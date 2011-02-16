@@ -1,0 +1,32 @@
+<voiture>
+	<nom>Peugeot 206 S16</nom>
+	<economie>
+		<rarete>1</rarete>
+		<prix>12 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<periode debut="1999" fin="2007"/>
+	</presentation>
+	<moteur nom="EW10J4">
+		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="16"/>
+		<cylindree>1997</cylindree>
+		<puissance regime="6000">137</puissance>
+		<couple_max regime="4100">190</couple_max>
+		<rupteur>6500</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1083</poids><!-- Non fiable -->
+		<largeur>1652</largeur>
+		<longueur>3825</longueur>
+		<empattement>2442</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Peugeot_206</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=77451</source>
+	</sources>
+</voiture>

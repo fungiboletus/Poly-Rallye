@@ -1,0 +1,34 @@
+<voiture>
+	<nom>Audio Quattro Sport Rallye</nom>
+	<economie>
+		<rarete>6</rarete>
+		<prix>40 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<periode debut="1984" fin="1985"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="5" disposition="ligne" compression="turbo" nb_soupapes="20"/>
+		<cylindree>2133</cylindree>
+		<puissance regime="7000">450</puissance>
+		<couple_max regime="4000">42</couple_max><!-- Non fiable -->
+		<rupteur>8000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1090</poids><!-- Non fiable -->
+		<largeur>1803</largeur>
+		<longueur>4164</longueur>
+		<empattement>2225</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Audi_quattro_Sport</source>
+		<source>http://de.wikipedia.org/wiki/Audi_Sport_quattro</source>
+		<source>http://www.carfolio.com/specifications/models/car/?car=26532</source>
+		<source>http://www.automobile-sportive.com/guide/audi/quattro.php</source>
+	</sources>
+</voiture>

@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Peugeot 205 Turbo 16 Évolution 2</nom>
+	<economie>
+		<rarete>5</rarete>
+		<prix>30 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<periode debut="1982" fin="1987"/>
+	</presentation>
+	<moteur nom="XU8T">
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1775</cylindree>
+		<puissance regime="8000">480</puissance>
+		<couple_max regime="5000">45</couple_max>
+		<ralenti>1500</ralenti><!-- Non fiable -->
+		<rupteur>10000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>910</poids>
+		<largeur>1770</largeur>
+		<longueur>3825</longueur>
+		<empattement>2450</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Peugeot_205_Turbo_16</source>
+		<source>http://www.rallye-stars.com/autos/205/205c.htm</source>
+	</sources>
+</voiture>

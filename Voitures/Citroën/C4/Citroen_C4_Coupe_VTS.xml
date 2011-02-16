@@ -1,0 +1,32 @@
+<voiture>
+	<nom>Citroën C4 Coupé VTS</nom>
+	<economie>
+		<rarete>1</rarete>
+		<prix>14 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<periode debut="2004" fin="2010"/>
+	</presentation>
+	<moteur nom="EW10J4S">
+		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="16"/>
+		<cylindree>1997</cylindree>
+		<puissance regime="7000">181</puissance>
+		<couple_max regime="4750">202</couple_max>
+		<rupteur>7600</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1337</poids>
+		<largeur>1458</largeur>
+		<longueur>4274</longueur>
+		<empattement>2608</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Citro%C3%ABn_C4_(2004)</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=122694</source>
+	</sources>
+</voiture>

@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Subaru Impreza WRC Génération 3</nom>
+	<economie>
+		<rarete>1</rarete>
+		<prix>16 500</prix>
+	</economie>
+	<presentation>
+		<constructeur>Subaru</constructeur>
+		<periode debut="2007" fin="2011"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="boxer" compression="turbo" nb_soupapes="16"/>
+		<cylindree>2500</cylindree>
+		<puissance regime="5200">265</puissance>
+		<couple_max regime="2800">31</couple_max>
+		<ralenti>1500</ralenti><!-- Non fiable -->
+		<rupteur>6500</rupteur>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1425</poids>
+		<largeur>1796</largeur>
+		<longueur>4415</longueur>
+		<empattement>2619</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Subaru_Impreza</source>
+		<source>http://en.wikipedia.org/wiki/Subaru_Impreza_WRX</source>
+	</sources>
+</voiture>

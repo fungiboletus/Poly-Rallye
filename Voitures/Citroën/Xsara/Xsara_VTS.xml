@@ -1,0 +1,32 @@
+<voiture>
+	<nom>Citroën Xsara VTS</nom>
+	<economie>
+		<rarete>1</rarete>
+		<prix>10 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<periode debut="1997" fin="2006"/>
+	</presentation>
+	<moteur nom="EW10J4S">
+		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="16"/>
+		<cylindree>1998</cylindree>
+		<puissance regime="6500">163</puissance>
+		<couple_max regime="5500">193</couple_max>
+		<rupteur>7250</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1190</poids>
+		<largeur>1698</largeur>
+		<longueur>4167</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Citro%C3%ABn_Xsara</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=86031</source>
+	</sources>
+</voiture>

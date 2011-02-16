@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Renault 5 Turbo</nom>
+	<economie>
+		<rarete>3</rarete>
+		<prix>14 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<periode debut="1980" fin="1986"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="8"/>
+		<cylindree>1397</cylindree>
+		<puissance regime="6000">160</puissance>
+		<couple_max regime="3250">22</couple_max>
+		<rupteur>7000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>970</poids>
+		<largeur>1752</largeur>
+		<longueur>3664</longueur>
+		<empattement>2430</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Renault_5_Turbo</source>
+		<source>http://www.renault-5.net/version_renault_5_turbo2.htm</source>
+		<source>http://www.carfolio.com/specifications/models/car/?car=37807</source>
+	</sources>
+</voiture>

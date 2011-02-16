@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Peugeot 206 WRC</nom>
+	<economie>
+		<rarete>8</rarete>
+		<prix>100 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<periode debut="1999" fin="2003"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1997</cylindree>
+		<puissance regime="5250">300</puissance>
+		<couple_max regime="3500">535</couple_max>
+		<rupteur>6000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1230</poids>
+		<largeur>1770</largeur>
+		<longueur>4005</longueur>
+		<empattement>2442</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Peugeot_206</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=18</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=110132</source>
+	</sources>
+</voiture>

@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Subaru Impreza WRC Génération 2</nom>
+	<economie>
+		<rarete>2</rarete>
+		<prix>17 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Subaru</constructeur>
+		<periode debut="2001" fin="2007"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="boxer" compression="turbo" nb_soupapes="16"/>
+		<cylindree>2500</cylindree>
+		<puissance regime="6000">230</puissance>
+		<couple_max regime="3600">34</couple_max>
+		<ralenti>1500</ralenti><!-- Non fiable -->
+		<rupteur>7500</rupteur>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1361</poids>
+		<largeur>1740</largeur>
+		<longueur>4465</longueur>
+		<empattement>2525</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Subaru_Impreza</source>
+		<source>http://en.wikipedia.org/wiki/Subaru_Impreza_WRX</source>
+	</sources>
+</voiture>

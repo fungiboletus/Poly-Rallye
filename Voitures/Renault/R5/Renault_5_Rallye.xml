@@ -1,0 +1,34 @@
+<voiture>
+	<nom>Renault 5 Turbo Rallye</nom>
+	<economie>
+		<rarete>4</rarete>
+		<prix>20 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<periode debut="1980" fin="1984"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="8"/>
+		<cylindree>1397</cylindree>
+		<puissance regime="7000">255</puissance>
+		<couple_max regime="6000">30</couple_max>
+		<rupteur>8000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>900</poids>
+		<largeur>1752</largeur>
+		<longueur>3664</longueur>
+		<empattement>2430</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Renault_5_Turbo</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=209</source>
+		<source>http://www.renault-5.net/version_renault_5_turbo2.htm</source>
+		<source>http://www.carfolio.com/specifications/models/car/?car=37807</source>
+	</sources>
+</voiture>

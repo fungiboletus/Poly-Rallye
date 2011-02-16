@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Citroën C4 WRC</nom>
+	<economie>
+		<rarete>8</rarete>
+		<prix>140 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<periode debut="2005" fin="2010"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1997</cylindree>
+		<puissance regime="5500">320</puissance>
+		<couple_max regime="2750">580</couple_max>
+		<rupteur>7000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1230</poids>
+		<largeur>1800</largeur>
+		<longueur>4274</longueur>
+		<empattement>2608</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Citro%C3%ABn_C4_(2004)</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=407</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=122694</source>
+	</sources>
+</voiture>

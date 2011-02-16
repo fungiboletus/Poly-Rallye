@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Peugeot 306 Maxi</nom>
+	<economie>
+		<rarete>6</rarete>
+		<prix>100 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<periode debut="1996" fin="2000"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1998</cylindree>
+		<puissance regime="11000">308</puissance>
+		<couple_max regime="8900">265</couple_max>
+		<rupteur>11500</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>960</poids>
+		<largeur>1835</largeur>
+		<longueur>3995</longueur>
+		<empattement>2580</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Peugeot_306</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=170</source>
+		<source>http://www.carfolio.com/specifications/models/car/?car=29216</source>
+	</sources>
+</voiture>

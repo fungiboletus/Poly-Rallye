@@ -1,0 +1,33 @@
+<voiture>
+	<nom>Lancia Stratos Série</nom>
+	<economie>
+		<rarete>7</rarete>
+		<prix>50 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Lancia</constructeur>
+		<periode debut="1972" fin="1974"/>
+	</presentation>
+	<moteur nom="Ferrari Dino V6">
+		<configuration nb_cylindres="6" disposition="v" compression="non" nb_soupapes="12"/>
+		<cylindree>2418</cylindree>
+		<puissance regime="7500">190</puissance><!-- Non fiable pour le régime-->
+		<couple_max regime="4000">24</couple_max>
+		<ralenti>1500</ralenti><!-- Non fiable -->
+		<rupteur>9000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>980</poids>
+		<largeur>1750</largeur>
+		<longueur>3708</longueur>
+		<empattement>2180</empattement>
+	</chassis>
+	<sources>
+		<source>http://lancia-stratos.chez-alice.fr/Spec1.html</source>
+		<source>http://fr.wikipedia.org/wiki/Lancia_Stratos</source>
+	</sources>
+</voiture>

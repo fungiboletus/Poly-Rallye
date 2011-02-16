@@ -1,0 +1,35 @@
+<voiture>
+	<nom>Audio Quattro Sport S1</nom>
+	<economie>
+		<rarete>7</rarete>
+		<prix>55 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<periode debut="1985" fin="1986"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="5" disposition="ligne" compression="turbo" nb_soupapes="20"/>
+		<cylindree>2133</cylindree>
+		<puissance regime="7500">530</puissance>
+		<couple_max regime="5000">50</couple_max><!-- Non fiable -->
+		<rupteur>8500</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1090</poids><!-- Non fiable -->
+		<largeur>1860</largeur>
+		<longueur>4240</longueur>
+		<empattement>2224</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Audi_quattro_Sport</source>
+		<source>http://de.wikipedia.org/wiki/Audi_Sport_quattro</source>
+		<source>http://www.carfolio.com/specifications/models/car/?car=26532</source>
+		<source>http://www.automobile-sportive.com/guide/audi/quattro.php</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=147</source>
+	</sources>
+</voiture>
