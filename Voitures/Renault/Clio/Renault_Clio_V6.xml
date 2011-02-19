@@ -1,0 +1,32 @@
+<voiture>
+	<nom>Renault Clio V6</nom>
+	<economie>
+		<rarete>3</rarete>
+		<prix>20 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<periode debut="2000" fin="2005"/>
+	</presentation>
+	<moteur nom="Renault L7X">
+		<configuration nb_cylindres="6" disposition="v" compression="non" nb_soupapes="24"/>
+		<cylindree>2948</cylindree>
+		<puissance regime="7150">255</puissance>
+		<couple_max regime="4650">300</couple_max><!-- Non fiable -->
+		<rupteur>7500</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1400</poids>
+		<largeur>1830</largeur>
+		<longueur>3841</longueur>
+		<empattement>2532</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Renault_Clio_II#Renault_Clio_V6</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=108669</source>
+	</sources>
+</voiture>
