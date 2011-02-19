@@ -12,7 +12,7 @@
 		<configuration nb_cylindres="6" disposition="V" compression="non" nb_soupapes="12"/>
 		<cylindree>2670</cylindree>
 		<puissance regime="6250">170</puissance>
-		<couple_max regime="4000">232</couple_max>
+		<couple_max regime="4000">230</couple_max>
 		<rupteur>6800</rupteur><!-- Non fiable -->
 	</moteur>
 	<transmission>

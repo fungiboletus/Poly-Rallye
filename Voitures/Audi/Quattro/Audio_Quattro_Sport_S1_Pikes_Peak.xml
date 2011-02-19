@@ -12,7 +12,7 @@
 		<configuration nb_cylindres="5" disposition="ligne" compression="turbo" nb_soupapes="20"/>
 		<cylindree>2133</cylindree>
 		<puissance regime="8000">598</puissance>
-		<couple_max regime="5500">67</couple_max>
+		<couple_max regime="5500">670</couple_max>
 		<rupteur>9000</rupteur><!-- Non fiable -->
 	</moteur>
 	<transmission>

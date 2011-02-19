@@ -12,7 +12,7 @@
 		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="16"/>
 		<cylindree>1997</cylindree>
 		<puissance regime="7000">181</puissance>
-		<couple_max regime="4750">202</couple_max>
+		<couple_max regime="4750">200</couple_max>
 		<rupteur>7600</rupteur><!-- Non fiable -->
 	</moteur>
 	<transmission>

@@ -1,0 +1,32 @@
+<voiture>
+	<nom>Renault Espace F1</nom>
+	<economie>
+		<rarete>9</rarete>
+		<prix>200 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<periode debut="1995" fin="1995"/>
+	</presentation>
+	<moteur nom="Renault RS5">
+		<configuration nb_cylindres="10" disposition="v" compression="turbo" nb_soupapes="40"/>
+		<cylindree>3493</cylindree>
+		<puissance regime="13800">780</puissance>
+		<couple_max regime="13000">700</couple_max><!-- Non fiable -->
+		<rupteur>14000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1300</poids>
+		<largeur>2050</largeur>
+		<longueur>4430</longueur>
+		<empattement>2715</empattement>
+	</chassis>
+	<sources>
+		<source>http://en.wikipedia.org/wiki/Renault_Espace#Espace_F1</source>
+		<source>http://www.supercars.net/cars/1672.html</source>
+	</sources>
+</voiture>

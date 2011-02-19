@@ -12,7 +12,7 @@
 		<configuration nb_cylindres="4" disposition="boxer" compression="turbo" nb_soupapes="16"/>
 		<cylindree>2500</cylindree>
 		<puissance regime="6000">320</puissance>
-		<couple_max regime="3700">45</couple_max>
+		<couple_max regime="3700">450</couple_max>
 		<ralenti>1500</ralenti><!-- Non fiable -->
 		<rupteur>7250</rupteur>
 	</moteur>

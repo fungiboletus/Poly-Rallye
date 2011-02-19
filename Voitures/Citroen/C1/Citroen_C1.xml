@@ -1,0 +1,31 @@
+<voiture>
+	<nom>Citroën C1</nom>
+	<economie>
+		<rarete>1</rarete>
+		<prix>8 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<periode debut="2005" fin="2011"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="3" disposition="ligne" compression="non" nb_soupapes="12"/>
+		<cylindree>998</cylindree>
+		<puissance regime="6000">68</puissance>
+		<couple_max regime="3600">93</couple_max>
+		<rupteur>6600</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>790</poids>
+		<largeur>1630</largeur>
+		<longueur>3435</longueur>
+		<empattement>2340</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Citro%C3%ABn_C1_-_Peugeot_107_-_Toyota_Aygo</source>
+	</sources>
+</voiture>

@@ -12,7 +12,7 @@
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="8"/>
 		<cylindree>1397</cylindree>
 		<puissance regime="7000">255</puissance>
-		<couple_max regime="6000">30</couple_max>
+		<couple_max regime="6000">300</couple_max>
 		<rupteur>8000</rupteur><!-- Non fiable -->
 	</moteur>
 	<transmission>

@@ -12,7 +12,7 @@
 		<configuration nb_cylindres="6" disposition="v" compression="turbo" nb_soupapes="12"/>
 		<cylindree>2418</cylindree>
 		<puissance regime="7500">480</puissance><!-- Non fiable pour le régime-->
-		<couple_max regime="4000">45</couple_max><!-- Non fiable-->
+		<couple_max regime="4000">450</couple_max><!-- Non fiable-->
 		<ralenti>1500</ralenti><!-- Non fiable -->
 		<rupteur>9000</rupteur><!-- Non fiable -->
 	</moteur>
