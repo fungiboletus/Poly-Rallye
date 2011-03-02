@@ -12,4 +12,10 @@ public class Voiture extends Tuple
 	protected int finDiffusion;
 	
 	protected Moteur moteur;
+	
+	protected Transmission transmission;
+	
+	protected Chassis chassis;
+	
+	protected Sources sources;
 }
