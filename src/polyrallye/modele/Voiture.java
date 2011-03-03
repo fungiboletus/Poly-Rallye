@@ -44,9 +44,9 @@ public class Voiture extends Tuple
 		finDiffusion = GestionXML.getInt(periode.getAttributeValue("fin"));
 		
 		moteur = new Moteur(noeud.getChild("moteur"));
-		/*transmission = new Transmission(noeud.getChild("transmission"));
+		transmission = new Transmission(noeud.getChild("transmission"));
 		chassis = new Chassis(noeud.getChild("chassis"));
-		sources = new Sources(noeud.getChild("sources"));*/
+		sources = new Sources(noeud.getChild("sources"));
 	}
 
 	public String getNom()
