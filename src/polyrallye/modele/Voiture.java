@@ -1,21 +1,118 @@
 package polyrallye.modele;
 
+import org.jdom.Element;
+
 public class Voiture extends Tuple
 {
 	protected String nom;
 	protected String constructeur;
-	
+
 	protected int rarete;
 	protected int prix;
-	
+
 	protected int debutDiffusion;
 	protected int finDiffusion;
-	
+
 	protected Moteur moteur;
-	
+
 	protected Transmission transmission;
-	
+
 	protected Chassis chassis;
-	
+
 	protected Sources sources;
+
+	public Voiture()
+	{
+		super();
+	}
+
+	public Voiture(Element noeud)
+	{
+		super();
+		
+		nom = noeud.getChildText("nom");
+		
+		Element presentation = noeud.getChild("presentation");
+		constructeur = presentation.getChildText("constructeur");
+		
+		Element economie = noeud.getChild("economie");
+		prix = GestionXML.getInt(economie.getChildText("prix"));
+		rarete = GestionXML.getInt(economie.getChildText("rarete"));
+		
+		Element periode = presentation.getChild("periode");
+		debutDiffusion = GestionXML.getInt(periode.getAttributeValue("debut"));
+		finDiffusion = GestionXML.getInt(periode.getAttributeValue("fin"));
+		
+		moteur = new Moteur(noeud.getChild("moteur"));
+		/*transmission = new Transmission(noeud.getChild("transmission"));
+		chassis = new Chassis(noeud.getChild("chassis"));
+		sources = new Sources(noeud.getChild("sources"));*/
+	}
+
+	public String getNom()
+	{
+		return nom;
+	}
+
+	public String getConstructeur()
+	{
+		return constructeur;
+	}
+
+	public int getRarete()
+	{
+		return rarete;
+	}
+
+	public int getPrix()
+	{
+		return prix;
+	}
+
+	public int getDebutDiffusion()
+	{
+		return debutDiffusion;
+	}
+
+	public int getFinDiffusion()
+	{
+		return finDiffusion;
+	}
+
+	public Moteur getMoteur()
+	{
+		return moteur;
+	}
+
+	public Transmission getTransmission()
+	{
+		return transmission;
+	}
+
+	public Chassis getChassis()
+	{
+		return chassis;
+	}
+
+	public Sources getSources()
+	{
+		return sources;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Voiture [ ");
+		if (constructeur != null) {
+			builder.append(constructeur);
+			builder.append(", ");
+		}
+		if (nom != null) {
+			builder.append(nom);
+			builder.append(", ");
+		}
+		builder.append(prix);
+		builder.append("€ ]");
+		return builder.toString();
+	}
 }
