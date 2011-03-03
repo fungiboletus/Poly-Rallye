@@ -2,13 +2,10 @@ package polyrallye.modele;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.jdom.Element;
-
-import polyrallye.modele.*;
 
 public class ChargerVoitures {
 
@@ -53,7 +50,7 @@ public class ChargerVoitures {
 	{
 		FileInputStream lecteurFichier = new FileInputStream(fichier);
 		Element noeud = GestionXML.chargerElementFlux(GestionXML.creerDocument(lecteurFichier));
-		
+		lecteurFichier.close();
 		voitures.add(new Voiture(noeud));
 	}
 	
