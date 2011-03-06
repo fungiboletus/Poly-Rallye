@@ -1,6 +1,15 @@
 package polyrallye.modele;
 
-public class Joueur
+public class Joueur extends Personne
 {
-	protected String nom;
+	protected Garage garage;
+	
+	public Joueur()
+	{
+		super();
+	}
+
+	public Garage getGarage() {
+		return garage;
+	}
 }

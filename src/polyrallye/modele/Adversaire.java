@@ -1,6 +1,6 @@
 package polyrallye.modele;
 
-public class Adversaire extends Joueur
+public class Adversaire extends Personne
 {
 
 }

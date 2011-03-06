@@ -24,11 +24,6 @@ public class GestionEntrees implements KeyListener {
 		ecouteur = e;
 	}
 
-	@Override
-	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		System.out.println(arg0);
-	}
 
 	@Override
 	public void keyReleased(KeyEvent codeTouche) {
@@ -46,8 +41,22 @@ public class GestionEntrees implements KeyListener {
 			case KeyEvent.VK_RIGHT:
 				ecouteur.droite();
 				break;
+			case KeyEvent.VK_ENTER:
+				ecouteur.selectionner();
+				break;
+			case KeyEvent.VK_ESCAPE:
+				ecouteur.annuler();
+				break;
+			case KeyEvent.VK_F1:
+				ecouteur.aide();
+				break;
+				
 			}
 		}
+	}
+
+	@Override
+	public void keyPressed(KeyEvent arg0) {
 	}
 
 	@Override

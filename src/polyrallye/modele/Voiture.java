@@ -2,7 +2,7 @@ package polyrallye.modele;
 
 import org.jdom.Element;
 
-public class Voiture extends Tuple
+public class Voiture
 {
 	protected String nom;
 	protected String constructeur;

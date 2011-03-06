@@ -9,4 +9,10 @@ public interface EcouteurEntrees {
 	public void gauche();
 	
 	public void droite();
+	
+	public void selectionner();
+	
+	public void annuler();
+	
+	public void aide();
 }
