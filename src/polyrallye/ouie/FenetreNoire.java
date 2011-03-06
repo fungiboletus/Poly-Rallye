@@ -1,11 +1,15 @@
 package polyrallye.ouie;
 
 import java.awt.Color;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class FenetreNoire extends JFrame{
+import polyrallye.controlleur.Main;
+
+public class FenetreNoire extends JFrame implements WindowListener {
 
 	private static final long serialVersionUID = -6277192979591219507L;
 
@@ -25,7 +29,39 @@ public class FenetreNoire extends JFrame{
 		add(p);
 		
 		addKeyListener(GestionEntrees.getInstance());
+		addWindowListener(this);
+		
 		setVisible(true);
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		Main.quitter();
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {	
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+	}
+
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
 	}
 	
 

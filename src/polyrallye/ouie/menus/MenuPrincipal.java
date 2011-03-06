@@ -1,33 +1,26 @@
 package polyrallye.ouie.menus;
 
-import polyrallye.ouie.ActionMenu;
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
 
 public class MenuPrincipal extends Menu {
 
 	public MenuPrincipal() {
-		super();
-		
+		super(null);
+
 		Liseuse.lire("Menu principal.");
-		
-		ajouterElement("Garage", new ActionMenu() {
-			
-			@Override
-			public void actionMenu() {
-				new MenuGarage().lancer();
-			}
-		});
+
+
+		ajouterElement("Garage", new MenuGarage(this));
+		ajouterElement("Magasins", new MenuMagasins(this));
 		ajouterElement("Permis", null);
-		ajouterElement("Sortir", null);
 		ajouterElement("Manger", null);
-		ajouterElement("Garage", null);
 	}
-	
+
 	@Override
-	public void annuler()
-	{
-		System.out.println("Quittons");
+	public void annuler() {
+		Main.demanderAQuitter();
 	}
 
 }

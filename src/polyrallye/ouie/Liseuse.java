@@ -35,5 +35,13 @@ public abstract class Liseuse {
 
 		}
 	}
+	
+	public static void lire(int valeur){
+		System.out.println(""+valeur);
+	}
+	
+	public static void marquerPause(){
+		
+	}
 
 }

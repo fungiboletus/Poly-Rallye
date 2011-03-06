@@ -2,6 +2,8 @@ package polyrallye.modele;
 
 import org.jdom.Element;
 
+import polyrallye.ouie.Liseuse;
+
 public class Voiture
 {
 	protected String nom;
@@ -114,5 +116,21 @@ public class Voiture
 		builder.append(prix);
 		builder.append("€ ]");
 		return builder.toString();
+	}
+	
+	public void lireSpecifications()
+	{
+		Liseuse.lire(nom);
+		Liseuse.lire("Construite par ");
+		Liseuse.lire(constructeur);
+		Liseuse.lire(" entre ");
+		Liseuse.lire(debutDiffusion);
+		Liseuse.lire(" et ");
+		Liseuse.lire(finDiffusion);
+		Liseuse.lire(". Valeur de ");
+		Liseuse.lire(prix);
+		Liseuse.lire("pour une rareté de ");
+		Liseuse.lire(rarete);
+		Liseuse.marquerPause();
 	}
 }

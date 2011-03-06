@@ -1,5 +1,8 @@
 package polyrallye.modele;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
@@ -55,6 +58,13 @@ public abstract class GestionXML {
 		doc.setRootElement(new Element(nom));
 		return doc;
 	}
+	
+	protected static Document creerDocument(Element root)
+	{
+		Document doc = new Document();
+		doc.setRootElement(root);
+		return doc;
+	}
 
 	/**
 	 * Récupère le noeud parent d'un document.
@@ -78,5 +88,24 @@ public abstract class GestionXML {
 
 	protected static int getInt(String nombre) {
 		return Integer.parseInt(nombre.replace(" ", ""));
+	}
+	
+	protected static Element chargerNoeudRacine(File fichier) throws Exception
+	{
+		FileInputStream lecteurFichier = new FileInputStream(fichier);
+		Element noeud = chargerElementFlux(creerDocument(lecteurFichier));
+		lecteurFichier.close();
+		
+		return noeud;
+	}
+	
+	protected static void enregistrerRacine(String nomFichier, Element noeud) throws Exception
+	{
+		Document doc = creerDocument(noeud);
+		
+		FileOutputStream f = new FileOutputStream(nomFichier);
+		ecrireXML(f, doc);
+		
+		f.close();
 	}
 }

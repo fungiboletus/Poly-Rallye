@@ -10,7 +10,16 @@ public abstract class Menu implements EcouteurEntrees {
 
 	protected int courant;
 
-	public Menu() {
+	protected Menu menuPrecedent;
+
+	public Menu(Menu menuPrecedent) {
+
+		initialiser();
+
+		this.menuPrecedent = menuPrecedent;
+	}
+
+	public void initialiser() {
 		libelles = new ArrayList<String>();
 		actions = new ArrayList<ActionMenu>();
 
@@ -46,21 +55,29 @@ public abstract class Menu implements EcouteurEntrees {
 	}
 
 	public void selectionner() {
-		ActionMenu am = actions.get(courant);
-		
-		if (am != null){
-			am.actionMenu();
+
+		if (libelles.size() > 0) {
+			ActionMenu am = actions.get(courant);
+
+			if (am != null) {
+				am.actionMenu();
+				return;
+			}
 		}
-		else
-		{
-			Liseuse.lire("Action invalide.");
-		}
+
+		Liseuse.lire("Action invalide.");
 	}
 
-	public abstract void annuler();
+	public void annuler() {
+		menuPrecedent.lancer();
+	}
 
 	public void ennoncer() {
-		Liseuse.lire(libelles.get(courant));
+		if (libelles.size() > 0) {
+			Liseuse.lire(libelles.get(courant));
+		} else {
+			Liseuse.lire("Le menu est vide.");
+		}
 	}
 
 	@Override
@@ -82,9 +99,8 @@ public abstract class Menu implements EcouteurEntrees {
 	public void droite() {
 		selectionner();
 	}
-	
-	public void aide()
-	{
+
+	public void aide() {
 		Liseuse.lire("Vous êtes dans un menu. Utilisez les touches haut et bas pour vous déplacer dans le menu. Entrée pour valider, et échap pour annuler.");
 	}
 }
