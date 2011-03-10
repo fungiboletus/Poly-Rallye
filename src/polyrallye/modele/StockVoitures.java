@@ -65,7 +65,8 @@ public abstract class StockVoitures {
 
 				hierarchie.put(fichier.getName(), nouvelleHierarchie);
 
-			} else if (fichier.isFile() && !fichier.isHidden()) {
+			} else if (fichier.isFile() && !fichier.isHidden()
+					&& fichier.getName().endsWith(".xml")) {
 				try {
 					chargerFichierVoiture(fichier, hierarchie);
 				} catch (Exception e) {
@@ -110,19 +111,22 @@ public abstract class StockVoitures {
 
 	/**
 	 * Récupère la liste des voitures (sous forme de tableau associatif)
+	 * 
 	 * @return Liste des voitures
 	 */
 	public static Map<String, Voiture> getVoitures() {
 		return voitures;
 	}
-	
+
 	/**
 	 * Récupère l'arbre contenant la hiérarchie des voitures.
 	 * 
-	 * Les éléments de l'arbre peuvent être des sous arbres du même type, ou des voitures.
+	 * Les éléments de l'arbre peuvent être des sous arbres du même type, ou des
+	 * voitures.
+	 * 
 	 * @return Hierachie des voitures
 	 */
-	public static Map<String, Object> getHierarchie(){
+	public static Map<String, Object> getHierarchie() {
 		return hierarchieVoitures;
 	}
 

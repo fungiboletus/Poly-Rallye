@@ -3,10 +3,14 @@ package polyrallye.ouie;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import polyrallye.controlleur.Main;
+
 public abstract class Liseuse {
 
 	public static void lire(String texte) {
 		System.out.println(texte);
+
+		Main.changerTexteFenetre(texte);
 
 		// Efficace et bourrin (pas de gestion de colisions, on verra si on en
 		// rencontre un jour…)
@@ -17,7 +21,8 @@ public abstract class Liseuse {
 		if (f.exists()) {
 			// TODO Lecture du son
 		} else {
-			// Si on n'a pas le son, on fait un fichier texte qui contient le texte a énoncer
+			// Si on n'a pas le son, on fait un fichier texte qui contient le
+			// texte a énoncer
 
 			File fi = new File("Paroles/" + clef + ".txt");
 
@@ -35,13 +40,13 @@ public abstract class Liseuse {
 
 		}
 	}
-	
-	public static void lire(int valeur){
-		System.out.println(""+valeur);
+
+	public static void lire(int valeur) {
+		System.out.println("" + valeur);
 	}
-	
-	public static void marquerPause(){
-		
+
+	public static void marquerPause() {
+
 	}
 
 }
