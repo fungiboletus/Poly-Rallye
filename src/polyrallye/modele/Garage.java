@@ -47,13 +47,14 @@ public class Garage {
 		changement = true;
 	}
 	
-	public void vendre(Voiture v) throws Exception{
+	public int vendre(Voiture v) throws Exception{
 		if (!voitures.contains(v))
 		{
 			throw new Exception("Voiture non présente dans le garage");
 		}
 		voitures.remove(v);
 		changement = true;
+		return (int) (v.getPrix()*0.7);
 	}
 	
 	public boolean verifierChangement()
