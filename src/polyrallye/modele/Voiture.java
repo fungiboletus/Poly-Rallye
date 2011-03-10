@@ -132,5 +132,6 @@ public class Voiture
 		Liseuse.lire("pour une rareté de ");
 		Liseuse.lire(rarete);
 		Liseuse.marquerPause();
+		moteur.lireSpecifications();
 	}
 }

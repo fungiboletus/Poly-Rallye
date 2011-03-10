@@ -2,6 +2,8 @@ package polyrallye.modele;
 
 import org.jdom.Element;
 
+import polyrallye.ouie.Liseuse;
+
 public class Moteur {
 	protected String nom;
 
@@ -160,5 +162,58 @@ public class Moteur {
 		builder.append(regimeRupteur);
 		builder.append("]");
 		return builder.toString();
+	}
+	
+	public void lireSpecifications()
+	{
+		Liseuse.lire("Moteur ");
+		if (nom != null) {
+			Liseuse.lire(nom);
+		}
+		
+		Liseuse.lire(" de cylindrée ");
+		Liseuse.lire(cylindree);
+		Liseuse.lire(" pour ");
+		Liseuse.lire(nbCylindres);
+		Liseuse.lire(", ");
+		Liseuse.lire(nbSoupapes);
+		Liseuse.lire(" soupapes. Disposition ");
+		
+		switch(disposition)
+		{
+		case LIGNE:
+			Liseuse.lire("en ligne");
+			break;
+		case PLAT:
+			Liseuse.lire("à plat");
+			break;
+		case V:
+			Liseuse.lire("en V");
+			break;
+		}
+		
+		switch (compression)
+		{
+		case COMPRESSEUR:
+			Liseuse.lire(" avec compresseur mécanique");
+			break;
+		case TURBO:
+			Liseuse.lire(" avec turbo compresseur");
+			break;
+		}
+		
+		Liseuse.marquerPause();
+		
+		Liseuse.lire("Couple max de ");
+		Liseuse.lire(coupleMax);
+		Liseuse.lire(" nm à ");
+		Liseuse.lire(regimeCoupleMax);
+		Liseuse.lire(" tours/min. Puissance max de ");
+		Liseuse.lire(puissanceMax);
+		Liseuse.lire(" chevaux à ");
+		Liseuse.lire(regimePuissanceMax);
+		Liseuse.lire(" tours/min. Rupteur à ");
+		Liseuse.lire(regimeRupteur);
+		Liseuse.lire(" tours/min.");
 	}
 }
