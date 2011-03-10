@@ -1,5 +1,9 @@
 package polyrallye.ouie.menus;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -19,14 +23,16 @@ public class MenuMagasins extends Menu implements ActionMenu {
 	public MenuMagasins(Menu menuPrecedent, Map<String, Object> hierarchie) {
 		super(menuPrecedent);
 		
+		// Les voitures sont triées par prix, donc on utilise un tableau temporaire
+		List<Voiture> listeVoitures = new ArrayList<Voiture>();
+		
 		for (Entry<String, Object> c : hierarchie.entrySet()) {
 			Object v = c.getValue();
 			
-			System.out.println(v);
-			
 			if (v instanceof Voiture)
-			{				
-				ajouterElement(c.getKey(), new MenuVoitureMagasin(this, (Voiture) v));
+			{
+				// Ajout au tableau temporaire des voitures
+				listeVoitures.add((Voiture) v);
 			}
 			else if (v instanceof Map<?, ?>)
 			{
@@ -34,6 +40,24 @@ public class MenuMagasins extends Menu implements ActionMenu {
 				@SuppressWarnings("unchecked")
 				Map<String,Object> v2 = (Map<String,Object>) v;
 				ajouterElement(c.getKey(), new MenuMagasins(this, v2));
+			}
+		}
+		
+		if (listeVoitures.size() > 0)
+		{
+			// Comparateur en fonction des prix des voitures
+			Comparator<Voiture> c = new Comparator<Voiture>() {
+				@Override
+				public int compare(Voiture o1, Voiture o2) {
+					return ((Integer) o1.getPrix()).compareTo(o2.getPrix());
+				}
+			};
+			
+			// Trie des voitures en fonction de leur prix
+			Collections.sort(listeVoitures, c);
+			
+			for (Voiture v : listeVoitures){
+				ajouterElement(v.getNom(), new MenuVoitureMagasin(this, v));
 			}
 		}
 	}
