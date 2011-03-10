@@ -72,4 +72,93 @@ public class Moteur {
 			compression = CompressionMoteur.NON;
 		}
 	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public int getCylindree() {
+		return cylindree;
+	}
+
+	public int getNbCylindres() {
+		return nbCylindres;
+	}
+
+	public DispositionMoteur getDisposition() {
+		return disposition;
+	}
+
+	public CompressionMoteur getCompression() {
+		return compression;
+	}
+
+	public int getNbSoupapes() {
+		return nbSoupapes;
+	}
+
+	public int getPuissanceMax() {
+		return puissanceMax;
+	}
+
+	public int getRegimePuissanceMax() {
+		return regimePuissanceMax;
+	}
+
+	public int getCoupleMax() {
+		return coupleMax;
+	}
+
+	public int getRegimeCoupleMax() {
+		return regimeCoupleMax;
+	}
+
+	public int getRegimeRupteur() {
+		return regimeRupteur;
+	}
+
+	public double getCouple()
+	{
+		return 0.0;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Moteur [");
+		if (nom != null) {
+			builder.append("nom=");
+			builder.append(nom);
+			builder.append(", ");
+		}
+		builder.append("cylindree=");
+		builder.append(cylindree);
+		builder.append(", nbCylindres=");
+		builder.append(nbCylindres);
+		builder.append(", ");
+		if (disposition != null) {
+			builder.append("disposition=");
+			builder.append(disposition);
+			builder.append(", ");
+		}
+		if (compression != null) {
+			builder.append("compression=");
+			builder.append(compression);
+			builder.append(", ");
+		}
+		builder.append("nbSoupapes=");
+		builder.append(nbSoupapes);
+		builder.append(", puissanceMax=");
+		builder.append(puissanceMax);
+		builder.append(", regimePuissanceMax=");
+		builder.append(regimePuissanceMax);
+		builder.append(", coupleMax=");
+		builder.append(coupleMax);
+		builder.append(", regimeCoupleMax=");
+		builder.append(regimeCoupleMax);
+		builder.append(", regimeRupteur=");
+		builder.append(regimeRupteur);
+		builder.append("]");
+		return builder.toString();
+	}
 }

@@ -28,6 +28,7 @@ public class MenuVoitureGarage extends Menu implements ActionMenu {
 	@Override
 	public void actionMenu() {
 		//Liseuse.lire(voiture.getNom());
+		//voiture.getTransmission().calculerRapports();
 		lancer();
 		
 	}
