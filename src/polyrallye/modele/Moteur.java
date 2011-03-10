@@ -171,11 +171,11 @@ public class Moteur {
 			Liseuse.lire(nom);
 		}
 		
-		Liseuse.lire(" de cylindrée ");
+		Liseuse.lire(" de ");
 		Liseuse.lire(cylindree);
-		Liseuse.lire(" pour ");
+		Liseuse.lire(" cm cube pour ");
 		Liseuse.lire(nbCylindres);
-		Liseuse.lire(", ");
+		Liseuse.lire(" cylindres, ");
 		Liseuse.lire(nbSoupapes);
 		Liseuse.lire(" soupapes. Disposition ");
 		
