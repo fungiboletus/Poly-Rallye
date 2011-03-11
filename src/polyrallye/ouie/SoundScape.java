@@ -6,8 +6,9 @@ import java.io.FileInputStream;
 
 import java.nio.*;
 import org.lwjgl.openal.*;
-import org.newdawn.slick.openal.OggData;
-import org.newdawn.slick.openal.OggDecoder;
+
+import polyrallye.ouie.ogg.OggData;
+import polyrallye.ouie.ogg.OggDecoder;
 
 /**
  * SoundScape wraps OpenAL functions to create a sound environment. Can load and
@@ -287,6 +288,10 @@ public class SoundScape {
 		AL10.alSource3f(soundSourceHandle, AL10.AL_VELOCITY, x, y, z);
 	}
 
+	public static void setOffset(int soundSourceHandle, float offset)
+	{
+		AL10.alSourcef(soundSourceHandle, AL11.AL_SEC_OFFSET, offset);		
+	}
 	/**
 	 * @param soundSourceHandle
 	 *            set pitch of this sound source

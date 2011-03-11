@@ -18,15 +18,17 @@ public class TestSoundScape {
 		
 		int s = SoundScape.makeSoundSource(m);
 		
+		SoundScape.setOffset(s, 120);
+		
 		SoundScape.play(s);
 		
-		float x = -100.0f;
+		float x = -10.0f;
 		
-		float vitesse = 1.0f;
+		float vitesse = 0.10f;
 		
 		while (true)
 		{
-			vitesse += (0.5-new Random().nextFloat())/3;
+			vitesse += (0.51-new Random().nextFloat())/100;
 			
 			SoundScape.setSoundPosition(s, x, 0.0f, 0.0f);
 			SoundScape.setVelocity(s, vitesse, 0.0f, 0.0f);
@@ -35,6 +37,8 @@ public class TestSoundScape {
 			AL10.alDopplerFactor(50.0f);
 			
 			x += vitesse;
+			
+			System.out.println(x);
 			Thread.sleep(100);
 		}
 	}
