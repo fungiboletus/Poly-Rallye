@@ -3,6 +3,7 @@ package polyrallye.ouie;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
@@ -13,7 +14,7 @@ import javax.swing.JPanel;
 
 import polyrallye.controlleur.Main;
 
-public class FenetreNoire extends JFrame implements WindowListener {
+public class FenetreNoire extends JFrame {
 
 	private static final long serialVersionUID = -6277192979591219507L;
 
@@ -27,6 +28,7 @@ public class FenetreNoire extends JFrame implements WindowListener {
 
 		setSize(400, 225);
 		setExtendedState(MAXIMIZED_BOTH);
+		requestFocusInWindow();
 
 		// Pour avoir un fond noir, malgré le thème, il faut un jpanel
 		JPanel p = new JPanel();
@@ -52,42 +54,19 @@ public class FenetreNoire extends JFrame implements WindowListener {
 		add(p);
 
 		addKeyListener(GestionEntrees.getInstance());
-		addWindowListener(this);
+		
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				Main.quitter();
+			}
+		});
 
 		setVisible(true);
 	}
 
 	public void changerTexte(String texte) {
 		this.texte.setText(texte);
-	}
-
-	@Override
-	public void windowClosing(WindowEvent e) {
-		Main.quitter();
-	}
-
-	@Override
-	public void windowActivated(WindowEvent e) {
-	}
-
-	@Override
-	public void windowClosed(WindowEvent e) {
-	}
-
-	@Override
-	public void windowDeactivated(WindowEvent e) {
-	}
-
-	@Override
-	public void windowDeiconified(WindowEvent e) {
-	}
-
-	@Override
-	public void windowIconified(WindowEvent e) {
-	}
-
-	@Override
-	public void windowOpened(WindowEvent e) {
 	}
 
 }
