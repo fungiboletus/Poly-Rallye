@@ -1,5 +1,5 @@
-<project name="td5_ant" default="dist" basedir=".">
-	<description>Projet de test pour le TD5 de OGL.</description>
+<project name="polyrallye" default="dist" basedir=".">
+	<description>Poly'Rallye, le jeu de rallye pour les non voyants.</description>
 	
 	<property name="src" location="src" />
 	<property name="build" location="bin" />
