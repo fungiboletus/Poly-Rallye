@@ -12,7 +12,7 @@ public class TestSoundScape {
 	 * @throws InterruptedException 
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		SoundScape.create();
+		//SoundScape.create();
 		
 		int m = SoundScape.loadSoundData("Ressources/Reno Project - 1.0/test.ogg");
 		
@@ -25,10 +25,12 @@ public class TestSoundScape {
 		float x = -10.0f;
 		
 		float vitesse = 0.10f;
+
+		Random r = new Random();
 		
 		while (true)
 		{
-			vitesse += (0.51-new Random().nextFloat())/100;
+			vitesse += (0.51-r.nextFloat())/100;
 			
 			SoundScape.setSoundPosition(s, x, 0.0f, 0.0f);
 			SoundScape.setVelocity(s, vitesse, 0.0f, 0.0f);

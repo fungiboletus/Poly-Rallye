@@ -1,3 +1,16 @@
+/**
+ * SoundScape wraps OpenAL functions to create a sound environment. Can load and
+ * play several sounds, set properties of sounds (pitch, position, volume,
+ * dropoff), pause all sounds or one sound, control global volume.
+ * 
+ * Requires the WaveData class to load wav files.
+ * <P>
+ * Borrows heavily from Brian Matzon's PlayTest demo (at http://lwjgl.org)
+ * <P>
+ * 
+ * This class is highly modified for PolyRallye.
+ */
+
 package polyrallye.ouie;
 
 import java.io.BufferedInputStream;
@@ -5,59 +18,31 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 
 import java.nio.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.lwjgl.openal.*;
 
 import polyrallye.ouie.ogg.OggData;
 import polyrallye.ouie.ogg.OggDecoder;
 
-/**
- * SoundScape wraps OpenAL functions to create a sound environment. Can load and
- * play several sounds, set properties of sounds (pitch, position, volume,
- * dropoff), pause all sounds or one sound, control global volume.
- * 
- * To run a demo of SoundScape just call the static demo() function:
- * 
- * <PRE>
- * SoundScape.demo();
- * </PRE>
- * 
- * The class is static so can be used without instantiation, similar to LWJGL
- * Display, Mouse and Keyboard classes:
- * 
- * <PRE>
- *     SoundScape.create();      // init sound environment
- *     ...
- *     int soundData sd = SoundScape.loadSoundData("a_noise.wav");
- *     int soundSource ss = SoundScape.makeSoundSource(soundData);
- *     SoundScape.setSoundPosition(ss, 10, 2, 0);
- *     SoundScape.play(ss);
- *     ...
- *     SoundScape.destroy();
- * </PRE>
- * 
- * Requires the WaveData class to load wav files.
- * <P>
- * Borrows heavily from Brian Matzon's PlayTest demo (at http://lwjgl.org)
- * <P>
- */
-public class SoundScape {
-	static final int NUM_SOUNDS = 100;
-	static int[] soundDataBuffers = new int[NUM_SOUNDS];
-	static int[] soundSources = new int[NUM_SOUNDS];
-	static int soundDataBufferC = 0;
-	static int soundSourceC = 0;
+public abstract class SoundScape {
+
+	static List<Integer> soundDataBuffers;
+	static List<Integer> soundSources;
+
 	static boolean ALcreated = false;
 	static boolean haveVorbis = false;
 	static float globalGain = 1f;
 	static float referenceDistance = 5f;
 	static int lastError;
 
-	/**
-	 * Creates an instance of SoundScape BUT SoundScape is meant to be used as
-	 * static class. Use SoundScape.create() to init the class.
-	 */
-	public SoundScape() {
-		create(); // static singleton class?
+	static {
+		soundDataBuffers = new ArrayList<Integer>();
+		soundSources = new ArrayList<Integer>();
+		
+		// Création automatique (et oui)
+		create();
 	}
 
 	/**
@@ -98,18 +83,17 @@ public class SoundScape {
 	 */
 	public static void destroy() {
 		// stop all sounds
-		for (int i = 0; i < soundSourceC; i++) {
-			stop(soundSources[i]);
-			deleteSoundSource(soundSources[i]);
+		for (Integer i : soundSources) {
+			stop(i);
+			deleteSoundSource(i);
 		}
 
 		// delete buffers and sources
-		for (int i = 0; i < soundDataBufferC; i++) {
-			deleteSoundData(soundDataBuffers[i]);
+		for (Integer i : soundDataBuffers) {
+			deleteSoundData(i);
 		}
 
 		// reset counters and flags
-		soundSourceC = soundDataBufferC = 0;
 		ALcreated = false;
 
 		// shutdown
@@ -127,39 +111,6 @@ public class SoundScape {
 		// System.exit(arg);
 	}
 
-	/**
-	 * Run a bare-bones demo of SoundScape.
-	 */
-	public static void demo() {
-		int soundDataA, soundDataB; // handles to sound data buffers
-		int source1, source2; // handles to sound sources
-
-		// start up OpenAL env
-		create();
-
-		// Load sound data into buffers
-		soundDataA = loadSoundData("sounds/cardinal3.wav");
-		soundDataB = loadSoundData("sounds/bomb.wav");
-
-		// Create two sound sources bound to the sound data
-		source1 = makeSoundSource(soundDataA);
-		source2 = makeSoundSource(soundDataB);
-
-		// Tweak the pitch and volume of each sound
-		setGain(source2, .3f);
-		setPitch(source2, .5f);
-		setPitch(source1, 1.2f);
-
-		// Play the sound sources (looping)
-		setLoop(source1, true);
-		setLoop(source2, true);
-		play(source1);
-		play(source2);
-
-		// clean up: call destroy when done
-		// destroy();
-	}
-
 	// ========================================================================
 	// functions that control entire sound environment
 	// ========================================================================
@@ -168,8 +119,8 @@ public class SoundScape {
 	 * Pause or resume all sounds playing in the SoundScape
 	 */
 	public static void pause(boolean bool) {
-		for (int i = 0; i < soundSourceC; i++) {
-			pause(soundSources[i], bool);
+		for (Integer i : soundSources) {
+			pause(i, bool);
 		}
 	}
 
@@ -177,8 +128,8 @@ public class SoundScape {
 	 * Stop all sounds playing in the SoundScape
 	 */
 	public static void stop() {
-		for (int i = 0; i < soundSourceC; i++) {
-			stop(soundSources[i]);
+		for (Integer i : soundSources) {
+			stop(i);
 		}
 	}
 
@@ -197,8 +148,9 @@ public class SoundScape {
 				gain = 0;
 			}
 			globalGain = gain;
-			for (int i = 0; i < soundSourceC; i++) {
-				setGain(soundSources[i], getGain(soundSources[i]));
+
+			for (Integer i : soundSources) {
+				setGain(i, getGain(i));
 			}
 		}
 	}
@@ -288,10 +240,10 @@ public class SoundScape {
 		AL10.alSource3f(soundSourceHandle, AL10.AL_VELOCITY, x, y, z);
 	}
 
-	public static void setOffset(int soundSourceHandle, float offset)
-	{
-		AL10.alSourcef(soundSourceHandle, AL11.AL_SEC_OFFSET, offset);		
+	public static void setOffset(int soundSourceHandle, float offset) {
+		AL10.alSourcef(soundSourceHandle, AL11.AL_SEC_OFFSET, offset);
 	}
+
 	/**
 	 * @param soundSourceHandle
 	 *            set pitch of this sound source
@@ -417,10 +369,9 @@ public class SoundScape {
 		if ((lastError = AL10.alGetError()) != AL10.AL_NO_ERROR) {
 			exit(lastError);
 		}
-		// hold onto sound Data handle
-		if (soundDataBufferC < NUM_SOUNDS) {
-			soundDataBuffers[soundDataBufferC++] = soundDataHandle.get(0);
-		}
+		
+		soundDataBuffers.add(soundDataHandle.get(0));
+		
 		return soundDataHandle.get(0);
 	}
 
@@ -449,9 +400,8 @@ public class SoundScape {
 		// set volume to current environment volume
 		AL10.alSourcef(soundSourceHandle.get(0), AL10.AL_GAIN, globalGain);
 		// hold onto the new sound source
-		if (soundSourceC < NUM_SOUNDS) {
-			soundSources[soundSourceC++] = soundSourceHandle.get(0);
-		}
+		soundSources.add(soundSourceHandle.get(0));
+		
 		return soundSourceHandle.get(0);
 	}
 
@@ -496,7 +446,7 @@ public class SoundScape {
 	 * @return numeric handle to the sound data buffer
 	 */
 	public static int loadSoundData(String soundFilename) // , int
-															// soundDataBufferHandle)
+	// soundDataBufferHandle)
 	{
 		int soundDataBufferHandle = allocateSoundData();
 		if (soundFilename.endsWith(".ogg")) {
@@ -510,11 +460,15 @@ public class SoundScape {
 				try {
 					OggDecoder decoder = new OggDecoder();
 					FileInputStream fis = new FileInputStream(soundFilename);
-					
+
 					OggData ogg = decoder.getData(fis);
 
-					AL10.alBufferData(soundDataBufferHandle, ogg.channels > 1 ? AL10.AL_FORMAT_STEREO16 : AL10.AL_FORMAT_MONO16, ogg.data, ogg.rate);
-					
+					AL10
+							.alBufferData(soundDataBufferHandle,
+									ogg.channels > 1 ? AL10.AL_FORMAT_STEREO16
+											: AL10.AL_FORMAT_MONO16, ogg.data,
+									ogg.rate);
+
 					fis.close();
 				} catch (Exception e) {
 					e.printStackTrace();
