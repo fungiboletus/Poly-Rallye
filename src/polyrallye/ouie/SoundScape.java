@@ -445,7 +445,7 @@ public abstract class SoundScape {
 	 * 
 	 * @param whichSoundHandle
 	 */
-	static void deleteSoundData(int soundDataHandle) {
+	public static void deleteSoundData(int soundDataHandle) {
 		IntBuffer ib = allocInts(1);
 		ib.put(soundDataHandle);
 		ib.position(0).limit(1);
@@ -460,7 +460,7 @@ public abstract class SoundScape {
 	 * 
 	 * @param whichSoundHandle
 	 */
-	static void deleteSoundSource(int soundSourceHandle) {
+	public static void deleteSoundSource(int soundSourceHandle) {
 		IntBuffer ib = allocInts(1);
 		ib.put(soundSourceHandle);
 		ib.position(0).limit(1);

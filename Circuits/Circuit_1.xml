@@ -1,6 +1,6 @@
 <circuit>
 <nom>Foret Noire</nom>
-<temps>Nuit</temps>
+<temps>nuit</temps>
 <meteo>Vent</meteo>
 <contenu>
 <environnement type = "foret" distance = "0" longueur = "700"/>

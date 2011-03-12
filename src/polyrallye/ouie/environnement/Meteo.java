@@ -25,7 +25,7 @@ public class Meteo {
 
 	public Meteo() {
 		super();
-		etat = "Clair";
+		etat = "clair";
 		environnement = "defaut";
 		
 		SoundScape.create();
@@ -95,7 +95,7 @@ public class Meteo {
 	
 	public void play() {
 
-		String rep = "Sons/Meteo/" + etat+"/";
+		String rep = "Sons/meteo/" + etat+"/";
 		BufferedReader mani = null;		
 		//On lit le fichier
 		try {
@@ -141,7 +141,7 @@ public class Meteo {
 		//loop
 		SoundScape.setLoop(env, true);
 		//Son
-		SoundScape.setGain(env, 0.4f);
+		SoundScape.setGain(env, 0.3f);
 		//On le joue pour la vie
 		isPlaying = true;
 		SoundScape.play(env);
