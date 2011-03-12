@@ -127,7 +127,7 @@ public class Voiture
 		Liseuse.lire(debutDiffusion);
 		Liseuse.lire(" et ");
 		Liseuse.lire(finDiffusion);
-		Liseuse.lire(". Valeur de ");
+		Liseuse.lire("Valeur de ");
 		Liseuse.lire(prix);
 		Liseuse.lire("pour une rareté de ");
 		Liseuse.lire(rarete);

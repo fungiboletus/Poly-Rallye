@@ -1,15 +1,26 @@
 package polyrallye.ouie;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.nio.channels.FileChannel;
+
+import t2s.son.LecteurTexte;
 
 import polyrallye.controlleur.Main;
 
 public abstract class Liseuse {
 
+	protected static LecteurTexte lt;
+	
+	static {
+		lt = new LecteurTexte();
+	}
+	
 	public static void lire(String texte) {
 		System.out.println(texte);
-
+		
+		
 		Main.changerTexteFenetre(texte);
 
 		// Efficace et bourrin (pas de gestion de colisions, on verra si on en
@@ -21,6 +32,43 @@ public abstract class Liseuse {
 		if (f.exists()) {
 			// TODO Lecture du son
 		} else {
+			
+			f = new File("Paroles/"+clef+".wav");
+			
+			if (!f.exists())
+			{
+				lt.setTexte(texte);
+				lt.play();
+				
+				FileChannel in = null; // canal d'entrée
+				FileChannel out = null; // canal de sortie
+				 
+				try {
+				  // Init
+				  in = new FileInputStream("VocalyzeSIVOX/donneesMbrola/pho_wav/phrase.wav").getChannel();
+				  out = new FileOutputStream(f.getPath()).getChannel();
+				 
+				  // Copie depuis le in vers le out
+				  in.transferTo(0, in.size(), out);
+				} catch (Exception e) {
+				  e.printStackTrace(); // n'importe quelle exception
+				} finally { // finalement on ferme
+				  if(in != null) {
+				  	try {
+					  in.close();
+					} catch (Exception e) {}
+				  }
+				  if(out != null) {
+				  	try {
+					  out.close();
+					} catch (Exception e) {}
+				  }
+				}
+			}
+			
+			Sound s = new Sound(f.getPath(),null);
+			s.play();
+
 			// Si on n'a pas le son, on fait un fichier texte qui contient le
 			// texte a énoncer
 
