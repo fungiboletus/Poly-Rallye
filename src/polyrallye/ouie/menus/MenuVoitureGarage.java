@@ -23,13 +23,7 @@ public class MenuVoitureGarage extends Menu implements ActionMenu {
 
 		ajouterElement("Tester", null);
 		ajouterElement("Vendre", new MenuVenteVoiture(this, voiture));
-		ajouterElement("Web", new ActionMenu() {
-
-			@Override
-			public void actionMenu() {
-				voiture.getSources().naviguer();
-			}
-		});
+		ajouterElement("Web", new MenuSources(this, v.getSources()));
 	}
 
 	@Override

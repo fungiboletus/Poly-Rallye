@@ -264,5 +264,5 @@ public class WaveData {
 		dest.rewind();
 		return dest;
 	}
-}
 
+}

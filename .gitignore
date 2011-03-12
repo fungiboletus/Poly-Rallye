@@ -1,2 +1,5 @@
 .*
 !.gitignore
+*.class
+bin
+PolyRallye.jar

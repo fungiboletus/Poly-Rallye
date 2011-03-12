@@ -28,6 +28,7 @@ public class MenuGarage extends Menu implements ActionMenu {
 
 		while (i.hasPrevious()) {
 			Voiture v = i.previous();
+			System.out.println(v);
 			ajouterElement(v.getNom(), new MenuVoitureGarage(this, v));
 		}
 	}

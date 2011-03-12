@@ -29,11 +29,8 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import org.lwjgl.openal.*;
 import java.io.FileInputStream;
 
-import java.nio.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.lwjgl.openal.*;
 
 import polyrallye.ouie.ogg.OggData;
 import polyrallye.ouie.ogg.OggDecoder;
