@@ -1,7 +1,18 @@
 package polyrallye.ouie.environnement;
 
+
+import org.jdom.Element;
+
+import java.io.File;
+import java.io.IOException;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
+import java.util.Scanner;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
 
 import org.lwjgl.BufferUtils;
 import org.lwjgl.LWJGLException;
@@ -9,9 +20,15 @@ import org.lwjgl.openal.AL;
 import org.lwjgl.openal.AL10;
 import org.lwjgl.util.WaveData;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
+
+
 public class Environnement {
 	
 	protected String nom;
+	protected String type;
+	protected Meteo meteo;
+
 	
 	  /** Buffers hold sound data. */
 	  IntBuffer buffer = BufferUtils.createIntBuffer(1);
@@ -34,9 +51,18 @@ public class Environnement {
 	  /** Orientation of the listener. (first 3 elements are "at", second 3 are "up") */
 	  FloatBuffer listenerOri = (FloatBuffer)BufferUtils.createFloatBuffer(6).put(new float[] { 0.0f, 0.0f, -1.0f,  0.0f, 1.0f, 0.0f }).rewind();
 	
-	public Environnement(String n) {
-		nom=n;
+	public Environnement() {
+		super();
+		nom="foret";
+		meteo= new Meteo("Vent",nom);
 	}
+	
+	public Environnement(Element noeud) {
+		
+		
+	}
+	
+	
 	
 	 int loadALData(String fichier) {
 		    // Load wav data into a buffer.
@@ -46,19 +72,44 @@ public class Environnement {
 		      return AL10.AL_FALSE;
 
 		    //Loads the wave file from your file system
-		    java.io.FileInputStream fin = null;
+		    
+		    /*BULLSHIT
+		    FileInputStream fin = null;
+		    
 		    try {
-		      fin = new java.io.FileInputStream(fichier+".wav");
+		      fin = new FileInputStream(fichier+".wav");
+		      
 		    } catch (java.io.FileNotFoundException ex) {
 		      ex.printStackTrace();
 		      return AL10.AL_FALSE;
 		    }
-		    System.out.println(fin);
-		    WaveData waveFile = WaveData.create(fin);
+		    System.out.println(fin
+		    		);
+		    */
+		    
+		    File fin = new File(fichier+".wav");
+		    AudioInputStream aud = null;
+		    
+		    try {
+				aud = AudioSystem.getAudioInputStream(fin);
+			} catch (UnsupportedAudioFileException e) {
+				System.out.println("Format non supporte");
+				e.printStackTrace();
+			      return AL10.AL_FALSE;
+			} catch (IOException e) {
+				e.printStackTrace();
+			      return AL10.AL_FALSE;
+			}
+	    
+		    WaveData waveFile;
+				waveFile = WaveData.create(aud);
+
+
+			/*
 		    try {
 		      fin.close();
 		    } catch (java.io.IOException ex) {
-		    }
+		    }*/
 
 		    //Loads the wave file from this class's package in your classpath
 		    //WaveData waveFile = WaveData.create("FancyPants.wav");
@@ -111,7 +162,7 @@ public class Environnement {
 		  }
 
 	
-	public void jouer(String son)
+	private void jouer(String son)
 	{
 	    // Initialize OpenAL and clear the error bit.
 	    try{
@@ -124,21 +175,49 @@ public class Environnement {
 	    AL10.alGetError();
 	 
 	    // Load the wav data.
-	    if(loadALData("sons/"+nom+"/"+son) == AL10.AL_FALSE) {
+	    if(loadALData("Sons/"+nom+"/"+son) == AL10.AL_FALSE) {
 	      System.out.println("Error loading data.");
 	      return;
 	    }
 	    setListenerValues();
 	    AL10.alSourcePlay(source.get(0));
-	    
+		Scanner sc = new Scanner(System.in);
+
+		while (!sc.next().equals("e"))
+		{
+
+		}
+		
+		this.killALData();
 
 
 	}
 	
+	public void play()
+	{
+		meteo.play();
+	}
+	
+	public void stop()
+	{
+		meteo.stop();
+	}
 
 	public static void main(String[] args) {
-			Environnement test = new Environnement("foret");
-			test.jouer("nuit_2");
+			Environnement test = new Environnement();
+			test.play();
+			Scanner sc = new Scanner(System.in);
+
+			while (!sc.next().equals("e"))
+			{
+
+			}
+			test.stop();
+			while (!sc.next().equals("e"))
+			{
+
+			}
+
 	}
 
 }
