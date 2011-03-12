@@ -13,6 +13,8 @@ public class Joueur extends Personne
 	protected Garage garage;
 	protected int argent = 0;
 	
+	protected Permis permis;
+	
 	public Joueur(String nom)
 	{
 		super(nom);
@@ -21,6 +23,8 @@ public class Joueur extends Personne
 		
 		// Au début, on a beaucoup d'argent
 		argent = 20000;
+		
+		permis = new Permis();
 	}
 	
 	public Joueur(Element noeud)
@@ -30,6 +34,8 @@ public class Joueur extends Personne
 		garage = new Garage(noeud.getChild("garage"));
 		
 		argent = GestionXML.getInt(noeud.getChildText("argent"));
+		
+		permis = new Permis(noeud.getChild("permis"));
 	}
 
 	public Garage getGarage() {
@@ -38,6 +44,10 @@ public class Joueur extends Personne
 	
 	public int getArgent() {
 		return argent;
+	}
+
+	public Permis getPermis() {
+		return permis;
 	}
 
 	public void acheterVoiture(Voiture v) throws Exception{

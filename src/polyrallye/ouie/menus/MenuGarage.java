@@ -15,6 +15,8 @@ public class MenuGarage extends Menu implements ActionMenu {
 		super(menuPrecedent);
 
 		listerVoitures();
+		
+		messageMenuVide = "Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.";
 	}
 
 	public void listerVoitures() {
@@ -35,12 +37,13 @@ public class MenuGarage extends Menu implements ActionMenu {
 
 	@Override
 	public void actionMenu() {
-		Liseuse.lire("Vous êtes dans votre garage. Vous pouvez sélectionner vos voitures.");
 
 		if (Joueur.session.getGarage().verifierChangement()) {
 			initialiser();
 			listerVoitures();
 		}
+
+		Liseuse.lire("Vous êtes dans votre garage. Vous pouvez sélectionner vos voitures.");
 
 		lancer();
 	}
