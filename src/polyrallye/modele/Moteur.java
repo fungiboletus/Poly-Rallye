@@ -2,6 +2,8 @@ package polyrallye.modele;
 
 import org.jdom.Element;
 
+import polyrallye.ouie.Liseuse;
+
 public class Moteur {
 	protected String nom;
 
@@ -71,5 +73,147 @@ public class Moteur {
 		} else {
 			compression = CompressionMoteur.NON;
 		}
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public int getCylindree() {
+		return cylindree;
+	}
+
+	public int getNbCylindres() {
+		return nbCylindres;
+	}
+
+	public DispositionMoteur getDisposition() {
+		return disposition;
+	}
+
+	public CompressionMoteur getCompression() {
+		return compression;
+	}
+
+	public int getNbSoupapes() {
+		return nbSoupapes;
+	}
+
+	public int getPuissanceMax() {
+		return puissanceMax;
+	}
+
+	public int getRegimePuissanceMax() {
+		return regimePuissanceMax;
+	}
+
+	public int getCoupleMax() {
+		return coupleMax;
+	}
+
+	public int getRegimeCoupleMax() {
+		return regimeCoupleMax;
+	}
+
+	public int getRegimeRupteur() {
+		return regimeRupteur;
+	}
+
+	public double getCouple()
+	{
+		return 0.0;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Moteur [");
+		if (nom != null) {
+			builder.append("nom=");
+			builder.append(nom);
+			builder.append(", ");
+		}
+		builder.append("cylindree=");
+		builder.append(cylindree);
+		builder.append(", nbCylindres=");
+		builder.append(nbCylindres);
+		builder.append(", ");
+		if (disposition != null) {
+			builder.append("disposition=");
+			builder.append(disposition);
+			builder.append(", ");
+		}
+		if (compression != null) {
+			builder.append("compression=");
+			builder.append(compression);
+			builder.append(", ");
+		}
+		builder.append("nbSoupapes=");
+		builder.append(nbSoupapes);
+		builder.append(", puissanceMax=");
+		builder.append(puissanceMax);
+		builder.append(", regimePuissanceMax=");
+		builder.append(regimePuissanceMax);
+		builder.append(", coupleMax=");
+		builder.append(coupleMax);
+		builder.append(", regimeCoupleMax=");
+		builder.append(regimeCoupleMax);
+		builder.append(", regimeRupteur=");
+		builder.append(regimeRupteur);
+		builder.append("]");
+		return builder.toString();
+	}
+	
+	public void lireSpecifications()
+	{
+		Liseuse.lire("Moteur ");
+		if (nom != null) {
+			Liseuse.lire(nom);
+		}
+		
+		Liseuse.lire(" de ");
+		Liseuse.lire(cylindree);
+		Liseuse.lire(" cm cube pour ");
+		Liseuse.lire(nbCylindres);
+		Liseuse.lire(" cylindres, ");
+		Liseuse.lire(nbSoupapes);
+		Liseuse.lire(" soupapes. Disposition ");
+		
+		switch(disposition)
+		{
+		case LIGNE:
+			Liseuse.lire("en ligne");
+			break;
+		case PLAT:
+			Liseuse.lire("à plat");
+			break;
+		case V:
+			Liseuse.lire("en V");
+			break;
+		}
+		
+		switch (compression)
+		{
+		case COMPRESSEUR:
+			Liseuse.lire(" avec compresseur mécanique");
+			break;
+		case TURBO:
+			Liseuse.lire(" avec turbo compresseur");
+			break;
+		}
+		
+		Liseuse.marquerPause();
+		
+		Liseuse.lire("Couple max de ");
+		Liseuse.lire(coupleMax);
+		Liseuse.lire(" nm à ");
+		Liseuse.lire(regimeCoupleMax);
+		Liseuse.lire(" tours/min. Puissance max de ");
+		Liseuse.lire(puissanceMax);
+		Liseuse.lire(" chevaux à ");
+		Liseuse.lire(regimePuissanceMax);
+		Liseuse.lire(" tours/min. Rupteur à ");
+		Liseuse.lire(regimeRupteur);
+		Liseuse.lire(" tours/min.");
 	}
 }

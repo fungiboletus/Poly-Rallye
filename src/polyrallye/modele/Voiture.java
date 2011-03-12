@@ -46,7 +46,7 @@ public class Voiture
 		finDiffusion = GestionXML.getInt(periode.getAttributeValue("fin"));
 		
 		moteur = new Moteur(noeud.getChild("moteur"));
-		transmission = new Transmission(noeud.getChild("transmission"));
+		transmission = new Transmission(moteur, noeud.getChild("transmission"));
 		chassis = new Chassis(noeud.getChild("chassis"));
 		sources = new Sources(noeud.getChild("sources"));
 	}
@@ -132,5 +132,6 @@ public class Voiture
 		Liseuse.lire("pour une rareté de ");
 		Liseuse.lire(rarete);
 		Liseuse.marquerPause();
+		moteur.lireSpecifications();
 	}
 }

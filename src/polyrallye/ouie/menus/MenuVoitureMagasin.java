@@ -13,7 +13,13 @@ public class MenuVoitureMagasin extends Menu implements ActionMenu {
 		
 		voiture = v;		
 
-		ajouterElement("Spécifications", null);
+		ajouterElement("Spécifications", new ActionMenu() {
+			
+			@Override
+			public void actionMenu() {
+				voiture.lireSpecifications();
+			}
+		});
 		ajouterElement("Acheter", new MenuAchatVoiture(this, voiture));
 		
 		ajouterElement("Web", new ActionMenu() {

@@ -1,0 +1,32 @@
+<voiture>
+	<nom>Bugatti Veyron 16.4 Super Sport</nom>
+	<economie>
+		<rarete>6</rarete>
+		<prix>500 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Bugatti</constructeur>
+		<periode debut="2005" fin="2011"/>
+	</presentation>
+	<moteur>
+		<configuration nb_cylindres="16" disposition="v" compression="turbo" nb_soupapes="64"/>
+		<cylindree>7993</cylindree>
+		<puissance regime="6400">1200</puissance>
+		<couple_max regime="3000">1500</couple_max>
+		<rupteur>7000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>7</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1838</poids>
+		<largeur>1998</largeur>
+		<longueur>4462</longueur>
+		<empattement>2710</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Bugatti_Veyron_16.4</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=218999</source>
+	</sources>
+</voiture>

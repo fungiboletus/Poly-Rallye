@@ -138,8 +138,6 @@ public class Meteo {
 		}
 		//position (middle)
 		SoundScape.setSoundPosition(env,  0f, 0f, -8f);
-		//Velocity
-		SoundScape.setVelocity(env, 0);
 		//loop
 		SoundScape.setLoop(env, true);
 		//Son

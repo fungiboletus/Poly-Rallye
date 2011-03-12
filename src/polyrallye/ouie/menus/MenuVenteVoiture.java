@@ -38,7 +38,7 @@ public class MenuVenteVoiture extends Menu implements ActionMenu {
 	public void actionMenu() {
 
 		int argent = Joueur.session.getArgent();
-		int prix = voiture.getPrix();
+		int prix = (int) (voiture.getPrix()*0.7);
 
 		Liseuse.lire("Vendre la voiture ");
 		Liseuse.lire(voiture.getNom());

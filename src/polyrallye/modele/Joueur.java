@@ -51,8 +51,7 @@ public class Joueur extends Personne
 	}
 	
 	public void vendreVoiture(Voiture v) throws Exception{
-		garage.vendre(v);
-		argent += v.getPrix();
+		argent += garage.vendre(v);
 	}
 	
 	public Element toXML(){

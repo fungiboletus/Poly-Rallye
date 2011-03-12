@@ -23,4 +23,20 @@ public class Chassis
 		longueur = GestionXML.getInt(noeud.getChildText("longueur"));
 		empattement = GestionXML.getInt(noeud.getChildText("empattement"));
 	}
+
+	public int getPoids() {
+		return poids;
+	}
+
+	public int getLargeur() {
+		return largeur;
+	}
+
+	public int getLongueur() {
+		return longueur;
+	}
+
+	public int getEmpattement() {
+		return empattement;
+	}
 }
