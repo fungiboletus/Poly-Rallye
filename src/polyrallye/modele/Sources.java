@@ -2,6 +2,7 @@ package polyrallye.modele;
 
 import java.awt.Desktop;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,25 +12,40 @@ import polyrallye.ouie.Liseuse;
 
 public class Sources
 {
-	protected List<String> sources;
+	protected List<URI> sources;
 	
 	public Sources(Element noeud)
 	{
-		sources = new ArrayList<String>();
+		sources = new ArrayList<URI>();
 		
 		for (Object s : noeud.getChildren())
 		{
-			sources.add(((Element) s).getText());
+			try {
+				sources.add(new URI(((Element) s).getText()));
+			} catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
-	public void naviguer()
+	public void naviguer(URI u)
 	{
+		if (u == null){
+			if (sources.size() == 0)
+			{
+				return;
+			}
+			u = sources.get(0);
+		}
 		try {
-			Desktop.getDesktop().browse(new URI(sources.get(0)));
+			Desktop.getDesktop().browse(u);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Liseuse.lire("Impossible d'aller sur le web.");
 		}
+	}
+
+	public List<URI> getSources() {
+		return sources;
 	}
 }
