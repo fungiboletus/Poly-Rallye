@@ -7,7 +7,7 @@ import polyrallye.ouie.Sound;
 public class TestSoundPerso {
 
 	public static void main(String[] args) throws InterruptedException {
-		Sound m = new Sound("Sons/foret/nuit_1.wav", null);
+		Sound m = new Sound("Sons/foret/nuit_1.wav");
 		
 		m.setOffset(120);
 		m.setLoop(true);

@@ -17,7 +17,7 @@ public class MenuPrincipal extends Menu {
 	
 	public void lancer()
 	{
-		Liseuse.lire("Menu principal.");
+		Liseuse.lire("Menu principal");
 		super.lancer();
 	}
 
