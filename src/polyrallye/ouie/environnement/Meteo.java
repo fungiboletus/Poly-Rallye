@@ -5,13 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
-import java.util.Scanner;
-
-import org.lwjgl.Sys;
 
 import polyrallye.ouie.Sound;
-import polyrallye.ouie.SoundScape;
-import polyrallye.ouie.WaveData;
+
 
 public class Meteo {
 
@@ -97,10 +93,14 @@ public class Meteo {
 		meteo.setPosition(0, 0, 0);
 
 		meteo.play();
+		
+		//Création du sfx
+		
 
 	}
 
 	public void stop() {
+		meteo.stop();
 
 	}
 
