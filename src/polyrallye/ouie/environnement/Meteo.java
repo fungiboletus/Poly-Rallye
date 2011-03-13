@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 import org.lwjgl.Sys;
 
+import polyrallye.ouie.Sound;
 import polyrallye.ouie.SoundScape;
 import polyrallye.ouie.WaveData;
-
 
 public class Meteo {
 
@@ -19,29 +19,17 @@ public class Meteo {
 	protected String environnement;
 	protected int env;
 	protected int sfx;
-	protected int sfx_rate;
-	protected float[] velocity;
-	protected boolean isPlaying;
+
+	protected Sound meteo;
 
 	public Meteo() {
 		super();
 		etat = "clair";
 		environnement = "defaut";
-		
-		SoundScape.create();
-		SoundScape.setListenerPosition(0f, 0f, 0f);
 
-		
-		velocity = new float[3];
-		velocity[0]=0f;
-		velocity[1]=0f;
-		velocity[2]=0f;
-		
-		isPlaying = false;
 		env = -1;
 		sfx = -1;
-		sfx_rate = -1;
-		
+
 	}
 
 	public Meteo(String et) {
@@ -55,63 +43,31 @@ public class Meteo {
 		environnement = en;
 	}
 
-	private void sfx(String rep) {
-		String path = rep+"sfx/";
-		
-		int sfx_temp;
-		long time;
-		
-		Random random = new Random();
-		System.out.println("SFX ; env : "+env+" "+SoundScape.isPlaying(env));
-		while (isPlaying)
-		{
-			time = System.nanoTime();
-			long temp=System.nanoTime() - time;
-			while (temp<10000000)
-			{
-				System.out.println(temp);
-				temp = System.nanoTime() - time;
-			}
-			if (isPlaying)
-			{
-				System.out.println(path+"sfx_"+(random.nextInt(sfx)+1)+".wav");
-				sfx_temp = SoundScape.makeSound(path+"sfx_"+(random.nextInt(sfx)+1)+".wav");
-				
-				SoundScape.setSoundPosition(sfx_temp, 0, 0, 0);
-				
-				SoundScape.play(sfx_temp);
-				//while(SoundScape.isPlaying(sfx_temp));
-				//SoundScape.deleteSoundSource(sfx_temp);
-				
-				Scanner sc = new Scanner(System.in);
-				sc.next();
-			}
-		}
-		
-		System.out.println("SFX OUT");
-		
-		
-	}
-	
 	public void play() {
 
-		String rep = "Sons/meteo/" + etat+"/";
-		BufferedReader mani = null;		
-		//On lit le fichier
+		// On va charger dans le fichier les config
+		String rep = "Sons/meteo" + "/" + etat + "/";
+		BufferedReader mani = null;
+		// On lit le fichie
 		try {
 			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
 			String line = null;
 			try {
 				while ((line = mani.readLine()) != null) {
 					if (line.contains(environnement)) {
-						env = Integer.valueOf(line
-								.substring(line.indexOf(" ") + 1));
-					} else if (line.contains("random")) {
-						sfx_rate = Integer.valueOf(line
-								.substring(line.indexOf(" ") + 1));
-					} else if (line.contains("sfx")) {
-						sfx  = Integer.valueOf(line
-								.substring(line.indexOf(" ") + 1));
+						this.env = Integer.valueOf(line.substring(line
+								.indexOf(" ") + 1));
+					}
+				}
+				// On remet le terrain a defaut si on a pas de sons specifiques
+				if (env == -1) {
+					environnement = "defaut";
+					line = null;
+					while ((line = mani.readLine()) != null) {
+						if (line.contains(environnement)) {
+							this.env = Integer.valueOf(line.substring(line
+									.indexOf(" ") + 1));
+						}
 					}
 				}
 			} catch (IOException e) {
@@ -122,41 +78,29 @@ public class Meteo {
 			System.out.println("Erreur chargement fichier");
 			e.printStackTrace();
 		}
-		
+
 		try {
 			mani.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Random random = new Random();
-		//On charge un son au pif
-		if(env>-1)
-		{
 
-			System.out.println(rep+environnement+"_"+(random.nextInt(env)+1)+".wav");
-			env = SoundScape.makeSound(rep+environnement+"_"+(random.nextInt(env)+1)+".wav");
-		}
-		//position (middle)
-		SoundScape.setSoundPosition(env,  0f, 0f, -8f);
-		//loop
-		SoundScape.setLoop(env, true);
-		//Son
-		SoundScape.setGain(env, 0.3f);
-		//On le joue pour la vie
-		isPlaying = true;
-		SoundScape.play(env);
-		
-		//On active les sfx
-		//sfx(rep);
-		
+		// On prend un son au pif parmi ceux disponibles
+		Random random = new Random();
+
+		meteo = new Sound(rep + environnement + "_" + (random.nextInt(env) + 1)
+				+ ".wav");
+
+		// Configuration du son
+		meteo.setLoop(true);
+		meteo.setGain(0.3f);
+		meteo.setPosition(0, 0, 0);
+
+		meteo.play();
 
 	}
 
-	
 	public void stop() {
-		isPlaying=false;
-		SoundScape.stop(env);
-		
 
 	}
 

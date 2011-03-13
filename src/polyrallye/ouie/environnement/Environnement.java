@@ -65,14 +65,14 @@ public class Environnement {
 		ambiance = new Sound(rep+temps+"_"+(random.nextInt(randAmb)+1)+".wav");
 		ambiance.setLoop(true);
 		ambiance.setGain(0.4f);
-		ambiance.setPosition(0, 0, 10);
+		ambiance.setPosition(0, 0, 0);
 		
 	}
 	
 	public void play()
 	{
 		ambiance.play();
-		//meteo.play();
+		meteo.play();
 	}
 	
 	public void fade()
@@ -83,7 +83,7 @@ public class Environnement {
 	public void stop()
 	{
 		ambiance.stop();
-		//meteo.stop();
+		meteo.stop();
 	}
 
 	public static void main(String[] args) {

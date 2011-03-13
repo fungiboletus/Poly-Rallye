@@ -95,5 +95,12 @@ public class Sound {
 			id = SoundScape.makeSoundSource(data);
 		}
 	}
+	
+	public void fade() {
+		if (id == -1 && data == -1) {
+			this.setVelocity(0, 0, 0.1f);
+		}
+	}
+	
 
 }

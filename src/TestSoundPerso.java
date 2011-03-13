@@ -11,6 +11,7 @@ public class TestSoundPerso {
 		
 		m.setOffset(120);
 		m.play();
+		m.setLoop(true);
 		
 		float x = -10.0f;
 		
@@ -26,7 +27,7 @@ public class TestSoundPerso {
 			m.setVelocity(vitesse, 0.0f, 0.0f);
 			
 			// Note Ça marche putain de bien
-			AL10.alDopplerFactor(50.0f);
+			//AL10.alDopplerFactor(50.0f);
 			
 			x += vitesse;
 			
