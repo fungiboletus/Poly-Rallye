@@ -44,7 +44,8 @@ public class MenuAchatVoiture extends Menu implements ActionMenu {
 		{
 			Liseuse.lire("Il vous manque ");
 			Liseuse.lire(prix-argent);
-			Liseuse.lire(" euros pour acheter la voiture ");
+			Liseuse.lire("euros");
+			Liseuse.lire("pour acheter la voiture ");
 			Liseuse.lire(voiture.getNom());
 		} else
 		{
@@ -52,9 +53,10 @@ public class MenuAchatVoiture extends Menu implements ActionMenu {
 			Liseuse.lire(voiture.getNom());
 			Liseuse.lire(" pour ");
 			Liseuse.lire(prix);
-			Liseuse.lire(" euros. Il vous restera ");
+			Liseuse.lire("euros");
+			Liseuse.lire("Il vous restera ");
 			Liseuse.lire(argent-prix);
-			Liseuse.lire("euros. ");
+			Liseuse.lire("euros");
 			
 			lancer();
 		}

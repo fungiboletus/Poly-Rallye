@@ -13,6 +13,16 @@ public abstract class Menu implements EcouteurEntrees {
 	protected Menu menuPrecedent;
 
 	protected String messageMenuVide = "Le menu est vide";
+	
+	public static Sound sonSuivant;
+	public static Sound sonPrecedent;
+	public static Sound sonTic;
+	
+	static {
+		sonSuivant = new Sound("Sons/menus/suivant.ogg");
+		sonPrecedent = new Sound("Sons/menus/precedent.ogg");
+		sonTic = new Sound("Sons/menus/tic.wav");
+	}
 
 	public Menu(Menu menuPrecedent) {
 
@@ -33,7 +43,6 @@ public abstract class Menu implements EcouteurEntrees {
 			GestionEntrees.getInstance().setEcouteur(this);
 		}
 		ennoncer();
-
 	}
 
 	public void ajouterElement(String libelle, ActionMenu action) {
@@ -46,6 +55,9 @@ public abstract class Menu implements EcouteurEntrees {
 			courant = 0;
 		}
 
+		sonTic.play();
+
+		Liseuse.interrompre();
 		ennoncer();
 	}
 
@@ -56,11 +68,17 @@ public abstract class Menu implements EcouteurEntrees {
 
 		--courant;
 
+		sonTic.play();
+
+		Liseuse.interrompre();
 		ennoncer();
 	}
 
 	public void selectionner() {
 
+		sonSuivant.play();
+
+		Liseuse.interrompre();
 		if (libelles.size() > 0) {
 			ActionMenu am = actions.get(courant);
 
@@ -74,6 +92,9 @@ public abstract class Menu implements EcouteurEntrees {
 	}
 
 	public void annuler() {
+		sonPrecedent.play();
+
+		Liseuse.interrompre();
 		menuPrecedent.lancer();
 	}
 

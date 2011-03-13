@@ -21,7 +21,7 @@ public class Sound {
 			super(cause);
 		}
 	}
-	
+
 	protected int data;
 
 	protected int id;
@@ -33,19 +33,16 @@ public class Sound {
 
 	public Sound(String chemin, Object exceptionMode) throws SoundException {
 		this();
-		
+
 		charger(chemin);
 	}
-	
-	public Sound(String chemin)
-	{
+
+	public Sound(String chemin) {
 		this();
-		
-		try
-		{	
+
+		try {
 			charger(chemin);
-		} catch (SoundException se)
-		{
+		} catch (SoundException se) {
 			System.err.println(se.getMessage());
 		}
 	}
@@ -111,15 +108,26 @@ public class Sound {
 			return SoundScape.isPlaying(id);
 		return false;
 	}
-	
-	public void playAndWait()
-	{
+
+	public void playAndWait() {
 		play();
-		
-		while (isPlaying()){
+
+		while (isPlaying()) {
 			try {
 				Thread.sleep(100);
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {
+			}
+		}
+	}
+
+	public void playAndWaitWithCallback(CallbackArretSon car) {
+		play();
+
+		while (isPlaying() && car.continuerLecture()) {
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+			}
 		}
 	}
 
@@ -137,7 +145,7 @@ public class Sound {
 		if (id != -1 && data != -1) {
 			delete();
 		}
-		
+
 		data = SoundScape.loadSoundData(chemin);
 		id = SoundScape.makeSoundSource(data);
 

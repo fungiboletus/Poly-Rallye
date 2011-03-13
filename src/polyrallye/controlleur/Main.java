@@ -16,12 +16,15 @@ public class Main {
 	 * @throws LWJGLException
 	 */
 	public static void main(String[] args) {
-		Liseuse.lire("PolyRallye");
+
+		fenetre = new FenetreNoire();
+		
+		Liseuse.lancer();
 
 		Joueur j = Joueur.chargerJoueur("Bob");
 		j.setSessionCourante();
 
-		fenetre = new FenetreNoire();
+		Liseuse.lire("PolyRallye");
 
 		menuPrincipal = new MenuPrincipal();
 		menuPrincipal.lancer();
@@ -31,6 +34,8 @@ public class Main {
 		Joueur.EnregistrerJoueur(Joueur.session);
 
 		Liseuse.lire("Salut");
+		
+		Liseuse.arreter();
 	}
 
 	public static void demanderAQuitter() {
