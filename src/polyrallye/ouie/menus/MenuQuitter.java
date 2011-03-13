@@ -5,7 +5,7 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
 
-public class MenuQuitter extends Menu implements ActionMenu  {
+public class MenuQuitter extends Menu  {
 
 	public MenuQuitter() {
 		super(null);
@@ -29,10 +29,9 @@ public class MenuQuitter extends Menu implements ActionMenu  {
 	}
 
 	@Override
-	public void actionMenu() {
+	public void lancer() {
 		Liseuse.lire("Voulez vous quitter le jeu ?");
-		lancer();
-
+		super.lancer();
 	}
 	
 	@Override

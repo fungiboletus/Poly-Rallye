@@ -336,9 +336,9 @@ public abstract class SoundScape {
 	 * @return true if sound is playing
 	 */
 	public static boolean isPlaying(int soundSourceHandle) {
-		IntBuffer ib = allocInts(1);
-		AL10.alGetInteger(AL10.AL_PLAYING, ib);
-		return (ib.get(0) == AL10.AL_TRUE);
+		int state = AL10.alGetSourcei(soundSourceHandle, AL10.AL_SOURCE_STATE);
+		
+		return (state == AL10.AL_PLAYING);
 	}
 
 	// ========================================================================

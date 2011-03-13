@@ -1,9 +1,7 @@
 package polyrallye.ouie;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.nio.channels.FileChannel;
 
 import t2s.son.LecteurTexte;
 
@@ -33,41 +31,20 @@ public abstract class Liseuse {
 			// TODO Lecture du son
 		} else {
 			
-			f = new File("Paroles/"+clef+".wav");
+			f = new File("Paroles/Generated/"+clef+".wav");
 			
 			if (!f.exists())
 			{
 				lt.setTexte(texte);
+				lt.setVoix(2);
 				lt.play();
 				
-				FileChannel in = null; // canal d'entrée
-				FileChannel out = null; // canal de sortie
-				 
-				try {
-				  // Init
-				  in = new FileInputStream("VocalyzeSIVOX/donneesMbrola/pho_wav/phrase.wav").getChannel();
-				  out = new FileOutputStream(f.getPath()).getChannel();
-				 
-				  // Copie depuis le in vers le out
-				  in.transferTo(0, in.size(), out);
-				} catch (Exception e) {
-				  e.printStackTrace(); // n'importe quelle exception
-				} finally { // finalement on ferme
-				  if(in != null) {
-				  	try {
-					  in.close();
-					} catch (Exception e) {}
-				  }
-				  if(out != null) {
-				  	try {
-					  out.close();
-					} catch (Exception e) {}
-				  }
-				}
+				new File("VocalyzeSIVOX/donneesMbrola/pho_wav/phrase.wav").renameTo(f);
 			}
 			
-			Sound s = new Sound(f.getPath(),null);
-			s.play();
+			Sound s = new Sound(f.getPath());
+			s.playAndWait();
+			//s.delete();
 
 			// Si on n'a pas le son, on fait un fichier texte qui contient le
 			// texte a énoncer

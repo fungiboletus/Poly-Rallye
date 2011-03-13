@@ -31,13 +31,13 @@ public class Sound {
 		id = -1;
 	}
 
-	public Sound(String chemin) throws SoundException {
+	public Sound(String chemin, Object exceptionMode) throws SoundException {
 		this();
 		
 		charger(chemin);
 	}
 	
-	public Sound(String chemin, Object modeGuedin)
+	public Sound(String chemin)
 	{
 		this();
 		
@@ -110,6 +110,17 @@ public class Sound {
 		if (id != -1 && data != -1)
 			return SoundScape.isPlaying(id);
 		return false;
+	}
+	
+	public void playAndWait()
+	{
+		play();
+		
+		while (isPlaying()){
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {}
+		}
 	}
 
 	public void delete() {
