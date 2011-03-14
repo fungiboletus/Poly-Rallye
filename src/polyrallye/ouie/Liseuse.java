@@ -58,7 +58,7 @@ public abstract class Liseuse {
 					String clef = sc.nextLine().trim().toLowerCase();
 
 					Parole p = new Parole(debut, fin, clef);
-					// System.out.println(p);
+					System.out.println(p);
 					paroles.put(clef, p);
 				} catch (Exception ee) {
 				}

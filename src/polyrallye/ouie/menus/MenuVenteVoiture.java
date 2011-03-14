@@ -23,7 +23,7 @@ public class MenuVenteVoiture extends Menu implements ActionMenu {
 				try {
 					Joueur.session.vendreVoiture(voiture);
 
-					Liseuse.lire("Félicications cette vente.");
+					Liseuse.lire("Félicications pour cette vente");
 					Main.revenirAuMenuPrincipal();
 
 				} catch (Exception e) {

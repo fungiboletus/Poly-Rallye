@@ -23,7 +23,7 @@ public class MenuAchatVoiture extends Menu implements ActionMenu {
 				try {
 					Joueur.session.acheterVoiture(voiture);
 					
-					Liseuse.lire("Félicications pour votre achat. La voiture est dans votre garage");
+					Liseuse.lire("félicitations pour votre achat. la voiture est dans votre garage");
 					Main.revenirAuMenuPrincipal();
 					
 				} catch (Exception e) {

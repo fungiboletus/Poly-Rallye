@@ -54,7 +54,7 @@
 67,767438	69,114195	pour acheter la voiture
 69,601814	70,669932	vous aurez alors
 71,610340	73,409887	félicitations pour cette vente
-73,676916	77,183129	félicitations pour votre achat. la voiture est dans votre garage
+73,676916	77,183129	Félicitations pour votre achat. La voiture est dans votre garage
 77,601088	78,181587	fiat
 78,402177	78,971066	huit
 79,040726	80,062404	il vous manque
