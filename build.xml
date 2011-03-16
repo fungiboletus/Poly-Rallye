@@ -20,7 +20,7 @@
 	
 	<target name="dist" depends="compile" description="generate the distribution" >
 		<delete file="PolyRallye.jar"/>
-		<jar jarfile="PolyRallye.jar" basedir="${build}" mergeClassPathAttributes="true">
+		<jar jarfile="PolyRallye.jar" basedir="${build}" >
 			<manifest>
 				<attribute name="Main-Class" value="${mainclass}" />
 				<attribute name="Class-Path" value="lib/lwjgl.jar lib/lwjgl_util.jar lib/jdom.jar VocalyzeSIVOX/bin/SI_VOX.jar lib/jorbis-0.0.15.jar lib/jogg-0.0.7.jar" />

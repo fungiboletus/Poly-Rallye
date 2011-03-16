@@ -1,7 +1,5 @@
 import java.util.Random;
 
-import org.lwjgl.openal.AL10;
-
 import polyrallye.ouie.Sound;
 
 public class TestSoundPerso {

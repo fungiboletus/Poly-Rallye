@@ -153,12 +153,68 @@ public class Sound {
 			throw new SoundException("Impossible de charger le son");
 		}
 	}
-	
-	public void fade() {
-		if (id == -1 && data == -1) {
-			this.setVelocity(0, 0, 0.1f);
+
+	public void fadeOut(final long duree) {
+		if (id != -1 && data != -1) {
+			new Thread() {
+				public void run() {
+					
+					float gain = getGain();
+					
+					int nbEtapes = (int) (duree/50);
+					
+					float d = gain/nbEtapes;
+
+					gain -= d;
+					
+					do {
+						System.out.println(gain);
+						setGain(gain);
+						gain -= d;
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {}
+					} while (gain > 0.0f);
+					
+					pause(true);
+					
+				}
+			}.run();
+			
 		}
 	}
 	
+	public void fadeIn(final long duree, final float gainFinal) {
+		if (id != -1 && data != -1) {
+			new Thread() {
+				public void run() {
+					
+					pause(false);
+					
+					float gain = getGain();
+					
+					int nbEtapes = (int) (duree/50);
+					
+					float d = (gainFinal - gain)/nbEtapes;
+
+					gain += d;
+					
+					do {
+						System.out.println(gain);
+						setGain(gain);
+						gain += d;
+						try {
+							Thread.sleep(50);
+						} catch (InterruptedException e) {}
+					} while (gain < gainFinal);
+					
+					setGain(gainFinal);
+					
+					
+				}
+			}.run();
+			
+		}
+	}
 
 }
