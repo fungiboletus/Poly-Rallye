@@ -58,7 +58,7 @@ public abstract class Liseuse {
 					String clef = sc.nextLine().trim().toLowerCase();
 
 					Parole p = new Parole(debut, fin, clef);
-					System.out.println(p);
+					//System.out.println(p);
 					paroles.put(clef, p);
 				} catch (Exception ee) {
 				}
@@ -143,6 +143,12 @@ public abstract class Liseuse {
 			sonParoles.stop();
 		} else {
 
+			File d = new File("Paroles/Generated");
+			
+			if (!d.exists()) {
+				d.mkdir();
+			}
+			
 			File f = new File("Paroles/Generated/" + clef + ".wav");
 
 			if (!f.exists()) {

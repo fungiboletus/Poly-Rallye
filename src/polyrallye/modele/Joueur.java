@@ -101,6 +101,12 @@ public class Joueur extends Personne
 	public static void EnregistrerJoueur(Joueur j)
 	{
 		try {
+			File d = new File("Comptes");
+			
+			if (!d.exists()) {
+				d.mkdir();
+			}
+			
 			GestionXML.enregistrerRacine("Comptes/"+j.getNom().hashCode()+".xml", j.toXML());
 		} catch (Exception e) {
 			e.printStackTrace();
