@@ -23,7 +23,7 @@ public class Environnement {
 	protected Sfx sfx;
 
 	public Environnement() {
-		this("mer", "jour", "vent");
+		this("plaine", "jour", "vent");
 	}
 
 	public Environnement(String type, String temps, String meteo) {
@@ -67,9 +67,10 @@ public class Environnement {
 
 		// On prend un son au pif parmi ceux disponibles
 		Random random = new Random();
-
-		ambiance = new Sound(rep + temps + "_" + (random.nextInt(randAmb) + 1)
-				+ ".wav");
+		String temp = rep + temps + "_" + (random.nextInt(randAmb) + 1)
+		+ ".wav";
+		System.out.println(temp);
+		ambiance = new Sound(temp);
 		ambiance.setLoop(true);
 		ambiance.setGain(0.4f);
 		ambiance.setPosition(0, 0, 0);
