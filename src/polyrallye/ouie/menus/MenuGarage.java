@@ -8,15 +8,27 @@ import polyrallye.modele.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.Sound;
 
 public class MenuGarage extends Menu implements ActionMenu {
+
+	protected static Sound musique;
+
+	static {
+		musique = new Sound("Sons/foret/jour_6.wav");
+		musique.setLoop(true);
+	}
 
 	public MenuGarage(Menu menuPrecedent) {
 		super(menuPrecedent);
 
 		listerVoitures();
-		
+
 		messageMenuVide = "Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.";
+	}
+
+	public Sound getMusique() {
+		return musique;
 	}
 
 	public void listerVoitures() {

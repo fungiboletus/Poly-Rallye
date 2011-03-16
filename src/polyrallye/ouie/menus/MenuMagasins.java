@@ -12,11 +12,26 @@ import polyrallye.modele.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.Sound;
 
 public class MenuMagasins extends Menu implements ActionMenu {
 
 	protected boolean racineMagasin;
 
+	protected static Sound musique;
+
+	static {
+		/*musique = new Sound("Ressources/Reno Project - 1.0/02 - Atlanta.ogg");
+		musique.play();
+		musique.pause(true);
+		musique.setOffset(100);
+		musique.setLoop(true);*/
+	}
+	
+	public Sound getMusique() {
+		return musique;
+	}
+	
 	public MenuMagasins(Menu menuPrecedent) {
 		this(menuPrecedent, StockVoitures.getHierarchie());
 

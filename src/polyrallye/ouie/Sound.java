@@ -168,7 +168,6 @@ public class Sound {
 					gain -= d;
 					
 					do {
-						System.out.println(gain);
 						setGain(gain);
 						gain -= d;
 						try {
@@ -200,7 +199,6 @@ public class Sound {
 					gain += d;
 					
 					do {
-						System.out.println(gain);
 						setGain(gain);
 						gain += d;
 						try {
