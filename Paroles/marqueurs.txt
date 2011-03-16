@@ -54,7 +54,7 @@
 67,767438	69,114195	pour acheter la voiture
 69,601814	70,669932	vous aurez alors
 71,610340	73,409887	félicitations pour cette vente
-73,676916	77,183129	félicitations pour votre achat. la voiture est dans votre garage
+73,676916	77,183129	Félicitations pour votre achat. La voiture est dans votre garage
 77,601088	78,181587	fiat
 78,402177	78,971066	huit
 79,040726	80,062404	il vous manque
@@ -133,8 +133,8 @@
 207,121995	207,435465	un
 207,714104	208,538413	valeur de
 208,956372	210,012880	vendre la voiture
-210,349569	210,941678	voyron
-211,173878	212,555465	voyron super sport
+210,349569	210,941678	veyron
+211,173878	212,555465	veyron super sport
 212,636735	213,124354	vingt
 213,321723	213,960272	vinte
 215,121270	216,514467	voulez vous quitter le jeu ?

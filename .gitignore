@@ -2,5 +2,6 @@
 !.gitignore
 *.class
 bin
+!VocalyzeSIVOX/bin
 PolyRallye.jar
 pho_wav

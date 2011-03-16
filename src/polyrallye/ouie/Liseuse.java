@@ -7,8 +7,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
+import java.util.Queue;
 import java.util.Scanner;
+
+import org.lwjgl.Sys;
 
 import t2s.son.LecteurTexte;
 
@@ -21,9 +25,20 @@ public abstract class Liseuse {
 
 	protected static Map<String, Parole> paroles;
 
+	protected static Queue<String> fileParoles;
+
+	protected static Thread thread;
+
+	protected static boolean lancee;
+
+	protected static boolean interrompre;
+
 	static {
+		fileParoles = new LinkedList<String>();
+
 		lt = new LecteurTexte();
 		sonParoles = new Sound("Paroles/paroles.ogg");
+		sonParoles.setGain(0.75f);
 
 		paroles = new HashMap<String, Parole>();
 
@@ -51,9 +66,50 @@ public abstract class Liseuse {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		thread = new Thread() {
+			public void run() {
+				while (lancee) {
+					// System.out.println("canard");
+					interrompre = false;
+					if (!lireSuivant()) {
+						// Mise en attente
+						// 100 millisecondes n'est pas énorme, car normalement,
+						// les éléments sont ajoutés à la suite
+						// il ne peut pas avoir des pauses de 100 millisecondes
+						// pendant
+						// une même phrase
+						try {
+							Thread.sleep(100);
+						} catch (InterruptedException e) {
+						}
+					}
+				}
+			}
+		};
 	}
 
-	public static void lire(String texte) {
+	public static void lancer() {
+		lancee = true;
+		thread.start();
+	}
+
+	public static void arreter() {
+		lancee = false;
+	}
+
+	public static void interrompre() {
+		fileParoles.clear();
+		interrompre = true;
+	}
+
+	public static boolean lireSuivant() {
+		String texte = fileParoles.poll();
+
+		if (texte == null) {
+			return false;
+		}
+
 		System.out.println(texte);
 
 		Main.changerTexteFenetre(texte);
@@ -64,22 +120,31 @@ public abstract class Liseuse {
 
 		Parole p = paroles.get(texte.trim().toLowerCase());
 		if (p != null) {
-			System.out.println("alélouilla");
-			System.out.println(p);
+			// System.out.println("alélouilla");
+			// System.out.println(p);
 			sonParoles.setOffset(p.getDebut());
 			sonParoles.play();
-			try {
-				long t = (long) ((p.getFin() - p.getDebut()) * 1000);
+			
+			long time = Sys.getTime();
 
-				System.out.println(t);
-				Thread.sleep(t);
-			} catch (InterruptedException e) {
+			long t = (long) ((p.getFin() - p.getDebut()) * 1000);
+
+			while (!interrompre) {
+				
+				if ((Sys.getTime() - time) > t) {
+					interrompre = true;
+				}
+				try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+				}
 			}
+
 			sonParoles.stop();
 		} else {
 
 			File f = new File("Paroles/Generated/" + clef + ".wav");
-			
+
 			if (!f.exists()) {
 
 				try {
@@ -89,19 +154,23 @@ public abstract class Liseuse {
 
 					new File("VocalyzeSIVOX/donneesMbrola/pho_wav/phrase.wav")
 							.renameTo(f);
-					
 
 				} catch (Exception e) {
 					System.err.println("VocalizeSIVOX s'est planté…");
-					return;
+					return true;
 				}
 			}
 
 			// VocalizeSIVOX peut se planter…
-			if (f.exists())
-			{
+			if (f.exists()) {
 				Sound s = new Sound(f.getPath());
-				s.playAndWait();
+				s.playAndWaitWithCallback(new CallbackArretSon() {
+					
+					@Override
+					public boolean continuerLecture() {
+						return !interrompre;
+					}
+				});
 				s.delete();
 			}
 
@@ -118,6 +187,11 @@ public abstract class Liseuse {
 			}
 
 		}
+		return true;
+	}
+
+	public static void lire(String texte) {
+		fileParoles.add(texte);
 	}
 
 	public static void lire(int valeur) {
@@ -202,12 +276,9 @@ public abstract class Liseuse {
 
 				break;
 			case 2:
-				if (reste == 0)
-				{
+				if (reste == 0) {
 					Liseuse.lire(" vingt ");
-				}
-				else
-				{
+				} else {
 					Liseuse.lire("vinte");
 				}
 				if (reste == 1) {
