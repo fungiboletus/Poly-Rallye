@@ -1,6 +1,6 @@
 #!/bin/sh
 
 ant
-java -jar PolyRallye.jar&
-sleep 1
-xdotool click 1
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib
+(sleep 2 ; xdotool click 1) &
+java -jar PolyRallye.jar

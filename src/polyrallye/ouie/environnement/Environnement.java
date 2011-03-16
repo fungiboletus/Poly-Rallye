@@ -23,7 +23,7 @@ public class Environnement {
 	protected Sfx sfx;
 
 	public Environnement() {
-		this("foret", "jour", "vent");
+		this("mer", "jour", "vent");
 	}
 
 	public Environnement(String type, String temps, String meteo) {

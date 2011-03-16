@@ -47,7 +47,7 @@ public class FenetreNoire extends JFrame {
 		texte.setPreferredSize(new Dimension(400, 50));
 
 		p.add(image, BorderLayout.CENTER);
-		p.add(texte, BorderLayout.SOUTH);
+		//p.add(texte, BorderLayout.SOUTH);
 
 		p.add(image, BorderLayout.CENTER);
 		add(p);

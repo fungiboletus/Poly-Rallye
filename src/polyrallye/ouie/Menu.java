@@ -12,6 +12,8 @@ public abstract class Menu implements EcouteurEntrees {
 
 	protected Menu menuPrecedent;
 
+	protected String messageMenuVide = "Le menu est vide";
+
 	public Menu(Menu menuPrecedent) {
 
 		initialiser();
@@ -27,8 +29,11 @@ public abstract class Menu implements EcouteurEntrees {
 	}
 
 	public void lancer() {
-		GestionEntrees.getInstance().setEcouteur(this);
+		if (libelles.size() > 0) {
+			GestionEntrees.getInstance().setEcouteur(this);
+		}
 		ennoncer();
+
 	}
 
 	public void ajouterElement(String libelle, ActionMenu action) {
@@ -76,7 +81,7 @@ public abstract class Menu implements EcouteurEntrees {
 		if (libelles.size() > 0) {
 			Liseuse.lire(libelles.get(courant));
 		} else {
-			Liseuse.lire("Le menu est vide.");
+			Liseuse.lire(messageMenuVide);
 		}
 	}
 
@@ -102,5 +107,9 @@ public abstract class Menu implements EcouteurEntrees {
 
 	public void aide() {
 		Liseuse.lire("Vous êtes dans un menu. Utilisez les touches haut et bas pour vous déplacer dans le menu. Entrée pour valider, et échap pour annuler.");
+	}
+
+	public void setMessageMenuVide(String messageMenuVide) {
+		this.messageMenuVide = messageMenuVide;
 	}
 }

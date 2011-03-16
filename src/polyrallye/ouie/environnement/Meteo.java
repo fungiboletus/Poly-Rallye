@@ -14,9 +14,10 @@ public class Meteo {
 	protected String etat;
 	protected String environnement;
 	protected int env;
-	protected int sfx;
+	protected int randSfx;
 
 	protected Sound meteo;
+	protected Sfx sfx;
 
 	public Meteo() {
 		super();
@@ -24,7 +25,7 @@ public class Meteo {
 		environnement = "defaut";
 
 		env = -1;
-		sfx = -1;
+		randSfx = -1;
 
 	}
 
@@ -53,11 +54,16 @@ public class Meteo {
 					if (line.contains(environnement)) {
 						this.env = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
+					} else if (line.contains("sfx")) {
+						this.randSfx = Integer.valueOf(line.substring(line
+								.indexOf(" ") + 1));
 					}
 				}
 				// On remet le terrain a defaut si on a pas de sons specifiques
 				if (env == -1) {
 					environnement = "defaut";
+					mani.close();
+					mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
 					line = null;
 					while ((line = mani.readLine()) != null) {
 						if (line.contains(environnement)) {
@@ -95,7 +101,9 @@ public class Meteo {
 		meteo.play();
 		
 		//Création du sfx
-		
+		rep+="sfx/";
+		sfx = new Sfx(rep,randSfx);
+		sfx.start();
 
 	}
 

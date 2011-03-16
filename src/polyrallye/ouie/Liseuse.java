@@ -1,11 +1,57 @@
 package polyrallye.ouie;
 
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+import t2s.son.LecteurTexte;
 
 import polyrallye.controlleur.Main;
 
 public abstract class Liseuse {
+
+	protected static LecteurTexte lt;
+	protected static Sound sonParoles;
+
+	protected static Map<String, Parole> paroles;
+
+	static {
+		lt = new LecteurTexte();
+		sonParoles = new Sound("Paroles/paroles.ogg");
+
+		paroles = new HashMap<String, Parole>();
+
+		try {
+			BufferedReader brMarqueurs = new BufferedReader(new FileReader(
+					"Paroles/marqueurs.txt"));
+
+			String ligneMarqueurs;
+			while ((ligneMarqueurs = brMarqueurs.readLine()) != null) {
+
+				Scanner sc = new Scanner(ligneMarqueurs);
+
+				float debut = sc.nextFloat();
+				float fin = sc.nextFloat();
+
+				try {
+					String clef = sc.nextLine().trim().toLowerCase();
+
+					Parole p = new Parole(debut, fin, clef);
+					System.out.println(p);
+					paroles.put(clef, p);
+				} catch (Exception ee) {
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void lire(String texte) {
 		System.out.println(texte);
@@ -16,26 +62,59 @@ public abstract class Liseuse {
 		// rencontre un jour…)
 		int clef = texte.hashCode();
 
-		File f = new File("Paroles/" + clef + ".ogg");
+		Parole p = paroles.get(texte.trim().toLowerCase());
+		if (p != null) {
+			System.out.println("alélouilla");
+			System.out.println(p);
+			sonParoles.setOffset(p.getDebut());
+			sonParoles.play();
+			try {
+				long t = (long) ((p.getFin() - p.getDebut()) * 1000);
 
-		if (f.exists()) {
-			// TODO Lecture du son
+				System.out.println(t);
+				Thread.sleep(t);
+			} catch (InterruptedException e) {
+			}
+			sonParoles.stop();
 		} else {
+
+			File f = new File("Paroles/Generated/" + clef + ".wav");
+			
+			if (!f.exists()) {
+
+				try {
+					lt.setTexte(texte);
+					lt.setVoix(2);
+					lt.play();
+
+					new File("VocalyzeSIVOX/donneesMbrola/pho_wav/phrase.wav")
+							.renameTo(f);
+					
+
+				} catch (Exception e) {
+					System.err.println("VocalizeSIVOX s'est planté…");
+					return;
+				}
+			}
+
+			// VocalizeSIVOX peut se planter…
+			if (f.exists())
+			{
+				Sound s = new Sound(f.getPath());
+				s.playAndWait();
+				s.delete();
+			}
+
 			// Si on n'a pas le son, on fait un fichier texte qui contient le
 			// texte a énoncer
 
-			File fi = new File("Paroles/" + clef + ".txt");
-
-			if (!fi.exists()) {
-				try {
-					FileOutputStream instructions = new FileOutputStream(fi);
-
-					instructions.write(texte.getBytes());
-
-					instructions.close();
-				} catch (Exception e) {
-					// ON NE FAIT RIEN !
-				}
+			try {
+				PrintWriter pw = new PrintWriter(new FileWriter(
+						"Paroles/a_enregistrer.txt", true));
+				pw.println(texte);
+				pw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 
 		}
@@ -80,57 +159,58 @@ public abstract class Liseuse {
 
 			switch (dizaine) {
 			case 9:
-				Liseuse.lire(" quatre vingt ");
-				Liseuse.lire(valeur-80);
+				Liseuse.lire(" quatre-vingt ");
+				Liseuse.lire(valeur - 80);
 				reste = 0;
 				break;
 			case 8:
-				Liseuse.lire(" quatre vingt");
+				Liseuse.lire(" quatre-vingt");
 				break;
 			case 7:
 				Liseuse.lire(" soixante ");
-				if (reste == 1)
-				{
+				if (reste == 1) {
 					Liseuse.lire(" et ");
 				}
-				Liseuse.lire(valeur-60);
+				Liseuse.lire(valeur - 60);
 				reste = 0;
 				break;
 			case 6:
 				Liseuse.lire(" soixante ");
-				if (reste == 1)
-				{
+				if (reste == 1) {
 					Liseuse.lire(" et ");
 				}
 				break;
 			case 5:
 				Liseuse.lire(" cinquante ");
-				if (reste == 1)
-				{
+				if (reste == 1) {
 					Liseuse.lire(" et ");
 				}
 
 				break;
 			case 4:
 				Liseuse.lire(" quarante ");
-				if (reste == 1)
-				{
+				if (reste == 1) {
 					Liseuse.lire(" et ");
 				}
 
 				break;
 			case 3:
 				Liseuse.lire(" trente ");
-				if (reste == 1)
-				{
+				if (reste == 1) {
 					Liseuse.lire(" et ");
 				}
 
 				break;
 			case 2:
-				Liseuse.lire(" vingt ");
-				if (reste == 1)
+				if (reste == 0)
 				{
+					Liseuse.lire(" vingt ");
+				}
+				else
+				{
+					Liseuse.lire("vinte");
+				}
+				if (reste == 1) {
 					Liseuse.lire(" et ");
 				}
 
@@ -141,10 +221,10 @@ public abstract class Liseuse {
 					Liseuse.lire(" dix-neuf ");
 					break;
 				case 8:
-					Liseuse.lire(" dix huit");
+					Liseuse.lire(" dix-huit");
 					break;
 				case 7:
-					Liseuse.lire(" dix sept ");
+					Liseuse.lire(" dix-sept ");
 					break;
 				case 6:
 					Liseuse.lire(" seize ");

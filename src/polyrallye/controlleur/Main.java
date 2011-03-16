@@ -48,4 +48,8 @@ public class Main {
 			fenetre.changerTexte(texte);
 		}
 	}
+
+	public static MenuPrincipal getMenuPrincipal() {
+		return menuPrincipal;
+	}
 }

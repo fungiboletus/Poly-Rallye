@@ -10,6 +10,7 @@ public class TestSoundPerso {
 		Sound m = new Sound("Sons/foret/nuit_1.wav");
 		
 		m.setOffset(120);
+		m.setLoop(true);
 		m.play();
 		m.setLoop(true);
 		

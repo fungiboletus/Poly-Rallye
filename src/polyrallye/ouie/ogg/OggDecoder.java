@@ -33,7 +33,6 @@ public class OggDecoder {
 		
 		OggInputStream oggInput = new OggInputStream(input);
 		
-		boolean done = false;
 		while (!oggInput.atEnd()) {
 			dataout.write(oggInput.read());
 		}

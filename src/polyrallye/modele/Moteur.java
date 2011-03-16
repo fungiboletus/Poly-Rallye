@@ -177,7 +177,8 @@ public class Moteur {
 		Liseuse.lire(nbCylindres);
 		Liseuse.lire(" cylindres, ");
 		Liseuse.lire(nbSoupapes);
-		Liseuse.lire(" soupapes. Disposition ");
+		Liseuse.lire(" soupapes");
+		Liseuse.lire("Disposition ");
 		
 		switch(disposition)
 		{
@@ -208,12 +209,14 @@ public class Moteur {
 		Liseuse.lire(coupleMax);
 		Liseuse.lire(" nm à ");
 		Liseuse.lire(regimeCoupleMax);
-		Liseuse.lire(" tours/min. Puissance max de ");
+		Liseuse.lire(" tours/min");
+		Liseuse.lire("Puissance max de ");
 		Liseuse.lire(puissanceMax);
 		Liseuse.lire(" chevaux à ");
 		Liseuse.lire(regimePuissanceMax);
-		Liseuse.lire(" tours/min. Rupteur à ");
+		Liseuse.lire(" tours/min");
+		Liseuse.lire(" Rupteur à ");
 		Liseuse.lire(regimeRupteur);
-		Liseuse.lire(" tours/min.");
+		Liseuse.lire(" tours/min");
 	}
 }
