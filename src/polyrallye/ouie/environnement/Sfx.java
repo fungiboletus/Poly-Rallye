@@ -38,7 +38,7 @@ public class Sfx extends Thread {
 			} catch (SoundException e1) {
 			}
 			temp.setGain(2f);
-			temp.setPosition(random.nextInt(10), random.nextInt(10), random.nextInt(10));
+			temp.setPosition(5-random.nextInt(10), 5-random.nextInt(10), 5-random.nextInt(10));
 			temp.play();
 			while(temp.isPlaying());
 			temp.delete();
