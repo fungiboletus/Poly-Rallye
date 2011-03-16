@@ -11,6 +11,8 @@ public class Sfx extends Thread {
 	protected int nombre;
 	protected long intervalle;
 	
+	protected boolean isAlive;
+	
 	public Sfx(String rep, int nombre) {
 		this(rep,nombre,10);
 	}
@@ -20,6 +22,7 @@ public class Sfx extends Thread {
 		this.rep = rep;
 		this.nombre = nombre;
 		this.intervalle = intervalle;
+		isAlive = true;
 	}
 	
 	public void run() {
@@ -27,7 +30,7 @@ public class Sfx extends Thread {
 		
 		Random random = new Random();
 		
-		while (this.isAlive())
+		while (isAlive)
 		{
 			System.out.println("playing "+rep+"sfx_"+(random.nextInt(nombre)+1)+".wav"+"?");
 			try {
@@ -44,5 +47,10 @@ public class Sfx extends Thread {
 			} catch (InterruptedException e) {}	
 		}
 	
+	}
+	
+	public void tuer()
+	{
+		isAlive = false;
 	}
 }

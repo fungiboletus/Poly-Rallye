@@ -98,7 +98,7 @@ public class Environnement {
 
 	public void stop() {
 		ambiance.stop();
-		sfx.stop();
+		sfx.tuer();
 		meteo.stop();
 	}
 
