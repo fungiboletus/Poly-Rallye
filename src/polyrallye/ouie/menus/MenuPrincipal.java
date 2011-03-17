@@ -1,8 +1,12 @@
 package polyrallye.ouie.menus;
 
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.EcouteurEntrees;
+import polyrallye.ouie.FenetreNoire;
+import polyrallye.ouie.GestionEntrees;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.Sound;
 import polyrallye.ouie.environnement.Environnement;
 
@@ -25,7 +29,67 @@ public class MenuPrincipal extends Menu {
 			public void actionMenu() {
 				Environnement e = new Environnement("foret", "nuit", "vent");
 				
-				e.play();
+				//e.play();
+				
+				//final SonMoteur sm = new SonMoteur();
+				
+				EcouteurEntrees ee = new EcouteurEntrees() {
+					
+					@Override
+					public void selectionner() {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void haut() {
+						SonMoteur.accelere = true;
+					}
+					
+					@Override
+					public void gauche() {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void droite() {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void bas() {
+						SonMoteur.accelere = false;
+					}
+					
+					@Override
+					public void annuler() {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void aide() {
+						// TODO Auto-generated method stub
+						
+					}
+				};
+				
+				GestionEntrees.getInstance().setEcouteur(ee);
+				
+				new Thread()
+				{
+					public void run()
+					{
+						try {
+							SonMoteur.lancer();
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}						
+					}
+				}.start();
 			}
 		});
 		ajouterElement("Garage", new MenuGarage(this));
