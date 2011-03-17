@@ -2,6 +2,8 @@ package polyrallye.ouie;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import polyrallye.ouie.Sound;
 
@@ -11,6 +13,8 @@ public class SonMoteur {
 	static Map<Integer, Sound> sons;
 	
 	public static boolean accelere = false;
+	
+	public static float regime;
 
 	/**
 	 * @param args
@@ -20,7 +24,7 @@ public class SonMoteur {
 		lancer();
 	}
 	
-	public static void lancer() throws InterruptedException {
+	public static void lancer() {
 		
 		
 		//Sound ralenti = new Sound("Sons/moteur/ralenti.wav");
@@ -41,24 +45,36 @@ public class SonMoteur {
 		
 		// régime de 3800
 		
-		float regime = 2000;
+		regime = 2000;
 		
-		while(true) {
-			if (accelere && regime < 9497){
-				regime += 1;
-			}
-			else if (regime > 2010)
-			{
-				regime -= 2;
-			}
+		Timer t = new Timer();
+		
+		TimerTask tt = new TimerTask() {
 			
-			setRegime(regime);
+			@Override
+			public void run() {
+				//System.out.println(SonMoteur.accelere);
+				float regime = SonMoteur.regime;
+				if (SonMoteur.accelere && regime < 8997){
+					regime += 10;
+				}
+				else if (regime > 2010)
+				{
+					regime -= 20;
+				}
+				
+				SonMoteur.setRegime(regime);
+				
+			}
+		};
+		
+		t.schedule(tt, 0, 10);
+		
+		/*while(true) {
 			//System.out.println("R: "+ regime + " - "+accelere);
 			
-			try {
-				Thread.sleep(0, 1);
-			} catch (InterruptedException e) {
-			}
+			for (int i = 0; i < 1000; ++i);
+				//Thread.sleep(0, 1);
 		}
 		/*while (regime<9400)
 		{
@@ -87,17 +103,19 @@ public class SonMoteur {
 	public static void setRegime(float regime)
 	{		
 		//System.out.println(regime);
+		SonMoteur.regime = regime;
 		
 		// Astuce sur la gestion des entiers
 		final int min = ((int) regime)/500*500;
 		final int max = min + 500;
 		
 		
-		final float marge = 1000;
+		final float marge = 500;
 
-		final float t_min = min + 250 - marge / 2;
-		final float t_max = max - 250 + marge / 2;
+		/*final float t_min = min + 250 - marge / 2;
+		final float t_max = max - 250 + marge / 2;*/
 		
+		// TODO Recoder ça proprement
 		float gain = (0.3f + 0.7f * (regime/10000.0f));
 		
 		//System.out.println(gain);
@@ -108,13 +126,13 @@ public class SonMoteur {
 		s_min.setPitch(regime/min);
 		s_max.setPitch(regime/max);
 		
-		if (regime < t_min)
+		/*if (regime < t_min)
 		{
 			s_min.setGain(gain);
 			s_max.setGain(0.0f);
 
 			/*s_min.pause(false);
-			s_max.pause(true);*/
+			s_max.pause(true);
 		}
 		else if (regime > t_max)
 		{
@@ -122,28 +140,45 @@ public class SonMoteur {
 			s_min.setGain(0.0f);
 
 			/*s_max.pause(false);
-			s_min.pause(true);*/
+			s_min.pause(true);
 		}
 		else
-		{
+		{*/
 			
-			float r_a = (t_max-regime)/marge;
+			float r_a = (max-regime)/marge;
 			
-			float r_b = (regime-t_min)/marge;
+			r_a = r_a > 0.1f ? r_a : 0.0f;
+			
+			float r_b = (regime-min)/marge;
+			r_b = r_b > 0.1f ? r_b : 0.0f;
 			
 			/*System.out.println("t_min : "+t_min);
-			System.out.println("t_max : "+t_max);
+			System.out.println("t_max : "+t_max);*/
 
-			System.out.println("r_a : "+r_a);
+			/*System.out.println("r_a : "+r_a);
 			System.out.println("r_b : "+r_b);*/
 			
 
 			s_min.setGain(r_a*gain);
 			s_max.setGain(r_b*gain);
+
+			/*s_min.pause(false);
+			s_max.pause(false);*/
+			
+			Sound a = sons.get(min-500);
+			if (a != null)
+			{
+				//a.pause(true);
+			}
+			a = sons.get(max+500);
+			if (a  != null)
+			{
+				//a.pause(true);
+			}
 			
 			/*s_max.pause(false);
 			s_min.pause(false);*/
-		}
+		/*}
 		
 		/*float r_a = (4000-regime)/500.0f;
 		

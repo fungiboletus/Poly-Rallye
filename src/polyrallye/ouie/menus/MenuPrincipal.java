@@ -1,5 +1,6 @@
 package polyrallye.ouie.menus;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.EcouteurEntrees;
 import polyrallye.ouie.FenetreNoire;
@@ -29,7 +30,7 @@ public class MenuPrincipal extends Menu {
 			public void actionMenu() {
 				Environnement e = new Environnement("foret", "nuit", "vent");
 				
-				//e.play();
+				e.play();
 				
 				//final SonMoteur sm = new SonMoteur();
 				
@@ -48,8 +49,7 @@ public class MenuPrincipal extends Menu {
 					
 					@Override
 					public void gauche() {
-						// TODO Auto-generated method stub
-						
+						annuler();
 					}
 					
 					@Override
@@ -65,8 +65,7 @@ public class MenuPrincipal extends Menu {
 					
 					@Override
 					public void annuler() {
-						// TODO Auto-generated method stub
-						
+						Main.demanderAQuitter();
 					}
 					
 					@Override
@@ -78,18 +77,18 @@ public class MenuPrincipal extends Menu {
 				
 				GestionEntrees.getInstance().setEcouteur(ee);
 				
-				new Thread()
+				/*new Thread()
 				{
 					public void run()
 					{
-						try {
+						try {*/
 							SonMoteur.lancer();
-						} catch (InterruptedException e) {
+						/*} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}						
 					}
-				}.start();
+				}.start();*/
 			}
 		});
 		ajouterElement("Garage", new MenuGarage(this));
