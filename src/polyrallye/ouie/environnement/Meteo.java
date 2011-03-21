@@ -42,10 +42,11 @@ public class Meteo {
 
 	public void play() {
 
+		if (!etat.equals("clair")) {
 		// On va charger dans le fichier les config
 		String rep = "Sons/meteo" + "/" + etat + "/";
 		BufferedReader mani = null;
-		// On lit le fichie
+		// On lit le fichier
 		try {
 			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
 			String line = null;
@@ -84,12 +85,12 @@ public class Meteo {
 		try {
 			mani.close();
 		} catch (IOException e) {
+			System.out.println("Erreur fermeture fichier");
 			e.printStackTrace();
 		}
 
 		// On prend un son au pif parmi ceux disponibles
 		Random random = new Random();
-
 		meteo = new Sound(rep + environnement + "_" + (random.nextInt(env) + 1)
 				+ ".wav");
 
@@ -104,6 +105,8 @@ public class Meteo {
 		rep+="sfx/";
 		sfx = new Sfx(rep,randSfx);
 		sfx.start();
+		
+		}
 
 	}
 
