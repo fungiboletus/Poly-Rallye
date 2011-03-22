@@ -1,7 +1,8 @@
 package polyrallye.ouie;
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -32,8 +33,12 @@ public class SonMoteur {
 
 		sons = new HashMap<Integer, Sound>();
 		
+		File dossier = new File("Sons/moteur");
 		
-		for (int i = 2000; i < 10000; i+= 500) {
+		for (File son : dossier.listFiles()) {
+			System.out.println(son.getName());
+		}
+		/*for (int i = 2000; i < 10000; i+= 500) {
 			Sound s = new Sound("Sons/moteur/"+i+".wav");
 			s.setLoop(true);
 			s.setOffset(2.0f);
@@ -116,7 +121,7 @@ public class SonMoteur {
 		final float t_max = max - 250 + marge / 2;*/
 		
 		// TODO Recoder ça proprement
-		float gain = (0.3f + 0.7f * (regime/10000.0f));
+		float gain = (0.5f + 0.5f * (regime/10000.0f));
 		
 		//System.out.println(gain);
 
@@ -147,10 +152,10 @@ public class SonMoteur {
 			
 			float r_a = (max-regime)/marge;
 			
-			r_a = r_a > 0.1f ? r_a : 0.0f;
+			r_a = r_a > 0.01f ? r_a*1.3f : 0.0f;
 			
 			float r_b = (regime-min)/marge;
-			r_b = r_b > 0.1f ? r_b : 0.0f;
+			r_b = r_b > 0.01f ? r_b*1.3f : 0.0f;
 			
 			/*System.out.println("t_min : "+t_min);
 			System.out.println("t_max : "+t_max);*/

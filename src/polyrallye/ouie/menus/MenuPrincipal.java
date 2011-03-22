@@ -49,13 +49,12 @@ public class MenuPrincipal extends Menu {
 					
 					@Override
 					public void gauche() {
-						annuler();
+						SonMoteur.regime = 6000;
 					}
 					
 					@Override
 					public void droite() {
-						// TODO Auto-generated method stub
-						
+						SonMoteur.regime = 3000;
 					}
 					
 					@Override
