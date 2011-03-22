@@ -30,7 +30,7 @@ public class MenuPrincipal extends Menu {
 			public void actionMenu() {
 				Environnement e = new Environnement("foret", "nuit", "vent");
 				
-				e.play();
+				//e.play();
 				
 				//final SonMoteur sm = new SonMoteur();
 				

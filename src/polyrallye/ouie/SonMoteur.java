@@ -1,17 +1,17 @@
 package polyrallye.ouie;
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Map.Entry;
+import java.util.NavigableMap;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.TreeMap;
 
 import polyrallye.ouie.Sound;
 
 
 public class SonMoteur {
 
-	static Map<Integer, Sound> sons;
+	protected static NavigableMap<Integer, Sound> sons;
 	
 	public static boolean accelere = false;
 	
@@ -31,23 +31,22 @@ public class SonMoteur {
 		//Sound ralenti = new Sound("Sons/moteur/ralenti.wav");
 		
 
-		sons = new HashMap<Integer, Sound>();
+		sons = new TreeMap<Integer, Sound>();
 		
 		File dossier = new File("Sons/moteur");
 		
 		for (File son : dossier.listFiles()) {
-			System.out.println(son.getName());
-		}
-		/*for (int i = 2000; i < 10000; i+= 500) {
-			Sound s = new Sound("Sons/moteur/"+i+".wav");
+			String nom = son.getName();
+			Integer nb = Integer.parseInt(nom.substring(0, nom.indexOf(".")));
+			
+			Sound s = new Sound(son.getAbsolutePath());
 			s.setLoop(true);
 			s.setOffset(2.0f);
 			s.play();
+			s.pause(true);
 			s.setGain(0.0f);
-			//s.pause(true);
-			sons.put(i, s);
+			sons.put(nb, s);
 		}
-		
 		// régime de 3800
 		
 		regime = 2000;
@@ -110,123 +109,64 @@ public class SonMoteur {
 		//System.out.println(regime);
 		SonMoteur.regime = regime;
 		
-		// Astuce sur la gestion des entiers
-		final int min = ((int) regime)/500*500;
-		final int max = min + 500;
-		
-		
-		final float marge = 500;
-
-		/*final float t_min = min + 250 - marge / 2;
-		final float t_max = max - 250 + marge / 2;*/
+		Integer intRegime = (int) regime;
 		
 		// TODO Recoder ça proprement
 		float gain = (0.5f + 0.5f * (regime/10000.0f));
 		
-		//System.out.println(gain);
-
-		Sound s_min = sons.get(min);
-		Sound s_max = sons.get(max);
-		
-		s_min.setPitch(regime/min);
-		s_max.setPitch(regime/max);
-		
-		/*if (regime < t_min)
-		{
-			s_min.setGain(gain);
-			s_max.setGain(0.0f);
-
-			/*s_min.pause(false);
-			s_max.pause(true);
-		}
-		else if (regime > t_max)
-		{
-			s_max.setGain(gain);
-			s_min.setGain(0.0f);
-
-			/*s_max.pause(false);
-			s_min.pause(true);
-		}
-		else
-		{*/
+		// Cas particulier plutôt rare, le régime est déjà dans les sons
+		Sound sonParfait = sons.get(intRegime);
+		if (sonParfait != null) {
+			sonParfait.setPitch(1.0f);
+			sonParfait.setGain(gain);
 			
-			float r_a = (max-regime)/marge;
-			
-			r_a = r_a > 0.01f ? r_a*1.3f : 0.0f;
-			
-			float r_b = (regime-min)/marge;
-			r_b = r_b > 0.01f ? r_b*1.3f : 0.0f;
-			
-			/*System.out.println("t_min : "+t_min);
-			System.out.println("t_max : "+t_max);*/
-
-			/*System.out.println("r_a : "+r_a);
-			System.out.println("r_b : "+r_b);*/
-			
-
-			s_min.setGain(r_a*gain);
-			s_max.setGain(r_b*gain);
-
-			/*s_min.pause(false);
-			s_max.pause(false);*/
-			
-			Sound a = sons.get(min-500);
-			if (a != null)
-			{
-				//a.pause(true);
+			for (Entry<Integer, Sound> e : sons.entrySet()) {
+				if (e.getKey() != intRegime) {
+					e.getValue().pause(true);
+					//e.getValue().setGain(0.0f);
+				}
 			}
-			a = sons.get(max+500);
-			if (a  != null)
-			{
-				//a.pause(true);
-			}
-			
-			/*s_max.pause(false);
-			s_min.pause(false);*/
-		/*}
-		
-		/*float r_a = (4000-regime)/500.0f;
-		
-		float r_b = (regime-3500)/500.0f;
-		
-		System.out.println("r_a : "+r_a);
-		System.out.println("r_b : "+r_b);
-		
-
-		s_3500.setGain(r_a);
-		s_4000.setGain(r_b);
-		
-		
-		float l_min = 4000;
-		
-		if (regime<3600)
-		{
-			s_3500.setGain(1.0f);
-			s_4000.setGain(0.0f);			
-		}
-		else if (regime > 3900)
-		{
-			s_3500.setGain(0.0f);
-			s_4000.setGain(1.0f);	
 		}
 		else
 		{
-			float r_a = (3900-regime)/300.0f;
+			// NavigableMap <3
+			Entry<Integer, Sound> min = sons.lowerEntry(intRegime);
+			Entry<Integer, Sound> max = sons.higherEntry(intRegime);
 			
-			float r_b = (regime-3600)/300.0f;
+			Integer i_min = min.getKey();
+			Integer i_max = max.getKey();
 			
-			System.out.println("r_a : "+r_a);
-			System.out.println("r_b : "+r_b);
+			Sound s_min = min.getValue();
+			Sound s_max = max.getValue();
 			
+			//System.out.println(gain);
 
-			s_3500.setGain(r_a);
-			s_4000.setGain(r_b);
-		}
-		
-		
-		s_3500.setPitch(regime/3500.0f);
-		s_4000.setPitch(regime/4000.0f);*/
+			final float marge = i_max-i_min;
 			
+			s_min.setPitch(regime/i_min);
+			s_max.setPitch(regime/i_max);
+			
+				
+				float r_a = (i_max-regime)/marge;
+				
+				r_a = r_a > 0.01f ? r_a*1.3f : 0.0f;
+				
+				float r_b = (regime-i_min)/marge;
+				r_b = r_b > 0.01f ? r_b*1.3f : 0.0f;
+
+				s_min.setGain(r_a*gain);
+				s_max.setGain(r_b*gain);
+				
+				s_min.pause(false);
+				s_max.pause(false);
+
+				for (Entry<Integer, Sound> e : sons.entrySet()) {
+					if (e.getKey() != i_max && e.getKey() != i_min) {
+						e.getValue().pause(true);
+						//e.getValue().setGain(0.0f);
+					}
+				}
+		}			
 	}
 
 }
