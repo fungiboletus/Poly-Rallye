@@ -25,6 +25,8 @@ public class Sound {
 	protected int data;
 
 	protected int id;
+	
+	protected boolean enPause = false;
 
 	public Sound() {
 		data = -1;
@@ -48,8 +50,10 @@ public class Sound {
 	}
 
 	public void pause(boolean pause) {
-		if (id != -1 && data != -1)
+		if (id != -1 && data != -1 && enPause != pause) {
 			SoundScape.pause(id, pause);
+			enPause = pause;
+		}
 	}
 
 	public void play() {
