@@ -18,6 +18,8 @@ public class Voiture
 	protected Moteur moteur;
 
 	protected Transmission transmission;
+	
+	protected Conduite conduite;
 
 	protected Chassis chassis;
 
@@ -134,4 +136,18 @@ public class Voiture
 		Liseuse.marquerPause();
 		moteur.lireSpecifications();
 	}
+
+    /**
+     * @return the conduite
+     */
+    public Conduite getConduite() {
+        return conduite;
+    }
+
+    /**
+     * @param conduite the conduite to set
+     */
+    public void setConduite(Conduite conduite) {
+        this.conduite = conduite;
+    }
 }
