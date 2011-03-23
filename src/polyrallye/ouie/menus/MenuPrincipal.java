@@ -30,7 +30,7 @@ public class MenuPrincipal extends Menu {
 			public void actionMenu() {
 				Environnement e = new Environnement("foret", "nuit", "vent");
 				
-				//e.play();
+				e.play();
 				
 				//final SonMoteur sm = new SonMoteur();
 				
@@ -49,12 +49,12 @@ public class MenuPrincipal extends Menu {
 					
 					@Override
 					public void gauche() {
-						SonMoteur.regime = 6000;
+						SonMoteur.regime *= 1.3;
 					}
 					
 					@Override
 					public void droite() {
-						SonMoteur.regime = 3000;
+						SonMoteur.regime *= 0.73;
 					}
 					
 					@Override

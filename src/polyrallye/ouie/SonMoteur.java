@@ -8,6 +8,7 @@ import java.util.TimerTask;
 import java.util.TreeMap;
 
 import polyrallye.ouie.Sound;
+import t2s.util.Random;
 
 public class SonMoteur {
 
@@ -50,17 +51,17 @@ public class SonMoteur {
 		regime = 2000;
 
 		Timer t = new Timer();
-
+		
 		TimerTask tt = new TimerTask() {
 
 			@Override
 			public void run() {
 				// System.out.println(SonMoteur.accelere);
 				float regime = SonMoteur.regime;
-				if (SonMoteur.accelere && regime < 8997) {
-					regime += 10;
+				if (SonMoteur.accelere && regime < 9500) {
+					regime += Random.delta(10, 15);
 				} else if (regime > 2010) {
-					regime -= 20;
+					regime -= Random.delta(5,15);
 				}
 
 				SonMoteur.setRegime(regime);
@@ -68,7 +69,7 @@ public class SonMoteur {
 			}
 		};
 
-		t.schedule(tt, 0, 10);
+		t.schedule(tt, 0, 5);
 
 		/*
 		 * while(true) { //System.out.println("R: "+ regime + " - "+accelere);
@@ -84,7 +85,6 @@ public class SonMoteur {
 
 	public static void setRegime(float regime) {
 		// System.out.println(regime);
-		SonMoteur.regime = regime;
 
 		Integer intRegime = (int) regime;
 
@@ -121,6 +121,7 @@ public class SonMoteur {
 				s_min.setPitch(regime / i_min);
 				s_min.pause(false);
 
+				
 			}
 
 			if (max != null) {
@@ -131,6 +132,7 @@ public class SonMoteur {
 				s_max.setGain(r_b * gain);
 				s_max.setPitch(regime / i_max);
 				s_max.pause(false);
+				
 			}
 
 			//System.out.println(i_min);
@@ -140,6 +142,8 @@ public class SonMoteur {
 				}
 			}
 		}
+		
+		SonMoteur.regime = regime;
 	}
 
 }
