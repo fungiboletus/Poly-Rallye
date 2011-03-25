@@ -29,8 +29,15 @@ public class Conduite {
      * Calcule la distance parcourue apres un temps d'acceleration.
      * @param tempsAcceleration
      */
-    public void distanceParcourue(int tempsAcceleration){
-        distanceParcourue = distanceParcourue + vitesse * tempsAcceleration
+    public void distanceAcceleration(int tempsAcceleration){
+        distanceParcourue += vitesse * tempsAcceleration
                 + acceleration * Math.sqrt(tempsAcceleration) / (double) 2;
+    }
+    /**
+     * Calcule la distance en fonction de la vitesse
+     * @param temps
+     */
+    public void distanceVitesseConstante(int temps){
+        distanceParcourue += vitesse*temps;
     }
 }
