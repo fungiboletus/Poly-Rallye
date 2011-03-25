@@ -10,19 +10,20 @@ import org.jdom.Element;
 
 import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Evenement;
+import polyrallye.ouie.environnement.Terrain;
 
 public class Circuit {
 	protected String nom;
 	protected Environnement environnement;
 	protected Queue<ContenuCircuit> contenu;
-	protected String terrain;
+	protected Terrain terrain;
 
 	public Circuit(String file) {
 		try {
 			Element racine = GestionXML.chargerNoeudRacine(new File("Circuits/"
 					+ file + ".xml"));
 			nom = racine.getChildText("nom");
-			terrain = racine.getChildText("terrain");
+			terrain = new Terrain(racine.getChildText("terrain"));
 			String type = racine.getChildText("environnement");
 			String temps = racine.getChildText("temps");
 			String meteo = racine.getChildText("meteo");
@@ -47,7 +48,6 @@ public class Circuit {
 					contenu.add(new Evenement(element.getName(), Long
 							.valueOf(element.getAttributeValue("distance")),
 							Long.valueOf(element.getAttributeValue("longueur")),element.getAttributeValue("type"), this));
-					
 				}
 
 			}
@@ -59,7 +59,7 @@ public class Circuit {
 	}
 
 	public void changeTerrain(String terr) {
-		terrain = terr;
+		terrain.change(terr);
 	}
 
 	public void changeEnvironnement(String envi) {
