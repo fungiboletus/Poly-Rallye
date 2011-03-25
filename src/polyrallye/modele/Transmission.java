@@ -87,7 +87,7 @@ public class Transmission {
 		vitesseCourante = 0;
 
 		// 200 Km/h de base, c'est pas mal non ?
-		vitessePuissanceMaximale = 200.0;
+		vitessePuissanceMaximale = 300.0;
 	}
 
 	/**
