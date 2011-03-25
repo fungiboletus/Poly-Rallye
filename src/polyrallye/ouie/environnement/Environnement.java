@@ -7,7 +7,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
+import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.Sound;
 
 public class Environnement {
@@ -18,13 +21,10 @@ public class Environnement {
 
 	protected int randAmb;
 	protected int randSfx;
+	protected int intervalle;
 
 	protected Sound ambiance;
 	protected Sfx sfx;
-
-	public Environnement() {
-		this("urban", "jour", "clair");
-	}
 
 	public Environnement(String type, String temps, String meteo) {
 		super();
@@ -32,6 +32,9 @@ public class Environnement {
 		this.temps = temps;
 		this.meteo = new Meteo(meteo, type);
 
+		//Par defaut
+		intervalle = 10;
+		
 		// On va charger dans le fichier les config
 		String rep = "Sons/" + type + "/";
 		BufferedReader mani = null;
@@ -46,6 +49,9 @@ public class Environnement {
 								.indexOf(" ") + 1));
 					} else if (line.contains("sfx")) {
 						this.randSfx = Integer.valueOf(line.substring(line
+								.indexOf(" ") + 1));
+					} else if (line.contains("random")) {
+						this.intervalle = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
 					}
 
@@ -82,7 +88,7 @@ public class Environnement {
 		} else
 			rep += "sfx/";
 
-		sfx = new Sfx(rep, randSfx);
+		sfx = new Sfx(rep, randSfx,intervalle);
 
 	}
 	
@@ -90,6 +96,9 @@ public class Environnement {
 		sfx.tuer();
 		
 		type = env;
+		
+		//intervalle par defaut (secondes ?)
+		intervalle = 10;
 		
 		// On va charger dans le fichier les config
 		String rep = "Sons/" + type + "/";
@@ -105,6 +114,9 @@ public class Environnement {
 								.indexOf(" ") + 1));
 					} else if (line.contains("sfx")) {
 						this.randSfx = Integer.valueOf(line.substring(line
+								.indexOf(" ") + 1));
+					} else if (line.contains("random")) {
+						this.intervalle = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
 					}
 
@@ -157,7 +169,7 @@ public class Environnement {
 	}
 
 	public void play() {
-		ambiance.play();
+		//ambiance.play();
 		sfx.start();
 		meteo.play();
 	}
@@ -172,20 +184,38 @@ public class Environnement {
 		meteo.stop();
 	}
 
+	public void setVitesse(float p) {
+		sfx.setVitesse(p);
+	}
+	
 	public static void main(String[] args) {
-		Environnement test = new Environnement();
+		final Environnement test = new Environnement("plaine", "jour", "clair");
+		test.setVitesse(300f);
 		test.play();
 		Scanner sc = new Scanner(System.in);
 
 		while (!sc.next().equals("e")) {
 
 		}
-		test.fade();
-		while (!sc.next().equals("e")) {
+		Timer t = new Timer();
+		
+		TimerTask tt = new TimerTask() {
 
-		}
-		test.stop();
+			@Override
+			public void run() {
+				// System.out.println(SonMoteur.accelere);
+				float dis = test.sfx.distance;
+				dis+=10;
+				test.sfx.setDistance(dis);
+				
+
+			}
+		};
+
+		t.schedule(tt, 0, 5);
 
 	}
+	
+	
 
 }
