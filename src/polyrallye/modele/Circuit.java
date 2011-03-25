@@ -17,6 +17,9 @@ public class Circuit {
 	protected Environnement environnement;
 	protected Queue<ContenuCircuit> contenu;
 	protected Terrain terrain;
+	
+	protected float distance;
+	protected float longueur;
 
 	public Circuit(String file) {
 		try {
@@ -28,6 +31,7 @@ public class Circuit {
 			String temps = racine.getChildText("temps");
 			String meteo = racine.getChildText("meteo");
 			environnement = new Environnement(type, temps, meteo);
+			distance=0;
 
 			contenu = new LinkedList<ContenuCircuit>();
 			Element parcours = racine.getChild("contenu");
@@ -43,6 +47,8 @@ public class Circuit {
 							TypeRoute.valueOf(element.getName()),
 							Long.valueOf(element.getAttributeValue("force"))));
 
+				} else if (element.getName().equals("fin")) {
+					
 				} else {
 
 					contenu.add(new Evenement(element.getName(), Long
@@ -56,6 +62,10 @@ public class Circuit {
 			System.out.println("Erreur chargement xml");
 		}
 
+	}
+	
+	public float getLongueur() {
+		return longueur;
 	}
 
 	public void changeTerrain(String terr) {

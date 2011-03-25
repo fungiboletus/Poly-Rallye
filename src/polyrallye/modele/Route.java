@@ -2,40 +2,40 @@ package polyrallye.modele;
 
 public class Route implements ContenuCircuit {
 	
-	protected long distance;
-	protected long longueur;
-	protected long force;
+	protected double distance;
+	protected double longueur;
+	protected double force;
 	
 	protected TypeRoute type;
 	
-	public Route(long distance,long longueur, TypeRoute type) {
+	public Route(double distance,double longueur, TypeRoute type) {
 		this.distance=distance;
 		this.longueur=longueur;
 		this.type=type;
 		this.force=0;
 	}
 	
-	public Route(long distance,long longueur, TypeRoute type,long force) {
+	public Route(double distance,double longueur, TypeRoute type,double force) {
 		this(distance,longueur,type);
 		this.force=force;
 	}
 	
 	
 	@Override
-	public long getDistance() {
+	public double getDistance() {
 		return distance;
 	}
 
 	@Override
-	public long getLongueur() {
+	public double getLongueur() {
 		return longueur;
 	}
 
-	public long getForce() {
+	public double getForce() {
 		return force;
 	}
 
-	public void setForce(long force) {
+	public void setForce(double force) {
 		this.force = force;
 	}
 
