@@ -89,7 +89,12 @@ public class Circuit {
 		double latPrec = 0;
 		double lonPrec = 0;
 		
+		double latPrecPrec = 0;
+		double lonPrecPrec = 0;
+		
 		double distance = 0;
+		
+		int i = 0;
 		
 		// Parcours du chemin
 		for (Object e : chemin.getChildren("nd")) {
@@ -105,12 +110,30 @@ public class Circuit {
 			
 			double lat = GestionXML.getDouble(n.getAttributeValue("lat"));
 			double lon = GestionXML.getDouble(n.getAttributeValue("lon"));
-			System.out.println("Lat : "+lat);
-			double d = Cartographie.distance(latPrec, lonPrec, lat, lon);
+			//System.out.println("Lat : "+lat);
 			
-			System.out.println("Distance : "+d);
+			if (i > 0)
+			{
+				double d = Cartographie.distance(latPrec, lonPrec, lat, lon);
 			
-			distance += d;
+				System.out.println("Distance : "+d);
+			
+				distance += d;
+				
+			}
+			
+			double a = Cartographie.angle(latPrecPrec, lonPrecPrec, latPrec, lonPrec, lat, lon);
+			System.out.println("Angle : " +a);
+			
+			latPrecPrec = latPrec;
+			lonPrecPrec = lonPrec;
+			
+			latPrec = lat;
+			lonPrec = lon;
+			
+			++i;
+			
+			System.out.println();
 		}
 		
 		System.out.println("Distance totale : "+distance);

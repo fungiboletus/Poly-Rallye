@@ -18,7 +18,7 @@ public abstract class Cartographie {
 	 */
 	public static double distance(double latA, double lonA, double latB,
 			double lonB) {
-		double R = 6378135;
+		double R = 6378137;
 		double sinHalfLat = Math.sin(Math.toRadians(latB - latA) / 2);
 		double sinHalfLon = Math.sin(Math.toRadians(lonB - lonA) / 2);
 		double d = 2
@@ -42,8 +42,8 @@ public abstract class Cartographie {
 	 * Angle entre trois points, calculés de manière ultra non précise.
 	 * 
 	 * JOSM proposait des fonctions énormément plus précises, mais très
-	 * complexes. C'est inadapté dans notre projet, les valeurs étant
-	 * énormément arrondies.
+	 * complexes. C'est inadapté dans notre projet, les valeurs étant énormément
+	 * arrondies.
 	 * 
 	 * En fait, le cotés sphérique est totalement laissé de cotés.
 	 * 
@@ -52,9 +52,30 @@ public abstract class Cartographie {
 	public static double angle(double latA, double lonA, double latB,
 			double lonB, double latC, double lonC) {
 
-		double m0 = (lonB - lonA) / (latB - latA);
-		double m1 = (lonC - lonB) / (latC - latB);
+		/*System.out.println("A : " + latA + " : " + lonA + "\nB : " + latB
+				+ " : " + lonB + "\nC : " + latC + " : " + lonC);
 
-		return Math.toDegrees(Math.atan((m1 - m0) / (1 + m1 * m0)));
+		/*
+		 * double m0 = (lonB - lonA) / (latB - latA); double m1 = (lonC - lonB)
+		 * / (latC - latB);
+		 * 
+		 * return Math.toDegrees(Math.atan((m1 - m0) / (1 + m1 * m0)));
+		 */
+
+		/*double lA = Math.sqrt(Math.pow(latA - latB, 2.0)
+				+ Math.pow(lonA - lonB, 2.0));
+		double lB = Math.sqrt(Math.pow(latB - latC, 2.0)
+				+ Math.pow(lonB - lonC, 2.0));
+		double lC = Math.sqrt(Math.pow(latA - latC, 2.0)
+				+ Math.pow(lonA - lonC, 2.0));*/
+		
+		double lA = distance(latA, lonA, latB, lonB);
+		double lB = distance(latB, lonB, latC, lonC);
+		double lC = distance(latA, lonA, latC, lonC);
+		System.out.println(lA);
+		System.out.println(lB);
+		System.out.println(lC);
+
+		return 180-Math.toDegrees(Math.acos((lA * lA + lB * lB - lC * lC) / (2 * lA * lB)));
 	}
 }
