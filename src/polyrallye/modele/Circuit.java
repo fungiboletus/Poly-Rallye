@@ -86,11 +86,11 @@ public class Circuit {
 			noeuds.put(id, ch);
 		}
 		
-		double latPrec = 0;
-		double lonPrec = 0;
+		double latCourant = 0;
+		double lonCourant = 0;
 		
-		double latPrecPrec = 0;
-		double lonPrecPrec = 0;
+		double latPrecedent = 0;
+		double lonPrecedent = 0;
 		
 		double distance = 0;
 		
@@ -108,28 +108,39 @@ public class Circuit {
 				continue; // Les vrais continuent toujours
 			}
 			
-			double lat = GestionXML.getDouble(n.getAttributeValue("lat"));
-			double lon = GestionXML.getDouble(n.getAttributeValue("lon"));
+			double latSuivant = GestionXML.getDouble(n.getAttributeValue("lat"));
+			double lonSuivant = GestionXML.getDouble(n.getAttributeValue("lon"));
 			//System.out.println("Lat : "+lat);
 			
 			if (i > 0)
 			{
-				double d = Cartographie.distance(latPrec, lonPrec, lat, lon);
+				double d = Cartographie.distance(latCourant, lonCourant, latSuivant, lonSuivant);
 			
 				System.out.println("Distance : "+d);
 			
 				distance += d;
-				
+			
+				if (i > 2) {
+					
+					double a = Cartographie.angleVirage(latPrecedent,
+							lonPrecedent, latCourant, lonCourant, latSuivant,
+							lonSuivant);
+					System.out.println("Angle : " + a);
+
+					TypeRoute s = Cartographie.sensVirage(latPrecedent,
+							lonPrecedent, latCourant, lonCourant, latSuivant,
+							lonSuivant);
+					System.out.println("Sens : "
+							+ (s == TypeRoute.GAUCHE ? "gauche" : "droite"));
+				}
 			}
 			
-			double a = Cartographie.angle(latPrecPrec, lonPrecPrec, latPrec, lonPrec, lat, lon);
-			System.out.println("Angle : " +a);
 			
-			latPrecPrec = latPrec;
-			lonPrecPrec = lonPrec;
+			latPrecedent = latCourant;
+			lonPrecedent = lonCourant;
 			
-			latPrec = lat;
-			lonPrec = lon;
+			latCourant = latSuivant;
+			lonCourant = lonSuivant;
 			
 			++i;
 			
