@@ -57,7 +57,36 @@ public class Circuit {
 		}
 
 	}
+	
+	public Circuit(Element noeud) {
+		if (noeud.getChildren("way").size() != 1) {
+			System.err.println("Le fichier OSM ne contient pas un seul chemin.");
+		}
+		
+		Element chemin = noeud.getChild("way");
+		
+		nom = getTagValue(chemin, "nom");
+		terrain = getTagValue(chemin, "terrain");
+		String type = getTagValue(chemin, "environnement");
+		String temps = getTagValue(chemin, "temps");
+		String meteo = getTagValue(chemin, "meteo");
+		
+		environnement = new Environnement(type, temps, meteo);
+	}
 
+	public static String getTagValue(Element noeud, String tag) {
+		for (Object t : noeud.getChildren(tag)) {
+			Element tt = (Element) t;
+			
+			if (tt.getAttributeValue("k").equals(tag)) {
+				return tt.getAttributeValue("v");
+			}
+		}
+		
+		return null;
+	}
+	
+	
 	public void changeTerrain(String terr) {
 		terrain = terr;
 	}
