@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import org.jdom.Element;
 
+import polyrallye.utilitaires.GestionXML;
+
 /**
  * @author Antoine Pultier
  * 

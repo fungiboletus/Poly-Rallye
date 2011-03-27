@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import org.jdom.Element;
 
 import polyrallye.ouie.Liseuse;
+import polyrallye.utilitaires.GestionXML;
 
 /**
  * @author Antoine Pultier Cette classe s'occupe de charger les voitures
