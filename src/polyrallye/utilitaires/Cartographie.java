@@ -53,28 +53,11 @@ public abstract class Cartographie {
 			double lonB, double latC, double lonC) {
 
 		/*System.out.println("A : " + latA + " : " + lonA + "\nB : " + latB
-				+ " : " + lonB + "\nC : " + latC + " : " + lonC);
-
-		/*
-		 * double m0 = (lonB - lonA) / (latB - latA); double m1 = (lonC - lonB)
-		 * / (latC - latB);
-		 * 
-		 * return Math.toDegrees(Math.atan((m1 - m0) / (1 + m1 * m0)));
-		 */
-
-		/*double lA = Math.sqrt(Math.pow(latA - latB, 2.0)
-				+ Math.pow(lonA - lonB, 2.0));
-		double lB = Math.sqrt(Math.pow(latB - latC, 2.0)
-				+ Math.pow(lonB - lonC, 2.0));
-		double lC = Math.sqrt(Math.pow(latA - latC, 2.0)
-				+ Math.pow(lonA - lonC, 2.0));*/
+				+ " : " + lonB + "\nC : " + latC + " : " + lonC);*/
 		
 		double lA = distance(latA, lonA, latB, lonB);
 		double lB = distance(latB, lonB, latC, lonC);
 		double lC = distance(latA, lonA, latC, lonC);
-		System.out.println(lA);
-		System.out.println(lB);
-		System.out.println(lC);
 
 		return 180-Math.toDegrees(Math.acos((lA * lA + lB * lB - lC * lC) / (2 * lA * lB)));
 	}
