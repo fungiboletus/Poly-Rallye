@@ -104,6 +104,11 @@ public class Voiture
 		return sources;
 	}
 
+	public double getRapportPuissance()
+	{
+		return moteur.getCoupleMax()/chassis.poids;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
