@@ -1,6 +1,6 @@
 package polyrallye.controlleur;
 
-import polyrallye.modele.Joueur;
+import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.FenetreNoire;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.menus.MenuPrincipal;

@@ -2,7 +2,7 @@ package polyrallye.ouie.menus;
 
 import java.net.URI;
 
-import polyrallye.modele.Sources;
+import polyrallye.modele.voiture.Sources;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;

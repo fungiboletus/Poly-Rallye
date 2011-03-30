@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.jdom.Element;
 
+import polyrallye.modele.voiture.StockVoitures;
+import polyrallye.modele.voiture.Voiture;
+
 public class Garage {
 	protected List<Voiture> voitures;
 	protected boolean changement = false;

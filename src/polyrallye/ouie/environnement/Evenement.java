@@ -1,7 +1,7 @@
 package polyrallye.ouie.environnement;
 
-import polyrallye.modele.Circuit;
-import polyrallye.modele.ContenuCircuit;
+import polyrallye.modele.circuit.Circuit;
+import polyrallye.modele.circuit.ContenuCircuit;
 import polyrallye.ouie.Sound;
 import polyrallye.ouie.Sound.SoundException;
 
