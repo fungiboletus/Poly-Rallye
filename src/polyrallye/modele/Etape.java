@@ -2,10 +2,14 @@ package polyrallye.modele;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import org.lwjgl.LWJGLUtil;
+
+import sun.rmi.server.Util;
 
 /**
- * Classe Match : représente un match, avec ses deux equipes, son arbitre et son
+ * Classe Match : représente un etape, avec ses deux equipes, son arbitre et son
  * gagnant
  * 
  * @author zizou
@@ -13,45 +17,44 @@ import java.util.List;
  */
 public class Etape {
 
-    private static int nofEtapes = 0;
-    private int specialeID;
-    private int numero;
+    
+    protected int numeroEtape;
     protected String nom;
+    protected Joueur joueur;
     protected Circuit circuit;
-    private List<Joueur> participants;
-    private List<Rang> classement;
+    protected List<Personne> participants;
+    protected List<Rang> classement;
+    protected List<Voiture> voitures;
 
     /**
      * Constructeur
      * 
      */
-    public Etape(int numeroMatch, String uneEpreuve,
-            List<Joueur> participants) {
-        specialeID = ++nofEtapes;
-        // tester les parametres
-        //
-        if (uneEpreuve == null || numeroMatch <= 0)
+    public Etape(int numero, String uneEpreuve, List<Personne> participants ) {
+
+        if (uneEpreuve == null || numero <= 0)
             throw new NullPointerException(
-                    "Un ou des parametres du constructeur de Match est null");
+                    "Un ou des parametres du constructeur de Etape est null");
 
-        // renseigner les attributs
-        //
         nom = uneEpreuve;
-        numero = numeroMatch;
-
+        numeroEtape = numero;
+        
+        
         // si la liste de participant est null : en créer une
         if (participants == null)
-            participants = new ArrayList<Joueur>();
+            participants = new ArrayList<Personne>();
         else
             this.setParticipants(participants);
+        
+        classement = new ArrayList<Rang>();
+        
+        voitures = new ArrayList<Voiture>();
+        
     }
 
-    public int getMatchID() {
-        return specialeID;
-    }
 
     /**
-     * retourne l'speciale concernée par le speciale
+     * retourne la peciale concernée par le speciale
      * 
      * @return
      */
@@ -76,6 +79,51 @@ public class Etape {
     public void setClassement(List<Rang> classement) {
         this.classement = classement;
     }
+    
+    /**
+     * affecte le classement de la spéciale
+     * 
+     * @return
+     */
+    public void setClassement(Duree dureeJoueurEtape) {
+        
+        participants.add(joueur);
+        participants.add(new Adversaire("Jean"));
+        participants.add(new Adversaire("Dupont"));
+        participants.add(new Adversaire("Esposa"));
+        participants.add(new Adversaire("Munoz"));
+        participants.add(new Adversaire("Trapatoni"));
+        participants.add(new Adversaire("Paolista"));
+        participants.add(new Adversaire("Barbosi"));
+        participants.add(new Adversaire("Zicko"));
+        participants.add(new Adversaire("Papisto"));
+        
+        for (int i =0; i<10; ++i)
+        classement.add(new Rang(nom, participants.get(i)));
+        
+        voitures.add(StockVoitures.getVoitureParNom("Bugatti Veyron 16.4 Super Sport"));
+        voitures.add(StockVoitures.getVoitureParNom("Audi Quattro Sport S1 Pikes Peak"));
+        voitures.add(StockVoitures.getVoitureParNom("Audi Quattro Sport S1"));
+        voitures.add(StockVoitures.getVoitureParNom("Citroën DS3 WRC"));
+        voitures.add(StockVoitures.getVoitureParNom("Peugeot 307 WRC"));
+        voitures.add(StockVoitures.getVoitureParNom("Peugeot 306 S16"));
+        voitures.add(StockVoitures.getVoitureParNom("Peugeot 206 WRC"));
+        voitures.add(StockVoitures.getVoitureParNom("Renault 5 Turbo"));
+        voitures.add(StockVoitures.getVoitureParNom("Subaru Impreza WRC Génération 3 Sti"));
+
+        
+        
+        
+        for (int i =0; i<10; ++i)
+        classement.get(i).setDuree(Duree(t2s.util.Random.delta(i, n)));
+        
+
+
+
+
+
+
+    }
 
     /**
      * retourne le numéro de la spéciale
@@ -83,7 +131,7 @@ public class Etape {
      * @return
      */
     public int getNumero() {
-        return numero;
+        return numeroEtape;
     }
 
     /**
@@ -91,7 +139,7 @@ public class Etape {
      * 
      * @return
      */
-    public void setParticipants(List<Joueur> participants) {
+    public void setParticipants(List<Personne> participants) {
         this.participants = participants;
     }
 
@@ -99,7 +147,7 @@ public class Etape {
      * 
      * @return joueurs de la spéciale
      */
-    public List<Joueur> getParticipants() {
+    public List<Personne> getParticipants() {
         return participants;
     }
 

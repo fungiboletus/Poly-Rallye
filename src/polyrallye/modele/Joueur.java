@@ -46,6 +46,10 @@ public class Joueur extends Personne
 	public int getArgent() {
 		return argent;
 	}
+	
+	public int ajouterArgent(int somme) {
+            return (argent += somme);
+        }
 
 	public Permis getPermis() {
 		return permis;
@@ -57,7 +61,7 @@ public class Joueur extends Personne
 		if (prix > argent){
 			throw new Exception("Vous n'avez pas assez d'argent pour acheter la voiture");
 		}
-		garage.acheter(v);
+		garage.ajouter(v);
 		argent -= prix;
 	}
 	

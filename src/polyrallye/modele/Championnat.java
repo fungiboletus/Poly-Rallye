@@ -9,20 +9,25 @@ import org.jdom.Element;
 
 public class Championnat {
     
-    
+    protected Garage garage;
+    protected Joueur player;
     protected String nom;
-    private Duree duree;
+    protected Duree duree;
     protected List<Etape> etapes;
     protected Voiture voitureGagné;
+    protected int argentGagné;
     
-    public Championnat(String nom,Duree duree, List<Etape> etapes, Voiture voitureGagné)
+    public Championnat(Garage G, Joueur J, String nom, Duree duree, List<Etape> etapes, Voiture voitureGagné, int argentGagné)
     {
+            this.garage = G;
+            this.player = J;
+            this.argentGagné = argentGagné;
             this.nom = nom;
             this.duree = duree;
             
             if (nom == null)
                 throw new NullPointerException(
-                        "Vous devez au moins specifier le nom de l epreuve !");
+                        "Vous devez au moins specifier le nom de la spéciale !");
             
          // si la liste de speciales est null : en créer une
             if (etapes == null)
@@ -69,5 +74,26 @@ public class Championnat {
 
     public String getNom() {
         return nom;
+    }
+    
+    public void setJoueur(Joueur j) {
+        this.player = j;
+    }
+
+    public Joueur getJoueur() {
+        return player;
+    }
+    
+    public void setGarage(Garage g) {
+        this.garage = g;
+    }
+
+    public Garage getGarage() {
+        return garage;
+    }
+    
+    public void RemisePrix() throws Exception {
+        garage.ajouter(voitureGagné);
+        player.ajouterArgent(argentGagné);    
     }
 }

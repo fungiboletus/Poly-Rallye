@@ -41,7 +41,7 @@ public class Garage {
 		return voitures;
 	}
 
-	public void acheter(Voiture v) throws Exception {
+	public void ajouter(Voiture v) throws Exception {
 		if (voitures.contains(v)) {
 			throw new Exception("Voiture déjà présente dans le garage");
 		}
