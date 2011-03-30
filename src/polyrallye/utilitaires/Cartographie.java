@@ -1,6 +1,6 @@
 package polyrallye.utilitaires;
 
-import polyrallye.modele.TypeRoute;
+import polyrallye.modele.circuit.TypeRoute;
 
 /**
  * Quelques fonctions de cartographies bien utiles.

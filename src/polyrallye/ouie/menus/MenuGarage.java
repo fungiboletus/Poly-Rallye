@@ -3,8 +3,8 @@ package polyrallye.ouie.menus;
 import java.util.List;
 import java.util.ListIterator;
 
-import polyrallye.modele.Joueur;
-import polyrallye.modele.Voiture;
+import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;

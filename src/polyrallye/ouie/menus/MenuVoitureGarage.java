@@ -1,6 +1,6 @@
 package polyrallye.ouie.menus;
 
-import polyrallye.modele.Voiture;
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 

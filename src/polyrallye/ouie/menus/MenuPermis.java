@@ -1,6 +1,6 @@
 package polyrallye.ouie.menus;
 
-import polyrallye.modele.Joueur;
+import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
