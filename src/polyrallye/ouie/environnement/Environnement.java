@@ -177,6 +177,10 @@ public class Environnement {
 	public void fade() {
 		ambiance.setVelocity(0, 0, 100f);
 	}
+	
+	public void setDistance(double d) {
+		sfx.setDistance(d);
+	}
 
 	public void stop() {
 		ambiance.stop();
@@ -204,7 +208,7 @@ public class Environnement {
 			@Override
 			public void run() {
 				// System.out.println(SonMoteur.accelere);
-				float dis = test.sfx.distance;
+				double dis = test.sfx.distance;
 				dis+=10;
 				test.sfx.setDistance(dis);
 				

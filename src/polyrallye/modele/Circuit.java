@@ -18,8 +18,8 @@ public class Circuit {
 	protected Queue<ContenuCircuit> contenu;
 	protected Terrain terrain;
 	
-	protected float distance;
-	protected float longueur;
+	protected double distance;
+	protected double longueur;
 
 	public Circuit(String file) {
 		try {
@@ -41,19 +41,19 @@ public class Circuit {
 				Element element = (Element) iterator.next();
 				if (element.getName().equals("gauche")
 						|| element.getName().equals("droite")) {
-					contenu.add(new Route(Long.valueOf(element
+					contenu.add(new Route(Double.valueOf(element
 							.getAttributeValue("distance")), Long
 							.valueOf(element.getAttributeValue("longueur")),
 							TypeRoute.valueOf(element.getName()),
-							Long.valueOf(element.getAttributeValue("force"))));
+							Double.valueOf(element.getAttributeValue("force"))));
 
 				} else if (element.getName().equals("fin")) {
-					
+					longueur = Double.valueOf(element.getAttributeValue("distance"));
 				} else {
 
-					contenu.add(new Evenement(element.getName(), Long
+					contenu.add(new Evenement(element.getName(), Double
 							.valueOf(element.getAttributeValue("distance")),
-							Long.valueOf(element.getAttributeValue("longueur")),element.getAttributeValue("type"), this));
+							Double.valueOf(element.getAttributeValue("longueur")),element.getAttributeValue("type"), this));
 				}
 
 			}
@@ -64,7 +64,12 @@ public class Circuit {
 
 	}
 	
-	public float getLongueur() {
+	public void setDistance(double d) {
+		distance = d;
+		environnement.setDistance(d);
+	}
+	
+	public double getLongueur() {
 		return longueur;
 	}
 
