@@ -1,9 +1,12 @@
-package polyrallye.modele;
+package polyrallye.modele.personnes;
 
 import java.io.File;
 
 import org.jdom.Element;
 
+import polyrallye.modele.Garage;
+import polyrallye.modele.Permis;
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 

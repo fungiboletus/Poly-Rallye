@@ -1,4 +1,6 @@
-package polyrallye.modele;
+package polyrallye.modele.championnat;
+
+import polyrallye.modele.personnes.Personne;
 
 /**
  * Classe Rang : représente un rang pour une epreuve donnée

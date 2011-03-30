@@ -1,10 +1,15 @@
-package polyrallye.modele;
+package polyrallye.modele.championnat;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import org.jdom.Element;
+
+import polyrallye.modele.Garage;
+import polyrallye.modele.circuit.Etape;
+import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.voiture.Voiture;
 
 
 public class Championnat {

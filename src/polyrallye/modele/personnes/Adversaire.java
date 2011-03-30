@@ -1,4 +1,6 @@
-package polyrallye.modele;
+package polyrallye.modele.personnes;
+
+import polyrallye.modele.voiture.Voiture;
 
 public class Adversaire extends Personne
 {

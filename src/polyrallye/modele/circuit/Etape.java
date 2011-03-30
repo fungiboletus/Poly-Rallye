@@ -1,10 +1,18 @@
-package polyrallye.modele;
+package polyrallye.modele.circuit;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import org.lwjgl.LWJGLUtil;
+
+import polyrallye.modele.championnat.Duree;
+import polyrallye.modele.championnat.Rang;
+import polyrallye.modele.personnes.Adversaire;
+import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.personnes.Personne;
+import polyrallye.modele.voiture.StockVoitures;
+import polyrallye.modele.voiture.Voiture;
 
 import sun.rmi.server.Util;
 
