@@ -12,6 +12,8 @@ public class Terrain {
 	protected Sound son;
 	protected Sound tournant;
 	
+	protected Double frottement;
+	
 	protected Sfx sfx;
 	
 	public Terrain(String t) {
