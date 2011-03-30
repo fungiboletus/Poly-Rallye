@@ -1,6 +1,4 @@
-package polyrallye.modele.championnat;
-
-import polyrallye.modele.personnes.Joueur;
+package polyrallye.modele;
 
 /**
  * Classe Rang : représente un rang pour une epreuve donnée
@@ -11,7 +9,7 @@ import polyrallye.modele.personnes.Joueur;
 public class Rang {
     private String speciale;
     private int classement;
-    private Joueur joueur;
+    private Personne personne;
     private Duree duree;
     private Duree ecart;
 
@@ -20,18 +18,14 @@ public class Rang {
      * 
      * @param uneEpreuve
      */
-    public Rang(String uneSpeciale, int unClassement, Joueur joueur, Duree duree, Duree ecart) {
-        // tester les parametres
-        if (uneSpeciale == null || unClassement < 0 
-                || joueur == null || duree == null)
+    public Rang(String uneSpeciale, Personne personne ) {
+
+        if (uneSpeciale == null || personne == null)
             throw new NullPointerException(
                     "Un ou des parametres du constructeur de Rang est incorrect");
-        // renseigner les attributs
+        
         speciale = uneSpeciale;
-        classement = unClassement;
-        this.joueur = joueur;
-        this.duree = duree;
-        this.ecart = ecart;
+        this.personne = personne;
     }
 
     /**
@@ -113,9 +107,10 @@ public class Rang {
 
         // completer le resultat
         //
-        resultat.append(speciale + "(" + classement + pos + ": " + joueur
+        resultat.append(speciale + "(" + classement + pos + ": " + personne
                 + ", duree -> " + duree + " )");
 
         return resultat.toString();
     }
+
 }

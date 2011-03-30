@@ -1,12 +1,9 @@
-package polyrallye.modele.personnes;
+package polyrallye.modele;
 
 import java.io.File;
 
 import org.jdom.Element;
 
-import polyrallye.modele.Garage;
-import polyrallye.modele.Permis;
-import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
@@ -49,6 +46,10 @@ public class Joueur extends Personne
 	public int getArgent() {
 		return argent;
 	}
+	
+	public int ajouterArgent(int somme) {
+            return (argent += somme);
+        }
 
 	public Permis getPermis() {
 		return permis;
@@ -60,7 +61,7 @@ public class Joueur extends Personne
 		if (prix > argent){
 			throw new Exception("Vous n'avez pas assez d'argent pour acheter la voiture");
 		}
-		garage.acheter(v);
+		garage.ajouter(v);
 		argent -= prix;
 	}
 	
