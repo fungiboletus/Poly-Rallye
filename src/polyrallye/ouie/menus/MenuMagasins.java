@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import polyrallye.modele.StockVoitures;
-import polyrallye.modele.Voiture;
+import polyrallye.modele.voiture.StockVoitures;
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
