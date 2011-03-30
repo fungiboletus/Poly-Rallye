@@ -1,6 +1,11 @@
 package polyrallye.modele.voiture;
 
+import polyrallye.modele.voiture.Moteur;
 
+/**
+ * 
+ * @author macina
+ */
 public class Conduite {
     protected double acceleration;
     protected double vitesse;
@@ -35,7 +40,7 @@ public class Conduite {
                 + acceleration * Math.sqrt(tempsAcceleration) / (double) 2;
     }
     /**
-     * Calcule la distance en fonction de la vitesse
+     * Calcule la distance en fonction de la vitesse.
      * @param temps
      */
     public void distanceVitesseConstante(int temps){
