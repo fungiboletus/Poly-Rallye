@@ -1,0 +1,32 @@
+<voiture>
+	<nom>Peugeot 405 Turbo 16 Grand Raid</nom>
+	<economie>
+		<rarete>7</rarete>
+		<prix>35 000</prix>
+	</economie>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<periode debut="1988" fin="1990"/>
+	</presentation>
+	<moteur nom="XU9T">
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1905</cylindree>
+		<puissance regime="7500">400</puissance>
+		<couple_max regime="4000">500</couple_max>
+		<rupteur>8000</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1300</poids>
+		<largeur>1674</largeur>
+		<longueur>4165</longueur>
+		<empattement>2888</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Peugeot_405_Turbo_16</source>
+		<source>http://405t16.free.fr/ficteccompet.htm</source>
+	</sources>
+</voiture>
