@@ -21,6 +21,7 @@ public class Main {
 		
 		Liseuse.lancer();
 
+		Liseuse.lire(1405);
 		String nomJoueur = args.length > 1 ? args[0] : "Bob";
 		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
@@ -28,7 +29,7 @@ public class Main {
 		Liseuse.lire("PolyRallye");
 
 		menuPrincipal = new Principal();
-		menuPrincipal.lancer();
+		//menuPrincipal.lancer();
 	}
 
 	public static void quitter() {

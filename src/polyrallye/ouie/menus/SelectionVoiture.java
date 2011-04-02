@@ -85,7 +85,11 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 			Collections.sort(listeVoitures, c);
 
 			for (Voiture v : listeVoitures) {
-				ajouterElement(v.getNomComplet(), new VoitureMagasin(this, v));
+				String libelle = v.getVersion();
+				if (libelle == null) {
+					libelle = "de série";
+				}
+				ajouterElement(libelle, new VoitureMagasin(this, v));
 			}
 		}
 	}

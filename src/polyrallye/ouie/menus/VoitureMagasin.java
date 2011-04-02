@@ -3,6 +3,7 @@ package polyrallye.ouie.menus;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 
 public class VoitureMagasin extends Menu implements ActionMenu {
@@ -24,11 +25,22 @@ public class VoitureMagasin extends Menu implements ActionMenu {
 	public VoitureMagasin(Menu menuPrecedent, Voiture v) {
 		super(menuPrecedent);
 		
-		voiture = v;		
+		voiture = v;
+	}
 
+	@Override
+	public void actionMenu() {
+		Liseuse.lire(voiture.getNomComplet());
+		//Liseuse.lire(" euros.");*/
+		lancer();
+
+	}
+
+	@Override
+	public void remplir() {
 		ajouterElement("Acheter la voiture", new AchatVoiture(this, voiture));
 
-		ajouterElement("Écouter les spécifications", new ActionMenu() {
+		ajouterElement("Écouter les spécifications complètes", new ActionMenu() {
 			
 			@Override
 			public void actionMenu() {
@@ -36,14 +48,7 @@ public class VoitureMagasin extends Menu implements ActionMenu {
 			}
 		});
 		
-		ajouterElement("Voir plus d'informations sur le web", new MenuSources(this, v.getSources()));
-	}
-
-	@Override
-	public void actionMenu() {
-		/*Liseuse.lire(voiture.getPrix());
-		Liseuse.lire(" euros.");*/
-		lancer();
+		ajouterElement("Voir plus d'informations sur le web", new MenuSources(this, voiture.getSources()));
 
 	}
 

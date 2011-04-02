@@ -24,11 +24,13 @@ public abstract class Menu implements EcouteurEntrees {
 	public static Sound sonSuivant;
 	public static Sound sonPrecedent;
 	public static Sound sonTic;
+	public static Sound sonBoucle;
 	
 	static {
 		sonSuivant = new Sound("Sons/menus/suivant.ogg");
 		sonPrecedent = new Sound("Sons/menus/precedent.ogg");
 		sonTic = new Sound("Sons/menus/tic.wav");
+		sonBoucle = new Sound("Sons/menus/suivant.ogg");
 	}
 
 	public Menu(Menu menuPrecedent) {
@@ -87,9 +89,12 @@ public abstract class Menu implements EcouteurEntrees {
 	public void suivant() {
 		if (++courant == libelles.size()) {
 			courant = 0;
+			sonBoucle.play();
 		}
-
-		sonTic.play();
+		else
+		{
+			sonTic.play();			
+		}
 
 		Liseuse.interrompre();
 		ennoncer();

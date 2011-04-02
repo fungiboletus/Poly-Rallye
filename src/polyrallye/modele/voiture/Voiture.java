@@ -148,9 +148,16 @@ public class Voiture
 		Liseuse.lire(nom);
 		Liseuse.lire("Construite par ");
 		Liseuse.lire(constructeur);
-		Liseuse.lire(" entre ");
-		Liseuse.lire(debutDiffusion);
-		Liseuse.lire(" et ");
+		
+		if (debutDiffusion == finDiffusion)
+		{
+			Liseuse.lire("en");
+			Liseuse.lire(debutDiffusion);
+		} else {
+			Liseuse.lire(" entre ");
+			Liseuse.lire(debutDiffusion);
+			Liseuse.lire(" et ");			
+		}
 		Liseuse.lire(finDiffusion);
 		Liseuse.lire("Valeur de ");
 		Liseuse.lire(prix);

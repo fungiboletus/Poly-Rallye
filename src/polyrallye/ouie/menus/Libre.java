@@ -11,7 +11,7 @@ public class Libre extends SelectionVoiture {
 
 	@Override
 	public void actionMenu() {
-		Liseuse.lire("Sélectionnez la marque de la voiture");
+		Liseuse.lire("Sélectionnez la voiture");
 		lancer();
 	}
 
