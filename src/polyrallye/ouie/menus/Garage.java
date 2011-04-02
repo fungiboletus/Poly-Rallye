@@ -22,41 +22,34 @@ public class Garage extends Menu implements ActionMenu {
 	public Garage(Menu menuPrecedent) {
 		super(menuPrecedent);
 
-		listerVoitures();
-
 		messageMenuVide = "Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.";
 	}
 
 	public Sound getMusique() {
 		return musique;
 	}
-
-	public void listerVoitures() {
-		/*
-		 * for (Voiture v : Joueur.session.getGarage().getVoitures()) {
-		 * ajouterElement(v.getNom(), new MenuVoitureGarage(this, v)); }
-		 */
-
-		List<Voiture> l = Joueur.session.getGarage().getVoitures();
-		ListIterator<Voiture> i = l.listIterator(l.size());
-
-		while (i.hasPrevious()) {
-			Voiture v = i.previous();
-			System.out.println(v);
-			ajouterElement(v.getNomComplet(), new VoitureGarage(this, v));
-		}
-	}
-
+	
 	@Override
 	public void actionMenu() {
 
 		if (Joueur.session.getGarage().verifierChangement()) {
 			initialiser();
-			listerVoitures();
 		}
 
 		Liseuse.lire("Vous êtes dans votre garage. Vous pouvez sélectionner vos voitures.");
 
 		lancer();
+	}
+
+	@Override
+	public void remplir() {
+		List<Voiture> l = Joueur.session.getGarage().getVoitures();
+		ListIterator<Voiture> i = l.listIterator(l.size());
+
+		while (i.hasPrevious()) {
+			Voiture v = i.previous();
+			//System.out.println(v);
+			ajouterElement(v.getNomComplet(), new VoitureGarage(this, v));
+		}
 	}
 }

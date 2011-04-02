@@ -15,23 +15,6 @@ public class VenteVoiture extends Menu implements ActionMenu {
 		super(menuPrecedent);
 
 		voiture = v;
-
-		ajouterElement("Confirmer", new ActionMenu() {
-
-			@Override
-			public void actionMenu() {
-				try {
-					Joueur.session.vendreVoiture(voiture);
-
-					Liseuse.lire("Félicications pour cette vente");
-					Main.revenirAuMenuPrincipal();
-
-				} catch (Exception e) {
-					Liseuse.lire("Impossible de vendre la voiture");
-					Liseuse.lire(e.getMessage());
-				}
-			}
-		});
 	}
 
 	@Override
@@ -49,5 +32,25 @@ public class VenteVoiture extends Menu implements ActionMenu {
 		Liseuse.lire("euros. ");
 
 		lancer();
+	}
+
+	@Override
+	public void remplir() {
+		ajouterElement("Confirmer", new ActionMenu() {
+
+			@Override
+			public void actionMenu() {
+				try {
+					Joueur.session.vendreVoiture(voiture);
+
+					Liseuse.lire("Félicications pour cette vente");
+					Main.revenirAuMenuPrincipal();
+
+				} catch (Exception e) {
+					Liseuse.lire("Impossible de vendre la voiture");
+					Liseuse.lire(e.getMessage());
+				}
+			}
+		});
 	}
 }

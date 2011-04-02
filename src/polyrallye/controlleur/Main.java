@@ -1,9 +1,14 @@
 package polyrallye.controlleur;
 
+import java.util.Map.Entry;
+
 import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.voiture.StockVoitures;
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.FenetreNoire;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.menus.Principal;
+import polyrallye.utilitaires.Multithreading;
 
 public class Main {
 
@@ -21,7 +26,6 @@ public class Main {
 		
 		Liseuse.lancer();
 
-		Liseuse.lire(1405);
 		String nomJoueur = args.length > 1 ? args[0] : "Bob";
 		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
@@ -29,7 +33,12 @@ public class Main {
 		Liseuse.lire("PolyRallye");
 
 		menuPrincipal = new Principal();
-		//menuPrincipal.lancer();
+		menuPrincipal.lancer();
+		
+		for (Entry<Double, Voiture> s : StockVoitures.getVoituresParPerformances().entrySet())
+		{
+			System.out.println(s.getValue().getNomComplet() + "  " + s.getKey());
+		}
 	}
 
 	public static void quitter() {
@@ -39,9 +48,7 @@ public class Main {
 
 		Liseuse.lire("Salut");
 		
-		try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {}
+		Multithreading.dormir(400);
 		
 		Liseuse.arreter();
 	}

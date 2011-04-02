@@ -4,6 +4,7 @@ import java.util.Random;
 
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
+import polyrallye.utilitaires.Multithreading;
 
 public class Sfx extends Thread {
 
@@ -78,10 +79,7 @@ public class Sfx extends Thread {
 			}
 			// On le supprimme
 			temp.delete();
-			try {
-				Thread.sleep(intervalle * 1000);
-			} catch (InterruptedException e) {
-			}
+			Multithreading.dormir(intervalle * 1000);
 		}
 
 	}

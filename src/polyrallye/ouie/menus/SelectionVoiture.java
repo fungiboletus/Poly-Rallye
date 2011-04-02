@@ -11,7 +11,6 @@ import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
-import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 
 public class SelectionVoiture extends Menu implements ActionMenu {
@@ -19,6 +18,8 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 	protected static Sound musique;
 	
 	protected Map<String, Object> hierarchie;
+	
+	protected boolean modeArcade;
 
 	static {
 		/*musique = new Sound("Ressources/Reno Project - 1.0/02 - Atlanta.ogg");
@@ -32,13 +33,13 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 		return musique;
 	}
 	
-	public SelectionVoiture(Menu menuPrecedent) {
-		this(menuPrecedent, StockVoitures.getHierarchie());
+	public SelectionVoiture(Menu menuPrecedent, boolean modeArcade) {
+		this(menuPrecedent, StockVoitures.getHierarchie(), modeArcade);
 	}
 
-	public SelectionVoiture(Menu menuPrecedent, Map<String, Object> hierarchie) {
+	public SelectionVoiture(Menu menuPrecedent, Map<String, Object> hierarchie, boolean modeArcade) {
 		super(menuPrecedent);
-
+		this.modeArcade = modeArcade;
 		this.hierarchie = hierarchie;
 	}
 
@@ -68,7 +69,7 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 				// C'est parfois franchement très très moche le java
 				@SuppressWarnings("unchecked")
 				Map<String, Object> v2 = (Map<String, Object>) v;
-				ajouterElement(c.getKey(), new SelectionVoiture(this, v2));
+				ajouterElement(c.getKey(), new SelectionVoiture(this, v2, modeArcade));
 			}
 		}
 
@@ -77,7 +78,7 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 			Comparator<Voiture> c = new Comparator<Voiture>() {
 				@Override
 				public int compare(Voiture o1, Voiture o2) {
-					return ((Integer) o1.getPrix()).compareTo(o2.getPrix());
+					return ((Double) o1.getScore()).compareTo(o2.getScore());
 				}
 			};
 
@@ -89,7 +90,12 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 				if (libelle == null) {
 					libelle = "de série";
 				}
-				ajouterElement(libelle, new VoitureMagasin(this, v));
+				
+				if (modeArcade) {
+					ajouterElement(libelle, new VoitureArcade(this, v));
+				} else {
+					ajouterElement(libelle, new VoitureMagasin(this, v));
+				}
 			}
 		}
 	}

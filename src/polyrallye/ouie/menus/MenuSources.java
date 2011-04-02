@@ -15,23 +15,24 @@ public class MenuSources extends Menu implements ActionMenu {
 		super(menuPrecedent);
 
 		sources = s;
-
-		for (final URI u : s.getSources()) {
-			ajouterElement(u.getHost(), new ActionMenu() {
-
-				@Override
-				public void actionMenu() {
-					s.naviguer(u);
-				}
-			});
-		}
-
 	}
 
 	@Override
 	public void actionMenu() {
 		Liseuse.lire("Différentes sources disponibles");
 		lancer();
+	}
 
+	@Override
+	public void remplir() {
+		for (final URI u : sources.getSources()) {
+			ajouterElement(u.getHost(), new ActionMenu() {
+
+				@Override
+				public void actionMenu() {
+					sources.naviguer(u);
+				}
+			});
+		}
 	}
 }

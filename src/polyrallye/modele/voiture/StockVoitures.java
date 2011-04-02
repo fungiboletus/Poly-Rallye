@@ -2,6 +2,7 @@ package polyrallye.modele.voiture;
 
 import java.io.File;
 import java.util.Map;
+import java.util.NavigableMap;
 import java.util.TreeMap;
 
 import org.jdom.Element;
@@ -29,10 +30,16 @@ public abstract class StockVoitures {
 	 * Arbre de listes de voitures correspondant à la hierarchie des voitures.
 	 */
 	protected static Map<String, Object> hierarchieVoitures;
+	
+	/**
+	 * Arbre de voitures classées en fonction de leurs performances.
+	 */
+	protected static NavigableMap<Double, Voiture> voituresParPerformances;
 
 	static {
 		voitures = new TreeMap<String, Voiture>();
 		hierarchieVoitures = new TreeMap<String, Object>();
+		voituresParPerformances = new TreeMap<Double, Voiture>();
 
 		File dossier = new File("Voitures");
 
@@ -93,10 +100,14 @@ public abstract class StockVoitures {
 	 */
 	protected static void chargerFichierVoiture(File fichier,
 			Map<String, Object> hierarchie) throws Exception {
+		
 		Element noeud = GestionXML.chargerNoeudRacine(fichier);
+		
 		Voiture v = new Voiture(noeud);
+		
 		voitures.put(v.getNomComplet(), v);
 		hierarchie.put(v.getNomComplet(), v);
+		voituresParPerformances.put(v.getScore(), v);
 	}
 
 	/**
@@ -129,6 +140,10 @@ public abstract class StockVoitures {
 	 */
 	public static Map<String, Object> getHierarchie() {
 		return hierarchieVoitures;
+	}
+
+	public static NavigableMap<Double, Voiture> getVoituresParPerformances() {
+		return voituresParPerformances;
 	}
 
 }

@@ -119,6 +119,7 @@ public class Moteur {
     public int getRegimeRupteur() {
         return regimeRupteur;
     }
+    
     /**
      * Renvoie le couple de la voiture en fonction de son régime actuel
      * @param regime

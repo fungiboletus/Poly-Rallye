@@ -19,11 +19,15 @@ import t2s.son.LecteurTexte;
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.CallbackArretSon;
 import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.utilitaires.Multithreading;
 
 public abstract class Liseuse {
 
 	protected static LecteurTexte lt;
-	protected static Sound sonParoles;
+	protected static Sound sonParoles_A;
+	protected static Sound sonParoles_B;
+	
+	protected static int source = 0;
 
 	protected static Map<String, Parole> paroles;
 
@@ -34,13 +38,17 @@ public abstract class Liseuse {
 	protected static boolean lancee;
 
 	protected static boolean interrompre;
+	
+	protected static long delai = 100;
 
 	static {
 		fileParoles = new LinkedList<String>();
 
 		lt = new LecteurTexte();
-		sonParoles = new Sound("Paroles/paroles.ogg");
-		sonParoles.setGain(0.75f);
+		sonParoles_A = new Sound("Paroles/paroles.ogg");
+		sonParoles_A.setGain(0.90f);
+		sonParoles_B = new Sound(sonParoles_A);
+		sonParoles_B.setGain(0.90f);
 
 		paroles = new HashMap<String, Parole>();
 
@@ -81,10 +89,7 @@ public abstract class Liseuse {
 						// il ne peut pas avoir des pauses de 100 millisecondes
 						// pendant
 						// une même phrase
-						try {
-							Thread.sleep(100);
-						} catch (InterruptedException e) {
-						}
+						Multithreading.dormir(100);
 					}
 				}
 			}
@@ -109,6 +114,9 @@ public abstract class Liseuse {
 		String texte = fileParoles.poll();
 
 		if (texte == null) {
+			Multithreading.dormir(delai);
+			sonParoles_A.stop();
+			sonParoles_B.stop();
 			return false;
 		}
 
@@ -124,27 +132,36 @@ public abstract class Liseuse {
 		if (p != null) {
 			// System.out.println("alélouilla");
 			// System.out.println(p);
-			sonParoles.setOffset(p.getDebut());
-			sonParoles.play();
-			
 			long time = Sys.getTime();
 
-			long t = (long) ((p.getFin() - p.getDebut()) * 1000);
+			if (source == 0) {
+				sonParoles_A.setOffset(p.getDebut());
+				sonParoles_A.play();
+				Multithreading.dormir(delai);
+				sonParoles_B.stop();
+				source = 1;
+			} else {
+				sonParoles_B.setOffset(p.getDebut());
+				sonParoles_B.play();
+				Multithreading.dormir(delai);
+				sonParoles_A.stop();
+				source = 0;
+			}
+
+			long t = (long) ((p.getFin() - p.getDebut()) * 1000)-delai;
 
 			while (!interrompre) {
 				
 				if ((Sys.getTime() - time) > t) {
 					interrompre = true;
 				}
-				try {
-					Thread.sleep(50);
-				} catch (InterruptedException e) {
-				}
+				Multithreading.dormir(50);
 			}
-
-			sonParoles.stop();
 		} else {
 
+			sonParoles_A.stop();
+			sonParoles_B.stop();
+			
 			File d = new File("Paroles/Generated");
 			
 			if (!d.exists()) {
@@ -374,7 +391,8 @@ public abstract class Liseuse {
 	}
 
 	public static void marquerPause() {
-
+		// va faire deux pause de «delai»
+		fileParoles.add(null);
 	}
 
 }

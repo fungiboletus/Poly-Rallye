@@ -1,6 +1,7 @@
 package polyrallye.ouie.utilitaires;
 
 import polyrallye.ouie.CallbackArretSon;
+import polyrallye.utilitaires.Multithreading;
 
 public class Sound {
 
@@ -40,7 +41,7 @@ public class Sound {
 
 		charger(chemin);
 	}
-
+	
 	public Sound(String chemin) {
 		this();
 
@@ -49,6 +50,11 @@ public class Sound {
 		} catch (SoundException se) {
 			System.err.println(se.getMessage());
 		}
+	}
+	
+	public Sound(Sound source) {
+		data = source.data;
+		id = SoundScape.makeSoundSource(data);
 	}
 
 	public void pause(boolean pause) {
@@ -119,10 +125,7 @@ public class Sound {
 		play();
 
 		while (isPlaying()) {
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-			}
+			Multithreading.dormir(100);
 		}
 	}
 
@@ -130,10 +133,7 @@ public class Sound {
 		play();
 
 		while (isPlaying() && car.continuerLecture()) {
-			try {
-				Thread.sleep(50);
-			} catch (InterruptedException e) {
-			}
+			Multithreading.dormir(100);
 		}
 	}
 
@@ -176,9 +176,7 @@ public class Sound {
 					do {
 						setGain(gain);
 						gain -= d;
-						try {
-							Thread.sleep(50);
-						} catch (InterruptedException e) {}
+						Multithreading.dormir(50);
 					} while (gain > 0.0f);
 					
 					pause(true);
@@ -207,9 +205,7 @@ public class Sound {
 					do {
 						setGain(gain);
 						gain += d;
-						try {
-							Thread.sleep(50);
-						} catch (InterruptedException e) {}
+						Multithreading.dormir(50);
 					} while (gain < gainFinal);
 					
 					setGain(gainFinal);

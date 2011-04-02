@@ -15,23 +15,6 @@ public class AchatVoiture extends Menu implements ActionMenu {
 		super(menuPrecedent);
 
 		voiture = v;
-
-		ajouterElement("Confirmer", new ActionMenu() {
-
-			@Override
-			public void actionMenu() {
-				try {
-					Joueur.session.acheterVoiture(voiture);
-					
-					Liseuse.lire("félicitations pour votre achat. la voiture est dans votre garage");
-					Main.revenirAuMenuPrincipal();
-					
-				} catch (Exception e) {
-					Liseuse.lire("Impossible d'acheter la voiture");
-					Liseuse.lire(e.getMessage());
-				}
-			}
-		});
 	}
 
 	@Override
@@ -60,5 +43,25 @@ public class AchatVoiture extends Menu implements ActionMenu {
 			
 			lancer();
 		}
+	}
+
+	@Override
+	public void remplir() {
+		ajouterElement("Confirmer", new ActionMenu() {
+
+			@Override
+			public void actionMenu() {
+				try {
+					Joueur.session.acheterVoiture(voiture);
+					
+					Liseuse.lire("félicitations pour votre achat. la voiture est dans votre garage");
+					Main.revenirAuMenuPrincipal();
+					
+				} catch (Exception e) {
+					Liseuse.lire("Impossible d'acheter la voiture");
+					Liseuse.lire(e.getMessage());
+				}
+			}
+		});
 	}
 }

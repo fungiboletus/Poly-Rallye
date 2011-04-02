@@ -66,6 +66,8 @@ public abstract class Menu implements EcouteurEntrees {
 		actions = new ArrayList<ActionMenu>();
 
 		courant = 0;
+		
+		remplis = false;
 	}
 
 	public void lancer() {

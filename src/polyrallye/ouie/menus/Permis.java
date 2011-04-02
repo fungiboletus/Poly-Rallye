@@ -9,7 +9,6 @@ public class Permis extends Menu implements ActionMenu {
 
 	public Permis(Menu menuPrecedent) {
 		super(menuPrecedent);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -23,6 +22,12 @@ public class Permis extends Menu implements ActionMenu {
 		{
 			Liseuse.lire("Il existe des mondes où il vaut mieux avoir un permis de conduire.");
 		}
+	}
+
+	@Override
+	public void remplir() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
