@@ -24,12 +24,14 @@ public abstract class StockVoitures {
 	 * Map permettant d'obtenir une voiture à partir de son nom, de manière
 	 * efficace.
 	 */
-	protected static Map<String, Voiture> voitures;
+	protected static Map<String, Voiture> voituresParNom;
 
 	/**
 	 * Arbre de listes de voitures correspondant à la hierarchie des voitures.
+	 * 
+	 * Le premier niveau correspond aux constructeurs, le deuxièmes aux modèles, et le troisième aux versions.
 	 */
-	protected static Map<String, Object> hierarchieVoitures;
+	protected static Map<String, Map<String, Map<String, Voiture>>> hierarchieVoitures;
 	
 	/**
 	 * Arbre de voitures classées en fonction de leurs performances.
@@ -37,8 +39,8 @@ public abstract class StockVoitures {
 	protected static NavigableMap<Double, Voiture> voituresParPerformances;
 
 	static {
-		voitures = new TreeMap<String, Voiture>();
-		hierarchieVoitures = new TreeMap<String, Object>();
+		voituresParNom = new TreeMap<String, Voiture>();
+		hierarchieVoitures = new TreeMap<String, Map<String, Map<String, Voiture>>>();
 		voituresParPerformances = new TreeMap<Double, Voiture>();
 
 		File dossier = new File("Voitures");
@@ -47,7 +49,7 @@ public abstract class StockVoitures {
 			Liseuse.lire("Le jeu ne contient pas de dossier de voitures.");
 		}
 
-		chargerDossier(dossier, hierarchieVoitures);
+		chargerDossier(dossier);
 	}
 
 	/**
@@ -62,21 +64,14 @@ public abstract class StockVoitures {
 	 *            Noeud de l'arbre permettant de stocker la hiérachie des
 	 *            voitures
 	 */
-	protected static void chargerDossier(File dossier,
-			Map<String, Object> hierarchie) {
+	protected static void chargerDossier(File dossier) {
 		for (File fichier : dossier.listFiles()) {
 			if (fichier.isDirectory()) {
-
-				Map<String, Object> nouvelleHierarchie = new TreeMap<String, Object>();
-
-				chargerDossier(fichier, nouvelleHierarchie);
-
-				hierarchie.put(fichier.getName(), nouvelleHierarchie);
-
+				chargerDossier(fichier);
 			} else if (fichier.isFile() && !fichier.isHidden()
 					&& fichier.getName().endsWith(".xml")) {
 				try {
-					chargerFichierVoiture(fichier, hierarchie);
+					chargerFichierVoiture(fichier);
 				} catch (Exception e) {
 					System.out.println("Problème avec le fichier " + fichier);
 					e.printStackTrace();
@@ -98,16 +93,34 @@ public abstract class StockVoitures {
 	 *             Problème lors du chargement du fichier (fichier non valide,
 	 *             voiture non valide)
 	 */
-	protected static void chargerFichierVoiture(File fichier,
-			Map<String, Object> hierarchie) throws Exception {
+	protected static void chargerFichierVoiture(File fichier) throws Exception {
 		
 		Element noeud = GestionXML.chargerNoeudRacine(fichier);
 		
 		Voiture v = new Voiture(noeud);
 		
-		voitures.put(v.getNomComplet(), v);
-		hierarchie.put(v.getNomComplet(), v);
+		voituresParNom.put(v.getNomComplet(), v);
 		voituresParPerformances.put(v.getScore(), v);
+		
+		String constructeur = v.getConstructeur();
+		String nom = v.getNom();
+		String version = v.getVersion();
+		
+		Map<String, Map<String, Voiture>> mapConstructeur = hierarchieVoitures.get(constructeur);
+		
+		if (mapConstructeur == null) {
+			mapConstructeur = new TreeMap<String, Map<String,Voiture>>();
+			hierarchieVoitures.put(constructeur, mapConstructeur);
+		}
+		
+		Map<String, Voiture> mapModeles = mapConstructeur.get(nom);
+		
+		if (mapModeles == null) {
+			mapModeles = new TreeMap<String, Voiture>();
+			mapConstructeur.put(nom, mapModeles);
+		}
+		
+		mapModeles.put(version, v);
 	}
 
 	/**
@@ -118,7 +131,7 @@ public abstract class StockVoitures {
 	 * @return Voiture
 	 */
 	public static Voiture getVoitureParNom(String nom) {
-		return voitures.get(nom);
+		return voituresParNom.get(nom);
 	}
 
 	/**
@@ -126,8 +139,8 @@ public abstract class StockVoitures {
 	 * 
 	 * @return Liste des voitures
 	 */
-	public static Map<String, Voiture> getVoitures() {
-		return voitures;
+	public static Map<String, Voiture> getVoituresParNom() {
+		return voituresParNom;
 	}
 
 	/**
@@ -138,7 +151,7 @@ public abstract class StockVoitures {
 	 * 
 	 * @return Hierachie des voitures
 	 */
-	public static Map<String, Object> getHierarchie() {
+	public static Map<String, Map<String, Map<String, Voiture>>> getHierarchie() {
 		return hierarchieVoitures;
 	}
 

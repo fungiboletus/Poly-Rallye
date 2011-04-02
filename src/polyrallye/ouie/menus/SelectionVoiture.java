@@ -17,7 +17,7 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 
 	protected static Sound musique;
 	
-	protected Map<String, Object> hierarchie;
+	protected Map<String, Map<String, Map<String, Voiture>>> hierarchie;
 	
 	protected boolean modeArcade;
 
@@ -34,10 +34,10 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 	}
 	
 	public SelectionVoiture(Menu menuPrecedent, boolean modeArcade) {
-		this(menuPrecedent, StockVoitures.getHierarchie(), modeArcade);
+		this(menuPrecedent, modeArcade, StockVoitures.getHierarchie());
 	}
-
-	public SelectionVoiture(Menu menuPrecedent, Map<String, Object> hierarchie, boolean modeArcade) {
+	
+	protected SelectionVoiture(Menu menuPrecedent, boolean modeArcade, Map<String, Map<String, Map<String, Voiture>>> hierarchie) {
 		super(menuPrecedent);
 		this.modeArcade = modeArcade;
 		this.hierarchie = hierarchie;
@@ -54,49 +54,51 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 
 	@Override
 	public void remplir() {
+
+		if (hierarchie == null) return;
 		
-		// Les voitures sont triées par prix, donc on utilise un tableau
-		// temporaire
-		List<Voiture> listeVoitures = new ArrayList<Voiture>();
-
-		for (Entry<String, Object> c : hierarchie.entrySet()) {
-			Object v = c.getValue();
-
-			if (v instanceof Voiture) {
-				// Ajout au tableau temporaire des voitures
-				listeVoitures.add((Voiture) v);
-			} else if (v instanceof Map<?, ?>) {
-				// C'est parfois franchement très très moche le java
-				@SuppressWarnings("unchecked")
-				Map<String, Object> v2 = (Map<String, Object>) v;
-				ajouterElement(c.getKey(), new SelectionVoiture(this, v2, modeArcade));
-			}
-		}
-
-		if (listeVoitures.size() > 0) {
-			// Comparateur en fonction des prix des voitures
-			Comparator<Voiture> c = new Comparator<Voiture>() {
-				@Override
-				public int compare(Voiture o1, Voiture o2) {
-					return ((Double) o1.getScore()).compareTo(o2.getScore());
-				}
-			};
-
-			// Trie des voitures en fonction de leur prix
-			Collections.sort(listeVoitures, c);
-
-			for (Voiture v : listeVoitures) {
-				String libelle = v.getVersion();
-				if (libelle == null) {
-					libelle = "de série";
+		for (Entry<String, Map<String, Map<String, Voiture>>> c : hierarchie.entrySet()) {
+			SelectionVoiture menuConstructeur = new SelectionVoiture(this, modeArcade, null);
+			
+			for (Entry<String, Map<String, Voiture>> cc : c.getValue().entrySet()) {
+				SelectionVoiture menuModele = new SelectionVoiture(menuConstructeur, modeArcade, null);
+				
+				// Les voitures sont triées par prix, donc on utilise un tableau
+				// temporaire
+				List<Voiture> listeVoitures = new ArrayList<Voiture>();
+				
+				for (Entry<String, Voiture> ccc : cc.getValue().entrySet()) {
+					listeVoitures.add(ccc.getValue());
 				}
 				
-				if (modeArcade) {
-					ajouterElement(libelle, new VoitureArcade(this, v));
-				} else {
-					ajouterElement(libelle, new VoitureMagasin(this, v));
+				// Comparateur en fonction des prix des voitures
+				Comparator<Voiture> comparateur = new Comparator<Voiture>() {
+					@Override
+					public int compare(Voiture o1, Voiture o2) {
+						return ((Double) o1.getScore()).compareTo(o2.getScore());
+					}
+				};
+
+				// Trie des voitures en fonction de leur prix
+				Collections.sort(listeVoitures, comparateur);
+
+				for (Voiture v : listeVoitures) {
+					String libelle = v.getVersion();
+					if (libelle == null) {
+						libelle = "de série";
+					}
+					
+					if (modeArcade) {
+						menuModele.ajouterElement(libelle, new VoitureArcade(menuModele, v));
+					} else {
+						menuModele.ajouterElement(libelle, new VoitureMagasin(menuModele, v));
+					}
 				}
+				
+				menuConstructeur.ajouterElement(cc.getKey(), menuModele);
 			}
+			
+			ajouterElement(c.getKey(), menuConstructeur);
 		}
 	}
 
