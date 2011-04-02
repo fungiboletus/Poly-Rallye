@@ -1,5 +1,9 @@
 package polyrallye.ouie.utilitaires;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import polyrallye.ouie.CallbackArretSon;
 import polyrallye.utilitaires.Multithreading;
 
@@ -24,13 +28,26 @@ public class Sound {
 			super(cause);
 		}
 	}
+	
+	protected class TupleData {
+		public int nbReferences;
+		public int data;
+	}
 
+	protected static Map<String, TupleData> cacheData; 
+	
+	protected String chemin;
+	
 	protected int data;
 
 	protected int id;
 	
 	protected boolean enPause = false;
 
+	static {
+		cacheData = new HashMap<String, Sound.TupleData>();
+	}
+	
 	public Sound() {
 		data = -1;
 		id = -1;
@@ -141,18 +158,57 @@ public class Sound {
 		if (id != -1 && data != -1) {
 			this.stop();
 			SoundScape.deleteSoundSource(id);
-			SoundScape.deleteSoundData(data);
+			
+			TupleData cache = cacheData.get(chemin);
+			
+			if (cache != null) {
+				--cache.nbReferences;
+			}
+			//SoundScape.deleteSoundData(data);
+			
 			id = -1;
 			data = -1;
 		}
 	}
 
 	public void charger(String chemin) throws SoundException {
+		
 		if (id != -1 && data != -1) {
 			delete();
 		}
+		
+		this.chemin = chemin;
 
-		data = SoundScape.loadSoundData(chemin);
+		TupleData cache = cacheData.get(chemin);
+		
+		if (cache != null) {
+			data = cache.data;
+			++cache.nbReferences;
+			System.out.println("Cache pour "+chemin);
+		}
+		else
+		{
+			// Il ne faut pas garder trop de sons dans le cache
+			if (cacheData.size() > 64) {
+				for (Entry<String, TupleData> e : cacheData.entrySet()) {
+					TupleData td = e.getValue();
+					if (td.nbReferences == 0) {
+						SoundScape.deleteSoundData(td.data);
+						cacheData.remove(e.getKey());
+						System.out.println("enlèvement du cache pour "+e.getKey());
+					}
+				}
+			}
+			
+			data = SoundScape.loadSoundData(chemin);
+			if (data != -1) {
+				cache = new TupleData();
+				cache.data = data;
+				cache.nbReferences = 1;
+				cacheData.put(chemin, cache);				
+			}
+		}
+		
 		id = SoundScape.makeSoundSource(data);
 
 		if (id == -1 || data == -1) {

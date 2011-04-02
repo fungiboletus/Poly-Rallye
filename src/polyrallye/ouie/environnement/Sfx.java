@@ -76,6 +76,7 @@ public class Sfx extends Thread {
 					realDistance=distance;
 				temp.setPosition(positionX, positionY, positionZ);
 				}
+				Multithreading.dormir(20);
 			}
 			// On le supprimme
 			temp.delete();
