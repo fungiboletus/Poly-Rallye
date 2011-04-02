@@ -2,6 +2,7 @@ package polyrallye.ouie.menus;
 
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.Course;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
 
@@ -29,7 +30,8 @@ public class VoitureArcade extends Menu implements ActionMenu {
 
 	@Override
 	public void remplir() {
-		ajouterElement("Sélectionner cette voiture", null);
+
+		ajouterElement("Sélectionner cette voiture", new Course());
 
 		ajouterElement("Écouter les spécifications complètes", new ActionMenu() {
 			
