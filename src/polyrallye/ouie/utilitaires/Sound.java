@@ -1,4 +1,6 @@
-package polyrallye.ouie;
+package polyrallye.ouie.utilitaires;
+
+import polyrallye.ouie.CallbackArretSon;
 
 public class Sound {
 

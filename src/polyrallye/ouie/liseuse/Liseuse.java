@@ -1,4 +1,4 @@
-package polyrallye.ouie;
+package polyrallye.ouie.liseuse;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,6 +17,8 @@ import org.lwjgl.Sys;
 import t2s.son.LecteurTexte;
 
 import polyrallye.controlleur.Main;
+import polyrallye.ouie.CallbackArretSon;
+import polyrallye.ouie.utilitaires.Sound;
 
 public abstract class Liseuse {
 
@@ -162,7 +164,11 @@ public abstract class Liseuse {
 							.renameTo(f);
 
 				} catch (Exception e) {
+					// TODO La phrase d'en dessous doit obligatoirement 
+					// être enregistrée :D
+					Liseuse.lire("Erreur de synthèse vocale");
 					System.err.println("VocalizeSIVOX s'est planté…");
+					e.printStackTrace();
 					return true;
 				}
 			}

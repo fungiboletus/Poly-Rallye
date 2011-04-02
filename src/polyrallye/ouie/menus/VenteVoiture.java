@@ -4,14 +4,14 @@ import polyrallye.controlleur.Main;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.liseuse.Liseuse;
 
-public class MenuVenteVoiture extends Menu implements ActionMenu {
+public class VenteVoiture extends Menu implements ActionMenu {
 
 	protected Voiture voiture;
 
-	public MenuVenteVoiture(final MenuVoitureGarage menuPrecedent, Voiture v) {
+	public VenteVoiture(final VoitureGarage menuPrecedent, Voiture v) {
 		super(menuPrecedent);
 
 		voiture = v;
@@ -41,7 +41,7 @@ public class MenuVenteVoiture extends Menu implements ActionMenu {
 		int prix = (int) (voiture.getPrix()*0.7);
 
 		Liseuse.lire("Vendre la voiture ");
-		Liseuse.lire(voiture.getNom());
+		Liseuse.lire(voiture.getNomComplet());
 		Liseuse.lire(" pour ");
 		Liseuse.lire(prix);
 		Liseuse.lire(" euros. Vous aurez alors ");

@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Bugatti Veyron 16.4 Super Sport</nom>
-	<economie>
-		<rarete>6</rarete>
-		<prix>500 000</prix>
-	</economie>
 	<presentation>
 		<constructeur>Bugatti</constructeur>
+		<nom>Veyron</nom>
+		<version>16.4 Super Sport</version>
 		<periode debut="2005" fin="2011"/>
 	</presentation>
+	<economie>
+		<rarete>6</rarete>
+		<prix>300 000</prix>
+	</economie>
 	<moteur>
 		<configuration nb_cylindres="16" disposition="v" compression="turbo" nb_soupapes="64"/>
 		<cylindree>7993</cylindree>

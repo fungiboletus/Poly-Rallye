@@ -1,4 +1,4 @@
-package polyrallye.ouie;
+package polyrallye.ouie.liseuse;
 
 public class Parole {
 

@@ -5,13 +5,13 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.EcouteurEntrees;
 import polyrallye.ouie.FenetreNoire;
 import polyrallye.ouie.GestionEntrees;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.SonMoteur;
-import polyrallye.ouie.Sound;
 import polyrallye.ouie.environnement.Environnement;
+import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.utilitaires.Sound;
 
-public class MenuPrincipal extends Menu {
+public class Principal extends Menu {
 
 	protected static Sound musique;
 	
@@ -20,11 +20,10 @@ public class MenuPrincipal extends Menu {
 		//musique.setLoop(true);
 	}
 	
-	public MenuPrincipal() {
-		super(new MenuQuitter());
+	public Principal() {
+		super(new Quitter());
 
-
-		ajouterElement("Course rapide", new ActionMenu() {
+		/*ajouterElement("Course rapide", new ActionMenu() {
 			
 			@Override
 			public void actionMenu() {
@@ -81,18 +80,18 @@ public class MenuPrincipal extends Menu {
 					public void run()
 					{
 						try {*/
-							SonMoteur.lancer();
+							//SonMoteur.lancer();
 						/*} catch (InterruptedException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}						
 					}
-				}.start();*/
+				//}.start();/
 			}
 		});
 		ajouterElement("Garage", new MenuGarage(this));
 		ajouterElement("Magasins", new MenuMagasins(this));
-		ajouterElement("Permis", new MenuPermis(this));
+		ajouterElement("Permis", new MenuPermis(this));*/
 	}
 	
 	public Sound getMusique() {
@@ -103,6 +102,12 @@ public class MenuPrincipal extends Menu {
 	{
 		Liseuse.lire("Menu principal");
 		super.lancer();
+	}
+
+	@Override
+	public void remplir() {
+		ajouterElement("Mode libre", new Libre(this));
+		//ajouterElement("Carrière", new Carriere(this));
 	}
 
 }

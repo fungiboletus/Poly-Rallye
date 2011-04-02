@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Citroën DS3 WRC</nom>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>DS3</nom>
+		<version>WRC</version>
+		<periode debut="2010" fin="2011"/>
+	</presentation>
 	<economie>
 		<rarete>7</rarete>
 		<prix>100 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Citroën</constructeur>
-		<periode debut="2010" fin="2011"/>
-	</presentation>
 	<moteur nom="THP 200">
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1598</cylindree>

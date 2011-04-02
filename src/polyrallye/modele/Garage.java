@@ -32,7 +32,7 @@ public class Garage {
 
 		for (Voiture v : voitures) {
 			Element n = new Element("voiture");
-			n.setText(v.getNom());
+			n.setText(v.getNomComplet());
 
 			noeud.addContent(n);
 		}

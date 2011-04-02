@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 307 CC 2.0 180</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>307</nom>
+		<version>CC 2 litres 180</version>
+		<periode debut="2000" fin="2007"/>
+	</presentation>
 	<economie>
 		<rarete>1</rarete>
 		<prix>10 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="2000" fin="2007"/>
-	</presentation>
 	<moteur nom="EW10J4S">
 		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="16"/>
 		<cylindree>1997</cylindree>

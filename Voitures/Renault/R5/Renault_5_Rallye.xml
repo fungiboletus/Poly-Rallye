@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Renault 5 Turbo Rallye</nom>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>R5</nom>
+		<version>Turbo Rallye</version>
+		<periode debut="1980" fin="1984"/>
+	</presentation>
 	<economie>
 		<rarete>4</rarete>
 		<prix>20 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Renault</constructeur>
-		<periode debut="1980" fin="1984"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="8"/>
 		<cylindree>1397</cylindree>

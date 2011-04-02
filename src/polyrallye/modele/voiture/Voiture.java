@@ -2,12 +2,13 @@ package polyrallye.modele.voiture;
 
 import org.jdom.Element;
 
-import polyrallye.ouie.Liseuse;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 public class Voiture
 {
 	protected String nom;
+	protected String version;
 	protected String constructeur;
 
 	protected int rarete;
@@ -35,9 +36,10 @@ public class Voiture
 	{
 		super();
 		
-		nom = noeud.getChildText("nom");
 		
 		Element presentation = noeud.getChild("presentation");
+		nom = presentation.getChildText("nom");
+		version = presentation.getChildText("version");
 		constructeur = presentation.getChildText("constructeur");
 		
 		Element economie = noeud.getChild("economie");
@@ -54,9 +56,24 @@ public class Voiture
 		sources = new Sources(noeud.getChild("sources"));
 	}
 
-	public String getNom()
+	public String getNomComplet()
 	{
+		StringBuilder sb = new StringBuilder(constructeur);
+		sb.append(" ");
+		sb.append(nom);
+		if (version != null) {
+			sb.append(" ");
+			sb.append(version);
+		}
+		return sb.toString();
+	}
+
+	public String getNom() {
 		return nom;
+	}
+
+	public String getVersion() {
+		return version;
 	}
 
 	public String getConstructeur()

@@ -4,14 +4,14 @@ import polyrallye.controlleur.Main;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.liseuse.Liseuse;
 
-public class MenuAchatVoiture extends Menu implements ActionMenu {
+public class AchatVoiture extends Menu implements ActionMenu {
 
 	protected Voiture voiture;
 
-	public MenuAchatVoiture(final MenuVoitureMagasin menuPrecedent, Voiture v) {
+	public AchatVoiture(final VoitureMagasin menuPrecedent, Voiture v) {
 		super(menuPrecedent);
 
 		voiture = v;
@@ -46,11 +46,11 @@ public class MenuAchatVoiture extends Menu implements ActionMenu {
 			Liseuse.lire(prix-argent);
 			Liseuse.lire("euros");
 			Liseuse.lire("pour acheter la voiture ");
-			Liseuse.lire(voiture.getNom());
+			Liseuse.lire(voiture.getNomComplet());
 		} else
 		{
 			Liseuse.lire("Acheter la voiture ");
-			Liseuse.lire(voiture.getNom());
+			Liseuse.lire(voiture.getNomComplet());
 			Liseuse.lire(" pour ");
 			Liseuse.lire(prix);
 			Liseuse.lire("euros");

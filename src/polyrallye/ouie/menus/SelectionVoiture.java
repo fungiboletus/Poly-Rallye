@@ -10,15 +10,15 @@ import java.util.Map.Entry;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
-import polyrallye.ouie.Sound;
+import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.utilitaires.Sound;
 
-public class MenuMagasins extends Menu implements ActionMenu {
-
-	protected boolean racineMagasin;
+public class SelectionVoiture extends Menu implements ActionMenu {
 
 	protected static Sound musique;
+	
+	protected Map<String, Object> hierarchie;
 
 	static {
 		/*musique = new Sound("Ressources/Reno Project - 1.0/02 - Atlanta.ogg");
@@ -32,17 +32,28 @@ public class MenuMagasins extends Menu implements ActionMenu {
 		return musique;
 	}
 	
-	public MenuMagasins(Menu menuPrecedent) {
+	public SelectionVoiture(Menu menuPrecedent) {
 		this(menuPrecedent, StockVoitures.getHierarchie());
-
-		racineMagasin = true;
 	}
 
-	public MenuMagasins(Menu menuPrecedent, Map<String, Object> hierarchie) {
+	public SelectionVoiture(Menu menuPrecedent, Map<String, Object> hierarchie) {
 		super(menuPrecedent);
 
-		racineMagasin = false;
+		this.hierarchie = hierarchie;
+	}
 
+	/*@Override
+	public void actionMenu() {
+		if (hierarchie != null) {
+			Liseuse.lire("Vous pouvez acheter de nombreuses voitures dans les magasins.");
+		}
+		
+		lancer();
+	}*/
+
+	@Override
+	public void remplir() {
+		
 		// Les voitures sont triées par prix, donc on utilise un tableau
 		// temporaire
 		List<Voiture> listeVoitures = new ArrayList<Voiture>();
@@ -57,7 +68,7 @@ public class MenuMagasins extends Menu implements ActionMenu {
 				// C'est parfois franchement très très moche le java
 				@SuppressWarnings("unchecked")
 				Map<String, Object> v2 = (Map<String, Object>) v;
-				ajouterElement(c.getKey(), new MenuMagasins(this, v2));
+				ajouterElement(c.getKey(), new SelectionVoiture(this, v2));
 			}
 		}
 
@@ -74,17 +85,13 @@ public class MenuMagasins extends Menu implements ActionMenu {
 			Collections.sort(listeVoitures, c);
 
 			for (Voiture v : listeVoitures) {
-				ajouterElement(v.getNom(), new MenuVoitureMagasin(this, v));
+				ajouterElement(v.getNomComplet(), new VoitureMagasin(this, v));
 			}
 		}
 	}
 
 	@Override
 	public void actionMenu() {
-		if (racineMagasin) {
-			Liseuse.lire("Vous pouvez acheter de nombreuses voitures dans les magasins.");
-		}
-		
 		lancer();
 	}
 

@@ -2,14 +2,14 @@ package polyrallye.controlleur;
 
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.FenetreNoire;
-import polyrallye.ouie.Liseuse;
-import polyrallye.ouie.menus.MenuPrincipal;
+import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.menus.Principal;
 
 public class Main {
 
 	protected static FenetreNoire fenetre;
 
-	protected static MenuPrincipal menuPrincipal;
+	protected static Principal menuPrincipal;
 
 	/**
 	 * @param args
@@ -21,12 +21,13 @@ public class Main {
 		
 		Liseuse.lancer();
 
-		Joueur j = Joueur.chargerJoueur("Bob");
+		String nomJoueur = args.length > 1 ? args[0] : "Bob";
+		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
 
 		Liseuse.lire("PolyRallye");
 
-		menuPrincipal = new MenuPrincipal();
+		menuPrincipal = new Principal();
 		menuPrincipal.lancer();
 	}
 
@@ -60,7 +61,7 @@ public class Main {
 		}
 	}
 
-	public static MenuPrincipal getMenuPrincipal() {
+	public static Principal getMenuPrincipal() {
 		return menuPrincipal;
 	}
 }

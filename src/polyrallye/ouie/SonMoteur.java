@@ -7,7 +7,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.TreeMap;
 
-import polyrallye.ouie.Sound;
+import polyrallye.ouie.utilitaires.Sound;
 import t2s.util.Random;
 
 public class SonMoteur {

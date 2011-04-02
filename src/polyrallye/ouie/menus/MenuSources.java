@@ -4,8 +4,8 @@ import java.net.URI;
 
 import polyrallye.modele.voiture.Sources;
 import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.liseuse.Liseuse;
 
 public class MenuSources extends Menu implements ActionMenu {
 

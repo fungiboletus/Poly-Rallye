@@ -1,6 +1,6 @@
 import java.util.Random;
 
-import polyrallye.ouie.Sound;
+import polyrallye.ouie.utilitaires.Sound;
 
 public class TestSoundPerso {
 

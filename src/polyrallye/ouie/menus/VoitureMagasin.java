@@ -3,9 +3,9 @@ package polyrallye.ouie.menus;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
-import polyrallye.ouie.Sound;
+import polyrallye.ouie.utilitaires.Sound;
 
-public class MenuVoitureMagasin extends Menu implements ActionMenu {
+public class VoitureMagasin extends Menu implements ActionMenu {
 
 	protected static Sound musique;
 
@@ -21,12 +21,12 @@ public class MenuVoitureMagasin extends Menu implements ActionMenu {
 	
 	protected Voiture voiture;
 
-	public MenuVoitureMagasin(Menu menuPrecedent, Voiture v) {
+	public VoitureMagasin(Menu menuPrecedent, Voiture v) {
 		super(menuPrecedent);
 		
 		voiture = v;		
 
-		ajouterElement("Acheter la voiture", new MenuAchatVoiture(this, voiture));
+		ajouterElement("Acheter la voiture", new AchatVoiture(this, voiture));
 
 		ajouterElement("Écouter les spécifications", new ActionMenu() {
 			

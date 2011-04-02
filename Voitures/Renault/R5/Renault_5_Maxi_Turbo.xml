@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Renault 5 Maxi Turbo</nom>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>R5</nom>
+		<version>Maxi Turbo</version>
+		<periode debut="1985" fin="1986"/>
+	</presentation>
 	<economie>
 		<rarete>6</rarete>
 		<prix>24 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Renault</constructeur>
-		<periode debut="1985" fin="1986"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="8"/>
 		<cylindree>1397</cylindree>

@@ -1,4 +1,4 @@
-package polyrallye.ouie.ogg;
+package polyrallye.ouie.utilitaires.ogg;
 
 import java.nio.ByteBuffer;
 

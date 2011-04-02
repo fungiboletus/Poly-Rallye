@@ -2,8 +2,8 @@ package polyrallye.ouie.environnement;
 
 import java.util.Random;
 
-import polyrallye.ouie.Sound;
-import polyrallye.ouie.Sound.SoundException;
+import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.ouie.utilitaires.Sound.SoundException;
 
 public class Sfx extends Thread {
 

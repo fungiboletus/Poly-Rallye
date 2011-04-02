@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Citroën Xsara Kit Car</nom>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>Xsara</nom>
+		<version>Kit car</version>
+		<periode debut="1998" fin="2000"/>
+	</presentation>
 	<economie>
 		<rarete>3</rarete>
 		<prix>25 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Citroën</constructeur>
-		<periode debut="1998" fin="2000"/>
-	</presentation>
 	<moteur nom="EW10J4S">
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1998</cylindree>

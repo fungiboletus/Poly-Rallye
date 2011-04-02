@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 205 Turbo 16 Pikes Peak</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>205</nom>
+		<version>Turbo 16 Pikes Peak</version>
+		<periode debut="1982" fin="1987"/>
+	</presentation>
 	<economie>
 		<rarete>10</rarete>
 		<prix>45 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1982" fin="1987"/>
-	</presentation>
 	<moteur nom="XU8T">
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1775</cylindree>

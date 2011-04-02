@@ -7,7 +7,7 @@ import org.jdom.Element;
 import polyrallye.modele.Garage;
 import polyrallye.modele.Permis;
 import polyrallye.modele.voiture.Voiture;
-import polyrallye.ouie.Liseuse;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 public class Joueur extends Personne

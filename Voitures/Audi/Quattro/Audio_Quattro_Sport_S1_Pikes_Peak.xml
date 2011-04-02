@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Audi Quattro Sport S1 Pikes Peak</nom>
-	<economie>
-		<rarete>9</rarete>
-		<prix>85 000</prix>
-	</economie>
 	<presentation>
 		<constructeur>Audi</constructeur>
+		<nom>Quattro</nom>
+		<version>S1 Pikes Peak</version>
 		<periode debut="1987" fin="1987"/>
 	</presentation>
+	<economie>
+		<rarete>9</rarete>
+		<prix>185 000</prix>
+	</economie>
 	<moteur>
 		<configuration nb_cylindres="5" disposition="ligne" compression="turbo" nb_soupapes="20"/>
 		<cylindree>2133</cylindree>

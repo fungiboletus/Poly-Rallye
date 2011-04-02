@@ -2,30 +2,13 @@ package polyrallye.ouie.menus;
 
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.liseuse.Liseuse;
 
-public class MenuQuitter extends Menu  {
+public class Quitter extends Menu {
 
-	public MenuQuitter() {
+	public Quitter() {
 		super(null);
-
-		ajouterElement("Non", new ActionMenu() {
-			
-			@Override
-			public void actionMenu() {
-				Main.getMenuPrincipal().lancer();
-			}
-		});
-		
-		ajouterElement("Oui", new ActionMenu() {
-			
-			@Override
-			public void actionMenu() {
-				annuler();
-			}
-		});
-		
 	}
 
 	@Override
@@ -33,10 +16,28 @@ public class MenuQuitter extends Menu  {
 		Liseuse.lire("Voulez vous quitter le jeu ?");
 		super.lancer();
 	}
-	
+
 	@Override
-	public void annuler()
-	{
+	public void annuler() {
 		Main.demanderAQuitter();
+	}
+
+	@Override
+	public void remplir() {
+		ajouterElement("Non", new ActionMenu() {
+
+			@Override
+			public void actionMenu() {
+				Main.getMenuPrincipal().lancer();
+			}
+		});
+
+		ajouterElement("Oui", new ActionMenu() {
+
+			@Override
+			public void actionMenu() {
+				annuler();
+			}
+		});
 	}
 }

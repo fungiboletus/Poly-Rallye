@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 import org.jdom.Element;
 
-import polyrallye.ouie.Liseuse;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -95,8 +95,8 @@ public abstract class StockVoitures {
 			Map<String, Object> hierarchie) throws Exception {
 		Element noeud = GestionXML.chargerNoeudRacine(fichier);
 		Voiture v = new Voiture(noeud);
-		voitures.put(v.getNom(), v);
-		hierarchie.put(v.getNom(), v);
+		voitures.put(v.getNomComplet(), v);
+		hierarchie.put(v.getNomComplet(), v);
 	}
 
 	/**

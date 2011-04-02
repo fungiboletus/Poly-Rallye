@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Renault Mégane 3 RS</nom>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>Mégane</nom>
+		<version>3 RS</version>
+		<periode debut="2009" fin="2011"/>
+	</presentation>
 	<economie>
 		<rarete>2</rarete>
 		<prix>16 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Renault</constructeur>
-		<periode debut="2009" fin="2011"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1998</cylindree>

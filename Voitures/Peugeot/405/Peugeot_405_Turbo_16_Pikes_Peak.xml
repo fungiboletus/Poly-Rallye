@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 405 Turbo 16 Pikes Peak</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>405</nom>
+		<version>Turbo 16 Pikes Peak</version>
+		<periode debut="1988" fin="1990"/>
+	</presentation>
 	<economie>
 		<rarete>8</rarete>
 		<prix>45 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1988" fin="1990"/>
-	</presentation>
 	<moteur nom="XU9T">
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1905</cylindree>

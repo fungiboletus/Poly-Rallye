@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Subaru Impreza WRC Génération 3 Gendarmerie</nom>
+	<presentation>
+		<constructeur>Subaru</constructeur>
+		<nom>Impreza</nom>
+		<version>WRX 3 Gendarmerie</version>
+		<periode debut="2003" fin="2005"/>
+	</presentation>
 	<economie>
 		<rarete>6</rarete>
 		<prix>27 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Subaru</constructeur>
-		<periode debut="2003" fin="2005"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="boxer" compression="turbo" nb_soupapes="16"/>
 		<cylindree>2500</cylindree>

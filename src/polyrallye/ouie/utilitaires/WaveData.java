@@ -1,5 +1,5 @@
 
-package polyrallye.ouie;
+package polyrallye.ouie.utilitaires;
 
 /* 
  * Copyright (c) 2002-2004 LWJGL Project

@@ -6,11 +6,11 @@ import java.util.ListIterator;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
-import polyrallye.ouie.Sound;
+import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.utilitaires.Sound;
 
-public class MenuGarage extends Menu implements ActionMenu {
+public class Garage extends Menu implements ActionMenu {
 
 	protected static Sound musique;
 
@@ -19,7 +19,7 @@ public class MenuGarage extends Menu implements ActionMenu {
 		musique.setLoop(true);
 	}
 
-	public MenuGarage(Menu menuPrecedent) {
+	public Garage(Menu menuPrecedent) {
 		super(menuPrecedent);
 
 		listerVoitures();
@@ -43,7 +43,7 @@ public class MenuGarage extends Menu implements ActionMenu {
 		while (i.hasPrevious()) {
 			Voiture v = i.previous();
 			System.out.println(v);
-			ajouterElement(v.getNom(), new MenuVoitureGarage(this, v));
+			ajouterElement(v.getNomComplet(), new VoitureGarage(this, v));
 		}
 	}
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.jdom.Element;
 
-import polyrallye.ouie.Liseuse;
+import polyrallye.ouie.liseuse.Liseuse;
 
 public class Sources
 {

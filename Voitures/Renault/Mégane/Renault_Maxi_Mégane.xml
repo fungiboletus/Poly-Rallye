@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Renault Maxi Mégane</nom>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>Mégane</nom>
+		<version>Maxi</version>
+		<periode debut="1996" fin="2001"/>
+	</presentation>
 	<economie>
 		<rarete>5</rarete>
 		<prix>30 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Renault</constructeur>
-		<periode debut="1996" fin="2001"/>
-	</presentation>
 	<moteur nom="Renault F7R710">
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1995</cylindree>

@@ -14,7 +14,7 @@
  */
 
 
-package polyrallye.ouie;
+package polyrallye.ouie.utilitaires;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -32,8 +32,8 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import polyrallye.ouie.ogg.OggData;
-import polyrallye.ouie.ogg.OggDecoder;
+import polyrallye.ouie.utilitaires.ogg.OggData;
+import polyrallye.ouie.utilitaires.ogg.OggDecoder;
 
 
 public abstract class SoundScape {

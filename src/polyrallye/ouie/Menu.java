@@ -3,6 +3,9 @@ package polyrallye.ouie;
 import java.util.ArrayList;
 import java.util.List;
 
+import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.utilitaires.Sound;
+
 public abstract class Menu implements EcouteurEntrees {
 
 	protected List<String> libelles;
@@ -11,6 +14,8 @@ public abstract class Menu implements EcouteurEntrees {
 	protected int courant;
 
 	protected Menu menuPrecedent;
+	
+	protected boolean remplis = false;
 
 	protected String messageMenuVide = "Le menu est vide";
 	
@@ -62,6 +67,11 @@ public abstract class Menu implements EcouteurEntrees {
 	}
 
 	public void lancer() {
+		if (!remplis) {
+			remplir();
+			remplis = true;
+		}
+		
 		if (libelles.size() > 0) {
 			GestionEntrees.getInstance().setEcouteur(this);
 		}
@@ -157,4 +167,6 @@ public abstract class Menu implements EcouteurEntrees {
 	public void setMessageMenuVide(String messageMenuVide) {
 		this.messageMenuVide = messageMenuVide;
 	}
+	
+	public abstract void remplir();
 }

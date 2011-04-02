@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 405 Turbo 16</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>405</nom>
+		<version>Turbo 16</version>
+		<periode debut="1988" fin="1993"/>
+	</presentation>
 	<economie>
 		<rarete>3</rarete>
 		<prix>10 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1988" fin="1993"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1998</cylindree>

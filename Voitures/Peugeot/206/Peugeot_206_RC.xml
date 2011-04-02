@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 206 RC</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>u
+		<nom>206</nom>
+		<version>RC</version>
+		<periode debut="2003" fin="2006"/>
+	</presentation>
 	<economie>
 		<rarete>4</rarete>
 		<prix>19 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="2003" fin="2006"/>
-	</presentation>
 	<moteur nom="EW10J4S">
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1997</cylindree>

@@ -2,7 +2,7 @@ package polyrallye.modele.voiture;
 
 import org.jdom.Element;
 
-import polyrallye.ouie.Liseuse;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 public class Moteur {

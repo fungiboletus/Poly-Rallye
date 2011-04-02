@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 206 S16</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>206</nom>
+		<version>S16</version>
+		<periode debut="1999" fin="2007"/>
+	</presentation>
 	<economie>
 		<rarete>1</rarete>
 		<prix>12 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1999" fin="2007"/>
-	</presentation>
 	<moteur nom="EW10J4">
 		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="16"/>
 		<cylindree>1997</cylindree>

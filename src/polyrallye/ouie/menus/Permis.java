@@ -2,12 +2,12 @@ package polyrallye.ouie.menus;
 
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Liseuse;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.liseuse.Liseuse;
 
-public class MenuPermis extends Menu implements ActionMenu {
+public class Permis extends Menu implements ActionMenu {
 
-	public MenuPermis(Menu menuPrecedent) {
+	public Permis(Menu menuPrecedent) {
 		super(menuPrecedent);
 		// TODO Auto-generated constructor stub
 	}

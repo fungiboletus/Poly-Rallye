@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 306 S16</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>306</nom>
+		<version>S16</version>
+		<periode debut="1993" fin="2002"/>
+	</presentation>
 	<economie>
 		<rarete>2</rarete>
 		<prix>10 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1993" fin="2002"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="16"/>
 		<cylindree>1998</cylindree>

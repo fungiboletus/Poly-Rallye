@@ -4,18 +4,18 @@ import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 
-public class MenuVoitureGarage extends Menu implements ActionMenu {
+public class VoitureGarage extends Menu implements ActionMenu {
 
 	protected Voiture voiture;
 
-	public MenuVoitureGarage(Menu menuPrecedent, Voiture v) {
+	public VoitureGarage(Menu menuPrecedent, Voiture v) {
 		super(menuPrecedent);
 
 		voiture = v;
 
 		ajouterElement("Tester la voiture", null);
 
-		ajouterElement("Vendre la voiture", new MenuVenteVoiture(this, voiture));
+		ajouterElement("Vendre la voiture", new VenteVoiture(this, voiture));
 
 		ajouterElement("Écouter les spécifications", new ActionMenu() {
 
