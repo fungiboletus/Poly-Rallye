@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>R8</nom>
+		<version>Spyder</version>
+		<periode annee="2009" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+		<prix>90000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="10" nb_soupapes="40" disposition="V" compression="normal"/>
+		<cylindree>5204</cylindree>
+		<puissance regime="8000">518</puissance>
+		<couple_max regime="6500">530</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1720</poids>
+		<largeur>1904</largeur>
+		<longueur>4434</longueur>
+		<empattement>2650</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=202884</source>
+	</sources>
+</voiture>

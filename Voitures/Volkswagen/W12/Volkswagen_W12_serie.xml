@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Volkswagen</constructeur>
+		<nom>W12</nom>
+		<periode annee="1997" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>56000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="48" disposition="ligne" compression="normal"/>
+		<cylindree>5584</cylindree>
+		<puissance regime="5800">420</puissance>
+		<couple_max regime="3000">530</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1200</poids>
+		<largeur>1920</largeur>
+		<longueur>4400</longueur>
+		<empattement>2530</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=15598</source>
+	</sources>
+</voiture>

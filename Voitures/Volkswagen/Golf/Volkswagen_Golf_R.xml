@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Volkswagen</constructeur>
+		<nom>Golf</nom>
+		<version>R</version>
+		<periode annee="2009" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+		<prix>30000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="turbo"/>
+		<cylindree>1984</cylindree>
+		<puissance regime="6000">267</puissance>
+		<couple_max regime="2500">350</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1446</poids>
+		<largeur>1779</largeur>
+		<longueur>4212</longueur>
+		<empattement>2578</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=207592</source>
+	</sources>
+</voiture>
