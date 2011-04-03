@@ -36,6 +36,9 @@ public class Voiture {
 		Element presentation = noeud.getChild("presentation");
 		nom = presentation.getChildText("nom");
 		version = presentation.getChildText("version");
+		if (version == null) {
+			version = "serie";
+		}
 		constructeur = presentation.getChildText("constructeur");
 
 		Element economie = noeud.getChild("economie");

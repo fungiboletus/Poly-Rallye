@@ -13,7 +13,7 @@
 	<moteur>
 		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
 		<cylindree>2393</cylindree>
-		<puissance regime="6500">151;3R</puissance>
+		<puissance regime="6500">185</puissance>
 		<couple_max regime="4000">231</couple_max>
 	</moteur>
 	<transmission>

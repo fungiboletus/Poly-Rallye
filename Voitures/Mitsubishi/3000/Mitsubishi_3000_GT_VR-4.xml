@@ -7,8 +7,8 @@
 		<periode annee="1994" />
 	</presentation>
 	<economie>
-		<rarete></rarete>
-		<prix></prix>
+		<rarete>4</rarete>
+		<prix>41000</prix>
 	</economie>
 	<moteur>
 		<configuration nb_cylindres="6" nb_soupapes="24" disposition="V" compression="turbo"/>

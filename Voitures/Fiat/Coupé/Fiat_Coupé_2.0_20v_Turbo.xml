@@ -7,8 +7,8 @@
 		<periode annee="1996" />
 	</presentation>
 	<economie>
-		<rarete></rarete>
-		<prix></prix>
+		<rarete>3</rarete>
+		<prix>19000</prix>
 	</economie>
 	<moteur>
 		<configuration nb_cylindres="5" nb_soupapes="20" disposition="ligne" compression="turbo"/>
