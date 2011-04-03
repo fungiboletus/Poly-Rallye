@@ -26,6 +26,7 @@ public class Main {
 		
 		Liseuse.lancer();
 
+		
 		String nomJoueur = args.length > 1 ? args[0] : "Bob";
 		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
@@ -48,7 +49,7 @@ public class Main {
 
 		Liseuse.lire("Salut");
 		
-		Multithreading.dormir(400);
+		Multithreading.dormir(500);
 		
 		Liseuse.arreter();
 	}

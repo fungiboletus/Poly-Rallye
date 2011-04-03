@@ -11,11 +11,14 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.lwjgl.Sys;
 
 import t2s.son.LecteurTexte;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.CallbackArretSon;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
@@ -44,8 +47,14 @@ public abstract class Liseuse {
 	protected static boolean interrompre;
 	
 	protected static long delai = 100;
+	
+	protected static Pattern regexAbreviations;
 
 	static {
+
+		// On regarde quelles sont les abréviations (lettres en majuscules d'au moins 2 lettres de long)
+		regexAbreviations = Pattern.compile("[A-Z][A-Z]*[A-Z]");
+		
 		fileParoles = new LinkedList<String>();
 
 		lt = new LecteurTexte();
@@ -55,7 +64,7 @@ public abstract class Liseuse {
 		sonParoles_B.setGain(0.90f);
 
 		paroles = new HashMap<String, Parole>();
-
+		
 		try {
 			BufferedReader brMarqueurs = new BufferedReader(new FileReader(
 					"Paroles/marqueurs.txt"));
@@ -224,13 +233,43 @@ public abstract class Liseuse {
 	}
 
 	public static void lire(String texte) {
-		fileParoles.add(texte);
+		// VocalizeSIVOX a un peu de mal avec les abréviations, il faut rajouter des espaces
+		
+		// Nouveau texte à lire
+		StringBuffer sb = new StringBuffer();
+		
+		// On en profite pour remplacer les points par « points » pour éviter que la synthèse vocale s'arrête au milieu d'une cylindrée
+		Matcher regexMatcher = regexAbreviations.matcher(texte.replace(".", " point "));
+		
+		// Tant qu'il y a des abréviations
+		while (regexMatcher.find()) {
+			
+			// Construction de la nouvelle abréviation
+			StringBuilder remplacement = new StringBuilder();
+			remplacement.append(' ');
+			
+			for (char c : regexMatcher.toMatchResult().group().toCharArray())
+			{
+				remplacement.append(c);
+				remplacement.append(' ');
+			}
+			
+			// Remplacement de l'abréviation par la nouvelle
+			regexMatcher.appendReplacement(sb, remplacement.toString());
+		}
+		
+		// La suite
+		regexMatcher.appendTail(sb);
+		
+		Main.changerTexteFenetre(sb.toString());
+		
+		fileParoles.add(sb.toString());
 	}
 
 	public static void lire(int valeur) {
 		if (valeur >= 1000000) {
 			lire(valeur / 1000000);
-			Liseuse.lire(" millions ");
+			fileParoles.add(" millions ");
 
 			int reste = valeur % 1000000;
 
@@ -241,7 +280,7 @@ public abstract class Liseuse {
 			if (valeur / 1000 > 1) {
 				lire(valeur / 1000);
 			}
-			Liseuse.lire(" milles ");
+			fileParoles.add(" milles ");
 
 			int reste = valeur % 1000;
 
@@ -253,7 +292,7 @@ public abstract class Liseuse {
 				lire(valeur / 100);
 			}
 
-			Liseuse.lire(" cent ");
+			fileParoles.add(" cent ");
 
 			int reste = valeur % 100;
 
@@ -266,90 +305,90 @@ public abstract class Liseuse {
 
 			switch (dizaine) {
 			case 9:
-				Liseuse.lire(" quatre-vingt ");
+				fileParoles.add(" quatre-vingt ");
 				Liseuse.lire(valeur - 80);
 				reste = 0;
 				break;
 			case 8:
-				Liseuse.lire(" quatre-vingt");
+				fileParoles.add(" quatre-vingt");
 				break;
 			case 7:
-				Liseuse.lire(" soixante ");
+				fileParoles.add(" soixante ");
 				if (reste == 1) {
-					Liseuse.lire(" et ");
+					fileParoles.add(" et ");
 				}
 				Liseuse.lire(valeur - 60);
 				reste = 0;
 				break;
 			case 6:
-				Liseuse.lire(" soixante ");
+				fileParoles.add(" soixante ");
 				if (reste == 1) {
-					Liseuse.lire(" et ");
+					fileParoles.add(" et ");
 				}
 				break;
 			case 5:
-				Liseuse.lire(" cinquante ");
+				fileParoles.add(" cinquante ");
 				if (reste == 1) {
-					Liseuse.lire(" et ");
+					fileParoles.add(" et ");
 				}
 
 				break;
 			case 4:
-				Liseuse.lire(" quarante ");
+				fileParoles.add(" quarante ");
 				if (reste == 1) {
-					Liseuse.lire(" et ");
+					fileParoles.add(" et ");
 				}
 
 				break;
 			case 3:
-				Liseuse.lire(" trente ");
+				fileParoles.add(" trente ");
 				if (reste == 1) {
-					Liseuse.lire(" et ");
+					fileParoles.add(" et ");
 				}
 
 				break;
 			case 2:
 				if (reste == 0) {
-					Liseuse.lire(" vingt ");
+					fileParoles.add(" vingt ");
 				} else {
-					Liseuse.lire("vinte");
+					fileParoles.add("vinte");
 				}
 				if (reste == 1) {
-					Liseuse.lire(" et ");
+					fileParoles.add(" et ");
 				}
 
 				break;
 			case 1:
 				switch (reste) {
 				case 9:
-					Liseuse.lire(" dix-neuf ");
+					fileParoles.add(" dix-neuf ");
 					break;
 				case 8:
-					Liseuse.lire(" dix-huit");
+					fileParoles.add(" dix-huit");
 					break;
 				case 7:
-					Liseuse.lire(" dix-sept ");
+					fileParoles.add(" dix-sept ");
 					break;
 				case 6:
-					Liseuse.lire(" seize ");
+					fileParoles.add(" seize ");
 					break;
 				case 5:
-					Liseuse.lire(" quinze ");
+					fileParoles.add(" quinze ");
 					break;
 				case 4:
-					Liseuse.lire(" quatorze ");
+					fileParoles.add(" quatorze ");
 					break;
 				case 3:
-					Liseuse.lire(" treize ");
+					fileParoles.add(" treize ");
 					break;
 				case 2:
-					Liseuse.lire(" douze ");
+					fileParoles.add(" douze ");
 					break;
 				case 1:
-					Liseuse.lire(" onze ");
+					fileParoles.add(" onze ");
 					break;
 				case 0:
-					Liseuse.lire(" dix ");
+					fileParoles.add(" dix ");
 					break;
 				}
 				reste = 0;
@@ -361,34 +400,34 @@ public abstract class Liseuse {
 		} else {
 			switch (valeur) {
 			case 9:
-				Liseuse.lire(" neuf ");
+				fileParoles.add(" neuf ");
 				break;
 			case 8:
-				Liseuse.lire(" huit ");
+				fileParoles.add(" huit ");
 				break;
 			case 7:
-				Liseuse.lire(" sept  ");
+				fileParoles.add(" sept  ");
 				break;
 			case 6:
-				Liseuse.lire(" six ");
+				fileParoles.add(" six ");
 				break;
 			case 5:
-				Liseuse.lire(" cinq ");
+				fileParoles.add(" cinq ");
 				break;
 			case 4:
-				Liseuse.lire(" quatre ");
+				fileParoles.add(" quatre ");
 				break;
 			case 3:
-				Liseuse.lire(" trois ");
+				fileParoles.add(" trois ");
 				break;
 			case 2:
-				Liseuse.lire(" deux ");
+				fileParoles.add(" deux ");
 				break;
 			case 1:
-				Liseuse.lire(" un ");
+				fileParoles.add(" un ");
 				break;
 			case 0:
-				Liseuse.lire(" zéro ");
+				fileParoles.add(" zéro ");
 				break;
 			}
 		}
