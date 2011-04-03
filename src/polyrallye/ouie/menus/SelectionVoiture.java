@@ -11,6 +11,7 @@ import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 
 public class SelectionVoiture extends Menu implements ActionMenu {
@@ -104,6 +105,10 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 
 	@Override
 	public void actionMenu() {
+		if (hierarchie != null) {
+			Liseuse.lire("Sélectionnez la voiture");
+		}
+		
 		lancer();
 	}
 

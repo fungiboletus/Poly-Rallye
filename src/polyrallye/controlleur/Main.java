@@ -49,7 +49,7 @@ public class Main {
 
 		Liseuse.lire("Salut");
 		
-		Multithreading.dormir(500);
+		Multithreading.dormir(800);
 		
 		Liseuse.arreter();
 	}

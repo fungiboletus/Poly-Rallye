@@ -18,7 +18,6 @@ import org.lwjgl.Sys;
 
 import t2s.son.LecteurTexte;
 
-import polyrallye.controlleur.Main;
 import polyrallye.ouie.CallbackArretSon;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
@@ -260,8 +259,6 @@ public abstract class Liseuse {
 		
 		// La suite
 		regexMatcher.appendTail(sb);
-		
-		Main.changerTexteFenetre(sb.toString());
 		
 		fileParoles.add(sb.toString());
 	}
