@@ -20,6 +20,11 @@ import polyrallye.ouie.CallbackArretSon;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
 
+/**
+ * @author Antoine Pultier
+ *
+ * Liseuse de texte et de nombres.
+ */
 public abstract class Liseuse {
 
 	protected static LecteurTexte lt;
