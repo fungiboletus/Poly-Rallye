@@ -10,6 +10,11 @@ import java.util.TreeMap;
 import polyrallye.ouie.utilitaires.Sound;
 import t2s.util.Random;
 
+/**
+ * @author Antoine Pultier
+ *
+ * Classe de gestion du son moteur. En cours de développement.
+ */
 public class SonMoteur {
 
 	protected static NavigableMap<Integer, Sound> sons;

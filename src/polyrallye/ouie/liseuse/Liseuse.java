@@ -16,7 +16,6 @@ import org.lwjgl.Sys;
 
 import t2s.son.LecteurTexte;
 
-import polyrallye.controlleur.Main;
 import polyrallye.ouie.CallbackArretSon;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
@@ -122,7 +121,7 @@ public abstract class Liseuse {
 
 		System.out.println(texte);
 
-		Main.changerTexteFenetre(texte);
+		//Main.changerTexteFenetre(texte);
 
 		// Efficace et bourrin (pas de gestion de colisions, on verra si on en
 		// rencontre un jour…)

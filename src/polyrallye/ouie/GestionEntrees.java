@@ -3,8 +3,16 @@ package polyrallye.ouie;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * @author Antoine Pultier
+ * 
+ *         Singleton de gestion des entrées clavier.
+ */
 public class GestionEntrees extends KeyAdapter {
 
+	/**
+	 * Objet qui capture les entrées actuellement.
+	 */
 	protected static EcouteurEntrees ecouteur = null;
 
 	private static GestionEntrees singletonGestionEntree = null;
@@ -13,6 +21,11 @@ public class GestionEntrees extends KeyAdapter {
 
 	}
 
+	/**
+	 * Récupère l'instance du singleton.
+	 * 
+	 * @return Instance
+	 */
 	public static GestionEntrees getInstance() {
 		if (singletonGestionEntree == null) {
 			singletonGestionEntree = new GestionEntrees();
@@ -20,10 +33,16 @@ public class GestionEntrees extends KeyAdapter {
 		return singletonGestionEntree;
 	}
 
+	/**
+	 * Spécifie l'écouteur qui doit gérer les entrées clavier pendant un temps
+	 * donné.
+	 * 
+	 * @param e
+	 *            Écouteur
+	 */
 	public void setEcouteur(EcouteurEntrees e) {
 		ecouteur = e;
 	}
-
 
 	@Override
 	public void keyReleased(KeyEvent codeTouche) {
@@ -50,7 +69,7 @@ public class GestionEntrees extends KeyAdapter {
 			case KeyEvent.VK_F1:
 				ecouteur.aide();
 				break;
-				
+
 			}
 		}
 	}

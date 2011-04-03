@@ -13,6 +13,10 @@ import javax.swing.JPanel;
 
 import polyrallye.controlleur.Main;
 
+/**
+ * @author Antoine Pultier
+ * Fenêtre noire.
+ */
 public class FenetreNoire extends JFrame {
 
 	private static final long serialVersionUID = -6277192979591219507L;
@@ -47,7 +51,7 @@ public class FenetreNoire extends JFrame {
 		texte.setPreferredSize(new Dimension(400, 50));
 
 		p.add(image, BorderLayout.CENTER);
-		//p.add(texte, BorderLayout.SOUTH);
+		p.add(texte, BorderLayout.SOUTH);
 
 		p.add(image, BorderLayout.CENTER);
 		add(p);
@@ -64,6 +68,11 @@ public class FenetreNoire extends JFrame {
 		setVisible(true);
 	}
 
+	/**
+	 * Changer le texte qui s'affiche en bas de la fenêtre.
+	 * 
+	 * @param texte Le texte à afficher
+	 */
 	public void changerTexte(String texte) {
 		this.texte.setText(texte);
 	}
