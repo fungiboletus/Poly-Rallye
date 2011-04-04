@@ -18,7 +18,7 @@
 	</moteur>
 	<transmission>
 		<nb_rapports>5</nb_rapports>
-		<type>propulsion</type>
+		<type>traction</type>
 	</transmission>
 	<chassis>
 		<poids>1195</poids>

@@ -8,4 +8,13 @@ public abstract class Multithreading {
 		} catch (InterruptedException e) {
 		}
 	}
+	
+	/**
+	 * Get the accurate system time
+	 * 
+	 * @return The system time in milliseconds
+	 */
+	/*private long getTime() {
+		return (Sys.getTime() * 1000) / Sys.getTimerResolution();
+	}*/
 }
