@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>Enzo</nom>
+		<periode annee="2002" />
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+		<prix>350 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="48" disposition="V" compression="normal"/>
+		<cylindree>5998</cylindree>
+		<puissance regime="7800">650</puissance>
+		<couple_max regime="5500">657</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1365</poids>
+		<largeur>2035</largeur>
+		<longueur>4702</longueur>
+		<empattement>2650</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=97108</source>
+	</sources>
+</voiture>

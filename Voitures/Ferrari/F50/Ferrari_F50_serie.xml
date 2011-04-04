@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>F50</nom>
+		<periode annee="1995" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+		<prix>250 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="60" disposition="V" compression="normal"/>
+		<cylindree>4698</cylindree>
+		<puissance regime="8000">513</puissance>
+		<couple_max regime="6500">470</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1230</poids>
+		<largeur>1986</largeur>
+		<longueur>4480</longueur>
+		<empattement>2580</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=39787</source>
+	</sources>
+</voiture>

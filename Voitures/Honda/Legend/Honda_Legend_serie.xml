@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Honda</constructeur>
+		<nom>Legend</nom>
+		<periode annee="2008" />
+	</presentation>
+	<economie>
+		<rarete>1</rarete>
+		<prix>20000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="V" compression="normal"/>
+		<cylindree>3664</cylindree>
+		<puissance regime="6300">305</puissance>
+		<couple_max regime="5000">370</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1820</poids>
+		<largeur>1845</largeur>
+		<longueur>4985</longueur>
+		<empattement>2800</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=191455</source>
+	</sources>
+</voiture>

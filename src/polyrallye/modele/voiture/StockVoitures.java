@@ -68,8 +68,7 @@ public abstract class StockVoitures {
 		for (File fichier : dossier.listFiles()) {
 			if (fichier.isDirectory()) {
 				chargerDossier(fichier);
-			} else if (fichier.isFile() && !fichier.isHidden()
-					&& fichier.getName().endsWith(".xml")) {
+			} else if (fichier.getName().endsWith(".xml")) {
 				try {
 					chargerFichierVoiture(fichier);
 				} catch (Exception e) {
@@ -100,7 +99,18 @@ public abstract class StockVoitures {
 		Voiture v = new Voiture(noeud);
 		
 		voituresParNom.put(v.getNomComplet(), v);
-		voituresParPerformances.put(v.getScore(), v);
+		
+		double score = v.getScore();
+		
+		Voiture ancienne = voituresParPerformances.get(score);
+		
+		if (ancienne != null) {
+			System.err.println("La voiture "+v.toString()+" a les mêmes performances que la voiture "+ancienne.toString()+". Elle est donc ignorée.");
+		}
+		else
+		{
+			voituresParPerformances.put(score, v);			
+		}
 		
 		String constructeur = v.getConstructeur();
 		String nom = v.getNom();

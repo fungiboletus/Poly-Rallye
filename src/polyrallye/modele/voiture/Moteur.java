@@ -52,6 +52,10 @@ public class Moteur {
                 .getAttributeValue("regime"));
 
         regimeRupteur = GestionXML.getInt(noeud.getChildText("rupteur"));
+        
+        if (regimeRupteur == 0) {
+        	regimeRupteur = regimePuissanceMax + 500;
+        }
 
         String sSisposition = configuration.getAttributeValue("disposition")
                 .toUpperCase();

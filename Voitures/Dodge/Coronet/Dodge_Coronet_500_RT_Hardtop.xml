@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Dodge</constructeur>
+		<nom>Coronet</nom>
+		<version>500 RT Hardtop</version>
+		<periode annee="1968" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+		<prix>45000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>7206</cylindree>
+		<puissance regime="4600">375</puissance>
+		<couple_max regime="3200">651</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1601</poids>
+		<largeur>1948</largeur>
+		<longueur>5248</longueur>
+		<empattement>2972</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=5720</source>
+	</sources>
+</voiture>

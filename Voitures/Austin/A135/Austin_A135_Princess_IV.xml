@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Austin</constructeur>
+		<nom>A135</nom>
+		<version>Princess IV</version>
+		<periode annee="1956" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>23000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="12" disposition="ligne" compression="normal"/>
+		<cylindree>3990</cylindree>
+		<puissance regime="4100">150</puissance>
+		<couple_max regime="2400">308</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>2019</poids>
+		<largeur>1861</largeur>
+		<longueur>5105</longueur>
+		<empattement>3092</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=50292</source>
+	</sources>
+</voiture>

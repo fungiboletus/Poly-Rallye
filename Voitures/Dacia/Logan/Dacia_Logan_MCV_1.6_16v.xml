@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Dacia</constructeur>
+		<nom>Logan</nom>
+		<version>MCV 1.6 16v</version>
+		<periode annee="2006" />
+	</presentation>
+	<economie>
+		<rarete>1</rarete>
+		<prix>5000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1598</cylindree>
+		<puissance regime="5750">104</puissance>
+		<couple_max regime="3750">148</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1225</poids>
+		<largeur>1200</largeur>
+		<longueur>4450</longueur>
+		<empattement>2905</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=148885</source>
+	</sources>
+</voiture>

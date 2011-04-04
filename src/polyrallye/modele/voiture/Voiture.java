@@ -47,6 +47,11 @@ public class Voiture {
 
 		Element periode = presentation.getChild("periode");
 		debutDiffusion = GestionXML.getInt(periode.getAttributeValue("debut"));
+		
+		if (debutDiffusion == 0) {
+			debutDiffusion = GestionXML.getInt(periode.getAttributeValue("annee"));
+		}
+		
 		finDiffusion = GestionXML.getInt(periode.getAttributeValue("fin"));
 
 		moteur = new Moteur(noeud.getChild("moteur"));
@@ -111,7 +116,7 @@ public class Voiture {
 	}
 
 	public double getScore() {
-		return ((moteur.getPuissanceMax() * 1.75 + moteur.getCoupleMax()) / ((double) chassis
+		return ((moteur.getPuissanceMax() * 1.75 + moteur.getCoupleMax() * moteur.getCoupleMax()) / ((double) chassis
 				.getPoids() * 1.75))
 				* ((transmission.type == TypeTransmission.QUATTRO) ? 1.2 : 1.0);
 	}

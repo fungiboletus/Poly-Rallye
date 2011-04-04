@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Honda</constructeur>
+		<nom>S2000</nom>
+		<periode annee="1998" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1997</cylindree>
+		<puissance regime="8300">250</puissance>
+		<couple_max regime="7500">218</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1240</poids>
+		<largeur>1750</largeur>
+		<longueur>4135</longueur>
+		<empattement>2400</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=31416</source>
+	</sources>
+</voiture>

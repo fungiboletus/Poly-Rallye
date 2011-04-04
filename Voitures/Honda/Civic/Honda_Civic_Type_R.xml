@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Honda</constructeur>
+		<nom>Civic</nom>
+		<version>Type R</version>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1998</cylindree>
+		<puissance regime="8000">222</puissance>
+		<couple_max regime="6100">215</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1270</poids>
+		<largeur>1770</largeur>
+		<longueur>4540</longueur>
+		<empattement>2700</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=156057</source>
+	</sources>
+</voiture>

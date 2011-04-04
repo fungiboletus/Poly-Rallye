@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Rolls-Royce</constructeur>
+		<nom>Ghost</nom>
+		<periode annee="2009" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>250 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="48" disposition="V" compression="turbo"/>
+		<cylindree>6592</cylindree>
+		<puissance regime="5250">562</puissance>
+		<couple_max regime="1500">780</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>8</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>2435</poids>
+		<largeur>1948</largeur>
+		<longueur>5399</longueur>
+		<empattement>3295</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=201256</source>
+	</sources>
+</voiture>
