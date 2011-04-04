@@ -40,9 +40,13 @@ namespace CarFolioParser
 			
 			HtmlDocument document = new HtmlDocument();
 			
+			StreamReader SR = new StreamReader(reponse.GetResponseStream(), System.Text.Encoding.UTF8);
+			string page = (string) (SR.ReadToEnd());
 			
-			document.Load(reponse.GetResponseStream(), System.Text.Encoding.UTF8);
+			
+			//document.Load(reponse.GetResponseStream(), System.Text.Encoding.UTF8);
 			//document.Load("../../"+numero+".html");
+			document.LoadHtml(page);
 			
 			HtmlNode n = document.DocumentNode.SelectSingleNode("id('contentmain')");
 			
@@ -50,43 +54,102 @@ namespace CarFolioParser
 			String constructeur = confirmerUtilisateur("le constructeur", n.SelectSingleNode("ul/li[3]/a").InnerText.Replace("cars","").Trim());
 			
 			Regex r_number = new Regex("^\\d*");
-			String nom = confirmerUtilisateur("le nom", n.SelectSingleNode("ul/li[2]/a").InnerText.Replace("models","").Replace(constructeur, "").Trim());
-			String version = n.SelectSingleNode("ul/li[1]/strong").InnerText;
+			
+			String nom = "";
+			try {
+				nom = n.SelectSingleNode("ul/li[2]/a").InnerText.Replace("models","").Replace(constructeur, "").Trim();
+			} catch (Exception ex) { }
+			nom = confirmerUtilisateur("le nom", nom);
+			
+			String version = "";
+			try {
+				version = n.SelectSingleNode("ul/li[1]/strong").InnerText;
+			} catch (Exception ex) { }
+			
 			String annee = r_number.Match(version).Groups[0].Value;
+			if (annee == "") {
+				annee = "canard";
+			}
+			
 			version = confirmerUtilisateur("la version", version.Replace(annee,"").Replace(nom,"").Replace(constructeur, "").Trim());
 			annee = confirmerUtilisateur("l'année", annee);
 			
 			String rarete = demander("Quelle est sa rareté ?");
-			String prix = demander("Quel est son prix ?");
+			//String prix = demander("Quel est son prix ?");
 			
-			String poids = confirmerUtilisateur("le poids", n.SelectSingleNode("table/tbody[6]/tr[9]/td[1]/strong").InnerText.Replace("kg","").Trim());
-			String largeur = confirmerUtilisateur("la largeur", n.SelectSingleNode("table/tbody[6]/tr[5]/td[1]").InnerText.Replace("mm","").Trim());
-			String longueur = confirmerUtilisateur("la longueur", n.SelectSingleNode("table/tbody[6]/tr[4]/td[1]/strong").InnerText.Replace("mm","").Trim());
-			String empattement = confirmerUtilisateur("l'empattement", n.SelectSingleNode("table/tbody[6]/tr[1]/td[1]/strong").InnerText.Replace("mm","").Trim());			
-			String nb_rapports = confirmerUtilisateur("le nombre de rapports", r_number.Match(n.SelectSingleNode("table/tbody[16]/tr[18]/td").InnerText).Groups[0].Value.Trim());
+			String poids = "";
+			try {
+				poids = n.SelectSingleNode("table/tbody[6]/tr[9]/td[1]/strong").InnerText.Replace("kg","").Trim();
+			} catch (Exception ex) { }
+			poids = confirmerUtilisateur("le poids", poids);
+			
+			String largeur = "";
+			try {
+				largeur = n.SelectSingleNode("table/tbody[6]/tr[5]/td[1]").InnerText.Replace("mm","").Trim();
+			} catch (Exception ex) { }
+			largeur = confirmerUtilisateur("la largeur", largeur);
+			
+			String longueur = "";
+			try {
+				longueur = n.SelectSingleNode("table/tbody[6]/tr[4]/td[1]/strong").InnerText.Replace("mm","").Trim();
+			} catch (Exception ex) { }
+			longueur = confirmerUtilisateur("la longueur", longueur);
+
+
+			String empattement = "";
+			try {
+				empattement = n.SelectSingleNode("table/tbody[6]/tr[1]/td[1]/strong").InnerText.Replace("mm","").Trim();
+			} catch (Exception ex) { }
+			empattement = confirmerUtilisateur("l'empattement", empattement);
+
+			String nb_rapports = "";
+			try {
+				nb_rapports = r_number.Match(n.SelectSingleNode("table/tbody[16]/tr[18]/td").InnerText).Groups[0].Value.Trim();
+			} catch (Exception ex) { }
+			nb_rapports = confirmerUtilisateur("le nombre de rapports", nb_rapports);
 			
 			Regex r_drive = new Regex("(.+) wheel");
-			String drive = r_drive.Match(n.SelectSingleNode("table/tbody[16]/tr[3]/td").InnerText).Groups[1].Value.Trim();
+
+			String drive = "";
 			
-			if (drive == "Front")
+			try {
+				drive = r_drive.Match(page).Groups[1].Value.Trim().ToLower();
+			} catch (Exception ex) { }
+			
+			//Console.WriteLine(document.DocumentNode.InnerHtml);
+			
+			if (drive.Contains("front"))
 			{
 				drive = "traction";
-			} else if (drive == "All" || drive == "Four")
+			} else if (drive.Contains("all") || drive.Contains("four"))
 			{
 				drive = "4x4";
-			} else {
+			} else if (drive.Contains("rear")) {
 				drive = "propulsion";
+			}
+			else {
+				drive = "CANARD";
 			}
 			drive = confirmerUtilisateur("la transmission", drive);
 			
 			Regex r_cylindree = new Regex("(\\d+) cc");
-			String cylindree = confirmerUtilisateur("la cylindrée", r_cylindree.Match(n.SelectSingleNode("table/tbody[10]/tr[3]/td/strong").InnerText).Groups[1].Value.Trim());
+			
+			String cylindree = "";
+			try {
+				cylindree = r_cylindree.Match(n.SelectSingleNode("table/tbody[10]/tr[3]/td/strong").InnerText).Groups[1].Value.Trim();
+			} catch (Exception ex) { }
+			cylindree = confirmerUtilisateur("la cylindrée", cylindree);
 			
 			Regex r_regime = new Regex("@ (\\d+)");
 			
 			Regex r_puissance_max = new Regex("\\((\\d+) bhp\\)");
 			Regex r_puissance_max_b = new Regex("\\((\\d+)\\.\\d bhp\\)");
-			String infos_puissance = n.SelectSingleNode("table/tbody[10]/tr[9]/td").InnerText;
+			
+			String infos_puissance = "";
+			try {
+				infos_puissance = n.SelectSingleNode("table/tbody[10]/tr[9]/td").InnerText;
+			} catch (Exception ex) { }
+
 			String puissance_max = r_puissance_max.Match(infos_puissance).Groups[1].Value.Trim();
 			if (puissance_max.Length == 0)
 			{
@@ -97,16 +160,34 @@ namespace CarFolioParser
 			
 			
 			Regex r_couple_max = new Regex("(\\d+)\\.\\d Nm");
-			String infos_couple = n.SelectSingleNode("table/tbody[10]/tr[11]/td").InnerText;
+			
+			String infos_couple = "";
+			try {
+				infos_couple = n.SelectSingleNode("table/tbody[10]/tr[11]/td").InnerText;
+			} catch (Exception ex) { }
+
 			String couple_max = confirmerUtilisateur("le couple maximal", r_couple_max.Match(infos_couple).Groups[1].Value.Trim());
 			String regime_couple_max = confirmerUtilisateur("le régime associé", r_regime.Match(infos_couple).Groups[1].Value.Trim());
 			
-			String compression = n.SelectSingleNode("table/tbody[10]/tr[21]/td").InnerText.Trim();
+			String compression = "";
+			try {
+				compression = n.SelectSingleNode("table/tbody[10]/tr[21]/td").InnerText.Trim();
+			} catch (Exception ex) { }
 			compression = confirmerUtilisateur("la compression", compression.ToLower());
 			
 			Regex r_nb_valves = new Regex("(\\d+) valves in");
-			String nb_valves = confirmerUtilisateur("le nombre de valves", r_nb_valves.Match(n.SelectSingleNode("table/tbody[10]/tr[4]/td").InnerText).Groups[1].Value.Trim());
-			String infos_cylindres = n.SelectSingleNode("table/tbody[10]/tr[2]/td/strong").InnerText;
+			
+			String nb_valves = "";
+			try {
+				nb_valves = n.SelectSingleNode("table/tbody[10]/tr[4]/td").InnerText;
+			} catch (Exception ex) { }
+			nb_valves = confirmerUtilisateur("le nombre de valves", r_nb_valves.Match(nb_valves).Groups[1].Value.Trim());
+
+			String infos_cylindres = "";
+			try {
+				infos_cylindres = n.SelectSingleNode("table/tbody[10]/tr[2]/td/strong").InnerText;
+			} catch (Exception ex) { }
+
 			Regex r_nb_cylindres = new Regex("\\d+");
 			String nb_cylindres = confirmerUtilisateur("le nombre de cylindres", r_nb_cylindres.Match(infos_cylindres).Groups[0].Value.Trim());
 			String disposition = "ligne";
@@ -140,7 +221,7 @@ namespace CarFolioParser
 			
 			st.WriteLine("\t<economie>");
 			st.WriteLine("\t\t<rarete>"+rarete+"</rarete>");
-			st.WriteLine("\t\t<prix>"+prix+"</prix>");
+			//st.WriteLine("\t\t<prix>"+prix+"</prix>");
 			st.WriteLine("\t</economie>");
 			
 			st.WriteLine("\t<moteur>");

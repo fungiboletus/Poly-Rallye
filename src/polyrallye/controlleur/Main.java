@@ -22,23 +22,23 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		fenetre = new FenetreNoire();
+/*		fenetre = new FenetreNoire();
 		
-		Liseuse.lancer();
+		Liseuse.lancer();*/
 
 		
 		String nomJoueur = args.length > 1 ? args[0] : "Bob";
 		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
 
-		Liseuse.lire("PolyRallye");
+/*		Liseuse.lire("PolyRallye");
 
 		menuPrincipal = new Principal();
-		menuPrincipal.lancer();
+		menuPrincipal.lancer();*/
 		
 		for (Entry<Double, Voiture> s : StockVoitures.getVoituresParPerformances().entrySet())
 		{
-			System.out.println(s.getValue().getNomComplet() + "  " + s.getKey());
+			System.out.println("v : " + s.getValue().getNomComplet() + "  " + s.getKey());
 		}
 	}
 
