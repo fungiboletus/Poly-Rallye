@@ -1,4 +1,4 @@
-package polyrallye.modele;
+package polyrallye.utilitaires;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +26,7 @@ public abstract class GestionXML {
 	 * @throws Exception
 	 *             Exception Problème lors de l'écriture
 	 */
-	protected static void ecrireXML(OutputStream flux, Document document)
+	public static void ecrireXML(OutputStream flux, Document document)
 			throws Exception {
 		// On affiche de façon à ce que ça soit lisible
 		XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
@@ -42,7 +42,7 @@ public abstract class GestionXML {
 	 * @throws Exception
 	 *             Problème de lecture ou de construction du document.
 	 */
-	protected static Document creerDocument(InputStream flux) throws Exception {
+	public static Document creerDocument(InputStream flux) throws Exception {
 		return new SAXBuilder().build(flux);
 	}
 
@@ -53,13 +53,13 @@ public abstract class GestionXML {
 	 *            Nom du document à créer.
 	 * @return Nouveau document créé.
 	 */
-	protected static Document creerDocument(String nom) {
+	public static Document creerDocument(String nom) {
 		Document doc = new Document();
 		doc.setRootElement(new Element(nom));
 		return doc;
 	}
 	
-	protected static Document creerDocument(Element root)
+	public static Document creerDocument(Element root)
 	{
 		Document doc = new Document();
 		doc.setRootElement(root);
@@ -75,7 +75,7 @@ public abstract class GestionXML {
 	 * @throws Exception
 	 *             Le document est vide.
 	 */
-	protected static Element chargerElementFlux(Document document)
+	public static Element chargerElementFlux(Document document)
 			throws Exception {
 		Element e = document.getRootElement();
 
@@ -86,11 +86,15 @@ public abstract class GestionXML {
 		return e;
 	}
 
-	protected static int getInt(String nombre) {
+	public static int getInt(String nombre) {
 		return Integer.parseInt(nombre.replace(" ", ""));
 	}
 	
-	protected static Element chargerNoeudRacine(File fichier) throws Exception
+	public static double getDouble(String nombre) {
+		return Double.parseDouble(nombre.replace(" ", ""));
+	}
+	
+	public static Element chargerNoeudRacine(File fichier) throws Exception
 	{
 		FileInputStream lecteurFichier = new FileInputStream(fichier);
 		Element noeud = chargerElementFlux(creerDocument(lecteurFichier));
@@ -99,7 +103,7 @@ public abstract class GestionXML {
 		return noeud;
 	}
 	
-	protected static void enregistrerRacine(String nomFichier, Element noeud) throws Exception
+	public static void enregistrerRacine(String nomFichier, Element noeud) throws Exception
 	{
 		Document doc = creerDocument(noeud);
 		

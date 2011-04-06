@@ -48,8 +48,6 @@ public class Sfx extends Thread {
 		int position = 0;
 
 		while (isAlive) {
-			System.out.println("playing " + rep + "sfx_"
-					+ (random.nextInt(nombre) + 1) + ".wav" + "?");
 			try {
 				temp.charger(rep + "sfx_" + (random.nextInt(nombre) + 1)
 						+ ".wav");

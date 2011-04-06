@@ -169,7 +169,7 @@ public class Environnement {
 	}
 
 	public void play() {
-		//ambiance.play();
+		ambiance.play();
 		sfx.start();
 		meteo.play();
 	}

@@ -2,6 +2,8 @@ package polyrallye.modele;
 
 import org.jdom.Element;
 
+import polyrallye.utilitaires.GestionXML;
+
 public class Chassis
 {
 	protected int poids;

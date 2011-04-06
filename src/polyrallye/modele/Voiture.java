@@ -3,6 +3,7 @@ package polyrallye.modele;
 import org.jdom.Element;
 
 import polyrallye.ouie.Liseuse;
+import polyrallye.utilitaires.GestionXML;
 
 public class Voiture
 {

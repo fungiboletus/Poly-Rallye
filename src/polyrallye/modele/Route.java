@@ -3,20 +3,23 @@ package polyrallye.modele;
 public class Route implements ContenuCircuit {
 	
 	protected double distance;
-	protected double longueur;
+	//protected double longueur;
 	protected double force;
 	
 	protected TypeRoute type;
 	
-	public Route(double distance,double longueur, TypeRoute type) {
-		this.distance=distance;
-		this.longueur=longueur;
-		this.type=type;
-		this.force=0;
-	}
+//	public Route(double distance,double longueur, TypeRoute type) {
+//		this.distance=distance;
+//		this.longueur=longueur;
+//		this.type=type;
+//		this.force=0;
+//	}
 	
-	public Route(double distance,double longueur, TypeRoute type,double force) {
-		this(distance,longueur,type);
+	public Route(double distance, TypeRoute type,double force) {
+		this.distance=distance;
+
+		this.type=type;
+
 		this.force=force;
 	}
 	
@@ -26,10 +29,10 @@ public class Route implements ContenuCircuit {
 		return distance;
 	}
 
-	@Override
-	public double getLongueur() {
-		return longueur;
-	}
+//	@Override
+//	public double getLongueur() {
+//		return longueur;
+//	}
 
 	public double getForce() {
 		return force;
