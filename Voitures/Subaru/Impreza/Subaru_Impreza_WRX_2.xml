@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Subaru Impreza WRC Génération 2</nom>
+	<presentation>
+		<constructeur>Subaru</constructeur>
+		<nom>Impreza</nom>
+		<version>WRX 2</version>
+		<periode debut="2001" fin="2007"/>
+	</presentation>
 	<economie>
 		<rarete>2</rarete>
 		<prix>17 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Subaru</constructeur>
-		<periode debut="2001" fin="2007"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="boxer" compression="turbo" nb_soupapes="16"/>
 		<cylindree>2500</cylindree>

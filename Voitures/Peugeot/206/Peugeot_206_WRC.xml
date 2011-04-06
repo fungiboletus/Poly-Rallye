@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 206 WRC</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>206</nom>
+		<version>WRC</version>
+		<periode debut="1999" fin="2003"/>
+	</presentation>
 	<economie>
 		<rarete>8</rarete>
 		<prix>100 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1999" fin="2003"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1997</cylindree>

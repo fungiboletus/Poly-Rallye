@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>F40</nom>
+		<periode annee="1987" />
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+		<prix>350 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="turbo"/>
+		<cylindree>2936</cylindree>
+		<puissance regime="7000">471</puissance>
+		<couple_max regime="4000">577</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1100</poids>
+		<largeur>1989</largeur>
+		<longueur>4430</longueur>
+		<empattement>2451</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=27247</source>
+	</sources>
+</voiture>

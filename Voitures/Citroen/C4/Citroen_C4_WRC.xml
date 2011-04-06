@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Citroën C4 WRC</nom>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>C4</nom>
+		<version>WRC</version>
+		<periode debut="2005" fin="2010"/>
+	</presentation>
 	<economie>
 		<rarete>8</rarete>
 		<prix>140 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Citroën</constructeur>
-		<periode debut="2005" fin="2010"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1997</cylindree>

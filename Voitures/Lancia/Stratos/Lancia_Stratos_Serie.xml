@@ -1,13 +1,13 @@
 <voiture>
-	<nom>Lancia Stratos Série</nom>
+	<presentation>
+		<constructeur>Lancia</constructeur>
+		<nom>Stratos</nom>
+		<periode debut="1972" fin="1974"/>
+	</presentation>
 	<economie>
 		<rarete>7</rarete>
 		<prix>50 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Lancia</constructeur>
-		<periode debut="1972" fin="1974"/>
-	</presentation>
 	<moteur nom="Ferrari Dino V6">
 		<configuration nb_cylindres="6" disposition="v" compression="non" nb_soupapes="12"/>
 		<cylindree>2418</cylindree>

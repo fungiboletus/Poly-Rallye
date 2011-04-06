@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Audi Quattro Sport</nom>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>Quattro</nom>
+		<version>Sport</version>
+		<periode debut="1984" fin="1985"/>
+	</presentation>
 	<economie>
 		<rarete>4</rarete>
 		<prix>20 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Audi</constructeur>
-		<periode debut="1984" fin="1985"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="5" disposition="ligne" compression="turbo" nb_soupapes="20"/>
 		<cylindree>2133</cylindree>

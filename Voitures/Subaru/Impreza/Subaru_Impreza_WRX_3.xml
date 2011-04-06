@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Subaru Impreza WRC Génération 3</nom>
+	<presentation>
+		<constructeur>Subaru</constructeur>
+		<nom>Impreza</nom>
+		<version>WRX 3</version>
+		<periode debut="2007" fin="2011"/>
+	</presentation>
 	<economie>
 		<rarete>1</rarete>
 		<prix>16 500</prix>
 	</economie>
-	<presentation>
-		<constructeur>Subaru</constructeur>
-		<periode debut="2007" fin="2011"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="boxer" compression="turbo" nb_soupapes="16"/>
 		<cylindree>2500</cylindree>

@@ -5,6 +5,9 @@ import java.util.List;
 
 import org.jdom.Element;
 
+import polyrallye.modele.voiture.StockVoitures;
+import polyrallye.modele.voiture.Voiture;
+
 public class Garage {
 	protected List<Voiture> voitures;
 	protected boolean changement = false;
@@ -29,7 +32,7 @@ public class Garage {
 
 		for (Voiture v : voitures) {
 			Element n = new Element("voiture");
-			n.setText(v.getNom());
+			n.setText(v.getNomComplet());
 
 			noeud.addContent(n);
 		}
@@ -41,7 +44,7 @@ public class Garage {
 		return voitures;
 	}
 
-	public void acheter(Voiture v) throws Exception {
+	public void ajouter(Voiture v) throws Exception {
 		if (voitures.contains(v)) {
 			throw new Exception("Voiture déjà présente dans le garage");
 		}

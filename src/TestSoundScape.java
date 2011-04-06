@@ -2,7 +2,7 @@ import java.util.Random;
 
 import org.lwjgl.openal.AL10;
 
-import polyrallye.ouie.SoundScape;
+import polyrallye.ouie.utilitaires.SoundScape;
 
 
 public class TestSoundScape {

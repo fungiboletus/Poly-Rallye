@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 306 Maxi</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>306</nom>
+		<version>Maxi</version>
+		<periode debut="1996" fin="2000"/>
+	</presentation>
 	<economie>
 		<rarete>6</rarete>
 		<prix>100 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1996" fin="2000"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1998</cylindree>

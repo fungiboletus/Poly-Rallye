@@ -1,15 +1,20 @@
 package polyrallye.controlleur;
 
-import polyrallye.modele.Joueur;
+import java.util.Map.Entry;
+
+import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.voiture.StockVoitures;
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.FenetreNoire;
-import polyrallye.ouie.Liseuse;
-import polyrallye.ouie.menus.MenuPrincipal;
+import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.menus.Principal;
+import polyrallye.utilitaires.Multithreading;
 
 public class Main {
 
 	protected static FenetreNoire fenetre;
 
-	protected static MenuPrincipal menuPrincipal;
+	protected static Principal menuPrincipal;
 
 	/**
 	 * @param args
@@ -17,17 +22,24 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 
-		fenetre = new FenetreNoire();
+/*		fenetre = new FenetreNoire();
 		
-		Liseuse.lancer();
+		Liseuse.lancer();*/
 
-		Joueur j = Joueur.chargerJoueur("Bob");
+		
+		String nomJoueur = args.length > 1 ? args[0] : "Bob";
+		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
 
-		Liseuse.lire("PolyRallye");
+/*		Liseuse.lire("PolyRallye");
 
-		menuPrincipal = new MenuPrincipal();
-		menuPrincipal.lancer();
+		menuPrincipal = new Principal();
+		menuPrincipal.lancer();*/
+		
+		for (Entry<Double, Voiture> s : StockVoitures.getVoituresParPerformances().entrySet())
+		{
+			System.out.println("v : " + s.getValue().getNomComplet() + "  " + s.getKey());
+		}
 	}
 
 	public static void quitter() {
@@ -37,9 +49,7 @@ public class Main {
 
 		Liseuse.lire("Salut");
 		
-		try {
-			Thread.sleep(200);
-		} catch (InterruptedException e) {}
+		Multithreading.dormir(800);
 		
 		Liseuse.arreter();
 	}
@@ -60,7 +70,7 @@ public class Main {
 		}
 	}
 
-	public static MenuPrincipal getMenuPrincipal() {
+	public static Principal getMenuPrincipal() {
 		return menuPrincipal;
 	}
 }

@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Renault Espace F1</nom>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>Espace</nom>
+		<version>F1</version>
+		<periode debut="1995" fin="1995"/>
+	</presentation>
 	<economie>
 		<rarete>9</rarete>
 		<prix>200 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Renault</constructeur>
-		<periode debut="1995" fin="1995"/>
-	</presentation>
 	<moteur nom="Renault RS5">
 		<configuration nb_cylindres="10" disposition="v" compression="turbo" nb_soupapes="40"/>
 		<cylindree>3493</cylindree>

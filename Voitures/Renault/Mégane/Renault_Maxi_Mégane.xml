@@ -1,0 +1,33 @@
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>Mégane</nom>
+		<version>Maxi</version>
+		<periode debut="1996" fin="2001"/>
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+		<prix>30 000</prix>
+	</economie>
+	<moteur nom="Renault F7R710">
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1995</cylindree>
+		<puissance regime="8400">280</puissance>
+		<couple_max regime="5900">258</couple_max>
+		<rupteur>8600</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>7</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>960</poids>
+		<largeur>1823</largeur>
+		<longueur>3952</longueur>
+		<empattement>2532</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Renault_M%C3%A9gane</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=331</source>
+	</sources>
+</voiture>

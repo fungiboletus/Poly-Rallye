@@ -1,13 +1,13 @@
 <voiture>
-	<nom>Citroën C1</nom>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>C1</nom>
+		<periode debut="2005" fin="2011"/>
+	</presentation>
 	<economie>
 		<rarete>1</rarete>
 		<prix>8 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Citroën</constructeur>
-		<periode debut="2005" fin="2011"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="3" disposition="ligne" compression="non" nb_soupapes="12"/>
 		<cylindree>998</cylindree>

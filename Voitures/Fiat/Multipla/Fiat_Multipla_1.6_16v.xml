@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Fiat</constructeur>
+		<nom>Multipla</nom>
+		<version>1.6 16v</version>
+		<periode annee="2004" />
+	</presentation>
+	<economie>
+		<rarete>1</rarete>
+		<prix>12000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1596</cylindree>
+		<puissance regime="5750">102</puissance>
+		<couple_max regime="4000">145</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1300</poids>
+		<largeur>1871</largeur>
+		<longueur>4089</longueur>
+		<empattement>2666</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=163614</source>
+	</sources>
+</voiture>

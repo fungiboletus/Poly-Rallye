@@ -1,0 +1,34 @@
+<voiture>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>405</nom>
+		<version>Turbo 16</version>
+		<periode debut="1988" fin="1993"/>
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+		<prix>10 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1998</cylindree>
+		<puissance regime="5000">200</puissance>
+		<couple_max regime="2600">294</couple_max>
+		<rupteur>7000</rupteur>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1340</poids>
+		<largeur>1714</largeur>
+		<longueur>4407</longueur>
+		<empattement>2669</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Peugeot_405_Turbo_16</source>
+		<source>http://www.carfolio.com/specifications/models/car/?car=27269</source>
+		<source>http://405t16.free.fr/ficteccompet.htm</source>
+	</sources>
+</voiture>

@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ford</constructeur>
+		<nom>T</nom>
+		<periode annee="1908" />
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+		<prix>23987</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>2896</cylindree>
+		<puissance regime="3000">20</puissance>
+		<couple_max regime="2000">40</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>2</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>544</poids>
+		<largeur>1200</largeur>
+		<longueur>3500</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=176704</source>
+	</sources>
+</voiture>

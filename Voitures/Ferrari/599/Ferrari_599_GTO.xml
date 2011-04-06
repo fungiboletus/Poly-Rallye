@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>599</nom>
+		<version>GTO</version>
+		<periode annee="2010" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+		<prix>250 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="48" disposition="V" compression="normal"/>
+		<cylindree>5999</cylindree>
+		<puissance regime="8250">661</puissance>
+		<couple_max regime="6500">620</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1605</poids>
+		<largeur>1962</largeur>
+		<longueur>4710</longueur>
+		<empattement>2750</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=210067</source>
+	</sources>
+</voiture>

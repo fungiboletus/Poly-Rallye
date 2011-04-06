@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>250</nom>
+		<version>LM</version>
+		<periode annee="1963" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+		<prix>100 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="24" disposition="V" compression="normal"/>
+		<cylindree>3286</cylindree>
+		<puissance regime="7500">320</puissance>
+		<couple_max regime="5500">313</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>850</poids>
+		<largeur>1700</largeur>
+		<longueur>4090</longueur>
+		<empattement>2400</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=69190</source>
+	</sources>
+</voiture>

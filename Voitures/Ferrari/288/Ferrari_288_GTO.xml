@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>288</nom>
+		<version>GTO</version>
+		<periode annee="1984" />
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+		<prix>96 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="turbo"/>
+		<cylindree>2855</cylindree>
+		<puissance regime="7000">395</puissance>
+		<couple_max regime="3800">496</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1160</poids>
+		<largeur>1910</largeur>
+		<longueur>4290</longueur>
+		<empattement>2451</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=1320</source>
+	</sources>
+</voiture>

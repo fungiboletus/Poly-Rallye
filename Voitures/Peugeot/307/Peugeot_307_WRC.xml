@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Peugeot 307 WRC</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>307</nom>
+		<version>WRC</version>
+		<periode debut="2004" fin="2006"/>
+	</presentation>
 	<economie>
 		<rarete>5</rarete>
 		<prix>90 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="2004" fin="2006"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1997</cylindree>

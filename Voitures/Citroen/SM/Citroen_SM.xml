@@ -1,13 +1,13 @@
 <voiture>
-	<nom>Citroën SM</nom>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>SM</nom>
+		<periode debut="1970" fin="1975"/>
+	</presentation>
 	<economie>
 		<rarete>4</rarete>
 		<prix>54 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Citroën</constructeur>
-		<periode debut="1970" fin="1975"/>
-	</presentation>
 	<moteur nom="C114/03">
 		<configuration nb_cylindres="6" disposition="V" compression="non" nb_soupapes="12"/>
 		<cylindree>2670</cylindree>

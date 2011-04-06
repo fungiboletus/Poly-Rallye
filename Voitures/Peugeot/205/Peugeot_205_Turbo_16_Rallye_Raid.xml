@@ -1,20 +1,20 @@
 <voiture>
-	<nom>Peugeot 205 Turbo 16 Rallye Raid</nom>
+	<presentation>
+		<constructeur>Peugeot</constructeur>
+		<nom>205</nom>
+		<version>Turbo 16 Rallye Raid</version>
+		<periode debut="1982" fin="1987"/>
+	</presentation>
 	<economie>
 		<rarete>7</rarete>
 		<prix>30 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Peugeot</constructeur>
-		<periode debut="1982" fin="1987"/>
-	</presentation>
 	<moteur nom="XU8T">
 		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
 		<cylindree>1775</cylindree>
 		<puissance regime="8000">480</puissance>
 		<couple_max regime="5000">450</couple_max>
-		<ralenti>1500</ralenti><!-- Non fiable -->
-		<rupteur>10000</rupteur><!-- Non fiable -->
+		<rupteur>8500</rupteur><!-- Non fiable -->
 	</moteur>
 	<transmission>
 		<nb_rapports>5</nb_rapports>

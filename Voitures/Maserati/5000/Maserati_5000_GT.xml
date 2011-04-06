@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Maserati</constructeur>
+		<nom>5000</nom>
+		<version>GT</version>
+		<periode annee="1963" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>99 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>4938</cylindree>
+		<puissance regime="6000">340</puissance>
+		<couple_max regime="2500">420</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1400</poids>
+		<largeur>1643</largeur>
+		<longueur>4700</longueur>
+		<empattement>2600</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=9251</source>
+	</sources>
+</voiture>

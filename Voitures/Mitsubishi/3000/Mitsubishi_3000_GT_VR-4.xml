@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Mitsubishi</constructeur>
+		<nom>3000</nom>
+		<version>GT VR-4</version>
+		<periode annee="1994" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>41000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="V" compression="turbo"/>
+		<cylindree>2972</cylindree>
+		<puissance regime="6000">320</puissance>
+		<couple_max regime="2500">427</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1725</poids>
+		<largeur>1839</largeur>
+		<longueur>4564</longueur>
+		<empattement>2469</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=12012</source>
+	</sources>
+</voiture>

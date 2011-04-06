@@ -87,10 +87,12 @@ public abstract class GestionXML {
 	}
 
 	public static int getInt(String nombre) {
+		if (nombre == null) return 0;
 		return Integer.parseInt(nombre.replace(" ", ""));
 	}
 	
 	public static double getDouble(String nombre) {
+		if (nombre == null) return 0.0;
 		return Double.parseDouble(nombre.replace(" ", ""));
 	}
 	

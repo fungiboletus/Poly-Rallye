@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Fiat Panda 4x4</nom>
+	<presentation>
+		<constructeur>Fiat</constructeur>
+		<nom>Panda</nom>
+		<version>4x4</version>
+		<periode debut="1982" fin="2003"/>
+	</presentation>
 	<economie>
 		<rarete>2</rarete>
 		<prix>5 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Fiat</constructeur>
-		<periode debut="1982" fin="2003"/>
-	</presentation>
 	<moteur>
 		<configuration nb_cylindres="4" disposition="ligne" compression="non" nb_soupapes="8"/>
 		<cylindree>999</cylindree>

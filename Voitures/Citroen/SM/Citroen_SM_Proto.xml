@@ -1,13 +1,14 @@
 <voiture>
-	<nom>Citroën SM Proto</nom>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>SM</nom>
+		<version>Proto</version>
+		<periode debut="1972" fin="1973"/>
+	</presentation>
 	<economie>
 		<rarete>7</rarete>
 		<prix>84 000</prix>
 	</economie>
-	<presentation>
-		<constructeur>Citroën</constructeur>
-		<periode debut="1972" fin="1973"/>
-	</presentation>
 	<moteur nom="C114/03">
 		<configuration nb_cylindres="6" disposition="V" compression="turbo" nb_soupapes="12"/>
 		<cylindree>2670</cylindree>

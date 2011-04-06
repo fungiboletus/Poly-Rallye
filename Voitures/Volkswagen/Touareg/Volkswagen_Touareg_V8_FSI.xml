@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Volkswagen</constructeur>
+		<nom>Touareg</nom>
+		<version>V8 FSI</version>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+		<prix>72000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="normal"/>
+		<cylindree>4163</cylindree>
+		<puissance regime="6800">345</puissance>
+		<couple_max regime="3500">440</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>2332</poids>
+		<largeur>1928</largeur>
+		<longueur>4754</longueur>
+		<empattement>2855</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=153406</source>
+	</sources>
+</voiture>

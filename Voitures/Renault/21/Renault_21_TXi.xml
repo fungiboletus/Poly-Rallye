@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>21</nom>
+		<version>TXi</version>
+		<periode annee="1988" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+		<prix>13000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="12" disposition="ligne" compression="normal"/>
+		<cylindree>1995</cylindree>
+		<puissance regime="6000">140</puissance>
+		<couple_max regime="4300">176</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1155</poids>
+		<largeur>1707</largeur>
+		<longueur>4458</longueur>
+		<empattement>2600</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=5423</source>
+	</sources>
+</voiture>

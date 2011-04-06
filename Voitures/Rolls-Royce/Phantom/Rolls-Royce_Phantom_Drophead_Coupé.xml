@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Rolls-Royce</constructeur>
+		<nom>Phantom</nom>
+		<version>Drophead Coupé</version>
+		<periode annee="2006" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>230 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="48" disposition="V" compression="normal"/>
+		<cylindree>6749</cylindree>
+		<puissance regime="5350">454</puissance>
+		<couple_max regime="3500">720</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>2620</poids>
+		<largeur>1987</largeur>
+		<longueur>5609</longueur>
+		<empattement>3320</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=150975</source>
+	</sources>
+</voiture>
