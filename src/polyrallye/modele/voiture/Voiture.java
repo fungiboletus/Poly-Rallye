@@ -47,11 +47,12 @@ public class Voiture {
 
 		Element periode = presentation.getChild("periode");
 		debutDiffusion = GestionXML.getInt(periode.getAttributeValue("debut"));
-		
+
 		if (debutDiffusion == 0) {
-			debutDiffusion = GestionXML.getInt(periode.getAttributeValue("annee"));
+			debutDiffusion = GestionXML.getInt(periode
+					.getAttributeValue("annee"));
 		}
-		
+
 		finDiffusion = GestionXML.getInt(periode.getAttributeValue("fin"));
 
 		moteur = new Moteur(noeud.getChild("moteur"));
@@ -115,10 +116,30 @@ public class Voiture {
 		return sources;
 	}
 
+	/**
+	 * Calcule un score de la voiture.
+	 * 
+	 * Le score est calculé en fonction de certains paramètres de la voiture. La
+	 * formule n'a rien de scientifique, le but est seulement d'obtenir un moyen
+	 * fiable et pertinent pour classer les différentes voitures en fonction de
+	 * leurs performances.
+	 * 
+	 * Une voiture 4x4 a un meilleur score qu'une voiture propulsion, qui a un
+	 * meilleur score qu'une voiture traction. Plus la plage d'utilisation du
+	 * moteur est élevée, plus le score est élevé. Plus le couple (important
+	 * dans la formule), et la puissance (moins important) sont élevés, plus le
+	 * score est élevé. Plus le poids de la voiture est élevé, plus le score est
+	 * faible.
+	 * 
+	 * @return Le score de la voiture
+	 */
 	public double getScore() {
-		return ((moteur.getPuissanceMax() * 1.75 + moteur.getCoupleMax() * moteur.getCoupleMax()) / ((double) chassis
-				.getPoids() * 1.75))
-				* ((transmission.type == TypeTransmission.QUATTRO) ? 1.2 : 1.0);
+		return (((transmission.type == TypeTransmission.QUATTRO) ? 1.2
+				: ((transmission.type == TypeTransmission.TRACTION) ? 0.9 : 1.0))
+				* (0.6 + (Math.abs(moteur.getRegimePuissanceMax()
+						- moteur.getRegimeCoupleMax()) / 5000.0) * 0.42) * (moteur
+				.getPuissanceMax() * 4.2 + Math.pow(moteur.getCoupleMax(), 1.3)))
+				/ Math.pow((double) chassis.getPoids(), 1.2);
 	}
 
 	@Override
@@ -158,7 +179,7 @@ public class Voiture {
 
 	public void ennoncerCategoriePerformances() {
 		double score = getScore();
-		
+
 		if (score <= 0.2) {
 			Liseuse.lire("Faibles performances");
 		} else if (score <= 0.35) {

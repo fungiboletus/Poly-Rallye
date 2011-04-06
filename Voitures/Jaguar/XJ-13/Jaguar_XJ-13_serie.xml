@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Jaguar</constructeur>
+		<nom>XJ-13</nom>
+		<periode annee="1964" />
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="24" disposition="V" compression="normal"/>
+		<cylindree>4994</cylindree>
+		<puissance regime="7600">502</puissance>
+		<couple_max regime="6300">523</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>998</poids>
+		<largeur>1854</largeur>
+		<longueur>4483</longueur>
+		<empattement>2438</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=34936</source>
+	</sources>
+</voiture>

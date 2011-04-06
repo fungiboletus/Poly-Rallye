@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Jaguar</constructeur>
+		<nom>XKR</nom>
+		<version>Coupé</version>
+		<periode annee="2009" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="turbo"/>
+		<cylindree>5000</cylindree>
+		<puissance regime="6000">503</puissance>
+		<couple_max regime="2500">625</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1753</poids>
+		<largeur>1892</largeur>
+		<longueur>4794</longueur>
+		<empattement>2752</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=192115</source>
+	</sources>
+</voiture>

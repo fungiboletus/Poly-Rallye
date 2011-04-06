@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Jaguar</constructeur>
+		<nom>XJ-220</nom>
+		<periode annee="1991" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="V" compression="turbo"/>
+		<cylindree>3498</cylindree>
+		<puissance regime="7200">500</puissance>
+		<couple_max regime="4500">640</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1560</poids>
+		<largeur>2000</largeur>
+		<longueur>4860</longueur>
+		<empattement>2640</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=35651</source>
+	</sources>
+</voiture>
