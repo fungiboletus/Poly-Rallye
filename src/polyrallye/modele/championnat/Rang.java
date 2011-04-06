@@ -8,7 +8,7 @@ import polyrallye.modele.personnes.Personne;
  * @author zizou
  * 
  */
-public class Rang {
+public class Rang implements Comparable {
     private String speciale;
     private int classement;
     private Personne personne;
@@ -20,14 +20,15 @@ public class Rang {
      * 
      * @param uneEpreuve
      */
-    public Rang(String uneSpeciale, Personne personne ) {
+    public Rang(String uneSpeciale, Personne personne, Duree d) {
 
         if (uneSpeciale == null || personne == null)
             throw new NullPointerException(
                     "Un ou des parametres du constructeur de Rang est incorrect");
-        
+
         speciale = uneSpeciale;
         this.personne = personne;
+        duree = d;
     }
 
     /**
@@ -37,8 +38,8 @@ public class Rang {
      */
     public String getSpeciale() {
         return speciale;
-    }  
-    
+    }
+
     /**
      * retourne l'ecart
      * 
@@ -46,8 +47,8 @@ public class Rang {
      */
     public Duree getEcart() {
         return ecart;
-    }  
-    
+    }
+
     /**
      * retourne la duree concernée par ce rang
      * 
@@ -56,7 +57,6 @@ public class Rang {
     public Duree getDuree() {
         return duree;
     }
-    
 
     /**
      * retourne le classement
@@ -75,7 +75,7 @@ public class Rang {
     public void setClassement(int nouveau) {
         classement = nouveau;
     }
-    
+
     /**
      * Met à jour la duree
      * 
@@ -84,7 +84,7 @@ public class Rang {
     public void setDuree(Duree D) {
         duree = D;
     }
-    
+
     /**
      * Met à jour l'ecart
      * 
@@ -113,6 +113,16 @@ public class Rang {
                 + ", duree -> " + duree + " )");
 
         return resultat.toString();
+    }
+
+    @Override
+    public int compareTo(Object arg0) {
+        Rang rang = (Rang)arg0;
+        
+        int valeur = rang.duree.ConvertToSeconds();
+        
+        return (this.duree.ConvertToSeconds() - valeur);
+        
     }
 
 }
