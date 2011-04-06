@@ -193,7 +193,7 @@ public class Environnement {
 	}
 	
 	public static void main(String[] args) {
-		final Environnement test = new Environnement("plaine", "jour", "clair");
+		final Environnement test = new Environnement("plaine", "nuit", "pluie");
 		test.setVitesse(300f);
 		test.play();
 		Scanner sc = new Scanner(System.in);
@@ -208,6 +208,7 @@ public class Environnement {
 			@Override
 			public void run() {
 				// System.out.println(SonMoteur.accelere);
+				System.out.println("acc");
 				double dis = test.sfx.distance;
 				dis+=10;
 				test.sfx.setDistance(dis);
@@ -216,7 +217,7 @@ public class Environnement {
 			}
 		};
 
-		t.schedule(tt, 0, 5);
+		t.schedule(tt, 0, 10);
 
 	}
 	

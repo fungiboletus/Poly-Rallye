@@ -11,15 +11,15 @@ public class Evenement implements ContenuCircuit {
 	
 	protected String type;
 	protected double distance;
-	protected double longueur;	
+	//protected double longueur;	
 	protected String param;
 	
 	protected Sound son;
 	
-	public Evenement(String t,double d,double l,String p,Circuit c) {
+	public Evenement(String t,double d,String p,Circuit c) {
 		type=t;
 		distance=d;
-		longueur=l;
+		//longueur=l;
 		param=p;
 		circuit=c;
 		son=null;

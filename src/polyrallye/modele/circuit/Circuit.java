@@ -117,60 +117,63 @@ public class Circuit {
 			
 
 			
+
 			if (i==0)
 			{
-				System.out.println("zero");
-				terrain = new Terrain(getTagValue(n, "surface"));
-				String type = getTagValue(n, "environnement");
-				String temps = getTagValue(n, "temps");
-				String meteo = getTagValue(n, "meteo");
-				System.out.println(type+temps+meteo);
-				environnement = new Environnement(type, temps, meteo);
+			System.out.println("zero");
+			terrain = new Terrain(getTagValue(n, "surface"));
+			String type = getTagValue(n, "environnement");
+			String temps = getTagValue(n, "temps");
+			String meteo = getTagValue(n, "meteo");
+			System.out.println(type+temps+meteo);
+			environnement = new Environnement(type, temps, meteo);
 			}
-			
+
 			if (i > 0)
 			{
-				double d = Cartographie.distance(latCourant, lonCourant, latSuivant, lonSuivant);
-			
-				System.out.println("Distance : "+d);
-			
-				distance += d;
-				
+			double d = Cartographie.distance(latCourant, lonCourant, latSuivant, lonSuivant);
 
-			
-				if (i > 1) {
-					
+			System.out.println("Distance : "+d);
 
-					
-					double a = Cartographie.angleVirage(latPrecedent,
-							lonPrecedent, latCourant, lonCourant, latSuivant,
-							lonSuivant);
-					System.out.println("Angle : " + a);
-					
-					double force=0;
-					
-					if(i==2) {
-						angle = a;
-					}
-					else 
-					{
-						force = Math.abs(angle-a)/30;
-					}
-					
-					
-					
-					TypeRoute s = Cartographie.sensVirage(latPrecedent,
-							lonPrecedent, latCourant, lonCourant, latSuivant,
-							lonSuivant);
-					
-					
-					contenu.add(new Route(d,s,force));
-					
-					System.out.println("Sens : "
-							+ (s == TypeRoute.GAUCHE ? "gauche" : "droite"));
-					
-					
-				}
+			distance += d;
+
+
+
+			if (i > 1) {
+
+
+
+			double a = Cartographie.angleVirage(latPrecedent,
+			lonPrecedent, latCourant, lonCourant, latSuivant,
+			lonSuivant);
+			System.out.println("Angle : " + a);
+			
+
+
+
+
+			TypeRoute s = Cartographie.sensVirage(latPrecedent,
+			lonPrecedent, latCourant, lonCourant, latSuivant,
+			lonSuivant);
+
+			//On ajoute le virage
+			contenu.add(new Route(d,s,a));
+			//Si des evenements lies
+			if (n.getChildren()!=null) {
+				String param;
+				if ((param = getTagValue(n, "environnement"))!=null)
+					contenu.add(new Evenement("environnement",distance,param,this));
+				if ((param = getTagValue(n, "terrain"))!=null)
+					contenu.add(new Evenement("terrain",distance,param,this));
+				if ((param = getTagValue(n, "son"))!=null)
+					contenu.add(new Evenement("son",distance,param,this));
+			}
+
+			System.out.println("Sens : "
+			+ (s == TypeRoute.GAUCHE ? "gauche" : "droite"));
+
+
+			}
 			}
 			
 			
@@ -217,6 +220,10 @@ public class Circuit {
 		return distance;
 	}
 
+	public String getNom() {
+		return nom;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		/*Circuit test = new Circuit("Circuit_1");
 		test.start();
@@ -233,4 +240,6 @@ public class Circuit {
 		Circuit temp = new Circuit(noeud);
 		temp.start();
 	}
+
+	
 }
