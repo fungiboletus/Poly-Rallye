@@ -1,13 +1,34 @@
 package polyrallye.ouie;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.environnement.Environnement;
 
 public class Course implements ActionMenu {
 
+	/**
+	 * Le timer qui excécute la course.
+	 */
+	protected Timer timer;
+	
 	@Override
 	public void actionMenu() {
-		Environnement e = new Environnement("foret", "nuit", "vent");
+		timer = new Timer();
+
+		TimerTask tt = new TimerTask() {
+
+			@Override
+			public void run() {
+				// TODO mettre le code de abdoul (oui monsieur)
+			}
+		};
+
+		// À 50Hz, comme le courant EDF
+		timer.schedule(tt, 0, 20);
+		
+		/*Environnement e = new Environnement("foret", "nuit", "vent");
 
 		e.play();
 
@@ -59,6 +80,6 @@ public class Course implements ActionMenu {
 			public void run() {
 				SonMoteur.lancer();
 			}
-		}.start();
+		}.start();*/
 	}
 }
