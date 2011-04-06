@@ -20,46 +20,52 @@ public class Circuit {
 	protected Environnement environnement;
 	protected Queue<ContenuCircuit> contenu;
 	protected Terrain terrain;
+	
+	protected double distance;
 
-	public Circuit(String file) {
-		try {
-			Element racine = GestionXML.chargerNoeudRacine(new File("Circuits/"
-					+ file + ".xml"));
-			nom = racine.getChildText("nom");
-			terrain = new Terrain(racine.getChildText("terrain"));
-			String type = racine.getChildText("environnement");
-			String temps = racine.getChildText("temps");
-			String meteo = racine.getChildText("meteo");
-			environnement = new Environnement(type, temps, meteo);
 
-			contenu = new LinkedList<ContenuCircuit>();
-			Element parcours = racine.getChild("contenu");
-
-			for (Iterator iterator = parcours.getChildren().iterator(); iterator
-					.hasNext();) {
-				Element element = (Element) iterator.next();
-				if (element.getName().equals("gauche")
-						|| element.getName().equals("droite")) {
-					contenu.add(new Route(Long.valueOf(element
-							.getAttributeValue("distance")), Long
-							.valueOf(element.getAttributeValue("longueur")),
-							TypeRoute.valueOf(element.getName()),
-							Long.valueOf(element.getAttributeValue("force"))));
-
-				} else {
-
-					contenu.add(new Evenement(element.getName(), Long
-							.valueOf(element.getAttributeValue("distance")),
-							Long.valueOf(element.getAttributeValue("longueur")),element.getAttributeValue("type"), this));
-				}
-
-			}
-
-		} catch (Exception e) {
-			System.out.println("Erreur chargement xml");
-		}
-
-	}
+//	public Circuit(String file) {
+//		try {
+//			Element racine = GestionXML.chargerNoeudRacine(new File("Circuits/"
+//					+ file + ".xml"));
+//			nom = racine.getChildText("nom");
+//			terrain = new Terrain(racine.getChildText("terrain"));
+//			String type = racine.getChildText("environnement");
+//			String temps = racine.getChildText("temps");
+//			String meteo = racine.getChildText("meteo");
+//			environnement = new Environnement(type, temps, meteo);
+//			distance=0;
+//
+//			contenu = new LinkedList<ContenuCircuit>();
+//			Element parcours = racine.getChild("contenu");
+//
+//			for (Iterator iterator = parcours.getChildren().iterator(); iterator
+//					.hasNext();) {
+//				Element element = (Element) iterator.next();
+//				if (element.getName().equals("gauche")
+//						|| element.getName().equals("droite")) {
+//					contenu.add(new Route(Double.valueOf(element
+//							.getAttributeValue("distance")), Long
+//							.valueOf(element.getAttributeValue("longueur")),
+//							TypeRoute.valueOf(element.getName()),
+//							Double.valueOf(element.getAttributeValue("force"))));
+//
+//				} else if (element.getName().equals("fin")) {
+//					distance = Double.valueOf(element.getAttributeValue("distance"));
+//				} else {
+//
+//					contenu.add(new Evenement(element.getName(), Double
+//							.valueOf(element.getAttributeValue("distance")),
+//							Double.valueOf(element.getAttributeValue("longueur")),element.getAttributeValue("type"), this));
+//				}
+//
+//			}
+//
+//		} catch (Exception e) {
+//			System.out.println("Erreur chargement xml");
+//		}
+//
+//	}
 	
 	public Circuit(Element noeud) {
 		if (noeud.getChildren("way").size() != 1) {
@@ -69,12 +75,7 @@ public class Circuit {
 		Element chemin = noeud.getChild("way");
 		
 		nom = getTagValue(chemin, "nom");
-		//terrain = getTagValue(chemin, "terrain");
-		String type = getTagValue(chemin, "environnement");
-		String temps = getTagValue(chemin, "temps");
-		String meteo = getTagValue(chemin, "meteo");
-		
-		//environnement = new Environnement(type, temps, meteo);
+
 		
 		
 		// Récupération des noeuds
@@ -94,6 +95,8 @@ public class Circuit {
 		
 		double distance = 0;
 		
+		double angle=0;
+		
 		int i = 0;
 		
 		// Parcours du chemin
@@ -112,27 +115,65 @@ public class Circuit {
 			double lonSuivant = GestionXML.getDouble(n.getAttributeValue("lon"));
 			//System.out.println("Lat : "+lat);
 			
+
+			
+
+			if (i==0)
+			{
+			System.out.println("zero");
+			terrain = new Terrain(getTagValue(n, "surface"));
+			String type = getTagValue(n, "environnement");
+			String temps = getTagValue(n, "temps");
+			String meteo = getTagValue(n, "meteo");
+			System.out.println(type+temps+meteo);
+			environnement = new Environnement(type, temps, meteo);
+			}
+
 			if (i > 0)
 			{
-				double d = Cartographie.distance(latCourant, lonCourant, latSuivant, lonSuivant);
-			
-				System.out.println("Distance : "+d);
-			
-				distance += d;
-			
-				if (i > 2) {
-					
-					double a = Cartographie.angleVirage(latPrecedent,
-							lonPrecedent, latCourant, lonCourant, latSuivant,
-							lonSuivant);
-					System.out.println("Angle : " + a);
+			double d = Cartographie.distance(latCourant, lonCourant, latSuivant, lonSuivant);
 
-					TypeRoute s = Cartographie.sensVirage(latPrecedent,
-							lonPrecedent, latCourant, lonCourant, latSuivant,
-							lonSuivant);
-					System.out.println("Sens : "
-							+ (s == TypeRoute.GAUCHE ? "gauche" : "droite"));
-				}
+			System.out.println("Distance : "+d);
+
+			distance += d;
+
+
+
+			if (i > 1) {
+
+
+
+			double a = Cartographie.angleVirage(latPrecedent,
+			lonPrecedent, latCourant, lonCourant, latSuivant,
+			lonSuivant);
+			System.out.println("Angle : " + a);
+			
+
+
+
+
+			TypeRoute s = Cartographie.sensVirage(latPrecedent,
+			lonPrecedent, latCourant, lonCourant, latSuivant,
+			lonSuivant);
+
+			//On ajoute le virage
+			contenu.add(new Route(d,s,a));
+			//Si des evenements lies
+			if (n.getChildren()!=null) {
+				String param;
+				if ((param = getTagValue(n, "environnement"))!=null)
+					contenu.add(new Evenement("environnement",distance,param,this));
+				if ((param = getTagValue(n, "terrain"))!=null)
+					contenu.add(new Evenement("terrain",distance,param,this));
+				if ((param = getTagValue(n, "son"))!=null)
+					contenu.add(new Evenement("son",distance,param,this));
+			}
+
+			System.out.println("Sens : "
+			+ (s == TypeRoute.GAUCHE ? "gauche" : "droite"));
+
+
+			}
 			}
 			
 			
@@ -151,7 +192,7 @@ public class Circuit {
 	}
 
 	public static String getTagValue(Element noeud, String tag) {
-		for (Object t : noeud.getChildren(tag)) {
+		for (Object t : noeud.getChildren("tag")) {
 			Element tt = (Element) t;
 			
 			if (tt.getAttributeValue("k").equals(tag)) {
@@ -174,7 +215,15 @@ public class Circuit {
 	public void start() {
 		environnement.play();
 	}
+	
+	public double getDistance() {
+		return distance;
+	}
 
+	public String getNom() {
+		return nom;
+	}
+	
 	public static void main(String[] args) throws Exception {
 		/*Circuit test = new Circuit("Circuit_1");
 		test.start();
@@ -184,8 +233,13 @@ public class Circuit {
 		test.changeEnvironnement("mer");
 		while (!sc.next().equals("e"))
 			;*/
-		Element noeud = GestionXML.chargerNoeudRacine(new File("Circuits/CoteReserveCalvi.osm"));
+
+		Element noeud = GestionXML.chargerNoeudRacine(new File("Circuits/Calenzana.osm"));
+
 		
-		new Circuit(noeud);
+		Circuit temp = new Circuit(noeud);
+		temp.start();
 	}
+
+	
 }

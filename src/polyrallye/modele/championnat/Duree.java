@@ -15,14 +15,20 @@ public class Duree implements java.io.Serializable {
     private int dixiemes;
 
     /**
-     * Construit la durée en précisant les minutes, les secondes et les heures. * Les deux
-     * nombres doivent être positifs et les minutes strictement inférieures à
-     * 60. 
-     * @param m Nombre de minutes de la durée. 
-     * @param h Nombre d'heures
-     * @param s Nombres Secondes
-     * @param s Nombres dixiemes
-     * @throws IllegalArgumentException La condition énoncé n'est pas respecté.
+     * Construit la durée en précisant les minutes, les secondes et les heures.
+     * * Les deux nombres doivent être positifs et les minutes strictement
+     * inférieures à 60.
+     * 
+     * @param m
+     *            Nombre de minutes de la durée.
+     * @param h
+     *            Nombre d'heures
+     * @param s
+     *            Nombres Secondes
+     * @param s
+     *            Nombres dixiemes
+     * @throws IllegalArgumentException
+     *             La condition énoncé n'est pas respecté.
      * */
     public Duree(int h, int m, int s, int d) {
         if (m >= 0 && m < 60 && h >= 0 && s >= 0 && s < 60 && d >= 0 && d < 10) {
@@ -30,6 +36,16 @@ public class Duree implements java.io.Serializable {
             this.heures = h;
             this.secondes = s;
             this.dixiemes = d;
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+    
+    public Duree(int sec) {
+        if (sec >= 0) {
+            this.heures = sec / 3600;
+            this.heures = (sec - this.heures) / 60;
+            this.secondes = (sec - this.heures - this.minutes);
         } else {
             throw new IllegalArgumentException();
         }
@@ -60,7 +76,7 @@ public class Duree implements java.io.Serializable {
             throw new IllegalArgumentException();
         }
     }
-    
+
     /**
      * Getter de dixiemes. Seules les minutes sont retournées
      * 
@@ -86,15 +102,16 @@ public class Duree implements java.io.Serializable {
             throw new IllegalArgumentException();
         }
     }
+
     /**
-     * Getter de secondes. Seules les secondes sont retournées 
+     * Getter de secondes. Seules les secondes sont retournées
      * 
      * @return Nombre de minutes de la durée.
      */
     public int getSecondes() {
         return this.secondes;
     }
-    
+
     /**
      * Setter de minutes. Le nombre de secondes de la durée ne peut ni être
      * négatif ni supérieur ou égal à 60.
@@ -137,8 +154,6 @@ public class Duree implements java.io.Serializable {
         }
     }
 
- 
-
     /**
      * Vérifie l'équalité entre l'objet courant et un autre objet.
      * 
@@ -151,7 +166,9 @@ public class Duree implements java.io.Serializable {
             return false;
         else {
             Duree autre = (Duree) o;
-            if (this.minutes == autre.minutes && this.heures == autre.heures && this.secondes == autre.secondes && this.dixiemes == autre.dixiemes)
+            if (this.minutes == autre.minutes && this.heures == autre.heures
+                    && this.secondes == autre.secondes
+                    && this.dixiemes == autre.dixiemes)
                 return true;
             else
                 return false;
@@ -164,7 +181,8 @@ public class Duree implements java.io.Serializable {
      * @return Copie de l'objet courant.
      */
     public Object clone() {
-        return new Duree(this.heures, this.minutes, this.secondes, this.dixiemes);
+        return new Duree(this.heures, this.minutes, this.secondes,
+                this.dixiemes);
     }
 
     /**
@@ -176,12 +194,28 @@ public class Duree implements java.io.Serializable {
     public String toString() {
         String fin = null;
         if (this.minutes < 10)
-            fin = ":0" + this.minutes + ":" + this.secondes + "." + this.dixiemes;
+            fin = ":0" + this.minutes + ":" + this.secondes + "."
+                    + this.dixiemes;
         else if (this.secondes < 10)
-            fin += ":" + this.minutes + ":0" + this.secondes + "." + this.dixiemes;
+            fin += ":" + this.minutes + ":0" + this.secondes + "."
+                    + this.dixiemes;
         else
-            fin = ":" + this.minutes + ":" + this.secondes + "." + this.dixiemes;
+            fin = ":" + this.minutes + ":" + this.secondes + "."
+                    + this.dixiemes;
         return "" + this.heures + fin;
+    }
+
+    /**
+     * Converti en secondes.
+     * 
+     * @return entier
+     */
+    public int ConvertToSeconds() {
+        int result = 0;
+        result += this.minutes * 60;
+        result += this.heures * 3600;
+        result += this.secondes;
+        return result;
     }
 
 }

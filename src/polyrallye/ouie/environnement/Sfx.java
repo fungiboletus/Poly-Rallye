@@ -19,8 +19,8 @@ public class Sfx extends Thread {
 	protected float positionY;
 	protected float positionZ;
 
-	public float distance;
-	protected float realDistance;
+	public double distance;
+	protected double realDistance;
 
 	protected boolean isAlive;
 
@@ -49,8 +49,6 @@ public class Sfx extends Thread {
 		int position = 0;
 
 		while (isAlive) {
-			System.out.println("playing " + rep + "sfx_"
-					+ (random.nextInt(nombre) + 1) + ".wav" + "?");
 			try {
 				temp.charger(rep + "sfx_" + (random.nextInt(nombre) + 1)
 						+ ".wav");
@@ -89,7 +87,7 @@ public class Sfx extends Thread {
 		vitesse = t;
 	}
 
-	public void setDistance(float d) {
+	public void setDistance(double d) {
 		distance = d;
 	}
 

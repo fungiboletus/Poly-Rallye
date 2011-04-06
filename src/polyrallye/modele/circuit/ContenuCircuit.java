@@ -3,9 +3,9 @@ package polyrallye.modele.circuit;
 public interface ContenuCircuit {
 
 	
-	public long getLongueur();
+	//public double getLongueur();
 	
-	public long getDistance();
+	public double getDistance();
 	
 
 }
