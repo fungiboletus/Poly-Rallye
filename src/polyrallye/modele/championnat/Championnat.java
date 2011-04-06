@@ -1,60 +1,55 @@
 package polyrallye.modele.championnat;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.jdom.Element;
 
-import polyrallye.modele.Garage;
-import polyrallye.modele.circuit.Etape;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.Voiture;
-
+import polyrallye.utilitaires.GestionXML;
 
 public class Championnat {
-    
-    protected Garage garage;
+
     protected Joueur player;
     protected String nom;
-    protected Duree duree;
     protected List<Etape> etapes;
     protected Voiture voitureGagné;
     protected int argentGagné;
-    
-    public Championnat(Garage G, Joueur J, String nom, Duree duree, List<Etape> etapes, Voiture voitureGagné, int argentGagné)
-    {
-            this.garage = G;
-            this.player = J;
-            this.argentGagné = argentGagné;
-            this.nom = nom;
-            this.duree = duree;
-            
-            if (nom == null)
-                throw new NullPointerException(
-                        "Vous devez au moins specifier le nom de la spéciale !");
-            
-         // si la liste de speciales est null : en créer une
-            if (etapes == null)
-                this.etapes = new ArrayList<Etape>();
-            else
-                this.etapes = etapes;
-            
-    }
-    
-    public Championnat(Element noeud)
-    {
-            noeud.getChildText("nom");
-            
-            
-    }
-    
-    public Duree getDuree() {
-        return duree;
+
+    public Championnat(Joueur J, String nom, Duree duree, List<Etape> etapes,
+            Voiture voitureGagné, int argentGagné) {
+        this.player = J;
+        this.argentGagné = argentGagné;
+        this.nom = nom;
+
+        if (nom == null)
+            throw new NullPointerException(
+                    "Vous devez au moins specifier le nom du championnat !");
+
+        // si la liste de speciales est null : en créer une
+        if (etapes == null)
+            this.etapes = new ArrayList<Etape>();
+        else
+            this.etapes = etapes;
+
     }
 
-    public void setDuree(Duree duree) {
-        this.duree = duree;
+    public Championnat(Element noeud) {
+
+        player = new Joueur(noeud.getChildText("joueur"));
+
+        nom = noeud.getChildText("nom");
+
+        for (Object e : noeud.getChildren("etapes")) {
+            Etape balise = new Etape((Element) e);
+            etapes.add(balise);
+        }
+
+        voitureGagné = new Voiture(noeud.getChild("voitureEnJeu"));
+
+        argentGagné = GestionXML.getInt(noeud.getChildText("argentEnJeu"));
+
     }
 
     public List<Etape> getEtapes() {
@@ -80,7 +75,7 @@ public class Championnat {
     public String getNom() {
         return nom;
     }
-    
+
     public void setJoueur(Joueur j) {
         this.player = j;
     }
@@ -88,17 +83,9 @@ public class Championnat {
     public Joueur getJoueur() {
         return player;
     }
-    
-    public void setGarage(Garage g) {
-        this.garage = g;
-    }
 
-    public Garage getGarage() {
-        return garage;
-    }
-    
     public void RemisePrix() throws Exception {
-        garage.ajouter(voitureGagné);
-        player.ajouterArgent(argentGagné);    
+        player.getGarage().ajouter(voitureGagné);
+        player.ajouterArgent(argentGagné);
     }
 }
