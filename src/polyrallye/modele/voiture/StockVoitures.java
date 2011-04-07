@@ -197,7 +197,14 @@ public abstract class StockVoitures {
 		int nbVoitures = voitures.length;
 		
 		for (int i = 0; i < nb;++i) {
-			liste.add(((Entry<Double, Voiture>) voitures[Random.unsignedDelta(0, nbVoitures)]).getValue());
+			
+			Voiture nouvelleVoiture = ((Entry<Double, Voiture>) voitures[Random.unsignedDelta(0, nbVoitures)]).getValue();
+			
+			if (liste.contains(nouvelleVoiture) && i < nb*3) {
+				++nb;
+			} else {				
+				liste.add(nouvelleVoiture);
+			}
 		}
 		
 		return liste;
