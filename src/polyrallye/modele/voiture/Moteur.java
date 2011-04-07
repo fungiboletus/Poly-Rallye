@@ -21,9 +21,11 @@ public class Moteur {
 
     protected int coupleMax;
     protected int regimeCoupleMax;
-
     protected int regimeRupteur;
 
+    private double regimeCourant;
+    protected double coeff = 0.7;
+    
     public Moteur() {
 
     }
@@ -125,12 +127,27 @@ public class Moteur {
      * @return
      */
     public double getCouple() {
-        double c = (getPuissanceMax() * 716) / (double)getCoupleMax();
         double res = getCoupleMax()+ (getRegimePuissanceMax() - getRegimeCoupleMax())
-                * ((c - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
+                * ((1500 - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
+        System.out.println("couple "+res);
         return res;
     }
 
+
+    /**
+     * @param regimeCourant the regimeCourant to set
+     */
+    public void setRegimeCourant() {
+        regimeCourant = coeff * regimeCoupleMax;
+    }
+
+    /**
+     * @return the regimeCourant
+     */
+    public double getRegimeCourant() {
+        return regimeCourant;
+    }
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

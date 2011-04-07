@@ -36,4 +36,10 @@ public class VoitureGarage extends Menu implements ActionMenu {
 
 	}
 
+    @Override
+    public void remplir() {
+        // TODO Auto-generated method stub
+        
+    }
+
 }

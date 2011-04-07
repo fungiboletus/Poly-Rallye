@@ -61,4 +61,10 @@ public class AchatVoiture extends Menu implements ActionMenu {
 			lancer();
 		}
 	}
+
+    @Override
+    public void remplir() {
+        // TODO Auto-generated method stub
+        
+    }
 }
