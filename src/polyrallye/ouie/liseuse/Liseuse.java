@@ -35,9 +35,10 @@ import polyrallye.utilitaires.Multithreading;
  */
 public abstract class Liseuse {
 
-	// Il y a deux sons pour pouvoir enchaîner rapidement
-	protected static Sound sonParoles_A;
-	protected static Sound sonParoles_B;
+	/**
+	 * Son contenant toute les paroles enregistrées à la suite.
+	 */
+	protected static Sound sonParoles;
 
 	/**
 	 * Identifieur entre sonParoles_A et sonParoles_B
@@ -93,10 +94,8 @@ public abstract class Liseuse {
 		fileParoles = new LinkedList<String>();
 
 		// lt = new LecteurTexte();
-		sonParoles_A = new Sound("Paroles/paroles.ogg");
+		sonParoles = new Sound("Paroles/paroles.ogg");
 		// sonParoles_A.setGain(0.90f);
-		sonParoles_B = new Sound(sonParoles_A);
-		// sonParoles_B.setGain(0.90f);
 
 		voixVocalyzeSIVOX = ConfigFile.rechercher("VOIX_4");
 
@@ -164,9 +163,6 @@ public abstract class Liseuse {
 		String texte = fileParoles.poll();
 
 		if (texte == null) {
-			Multithreading.dormir(delai);
-			sonParoles_A.stop();
-			sonParoles_B.stop();
 			return false;
 		}
 
@@ -179,21 +175,9 @@ public abstract class Liseuse {
 			// System.out.println("alélouilla");
 			// System.out.println(p);
 			long time = Sys.getTime();
-
-			if (source == 0) {
-				sonParoles_A.setOffset(p.getDebut());
-				sonParoles_A.play();
-				Multithreading.dormir(delai);
-				sonParoles_B.stop();
-				source = 1;
-			} else {
-				sonParoles_B.setOffset(p.getDebut());
-				sonParoles_B.play();
-				Multithreading.dormir(delai);
-				sonParoles_A.stop();
-				source = 0;
-			}
-
+			sonParoles.setOffset(p.getDebut());
+			sonParoles.play();
+			
 			long t = (long) ((p.getFin() - p.getDebut()) * 1000) - delai;
 
 			while (!interrompre) {
@@ -203,10 +187,9 @@ public abstract class Liseuse {
 				}
 				Multithreading.dormir(50);
 			}
+			sonParoles.stop();
 		} else {
 
-			sonParoles_A.stop();
-			sonParoles_B.stop();
 
 			// VocalizeSIVOX a un peu de mal avec les abréviations, il faut
 			// rajouter
@@ -324,171 +307,7 @@ public abstract class Liseuse {
 	}
 
 	public static void lire(int valeur) {
-		fileParoles.add(""+valeur);/*
-		if (valeur >= 1000000) {
-			lire(valeur / 1000000);
-			fileParoles.add(" millions ");
-
-			int reste = valeur % 1000000;
-
-			if (reste > 0) {
-				lire(reste);
-			}
-		} else if (valeur >= 1000) {
-			if (valeur / 1000 > 1) {
-				lire(valeur / 1000);
-			}
-			fileParoles.add(" milles ");
-
-			int reste = valeur % 1000;
-
-			if (reste > 0) {
-				lire(reste);
-			}
-		} else if (valeur >= 100) {
-			if (valeur / 100 > 1) {
-				lire(valeur / 100);
-			}
-
-			fileParoles.add(" cent ");
-
-			int reste = valeur % 100;
-
-			if (reste > 0) {
-				lire(reste);
-			}
-		} else if (valeur >= 10) {
-			int dizaine = valeur / 10;
-			int reste = valeur % 10;
-
-			switch (dizaine) {
-			case 9:
-				fileParoles.add(" quatre-vingt ");
-				Liseuse.lire(valeur - 80);
-				reste = 0;
-				break;
-			case 8:
-				fileParoles.add(" quatre-vingt");
-				break;
-			case 7:
-				fileParoles.add(" soixante ");
-				if (reste == 1) {
-					fileParoles.add(" et ");
-				}
-				Liseuse.lire(valeur - 60);
-				reste = 0;
-				break;
-			case 6:
-				fileParoles.add(" soixante ");
-				if (reste == 1) {
-					fileParoles.add(" et ");
-				}
-				break;
-			case 5:
-				fileParoles.add(" cinquante ");
-				if (reste == 1) {
-					fileParoles.add(" et ");
-				}
-
-				break;
-			case 4:
-				fileParoles.add(" quarante ");
-				if (reste == 1) {
-					fileParoles.add(" et ");
-				}
-
-				break;
-			case 3:
-				fileParoles.add(" trente ");
-				if (reste == 1) {
-					fileParoles.add(" et ");
-				}
-
-				break;
-			case 2:
-				if (reste == 0) {
-					fileParoles.add(" vingt ");
-				} else {
-					fileParoles.add("vinte");
-				}
-				if (reste == 1) {
-					fileParoles.add(" et ");
-				}
-
-				break;
-			case 1:
-				switch (reste) {
-				case 9:
-					fileParoles.add(" dix-neuf ");
-					break;
-				case 8:
-					fileParoles.add(" dix-huit");
-					break;
-				case 7:
-					fileParoles.add(" dix-sept ");
-					break;
-				case 6:
-					fileParoles.add(" seize ");
-					break;
-				case 5:
-					fileParoles.add(" quinze ");
-					break;
-				case 4:
-					fileParoles.add(" quatorze ");
-					break;
-				case 3:
-					fileParoles.add(" treize ");
-					break;
-				case 2:
-					fileParoles.add(" douze ");
-					break;
-				case 1:
-					fileParoles.add(" onze ");
-					break;
-				case 0:
-					fileParoles.add(" dix ");
-					break;
-				}
-				reste = 0;
-			}
-
-			if (reste > 0) {
-				lire(reste);
-			}
-		} else {
-			switch (valeur) {
-			case 9:
-				fileParoles.add(" neuf ");
-				break;
-			case 8:
-				fileParoles.add(" huit ");
-				break;
-			case 7:
-				fileParoles.add(" sept  ");
-				break;
-			case 6:
-				fileParoles.add(" six ");
-				break;
-			case 5:
-				fileParoles.add(" cinq ");
-				break;
-			case 4:
-				fileParoles.add(" quatre ");
-				break;
-			case 3:
-				fileParoles.add(" trois ");
-				break;
-			case 2:
-				fileParoles.add(" deux ");
-				break;
-			case 1:
-				fileParoles.add(" un ");
-				break;
-			case 0:
-				fileParoles.add(" zéro ");
-				break;
-			}
-		}*/
+		fileParoles.add(""+valeur);
 	}
 	
 	/**
