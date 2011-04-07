@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Lamborghini</constructeur>
+		<nom>Diablo</nom>
+		<version>GTR</version>
+		<periode annee="2001" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="48" disposition="V" compression="normal"/>
+		<cylindree>5992</cylindree>
+		<puissance regime="7300">582</puissance>
+		<couple_max regime="5500">640</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1395</poids>
+		<largeur>2040</largeur>
+		<longueur>4430</longueur>
+		<empattement>2650</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=87769</source>
+	</sources>
+</voiture>

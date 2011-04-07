@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Porsche</constructeur>
+		<nom>911</nom>
+		<version>GT1</version>
+		<periode annee="1998" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="ligne" compression="turbo"/>
+		<cylindree>3164</cylindree>
+		<puissance regime="7000">536</puissance>
+		<couple_max regime="4250">600</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1250</poids>
+		<largeur>1980</largeur>
+		<longueur>4710</longueur>
+		<empattement>4000</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=77924</source>
+	</sources>
+</voiture>
