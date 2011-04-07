@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
-import java.util.Random;
 import java.util.TreeMap;
 
 import org.jdom.Element;
 
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
+import t2s.util.Random;
 
 /**
  * @author Antoine Pultier Cette classe s'occupe de charger les voitures
@@ -182,24 +182,22 @@ public abstract class StockVoitures {
 	 * @param nb Nombre de voitures
 	 * @return Liste des voitures équivalentes
 	 */
+	@SuppressWarnings("unchecked")
 	public static List<Voiture> getVoituresEquivalentes(Voiture v, int nb) {
 		List<Voiture> liste = new ArrayList<Voiture>();
 		
 		double score = v.getScore();
 		
-		Random r = new Random();
+		// 50 => 15
+		// 1000 => 100
+		double marge = 15.0 + (score - 50.0)*((85.0)/(950.0));
 		
-		for (int i = 0; i < nb;) {
-			double nouveauScore = score * (0.9+r.nextDouble()*0.2);
-			System.out.println(nouveauScore);
-			Entry<Double, Voiture> e = voituresParPerformances.lowerEntry(nouveauScore);
-			
-			if (e != null) {
-				if (!liste.contains(e.getValue())) {
-					liste.add(voituresParPerformances.lowerEntry(nouveauScore).getValue());
-					++i;					
-				}
-			}
+		Object voitures [] = voituresParPerformances.subMap(score-marge, true, score+marge, true).entrySet().toArray();
+		
+		int nbVoitures = voitures.length;
+		
+		for (int i = 0; i < nb;++i) {
+			liste.add(((Entry<Double, Voiture>) voitures[Random.unsignedDelta(0, nbVoitures)]).getValue());
 		}
 		
 		return liste;

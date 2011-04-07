@@ -33,7 +33,7 @@ public class Main {
 	public static void voitures() {		
 		for (Entry<Double, Voiture> s : StockVoitures.getVoituresParPerformances().entrySet())
 		{
-			System.out.println("v : " + s.getValue().getNomComplet() + "  " + s.getKey());
+			System.out.println("v : "+ Math.round(s.getKey()) + "\t"  + s.getValue().getNomComplet());
 		}
 		
 		System.out.println("Voitures équivalentes à la Citroën DS3 WRC :");

@@ -131,15 +131,34 @@ public class Voiture {
 	 * score est élevé. Plus le poids de la voiture est élevé, plus le score est
 	 * faible.
 	 * 
+	 * Le résultat est interpolé
+	 * 
 	 * @return Le score de la voiture
 	 */
 	public double getScore() {
-		return (((transmission.type == TypeTransmission.QUATTRO) ? 1.2
+		double score = (((transmission.type == TypeTransmission.QUATTRO) ? 1.2
 				: ((transmission.type == TypeTransmission.TRACTION) ? 0.9 : 1.0))
 				* (0.6 + (Math.abs(moteur.getRegimePuissanceMax()
 						- moteur.getRegimeCoupleMax()) / 5000.0) * 0.42) * (moteur
 				.getPuissanceMax() * 4.2 + Math.pow(moteur.getCoupleMax(), 1.3)))
 				/ Math.pow((double) chassis.getPoids(), 1.2);
+		
+		// Maintenant, il faut faire une interpolation
+
+		double xa = 0.01;
+		double xb = 1.25;
+		double ya = 20;
+		double yb = 700;
+
+		if (score >= xb) {
+			xa = xb;
+			xb = 2.5;
+			ya = yb;
+			yb = 900;
+		}
+
+		return ya + (score - xa)*((yb-ya)/(xb-xa));
+		
 	}
 
 	@Override
