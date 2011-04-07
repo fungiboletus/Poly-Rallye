@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.jdom.Element;
 
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -249,6 +250,33 @@ public class Transmission {
 		}
 		builder.append("]");
 		return builder.toString();
+	}
+	
+	public void lireSpecifications() {
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Transmission aux ");
+		switch (type) {
+		case PROPULSION:
+			sb.append("roues arrières");
+			break;
+		case TRACTION:
+			sb.append("roues avant");
+			break;
+		case QUATTRO:
+			sb.append("4 roues");
+			break;
+		}
+		
+		Liseuse.lire(sb.toString());
+        Liseuse.marquerPause();
+        sb = new StringBuilder();
+        
+		sb.append("Avec une boite de ");
+		sb.append(nbVitesses);
+		sb.append(" vitesses");
+		
+		Liseuse.lire(sb.toString());
 	}
 
 }

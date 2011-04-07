@@ -1,5 +1,6 @@
 package polyrallye.ouie.utilitaires;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -36,7 +37,7 @@ public class Sound {
 
 	protected static Map<String, TupleData> cacheData; 
 	
-	protected String chemin;
+	protected String identifiant;
 	
 	protected int data;
 
@@ -72,6 +73,16 @@ public class Sound {
 	public Sound(Sound source) {
 		data = source.data;
 		id = SoundScape.makeSoundSource(data);
+	}
+	
+	public Sound(File fichier, String identifiantCache) {
+		this();
+		
+		try {
+			charger(fichier.getPath(), identifiantCache);
+		} catch (SoundException e) {
+			System.err.println(e.getMessage());
+		}
 	}
 
 	public void pause(boolean pause) {
@@ -159,7 +170,7 @@ public class Sound {
 			this.stop();
 			SoundScape.deleteSoundSource(id);
 			
-			TupleData cache = cacheData.get(chemin);
+			TupleData cache = cacheData.get(identifiant);
 			
 			if (cache != null) {
 				--cache.nbReferences;
@@ -172,14 +183,18 @@ public class Sound {
 	}
 
 	public void charger(String chemin) throws SoundException {
+		charger(chemin, chemin);
+	}
+	
+	public void charger(String chemin, String identifiant) throws SoundException {
 		
 		if (id != -1 && data != -1) {
 			delete();
 		}
 		
-		this.chemin = chemin;
+		this.identifiant = identifiant;
 
-		TupleData cache = cacheData.get(chemin);
+		TupleData cache = cacheData.get(identifiant);
 		
 		if (cache != null) {
 			data = cache.data;
@@ -205,7 +220,7 @@ public class Sound {
 				cache = new TupleData();
 				cache.data = data;
 				cache.nbReferences = 1;
-				cacheData.put(chemin, cache);				
+				cacheData.put(identifiant, cache);				
 			}
 		}
 		

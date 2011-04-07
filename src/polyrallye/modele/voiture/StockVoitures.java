@@ -1,8 +1,12 @@
 package polyrallye.modele.voiture;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.NavigableMap;
+import java.util.Random;
 import java.util.TreeMap;
 
 import org.jdom.Element;
@@ -169,4 +173,35 @@ public abstract class StockVoitures {
 		return voituresParPerformances;
 	}
 
+	/**
+	 * Calcule une liste de voitures aux performances et caractéristiques équivalentes à une voiture donnée.
+	 * 
+	 * C'est très utile pour avoir des adversaires aux voitures équivalentes.
+	 * 
+	 * @param v Voiture clef
+	 * @param nb Nombre de voitures
+	 * @return Liste des voitures équivalentes
+	 */
+	public static List<Voiture> getVoituresEquivalentes(Voiture v, int nb) {
+		List<Voiture> liste = new ArrayList<Voiture>();
+		
+		double score = v.getScore();
+		
+		Random r = new Random();
+		
+		for (int i = 0; i < nb;) {
+			double nouveauScore = score * (0.9+r.nextDouble()*0.2);
+			System.out.println(nouveauScore);
+			Entry<Double, Voiture> e = voituresParPerformances.lowerEntry(nouveauScore);
+			
+			if (e != null) {
+				if (!liste.contains(e.getValue())) {
+					liste.add(voituresParPerformances.lowerEntry(nouveauScore).getValue());
+					++i;					
+				}
+			}
+		}
+		
+		return liste;
+	}
 }

@@ -156,25 +156,30 @@ public class Voiture {
 	}
 
 	public void lireSpecifications() {
-		Liseuse.lire(nom);
-		Liseuse.lire("Construite par ");
-		Liseuse.lire(constructeur);
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Construite");
 
-		if (debutDiffusion == finDiffusion) {
-			Liseuse.lire("en");
-			Liseuse.lire(debutDiffusion);
+		if (debutDiffusion == finDiffusion || finDiffusion == 0) {
+			sb.append(" en ");
+			sb.append(debutDiffusion);
 		} else {
-			Liseuse.lire(" entre ");
-			Liseuse.lire(debutDiffusion);
-			Liseuse.lire(" et ");
+			sb.append(" entre ");
+			sb.append(debutDiffusion);
+			sb.append(" et ");
+			sb.append(finDiffusion);
 		}
-		Liseuse.lire(finDiffusion);
-		Liseuse.lire("Valeur de ");
-		Liseuse.lire(prix);
-		Liseuse.lire("pour une rareté de ");
-		Liseuse.lire(rarete);
-		Liseuse.marquerPause();
+		
+		Liseuse.lire(sb.toString());
+		
 		moteur.lireSpecifications();
+		Liseuse.marquerPause();
+		
+		chassis.lireSpecifications();
+		Liseuse.marquerPause();
+
+		transmission.lireSpecifications();
+		
 	}
 
 	public void ennoncerCategoriePerformances() {
