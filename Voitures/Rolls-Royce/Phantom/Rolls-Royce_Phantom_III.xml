@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Rolls-Royce</constructeur>
+		<nom>Phantom</nom>
+		<version>III</version>
+		<periode annee="1935" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+		<prix>300 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="24" disposition="V" compression="normal"/>
+		<cylindree>7340</cylindree>
+		<puissance regime="3000">165</puissance>
+		<couple_max regime="2500">300</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>2642</poids>
+		<largeur>1905</largeur>
+		<longueur>5410</longueur>
+		<empattement>3607</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=49060</source>
+	</sources>
+</voiture>

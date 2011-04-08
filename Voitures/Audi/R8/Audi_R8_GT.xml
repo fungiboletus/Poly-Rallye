@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>R8</nom>
+		<version>GT</version>
+		<periode annee="2010" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+		<prix>100000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="10" nb_soupapes="40" disposition="V" compression="normal"/>
+		<cylindree>5204</cylindree>
+		<puissance regime="8000">552</puissance>
+		<couple_max regime="6500">540</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1525</poids>
+		<largeur>1930</largeur>
+		<longueur>4435</longueur>
+		<empattement>2650</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=211541</source>
+	</sources>
+</voiture>

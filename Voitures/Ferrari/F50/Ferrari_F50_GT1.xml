@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>F50</nom>
+		<version>GT1</version>
+		<periode annee="1996" />
+	</presentation>
+	<economie>
+		<rarete>9</rarete>
+		<prix>300 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="60" disposition="V" compression="normal"/>
+		<cylindree>4698</cylindree>
+		<puissance regime="10500">750</puissance>
+		<couple_max regime="3000">520</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>907</poids>
+		<largeur>1986</largeur>
+		<longueur>4578</longueur>
+		<empattement>2580</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=85140</source>
+	</sources>
+</voiture>

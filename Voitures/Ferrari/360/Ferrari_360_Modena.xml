@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>360</nom>
+		<version>Modena</version>
+		<periode annee="1999" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>60000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="40" disposition="V" compression="normal"/>
+		<cylindree>3586</cylindree>
+		<puissance regime="8500">394</puissance>
+		<couple_max regime="4750">373</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1390</poids>
+		<largeur>1922</largeur>
+		<longueur>4477</longueur>
+		<empattement>2600</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=1430</source>
+	</sources>
+</voiture>

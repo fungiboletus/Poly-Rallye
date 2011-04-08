@@ -75,13 +75,12 @@ public abstract class SoundScape {
 			// AL10.alListenerf(AL10.AL_REFERENCE_DISTANCE, 100f);
 
 			// Check if VORBIS sound format is supported
-			System.out
-					.print("SoundScape.create(): Checking for Vorbis extension...");
+			//System.out.print("SoundScape.create(): Checking for Vorbis extension...");
 			if (AL10.alIsExtensionPresent("AL_EXT_vorbis")) {
-				System.out.println("Vorbis extension found.");
+				//System.out.println("Vorbis extension found.");
 				haveVorbis = true;
 			} else {
-				System.out.println("Vorbis extension not supported.");
+				//System.out.println("Vorbis extension not supported.");
 			}
 
 			ALcreated = true;

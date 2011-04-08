@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Lancia</constructeur>
+		<nom>Delta</nom>
+		<version>S4</version>
+		<periode annee="1985" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="turbo"/>
+		<cylindree>1759</cylindree>
+		<puissance regime="6750">247</puissance>
+		<couple_max regime="4500">291</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1197</poids>
+		<largeur>1801</largeur>
+		<longueur>4005</longueur>
+		<empattement>2327</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=23166</source>
+	</sources>
+</voiture>

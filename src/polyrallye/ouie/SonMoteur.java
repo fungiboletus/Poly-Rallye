@@ -10,6 +10,11 @@ import java.util.TreeMap;
 import polyrallye.ouie.utilitaires.Sound;
 import t2s.util.Random;
 
+/**
+ * @author Antoine Pultier
+ *
+ * Classe de gestion du son moteur. En cours de développement.
+ */
 public class SonMoteur {
 
 	protected static NavigableMap<Integer, Sound> sons;
@@ -51,7 +56,7 @@ public class SonMoteur {
 		regime = 2000;
 
 		Timer t = new Timer();
-		
+
 		TimerTask tt = new TimerTask() {
 
 			@Override
@@ -59,17 +64,16 @@ public class SonMoteur {
 				// System.out.println(SonMoteur.accelere);
 				float regime = SonMoteur.regime;
 				if (SonMoteur.accelere && regime < 9500) {
-					regime += Random.delta(10, 15);
+					regime += 20;// Random.delta(10, 15);
 				} else if (regime > 2010) {
-					regime -= Random.delta(5,15);
+					regime -= 20;// Random.delta(5,15);
 				}
 
 				SonMoteur.setRegime(regime);
-
 			}
 		};
 
-		t.schedule(tt, 0, 5);
+		t.schedule(tt, 0, 30);
 
 		/*
 		 * while(true) { //System.out.println("R: "+ regime + " - "+accelere);
@@ -108,10 +112,10 @@ public class SonMoteur {
 			// NavigableMap <3
 			Entry<Integer, Sound> min = sons.lowerEntry(intRegime);
 			Entry<Integer, Sound> max = sons.higherEntry(intRegime);
-			
+
 			Integer i_min = (min != null) ? min.getKey() : 0;
 			Integer i_max = (max != null) ? max.getKey() : 0;
-			
+
 			if (min != null) {
 				Sound s_min = min.getValue();
 
@@ -121,7 +125,6 @@ public class SonMoteur {
 				s_min.setPitch(regime / i_min);
 				s_min.pause(false);
 
-				
 			}
 
 			if (max != null) {
@@ -132,17 +135,17 @@ public class SonMoteur {
 				s_max.setGain(r_b * gain);
 				s_max.setPitch(regime / i_max);
 				s_max.pause(false);
-				
+
 			}
 
-			//System.out.println(i_min);
+			// System.out.println(i_min);
 			for (Entry<Integer, Sound> e : sons.entrySet()) {
 				if (!(e.getKey().equals(i_max) || e.getKey().equals(i_min))) {
 					e.getValue().pause(true);
 				}
 			}
 		}
-		
+
 		SonMoteur.regime = regime;
 	}
 

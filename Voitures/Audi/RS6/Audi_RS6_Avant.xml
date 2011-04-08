@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>RS6</nom>
+		<version>Avant</version>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+		<prix>772000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="10" nb_soupapes="40" disposition="V" compression="turbo"/>
+		<cylindree>4991</cylindree>
+		<puissance regime="6250">572</puissance>
+		<couple_max regime="1500">650</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>2025</poids>
+		<largeur>1889</largeur>
+		<longueur>4928</longueur>
+		<empattement>2846</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=160644</source>
+	</sources>
+</voiture>

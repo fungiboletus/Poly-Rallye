@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Ferrari</constructeur>
+		<nom>500</nom>
+		<version>Superfast</version>
+		<periode annee="1964" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+		<prix>160 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="24" disposition="V" compression="normal"/>
+		<cylindree>4963</cylindree>
+		<puissance regime="6500">400</puissance>
+		<couple_max regime="4750">475</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1400</poids>
+		<largeur>1778</largeur>
+		<longueur>4821</longueur>
+		<empattement>2648</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=1551</source>
+	</sources>
+</voiture>

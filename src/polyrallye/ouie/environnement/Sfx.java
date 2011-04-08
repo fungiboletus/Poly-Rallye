@@ -4,6 +4,7 @@ import java.util.Random;
 
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
+import polyrallye.utilitaires.Multithreading;
 
 public class Sfx extends Thread {
 
@@ -18,8 +19,8 @@ public class Sfx extends Thread {
 	protected float positionY;
 	protected float positionZ;
 
-	public float distance;
-	protected float realDistance;
+	public double distance;
+	protected double realDistance;
 
 	protected boolean isAlive;
 
@@ -48,8 +49,6 @@ public class Sfx extends Thread {
 		int position = 0;
 
 		while (isAlive) {
-			System.out.println("playing " + rep + "sfx_"
-					+ (random.nextInt(nombre) + 1) + ".wav" + "?");
 			try {
 				temp.charger(rep + "sfx_" + (random.nextInt(nombre) + 1)
 						+ ".wav");
@@ -75,13 +74,11 @@ public class Sfx extends Thread {
 					realDistance=distance;
 				temp.setPosition(positionX, positionY, positionZ);
 				}
+				Multithreading.dormir(20);
 			}
 			// On le supprimme
 			temp.delete();
-			try {
-				Thread.sleep(intervalle * 1000);
-			} catch (InterruptedException e) {
-			}
+			Multithreading.dormir(intervalle * 1000);
 		}
 
 	}
@@ -90,7 +87,7 @@ public class Sfx extends Thread {
 		vitesse = t;
 	}
 
-	public void setDistance(float d) {
+	public void setDistance(double d) {
 		distance = d;
 	}
 

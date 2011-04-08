@@ -4,6 +4,7 @@ package t2s.son;
 import java.io.*;
 import t2s.exception.*;
 import t2s.prosodie.*;
+import t2s.son.SynthetiseurMbrola;
 import t2s.traitement.*;
 import t2s.util.*;
 
@@ -235,7 +236,8 @@ public class LecteurTexte{
             System.out.println(outFile);
 		    l.ecrirePhonemes(outFile +".pho");
             sb = new SynthetiseurMbrola(voix, REPERTOIRE_PHO_WAV+"/", FICHIER_PHO_WAV);
-            sb.muet();
+            //sb.muet();
+            sb.play();
             try {
                 Thread.sleep(l.dureePhonemes()+ 100);
             } catch ( InterruptedException e ) {}
@@ -265,10 +267,11 @@ public class LecteurTexte{
 		    vide = true;
 		    l.ecrirePhonemes(outFile + ".pho");
 		    sb = new SynthetiseurMbrola(voix, REPERTOIRE_PHO_WAV+"/", FICHIER_PHO_WAV);
-		    sb.play();
+		    sb.muet();
+		    /*sb.play();
 		    try {
 		    	Thread.sleep(l.dureePhonemes()+ 100);
-		    } catch (Exception ee ) {};
+		    } catch (Exception ee ) {};*/
 		}
 		return l.toString();
     }

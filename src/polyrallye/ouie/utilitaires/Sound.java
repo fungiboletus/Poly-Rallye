@@ -1,6 +1,12 @@
 package polyrallye.ouie.utilitaires;
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import polyrallye.ouie.CallbackArretSon;
+import polyrallye.utilitaires.Multithreading;
 
 public class Sound {
 
@@ -23,13 +29,26 @@ public class Sound {
 			super(cause);
 		}
 	}
+	
+	protected class TupleData {
+		public int nbReferences;
+		public int data;
+	}
 
+	protected static Map<String, TupleData> cacheData; 
+	
+	protected String identifiant;
+	
 	protected int data;
 
 	protected int id;
 	
 	protected boolean enPause = false;
 
+	static {
+		cacheData = new HashMap<String, Sound.TupleData>();
+	}
+	
 	public Sound() {
 		data = -1;
 		id = -1;
@@ -40,7 +59,7 @@ public class Sound {
 
 		charger(chemin);
 	}
-
+	
 	public Sound(String chemin) {
 		this();
 
@@ -48,6 +67,21 @@ public class Sound {
 			charger(chemin);
 		} catch (SoundException se) {
 			System.err.println(se.getMessage());
+		}
+	}
+	
+	public Sound(Sound source) {
+		data = source.data;
+		id = SoundScape.makeSoundSource(data);
+	}
+	
+	public Sound(File fichier, String identifiantCache) {
+		this();
+		
+		try {
+			charger(fichier.getPath(), identifiantCache);
+		} catch (SoundException e) {
+			System.err.println(e.getMessage());
 		}
 	}
 
@@ -119,10 +153,7 @@ public class Sound {
 		play();
 
 		while (isPlaying()) {
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-			}
+			Multithreading.dormir(100);
 		}
 	}
 
@@ -130,10 +161,7 @@ public class Sound {
 		play();
 
 		while (isPlaying() && car.continuerLecture()) {
-			try {
-				Thread.sleep(50);
-			} catch (InterruptedException e) {
-			}
+			Multithreading.dormir(100);
 		}
 	}
 
@@ -141,18 +169,61 @@ public class Sound {
 		if (id != -1 && data != -1) {
 			this.stop();
 			SoundScape.deleteSoundSource(id);
-			SoundScape.deleteSoundData(data);
+			
+			TupleData cache = cacheData.get(identifiant);
+			
+			if (cache != null) {
+				--cache.nbReferences;
+			}
+			//SoundScape.deleteSoundData(data);
+			
 			id = -1;
 			data = -1;
 		}
 	}
 
 	public void charger(String chemin) throws SoundException {
+		charger(chemin, chemin);
+	}
+	
+	public void charger(String chemin, String identifiant) throws SoundException {
+		
 		if (id != -1 && data != -1) {
 			delete();
 		}
+		
+		this.identifiant = identifiant;
 
-		data = SoundScape.loadSoundData(chemin);
+		TupleData cache = cacheData.get(identifiant);
+		
+		if (cache != null) {
+			data = cache.data;
+			++cache.nbReferences;
+			System.out.println("Cache pour "+chemin);
+		}
+		else
+		{
+			// Il ne faut pas garder trop de sons dans le cache
+			if (cacheData.size() > 64) {
+				for (Entry<String, TupleData> e : cacheData.entrySet()) {
+					TupleData td = e.getValue();
+					if (td.nbReferences == 0) {
+						SoundScape.deleteSoundData(td.data);
+						cacheData.remove(e.getKey());
+						System.out.println("enlèvement du cache pour "+e.getKey());
+					}
+				}
+			}
+			
+			data = SoundScape.loadSoundData(chemin);
+			if (data != -1) {
+				cache = new TupleData();
+				cache.data = data;
+				cache.nbReferences = 1;
+				cacheData.put(identifiant, cache);				
+			}
+		}
+		
 		id = SoundScape.makeSoundSource(data);
 
 		if (id == -1 || data == -1) {
@@ -176,9 +247,7 @@ public class Sound {
 					do {
 						setGain(gain);
 						gain -= d;
-						try {
-							Thread.sleep(50);
-						} catch (InterruptedException e) {}
+						Multithreading.dormir(50);
 					} while (gain > 0.0f);
 					
 					pause(true);
@@ -207,9 +276,7 @@ public class Sound {
 					do {
 						setGain(gain);
 						gain += d;
-						try {
-							Thread.sleep(50);
-						} catch (InterruptedException e) {}
+						Multithreading.dormir(50);
 					} while (gain < gainFinal);
 					
 					setGain(gainFinal);

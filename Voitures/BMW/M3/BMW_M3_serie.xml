@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>BMW</constructeur>
+		<nom>M3</nom>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+		<prix>54900</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="normal"/>
+		<cylindree>3999</cylindree>
+		<puissance regime="8300">414</puissance>
+		<couple_max regime="3900">400</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1655</poids>
+		<largeur>1817</largeur>
+		<longueur>4615</longueur>
+		<empattement>2761</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=156024</source>
+	</sources>
+</voiture>

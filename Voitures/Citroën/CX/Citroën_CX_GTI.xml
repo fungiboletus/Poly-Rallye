@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>CX</nom>
+		<version>GTI</version>
+		<periode annee="1984" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>2500</cylindree>
+		<puissance regime="5000">136</puissance>
+		<couple_max regime="4000">206</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1370</poids>
+		<largeur>1770</largeur>
+		<longueur>4670</longueur>
+		<empattement>2850</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=24739</source>
+	</sources>
+</voiture>

@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>21</nom>
+		<version>Nevada</version>
+		<periode annee="1988" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+		<prix>12000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>2165</cylindree>
+		<puissance regime="5000">108</puissance>
+		<couple_max regime="3500">174</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1175</poids>
+		<largeur>1715</largeur>
+		<longueur>4645</longueur>
+		<empattement>2750</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=221749</source>
+	</sources>
+</voiture>

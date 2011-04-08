@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Dodge</constructeur>
+		<nom>Viper</nom>
+		<version>GTS</version>
+		<periode annee="1996" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>60 000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="10" nb_soupapes="20" disposition="V" compression="normal"/>
+		<cylindree>7986</cylindree>
+		<puissance regime="5200">450</puissance>
+		<couple_max regime="3700">664</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1531</poids>
+		<largeur>1923</largeur>
+		<longueur>4488</longueur>
+		<empattement>2443</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=20812</source>
+	</sources>
+</voiture>

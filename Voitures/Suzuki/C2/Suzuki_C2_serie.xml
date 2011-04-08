@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Suzuki</constructeur>
+		<nom>C2</nom>
+		<periode annee="1997" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>12000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="turbo"/>
+		<cylindree>1644</cylindree>
+		<puissance regime="7000">250</puissance>
+		<couple_max regime="4000">284</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>848</poids>
+		<largeur>1650</largeur>
+		<longueur>3650</longueur>
+		<empattement>2230</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=86856</source>
+	</sources>
+</voiture>

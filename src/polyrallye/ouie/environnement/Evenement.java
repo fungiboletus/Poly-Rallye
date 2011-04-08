@@ -10,16 +10,16 @@ public class Evenement implements ContenuCircuit {
 	protected Circuit circuit;
 	
 	protected String type;
-	protected long distance;
-	protected long longueur;	
+	protected double distance;
+	//protected double longueur;	
 	protected String param;
 	
 	protected Sound son;
 	
-	public Evenement(String t,long d,long l,String p,Circuit c) {
+	public Evenement(String t,double d,String p,Circuit c) {
 		type=t;
 		distance=d;
-		longueur=l;
+		//longueur=l;
 		param=p;
 		circuit=c;
 		son=null;
@@ -49,13 +49,13 @@ public class Evenement implements ContenuCircuit {
 	
 	
 	@Override
-	public long getDistance() {
+	public double getDistance() {
 		return distance;
 	}
 
-	@Override
-	public long getLongueur() {
-		return longueur;
-	}
+//	@Override
+//	public double getLongueur() {
+//		return longueur;
+//	}
 
 }

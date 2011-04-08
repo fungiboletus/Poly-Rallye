@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Chevrolet</constructeur>
+		<nom>Corvette</nom>
+		<version>ZR1</version>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>8</rarete>
+		<prix>90000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="turbo"/>
+		<cylindree>6162</cylindree>
+		<puissance regime="6500">638</puissance>
+		<couple_max regime="3800">819</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1508</poids>
+		<largeur>1928</largeur>
+		<longueur>4475</longueur>
+		<empattement>2685</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=167134</source>
+	</sources>
+</voiture>

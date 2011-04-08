@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Maserati</constructeur>
+		<nom>Ghibli</nom>
+		<version>SS</version>
+		<periode annee="1972" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+		<prix>100 200</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>4930</cylindree>
+		<puissance regime="5500">335</puissance>
+		<couple_max regime="4000">480</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1350</poids>
+		<largeur>1791</largeur>
+		<longueur>4684</longueur>
+		<empattement>2550</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=8932</source>
+	</sources>
+</voiture>

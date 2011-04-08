@@ -1,0 +1,32 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Suzuki</constructeur>
+		<nom>Kizashi</nom>
+		<version></version>
+		<periode annee="2009" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+		<prix>20000</prix>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>2393</cylindree>
+		<puissance regime="6500">185</puissance>
+		<couple_max regime="4000">231</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1470</poids>
+		<largeur>1820</largeur>
+		<longueur>4650</longueur>
+		<empattement>2700</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=206613</source>
+	</sources>
+</voiture>

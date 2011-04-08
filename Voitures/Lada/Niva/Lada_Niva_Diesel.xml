@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Lada</constructeur>
+		<nom>Niva</nom>
+		<version>Diesel</version>
+		<periode annee="1990" />
+	</presentation>
+	<economie>
+		<rarete>1</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="424;3Rnormal"/>
+		<cylindree>1905</cylindree>
+		<puissance regime="4600">58</puissance>
+		<couple_max regime="2070">114</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1190</poids>
+		<largeur>1680</largeur>
+		<longueur>3720</longueur>
+		<empattement>2200</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=32043</source>
+	</sources>
+</voiture>
