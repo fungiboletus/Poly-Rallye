@@ -129,7 +129,7 @@ public class Moteur {
     public double getCouple() {
         double res = getCoupleMax()+ (getRegimePuissanceMax() - getRegimeCoupleMax())
                 * ((1500 - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
-        System.out.println("couple "+res);
+//        System.out.println("couple "+res);
         return res;
     }
 

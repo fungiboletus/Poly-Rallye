@@ -35,9 +35,8 @@ public class Conduite {
      * @return
      */
     public double vitesseRoues(){
-        double vitesseMax = v.moteur.getPuissanceMax()/(double)v.moteur.getCoupleMax();
+        double vitesseMax = (v.moteur.getPuissanceMax()*716)/(double)v.moteur.getCoupleMax();
         double res =  vitesseMax*(1/v.transmission.getCoefCourant());
-        System.out.println("sfs "+v.transmission.getCoefCourant());
         return res;
         
     }
@@ -102,23 +101,25 @@ public class Conduite {
     
     public static void main(String []args){
        Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
+       System.out.println("voiture "+v.toString());
        v.getTransmission().passerVitesse();
        v.getTransmission().passerVitesse();
        v.getTransmission().passerVitesse();
        Conduite c = new Conduite(v);
        c.acceleration(TypeTerrain.ASPHALT);
-       c.distanceAcceleration(120);
+       c.distanceAcceleration(240);
        c.vitesseAvancement();
        System.out.println("distance "+c.distanceParcourue);
        
       Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
+      System.out.println("voiture "+vv.toString());
       vv.getTransmission().passerVitesse();
       vv.getTransmission().passerVitesse();
       vv.getTransmission().passerVitesse();
       Conduite cc = new Conduite(vv);
       cc.acceleration(TypeTerrain.ASPHALT);
       c.vitesseAvancement();
-      cc.distanceAcceleration(120);
+      cc.distanceAcceleration(240);
       System.out.println("distance "+cc.distanceParcourue);
        
     }
