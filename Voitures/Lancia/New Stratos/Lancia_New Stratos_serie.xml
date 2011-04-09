@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Lancia</constructeur>
+		<nom>New Stratos</nom>
+		<periode annee="2010" />
+	</presentation>
+	<economie>
+		<rarete>8</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="normal"/>
+		<cylindree>4308</cylindree>
+		<puissance regime="8200">533</puissance>
+		<couple_max regime="3750">500</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1247</poids>
+		<largeur>1971</largeur>
+		<longueur>4181</longueur>
+		<empattement>2400</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=223410</source>
+	</sources>
+</voiture>

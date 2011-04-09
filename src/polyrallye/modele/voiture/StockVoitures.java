@@ -1,7 +1,10 @@
 package polyrallye.modele.voiture;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 
@@ -9,6 +12,7 @@ import org.jdom.Element;
 
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
+import t2s.util.Random;
 
 /**
  * @author Antoine Pultier Cette classe s'occupe de charger les voitures
@@ -169,4 +173,41 @@ public abstract class StockVoitures {
 		return voituresParPerformances;
 	}
 
+	/**
+	 * Calcule une liste de voitures aux performances et caractéristiques équivalentes à une voiture donnée.
+	 * 
+	 * C'est très utile pour avoir des adversaires aux voitures équivalentes.
+	 * 
+	 * @param v Voiture clef
+	 * @param nb Nombre de voitures
+	 * @return Liste des voitures équivalentes
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<Voiture> getVoituresEquivalentes(Voiture v, int nb) {
+		List<Voiture> liste = new ArrayList<Voiture>();
+		
+		double score = v.getScore();
+		
+		// 50 => 15
+		// 1000 => 100
+		double marge = 15.0 + (score - 50.0)*((85.0)/(950.0));
+		
+		Object voitures [] = voituresParPerformances.subMap(score-marge, true, score+marge, true).entrySet().toArray();
+		
+		int nbVoitures = voitures.length;
+		
+		int nnb = nb;
+		for (int i = 0; i < nnb;++i) {
+			
+			Voiture nouvelleVoiture = ((Entry<Double, Voiture>) voitures[Random.unsignedDelta(0, nbVoitures)]).getValue();
+			
+			if (liste.contains(nouvelleVoiture) && i < nb*3) {
+				++nnb;
+			} else {				
+				liste.add(nouvelleVoiture);
+			}
+		}
+		
+		return liste;
+	}
 }

@@ -1,5 +1,7 @@
 package polyrallye.modele.championnat;
 
+import org.jdom.Element;
+
 import polyrallye.modele.personnes.Personne;
 
 /**
@@ -30,6 +32,12 @@ public class Rang implements Comparable {
         this.personne = personne;
         duree = d;
     }
+    
+    public Element toXML() {
+        return null;
+           
+    }
+
 
     /**
      * retourne la speciale concernée par ce rang

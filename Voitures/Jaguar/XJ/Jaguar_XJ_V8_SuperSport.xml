@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Jaguar</constructeur>
+		<nom>XJ</nom>
+		<version>V8 SuperSport</version>
+		<periode annee="2009" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="turbo"/>
+		<cylindree>5000</cylindree>
+		<puissance regime="6000">503</puissance>
+		<couple_max regime="2500">625</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1892</poids>
+		<largeur>1894</largeur>
+		<longueur>5122</longueur>
+		<empattement>3032</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=199463</source>
+	</sources>
+</voiture>

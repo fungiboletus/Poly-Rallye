@@ -19,8 +19,18 @@ public class MenuSources extends Menu implements ActionMenu {
 
 	@Override
 	public void actionMenu() {
-		Liseuse.lire("Différentes sources disponibles");
-		lancer();
+		switch (sources.getSources().size()) {
+		case 0:
+			Liseuse.lire("Désolé il n'y a pas de sources pour cette voiture");
+			break;
+		case 1:
+			sources.naviguer(sources.getSources().get(0));
+			break;
+		default:
+			Liseuse.lire("Différentes sources sont disponibles");
+			lancer();
+
+		}
 	}
 
 	@Override

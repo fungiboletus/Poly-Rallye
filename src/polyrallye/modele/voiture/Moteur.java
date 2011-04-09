@@ -21,9 +21,11 @@ public class Moteur {
 
     protected int coupleMax;
     protected int regimeCoupleMax;
-
     protected int regimeRupteur;
 
+    private double regimeCourant;
+    protected double coeff = 0.7;
+    
     public Moteur() {
 
     }
@@ -130,12 +132,27 @@ public class Moteur {
      * @return
      */
     public double getCouple() {
-        double c = (getPuissanceMax() * 716) / (double)getCoupleMax();
         double res = getCoupleMax()+ (getRegimePuissanceMax() - getRegimeCoupleMax())
-                * ((c - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
+                * ((1500 - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
+//        System.out.println("couple "+res);
         return res;
     }
 
+
+    /**
+     * @param regimeCourant the regimeCourant to set
+     */
+    public void setRegimeCourant() {
+        regimeCourant = coeff * regimeCoupleMax;
+    }
+
+    /**
+     * @return the regimeCourant
+     */
+    public double getRegimeCourant() {
+        return regimeCourant;
+    }
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -177,55 +194,63 @@ public class Moteur {
     }
 
     public void lireSpecifications() {
-        Liseuse.lire("Moteur ");
-        if (nom != null) {
-            Liseuse.lire(nom);
-        }
+    	StringBuilder sb = new StringBuilder();
+		
+        sb.append("Moteur de ");
 
-        Liseuse.lire(" de ");
-        Liseuse.lire(cylindree);
-        Liseuse.lire(" cm cube pour ");
-        Liseuse.lire(nbCylindres);
-        Liseuse.lire(" cylindres, ");
-        Liseuse.lire(nbSoupapes);
-        Liseuse.lire(" soupapes");
-        Liseuse.lire("Disposition ");
+        sb.append((int)Math.round(cylindree/1000.0));
+        sb.append(" litres pour ");
+        sb.append(nbCylindres);
+        sb.append(" cylindres, ");
+        sb.append(nbSoupapes);
+        sb.append(" soupapes");
+        
+        Liseuse.lire(sb.toString());
+        Liseuse.marquerPause();
+        sb = new StringBuilder();
+        
+        sb.append("Disposés ");
 
         switch (disposition) {
         case LIGNE:
-            Liseuse.lire("en ligne");
+            sb.append("en ligne");
             break;
         case PLAT:
-            Liseuse.lire("à plat");
+            sb.append("à plat");
             break;
         case V:
-            Liseuse.lire("en V");
+            sb.append("en V");
             break;
         }
 
         switch (compression) {
         case COMPRESSEUR:
-            Liseuse.lire(" avec compresseur mécanique");
+            sb.append(" avec compresseur mécanique");
             break;
         case TURBO:
-            Liseuse.lire(" avec turbo compresseur");
+            sb.append(" avec turbo compresseur");
             break;
         }
 
+        Liseuse.lire(sb.toString());
         Liseuse.marquerPause();
-
-        Liseuse.lire("Couple max de ");
-        Liseuse.lire(coupleMax);
-        Liseuse.lire(" nm à ");
-        Liseuse.lire(regimeCoupleMax);
-        Liseuse.lire(" tours/min");
-        Liseuse.lire("Puissance max de ");
-        Liseuse.lire(puissanceMax);
-        Liseuse.lire(" chevaux à ");
-        Liseuse.lire(regimePuissanceMax);
-        Liseuse.lire(" tours/min");
-        Liseuse.lire(" Rupteur à ");
-        Liseuse.lire(regimeRupteur);
-        Liseuse.lire(" tours/min");
+        sb = new StringBuilder();
+        
+        sb.append("Couple max de ");
+        sb.append(coupleMax);
+        sb.append(" nioutown mètres à ");
+        sb.append(regimeCoupleMax);
+        sb.append(" tours par minutes");
+        
+        Liseuse.lire(sb.toString());
+        sb = new StringBuilder();
+        
+        sb.append("Puissance max de ");
+        sb.append(puissanceMax);
+        sb.append(" chevaux à ");
+        sb.append(regimePuissanceMax);
+        sb.append(" tours minute");
+        
+        Liseuse.lire(sb.toString());
     }
 }

@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Jaguar</constructeur>
+		<nom>XJ-220</nom>
+		<version>Prototype</version>
+		<periode annee="1988" />
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="12" nb_soupapes="48" disposition="V" compression="normal"/>
+		<cylindree>6222</cylindree>
+		<puissance regime="7000">530</puissance>
+		<couple_max regime="5000">542</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1560</poids>
+		<largeur>2000</largeur>
+		<longueur>5130</longueur>
+		<empattement>2845</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=40964</source>
+	</sources>
+</voiture>

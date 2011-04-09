@@ -2,6 +2,7 @@ package polyrallye.modele.voiture;
 
 import org.jdom.Element;
 
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 public class Chassis
@@ -40,5 +41,18 @@ public class Chassis
 
 	public int getEmpattement() {
 		return empattement;
+	}
+	
+	public void lireSpecifications() {
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append(poids);
+		sb.append(" kilos pour ");
+		sb.append((int)Math.round(largeur/1000.0));
+		sb.append(" mètres de large sur ");
+		sb.append((int)Math.round(longueur/1000.0));
+		sb.append(" mètres de lon"); // pour rappel, les fautes sont volontaires
+		
+		Liseuse.lire(sb.toString());
 	}
 }

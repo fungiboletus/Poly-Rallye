@@ -1,13 +1,47 @@
-package polyrallye.ouie;
+package polyrallye.controlleur;
 
-import polyrallye.controlleur.Main;
+import java.util.TimerTask;
+
+import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.environnement.Environnement;
 
 public class Course implements ActionMenu {
 
+	/**
+	 * Le timer qui excécute la course.
+	 */
+	protected java.util.Timer timerOrganisateur;
+	protected org.lwjgl.util.Timer timerCompteur;
+	
+	protected float temps;
+	
 	@Override
 	public void actionMenu() {
-		Environnement e = new Environnement("foret", "nuit", "vent");
+		timerOrganisateur = new java.util.Timer();
+		timerCompteur = new org.lwjgl.util.Timer();
+		
+		org.lwjgl.util.Timer.tick();
+		temps = timerCompteur.getTime();
+
+		TimerTask tt = new TimerTask() {
+			
+			@Override
+			public void run() {
+				// Gestion du temps
+				org.lwjgl.util.Timer.tick();
+				float tempsTmp = timerCompteur.getTime();
+				float deltaTemps = tempsTmp-temps;
+				temps = tempsTmp;
+				
+				
+				// TODO mettre le code de abdoul (oui monsieur)
+			}
+		};
+
+		// À 50Hz, comme le courant EDF
+		timerOrganisateur.schedule(tt, 0, 20);
+		
+		/*Environnement e = new Environnement("foret", "nuit", "vent");
 
 		e.play();
 
@@ -59,6 +93,6 @@ public class Course implements ActionMenu {
 			public void run() {
 				SonMoteur.lancer();
 			}
-		}.start();
+		}.start();*/
 	}
 }

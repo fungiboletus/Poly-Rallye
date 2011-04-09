@@ -3,6 +3,8 @@ package polyrallye.ouie;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+import polyrallye.controlleur.Main;
+
 /**
  * @author Antoine Pultier
  * 
@@ -68,6 +70,9 @@ public class GestionEntrees extends KeyAdapter {
 				break;
 			case KeyEvent.VK_F1:
 				ecouteur.aide();
+				break;
+			case KeyEvent.VK_D:
+				Main.basculerAffichageConsole();
 				break;
 
 			}

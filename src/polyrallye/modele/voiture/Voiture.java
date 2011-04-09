@@ -47,11 +47,12 @@ public class Voiture {
 
 		Element periode = presentation.getChild("periode");
 		debutDiffusion = GestionXML.getInt(periode.getAttributeValue("debut"));
-		
+
 		if (debutDiffusion == 0) {
-			debutDiffusion = GestionXML.getInt(periode.getAttributeValue("annee"));
+			debutDiffusion = GestionXML.getInt(periode
+					.getAttributeValue("annee"));
 		}
-		
+
 		finDiffusion = GestionXML.getInt(periode.getAttributeValue("fin"));
 
 		moteur = new Moteur(noeud.getChild("moteur"));
@@ -115,10 +116,49 @@ public class Voiture {
 		return sources;
 	}
 
+	/**
+	 * Calcule un score de la voiture.
+	 * 
+	 * Le score est calculé en fonction de certains paramètres de la voiture. La
+	 * formule n'a rien de scientifique, le but est seulement d'obtenir un moyen
+	 * fiable et pertinent pour classer les différentes voitures en fonction de
+	 * leurs performances.
+	 * 
+	 * Une voiture 4x4 a un meilleur score qu'une voiture propulsion, qui a un
+	 * meilleur score qu'une voiture traction. Plus la plage d'utilisation du
+	 * moteur est élevée, plus le score est élevé. Plus le couple (important
+	 * dans la formule), et la puissance (moins important) sont élevés, plus le
+	 * score est élevé. Plus le poids de la voiture est élevé, plus le score est
+	 * faible.
+	 * 
+	 * Le résultat est interpolé
+	 * 
+	 * @return Le score de la voiture
+	 */
 	public double getScore() {
-		return ((moteur.getPuissanceMax() * 1.75 + moteur.getCoupleMax() * moteur.getCoupleMax()) / ((double) chassis
-				.getPoids() * 1.75))
-				* ((transmission.type == TypeTransmission.QUATTRO) ? 1.2 : 1.0);
+		double score = (((transmission.type == TypeTransmission.QUATTRO) ? 1.2
+				: ((transmission.type == TypeTransmission.TRACTION) ? 0.9 : 1.0))
+				* (0.6 + (Math.abs(moteur.getRegimePuissanceMax()
+						- moteur.getRegimeCoupleMax()) / 5000.0) * 0.42) * (moteur
+				.getPuissanceMax() * 4.2 + Math.pow(moteur.getCoupleMax(), 1.3)))
+				/ Math.pow((double) chassis.getPoids(), 1.2);
+		
+		// Maintenant, il faut faire une interpolation
+
+		double xa = 0.01;
+		double xb = 1.25;
+		double ya = 20;
+		double yb = 700;
+
+		if (score >= xb) {
+			xa = xb;
+			xb = 2.5;
+			ya = yb;
+			yb = 900;
+		}
+
+		return ya + (score - xa)*((yb-ya)/(xb-xa));
+		
 	}
 
 	@Override
@@ -135,30 +175,35 @@ public class Voiture {
 	}
 
 	public void lireSpecifications() {
-		Liseuse.lire(nom);
-		Liseuse.lire("Construite par ");
-		Liseuse.lire(constructeur);
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("Construite");
 
-		if (debutDiffusion == finDiffusion) {
-			Liseuse.lire("en");
-			Liseuse.lire(debutDiffusion);
+		if (debutDiffusion == finDiffusion || finDiffusion == 0) {
+			sb.append(" en ");
+			sb.append(debutDiffusion);
 		} else {
-			Liseuse.lire(" entre ");
-			Liseuse.lire(debutDiffusion);
-			Liseuse.lire(" et ");
+			sb.append(" entre ");
+			sb.append(debutDiffusion);
+			sb.append(" et ");
+			sb.append(finDiffusion);
 		}
-		Liseuse.lire(finDiffusion);
-		Liseuse.lire("Valeur de ");
-		Liseuse.lire(prix);
-		Liseuse.lire("pour une rareté de ");
-		Liseuse.lire(rarete);
-		Liseuse.marquerPause();
+		
+		Liseuse.lire(sb.toString());
+		
 		moteur.lireSpecifications();
+		Liseuse.marquerPause();
+		
+		chassis.lireSpecifications();
+		Liseuse.marquerPause();
+
+		transmission.lireSpecifications();
+		
 	}
 
 	public void ennoncerCategoriePerformances() {
 		double score = getScore();
-		
+
 		if (score <= 0.2) {
 			Liseuse.lire("Faibles performances");
 		} else if (score <= 0.35) {
