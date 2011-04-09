@@ -7,5 +7,6 @@ public interface ContenuCircuit {
 	
 	public double getDistance();
 	
+	public String getType();
 
 }

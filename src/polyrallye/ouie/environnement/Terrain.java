@@ -36,13 +36,12 @@ public class Terrain {
 	
 	public void play() {
 		son.play();
-		//sfx.run();
+		sfx.run();
 	}
 	
-	public void setVitesse(float vitesse) {
-		float pitch = vitesse / 50;
+	public void setVitesse(double vitesse) {
+		float pitch = (float)vitesse / 50;
 		son.setPitch(pitch);
-
 	}
 	
 	public void change(String t) {
@@ -63,7 +62,7 @@ public class Terrain {
 	}
 	
 	public static void main(String[] args) {
-		Terrain t = new Terrain("herbe");
+		Terrain t = new Terrain("terre");
 		t.play();
 		Scanner sc = new Scanner(System.in);
 		boolean b = true;

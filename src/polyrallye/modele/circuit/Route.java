@@ -43,12 +43,14 @@ public class Route implements ContenuCircuit {
 		this.force = force;
 	}
 
-	public TypeRoute getType() {
+	public String getType() {
+		return "virage";
+	}
+	
+	public TypeRoute getVirage() {
 		return type;
 	}
 
-	public void setType(TypeRoute type) {
-		this.type = type;
-	}
+
 
 }
