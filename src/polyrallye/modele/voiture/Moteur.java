@@ -201,7 +201,7 @@ public class Moteur {
         sb.append((int)Math.round(cylindree/1000.0));
         sb.append(" litres pour ");
         sb.append(nbCylindres);
-        sb.append(" cylindres, ");
+        sb.append(" cylindres et ");
         sb.append(nbSoupapes);
         sb.append(" soupapes");
         
@@ -209,7 +209,7 @@ public class Moteur {
         Liseuse.marquerPause();
         sb = new StringBuilder();
         
-        sb.append("Disposés ");
+        sb.append("Disposition ");
 
         switch (disposition) {
         case LIGNE:

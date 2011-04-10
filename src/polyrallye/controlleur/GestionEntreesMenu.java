@@ -1,25 +1,24 @@
-package polyrallye.ouie;
+package polyrallye.controlleur;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import polyrallye.controlleur.Main;
 
 /**
  * @author Antoine Pultier
  * 
- *         Singleton de gestion des entrées clavier.
+ *         Singleton de gestion des entrées clavier des menus.
  */
-public class GestionEntrees extends KeyAdapter {
+public class GestionEntreesMenu extends KeyAdapter {
 
 	/**
 	 * Objet qui capture les entrées actuellement.
 	 */
 	protected static EcouteurEntrees ecouteur = null;
 
-	private static GestionEntrees singletonGestionEntree = null;
+	private static GestionEntreesMenu singletonGestionEntree = null;
 
-	private GestionEntrees() {
+	private GestionEntreesMenu() {
 
 	}
 
@@ -28,9 +27,9 @@ public class GestionEntrees extends KeyAdapter {
 	 * 
 	 * @return Instance
 	 */
-	public static GestionEntrees getInstance() {
+	public static GestionEntreesMenu getInstance() {
 		if (singletonGestionEntree == null) {
-			singletonGestionEntree = new GestionEntrees();
+			singletonGestionEntree = new GestionEntreesMenu();
 		}
 		return singletonGestionEntree;
 	}

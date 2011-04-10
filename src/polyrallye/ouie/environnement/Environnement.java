@@ -193,7 +193,7 @@ public class Environnement {
 	}
 	
 	public static void main(String[] args) {
-		final Environnement test = new Environnement("plaine", "nuit", "pluie");
+		final Environnement test = new Environnement("mer", "jour", "pluie");
 		test.setVitesse(300f);
 		test.play();
 		Scanner sc = new Scanner(System.in);

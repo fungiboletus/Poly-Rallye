@@ -1,11 +1,14 @@
 package polyrallye.ouie.utilitaires;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import polyrallye.ouie.CallbackArretSon;
+import polyrallye.ouie.utilitaires.SoundScape;
+import polyrallye.utilitaires.CallbackArretSon;
 import polyrallye.utilitaires.Multithreading;
 
 public class Sound {
@@ -82,6 +85,21 @@ public class Sound {
 			charger(fichier.getPath(), identifiantCache);
 		} catch (SoundException e) {
 			System.err.println(e.getMessage());
+		}
+	}
+	
+	public static Sound depuisCache(String identifiant) {
+		TupleData cache = cacheData.get(identifiant);
+		
+		if (cache != null) {
+			Sound son = new Sound();
+			son.data = cache.data;
+			son.id = SoundScape.makeSoundSource(son.data);
+			++cache.nbReferences;
+			
+			return son;
+		} else {
+			return null;
 		}
 	}
 
@@ -205,13 +223,19 @@ public class Sound {
 		{
 			// Il ne faut pas garder trop de sons dans le cache
 			if (cacheData.size() > 64) {
+				List<String> aSupprimer = new ArrayList<String>();
+				
 				for (Entry<String, TupleData> e : cacheData.entrySet()) {
-					TupleData td = e.getValue();
-					if (td.nbReferences == 0) {
-						SoundScape.deleteSoundData(td.data);
-						cacheData.remove(e.getKey());
-						System.out.println("enlèvement du cache pour "+e.getKey());
+					if (e.getValue().nbReferences == 0) {
+						aSupprimer.add(e.getKey());
 					}
+				}
+				
+				for (String clef : aSupprimer) {
+					TupleData td = cacheData.remove(clef);
+					
+					SoundScape.deleteSoundData(td.data);
+					System.out.println("enlèvement du cache pour "+clef);					
 				}
 			}
 			

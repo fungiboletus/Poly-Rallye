@@ -1,4 +1,4 @@
-package polyrallye.ouie;
+package polyrallye.utilitaires;
 
 /**
  * @author Antoine Pultier

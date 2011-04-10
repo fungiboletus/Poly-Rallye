@@ -1,5 +1,6 @@
 package polyrallye.controlleur;
 
+import java.awt.event.KeyListener;
 import java.util.Map.Entry;
 
 import polyrallye.modele.personnes.Joueur;
@@ -57,6 +58,8 @@ public class Main {
 		
 		Liseuse.lire("PolyRallye");
 		
+		changerGestionEntrees(GestionEntreesMenu.getInstance());
+		
 		menuPrincipal = new Principal();
 		menuPrincipal.lancer();
 	}
@@ -97,5 +100,9 @@ public class Main {
 	
 	public static Principal getMenuPrincipal() {
 		return menuPrincipal;
+	}
+	
+	public static void changerGestionEntrees(KeyListener listener) {
+		fenetre.changerGestionEntrees(listener);
 	}
 }

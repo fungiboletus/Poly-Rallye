@@ -15,8 +15,14 @@ public class Course implements ActionMenu {
 	
 	protected float temps;
 	
+	protected GestionEntreesCourse entreesCourse;
+	
 	@Override
 	public void actionMenu() {
+		entreesCourse = new GestionEntreesCourse();
+		
+		Main.changerGestionEntrees(entreesCourse);
+		
 		timerOrganisateur = new java.util.Timer();
 		timerCompteur = new org.lwjgl.util.Timer();
 		
@@ -33,6 +39,9 @@ public class Course implements ActionMenu {
 				float deltaTemps = tempsTmp-temps;
 				temps = tempsTmp;
 				
+				if (entreesCourse.isAccelere()) {
+					System.out.println("accelere");
+				}
 				
 				// TODO mettre le code de abdoul (oui monsieur)
 			}

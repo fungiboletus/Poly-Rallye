@@ -53,6 +53,11 @@ public class Evenement implements ContenuCircuit {
 		return distance;
 	}
 
+	@Override
+	public String getType() {
+		return type;
+	}
+
 //	@Override
 //	public double getLongueur() {
 //		return longueur;
