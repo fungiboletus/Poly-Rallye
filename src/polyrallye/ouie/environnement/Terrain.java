@@ -27,8 +27,6 @@ public class Terrain {
 			
 			tournant = new Sound(rep+"derapage.wav");
 			tournant.setLoop(true);
-			tournant.setGain(0.6f);
-			
 			
 			sfx = new Sfx("Sons/terrain/sfx/",12,20);
 		
@@ -36,6 +34,8 @@ public class Terrain {
 	
 	public void play() {
 		son.play();
+		tournant.play();
+		tournant.pause(true);
 		sfx.run();
 	}
 	
@@ -49,11 +49,21 @@ public class Terrain {
 	}
 	
 	public void playTourne() {
-		tournant.play();
+		tournant.pause(false);
+		tournant.setGain(1.2f);
 	}
 	
 	public void stopTourne() {
-		tournant.fadeOut(1000);
+		
+		float gain = tournant.getGain();
+		gain -= 0.05f;
+		
+		if (gain < 0.0) {
+			tournant.pause(true);
+		}
+		else {
+			tournant.setGain(gain);
+		}
 	}
 	
 	public void stop() {
