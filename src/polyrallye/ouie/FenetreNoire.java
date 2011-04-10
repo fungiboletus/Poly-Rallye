@@ -16,7 +16,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import polyrallye.controlleur.GestionEntreesMenu;
 import polyrallye.controlleur.Main;
 
 /**

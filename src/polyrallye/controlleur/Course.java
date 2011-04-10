@@ -76,9 +76,7 @@ public class Course implements ActionMenu {
 				Transmission t = voiture.getTransmission();
 				
 				if (entreesCourse.isAccelere()) {
-					float gain = (float)(150.0f - Math.exp(1/t.getCoefCourant()));
-					System.out.println(gain);
-					regime += gain;
+					regime += t.getCoefCourant()*2.5;
 
 				} else {
 					regime -= 30.0f;
@@ -89,20 +87,22 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
-					regime -= 15.0f;
+					regime -= 29.0f;
 					terrain.playTourne();
 				} else {
 					terrain.stopTourne();
 				}
 
 				if (entreesCourse.isRapportInf()) {
-					regime *= 1.2f;
-					t.retrograder();
+					if (t.retrograder()) {						
+						regime *= 1.2f;
+					}
 				}
 
 				if (entreesCourse.isRapportSup()) {
-					regime *= 0.72f;
-					t.passerVitesse();
+					if (t.passerVitesse()) {						
+						regime *= 0.65f;
+					}
 				}
 
 				if (regime < 850) {

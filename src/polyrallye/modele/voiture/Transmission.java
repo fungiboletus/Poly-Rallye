@@ -170,10 +170,12 @@ public class Transmission {
 	 * 
 	 * Pas de protection anti-noob là. Il veut passer la vitesse, il la passe.
 	 */
-	public void passerVitesse() {
+	public boolean passerVitesse() {
 		if (vitesseCourante < nbVitesses) {
 			++vitesseCourante;
+			return true;
 		}
+		return false;
 	}
 
 	/**
@@ -181,10 +183,12 @@ public class Transmission {
 	 * 
 	 * Pas de protectection anti-noob non plus.
 	 */
-	public void retrograder() {
+	public boolean retrograder() {
 		if (vitesseCourante > 0) {
 			--vitesseCourante;
+			return true;
 		}
+		return false;
 	}
 
 	/**

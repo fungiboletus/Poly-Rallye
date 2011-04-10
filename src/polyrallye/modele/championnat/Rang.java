@@ -10,7 +10,7 @@ import polyrallye.modele.personnes.Personne;
  * @author zizou
  * 
  */
-public class Rang implements Comparable {
+public class Rang implements Comparable<Rang> {
     private String speciale;
     private int classement;
     private Personne personne;
@@ -124,13 +124,11 @@ public class Rang implements Comparable {
     }
 
     @Override
-    public int compareTo(Object arg0) {
-        Rang rang = (Rang)arg0;
-        
+    public int compareTo(Rang rang) {
+    	
         int valeur = rang.duree.ConvertToSeconds();
         
         return (this.duree.ConvertToSeconds() - valeur);
         
     }
-
 }

@@ -3,13 +3,10 @@ package polyrallye.ouie;
 import java.io.File;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.TreeMap;
 
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.utilitaires.Sound;
-import t2s.util.Random;
 
 /**
  * @author Antoine Pultier
