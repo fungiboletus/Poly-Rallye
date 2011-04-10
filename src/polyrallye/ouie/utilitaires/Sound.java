@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import polyrallye.ouie.utilitaires.SoundScape;
-import polyrallye.ouie.CallbackArretSon;
+import polyrallye.utilitaires.CallbackArretSon;
 import polyrallye.utilitaires.Multithreading;
 
 public class Sound {

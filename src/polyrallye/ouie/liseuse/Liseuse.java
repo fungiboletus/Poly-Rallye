@@ -24,8 +24,8 @@ import t2s.traitement.Pretraitement;
 import t2s.util.ConfigFile;
 
 import polyrallye.controlleur.Main;
-import polyrallye.ouie.CallbackArretSon;
 import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.utilitaires.CallbackArretSon;
 import polyrallye.utilitaires.Multithreading;
 
 /**

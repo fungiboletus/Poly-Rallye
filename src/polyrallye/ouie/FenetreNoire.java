@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -15,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import polyrallye.controlleur.GestionEntreesMenu;
 import polyrallye.controlleur.Main;
 
 /**
@@ -28,6 +30,8 @@ public class FenetreNoire extends JFrame {
 	protected JTextArea informations;
 	protected JPanel panneau;
 	protected JScrollPane defilement;
+	
+	protected KeyListener gestionEntrees;
 	
 	protected boolean consoleAffichee = false;
 
@@ -69,8 +73,6 @@ public class FenetreNoire extends JFrame {
 		panneau.add(image, BorderLayout.CENTER);
 		
 		add(panneau);
-
-		addKeyListener(GestionEntrees.getInstance());
 		
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -106,6 +108,16 @@ public class FenetreNoire extends JFrame {
 		
 		panneau.revalidate();
 		panneau.repaint();
+	}
+	
+	public void changerGestionEntrees(KeyListener nouveauListener)
+	{
+		if (gestionEntrees != null)
+		{
+			removeKeyListener(gestionEntrees);
+		}
+		addKeyListener(nouveauListener);
+		gestionEntrees = nouveauListener;
 	}
 
 }
