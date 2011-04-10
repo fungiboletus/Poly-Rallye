@@ -7,6 +7,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.TreeMap;
 
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.utilitaires.Sound;
 import t2s.util.Random;
 
@@ -17,77 +18,36 @@ import t2s.util.Random;
  */
 public class SonMoteur {
 
-	protected static NavigableMap<Integer, Sound> sons;
-
-	public static boolean accelere = false;
-
-	public static float regime;
-
-	/**
-	 * @param args
-	 * @throws InterruptedException
-	 */
-	public static void main(String[] args) throws InterruptedException {
-		lancer();
-	}
-
-	public static void lancer() {
-
-		// Sound ralenti = new Sound("Sons/moteur/ralenti.wav");
-
+	protected NavigableMap<Integer, Sound> sons;
+	
+	protected Voiture voiture;
+	
+	public SonMoteur(Voiture voiture) {
+		this.voiture = voiture;
 		sons = new TreeMap<Integer, Sound>();
-
+		
 		File dossier = new File("Sons/moteur");
-
+		
 		for (File son : dossier.listFiles()) {
 			String nom = son.getName();
 			Integer nb = Integer.parseInt(nom.substring(0, nom.indexOf(".")));
-
+			
 			Sound s = new Sound(son.getAbsolutePath());
 			s.setLoop(true);
 			s.setOffset(2.0f);
-			s.play();
-			s.pause(true);
-			s.setGain(0.0f);
 			sons.put(nb, s);
 		}
-		// régime de 3800
-
-		regime = 2000;
-
-		Timer t = new Timer();
-
-		TimerTask tt = new TimerTask() {
-
-			@Override
-			public void run() {
-				// System.out.println(SonMoteur.accelere);
-				float regime = SonMoteur.regime;
-				if (SonMoteur.accelere && regime < 9500) {
-					regime += 20;// Random.delta(10, 15);
-				} else if (regime > 2010) {
-					regime -= 20;// Random.delta(5,15);
-				}
-
-				SonMoteur.setRegime(regime);
-			}
-		};
-
-		t.schedule(tt, 0, 30);
-
-		/*
-		 * while(true) { //System.out.println("R: "+ regime + " - "+accelere);
-		 * 
-		 * for (int i = 0; i < 1000; ++i); //Thread.sleep(0, 1); } /*while
-		 * (regime<9400) { setRegime(regime); Thread.sleep(0,1); regime += 1; }
-		 * while(regime > 3000) { setRegime(regime); Thread.sleep(1); regime -=
-		 * 10; } setRegime(2000); while(regime > 1000) { setRegime(regime);
-		 * Thread.sleep(1); regime -= 20; }
-		 */
-
 	}
 
-	public static void setRegime(float regime) {
+	public void play() {
+		for (Entry<Integer, Sound> tuple : sons.entrySet()) {
+			Sound s = tuple.getValue();
+			s.play();
+			s.pause(true);
+		}
+	}
+
+	public void setRegime(float regime) {
 		// System.out.println(regime);
 
 		Integer intRegime = (int) regime;
@@ -145,8 +105,6 @@ public class SonMoteur {
 				}
 			}
 		}
-
-		SonMoteur.regime = regime;
 	}
 
 }

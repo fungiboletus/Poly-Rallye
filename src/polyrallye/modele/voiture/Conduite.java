@@ -48,7 +48,7 @@ public class Conduite {
      * @param masse
      */
     public void acceleration(TypeTerrain t) {
-        acceleration = ((v.moteur.getCouple()/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
+       // acceleration = ((v.moteur.getCouple()/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
     }
 
     /**
@@ -106,7 +106,7 @@ public class Conduite {
        v.getTransmission().passerVitesse();
        v.getTransmission().passerVitesse();
        Conduite c = new Conduite(v);
-       c.acceleration(TypeTerrain.ASPHALT);
+       //c.acceleration(TypeTerrain.ASPHALT);
        c.distanceAcceleration(240);
        c.vitesseAvancement();
        System.out.println("distance "+c.distanceParcourue);
@@ -117,7 +117,7 @@ public class Conduite {
       vv.getTransmission().passerVitesse();
       vv.getTransmission().passerVitesse();
       Conduite cc = new Conduite(vv);
-      cc.acceleration(TypeTerrain.ASPHALT);
+      //cc.acceleration(TypeTerrain.ASPHALT);
       c.vitesseAvancement();
       cc.distanceAcceleration(240);
       System.out.println("distance "+cc.distanceParcourue);

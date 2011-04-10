@@ -2,8 +2,11 @@ package polyrallye.controlleur;
 
 import java.util.TimerTask;
 
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.environnement.Environnement;
+import polyrallye.ouie.environnement.Terrain;
 
 public class Course implements ActionMenu {
 
@@ -17,11 +20,34 @@ public class Course implements ActionMenu {
 	
 	protected GestionEntreesCourse entreesCourse;
 	
+	protected SonMoteur sMoteur;
+	protected Environnement environnement;
+	protected Terrain terrain;
+	
+	protected Voiture voiture;
+	
+	// Démonstration, ça ne restera pas
+	protected float regime;
+	
+	public Course(Voiture voiture) {
+		this.voiture = voiture;
+	}
+	
 	@Override
 	public void actionMenu() {
 		entreesCourse = new GestionEntreesCourse();
 		
 		Main.changerGestionEntrees(entreesCourse);
+
+		environnement = new Environnement("foret", "nuit", "vent");
+		terrain = new Terrain("asphalt"); 
+		sMoteur = new SonMoteur(voiture);
+		
+		terrain.play();
+		environnement.play();
+		sMoteur.play();
+
+		regime = 850.0f;
 		
 		timerOrganisateur = new java.util.Timer();
 		timerCompteur = new org.lwjgl.util.Timer();
@@ -40,7 +66,7 @@ public class Course implements ActionMenu {
 				temps = tempsTmp;
 				
 				if (entreesCourse.isAccelere()) {
-					System.out.println("accelere");
+					regime += 
 				}
 				
 				// TODO mettre le code de abdoul (oui monsieur)
@@ -50,58 +76,7 @@ public class Course implements ActionMenu {
 		// À 50Hz, comme le courant EDF
 		timerOrganisateur.schedule(tt, 0, 20);
 		
-		/*Environnement e = new Environnement("foret", "nuit", "vent");
 
-		e.play();
-
-		// final SonMoteur sm = new SonMoteur();
-
-		EcouteurEntrees ee = new EcouteurEntrees() {
-
-			@Override
-			public void selectionner() {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void haut() {
-				SonMoteur.accelere = true;
-			}
-
-			@Override
-			public void gauche() {
-				SonMoteur.regime *= 1.3;
-			}
-
-			@Override
-			public void droite() {
-				SonMoteur.regime *= 0.73;
-			}
-
-			@Override
-			public void bas() {
-				SonMoteur.accelere = false;
-			}
-
-			@Override
-			public void annuler() {
-				Main.demanderAQuitter();
-			}
-
-			@Override
-			public void aide() {
-				// TODO Auto-generated method stub
-
-			}
-		};
-
-		GestionEntrees.getInstance().setEcouteur(ee);
-
-		new Thread() {
-			public void run() {
-				SonMoteur.lancer();
-			}
-		}.start();*/
+		
 	}
 }
