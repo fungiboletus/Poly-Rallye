@@ -19,6 +19,8 @@ public class SonMoteur {
 	
 	protected Voiture voiture;
 	
+	protected Sound passageRapport;
+	
 	public SonMoteur(Voiture voiture) {
 		this.voiture = voiture;
 		sons = new TreeMap<Integer, Sound>();
@@ -34,6 +36,9 @@ public class SonMoteur {
 			s.setOffset(2.0f);
 			sons.put(nb, s);
 		}
+		
+		passageRapport = new Sound("Sons/voiture/rapport.wav");
+		passageRapport.setGain(0.8f);
 	}
 
 	public void play() {
@@ -44,13 +49,17 @@ public class SonMoteur {
 		}
 	}
 
-	public void setRegime(float regime) {
+	public void setRegime(float regime, boolean acceleration) {
 		// System.out.println(regime);
 
 		Integer intRegime = (int) regime;
 
 		// TODO Recoder ça proprement
-		float gain = (0.5f + 0.5f * (regime / 10000.0f));
+		float gain = (0.7f + 0.4f * (regime / 10000.0f));
+		
+		if (!acceleration) {
+			gain *= 0.7f;
+		}
 
 		// Cas particulier plutôt rare, le régime est déjà dans les sons
 		Sound sonParfait = sons.get(intRegime);
@@ -102,6 +111,10 @@ public class SonMoteur {
 				}
 			}
 		}
+	}
+	
+	public void passageRapport() {
+		passageRapport.play();
 	}
 
 }

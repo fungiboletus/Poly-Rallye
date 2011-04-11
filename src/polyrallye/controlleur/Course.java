@@ -96,12 +96,14 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isRapportInf()) {
 					if (t.retrograder()) {						
 						regime *= 1.2f;
+						sMoteur.passageRapport();
 					}
 				}
 
 				if (entreesCourse.isRapportSup()) {
 					if (t.passerVitesse()) {						
 						regime *= 0.65f;
+						sMoteur.passageRapport();
 					}
 				}
 
@@ -111,7 +113,7 @@ public class Course implements ActionMenu {
 					regime = 10500;
 				}
 
-				sMoteur.setRegime(regime);
+				sMoteur.setRegime(regime, entreesCourse.isAccelere());
 				terrain.setVitesse(regime / 30.0f);
 				// TODO mettre le code de abdoul (oui monsieur)
 			}
