@@ -23,6 +23,7 @@ public class Sfx extends Thread {
 	protected double realDistance;
 
 	protected boolean isAlive;
+	protected boolean isFixe;
 
 	public Sfx(String rep, int nombre) {
 		this(rep, nombre, 10);
@@ -41,6 +42,12 @@ public class Sfx extends Thread {
 		positionZ = 0;
 		distance = 0;
 		realDistance = 0;
+		isFixe=false;
+	}
+	
+	public Sfx(String rep, int nombre, long intervalle,boolean tt) {
+		this(rep,nombre,intervalle);
+		isFixe=true;
 	}
 
 	public void run() {
@@ -63,13 +70,18 @@ public class Sfx extends Thread {
 			temp.setPosition(positionX, positionY, positionZ);
 			// Distance d'eloignement ?
 			temp.setReferenceDistance(200);
-
+			
+			if (isFixe) {
+				temp.setPosition(0, 0, 0);
+				temp.setGain(0.7f);
+			}
+			
 			// On joue le son
 			temp.play();
 			realDistance = distance;
 			// On attend que le son se termine
 			while (temp.isPlaying()) {
-				if (distance != realDistance) {
+				if (!isFixe && distance != realDistance) {
 					positionY -= distance - realDistance;
 					realDistance=distance;
 				temp.setPosition(positionX, positionY, positionZ);

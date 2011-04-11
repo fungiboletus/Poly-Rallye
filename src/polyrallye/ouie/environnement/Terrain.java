@@ -28,7 +28,7 @@ public class Terrain {
 			tournant = new Sound(rep+"derapage.wav");
 			tournant.setLoop(true);
 			
-			sfx = new Sfx("Sons/terrain/sfx/",12,20);
+			sfx = new Sfx("Sons/terrain/sfx/",12,20,true);
 		
 	}
 	
