@@ -51,6 +51,25 @@ public class Championnat {
         argentGagné = GestionXML.getInt(noeud.getChildText("argentEnJeu"));
 
     }
+    
+    public Element toXML() {
+        
+        Element noeud = new Element("Championnat");
+
+        noeud.addContent(new Element("nom").setText(nom));
+        noeud.addContent(new Element("joueur").setText(player.getNom()));
+
+        for (int i = 0; i < etapes.size() - 1; ++i)
+            noeud.addContent(new Element("etapes").setText(etapes
+                    .get(i).getEtape()));
+
+        noeud.addContent(new Element("voitureEnjeu").setText(voitureGagné.getNomComplet()));
+
+
+        noeud.addContent(new Element("argentEnJeu").setText(""+argentGagné));
+
+        return noeud;
+    }
 
     public List<Etape> getEtapes() {
         return etapes;

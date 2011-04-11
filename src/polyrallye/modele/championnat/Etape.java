@@ -57,45 +57,53 @@ public class Etape {
     }
 
     public Etape(Element noeud) {
-
+        
         joueur = new Joueur(noeud.getChildText("joueur"));
 
         circuit = new Circuit(noeud.getChild("circuit"));
         nom = noeud.getChildText("nom");
 
-        for (Object e : noeud.getChildren("participants")) {
+        for (Object e : noeud.getChildren("participant")) {
             Personne balise = new Personne((Element) e);
             participants.add(balise);
         }
 
-        for (Object e : noeud.getChildren("voitures")) {
+        for (Object e : noeud.getChildren("voiture")) {
             Voiture balise = new Voiture((Element) e);
             voitures.add(balise);
+        }
+        
+        for (Object e : noeud.getChildren("classement")) {
+            Rang balise = new Rang((Element) e);
+            classement.add(balise);
         }
 
         numeroEtape = GestionXML.getInt(noeud.getChildText("numero"));
 
     }
-    
-    public Element toXML() {
-        
-        Element noeud = new Element("Etape");
 
-        noeud.addContent(new Element("numero").setText(""+ numeroEtape));
+    public Element toXML() {
+
+        Element noeud = new Element("etapes");
+
+        noeud.addContent(new Element("numero").setText("" + numeroEtape));
         noeud.addContent(new Element("nom").setText(nom));
-        
+
+        noeud.addContent(new Element("numero").setText("" + numeroEtape));
+
         noeud.addContent(joueur.toXML());
-        
+
         noeud.addContent(new Element("circuit").setText(circuit.getNom()));
-        
-        for(int i=0;i<participants.size()-1;++i)
-            noeud.addContent(new Element("participant").setText(participants.get(i).getNom()));
-        
-        for(int i=0;i<classement.size()-1;++i)
+
+        for (int i = 0; i < participants.size() - 1; ++i)
+            noeud.addContent(new Element("participant").setText(participants
+                    .get(i).getNom()));
+
+        for (int i = 0; i < classement.size() - 1; ++i)
             noeud.addContent(classement.get(i).toXML());
-            
-        for(int i=0;i<voitures.size()-1;++i)
-            noeud.addContent(voitures.get(i).getNomComplet());
+
+        for (int i = 0; i < voitures.size() - 1; ++i)
+            noeud.addContent(new Element("voiture").setText(voitures.get(i).getNomComplet()));
 
         return noeud;
     }
@@ -156,7 +164,6 @@ public class Etape {
      * 
      * @return
      */
-    @SuppressWarnings("unchecked")
     public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {
 
         participants.add(joueur);

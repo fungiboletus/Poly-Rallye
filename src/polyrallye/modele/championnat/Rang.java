@@ -3,6 +3,7 @@ package polyrallye.modele.championnat;
 import org.jdom.Element;
 
 import polyrallye.modele.personnes.Personne;
+import polyrallye.utilitaires.GestionXML;
 
 /**
  * Classe Rang : représente un rang pour une epreuve donnée
@@ -32,12 +33,39 @@ public class Rang implements Comparable<Rang> {
         this.personne = personne;
         duree = d;
     }
-    
-    public Element toXML() {
-        return null;
-           
+
+    public Rang(Element noeud) {
+
+        speciale = noeud.getChildText("speciale");
+
+        classement = GestionXML.getInt(noeud.getChildText("classement"));
+
+        personne = new Personne(noeud.getChildText("nom"));
+
+        duree = new Duree(GestionXML.getInt(noeud.getChildText("duree")));
+
+        ecart = new Duree(GestionXML.getInt(noeud.getChildText("ecart")));
+
     }
 
+    public Element toXML() {
+
+        Element noeud = new Element("classement");
+
+        noeud.addContent(new Element("speciale").setText(speciale));
+        noeud.addContent(new Element("classement").setText("" + classement));
+
+        noeud.addContent(new Element("nom").setText(personne.getNom()));
+
+        noeud.addContent(new Element("duree").setText(""
+                + duree.ConvertToSeconds()));
+
+        noeud.addContent(new Element("ecart").setText(""
+                + ecart.ConvertToSeconds()));
+
+        return noeud;
+
+    }
 
     /**
      * retourne la speciale concernée par ce rang
@@ -125,10 +153,10 @@ public class Rang implements Comparable<Rang> {
 
     @Override
     public int compareTo(Rang rang) {
-    	
+
         int valeur = rang.duree.ConvertToSeconds();
-        
+
         return (this.duree.ConvertToSeconds() - valeur);
-        
+
     }
 }

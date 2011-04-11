@@ -28,11 +28,23 @@ public class PolyTour {
     public PolyTour(Element noeud) {
         nom = noeud.getChildText("nom");
 
-        for (Object e : noeud.getChildren("championnats")) {
+        for (Object e : noeud.getChildren("championnat")) {
             Championnat balise = new Championnat((Element) e);
             Championnats.add(balise);
         }
 
+    }
+    
+    public Element toXML() {
+        
+        Element noeud = new Element("PolyTour");
+
+        noeud.addContent(new Element("nom").setText(nom));
+        
+        for (int i = 0; i < Championnats.size() - 1; ++i)
+            noeud.addContent(Championnats.get(i).toXML());
+        
+        return noeud;
     }
 
     public List<Championnat> getChampionnats() {
