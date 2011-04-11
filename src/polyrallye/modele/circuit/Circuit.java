@@ -234,6 +234,11 @@ public class Circuit {
 	public void setVitesse(double vitesse) {
 		terrain.setVitesse(vitesse);
 	}
+	
+	public void stop() {
+		environnement.stop();
+		terrain.stop();
+	}
 
 	public static void main(String[] args) throws Exception {
 		/*

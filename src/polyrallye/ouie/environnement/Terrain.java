@@ -67,7 +67,7 @@ public class Terrain {
 	}
 	
 	public void stop() {
-		sfx.stop();
+		sfx.tuer();
 		son.stop();
 	}
 	
