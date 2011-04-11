@@ -118,12 +118,18 @@ public class Circuit {
 
 			if (i == 0) {
 				System.out.println("zero");
-				terrain = new Terrain(getTagValue(n, "surface"));
+
 				String type = getTagValue(n, "environnement");
 				String temps = getTagValue(n, "temps");
 				String meteo = getTagValue(n, "meteo");
 				System.out.println(type + temps + meteo);
 				environnement = new Environnement(type, temps, meteo);
+				String typeTerrain = getTagValue(n, "surface");
+				// On veut de LA BOUEEEEEEE
+				if (temps.equals("pluie") && typeTerrain.equals("terre"))
+					typeTerrain = "boue";
+
+				terrain = new Terrain(typeTerrain);
 			}
 
 			if (i > 0) {
@@ -218,7 +224,7 @@ public class Circuit {
 		ContenuCircuit temp;
 		if (contenu.element().getDistance() <= d) {
 			temp = contenu.poll();
-			while (temp!= null && !temp.getType().equals("virage")) {
+			while (temp != null && !temp.getType().equals("virage")) {
 				Evenement temp2 = (Evenement) temp;
 				temp2.exec();
 				temp = contenu.poll();
@@ -234,7 +240,7 @@ public class Circuit {
 	public void setVitesse(double vitesse) {
 		terrain.setVitesse(vitesse);
 	}
-	
+
 	public void stop() {
 		environnement.stop();
 		terrain.stop();
