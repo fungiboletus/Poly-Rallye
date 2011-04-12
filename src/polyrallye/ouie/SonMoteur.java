@@ -6,6 +6,7 @@ import java.util.NavigableMap;
 import java.util.TreeMap;
 
 import polyrallye.modele.voiture.Voiture;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 
 /**
@@ -25,7 +26,22 @@ public class SonMoteur {
 		this.voiture = voiture;
 		sons = new TreeMap<Integer, Sound>();
 		
-		File dossier = new File("Sons/moteur");
+		String variante = "r5";
+		String constructeur = voiture.getConstructeur();
+		
+		if (constructeur.equals("Audi")) {
+			variante = "cobra";
+		}
+		else if (constructeur.equals("Bugatti")) {
+			variante = "bugatti";
+		}
+		else if (constructeur.equals("Peugeot")) {
+			variante = "207";
+		}
+		
+		Liseuse.lire(variante);
+		
+		File dossier = new File("Sons/moteurs/"+variante);
 		
 		for (File son : dossier.listFiles()) {
 			String nom = son.getName();
@@ -55,7 +71,7 @@ public class SonMoteur {
 		Integer intRegime = (int) regime;
 
 		// TODO Recoder ça proprement
-		float gain = (0.7f + 0.4f * (regime / 10000.0f));
+		float gain = (0.85f + 0.3f * (regime / 5000.0f));
 		
 		if (!acceleration) {
 			gain *= 0.7f;
