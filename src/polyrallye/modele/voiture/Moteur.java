@@ -131,19 +131,28 @@ public class Moteur {
      * @param regime
      * @return
      */
-    public double getCouple() {
+
+    public double getCouple(double regime) {
         double res = getCoupleMax()+ (getRegimePuissanceMax() - getRegimeCoupleMax())
-                * ((1500 - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
-//        System.out.println("couple "+res);
+                * ((/*1500*/regime - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
         return res;
     }
 
+    
+    public double regimeCourant(double pourcentage){
+        regimeCourant = (pourcentage+10) * this.regimeCoupleMax /(double)100;
+        System.out.println("RegimeMax "+regimeCoupleMax);
+        System.out.println("Regime "+regimeCourant);
+        return regimeCourant;
+    }
 
     /**
      * @param regimeCourant the regimeCourant to set
      */
-    public void setRegimeCourant() {
-        regimeCourant = coeff * regimeCoupleMax;
+    public void setRegimeCourant(double regime) {
+        regimeCourant=regime;
+        if(regimeRupteur<regimeCourant)
+            regimeCourant = coeff * regimeCoupleMax;
     }
 
     /**

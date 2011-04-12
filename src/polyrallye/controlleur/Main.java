@@ -9,7 +9,6 @@ import polyrallye.ouie.FenetreNoire;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.menus.Principal;
 import polyrallye.utilitaires.Multithreading;
-
 public class Main {
 
 	protected static FenetreNoire fenetre;
