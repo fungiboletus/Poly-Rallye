@@ -6,6 +6,7 @@ import java.util.NavigableMap;
 import java.util.TreeMap;
 
 import polyrallye.modele.voiture.Voiture;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 
 /**
@@ -19,11 +20,28 @@ public class SonMoteur {
 	
 	protected Voiture voiture;
 	
+	protected Sound passageRapport;
+	
 	public SonMoteur(Voiture voiture) {
 		this.voiture = voiture;
 		sons = new TreeMap<Integer, Sound>();
 		
-		File dossier = new File("Sons/moteur");
+		String variante = "r5";
+		String constructeur = voiture.getConstructeur();
+		
+		if (constructeur.equals("Audi")) {
+			variante = "cobra";
+		}
+		else if (constructeur.equals("Bugatti")) {
+			variante = "bugatti";
+		}
+		else if (constructeur.equals("Peugeot")) {
+			variante = "207";
+		}
+		
+		Liseuse.lire(variante);
+		
+		File dossier = new File("Sons/moteurs/"+variante);
 		
 		for (File son : dossier.listFiles()) {
 			String nom = son.getName();
@@ -34,6 +52,9 @@ public class SonMoteur {
 			s.setOffset(2.0f);
 			sons.put(nb, s);
 		}
+		
+		passageRapport = new Sound("Sons/voiture/rapport.wav");
+		passageRapport.setGain(0.8f);
 	}
 
 	public void play() {
@@ -44,13 +65,17 @@ public class SonMoteur {
 		}
 	}
 
-	public void setRegime(float regime) {
+	public void setRegime(float regime, boolean acceleration) {
 		// System.out.println(regime);
 
 		Integer intRegime = (int) regime;
 
 		// TODO Recoder ça proprement
-		float gain = (0.5f + 0.5f * (regime / 10000.0f));
+		float gain = (0.85f + 0.3f * (regime / 5000.0f));
+		
+		if (!acceleration) {
+			gain *= 0.7f;
+		}
 
 		// Cas particulier plutôt rare, le régime est déjà dans les sons
 		Sound sonParfait = sons.get(intRegime);
@@ -102,6 +127,10 @@ public class SonMoteur {
 				}
 			}
 		}
+	}
+	
+	public void passageRapport() {
+		passageRapport.play();
 	}
 
 }

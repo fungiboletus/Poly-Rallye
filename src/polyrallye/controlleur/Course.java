@@ -47,7 +47,12 @@ public class Course implements ActionMenu {
 		new Thread() {
 			public void run() {
 				terrain.play();
-			}
+
+/*				while(true)
+				{
+					Multithreading.dormir(50);
+				}
+*/			}
 		}.start();
 
 		System.out.println("ok");
@@ -76,18 +81,18 @@ public class Course implements ActionMenu {
 				Transmission t = voiture.getTransmission();
 				
 				if (entreesCourse.isAccelere()) {
-					regime += t.getCoefCourant()*2.5;
+					regime += t.getCoefCourant()*1.25;
 
 				} else {
 					regime -= 30.0f;
 				}
 
 				if (entreesCourse.isFreine()) {
-					regime -= 150.0f;
+					regime -= 70.0f;
 				}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
-					regime -= 29.0f;
+					regime -= 17.0f;
 					terrain.playTourne();
 				} else {
 					terrain.stopTourne();
@@ -96,23 +101,25 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isRapportInf()) {
 					if (t.retrograder()) {						
 						regime *= 1.2f;
+						sMoteur.passageRapport();
 					}
 				}
 
 				if (entreesCourse.isRapportSup()) {
 					if (t.passerVitesse()) {						
-						regime *= 0.65f;
+						regime *= 0.625f;
+						sMoteur.passageRapport();
 					}
 				}
 
 				if (regime < 850) {
 					regime = 850;
-				} else if (regime > 11000) {
-					regime = 10500;
+				} else if (regime > 9300) {
+					regime = 9000;
 				}
 
-				sMoteur.setRegime(regime);
-				terrain.setVitesse(regime / 30.0f);
+				sMoteur.setRegime(regime, entreesCourse.isAccelere());
+				//terrain.setVitesse(regime / 3.0f);
 				// TODO mettre le code de abdoul (oui monsieur)
 			}
 		};
