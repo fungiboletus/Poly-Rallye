@@ -219,10 +219,38 @@ public class Course implements ActionMenu {
 					
 					devonsNousTourner = Random.unsignedDelta(120, 400);
 
-					Main.log("salut");
+					if (Random.unsignedDelta(1, 2) == 1) {
+						gauche.play();
+						if (!hasTourned("gauche")) {
+							megaCrash();	
+							
+						}
+					} else {
+						droite.play();
+						if (!hasTourned("droite")) {
+							megaCrash();
+						}
+					}
 				}
 			}
-		};//.start();
+			protected boolean hasTourned(String sens) {
+				double time = 0;
+				while (time<2) {
+					if ((sens.equals("gauche") && entreesCourse.isGauche()) || (sens.equals("droite") && entreesCourse.isDroite()))
+						return true;
+					time+=0.1;
+					Multithreading.dormir(100);
+				}
+				return false;
+			}
+			protected void megaCrash() {
+				regime = 10;
+				sMoteur.setRegime(10, false);
+				sMoteur.passageRapport();
+				crash.play();
+
+			}
+		}.start();
 
 	}
 }
