@@ -2,6 +2,7 @@ package polyrallye.controlleur;
 
 import java.util.TimerTask;
 
+import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
@@ -48,6 +49,9 @@ public class Course implements ActionMenu {
 	
 	protected boolean virageDroite;
 	
+	// Temporaire hein
+	protected Thread canard2;
+	
 	public Course(Voiture voiture) {
 		this.voiture = voiture;
 	}
@@ -86,6 +90,8 @@ public class Course implements ActionMenu {
 
 		org.lwjgl.util.Timer.tick();
 		temps = timerCompteur.getTime();
+		
+		final double score = voiture.getMoteur().getPuissanceMax();
 
 		TimerTask tt = new TimerTask() {
 
@@ -93,6 +99,7 @@ public class Course implements ActionMenu {
 			public void run() {
 				if (entreesCourse.echap) {
 					canard.stop();
+					canard2.stop();
 					environnement.stop();
 					terrain.stop();
 					sMoteur.stop();
@@ -109,7 +116,18 @@ public class Course implements ActionMenu {
 				Transmission t = voiture.getTransmission();
 
 				if (entreesCourse.isAccelere()) {
-					regime += t.getCoefCourant() * 1.25;
+					double xa = 20;
+					double xb = 1000;
+					double ya = 1.2;
+					double yb = 2.5;
+					
+					double plus = t.getCoefCourant() * (ya + (score - xa)*((yb-ya)/(xb-xa)));
+					
+					
+					regime += plus;
+					
+					//System.out.println(plus);
+					
 
 				} else {
 					regime -= 27.0f;
@@ -154,13 +172,9 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isRapportInf()) {
-					if (t.retrograder()) {
-						if (t.getCoefCourant() < 0.01) {
-							t.passerVitesse();
-						} else {
-							regime *= 1.2f;
-							sMoteur.passageRapport();							
-						}
+					if (t.retrograder() && t.getRapportCourant() > 0) {
+						regime *= 1.2f;
+						sMoteur.passageRapport();							
 					}
 				}
 
@@ -171,10 +185,12 @@ public class Course implements ActionMenu {
 					}
 				}
 
+				Moteur m = voiture.getMoteur();
 				if (regime < 850) {
 					regime = 850;
-				} else if (regime > 9300) {
-					regime = 9000;
+				} else if (regime > m.getRegimeRupteur()) {
+					System.out.println(m.getRegimeRupteur());
+					regime = m.getRegimeRupteur() - 500;
 				}
 				
 				if(entreesCourse.klaxon) {
@@ -202,7 +218,7 @@ public class Course implements ActionMenu {
 		// TODO
 		ok = new Sound("Sons/divers/freine.wav");
 
-		new Thread() {
+		canard2 = new Thread() {
 			public void run() {
 
 				while (true) {
@@ -246,11 +262,19 @@ public class Course implements ActionMenu {
 			protected void megaCrash() {
 				regime = 10;
 				sMoteur.setRegime(10, false);
+				
+				Transmission t = voiture.getTransmission();
+				while (t.getRapportCourant() > 1)
+				{
+					t.retrograder();
+				}
 				sMoteur.passageRapport();
 				crash.play();
 
 			}
-		}.start();
+		};
+		
+		canard2.start();
 
 	}
 }

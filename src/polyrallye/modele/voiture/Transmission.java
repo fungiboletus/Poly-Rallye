@@ -285,4 +285,8 @@ public class Transmission {
 		Liseuse.lire(sb.toString());
 	}
 
+	public int getRapportCourant() {
+		return vitesseCourante;
+	}
+
 }

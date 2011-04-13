@@ -86,13 +86,13 @@ public class SonMoteur {
 		Integer intRegime = (int) regime;
 
 		// TODO Recoder ça proprement
-		float gain = (0.85f + 0.3f * (regime / 5000.0f));
+		float gain = (0.85f + 0.3f * (regime / 3000.0f));
 		
 		if (!acceleration) {
 			gain *= 0.7f;
 		}
 		
-		gain *= 0.6;
+		gain *= 0.45;
 
 		// Cas particulier plutôt rare, le régime est déjà dans les sons
 		Sound sonParfait = sons.get(intRegime);
