@@ -12,6 +12,7 @@ import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Terrain;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
+import sun.management.Sensor;
 import t2s.util.Random;
 
 public class Course implements ActionMenu {
@@ -41,7 +42,12 @@ public class Course implements ActionMenu {
 	protected Sound gauche;
 	protected Sound droite;
 	protected Sound freine;
+	protected Sound ok;
 
+	protected int devonsNousTourner = 10000000;
+	
+	protected boolean virageDroite;
+	
 	public Course(Voiture voiture) {
 		this.voiture = voiture;
 	}
@@ -61,11 +67,12 @@ public class Course implements ActionMenu {
 		
 		
 		
-		new Thread() {
+		final Thread canard = new Thread() {
 			public void run() {
 				terrain.play();
 			}
-		}.start();
+		};
+		canard.start();
 
 		System.out.println("ok");
 		environnement.play();
@@ -84,6 +91,15 @@ public class Course implements ActionMenu {
 
 			@Override
 			public void run() {
+				if (entreesCourse.echap) {
+					canard.stop();
+					environnement.stop();
+					terrain.stop();
+					sMoteur.stop();
+					timerOrganisateur.cancel();
+					Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
+				}
+				
 				// Gestion du temps
 				org.lwjgl.util.Timer.tick();
 				float tempsTmp = timerCompteur.getTime();
@@ -96,24 +112,55 @@ public class Course implements ActionMenu {
 					regime += t.getCoefCourant() * 1.25;
 
 				} else {
-					regime -= 30.0f;
+					regime -= 27.0f;
 				}
 
 				if (entreesCourse.isFreine()) {
 					regime -= 50.0f;
+					
+					/*if (devonsNousTourner > 1) {
+						if (virageDroite == false) {
+							gauche.play();
+						} else {
+							droite.play();
+						}
+					}*/
 				}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
-					regime -= 17.0f;
+					regime -= 12.0f;
 					terrain.playTourne();
+					/*// Si ça fait trop longtemps que l'on freine
+					if (--devonsNousTourner < 0) {
+						
+						if (devonsNousTourner < 80) {
+							// CRASH
+							regime = 8000; // Pour avoir un retour sonore hein							
+						}
+					}
+					else {
+						if ((entreesCourse.isGauche() && virageDroite == false) || entreesCourse.isDroite() && virageDroite) {
+							if (devonsNousTourner == 0) {
+								ok.play();
+								devonsNousTourner = 10000000;
+							}
+						} else {
+							// CRASH
+							regime = 8000;
+						}
+					}*/
 				} else {
 					terrain.stopTourne();
 				}
 
 				if (entreesCourse.isRapportInf()) {
 					if (t.retrograder()) {
-						regime *= 1.2f;
-						sMoteur.passageRapport();
+						if (t.getCoefCourant() < 0.01) {
+							t.passerVitesse();
+						} else {
+							regime *= 1.2f;
+							sMoteur.passageRapport();							
+						}
 					}
 				}
 
@@ -151,6 +198,9 @@ public class Course implements ActionMenu {
 		//droite.setGain(18.0f);
 		
 		freine = new Sound("Sons/divers/freine.wav");
+		
+		// TODO
+		ok = new Sound("Sons/divers/freine.wav");
 
 		new Thread() {
 			public void run() {
@@ -161,22 +211,18 @@ public class Course implements ActionMenu {
 
 					Main.log("" + d);
 
-					Multithreading.dormir((long) (d*0.9));
+					Multithreading.dormir(d);
 					
 					freine.play();
 
-					Multithreading.dormir((long) (d*0.1));
+					virageDroite = Random.unsignedDelta(1, 2) == 1;
 					
-					Main.log("salut");
+					devonsNousTourner = Random.unsignedDelta(120, 400);
 
-					if (Random.unsignedDelta(1, 2) == 1) {
-						gauche.play();
-					} else {
-						droite.play();
-					}
+					Main.log("salut");
 				}
 			}
-		}.start();
+		};//.start();
 
 	}
 }

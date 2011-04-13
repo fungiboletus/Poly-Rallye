@@ -17,6 +17,7 @@ public class GestionEntreesCourse extends KeyAdapter {
 	protected boolean rapportSup;
 	protected boolean rapportInf;
 	protected boolean klaxon;
+	protected boolean echap;
 	
 	@Override
 	public void keyPressed(KeyEvent touche) {
@@ -40,7 +41,11 @@ public class GestionEntreesCourse extends KeyAdapter {
 			rapportInf = true;
 			break;
 		case KeyEvent.VK_K:
+		case KeyEvent.VK_SPACE:
 			klaxon = true;
+			break;
+		case KeyEvent.VK_ESCAPE:
+			echap = true;
 			break;
 		}
 	}
@@ -61,6 +66,7 @@ public class GestionEntreesCourse extends KeyAdapter {
 			droite = false;
 			break;
 		case KeyEvent.VK_K:
+		case KeyEvent.VK_SPACE:
 			klaxon = false;
 			break;
 		// Pour les passages de rapports, c'est des évènements
@@ -71,6 +77,7 @@ public class GestionEntreesCourse extends KeyAdapter {
 		case KeyEvent.VK_CONTROL:
 			rapportInf = true;
 			break;*/
+			
 		}
 	}
 

@@ -29,7 +29,7 @@ public class SonMoteur {
 		String variante = "r5";
 		String constructeur = voiture.getConstructeur();
 		
-		if (constructeur.equals("Audi")) {
+		if (constructeur.equals("Audi") || constructeur.equals("Subaru")) {
 			variante = "cobra";
 		}
 		else if (constructeur.equals("Bugatti")) {
@@ -38,8 +38,15 @@ public class SonMoteur {
 		else if (constructeur.equals("Peugeot")) {
 			variante = "207";
 		}
+		else if (constructeur.equals("Fiat")) {
+			variante = "saab";
+		}
+		else if (constructeur.equals("Ferrari")) {
+			variante = "enzo";
+		}
 		
-		Liseuse.lire(variante);
+		System.out.println(variante);
+		//Liseuse.lire(variante);
 		
 		File dossier = new File("Sons/moteurs/"+variante);
 		
@@ -64,6 +71,14 @@ public class SonMoteur {
 			s.pause(true);
 		}
 	}
+	
+	public void stop() {
+		for (Entry<Integer, Sound> tuple : sons.entrySet()) {
+			Sound s = tuple.getValue();
+			s.stop();
+			s.delete();
+		}
+	}
 
 	public void setRegime(float regime, boolean acceleration) {
 		// System.out.println(regime);
@@ -77,7 +92,7 @@ public class SonMoteur {
 			gain *= 0.7f;
 		}
 		
-		gain *= 0.42;
+		gain *= 0.6;
 
 		// Cas particulier plutôt rare, le régime est déjà dans les sons
 		Sound sonParfait = sons.get(intRegime);

@@ -12,7 +12,7 @@ public class Carriere extends Menu implements ActionMenu {
 
 	@Override
 	public void actionMenu() {
-		Liseuse.lire("Le mode carrière vous permet de dominer le monde !");
+		Liseuse.lire("Le mode carrière n'est pas du tout terminé.");
 		lancer();
 	}
 

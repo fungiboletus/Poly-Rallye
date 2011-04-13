@@ -223,12 +223,12 @@ public abstract class Menu implements EcouteurEntrees {
 
 	@Override
 	public void gauche() {
-		annuler();
+		//annuler();
 	}
 
 	@Override
 	public void droite() {
-		selectionner();
+		//selectionner();
 	}
 
 	public void aide() {
