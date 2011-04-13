@@ -13,7 +13,7 @@ public class Klaxon {
 		
 		String rep = "Sons/klaxon/";
 		
-		if (t.contains("gendarmerie"))
+		if (t.contains("Gendarmerie"))
 			name = "gendarmerie";
 		else
 			name = t.substring(0, t.indexOf(" "));
