@@ -146,7 +146,7 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
-					regime -= 12.0f;
+					regime -= 19.0f;
 					terrain.playTourne();
 					/*// Si ça fait trop longtemps que l'on freine
 					if (--devonsNousTourner < 0) {
