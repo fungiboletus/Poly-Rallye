@@ -8,6 +8,9 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Terrain;
+import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.utilitaires.Multithreading;
+import t2s.util.Random;
 
 public class Course implements ActionMenu {
 
@@ -30,6 +33,9 @@ public class Course implements ActionMenu {
 	// Démonstration, ça ne restera pas
 	protected float regime;
 
+	protected Sound gauche;
+	protected Sound droite;
+
 	public Course(Voiture voiture) {
 		this.voiture = voiture;
 	}
@@ -47,12 +53,7 @@ public class Course implements ActionMenu {
 		new Thread() {
 			public void run() {
 				terrain.play();
-
-/*				while(true)
-				{
-					Multithreading.dormir(50);
-				}
-*/			}
+			}
 		}.start();
 
 		System.out.println("ok");
@@ -79,9 +80,9 @@ public class Course implements ActionMenu {
 				temps = tempsTmp;
 
 				Transmission t = voiture.getTransmission();
-				
+
 				if (entreesCourse.isAccelere()) {
-					regime += t.getCoefCourant()*1.25;
+					regime += t.getCoefCourant() * 1.25;
 
 				} else {
 					regime -= 30.0f;
@@ -99,14 +100,14 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isRapportInf()) {
-					if (t.retrograder()) {						
+					if (t.retrograder()) {
 						regime *= 1.2f;
 						sMoteur.passageRapport();
 					}
 				}
 
 				if (entreesCourse.isRapportSup()) {
-					if (t.passerVitesse()) {						
+					if (t.passerVitesse()) {
 						regime *= 0.625f;
 						sMoteur.passageRapport();
 					}
@@ -119,13 +120,40 @@ public class Course implements ActionMenu {
 				}
 
 				sMoteur.setRegime(regime, entreesCourse.isAccelere());
-				//terrain.setVitesse(regime / 3.0f);
+				// terrain.setVitesse(regime / 3.0f);
 				// TODO mettre le code de abdoul (oui monsieur)
 			}
 		};
 
 		// À 50Hz, comme le courant EDF
 		timerOrganisateur.schedule(tt, 0, 20);
+
+		gauche = new Sound("Sons/divers/gauche.wav");
+		gauche.setGain(18.0f);
+		droite = new Sound("Sons/divers/droite.wav");
+		droite.setGain(18.0f);
+
+		new Thread() {
+			public void run() {
+
+				while (true) {
+
+					long d = Random.unsignedDelta(4, 22) * 1000;
+
+					Main.log("" + d);
+
+					Multithreading.dormir(d);
+
+					Main.log("salut");
+
+					if (Random.unsignedDelta(1, 2) == 1) {
+						gauche.play();
+					} else {
+						droite.play();
+					}
+				}
+			}
+		}.start();
 
 	}
 }
