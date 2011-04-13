@@ -1,11 +1,15 @@
 package polyrallye.modele.championnat;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.jdom.Element;
 
+import polyrallye.modele.personnes.Adversaire;
 import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.personnes.Personne;
+import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.utilitaires.GestionXML;
 
@@ -14,10 +18,11 @@ public class Championnat {
     protected Joueur player;
     protected String nom;
     protected List<Etape> etapes;
+    protected List<Rang> classement;
     protected Voiture voitureGagné;
     protected int argentGagné;
 
-    public Championnat(Joueur J, String nom, Duree duree, List<Etape> etapes,
+    public Championnat(Joueur J, String nom, List<Etape> etapes,
             Voiture voitureGagné, int argentGagné) {
         this.player = J;
         this.argentGagné = argentGagné;
@@ -51,22 +56,22 @@ public class Championnat {
         argentGagné = GestionXML.getInt(noeud.getChildText("argentEnJeu"));
 
     }
-    
+
     public Element toXML() {
-        
+
         Element noeud = new Element("Championnat");
 
         noeud.addContent(new Element("nom").setText(nom));
         noeud.addContent(new Element("joueur").setText(player.getNom()));
 
         for (int i = 0; i < etapes.size() - 1; ++i)
-            noeud.addContent(new Element("etapes").setText(etapes
-                    .get(i).getEtape()));
+            noeud.addContent(new Element("etapes").setText(etapes.get(i)
+                    .getEtape()));
 
-        noeud.addContent(new Element("voitureEnjeu").setText(voitureGagné.getNomComplet()));
+        noeud.addContent(new Element("voitureEnjeu").setText(voitureGagné
+                .getNomComplet()));
 
-
-        noeud.addContent(new Element("argentEnJeu").setText(""+argentGagné));
+        noeud.addContent(new Element("argentEnJeu").setText("" + argentGagné));
 
         return noeud;
     }
@@ -107,4 +112,78 @@ public class Championnat {
         player.getGarage().ajouter(voitureGagné);
         player.ajouterArgent(argentGagné);
     }
+
+    public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {
+        classement = new ArrayList<Rang>();
+
+        classement = etapes.get(0).getClassement();
+
+        for (int i = 0; i < 10; ++i) {
+            for (int j = 0; j < 10; ++j) {
+                if (classement.get(j).getPersonne().equals(
+                        etapes.get(0).getClassement().get(i).getPersonne()))
+                    classement.get(j).setDuree(
+                            new Duree(classement.get(j).getDuree()
+                                    .ConvertToSeconds()
+                                    + etapes.get(0).getClassement().get(i)
+                                            .getDuree().ConvertToSeconds()));
+            }
+        }
+
+        // réorganisation, trie de la liste classement
+        Collections.sort(classement);
+
+        // mise a jour des écarts
+        setecart();
+
+        for (int i = 0; i < 10; ++i) {
+            classement.get(i).setClassement(i + 1);
+            System.out.println(classement.get(i));
+            if (i > 1
+                    && classement.get(i).getDuree().equals(
+                            classement.get(i - 1).getDuree()))
+                classement.get(i).getDuree().setDixiemes(
+                        classement.get(i).getDuree().getDixiemes() - 5);
+        }
+
+    }
+
+    /**
+     * 
+     * 
+     * @return
+     */
+    public void setecart() {
+        int premier = classement.get(0).getDuree().ConvertToSeconds();
+        
+        for (int i = 1; i < 10; ++i)
+            classement.get(i).setEcart(
+                    new Duree(classement.get(i).getDuree().ConvertToSeconds()
+                            - premier));
+    }
+
+    public Joueur getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Joueur player) {
+        this.player = player;
+    }
+
+    public List<Rang> getClassement() {
+        return classement;
+    }
+
+    public void setClassement(List<Rang> classement) {
+        this.classement = classement;
+    }
+
+    public int getArgentGagné() {
+        return argentGagné;
+    }
+
+    public void setArgentGagné(int argentGagné) {
+        this.argentGagné = argentGagné;
+    }
+
 }

@@ -40,12 +40,13 @@ public class Duree implements java.io.Serializable {
             throw new IllegalArgumentException();
         }
     }
-    
+
     public Duree(int sec) {
         if (sec >= 0) {
-            this.heures = sec / 3600;
-            this.heures = (sec - this.heures) / 60;
-            this.secondes = (sec - this.heures - this.minutes);
+            this.heures = (sec / 3600);
+            this.minutes = (sec - (this.heures * 3600)) / 60;
+            this.secondes = (sec - (this.heures * 3600) - (this.minutes * 60));
+            this.dixiemes = t2s.util.Random.unsignedDelta(0, 9);
         } else {
             throw new IllegalArgumentException();
         }
@@ -192,13 +193,16 @@ public class Duree implements java.io.Serializable {
      * @return Représentation chainée de l'objet.
      */
     public String toString() {
-        String fin = null;
-        if (this.minutes < 10)
+        String fin = "";
+        if (this.minutes < 10 && this.secondes > 10)
             fin = ":0" + this.minutes + ":" + this.secondes + "."
                     + this.dixiemes;
-        else if (this.secondes < 10)
-            fin += ":" + this.minutes + ":0" + this.secondes + "."
+        else if (this.minutes < 10 && this.secondes < 10)
+            fin = ":0" + this.minutes + ":0" + this.secondes + "."
                     + this.dixiemes;
+        else if (this.minutes > 10 && this.secondes < 10)
+            fin = ":" + this.minutes + ":0" + this.secondes + "."
+            + this.dixiemes;
         else
             fin = ":" + this.minutes + ":" + this.secondes + "."
                     + this.dixiemes;

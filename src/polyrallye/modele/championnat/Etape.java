@@ -3,6 +3,7 @@ package polyrallye.modele.championnat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.jdom.Element;
 
@@ -24,8 +25,8 @@ import polyrallye.utilitaires.GestionXML;
 public class Etape {
 
     protected int numeroEtape;
-    protected String nom;
     protected Joueur joueur;
+    protected String nom;
     protected Circuit circuit;
     protected List<Personne> participants;
     protected List<Rang> classement;
@@ -57,8 +58,8 @@ public class Etape {
     }
 
     public Etape(Element noeud) {
-        
-        joueur = new Joueur(noeud.getChildText("joueur"));
+
+        joueur = new Joueur(Joueur.session.getNom());
 
         circuit = new Circuit(noeud.getChild("circuit"));
         nom = noeud.getChildText("nom");
@@ -72,7 +73,7 @@ public class Etape {
             Voiture balise = new Voiture((Element) e);
             voitures.add(balise);
         }
-        
+
         for (Object e : noeud.getChildren("classement")) {
             Rang balise = new Rang((Element) e);
             classement.add(balise);
@@ -103,7 +104,8 @@ public class Etape {
             noeud.addContent(classement.get(i).toXML());
 
         for (int i = 0; i < voitures.size() - 1; ++i)
-            noeud.addContent(new Element("voiture").setText(voitures.get(i).getNomComplet()));
+            noeud.addContent(new Element("voiture").setText(voitures.get(i)
+                    .getNomComplet()));
 
         return noeud;
     }
@@ -140,10 +142,11 @@ public class Etape {
      * 
      * @return
      */
-    public Duree ramdomduree(Personne pers, Duree dureeIdeale, Joueur J,
-            Voiture voitJoueur) {
-        Adversaire adv = (Adversaire) pers;
-        double scorevoitadv = adv.getVoiture().getScore();
+    public Duree ramdomduree(Adversaire adv, Voiture voiture,
+            Duree dureeIdeale, Joueur J, Voiture voitJoueur) {
+
+        double scorevoitadv = voiture.getScore();
+
         double scorevoitjoueur = voitJoueur.getScore();
 
         double rapport = scorevoitjoueur / scorevoitadv;
@@ -151,11 +154,15 @@ public class Etape {
         int sec = dureeIdeale.ConvertToSeconds();
 
         int approx = (int) (sec * rapport);
-        Duree approxDuree = new Duree(approx);
-        int fin = t2s.util.Random.delta(-(5 * approxDuree.getMinutes() + 1),
-                5 * approxDuree.getMinutes() + 1);
 
-        return new Duree(fin);
+        // approx += t2s.util.Random.unsignedDelta((20 * ((int)(1.5*rapport))),
+        // 20 * ((int)(1.5*rapport)));
+
+        approx += (int) (Math.random() * (15 - (-15))) - 15;
+
+        System.out.println(adv.getNom() + " ---- " + voiture);
+
+        return new Duree(approx);
 
     }
 
@@ -166,40 +173,60 @@ public class Etape {
      */
     public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {
 
-        participants.add(joueur);
-        participants.add(new Adversaire("Jean"));
+        participants = new ArrayList<Personne>();
+        participants.add(Joueur.session);
+        participants.add(new Adversaire("Chang"));
         participants.add(new Adversaire("Dupont"));
         participants.add(new Adversaire("Esposa"));
         participants.add(new Adversaire("Munoz"));
         participants.add(new Adversaire("Trapatoni"));
         participants.add(new Adversaire("Paolista"));
-        participants.add(new Adversaire("Barbosi"));
+        participants.add(new Adversaire("Salem"));
         participants.add(new Adversaire("Zicko"));
-        participants.add(new Adversaire("Papisto"));
+        participants.add(new Adversaire("Dialo"));
+
+        voitures.add(voitJoueur);
+        voitures.addAll(StockVoitures.getVoituresEquivalentes(voitJoueur, 9));
 
         classement.add(new Rang(nom, participants.get(0), dureeJoueurEtape));
         for (int i = 1; i < 10; ++i) {
-            classement
-                    .add(new Rang(nom, participants.get(i), ramdomduree(
-                            participants.get(i), dureeJoueurEtape, joueur,
-                            voitJoueur)));
+            Adversaire adv = (Adversaire) participants.get(i);
+            adv.setVoiture(voitures.get(i - 1));
+            classement.add(new Rang(nom, participants.get(i), ramdomduree(adv,
+                    voitures.get(i - 1), dureeJoueurEtape, Joueur.session,
+                    voitJoueur)));
         }
-
-        voitures.add(StockVoitures
-                .getVoitureParNom("Bugatti Veyron 16.4 Super Sport"));
-        voitures.add(StockVoitures
-                .getVoitureParNom("Audi Quattro Sport S1 Pikes Peak"));
-        voitures.add(StockVoitures.getVoitureParNom("Audi Quattro Sport S1"));
-        voitures.add(StockVoitures.getVoitureParNom("Citroën DS3 WRC"));
-        voitures.add(StockVoitures.getVoitureParNom("Peugeot 307 WRC"));
-        voitures.add(StockVoitures.getVoitureParNom("Peugeot 306 S16"));
-        voitures.add(StockVoitures.getVoitureParNom("Peugeot 206 WRC"));
-        voitures.add(StockVoitures.getVoitureParNom("Renault 5 Turbo"));
-        voitures.add(StockVoitures
-                .getVoitureParNom("Subaru Impreza WRC Génération 3 Sti"));
 
         // réorganisation, trie de la liste classement
         Collections.sort(classement);
+
+        // mise a jour des écarts
+        setecart();
+        
+        for (int i = 0; i < 10; ++i) {
+            classement.get(i).setClassement(i + 1);
+            System.out.println(classement.get(i));
+            if (i > 1
+                    && classement.get(i).getDuree().equals(
+                            classement.get(i - 1).getDuree()))
+                classement.get(i).getDuree().setDixiemes(
+                        classement.get(i).getDuree().getDixiemes() - 5);
+        }
+
+    }
+
+    /**
+     * 
+     * 
+     * @return
+     */
+    public void setecart() {
+        int premier = classement.get(0).getDuree().ConvertToSeconds();
+
+        for (int i = 1; i < 10; ++i)
+            classement.get(i).setEcart(
+                    new Duree(classement.get(i).getDuree().ConvertToSeconds()
+                            - premier));
 
     }
 

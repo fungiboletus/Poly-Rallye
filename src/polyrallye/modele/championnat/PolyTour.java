@@ -10,7 +10,7 @@ public class PolyTour {
     protected String nom;
     protected List<Championnat> Championnats;
 
-    public PolyTour(String nom, Duree duree, List<Championnat> Championnats) {
+    public PolyTour(String nom, List<Championnat> Championnats) {
         this.nom = nom;
 
         if (nom == null)

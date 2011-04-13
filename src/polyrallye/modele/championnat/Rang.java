@@ -25,9 +25,9 @@ public class Rang implements Comparable<Rang> {
      */
     public Rang(String uneSpeciale, Personne personne, Duree d) {
 
-        if (uneSpeciale == null || personne == null)
-            throw new NullPointerException(
-                    "Un ou des parametres du constructeur de Rang est incorrect");
+        // if (uneSpeciale == null || personne == null)
+        // throw new NullPointerException(
+        // "Un ou des parametres du constructeur de Rang est incorrect");
 
         speciale = uneSpeciale;
         this.personne = personne;
@@ -140,13 +140,17 @@ public class Rang implements Comparable<Rang> {
         // obtenir le suffixe de la position
         //
         String pos = "eme";
-        if (classement == 1)
+        String affichEcart = "";
+        if (classement == 1) {
             pos = "er";
+        } else
+            affichEcart = " ; écart --> " + ecart;
 
         // completer le resultat
-        //
-        resultat.append(speciale + "(" + classement + pos + ": " + personne
-                + ", duree -> " + duree + " )");
+
+        resultat.append(speciale + " (" + classement + pos + ": "
+                + personne.getNom() + ", duree -> " + duree + affichEcart
+                + " )");
 
         return resultat.toString();
     }
@@ -158,5 +162,17 @@ public class Rang implements Comparable<Rang> {
 
         return (this.duree.ConvertToSeconds() - valeur);
 
+    }
+
+    public Personne getPersonne() {
+        return personne;
+    }
+
+    public void setPersonne(Personne personne) {
+        this.personne = personne;
+    }
+
+    public void setSpeciale(String speciale) {
+        this.speciale = speciale;
     }
 }
