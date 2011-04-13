@@ -40,8 +40,8 @@ public class Course implements ActionMenu {
 
 		Main.changerGestionEntrees(entreesCourse);
 
-		environnement = new Environnement("foret", "nuit", "vent");
-		terrain = new Terrain("asphalt");
+		environnement = new Environnement("village", "jour", "clair");
+		terrain = new Terrain("terre");
 		sMoteur = new SonMoteur(voiture);
 
 		new Thread() {
