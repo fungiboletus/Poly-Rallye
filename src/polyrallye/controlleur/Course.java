@@ -5,7 +5,9 @@ import java.util.TimerTask;
 import polyrallye.modele.voiture.Transmission;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.Klaxon;
 import polyrallye.ouie.SonMoteur;
+import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Terrain;
 import polyrallye.ouie.utilitaires.Sound;
@@ -29,6 +31,9 @@ public class Course implements ActionMenu {
 	protected Terrain terrain;
 
 	protected Voiture voiture;
+	
+	protected Crash crash;
+	protected Klaxon klaxon;
 
 	// Démonstration, ça ne restera pas
 	protected float regime;
@@ -49,7 +54,12 @@ public class Course implements ActionMenu {
 		environnement = new Environnement("village", "jour", "clair");
 		terrain = new Terrain("terre");
 		sMoteur = new SonMoteur(voiture);
-
+		
+		crash = new Crash(environnement.getType());
+		klaxon = new Klaxon(voiture.getNomComplet());
+		
+		
+		
 		new Thread() {
 			public void run() {
 				terrain.play();
@@ -118,6 +128,12 @@ public class Course implements ActionMenu {
 				} else if (regime > 9300) {
 					regime = 9000;
 				}
+				
+				if(entreesCourse.klaxon) {
+					klaxon.play();
+				}
+				else
+					klaxon.pause();
 
 				sMoteur.setRegime(regime, entreesCourse.isAccelere());
 				// terrain.setVitesse(regime / 3.0f);
