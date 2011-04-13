@@ -146,7 +146,7 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
-					regime -= 19.0f;
+					regime -= 35.0f;
 					terrain.playTourne();
 					/*// Si ça fait trop longtemps que l'on freine
 					if (--devonsNousTourner < 0) {
@@ -172,7 +172,7 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isRapportInf()) {
-					if (t.retrograder() && t.getRapportCourant() > 0) {
+					if (t.retrograder() && t.getRapportCourant() > 1) {
 						regime *= 1.2f;
 						sMoteur.passageRapport();							
 					}
