@@ -40,6 +40,7 @@ public class Course implements ActionMenu {
 
 	protected Sound gauche;
 	protected Sound droite;
+	protected Sound freine;
 
 	public Course(Voiture voiture) {
 		this.voiture = voiture;
@@ -99,7 +100,7 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isFreine()) {
-					regime -= 70.0f;
+					regime -= 50.0f;
 				}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
@@ -145,21 +146,27 @@ public class Course implements ActionMenu {
 		timerOrganisateur.schedule(tt, 0, 20);
 
 		gauche = new Sound("Sons/divers/gauche.wav");
-		gauche.setGain(18.0f);
+		//gauche.setGain(18.0f);
 		droite = new Sound("Sons/divers/droite.wav");
-		droite.setGain(18.0f);
+		//droite.setGain(18.0f);
+		
+		freine = new Sound("Sons/divers/freine.wav");
 
 		new Thread() {
 			public void run() {
 
 				while (true) {
 
-					long d = Random.unsignedDelta(4, 22) * 1000;
+					long d = Random.unsignedDelta(4, 10) * 1000;
 
 					Main.log("" + d);
 
-					Multithreading.dormir(d);
+					Multithreading.dormir((long) (d*0.9));
+					
+					freine.play();
 
+					Multithreading.dormir((long) (d*0.1));
+					
 					Main.log("salut");
 
 					if (Random.unsignedDelta(1, 2) == 1) {
