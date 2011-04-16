@@ -1,18 +1,17 @@
 package polyrallye.modele.championnat;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
-
 import org.jdom.Element;
 
-import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.personnes.Adversaire;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.personnes.Personne;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -25,9 +24,9 @@ import polyrallye.utilitaires.GestionXML;
 public class Etape {
 
     protected int numeroEtape;
-    protected Joueur joueur;
+    protected Joueur joueur = Joueur.session;
     protected String nom;
-    protected Circuit circuit;
+    protected String circuit;
     protected List<Personne> participants;
     protected List<Rang> classement;
     protected List<Voiture> voitures;
@@ -36,7 +35,8 @@ public class Etape {
      * Constructeur
      * 
      */
-    public Etape(int numero, String uneEpreuve, List<Personne> participants) {
+    public Etape(int numero, String uneEpreuve, List<Personne> participants,
+            String cir) {
 
         if (uneEpreuve == null || numero <= 0)
             throw new NullPointerException(
@@ -55,13 +55,14 @@ public class Etape {
 
         voitures = new ArrayList<Voiture>();
 
+        circuit = cir;
     }
 
     public Etape(Element noeud) {
 
         joueur = new Joueur(Joueur.session.getNom());
 
-        circuit = new Circuit(noeud.getChild("circuit"));
+        circuit = noeud.getChildText("circuit");
         nom = noeud.getChildText("nom");
 
         for (Object e : noeud.getChildren("participant")) {
@@ -85,27 +86,26 @@ public class Etape {
 
     public Element toXML() {
 
-        Element noeud = new Element("etapes");
+        Element noeud = new Element("etape");
 
         noeud.addContent(new Element("numero").setText("" + numeroEtape));
         noeud.addContent(new Element("nom").setText(nom));
 
-        noeud.addContent(new Element("numero").setText("" + numeroEtape));
-
         noeud.addContent(joueur.toXML());
 
-        noeud.addContent(new Element("circuit").setText(circuit.getNom()));
+        noeud.addContent(new Element("circuit").setText(circuit));
 
-        for (int i = 0; i < participants.size() - 1; ++i)
-            noeud.addContent(new Element("participant").setText(participants
-                    .get(i).getNom()));
+        // for (int i = 0; i < participants.size() - 1; ++i)
+        // noeud.addContent(new Element("participant").setText(participants
+        // .get(i).getNom()));
 
-        for (int i = 0; i < classement.size() - 1; ++i)
+        setecart();
+        
+        noeud.addContent(classement.get(0).toXML());
+        
+        for (int i = 1; i < classement.size(); ++i) {
             noeud.addContent(classement.get(i).toXML());
-
-        for (int i = 0; i < voitures.size() - 1; ++i)
-            noeud.addContent(new Element("voiture").setText(voitures.get(i)
-                    .getNomComplet()));
+        }
 
         return noeud;
     }
@@ -151,14 +151,14 @@ public class Etape {
 
         double rapport = scorevoitjoueur / scorevoitadv;
 
-        int sec = dureeIdeale.ConvertToSeconds();
+        int dix = dureeIdeale.ConvertToDixiemes();
 
-        int approx = (int) (sec * rapport);
+        int approx = (int) (dix * rapport);
 
         // approx += t2s.util.Random.unsignedDelta((20 * ((int)(1.5*rapport))),
         // 20 * ((int)(1.5*rapport)));
 
-        approx += (int) (Math.random() * (15 - (-15))) - 15;
+        approx += (int) (Math.random() * (100 - (-100))) - 100;
 
         System.out.println(adv.getNom() + " ---- " + voiture);
 
@@ -188,13 +188,14 @@ public class Etape {
         voitures.add(voitJoueur);
         voitures.addAll(StockVoitures.getVoituresEquivalentes(voitJoueur, 9));
 
-        classement.add(new Rang(nom, participants.get(0), dureeJoueurEtape));
+        classement.add(new Rang(nom, participants.get(0), dureeJoueurEtape,
+                voitures.get(0)));
         for (int i = 1; i < 10; ++i) {
             Adversaire adv = (Adversaire) participants.get(i);
             adv.setVoiture(voitures.get(i - 1));
             classement.add(new Rang(nom, participants.get(i), ramdomduree(adv,
                     voitures.get(i - 1), dureeJoueurEtape, Joueur.session,
-                    voitJoueur)));
+                    voitJoueur), (voitures.get(i - 1))));
         }
 
         // réorganisation, trie de la liste classement
@@ -202,7 +203,7 @@ public class Etape {
 
         // mise a jour des écarts
         setecart();
-        
+
         for (int i = 0; i < 10; ++i) {
             classement.get(i).setClassement(i + 1);
             System.out.println(classement.get(i));
@@ -221,12 +222,13 @@ public class Etape {
      * @return
      */
     public void setecart() {
-        int premier = classement.get(0).getDuree().ConvertToSeconds();
+        int premier = classement.get(0).getDuree().ConvertToDixiemes();
 
-        for (int i = 1; i < 10; ++i)
+        for (int i = 1; i < 10; ++i) {
             classement.get(i).setEcart(
-                    new Duree(classement.get(i).getDuree().ConvertToSeconds()
+                    new Duree(classement.get(i).getDuree().ConvertToDixiemes()
                             - premier));
+        }
 
     }
 
@@ -254,5 +256,21 @@ public class Etape {
      */
     public List<Personne> getParticipants() {
         return participants;
+    }
+
+    public static void EnregistrerEtape(Etape et) {
+        try {
+            File d = new File("Championnat");
+
+            if (!d.exists()) {
+                d.mkdir();
+            }
+
+            GestionXML.enregistrerRacine("Championnat/" + et.getEtape()
+                    + ".xml", et.toXML());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Liseuse.lire("Impossible de sauvegarder la progression.");
+        }
     }
 }

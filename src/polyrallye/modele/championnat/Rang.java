@@ -3,6 +3,7 @@ package polyrallye.modele.championnat;
 import org.jdom.Element;
 
 import polyrallye.modele.personnes.Personne;
+import polyrallye.modele.voiture.Voiture;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -17,13 +18,14 @@ public class Rang implements Comparable<Rang> {
     private Personne personne;
     private Duree duree;
     private Duree ecart;
+    private Voiture car;
 
     /**
      * Constructeur
      * 
      * @param uneEpreuve
      */
-    public Rang(String uneSpeciale, Personne personne, Duree d) {
+    public Rang(String uneSpeciale, Personne personne, Duree d, Voiture car) {
 
         // if (uneSpeciale == null || personne == null)
         // throw new NullPointerException(
@@ -32,6 +34,7 @@ public class Rang implements Comparable<Rang> {
         speciale = uneSpeciale;
         this.personne = personne;
         duree = d;
+        this.car = car;
     }
 
     public Rang(Element noeud) {
@@ -52,16 +55,16 @@ public class Rang implements Comparable<Rang> {
 
         Element noeud = new Element("classement");
 
-        noeud.addContent(new Element("speciale").setText(speciale));
         noeud.addContent(new Element("classement").setText("" + classement));
 
         noeud.addContent(new Element("nom").setText(personne.getNom()));
 
-        noeud.addContent(new Element("duree").setText(""
-                + duree.ConvertToSeconds()));
+        noeud.addContent(new Element("voiture").setText(car.getNomComplet()));
 
-        noeud.addContent(new Element("ecart").setText(""
-                + ecart.ConvertToSeconds()));
+        noeud.addContent(new Element("duree").setText(duree.toString()));
+
+        if (classement != 1)
+            noeud.addContent(new Element("ecart").setText(ecart.toString()));
 
         return noeud;
 
@@ -158,9 +161,9 @@ public class Rang implements Comparable<Rang> {
     @Override
     public int compareTo(Rang rang) {
 
-        int valeur = rang.duree.ConvertToSeconds();
+        int valeur = rang.duree.ConvertToDixiemes();
 
-        return (this.duree.ConvertToSeconds() - valeur);
+        return (this.duree.ConvertToDixiemes() - valeur);
 
     }
 

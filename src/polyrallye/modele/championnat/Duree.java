@@ -41,12 +41,24 @@ public class Duree implements java.io.Serializable {
         }
     }
 
-    public Duree(int sec) {
-        if (sec >= 0) {
-            this.heures = (sec / 3600);
-            this.minutes = (sec - (this.heures * 3600)) / 60;
-            this.secondes = (sec - (this.heures * 3600) - (this.minutes * 60));
-            this.dixiemes = t2s.util.Random.unsignedDelta(0, 9);
+    public Duree(int dix) {
+        if (dix >= 0) {
+            /*
+             * this.heures = (dix / 36000); this.minutes = (dix - (this.heures *
+             * 36000)) / 600; this.secondes = (dix - (this.heures * 36000 -
+             * this.minutes * 600))/10; System.out.println("dsds" + (dix -
+             * (this.heures * 3600 - (this.minutes * 600)/10); this.dixiemes =
+             * (dix - (this.heures * 36000 - this.minutes * 600 - this.secondes
+             * * 10));
+             */
+            this.heures = (dix / 36000);
+            dix -= this.heures * 36000;
+            this.minutes = (dix) / 600;
+            dix -= (this.minutes * 600);
+            this.secondes = (dix) / 10;
+            dix -= (this.secondes * 10);
+            this.dixiemes = (dix);
+
         } else {
             throw new IllegalArgumentException();
         }
@@ -100,7 +112,7 @@ public class Duree implements java.io.Serializable {
         if (c >= 0 && c < 10) {
             this.dixiemes = c;
         } else {
-            throw new IllegalArgumentException();
+            c = 0;
         }
     }
 
@@ -202,7 +214,7 @@ public class Duree implements java.io.Serializable {
                     + this.dixiemes;
         else if (this.minutes > 10 && this.secondes < 10)
             fin = ":" + this.minutes + ":0" + this.secondes + "."
-            + this.dixiemes;
+                    + this.dixiemes;
         else
             fin = ":" + this.minutes + ":" + this.secondes + "."
                     + this.dixiemes;
@@ -214,11 +226,18 @@ public class Duree implements java.io.Serializable {
      * 
      * @return entier
      */
-    public int ConvertToSeconds() {
+    /*
+     * public int ConvertToSeconds() { int result = 0; result += this.minutes *
+     * 60; result += this.heures * 3600; result += this.secondes; return result;
+     * }
+     */
+
+    public int ConvertToDixiemes() {
         int result = 0;
-        result += this.minutes * 60;
-        result += this.heures * 3600;
-        result += this.secondes;
+        result += this.minutes * 600;
+        result += this.heures * 36000;
+        result += this.secondes * 10;
+        result += this.dixiemes;
         return result;
     }
 
