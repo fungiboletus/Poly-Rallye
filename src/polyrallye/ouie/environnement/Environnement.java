@@ -220,6 +220,10 @@ public class Environnement {
 		t.schedule(tt, 0, 10);
 
 	}
+
+	public String getType() {
+		return type;
+	}
 	
 	
 

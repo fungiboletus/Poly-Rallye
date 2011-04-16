@@ -23,7 +23,7 @@ public class Terrain {
 			System.out.println(rep);
 			son = new Sound(rep+terrain+"_"+(random.nextInt(3)+1)+".wav");
 			son.setLoop(true);
-			son.setGain(0.6f);
+			son.setGain(1.0f);
 			
 			tournant = new Sound(rep+"derapage.wav");
 			tournant.setLoop(true);

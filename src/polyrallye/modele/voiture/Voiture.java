@@ -204,13 +204,13 @@ public class Voiture {
 	public void ennoncerCategoriePerformances() {
 		double score = getScore();
 
-		if (score <= 0.2) {
+		if (score <= 200) {
 			Liseuse.lire("Faibles performances");
-		} else if (score <= 0.35) {
+		} else if (score <= 300) {
 			Liseuse.lire("Performances moyennes");
-		} else if (score <= 0.5) {
+		} else if (score <= 400) {
 			Liseuse.lire("Bonnes performances");
-		} else if (score <= 0.8) {
+		} else if (score <= 650) {
 			Liseuse.lire("Très bonnes performances");
 		} else {
 			Liseuse.lire("Performances exceptionnelles");

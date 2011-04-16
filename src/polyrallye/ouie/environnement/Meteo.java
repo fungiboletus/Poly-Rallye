@@ -111,8 +111,9 @@ public class Meteo {
 	}
 
 	public void stop() {
-		meteo.stop();
-
+		if (meteo != null) {
+			meteo.stop();			
+		}
 	}
 
 }
