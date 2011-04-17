@@ -1,0 +1,149 @@
+
+205
+206
+306
+307
+Acheter la voiture 
+Action invalide.
+à plat
+Audi
+Audio_Quattro_Sport
+Audio_Quattro_Sport_Rallye
+Audio_Quattro_Sport_S1
+Audio_Quattro_Sport_S1_Pikes_Peak
+ avec compresseur mécanique
+ avec turbo compresseur
+Bugatti
+C1
+C4
+ cent 
+ chevaux à 
+ cinq 
+ cinquante 
+Citroen
+Citroen_C1
+Citroen_C4_Coupe_VTS
+Citroen_C4_WRC
+Citroen_DS3_Racing
+Citroen_DS3_WRC
+Citroen_SM
+Citroen_SM_Proto
+Clio
+ cm cube pour 
+Construite par 
+Couple max de 
+ cylindres, 
+ de 
+ deux 
+Différentes sources disponibles
+ dix 
+ dix huit
+ dix-neuf 
+ dix sept 
+ douze 
+DS3
+en ligne
+ entre 
+en V
+Espace
+ et 
+ euros.
+euros. 
+ euros. Il vous restera 
+ euros pour acheter la voiture 
+ euros. Vous aurez alors 
+Félicitations cette vente.
+Félicitations pour votre achat. La voiture est dans votre garage
+Fiat
+ huit 
+Il existe des mondes où il vaut mieux avoir un permis de conduire.
+Il vous manque 
+Impossible d'acheter la voiture
+Impossible d'aller sur le web.
+Impossible de sauvegarder la progression.
+Impossible de vendre la voiture
+Impreza
+Lancia
+Lancia_Stratos_Groupe_5
+Lancia_Stratos_Rallye
+Lancia_Stratos_Serie
+Le jeu ne contient pas de dossier de voitures.
+Menu principal.
+ milles 
+ millions 
+Moteur 
+ neuf 
+ nm à 
+ onze 
+Panda
+Panda_4x4
+Peugeot
+Peugeot_205_Turbo_16_Evolution_1
+Peugeot_205_Turbo_16_Evolution_2
+Peugeot_205_Turbo_16_Pikes_Peak
+Peugeot_205_Turbo_16_Rallye_Raid
+Peugeot_205_Turbo_16_Serie
+Peugeot_206_RC
+Peugeot_206_S16
+Peugeot_206_WRC
+Peugeot_306_Maxi
+Peugeot_306_S16
+Peugeot_307_CC_2.0
+Peugeot_307_WRC
+﻿PolyRallye
+ pour 
+pour une rareté de 
+ quarante 
+ quatorze 
+ quatre 
+ quatre vingt
+ quatre vingt 
+Quattro
+ quinze 
+R5
+Renault
+Renault_5_Maxi_Turbo
+Renault_5_Rallye
+Renault_5_Turbo
+Renault_Clio_V6
+Renault_Espace_F1
+Retour au menu principal
+Salut
+ seize 
+ sept  
+ six 
+SM
+ soixante 
+ soupapes. Disposition 
+Stratos
+Subaru
+Subaru_Impreza_WRX_1
+Subaru_Impreza_WRX_2
+Subaru_Impreza_WRX_2_RB320
+Subaru_Impreza_WRX_2_Sti
+Subaru_Impreza_WRX_3
+Subaru_Impreza_WRX_3_Gendarmerie
+Subaru_Impreza_WRX_3_Sti
+ tours/min.
+ tours/min. Puissance max de 
+ tours/min. Rupteur à 
+ treize 
+ trente 
+ trois 
+Tu as déjà ton permis de conduire. Tu peux cependant repasser les épreuves pour ne pas perdre la main.
+ un 
+Valeur de 
+Vendre la voiture 
+Veyron
+Veyron_Super_Sport
+ vingt
+ vinte
+Voulez vous quitter le jeu ?
+Vous êtes dans un menu. Utilisez les touches haut et bas pour vous déplacer dans le menu. Entrée pour valider, et échap pour annuler.
+Vous êtes dans votre garage. Vous pouvez sélectionner vos voitures.
+Vous pouvez acheter de nombreuses voitures dans les magasins.
+Xsara
+Xsara_Kit_Car
+Xsara_VTS
+Xsara_WRC
+ zéro 

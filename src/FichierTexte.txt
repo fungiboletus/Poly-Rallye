@@ -1,0 +1,158 @@
+﻿PolyRallye
+Salut
+Retour au menu principal
+ millions 
+ milles 
+ cent 
+ quatre vingt 
+ quatre vingt
+ soixante 
+ et 
+ soixante 
+ et 
+ cinquante 
+ et 
+ quarante 
+ et 
+ trente 
+ et 
+ vingt
+ vinte
+ et 
+ dix-neuf 
+ dix huit
+ dix sept 
+ seize 
+ quinze 
+ quatorze 
+ treize 
+ douze 
+ onze 
+ dix 
+ neuf 
+ huit 
+ sept  
+ six 
+ cinq 
+ quatre 
+ trois 
+ deux 
+ un 
+ zéro 
+Tu as déjà ton permis de conduire. Tu peux cependant repasser les épreuves pour ne pas perdre la main.
+Il existe des mondes où il vaut mieux avoir un permis de conduire.
+Vous êtes dans votre garage. Vous pouvez sélectionner vos voitures.
+ euros.
+Menu principal.
+Félicitations pour votre achat. La voiture est dans votre garage
+Impossible d'acheter la voiture
+Il vous manque 
+ euros pour acheter la voiture 
+Acheter la voiture 
+ pour 
+ euros. Il vous restera 
+euros. 
+Voulez vous quitter le jeu ?
+Différentes sources disponibles
+Félicitations cette vente.
+Impossible de vendre la voiture
+Vendre la voiture 
+ pour 
+ euros. Vous aurez alors 
+euros. 
+Vous pouvez acheter de nombreuses voitures dans les magasins.
+Action invalide.
+Vous êtes dans un menu. Utilisez les touches haut et bas pour vous déplacer dans le menu. Entrée pour valider, et échap pour annuler.
+Le jeu ne contient pas de dossier de voitures.
+Moteur 
+ de 
+ cm cube pour 
+ cylindres, 
+ soupapes. Disposition 
+en ligne
+à plat
+en V
+ avec compresseur mécanique
+ avec turbo compresseur
+Couple max de 
+ nm à 
+ tours/min. Puissance max de 
+ chevaux à 
+ tours/min. Rupteur à 
+ tours/min.
+Impossible de sauvegarder la progression.
+Impossible d'aller sur le web.
+Construite par 
+ entre 
+ et 
+Valeur de 
+pour une rareté de 
+
+Audi
+Quattro
+Audio_Quattro_Sport_Rallye
+Audio_Quattro_Sport_S1_Pikes_Peak
+Audio_Quattro_Sport_S1
+Audio_Quattro_Sport
+Bugatti
+Veyron
+Veyron_Super_Sport
+Citroen
+C1
+Citroen_C1
+C4
+Citroen_C4_Coupe_VTS
+Citroen_C4_WRC
+DS3
+Citroen_DS3_Racing
+Citroen_DS3_WRC
+SM
+Citroen_SM_Proto
+Citroen_SM
+Xsara
+Xsara_Kit_Car
+Xsara_VTS
+Xsara_WRC
+Fiat
+Panda
+Panda_4x4
+Lancia
+Stratos
+Lancia_Stratos_Groupe_5
+Lancia_Stratos_Rallye
+Lancia_Stratos_Serie
+Peugeot
+205
+Peugeot_205_Turbo_16_Evolution_1
+Peugeot_205_Turbo_16_Evolution_2
+Peugeot_205_Turbo_16_Pikes_Peak
+Peugeot_205_Turbo_16_Rallye_Raid
+Peugeot_205_Turbo_16_Serie
+206
+Peugeot_206_RC
+Peugeot_206_S16
+Peugeot_206_WRC
+306
+Peugeot_306_Maxi
+Peugeot_306_S16
+307
+Peugeot_307_CC_2.0
+Peugeot_307_WRC
+Renault
+Clio
+Renault_Clio_V6
+Espace
+Renault_Espace_F1
+R5
+Renault_5_Maxi_Turbo
+Renault_5_Rallye
+Renault_5_Turbo
+Subaru
+Impreza
+Subaru_Impreza_WRX_1
+Subaru_Impreza_WRX_2_RB320
+Subaru_Impreza_WRX_2_Sti
+Subaru_Impreza_WRX_2
+Subaru_Impreza_WRX_3_Gendarmerie
+Subaru_Impreza_WRX_3_Sti
+Subaru_Impreza_WRX_3
