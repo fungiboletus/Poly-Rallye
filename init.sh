@@ -1,11 +1,7 @@
 #!/bin/bash
 
-cd ~/PJ
-#ln -s /tmp/PJ_bin bin
-#mkdir /tmp/PJ_bin
-#cd /tmp/PJ_bin
-cd bin
-ln -s ../VocalyzeSIVOX VocalyzeSIVOX
-ln -s ../lib lib
-cd ..
+mkdir /tmp/PJ_bin
+ln -s /tmp/PJ_bin ~/PJ/bin
+ln -s ~/PJ/VocalyzeSIVOX /tmp/PJ_bin/VocalyzeSIVOX
+ln -s ~/PJ/lib /tmp/PJ_bin/lib
 

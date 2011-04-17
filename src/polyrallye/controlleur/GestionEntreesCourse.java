@@ -18,6 +18,7 @@ public class GestionEntreesCourse extends KeyAdapter {
 	protected boolean rapportInf;
 	protected boolean klaxon;
 	protected boolean echap;
+	protected boolean automatique = true;
 	
 	@Override
 	public void keyPressed(KeyEvent touche) {
@@ -47,6 +48,8 @@ public class GestionEntreesCourse extends KeyAdapter {
 		case KeyEvent.VK_ESCAPE:
 			echap = true;
 			break;
+		case KeyEvent.VK_A:
+			automatique = !automatique;
 		}
 	}
 	

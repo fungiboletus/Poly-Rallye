@@ -63,7 +63,7 @@ public class Course implements ActionMenu {
 		Main.changerGestionEntrees(entreesCourse);
 
 		environnement = new Environnement("village", "jour", "clair");
-		terrain = new Terrain("terre");
+		terrain = new Terrain("asphalt");
 		sMoteur = new SonMoteur(voiture);
 		
 		crash = new Crash(environnement.getType());
@@ -118,7 +118,7 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isAccelere()) {
 					double xa = 20;
 					double xb = 1000;
-					double ya = 1.2;
+					double ya = 1.5;
 					double yb = 2.5;
 					
 					double plus = t.getCoefCourant() * (ya + (score - xa)*((yb-ya)/(xb-xa)));
@@ -189,8 +189,29 @@ public class Course implements ActionMenu {
 				if (regime < 850) {
 					regime = 850;
 				} else if (regime > m.getRegimeRupteur()) {
-					System.out.println(m.getRegimeRupteur());
-					regime = m.getRegimeRupteur() - 500;
+					boolean rupteur = true;
+					if (entreesCourse.automatique) {
+						if (t.passerVitesse()) {
+							rupteur = false;
+							regime *= 0.625f;
+							sMoteur.passageRapport();
+							System.out.println("CANARD DE MERDE");
+						}
+					}
+					
+					if (rupteur) {
+						System.out.println(m.getRegimeRupteur());
+						regime = m.getRegimeRupteur() - 250;						
+					}
+				}
+				
+				if (entreesCourse.automatique && regime < m.getRegimeRupteur()*0.625) {
+					if (t.getRapportCourant() > 1) {
+						t.retrograder();
+						regime *= 1.2f;
+						sMoteur.passageRapport();
+						System.out.println("CANARD DE MERDE 2");
+					}
 				}
 				
 				if(entreesCourse.klaxon) {

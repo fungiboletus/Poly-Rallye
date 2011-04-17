@@ -35,6 +35,7 @@ public class Klaxon {
 	}
 
 	public void play() {
+		//klaxon.setOffset(0.0f);
 		klaxon.pause(false);
 	}
 
