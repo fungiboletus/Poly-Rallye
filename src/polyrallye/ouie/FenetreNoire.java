@@ -10,11 +10,18 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 import polyrallye.controlleur.Main;
 
@@ -26,7 +33,12 @@ public class FenetreNoire extends JFrame {
 
 	private static final long serialVersionUID = -6277192979591219507L;
 
-	protected JTextArea informations;
+	protected JTextPane console;
+	protected StyledDocument documentConsole;
+	protected SimpleAttributeSet consoleBleu;
+	protected SimpleAttributeSet consoleBlanc;
+	protected SimpleAttributeSet consoleRouge;
+	
 	protected JPanel panneau;
 	protected JScrollPane defilement;
 	
@@ -52,18 +64,25 @@ public class FenetreNoire extends JFrame {
 		// Chargement de la magnifique image de fond
 		JLabel image = new JLabel(new ImageIcon("Ressources/logo.png"));
 		image.setPreferredSize(new Dimension(400, 114));
-		image.setPreferredSize(new Dimension(400, 114));
 
-		informations = new JTextArea();
-		informations.setColumns(50);
-		informations.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
-		informations.setDisabledTextColor(Color.WHITE);
-		informations.setBackground(Color.BLACK);
-		informations.setRequestFocusEnabled(false);
-		informations.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
-		informations.setEnabled(false);
+		console = new JTextPane();
+		documentConsole = console.getStyledDocument();
+		
+		consoleBleu = new SimpleAttributeSet();
+		consoleBlanc = new SimpleAttributeSet();
+		consoleRouge = new SimpleAttributeSet();
+		
+		consoleBleu.addAttribute(StyleConstants.Foreground, Color.BLUE);
+		consoleBlanc.addAttribute(StyleConstants.Foreground, Color.WHITE);
+		consoleRouge.addAttribute(StyleConstants.Foreground, Color.RED);
+		
+		console.setPreferredSize(new Dimension(400, 0));
+		console.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
+		console.setBackground(Color.BLACK);
+		console.setRequestFocusEnabled(false);
+		console.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
 
-		defilement = new JScrollPane(informations);
+		defilement = new JScrollPane(console);
 		defilement.setAutoscrolls(true);
 		defilement.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		defilement.setBorder(BorderFactory.createEmptyBorder());
@@ -88,9 +107,26 @@ public class FenetreNoire extends JFrame {
 	 * 
 	 * @param texte Le texte à afficher
 	 */
-	public void afficherTexte(String texte) {
-		informations.append(texte+"\n");
-		informations.setCaretPosition(informations.getCaretPosition()+texte.length()+1);
+	protected void log(String texte, SimpleAttributeSet couleur) {
+		try {
+			documentConsole.insertString(documentConsole.getLength(), texte+"\n", couleur);
+		} catch (BadLocationException e) {
+		}
+		
+		console.setCaretPosition(console.getCaretPosition()+texte.length()+1);
+		
+	}
+	
+	public void logInfo(String texte) {
+		log(texte, consoleBleu);
+	}
+	
+	public void logLiseuse(String texte) {
+		log(texte, consoleBlanc);
+	}
+	
+	public void logImportant(String texte) {
+		log(texte, consoleRouge);
 	}
 	
 	/**

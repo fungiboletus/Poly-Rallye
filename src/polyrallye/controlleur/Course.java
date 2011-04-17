@@ -118,7 +118,7 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isAccelere()) {
 					double xa = 20;
 					double xb = 1000;
-					double ya = 1.5;
+					double ya = 0.5;
 					double yb = 2.5;
 					
 					double plus = t.getCoefCourant() * (ya + (score - xa)*((yb-ya)/(xb-xa)));
@@ -172,7 +172,7 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isRapportInf()) {
-					if (t.retrograder() && t.getRapportCourant() > 1) {
+					if (t.getRapportCourant() > 1 && t.retrograder()) {
 						regime *= 1.2f;
 						sMoteur.passageRapport();							
 					}
@@ -246,7 +246,7 @@ public class Course implements ActionMenu {
 
 					long d = Random.unsignedDelta(4, 10) * 1000;
 
-					Main.log("" + d);
+					Main.logImportant("" + d);
 
 					Multithreading.dormir(d);
 					
@@ -291,7 +291,6 @@ public class Course implements ActionMenu {
 				}
 				sMoteur.passageRapport();
 				crash.play();
-
 			}
 		};
 		

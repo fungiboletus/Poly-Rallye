@@ -18,10 +18,12 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 
 	protected static Sound musique;
 	
-	protected Map<String, Map<String, Map<String, Voiture>>> hierarchie;
-	
-	protected boolean modeArcade;
+	protected enum niveauHierarchie {
+		CONSTRUCTEURS, MODELES, VARIANTE
+	};
 
+	protected niveauHierarchie niveau;
+	
 	static {
 		/*musique = new Sound("Ressources/Reno Project - 1.0/02 - Atlanta.ogg");
 		musique.play();
@@ -38,31 +40,19 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 		this(menuPrecedent, modeArcade, StockVoitures.getHierarchie());
 	}
 	
-	protected SelectionVoiture(Menu menuPrecedent, boolean modeArcade, Map<String, Map<String, Map<String, Voiture>>> hierarchie) {
+	protected SelectionVoiture(Menu menuPrecedent, niveauHierarchie niveau) {
 		super(menuPrecedent);
-		this.modeArcade = modeArcade;
-		this.hierarchie = hierarchie;
+		this.niveau = niveau;
 	}
-
-	/*@Override
-	public void actionMenu() {
-		if (hierarchie != null) {
-			Liseuse.lire("Vous pouvez acheter de nombreuses voitures dans les magasins.");
-		}
-		
-		lancer();
-	}*/
-
-	@Override
-	public void remplir() {
-
-		if (hierarchie == null) return;
+	
+	protected SelectionVoiture(Menu menuPrecedent, boolean modeArcade, Map<String, Map<String, Map<String, Voiture>>> hierarchie) {
+		this(menuPrecedent, niveauHierarchie.CONSTRUCTEURS);
 		
 		for (Entry<String, Map<String, Map<String, Voiture>>> c : hierarchie.entrySet()) {
-			SelectionVoiture menuConstructeur = new SelectionVoiture(this, modeArcade, null);
+			SelectionVoiture menuConstructeur = new SelectionVoiture(this, niveauHierarchie.MODELES);
 			
 			for (Entry<String, Map<String, Voiture>> cc : c.getValue().entrySet()) {
-				SelectionVoiture menuModele = new SelectionVoiture(menuConstructeur, modeArcade, null);
+				SelectionVoiture menuModele = new SelectionVoiture(menuConstructeur, niveauHierarchie.VARIANTE);
 				
 				// Les voitures sont triées par prix, donc on utilise un tableau
 				// temporaire
@@ -85,7 +75,7 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 
 				for (Voiture v : listeVoitures) {
 					String libelle = v.getVersion();
-					if (libelle == null) {
+					if (libelle == null || libelle.equals("serie")) {
 						libelle = "de série";
 					}
 					
@@ -102,11 +92,25 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 			ajouterElement(c.getKey(), menuConstructeur);
 		}
 	}
+	
+	@Override
+	public void remplir() {
+
+		
+	}
 
 	@Override
 	public void actionMenu() {
-		if (hierarchie != null) {
-			Liseuse.lire("Sélectionnez la voiture");
+		switch (niveau) {
+		case CONSTRUCTEURS:
+			Liseuse.lire("Sélectionnez le constructeur");
+			break;
+		case MODELES:
+			Liseuse.lire("Sélectionnez le modèle");
+			break;
+		case VARIANTE:
+			Liseuse.lire("Sélectionnez la version");
+			break;
 		}
 		
 		lancer();

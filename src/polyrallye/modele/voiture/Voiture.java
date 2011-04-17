@@ -59,6 +59,12 @@ public class Voiture {
 		transmission = new Transmission(moteur, noeud.getChild("transmission"));
 		chassis = new Chassis(noeud.getChild("chassis"));
 		sources = new Sources(noeud.getChild("sources"));
+		
+		if (transmission.getVitessePuissanceMaximale() < 1.0) {
+			transmission.etablirVitesseMaximale(getScore());
+		}
+		
+		transmission.calculerRapports();
 	}
 
 	public String getNomComplet() {
@@ -175,6 +181,9 @@ public class Voiture {
 	}
 
 	public void lireSpecifications() {
+		Liseuse.lire(getNomComplet());
+		Liseuse.marquerPause();
+		
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("Construite");

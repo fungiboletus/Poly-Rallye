@@ -18,28 +18,21 @@ public class VoitureArcade extends Menu implements ActionMenu {
 
 	@Override
 	public void actionMenu() {
-		Liseuse.lire(voiture.getNomComplet());
-		
 		voiture.ennoncerCategoriePerformances();
 		
 		Liseuse.marquerPause();
 		
 		lancer();
 
+		System.out.println(voiture.getTransmission());
 	}
 
 	@Override
 	public void remplir() {
 
-		ajouterElement("Sélectionner cette voiture", new Course(voiture));
+		ajouterElement("Lancer la course avec cette voiture", new Course(voiture));
 
-		ajouterElement("Écouter les spécifications complètes", new ActionMenu() {
-			
-			@Override
-			public void actionMenu() {
-				voiture.lireSpecifications();
-			}
-		});
+		ajouterElement("Écouter les spécifications", new Specifications(this, voiture));
 		
 		ajouterElement("Voir plus d'informations sur le web", new MenuSources(this, voiture.getSources()));
 

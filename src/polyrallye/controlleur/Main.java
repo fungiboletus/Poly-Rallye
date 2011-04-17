@@ -85,13 +85,29 @@ public class Main {
 		Liseuse.lire("Retour au menu principal");
 		menuPrincipal.lancer();
 	}
-
-	public static void log(String texte) {
+	
+	public static void logInfo(String texte) {
 		if (fenetre != null) {
-			fenetre.afficherTexte(texte);
+			fenetre.logInfo(texte);
 		}
+		System.out.println(texte);
 	}
-
+	
+	public static void logLiseuse(String texte) {
+		if (fenetre != null) {
+			fenetre.logLiseuse(texte);
+		}
+		System.out.println(texte);
+	}
+	
+	public static void logImportant(String texte) {
+		if (fenetre != null) {
+			fenetre.logImportant(texte);
+		}
+		System.out.println(texte);
+	}
+	
+	
 	public static void basculerAffichageConsole() {
 		if (fenetre != null) {
 			fenetre.basculerAffichageConsole();
