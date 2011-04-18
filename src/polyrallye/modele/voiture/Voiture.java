@@ -1,5 +1,7 @@
 package polyrallye.modele.voiture;
 
+import java.util.Random;
+
 import org.jdom.Element;
 
 import polyrallye.ouie.liseuse.Liseuse;
@@ -11,7 +13,6 @@ public class Voiture {
 	protected String constructeur;
 
 	protected int rarete;
-	protected int prix;
 
 	protected int debutDiffusion;
 	protected int finDiffusion;
@@ -42,7 +43,7 @@ public class Voiture {
 		constructeur = presentation.getChildText("constructeur");
 
 		Element economie = noeud.getChild("economie");
-		prix = GestionXML.getInt(economie.getChildText("prix"));
+		//prix = GestionXML.getInt(economie.getChildText("prix"));
 		rarete = GestionXML.getInt(economie.getChildText("rarete"));
 
 		Element periode = presentation.getChild("periode");
@@ -93,11 +94,7 @@ public class Voiture {
 	public int getRarete() {
 		return rarete;
 	}
-
-	public int getPrix() {
-		return prix;
-	}
-
+	
 	public int getDebutDiffusion() {
 		return debutDiffusion;
 	}
@@ -120,6 +117,65 @@ public class Voiture {
 
 	public Sources getSources() {
 		return sources;
+	}
+
+	public int getPrix() {
+		int scorePrix = rarete*20 + (int) getScore() + new Random(getNomComplet().hashCode()).nextInt(30) - 15;
+		
+		//System.out.println(getNomComplet()+" +++ " + scorePrix);
+		
+		// Le gain est en fonction de l'année, plus la voiture est vielle, mieux c'est, sauf dans les années 90 où les voitures sont vielles, mais simplement mal cotées
+		
+		double gainAnnee = 0.0;
+		
+		double xa = 1950;
+		double xb = 1995;
+		double ya = 3.0;
+		double yb = 1.0;
+		
+		if (debutDiffusion > xb) {
+			xa = xb;
+			xb = 2012; // la fin du monde est cette année là, inutile de gérer la suite (ironie)
+			ya = yb;
+			yb = 1.6;
+		}
+		
+		gainAnnee = ya + (debutDiffusion - xa)*((yb-ya)/(xb-xa));
+		
+		if (scorePrix <= 100) {
+			xa = 0;
+			xb = 100;
+			ya = 1;
+			yb = 1000;			
+		}
+		else if (scorePrix <= 250) {
+			xa = 100;
+			xb = 200;
+			ya = 1000;
+			yb = 25000;	
+		}
+		else if (scorePrix <= 500) {
+			xa = 250;
+			xb = 500;
+			ya = 25000;
+			yb = 80000;	
+		}
+		else if (scorePrix <= 700) {
+			xa = 500;
+			xb = 700;
+			ya = 80000;
+			yb = 200000;	
+		}
+		else {
+			xa = 700;
+			xb = 1200;
+			ya = 120000;
+			yb = 2500000;	 
+		}
+		
+		//System.out.println("\n"+getNomComplet()+" _____ "+gainAnnee+" _____ "+scorePrix);
+		
+		return (int) ((ya + (scorePrix - xa)*((yb-ya)/(xb-xa)))*gainAnnee);
 	}
 
 	/**
@@ -175,7 +231,7 @@ public class Voiture {
 		builder.append(" score : ");
 		builder.append(getScore());
 		builder.append(" prix : ");
-		builder.append(prix);
+		builder.append(getPrix());
 		builder.append("€ ]");
 		return builder.toString();
 	}
@@ -219,7 +275,7 @@ public class Voiture {
 			Liseuse.lire("Performances moyennes");
 		} else if (score <= 400) {
 			Liseuse.lire("Bonnes performances");
-		} else if (score <= 650) {
+		} else if (score <= 620) {
 			Liseuse.lire("Très bonnes performances");
 		} else {
 			Liseuse.lire("Performances exceptionnelles");
