@@ -1,8 +1,9 @@
-package polyrallye.ouie.menus;
+package polyrallye.ouie.menus.carriere;
 
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
+import polyrallye.ouie.menus.MenuSources;
 
 public class VoitureGarage extends Menu implements ActionMenu {
 

@@ -1,4 +1,4 @@
-package polyrallye.ouie.menus;
+package polyrallye.ouie.menus.carriere;
 
 import java.util.List;
 import java.util.ListIterator;

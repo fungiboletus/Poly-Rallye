@@ -2,6 +2,8 @@ package polyrallye.ouie.menus;
 
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.menus.arcade.Arcade;
+import polyrallye.ouie.menus.carriere.Carriere;
 import polyrallye.ouie.utilitaires.Sound;
 
 public class Principal extends Menu {

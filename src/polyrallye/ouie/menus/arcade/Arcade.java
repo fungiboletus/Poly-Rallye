@@ -1,8 +1,10 @@
-package polyrallye.ouie.menus;
+package polyrallye.ouie.menus.arcade;
 
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.menus.SelectionVoitureMagasin;
+import polyrallye.ouie.menus.SelectionVoiturePerformances;
 
 public class Arcade extends Menu implements ActionMenu {
 
@@ -18,8 +20,8 @@ public class Arcade extends Menu implements ActionMenu {
 	
 	@Override
 	public void remplir() {
-		ajouterElement("En faisant appel à un expert", null);
-		ajouterElement("En parcourant les concessions", new SelectionVoiture(this, true));
+		ajouterElement("En fonction des performances", new SelectionVoiturePerformances(this));
+		ajouterElement("En parcourant les concessions", new SelectionVoitureMagasin(this, true));
 	}
 
 }

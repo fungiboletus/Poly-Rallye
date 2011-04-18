@@ -49,6 +49,8 @@ public class Main {
 		
 		fenetre = new FenetreNoire();
 		
+		logInfo("Les fautes sont la plupart du temps volontaires,\npour la synthèse vocale.");
+		
 		Liseuse.lancer();
 		
 		

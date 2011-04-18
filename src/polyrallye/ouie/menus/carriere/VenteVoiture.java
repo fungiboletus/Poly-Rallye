@@ -1,4 +1,4 @@
-package polyrallye.ouie.menus;
+package polyrallye.ouie.menus.carriere;
 
 import polyrallye.controlleur.Main;
 import polyrallye.modele.personnes.Joueur;

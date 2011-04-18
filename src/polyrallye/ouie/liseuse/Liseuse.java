@@ -166,8 +166,6 @@ public abstract class Liseuse {
 			return false;
 		}
 
-		System.out.println(texte);
-
 		Main.logLiseuse(texte);
 
 		Parole p = paroles.get(texte.trim().toLowerCase());

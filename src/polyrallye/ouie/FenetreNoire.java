@@ -10,14 +10,11 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
 import javax.swing.JTextPane;
-import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -48,7 +45,7 @@ public class FenetreNoire extends JFrame {
 
 	public FenetreNoire() {
 		super("PolyRallye");
-
+		
 		requestFocus();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 

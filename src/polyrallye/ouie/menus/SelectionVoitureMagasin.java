@@ -12,9 +12,11 @@ import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.menus.arcade.VoitureArcade;
+import polyrallye.ouie.menus.carriere.VoitureMagasin;
 import polyrallye.ouie.utilitaires.Sound;
 
-public class SelectionVoiture extends Menu implements ActionMenu {
+public class SelectionVoitureMagasin extends Menu implements ActionMenu {
 
 	protected static Sound musique;
 	
@@ -36,23 +38,23 @@ public class SelectionVoiture extends Menu implements ActionMenu {
 		return musique;
 	}
 	
-	public SelectionVoiture(Menu menuPrecedent, boolean modeArcade) {
+	public SelectionVoitureMagasin(Menu menuPrecedent, boolean modeArcade) {
 		this(menuPrecedent, modeArcade, StockVoitures.getHierarchie());
 	}
 	
-	protected SelectionVoiture(Menu menuPrecedent, niveauHierarchie niveau) {
+	protected SelectionVoitureMagasin(Menu menuPrecedent, niveauHierarchie niveau) {
 		super(menuPrecedent);
 		this.niveau = niveau;
 	}
 	
-	protected SelectionVoiture(Menu menuPrecedent, boolean modeArcade, Map<String, Map<String, Map<String, Voiture>>> hierarchie) {
+	protected SelectionVoitureMagasin(Menu menuPrecedent, boolean modeArcade, Map<String, Map<String, Map<String, Voiture>>> hierarchie) {
 		this(menuPrecedent, niveauHierarchie.CONSTRUCTEURS);
 		
 		for (Entry<String, Map<String, Map<String, Voiture>>> c : hierarchie.entrySet()) {
-			SelectionVoiture menuConstructeur = new SelectionVoiture(this, niveauHierarchie.MODELES);
+			SelectionVoitureMagasin menuConstructeur = new SelectionVoitureMagasin(this, niveauHierarchie.MODELES);
 			
 			for (Entry<String, Map<String, Voiture>> cc : c.getValue().entrySet()) {
-				SelectionVoiture menuModele = new SelectionVoiture(menuConstructeur, niveauHierarchie.VARIANTE);
+				SelectionVoitureMagasin menuModele = new SelectionVoitureMagasin(menuConstructeur, niveauHierarchie.VARIANTE);
 				
 				// Les voitures sont triées par prix, donc on utilise un tableau
 				// temporaire

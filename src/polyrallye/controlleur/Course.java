@@ -51,6 +51,8 @@ public class Course implements ActionMenu {
 	
 	protected boolean klaxonEnclanche;
 	
+	protected double score;
+	
 	// Temporaire hein
 	protected Thread canard2;
 	
@@ -93,7 +95,7 @@ public class Course implements ActionMenu {
 		org.lwjgl.util.Timer.tick();
 		temps = timerCompteur.getTime();
 		
-		final double score = voiture.getMoteur().getPuissanceMax();
+		score = voiture.getMoteur().getPuissanceMax();
 
 		TimerTask tt = new TimerTask() {
 
@@ -290,6 +292,7 @@ public class Course implements ActionMenu {
 			protected void megaCrash() {
 				regime = 10;
 				sMoteur.setRegime(10, false);
+				score *= 0.25;
 				
 				Transmission t = voiture.getTransmission();
 				while (t.getRapportCourant() > 1)

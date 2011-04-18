@@ -189,7 +189,7 @@ public abstract class Menu implements EcouteurEntrees {
 			}
 		}
 
-		Liseuse.lire("Action invalide.");
+		Liseuse.lire("Action invalide");
 	}
 
 	@Override
