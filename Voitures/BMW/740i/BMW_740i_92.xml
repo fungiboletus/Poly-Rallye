@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>BMW</constructeur>
+		<nom>740i</nom>
+		<version>92</version>
+		<periode annee="1992" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="normal"/>
+		<cylindree>3982</cylindree>
+		<puissance regime="5800">282</puissance>
+		<couple_max regime="4500">400</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1790</poids>
+		<largeur>1847</largeur>
+		<longueur>4910</longueur>
+		<empattement>2832</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=29106</source>
+	</sources>
+</voiture>

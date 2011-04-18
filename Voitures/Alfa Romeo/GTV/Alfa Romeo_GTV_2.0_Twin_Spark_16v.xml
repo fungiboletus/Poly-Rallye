@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Alfa Romeo</constructeur>
+		<nom>GTV</nom>
+		<version>2.0 Twin Spark 16v</version>
+		<periode annee="1995" />
+	</presentation>
+	<economie>
+		<rarete>151;3R3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1970</cylindree>
+		<puissance regime="6200">150</puissance>
+		<couple_max regime="4000">186</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1370</poids>
+		<largeur>1780</largeur>
+		<longueur>4285</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=41855</source>
+	</sources>
+</voiture>

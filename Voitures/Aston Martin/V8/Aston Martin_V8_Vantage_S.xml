@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Aston Martin</constructeur>
+		<nom>V8</nom>
+		<version>Vantage S</version>
+		<periode annee="2011" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="normal"/>
+		<cylindree>4735</cylindree>
+		<puissance regime="7300">430</puissance>
+		<couple_max regime="5000">490</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>7</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1610</poids>
+		<largeur>1865</largeur>
+		<longueur>4385</longueur>
+		<empattement>2600</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=230692</source>
+	</sources>
+</voiture>

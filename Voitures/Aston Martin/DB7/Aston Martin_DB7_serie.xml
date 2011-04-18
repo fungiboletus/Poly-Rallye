@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Aston Martin</constructeur>
+		<nom>DB7</nom>
+		<periode annee="1993" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="ligne" compression="turbo"/>
+		<cylindree>3239</cylindree>
+		<puissance regime="5500">335</puissance>
+		<couple_max regime="3000">488</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1650</poids>
+		<largeur>1820</largeur>
+		<longueur>4631</longueur>
+		<empattement>2591</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=20427</source>
+	</sources>
+</voiture>

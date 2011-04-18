@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Alfa Romeo</constructeur>
+		<nom>GTV</nom>
+		<version>3.2 V6 24v</version>
+		<periode annee="151;3R" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="V" compression="normal"/>
+		<cylindree>3179</cylindree>
+		<puissance regime="6200">237</puissance>
+		<couple_max regime="4800">289</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1445</poids>
+		<largeur>1776</largeur>
+		<longueur>4299</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=109527</source>
+	</sources>
+</voiture>

@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>S4</nom>
+		<version>Avant</version>
+		<periode annee="1997" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="30" disposition="V" compression="turbo"/>
+		<cylindree>2671</cylindree>
+		<puissance regime="5800">261</puissance>
+		<couple_max regime="1850">400</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1540</poids>
+		<largeur>1733</largeur>
+		<longueur>4488</longueur>
+		<empattement>2607</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=21769</source>
+	</sources>
+</voiture>

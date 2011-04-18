@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Aston Martin</constructeur>
+		<nom>DB6</nom>
+		<periode annee="1965" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="12" disposition="ligne" compression="normal"/>
+		<cylindree>3996</cylindree>
+		<puissance regime="5500">282</puissance>
+		<couple_max regime="4500">370</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1550</poids>
+		<largeur>1676</largeur>
+		<longueur>4623</longueur>
+		<empattement>2584</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=33506</source>
+	</sources>
+</voiture>
