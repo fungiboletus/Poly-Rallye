@@ -4,7 +4,7 @@
 		<constructeur>Alfa Romeo</constructeur>
 		<nom>GTV</nom>
 		<version>3.2 V6 24v</version>
-		<periode annee="151;3R" />
+		<periode annee="2003" />
 	</presentation>
 	<economie>
 		<rarete>4</rarete>
