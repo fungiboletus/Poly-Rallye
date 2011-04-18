@@ -49,6 +49,8 @@ public class Course implements ActionMenu {
 	
 	protected boolean virageDroite;
 	
+	protected boolean klaxonEnclanche;
+	
 	// Temporaire hein
 	protected Thread canard2;
 	
@@ -215,10 +217,15 @@ public class Course implements ActionMenu {
 				}
 				
 				if(entreesCourse.klaxon) {
-					klaxon.play();
+					if (!klaxonEnclanche) {
+						klaxon.play();
+						klaxonEnclanche = true;
+					}
 				}
-				else
+				else if (klaxonEnclanche){
 					klaxon.pause();
+					klaxonEnclanche = false;
+				}
 
 				sMoteur.setRegime(regime, entreesCourse.isAccelere());
 				// terrain.setVitesse(regime / 3.0f);
