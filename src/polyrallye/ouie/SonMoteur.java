@@ -92,7 +92,7 @@ public class SonMoteur {
 			gain *= 0.7f;
 		}
 		
-		gain *= 0.45;
+		gain *= 0.50;
 
 		// Cas particulier plutôt rare, le régime est déjà dans les sons
 		Sound sonParfait = sons.get(intRegime);

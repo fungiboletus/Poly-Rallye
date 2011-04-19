@@ -49,6 +49,10 @@ public class Course implements ActionMenu {
 	
 	protected boolean virageDroite;
 	
+	protected boolean klaxonEnclanche;
+	
+	protected double score;
+	
 	// Temporaire hein
 	protected Thread canard2;
 	
@@ -63,7 +67,7 @@ public class Course implements ActionMenu {
 		Main.changerGestionEntrees(entreesCourse);
 
 		environnement = new Environnement("village", "jour", "clair");
-		terrain = new Terrain("terre");
+		terrain = new Terrain("asphalt");
 		sMoteur = new SonMoteur(voiture);
 		
 		crash = new Crash(environnement.getType());
@@ -91,7 +95,7 @@ public class Course implements ActionMenu {
 		org.lwjgl.util.Timer.tick();
 		temps = timerCompteur.getTime();
 		
-		final double score = voiture.getMoteur().getPuissanceMax();
+		score = voiture.getMoteur().getPuissanceMax();
 
 		TimerTask tt = new TimerTask() {
 
@@ -118,7 +122,7 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isAccelere()) {
 					double xa = 20;
 					double xb = 1000;
-					double ya = 1.2;
+					double ya = 0.5;
 					double yb = 2.5;
 					
 					double plus = t.getCoefCourant() * (ya + (score - xa)*((yb-ya)/(xb-xa)));
@@ -172,7 +176,7 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isRapportInf()) {
-					if (t.retrograder() && t.getRapportCourant() > 1) {
+					if (t.getRapportCourant() > 1 && t.retrograder()) {
 						regime *= 1.2f;
 						sMoteur.passageRapport();							
 					}
@@ -189,15 +193,41 @@ public class Course implements ActionMenu {
 				if (regime < 850) {
 					regime = 850;
 				} else if (regime > m.getRegimeRupteur()) {
-					System.out.println(m.getRegimeRupteur());
-					regime = m.getRegimeRupteur() - 500;
+					boolean rupteur = true;
+					if (entreesCourse.automatique) {
+						if (t.passerVitesse()) {
+							rupteur = false;
+							regime *= 0.625f;
+							sMoteur.passageRapport();
+							System.out.println("CANARD DE MERDE");
+						}
+					}
+					
+					if (rupteur) {
+						System.out.println(m.getRegimeRupteur());
+						regime = m.getRegimeRupteur() - 250;						
+					}
+				}
+				
+				if (entreesCourse.automatique && regime < m.getRegimeRupteur()*0.625) {
+					if (t.getRapportCourant() > 1) {
+						t.retrograder();
+						regime *= 1.2f;
+						sMoteur.passageRapport();
+						System.out.println("CANARD DE MERDE 2");
+					}
 				}
 				
 				if(entreesCourse.klaxon) {
-					klaxon.play();
+					if (!klaxonEnclanche) {
+						klaxon.play();
+						klaxonEnclanche = true;
+					}
 				}
-				else
+				else if (klaxonEnclanche){
 					klaxon.pause();
+					klaxonEnclanche = false;
+				}
 
 				sMoteur.setRegime(regime, entreesCourse.isAccelere());
 				// terrain.setVitesse(regime / 3.0f);
@@ -225,7 +255,7 @@ public class Course implements ActionMenu {
 
 					long d = Random.unsignedDelta(4, 10) * 1000;
 
-					Main.log("" + d);
+					Main.logImportant("" + d);
 
 					Multithreading.dormir(d);
 					
@@ -262,6 +292,7 @@ public class Course implements ActionMenu {
 			protected void megaCrash() {
 				regime = 10;
 				sMoteur.setRegime(10, false);
+				score *= 0.25;
 				
 				Transmission t = voiture.getTransmission();
 				while (t.getRapportCourant() > 1)
@@ -270,7 +301,6 @@ public class Course implements ActionMenu {
 				}
 				sMoteur.passageRapport();
 				crash.play();
-
 			}
 		};
 		

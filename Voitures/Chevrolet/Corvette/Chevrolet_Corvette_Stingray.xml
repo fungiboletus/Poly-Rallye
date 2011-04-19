@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Chevrolet</constructeur>
+		<nom>Corvette</nom>
+		<version>Stingray</version>
+		<periode annee="1974" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>5733</cylindree>
+		<puissance regime="4400">195</puissance>
+		<couple_max regime="2800">373</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1538</poids>
+		<largeur>1753</largeur>
+		<longueur>4712</longueur>
+		<empattement>2489</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=90013</source>
+	</sources>
+</voiture>

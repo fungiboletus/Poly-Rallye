@@ -73,6 +73,9 @@ public class GestionEntreesMenu extends KeyAdapter {
 			case KeyEvent.VK_D:
 				Main.basculerAffichageConsole();
 				break;
+			case KeyEvent.VK_V:
+				Main.voitures();
+				break;
 
 			}
 		}

@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Chevrolet</constructeur>
+		<nom>Camaro</nom>
+		<version>Z28 72</version>
+		<periode annee="1972" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>5733</cylindree>
+		<puissance regime="5600">255</puissance>
+		<couple_max regime="4000">380</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1557</poids>
+		<largeur>1890</largeur>
+		<longueur>4775</longueur>
+		<empattement>2743</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=45639</source>
+	</sources>
+</voiture>

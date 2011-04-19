@@ -34,20 +34,15 @@ public class Main {
 	public static void voitures() {		
 		for (Entry<Double, Voiture> s : StockVoitures.getVoituresParPerformances().entrySet())
 		{
-			System.out.println("v : "+ Math.round(s.getKey()) + "\t"  + s.getValue().getNomComplet());
-		}
-		
-		System.out.println("Voitures équivalentes à la Citroën DS3 WRC :");
-		
-		for (Voiture v : StockVoitures.getVoituresEquivalentes(StockVoitures.getVoitureParNom("Fiat Panda 4x4"),8)) {
-			System.out.println(v.getNomComplet());
-			System.out.println("\t"+v.getScore());
+			System.out.println("v : "+ Math.round(s.getKey()) + "\t"  + s.getValue().getNomComplet() + " --- "+s.getValue().getPrix()+" €");
 		}
 	}
 	
 	public static void classique(String [] args) {
 		
 		fenetre = new FenetreNoire();
+		
+		logInfo("Les fautes sont la plupart du temps volontaires,\npour la synthèse vocale.");
 		
 		Liseuse.lancer();
 		
@@ -85,13 +80,29 @@ public class Main {
 		Liseuse.lire("Retour au menu principal");
 		menuPrincipal.lancer();
 	}
-
-	public static void log(String texte) {
+	
+	public static void logInfo(String texte) {
 		if (fenetre != null) {
-			fenetre.afficherTexte(texte);
+			fenetre.logInfo(texte);
 		}
+		System.out.println(texte);
 	}
-
+	
+	public static void logLiseuse(String texte) {
+		if (fenetre != null) {
+			fenetre.logLiseuse(texte);
+		}
+		System.out.println(texte);
+	}
+	
+	public static void logImportant(String texte) {
+		if (fenetre != null) {
+			fenetre.logImportant(texte);
+		}
+		System.out.println(texte);
+	}
+	
+	
 	public static void basculerAffichageConsole() {
 		if (fenetre != null) {
 			fenetre.basculerAffichageConsole();
