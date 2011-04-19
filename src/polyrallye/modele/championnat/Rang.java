@@ -3,7 +3,6 @@ package polyrallye.modele.championnat;
 import org.jdom.Element;
 
 import polyrallye.modele.personnes.Personne;
-import polyrallye.modele.voiture.Voiture;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -18,14 +17,14 @@ public class Rang implements Comparable<Rang> {
     private Personne personne;
     private Duree duree;
     private Duree ecart;
-    private Voiture car;
+    private String car;
 
     /**
      * Constructeur
      * 
      * @param uneEpreuve
      */
-    public Rang(String uneSpeciale, Personne personne, Duree d, Voiture car) {
+    public Rang(String uneSpeciale, Personne personne, Duree d, String car) {
 
         // if (uneSpeciale == null || personne == null)
         // throw new NullPointerException(
@@ -37,17 +36,26 @@ public class Rang implements Comparable<Rang> {
         this.car = car;
     }
 
+    public String getCar() {
+        return car;
+    }
+
+    public void setCar(String car) {
+        this.car = car;
+    }
+
     public Rang(Element noeud) {
 
-        speciale = noeud.getChildText("speciale");
-
-        classement = GestionXML.getInt(noeud.getChildText("classement"));
+        classement = GestionXML.getInt(noeud.getChildText("position"));
 
         personne = new Personne(noeud.getChildText("nom"));
 
+        car = noeud.getChildText("voiture");
+
         duree = new Duree(GestionXML.getInt(noeud.getChildText("duree")));
 
-        ecart = new Duree(GestionXML.getInt(noeud.getChildText("ecart")));
+        if (classement != 1)
+            ecart = new Duree(GestionXML.getInt(noeud.getChildText("ecart")));
 
     }
 
@@ -55,16 +63,18 @@ public class Rang implements Comparable<Rang> {
 
         Element noeud = new Element("classement");
 
-        noeud.addContent(new Element("classement").setText("" + classement));
+        noeud.addContent(new Element("position").setText("" + classement));
 
         noeud.addContent(new Element("nom").setText(personne.getNom()));
 
-        noeud.addContent(new Element("voiture").setText(car.getNomComplet()));
+        noeud.addContent(new Element("voiture").setText(car));
 
-        noeud.addContent(new Element("duree").setText(duree.toString()));
+        noeud.addContent(new Element("duree").setText(""
+                + duree.ConvertToDixiemes()));
 
         if (classement != 1)
-            noeud.addContent(new Element("ecart").setText(ecart.toString()));
+            noeud.addContent(new Element("ecart").setText(""
+                    + ecart.ConvertToDixiemes()));
 
         return noeud;
 
@@ -142,18 +152,25 @@ public class Rang implements Comparable<Rang> {
 
         // obtenir le suffixe de la position
         //
-        String pos = "eme";
+        String pos = "eme";      
+        String affichCar = "";
         String affichEcart = "";
         if (classement == 1) {
             pos = "er";
         } else
             affichEcart = " ; écart --> " + ecart;
 
-        // completer le resultat
-
-        resultat.append(speciale + " (" + classement + pos + ": "
-                + personne.getNom() + ", duree -> " + duree + affichEcart
-                + " )");
+        if (car != null) affichCar = ", " + car;
+        
+        if (speciale != null) {
+            resultat.append(speciale + " (" + classement + pos + ": "
+                    + personne.getNom() + affichCar + ", duree -> " + duree + affichEcart
+                    + " )");
+        } else {
+            resultat.append(" (" + classement + pos + ": "
+                    + personne.getNom() + ", " + car + ", duree -> " + duree + affichEcart
+                    + " )");
+        }
 
         return resultat.toString();
     }

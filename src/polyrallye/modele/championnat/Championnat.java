@@ -8,6 +8,7 @@ import java.util.List;
 import org.jdom.Element;
 
 import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
@@ -45,12 +46,14 @@ public class Championnat {
 
         nom = noeud.getChildText("nom");
 
+        etapes = new ArrayList<Etape>();
         for (Object e : noeud.getChildren("etape")) {
             Etape balise = new Etape((Element) e);
             etapes.add(balise);
         }
 
-        voitureGagné = new Voiture(noeud.getChild("voitureEnJeu"));
+        voitureGagné = StockVoitures.getVoitureParNom((noeud
+                .getChildText("voitureEnJeu")));
 
         argentGagné = GestionXML.getInt(noeud.getChildText("argentEnJeu"));
 
@@ -64,10 +67,9 @@ public class Championnat {
         noeud.addContent(new Element("joueur").setText(player.getNom()));
 
         for (int i = 0; i < etapes.size(); ++i)
-            noeud.addContent(new Element("etape").setText(etapes.get(i)
-                    .getEtape()));
+            noeud.addContent(etapes.get(i).toXML());
 
-        noeud.addContent(new Element("voitureEnjeu").setText(voitureGagné
+        noeud.addContent(new Element("voitureEnJeu").setText(voitureGagné
                 .getNomComplet()));
 
         noeud.addContent(new Element("argentEnJeu").setText("" + argentGagné));
@@ -112,22 +114,27 @@ public class Championnat {
         player.ajouterArgent(argentGagné);
     }
 
-    public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {
+    public void setClassement() {
         classement = new ArrayList<Rang>();
 
         classement = etapes.get(0).getClassement();
 
         for (int i = 0; i < 10; ++i) {
             classement.get(i).setSpeciale(nom);
+            classement.get(i).setCar(null);
         }
 
         for (int k = 1; k < etapes.size(); ++k) {
             for (int i = 0; i < 10 && k >= 1; ++i) {
-                classement.get(i).setDuree(
-                        new Duree(classement.get(i).getDuree()
-                                .ConvertToDixiemes()
-                                + etapes.get(k).getClassement().get(i)
-                                        .getDuree().ConvertToDixiemes()));
+                for (int j = 0; j < 10; ++j)
+                    if (classement.get(i).getPersonne().getNom().equalsIgnoreCase(etapes.get(
+                            k).getClassement().get(j).getPersonne().getNom()))
+                        classement.get(i).setDuree(
+                                        new Duree(classement.get(i).getDuree()
+                                                .ConvertToDixiemes()
+                                                + etapes.get(k).getClassement()
+                                                        .get(j).getDuree()
+                                                        .ConvertToDixiemes()));
             }
         }
 
@@ -138,13 +145,7 @@ public class Championnat {
         setecart();
 
         for (int i = 0; i < 10; ++i) {
-            classement.get(i).setClassement(i + 1);
             System.out.println(classement.get(i));
-            if (i > 1
-                    && classement.get(i).getDuree().equals(
-                            classement.get(i - 1).getDuree()))
-                classement.get(i).getDuree().setDixiemes(
-                        classement.get(i).getDuree().getDixiemes() - 5);
         }
 
     }
@@ -156,11 +157,13 @@ public class Championnat {
      */
     public void setecart() {
         int premier = classement.get(0).getDuree().ConvertToDixiemes();
-
-        for (int i = 1; i < 10; ++i)
+        classement.get(0).setClassement(1);
+        for (int i = 1; i < 10; ++i) {
+            classement.get(i).setClassement(i+1);
             classement.get(i).setEcart(
                     new Duree(classement.get(i).getDuree().ConvertToDixiemes()
                             - premier));
+        }
     }
 
     public Joueur getPlayer() {
@@ -187,6 +190,23 @@ public class Championnat {
         this.argentGagné = argentGagné;
     }
 
+    public static Championnat chargerChampionnat(String nom) {
+        File f = new File("Championnat/" + nom + ".xml");
+
+        if (f.exists()) {
+            Element n;
+            try {
+                n = GestionXML.chargerNoeudRacine(f);
+                return new Championnat(n);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            throw new IllegalAccessError();
+        }
+        return null;
+    }
+
     public static void EnregistrerChampionnat(Championnat c) {
         try {
             File d = new File("Championnat");
@@ -195,7 +215,8 @@ public class Championnat {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnat/" + c.getNom() + ".xml", c.toXML());
+            GestionXML.enregistrerRacine("Championnat/" + c.getNom() + ".xml",
+                    c.toXML());
         } catch (Exception e) {
             e.printStackTrace();
             Liseuse.lire("Impossible de sauvegarder la progression.");

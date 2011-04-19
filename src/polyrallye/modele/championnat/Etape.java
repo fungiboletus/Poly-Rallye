@@ -65,23 +65,64 @@ public class Etape {
         circuit = noeud.getChildText("circuit");
         nom = noeud.getChildText("nom");
 
-        for (Object e : noeud.getChildren("participant")) {
-            Personne balise = new Personne((Element) e);
-            participants.add(balise);
-        }
-
-        for (Object e : noeud.getChildren("voiture")) {
-            Voiture balise = new Voiture((Element) e);
-            voitures.add(balise);
-        }
-
+        voitures = new ArrayList<Voiture>();
+        classement = new ArrayList<Rang>();
         for (Object e : noeud.getChildren("classement")) {
             Rang balise = new Rang((Element) e);
+            if (balise.getEcart() == null)
+                balise.setEcart(new Duree(0));
+            balise.setSpeciale(nom);
+            voitures.add(StockVoitures.getVoitureParNom(balise.getCar()));
             classement.add(balise);
+        }
+        
+        participants = new ArrayList<Personne>();
+        for (int i = 0; i < classement.size(); ++i) {
+            participants.add(classement.get(i).getPersonne());
         }
 
         numeroEtape = GestionXML.getInt(noeud.getChildText("numero"));
+     
+    }
 
+    public int getNumeroEtape() {
+        return numeroEtape;
+    }
+
+    public void setNumeroEtape(int numeroEtape) {
+        this.numeroEtape = numeroEtape;
+    }
+
+    public Joueur getJoueur() {
+        return joueur;
+    }
+
+    public void setJoueur(Joueur joueur) {
+        this.joueur = joueur;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getCircuit() {
+        return circuit;
+    }
+
+    public void setCircuit(String circuit) {
+        this.circuit = circuit;
+    }
+
+    public List<Voiture> getVoitures() {
+        return voitures;
+    }
+
+    public void setVoitures(List<Voiture> voitures) {
+        this.voitures = voitures;
     }
 
     public Element toXML() {
@@ -100,9 +141,9 @@ public class Etape {
         // .get(i).getNom()));
 
         setecart();
-        
+
         noeud.addContent(classement.get(0).toXML());
-        
+
         for (int i = 1; i < classement.size(); ++i) {
             noeud.addContent(classement.get(i).toXML());
         }
@@ -189,13 +230,13 @@ public class Etape {
         voitures.addAll(StockVoitures.getVoituresEquivalentes(voitJoueur, 9));
 
         classement.add(new Rang(nom, participants.get(0), dureeJoueurEtape,
-                voitures.get(0)));
+                voitures.get(0).getNomComplet()));
         for (int i = 1; i < 10; ++i) {
             Adversaire adv = (Adversaire) participants.get(i);
             adv.setVoiture(voitures.get(i - 1));
             classement.add(new Rang(nom, participants.get(i), ramdomduree(adv,
                     voitures.get(i - 1), dureeJoueurEtape, Joueur.session,
-                    voitJoueur), (voitures.get(i - 1))));
+                    voitJoueur), (voitures.get(i - 1)).getNomComplet()));
         }
 
         // réorganisation, trie de la liste classement
@@ -256,6 +297,23 @@ public class Etape {
      */
     public List<Personne> getParticipants() {
         return participants;
+    }
+
+    public static Etape chargerEtape(String nom) {
+        File f = new File("Championnat/" + nom + ".xml");
+
+        if (f.exists()) {
+            Element n;
+            try {
+                n = GestionXML.chargerNoeudRacine(f);
+                return new Etape(n);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            throw new IllegalAccessError();
+        }
+        return null;
     }
 
     public static void EnregistrerEtape(Etape et) {
