@@ -1,5 +1,6 @@
 package polyrallye.controlleur;
 
+import java.util.ArrayList;
 import java.util.TimerTask;
 
 import polyrallye.modele.voiture.Moteur;
@@ -61,9 +62,31 @@ public class Course implements ActionMenu {
 		entreesCourse = new GestionEntreesCourse();
 
 		Main.changerGestionEntrees(entreesCourse);
+		
+		
+		ArrayList<String> listEnv = new ArrayList<String>();
+		ArrayList<String> listT = new ArrayList<String>();
+		ArrayList<String> listM = new ArrayList<String>();
+		
+		listEnv.add("village");
+		listEnv.add("foret");
+		listEnv.add("plaine");
+		listEnv.add("mer");
+		listEnv.add("urban");
+		
+		listT.add("jour");
+		listT.add("nuit");
+		
+		listM.add("clair");
+		listM.add("vent");
+		listM.add("pluie");
+		
 
-		environnement = new Environnement("village", "jour", "clair");
-		terrain = new Terrain("terre");
+		java.util.Random rand = new java.util.Random();
+		
+
+		environnement = new Environnement(listEnv.get(rand.nextInt(5)), listT.get(rand.nextInt(2)),listM.get(rand.nextInt(3)) );
+		terrain = new Terrain("sable");
 		sMoteur = new SonMoteur(voiture);
 		
 		crash = new Crash(environnement.getType());
@@ -118,7 +141,7 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isAccelere()) {
 					double xa = 20;
 					double xb = 1000;
-					double ya = 1.2;
+					double ya = 1.5;
 					double yb = 2.5;
 					
 					double plus = t.getCoefCourant() * (ya + (score - xa)*((yb-ya)/(xb-xa)));
@@ -189,8 +212,29 @@ public class Course implements ActionMenu {
 				if (regime < 850) {
 					regime = 850;
 				} else if (regime > m.getRegimeRupteur()) {
-					System.out.println(m.getRegimeRupteur());
-					regime = m.getRegimeRupteur() - 500;
+					boolean rupteur = true;
+					if (entreesCourse.automatique) {
+						if (t.passerVitesse()) {
+							rupteur = false;
+							regime *= 0.625f;
+							sMoteur.passageRapport();
+							System.out.println("CANARD DE MERDE");
+						}
+					}
+					
+					if (rupteur) {
+						System.out.println(m.getRegimeRupteur());
+						regime = m.getRegimeRupteur() - 500;						
+					}
+				}
+				
+				if (entreesCourse.automatique && regime < m.getRegimeRupteur()/3.0) {
+					if (t.getRapportCourant() > 1) {
+						t.retrograder();
+						regime *= 1.2f;
+						sMoteur.passageRapport();
+						System.out.println("CANARD DE MERDE 2");
+					}
 				}
 				
 				if(entreesCourse.klaxon) {
