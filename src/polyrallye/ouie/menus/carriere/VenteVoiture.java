@@ -23,14 +23,13 @@ public class VenteVoiture extends Menu implements ActionMenu {
 		int argent = Joueur.session.getArgent();
 		int prix = (int) (voiture.getPrix()*0.7);
 
-		Liseuse.lire("Vendre la voiture ");
-		Liseuse.lire(voiture.getNomComplet());
-		Liseuse.lire(" pour ");
-		Liseuse.lire(prix);
-		Liseuse.lire(" euros. Vous aurez alors ");
-		Liseuse.lire(argent + prix);
-		Liseuse.lire("euros. ");
+		StringBuilder sb = new StringBuilder("Vendre cette voiture pour ");
+		sb.append(prix);
+		sb.append(" euros, vous aurez alors ");
+		sb.append(argent + prix);
+		sb.append(" euros");
 
+		Liseuse.lire(sb.toString());
 		lancer();
 	}
 

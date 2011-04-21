@@ -217,7 +217,7 @@ public class Sound {
 		if (cache != null) {
 			data = cache.data;
 			++cache.nbReferences;
-			System.out.println("Cache pour "+chemin);
+			System.out.println("Récupération du cache pour «"+chemin+"»");
 		}
 		else
 		{
@@ -235,7 +235,7 @@ public class Sound {
 					TupleData td = cacheData.remove(clef);
 					
 					SoundScape.deleteSoundData(td.data);
-					System.out.println("enlèvement du cache pour "+clef);					
+					System.out.println("Suppression du cache pour «"+clef+"»");					
 				}
 			}
 			
