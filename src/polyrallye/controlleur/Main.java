@@ -34,14 +34,7 @@ public class Main {
 	public static void voitures() {		
 		for (Entry<Double, Voiture> s : StockVoitures.getVoituresParPerformances().entrySet())
 		{
-			System.out.println("v : "+ Math.round(s.getKey()) + "\t"  + s.getValue().getNomComplet());
-		}
-		
-		System.out.println("Voitures équivalentes à la Citroën DS3 WRC :");
-		
-		for (Voiture v : StockVoitures.getVoituresEquivalentes(StockVoitures.getVoitureParNom("Fiat Panda 4x4"),8)) {
-			System.out.println(v.getNomComplet());
-			System.out.println("\t"+v.getScore());
+			Main.logInfo("v : "+ Math.round(s.getKey()) + "\t"  + s.getValue().getNomComplet() + " --- "+s.getValue().getPrix()+" €");
 		}
 	}
 	

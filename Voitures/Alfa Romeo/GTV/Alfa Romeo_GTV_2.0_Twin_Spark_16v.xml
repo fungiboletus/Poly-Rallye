@@ -7,7 +7,7 @@
 		<periode annee="1995" />
 	</presentation>
 	<economie>
-		<rarete>151;3R3</rarete>
+		<rarete>3</rarete>
 	</economie>
 	<moteur>
 		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>

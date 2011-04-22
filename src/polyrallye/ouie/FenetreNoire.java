@@ -49,7 +49,7 @@ public class FenetreNoire extends JFrame {
 		requestFocus();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-		setSize(800, 450);
+		setSize(960, 540);
 		setExtendedState(MAXIMIZED_BOTH);
 		requestFocusInWindow();
 
@@ -60,7 +60,7 @@ public class FenetreNoire extends JFrame {
 
 		// Chargement de la magnifique image de fond
 		JLabel image = new JLabel(new ImageIcon("Ressources/logo.png"));
-		image.setPreferredSize(new Dimension(400, 114));
+		image.setPreferredSize(new Dimension(480, 114));
 
 		console = new JTextPane();
 		documentConsole = console.getStyledDocument();
@@ -73,7 +73,7 @@ public class FenetreNoire extends JFrame {
 		consoleBlanc.addAttribute(StyleConstants.Foreground, Color.WHITE);
 		consoleRouge.addAttribute(StyleConstants.Foreground, Color.RED);
 		
-		console.setPreferredSize(new Dimension(400, 0));
+		console.setPreferredSize(new Dimension(480, 0));
 		console.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
 		console.setBackground(Color.BLACK);
 		console.setRequestFocusEnabled(false);
@@ -110,7 +110,8 @@ public class FenetreNoire extends JFrame {
 		} catch (BadLocationException e) {
 		}
 		
-		console.setCaretPosition(console.getCaretPosition()+texte.length()+1);
+		//console.setCaretPosition(console.getCaretPosition()+texte.length()+1);
+		console.setCaretPosition(documentConsole.getLength());
 		
 	}
 	

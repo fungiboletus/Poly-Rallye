@@ -25,7 +25,14 @@ public class Sfx extends Thread {
 	protected boolean isAlive;
 	protected boolean isFixe;
 	protected boolean isPaused;
+	protected boolean isNull;
 
+	public Sfx() {
+		isNull=true;
+		isFixe=false;
+		isPaused=true;
+	}
+	
 	public Sfx(String rep, int nombre) {
 		this(rep, nombre, 10);
 	}
@@ -45,6 +52,7 @@ public class Sfx extends Thread {
 		realDistance = 0;
 		isFixe = false;
 		isPaused = false;
+		isNull=false;
 	}
 
 	public Sfx(String rep, int nombre, long intervalle, boolean tt) {
@@ -53,6 +61,7 @@ public class Sfx extends Thread {
 	}
 
 	public void run() {
+		if (!isNull) {
 
 		Random random = new Random();
 		int position = 0;
@@ -95,7 +104,7 @@ public class Sfx extends Thread {
 			temp.delete();
 			Multithreading.dormir(intervalle * 1000);
 		}
-
+		}
 	}
 
 	public void setVitesse(float t) {
@@ -111,6 +120,8 @@ public class Sfx extends Thread {
 	}
 
 	public void tuer() {
+		if (!isNull)
+		temp.delete();
 		isAlive = false;
 	}
 	

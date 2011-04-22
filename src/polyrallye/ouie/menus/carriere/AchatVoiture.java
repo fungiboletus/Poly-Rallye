@@ -25,21 +25,19 @@ public class AchatVoiture extends Menu implements ActionMenu {
 		
 		if (prix > argent)
 		{
-			Liseuse.lire("Il vous manque ");
-			Liseuse.lire(prix-argent);
-			Liseuse.lire("euros");
-			Liseuse.lire("pour acheter la voiture ");
-			Liseuse.lire(voiture.getNomComplet());
+			StringBuilder sb = new StringBuilder("Il vous manque ");
+			sb.append(prix-argent);
+			sb.append(" euros pour acheter cette voiture");
+			Liseuse.lire(sb.toString());
 		} else
 		{
-			Liseuse.lire("Acheter la voiture ");
-			Liseuse.lire(voiture.getNomComplet());
-			Liseuse.lire(" pour ");
-			Liseuse.lire(prix);
-			Liseuse.lire("euros");
-			Liseuse.lire("Il vous restera ");
-			Liseuse.lire(argent-prix);
-			Liseuse.lire("euros");
+			StringBuilder sb = new StringBuilder("Êtes vous certain de vouloir acheter cette voiture pour ");
+			sb.append(prix);
+			sb.append(" euros, il vous restera ");
+			sb.append(argent-prix);
+			sb.append(" euros");
+			
+			Liseuse.lire(sb.toString());
 			
 			lancer();
 		}

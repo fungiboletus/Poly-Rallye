@@ -35,11 +35,16 @@ public class Klaxon {
 	}
 
 	public void play() {
+		//klaxon.setOffset(0.0f);
 		klaxon.pause(false);
 	}
 
 	public void pause() {
 		klaxon.pause(true);
 		klaxon.setOffset(0.0f);
+	}
+	
+	public void delete() {
+		klaxon.delete();
 	}
 }
