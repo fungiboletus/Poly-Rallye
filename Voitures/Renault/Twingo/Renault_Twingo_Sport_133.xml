@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>Twingo</nom>
+		<version>Sport 133</version>
+		<periode annee="2008" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1598</cylindree>
+		<puissance regime="6750">131</puissance>
+		<couple_max regime="4400">160</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1049</poids>
+		<largeur>1688</largeur>
+		<longueur>3607</longueur>
+		<empattement>2368</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=178244</source>
+	</sources>
+</voiture>

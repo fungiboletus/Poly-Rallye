@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>Sprinter Trueno</nom>
+		<version>BZ-G</version>
+		<periode annee="1998" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="20" disposition="ligne" compression="normal"/>
+		<cylindree>1587</cylindree>
+		<puissance regime="7800">163</puissance>
+		<couple_max regime="5600">162</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1060</poids>
+		<largeur>1695</largeur>
+		<longueur>4305</longueur>
+		<empattement>2465</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=185196</source>
+	</sources>
+</voiture>

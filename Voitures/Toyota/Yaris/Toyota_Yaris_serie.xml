@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>Yaris</nom>
+		<periode annee="1999" />
+	</presentation>
+	<economie>
+		<rarete>1</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>998</cylindree>
+		<puissance regime="6000">67</puissance>
+		<couple_max regime="4100">90</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>915</poids>
+		<largeur>1660</largeur>
+		<longueur>3615</longueur>
+		<empattement>2370</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=17248</source>
+	</sources>
+</voiture>

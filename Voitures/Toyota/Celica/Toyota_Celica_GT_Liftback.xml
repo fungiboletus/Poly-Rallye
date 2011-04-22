@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>Celica</nom>
+		<version>GT Liftback</version>
+		<periode annee="1976" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>1968</cylindree>
+		<puissance regime="5800">118</puissance>
+		<couple_max regime="5200">152</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1116</poids>
+		<largeur>1620</largeur>
+		<longueur>4242</longueur>
+		<empattement>2500</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=36696</source>
+	</sources>
+</voiture>

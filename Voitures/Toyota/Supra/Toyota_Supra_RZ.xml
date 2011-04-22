@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>Supra</nom>
+		<version>RZ</version>
+		<periode annee="1998" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="ligne" compression="turbo"/>
+		<cylindree>2997</cylindree>
+		<puissance regime="5600">276</puissance>
+		<couple_max regime="3600">451</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1510</poids>
+		<largeur>1810</largeur>
+		<longueur>4520</longueur>
+		<empattement>2550</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=78727</source>
+	</sources>
+</voiture>
