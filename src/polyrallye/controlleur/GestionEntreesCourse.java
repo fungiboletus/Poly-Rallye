@@ -50,6 +50,10 @@ public class GestionEntreesCourse extends KeyAdapter {
 			break;
 		case KeyEvent.VK_A:
 			automatique = !automatique;
+			break;
+		case KeyEvent.VK_D:
+			Main.basculerAffichageConsole();
+			break;
 		}
 	}
 	

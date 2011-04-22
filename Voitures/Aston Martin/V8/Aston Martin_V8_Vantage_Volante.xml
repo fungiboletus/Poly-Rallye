@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Aston Martin</constructeur>
+		<nom>V8</nom>
+		<version>Vantage Volante</version>
+		<periode annee="1986" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>5341</cylindree>
+		<puissance regime="6000">400</puissance>
+		<couple_max regime="5000">529</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1900</poids>
+		<largeur>1880</largeur>
+		<longueur>4674</longueur>
+		<empattement>2610</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=19822</source>
+	</sources>
+</voiture>

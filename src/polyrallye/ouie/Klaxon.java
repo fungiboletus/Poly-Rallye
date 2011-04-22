@@ -41,5 +41,10 @@ public class Klaxon {
 
 	public void pause() {
 		klaxon.pause(true);
+		klaxon.setOffset(0.0f);
+	}
+	
+	public void delete() {
+		klaxon.delete();
 	}
 }

@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Chevrolet</constructeur>
+		<nom>Corvette</nom>
+		<version>Grand Sport</version>
+		<periode annee="1996" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>5733</cylindree>
+		<puissance regime="5800">330</puissance>
+		<couple_max regime="4500">461</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1520</poids>
+		<largeur>1796</largeur>
+		<longueur>4534</longueur>
+		<empattement>2443</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=20713</source>
+	</sources>
+</voiture>

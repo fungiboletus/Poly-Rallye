@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>BMW</constructeur>
+		<nom>840Ci</nom>
+		<periode annee="1996" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="32" disposition="V" compression="normal"/>
+		<cylindree>4398</cylindree>
+		<puissance regime="5700">282</puissance>
+		<couple_max regime="3900">420</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1855</poids>
+		<largeur>1855</largeur>
+		<longueur>4780</longueur>
+		<empattement>2684</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=182523</source>
+	</sources>
+</voiture>

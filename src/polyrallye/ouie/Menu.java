@@ -123,9 +123,9 @@ public abstract class Menu implements EcouteurEntrees {
 			remplis = true;
 		}
 
-		if (libelles.size() > 0) {
+		//if (libelles.size() > 0) {
 			GestionEntreesMenu.getInstance().setEcouteur(this);
-		}
+		//}
 		changerMusique();
 		ennoncer();
 	}
@@ -189,7 +189,7 @@ public abstract class Menu implements EcouteurEntrees {
 			}
 		}
 
-		Liseuse.lire("Action invalide.");
+		Liseuse.lire("Action invalide");
 	}
 
 	@Override

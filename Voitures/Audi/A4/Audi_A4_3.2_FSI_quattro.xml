@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>A4</nom>
+		<version>3.2 FSI quattro</version>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="V" compression="normal"/>
+		<cylindree>3197</cylindree>
+		<puissance regime="6500">261</puissance>
+		<couple_max regime="3000">330</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1580</poids>
+		<largeur>1826</largeur>
+		<longueur>4703</longueur>
+		<empattement>2808</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=161436</source>
+	</sources>
+</voiture>

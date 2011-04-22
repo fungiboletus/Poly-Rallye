@@ -66,9 +66,9 @@ public class Terrain {
 		}
 	}
 	
-	public void stop() {
+	public void delete() {
 		sfx.tuer();
-		son.stop();
+		son.delete();
 	}
 	
 	public static void main(String[] args) {

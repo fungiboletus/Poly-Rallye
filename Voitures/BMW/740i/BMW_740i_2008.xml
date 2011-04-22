@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>BMW</constructeur>
+		<nom>740i</nom>
+		<version>2008</version>
+		<periode annee="2008" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="ligne" compression="turbo"/>
+		<cylindree>2979</cylindree>
+		<puissance regime="5800">322</puissance>
+		<couple_max regime="1500">450</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1860</poids>
+		<largeur>1902</largeur>
+		<longueur>5072</longueur>
+		<empattement>3070</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=179773</source>
+	</sources>
+</voiture>

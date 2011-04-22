@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>S3</nom>
+		<version>Sportback</version>
+		<periode annee="2008" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="turbo"/>
+		<cylindree>1984</cylindree>
+		<puissance regime="6000">261</puissance>
+		<couple_max regime="2500">350</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1495</poids>
+		<largeur>1766</largeur>
+		<longueur>4302</longueur>
+		<empattement>2578</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=176891</source>
+	</sources>
+</voiture>

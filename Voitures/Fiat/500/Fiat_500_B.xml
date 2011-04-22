@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Fiat</constructeur>
+		<nom>500</nom>
+		<version>B</version>
+		<periode annee="1948" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>569</cylindree>
+		<puissance regime="4000">16</puissance>
+		<couple_max regime="2600">27</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>790</poids>
+		<largeur>1273</largeur>
+		<longueur>3210</longueur>
+		<empattement>2000</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=93643</source>
+	</sources>
+</voiture>

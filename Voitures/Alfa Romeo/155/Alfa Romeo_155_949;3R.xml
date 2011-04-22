@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Alfa Romeo</constructeur>
+		<nom>155</nom>
+		<version>949;3R</version>
+		<periode annee="1995" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1970</cylindree>
+		<puissance regime="6200">150</puissance>
+		<couple_max regime="4000">186</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1300</poids>
+		<largeur>1730</largeur>
+		<longueur>4442</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=41888</source>
+	</sources>
+</voiture>

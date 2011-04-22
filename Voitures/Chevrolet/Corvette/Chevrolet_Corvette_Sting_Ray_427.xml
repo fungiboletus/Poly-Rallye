@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Chevrolet</constructeur>
+		<nom>Corvette</nom>
+		<version>Sting Ray 427</version>
+		<periode annee="1966" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="16" disposition="V" compression="normal"/>
+		<cylindree>6999</cylindree>
+		<puissance regime="6400">425</puissance>
+		<couple_max regime="3800">460</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1463</poids>
+		<largeur>1770</largeur>
+		<longueur>4453</longueur>
+		<empattement>2489</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=43879</source>
+	</sources>
+</voiture>

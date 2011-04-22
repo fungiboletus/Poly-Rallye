@@ -13,7 +13,7 @@ public class Quitter extends Menu {
 
 	@Override
 	public void lancer() {
-		Liseuse.lire("Voulez vous quitter le jeu ?");
+		Liseuse.lire("Voulez-vous vraiment quitter le jeu ?");
 		super.lancer();
 	}
 
@@ -24,7 +24,7 @@ public class Quitter extends Menu {
 
 	@Override
 	public void remplir() {
-		ajouterElement("Non", new ActionMenu() {
+		ajouterElement("Revenir au menu principal", new ActionMenu() {
 
 			@Override
 			public void actionMenu() {
@@ -32,7 +32,7 @@ public class Quitter extends Menu {
 			}
 		});
 
-		ajouterElement("Oui", new ActionMenu() {
+		ajouterElement("Quitter le jeu", new ActionMenu() {
 
 			@Override
 			public void actionMenu() {

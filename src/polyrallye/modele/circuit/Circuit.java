@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import org.jdom.Element;
 
+import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Evenement;
 import polyrallye.ouie.environnement.Terrain;
@@ -20,6 +21,8 @@ public class Circuit {
 	protected Environnement environnement;
 	protected Queue<ContenuCircuit> contenu;
 	protected Terrain terrain;
+
+
 
 	protected double distance;
 
@@ -218,6 +221,10 @@ public class Circuit {
 	public String getNom() {
 		return nom;
 	}
+	
+	public void playCrash() {
+		environnement.playCrash();
+	}
 
 	public void setDistance(double d) {
 		environnement.setDistance(d);
@@ -242,8 +249,8 @@ public class Circuit {
 	}
 
 	public void stop() {
-		environnement.stop();
-		terrain.stop();
+		environnement.delete();
+		terrain.delete();
 	}
 
 	public static void main(String[] args) throws Exception {

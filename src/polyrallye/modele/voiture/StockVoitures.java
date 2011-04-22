@@ -169,6 +169,15 @@ public abstract class StockVoitures {
 		return hierarchieVoitures;
 	}
 
+	
+
+	@SuppressWarnings("unchecked")
+	public static Voiture getVoitureParPerformances(double min, double max) {
+		Object voitures [] = voituresParPerformances.subMap(min, true, max, true).entrySet().toArray();
+		
+		return ((Entry<Double, Voiture>) voitures[Random.unsignedDelta(0, voitures.length)]).getValue();
+	}
+	
 	public static NavigableMap<Double, Voiture> getVoituresParPerformances() {
 		return voituresParPerformances;
 	}
@@ -210,4 +219,5 @@ public abstract class StockVoitures {
 		
 		return liste;
 	}
+	
 }
