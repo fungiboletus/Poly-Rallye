@@ -1,0 +1,30 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>Supra</nom>
+		<periode annee="1993" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="ligne" compression="normal"/>
+		<cylindree>2997</cylindree>
+		<puissance regime="5800">220</puissance>
+		<couple_max regime="4800">284</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1458</poids>
+		<largeur>1810</largeur>
+		<longueur>4510</longueur>
+		<empattement>2550</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=16269</source>
+	</sources>
+</voiture>

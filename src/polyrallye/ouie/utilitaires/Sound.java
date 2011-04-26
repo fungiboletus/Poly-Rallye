@@ -104,65 +104,69 @@ public class Sound {
 	}
 
 	public void pause(boolean pause) {
-		if (id != -1 && data != -1 && enPause != pause) {
+		if (isAlive() && enPause != pause) {
 			SoundScape.pause(id, pause);
 			enPause = pause;
 		}
 	}
+	
+	public boolean isAlive() {
+		return (id != -1 && data != -1);
+	}
 
 	public void play() {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.play(id);
 	}
 
 	public void stop() {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.stop(id);
 	}
 
 	public float getGain() {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			return SoundScape.getGain(id);
 		return -1f;
 	}
 
 	public void setOffset(float offset) {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.setOffset(id, offset);
 	}
 
 	public void setPitch(float pitch) {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.setPitch(id, pitch);
 	}
 
 	public void setGain(float gain) {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.setGain(id, gain);
 	}
 
 	public void setVelocity(float x, float y, float z) {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.setVelocity(id, x, y, z);
 	}
 
 	public void setPosition(float x, float y, float z) {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.setSoundPosition(id, x, y, z);
 	}
 
 	public void setReferenceDistance(float distance) {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.setReferenceDistance(id, distance);
 	}
 
 	public void setLoop(boolean on) {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			SoundScape.setLoop(id, on);
 	}
 
 	public boolean isPlaying() {
-		if (id != -1 && data != -1)
+		if (isAlive())
 			return SoundScape.isPlaying(id);
 		return false;
 	}
@@ -184,7 +188,7 @@ public class Sound {
 	}
 
 	public void delete() {
-		if (id != -1 && data != -1) {
+		if (isAlive()) {
 			this.stop();
 			SoundScape.deleteSoundSource(id);
 			
@@ -206,7 +210,7 @@ public class Sound {
 	
 	public void charger(String chemin, String identifiant) throws SoundException {
 		
-		if (id != -1 && data != -1) {
+		if (isAlive()) {
 			delete();
 		}
 		
@@ -217,7 +221,7 @@ public class Sound {
 		if (cache != null) {
 			data = cache.data;
 			++cache.nbReferences;
-			System.out.println("Cache pour "+chemin);
+			System.out.println("Récupération du cache pour «"+chemin+"»");
 		}
 		else
 		{
@@ -235,7 +239,7 @@ public class Sound {
 					TupleData td = cacheData.remove(clef);
 					
 					SoundScape.deleteSoundData(td.data);
-					System.out.println("enlèvement du cache pour "+clef);					
+					System.out.println("Suppression du cache pour «"+clef+"»");					
 				}
 			}
 			
@@ -256,7 +260,7 @@ public class Sound {
 	}
 
 	public void fadeOut(final long duree) {
-		if (id != -1 && data != -1) {
+		if (isAlive()) {
 			new Thread() {
 				public void run() {
 					
@@ -283,7 +287,7 @@ public class Sound {
 	}
 	
 	public void fadeIn(final long duree, final float gainFinal) {
-		if (id != -1 && data != -1) {
+		if (isAlive()) {
 			new Thread() {
 				public void run() {
 					

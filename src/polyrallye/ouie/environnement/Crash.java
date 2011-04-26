@@ -17,6 +17,12 @@ public class Crash {
 	public Crash(String env) {
 
 		environnement = null;
+		changeEnvironnement(env);
+	}
+
+	public void changeEnvironnement(String env) {
+		if (son.isAlive())
+			son.delete();
 		// On va charger dans le fichier les config
 		String rep = "Sons/Crash" + "/";
 		BufferedReader mani = null;
@@ -60,13 +66,11 @@ public class Crash {
 		// Configuration du son
 		son.setGain(2f);
 		son.setPosition(0, 0, 0);
-
 	}
 
 	public void play() {
 		son.play();
-		while (son.isPlaying())
-			;
+		while (son.isPlaying());
 		repick();
 		son.setGain(2f);
 		son.setPosition(0, 0, 0);
@@ -80,6 +84,10 @@ public class Crash {
 		} catch (SoundException e) {
 			System.out.println("Erreur changement son crash");
 		}
+	}
+
+	public void delete() {
+		son.delete();
 	}
 
 }
