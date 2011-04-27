@@ -103,8 +103,8 @@ public class Course implements ActionMenu {
 				if (entreesCourse.echap) {
 					canard.stop();
 					canard2.stop();
-					environnement.stop();
-					terrain.stop();
+					environnement.delete();
+					terrain.delete();
 					sMoteur.stop();
 					timerOrganisateur.cancel();
 					Main
