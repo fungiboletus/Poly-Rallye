@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>19</nom>
+		<version>Cabriolet</version>
+		<periode annee="1991" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1764</cylindree>
+		<puissance regime="6500">133</puissance>
+		<couple_max regime="4250">158</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1180</poids>
+		<largeur>1684</largeur>
+		<longueur>4151</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=234894</source>
+	</sources>
+</voiture>
