@@ -127,9 +127,12 @@ public class Championnat {
         for (int k = 1; k < etapes.size(); ++k) {
             for (int i = 0; i < 10 && k >= 1; ++i) {
                 for (int j = 0; j < 10; ++j)
-                    if (classement.get(i).getPersonne().getNom().equalsIgnoreCase(etapes.get(
-                            k).getClassement().get(j).getPersonne().getNom()))
-                        classement.get(i).setDuree(
+                    if (classement.get(i).getPersonne().getNom()
+                            .equalsIgnoreCase(
+                                    etapes.get(k).getClassement().get(j)
+                                            .getPersonne().getNom()))
+                        classement.get(i)
+                                .setDuree(
                                         new Duree(classement.get(i).getDuree()
                                                 .ConvertToDixiemes()
                                                 + etapes.get(k).getClassement()
@@ -159,7 +162,7 @@ public class Championnat {
         int premier = classement.get(0).getDuree().ConvertToDixiemes();
         classement.get(0).setClassement(1);
         for (int i = 1; i < 10; ++i) {
-            classement.get(i).setClassement(i+1);
+            classement.get(i).setClassement(i + 1);
             classement.get(i).setEcart(
                     new Duree(classement.get(i).getDuree().ConvertToDixiemes()
                             - premier));

@@ -8,17 +8,16 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
 
-public class afficherClassementChampionnat extends Menu implements ActionMenu {
+public class afficherClassementEtape extends Menu implements ActionMenu {
 
     protected List<Rang> classements = new ArrayList<Rang>();
 
-    public afficherClassementChampionnat(Menu menuPrecedent,
-            List<Rang> classements) {
+    public afficherClassementEtape(Menu menuPrecedent, List<Rang> classements) {
         super(menuPrecedent);
 
         this.classements = classements;
 
-        messageMenuVide = "Vous n'avez pas encore participer à ce championnat";
+        messageMenuVide = "Vous n'avez pas encore participer à cet étape";
     }
 
     @Override
