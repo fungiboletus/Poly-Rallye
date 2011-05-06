@@ -1,10 +1,11 @@
 package polyrallye.controlleur;
 
-import java.util.ArrayList;
 import java.util.TimerTask;
 
+import polyrallye.modele.voiture.Conduite;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
+import polyrallye.modele.voiture.TypeTerrain;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Klaxon;
@@ -14,7 +15,6 @@ import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Terrain;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
-import sun.management.Sensor;
 import t2s.util.Random;
 
 public class Course implements ActionMenu {
@@ -34,6 +34,8 @@ public class Course implements ActionMenu {
 	protected Terrain terrain;
 
 	protected Voiture voiture;
+	
+	protected Conduite conduite;
 
 	protected Crash crash;
 	protected Klaxon klaxon;
@@ -71,6 +73,8 @@ public class Course implements ActionMenu {
 		terrain = new Terrain("asphalt");
 		sMoteur = new SonMoteur(voiture);
 
+		conduite = new Conduite(voiture);
+		
 		crash = new Crash(environnement.getType());
 		klaxon = new Klaxon(voiture.getNomComplet());
 
@@ -121,6 +125,11 @@ public class Course implements ActionMenu {
 				Transmission t = voiture.getTransmission();
 
 				if (entreesCourse.isAccelere()) {
+					conduite.acceleration(TypeTerrain.ASPHALT);
+					voiture.getMoteur().regimeCourant();
+				}
+				
+				/*if (entreesCourse.isAccelere()) {
 					double xa = 20;
 					double xb = 1000;
 					double ya = 0.5;
@@ -144,7 +153,7 @@ public class Course implements ActionMenu {
 					 * if (devonsNousTourner > 1) { if (virageDroite == false) {
 					 * gauche.play(); } else { droite.play(); } }
 					 */
-				}
+				/*}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
 					regime -= 35.0f;
@@ -159,11 +168,11 @@ public class Course implements ActionMenu {
 					 * devonsNousTourner = 10000000; } } else { // CRASH regime
 					 * = 8000; } }
 					 */
-				} else {
+				/*} else {
 					terrain.stopTourne();
 				}
 
-				if (entreesCourse.isRapportInf()) {
+				/*if (entreesCourse.isRapportInf()) {
 					if (t.getRapportCourant() > 1 && t.retrograder()) {
 						regime *= 1.2f;
 						sMoteur.passageRapport();
@@ -176,7 +185,7 @@ public class Course implements ActionMenu {
 						sMoteur.passageRapport();
 					}
 				}
-
+*/
 				Moteur m = voiture.getMoteur();
 				if (regime < 850) {
 					regime = 850;
@@ -217,7 +226,7 @@ public class Course implements ActionMenu {
 					klaxonEnclanche = false;
 				}
 
-				sMoteur.setRegime(regime, entreesCourse.isAccelere());
+				sMoteur.setRegime((float) voiture.getMoteur().getRegimeCourant(), entreesCourse.isAccelere());
 				// terrain.setVitesse(regime / 3.0f);
 				// TODO mettre le code de abdoul (oui monsieur)
 			}

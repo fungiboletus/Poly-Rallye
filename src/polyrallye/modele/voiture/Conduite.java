@@ -31,7 +31,7 @@ public class Conduite {
      * @return
      */
     public void vitesseAvancement(){
-        vitesseLineaire = vitesseRoues()*2*Math.PI*v.transmission.RAYON_ROUE;
+        vitesseLineaire = vitesseRoues()*2*Math.PI*Transmission.RAYON_ROUE;
         System.out.println("vitesseAvancement "+vitesseLineaire);
     }
     /**
@@ -53,7 +53,7 @@ public class Conduite {
      * @param masse
      */
     public void acceleration(TypeTerrain t) {
-        acceleration = ((v.moteur.getCouple()/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
+        acceleration = ((v.moteur.getCouple()/ Transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
     }
 
     /**
