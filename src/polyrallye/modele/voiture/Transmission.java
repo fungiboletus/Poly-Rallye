@@ -242,8 +242,7 @@ public class Transmission {
 			break;
 		case QUATTRO:
 			// Une transmission 4x4 a un rendement plus faible.
-			return moteur.getCouple() * getCoefCourant() * rendement
-					* RENDEMENT * 0.25;
+			return moteur.getCouple()* getCoefCourant() * RENDEMENT;
 		}
 
 		// Si on est là, c'est que la roue n'est pas motrice.
