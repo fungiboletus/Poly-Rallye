@@ -2,6 +2,7 @@ package polyrallye.modele.voiture;
 
 
 
+
 /**
  * 
  * @author macina
@@ -12,6 +13,7 @@ public class Conduite {
     protected double distanceParcourue;
     protected double frottement;
     protected boolean patinage;
+    protected String mode;
     Voiture v;
     public Conduite(Voiture v) {
         this.v = v;
@@ -19,6 +21,7 @@ public class Conduite {
         vitesseLineaire = 0.0;
         distanceParcourue = 0.0;
         patinage = false;
+        mode=null;
     }
 
     /**
@@ -28,27 +31,29 @@ public class Conduite {
      * @return
      */
     public void vitesseAvancement(){
-        vitesseLineaire = vitesseRoues()*2*Math.PI*v.transmission.RAYON_ROUE;
+        vitesseLineaire = vitesseRoues()*2*Math.PI*Transmission.RAYON_ROUE;
+        System.out.println("vitesseAvancement "+vitesseLineaire);
     }
     /**
      * Calcule la vitesse des roues
      * @return
      */
     public double vitesseRoues(){
-        double vitesseMax = (v.moteur.getPuissanceMax()*716)/(double)v.moteur.getCoupleMax();
-        double res =  vitesseMax*(1/v.transmission.getCoefCourant());
+        double rMax = (v.moteur.getPuissanceMax()*716)/(double)v.moteur.getCoupleMax();
+        double res =  rMax*(1/v.transmission.getCoefCourant());
         return res;
         
     }
     /**
      * Calcule l'acceleration en fonction de la puissance, la masse la rayon de
-     * la roue et le regime de la voiture.
+     * la roue et le regime
+     *  de la voiture.
      * 
      * @param m
      * @param masse
      */
     public void acceleration(TypeTerrain t) {
-       // acceleration = ((v.moteur.getCouple()/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
+        acceleration = ((v.moteur.getCouple()/ Transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
     }
 
     /**
@@ -57,8 +62,9 @@ public class Conduite {
      * @param tempsAcceleration
      */
     public void distanceAcceleration(int tempsAcceleration) {
-        distanceParcourue += vitesseLineaire * tempsAcceleration + acceleration
+        distanceParcourue += (vitesseLineaire/(double)3600) * tempsAcceleration + acceleration
                 * Math.sqrt(tempsAcceleration) / (double) 2;
+        System.out.println("distance en Mode A "+distanceParcourue);
     }
 
     /**
@@ -67,9 +73,22 @@ public class Conduite {
      * @param temps
      */
     public void distanceVitesseConstante(int tempsVariation) {
-        distanceParcourue += vitesseLineaire * tempsVariation;
+        distanceParcourue += (vitesseLineaire/(double)3600) * tempsVariation;
+        System.out.println("distance en Mode V "+distanceParcourue);
     }
 
+    /**
+     * calcul de la possiton de la voiture.
+     * @param mode
+     * @param temps
+     */
+    public void distance(String  mode, int temps){
+        if(mode.equals("acceleration"))
+            distanceAcceleration(temps);
+        if(mode.equals("vitesse"))
+            distanceVitesseConstante(temps);
+        System.out.println("Distance "+distanceParcourue);
+    }
     /**
      * @return the patinage
      */
@@ -98,29 +117,5 @@ public class Conduite {
         double res = Math.sqrt(rayon*9.81*Math.tan(angleFrottement)+angleRelevement);
         return (vitesseLineaire<res)?true:false;
     }
-    
-    public static void main(String []args){
-       Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
-       System.out.println("voiture "+v.toString());
-       v.getTransmission().passerVitesse();
-       v.getTransmission().passerVitesse();
-       v.getTransmission().passerVitesse();
-       Conduite c = new Conduite(v);
-       //c.acceleration(TypeTerrain.ASPHALT);
-       c.distanceAcceleration(240);
-       c.vitesseAvancement();
-       System.out.println("distance "+c.distanceParcourue);
-       
-      Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
-      System.out.println("voiture "+vv.toString());
-      vv.getTransmission().passerVitesse();
-      vv.getTransmission().passerVitesse();
-      vv.getTransmission().passerVitesse();
-      Conduite cc = new Conduite(vv);
-      //cc.acceleration(TypeTerrain.ASPHALT);
-      c.vitesseAvancement();
-      cc.distanceAcceleration(240);
-      System.out.println("distance "+cc.distanceParcourue);
-       
-    }
+   
 }
