@@ -39,21 +39,21 @@ public class Conduite {
      * @return
      */
     public double vitesseRoues(){
-        double vitesseMax = (v.moteur.getPuissanceMax()*716)/(double)v.moteur.getCoupleMax();
-        System.out.println("vitesseMAX "+vitesseMax);
-        double res =  vitesseMax*(1/v.transmission.getCoefCourant());
+        double rMax = (v.moteur.getPuissanceMax()*716)/(double)v.moteur.getCoupleMax();
+        double res =  rMax*(1/v.transmission.getCoefCourant());
         return res;
         
     }
     /**
      * Calcule l'acceleration en fonction de la puissance, la masse la rayon de
-     * la roue et le regime de la voiture.
+     * la roue et le regime
+     *  de la voiture.
      * 
      * @param m
      * @param masse
      */
     public void acceleration(TypeTerrain t) {
-        acceleration = ((v.moteur.getCouple(v.moteur.getRegimeCourant())/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
+        acceleration = ((v.moteur.getCouple()/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
         System.out.println("acceleration "+acceleration);
     }
 
@@ -63,7 +63,7 @@ public class Conduite {
      * @param tempsAcceleration
      */
     public void distanceAcceleration(int tempsAcceleration) {
-        distanceParcourue += vitesseLineaire * tempsAcceleration + acceleration
+        distanceParcourue += (vitesseLineaire/(double)3600) * tempsAcceleration + acceleration
                 * Math.sqrt(tempsAcceleration) / (double) 2;
         System.out.println("distance en Mode A "+distanceParcourue);
     }
@@ -74,7 +74,7 @@ public class Conduite {
      * @param temps
      */
     public void distanceVitesseConstante(int tempsVariation) {
-        distanceParcourue += vitesseLineaire * tempsVariation;
+        distanceParcourue += (vitesseLineaire/(double)3600) * tempsVariation;
         System.out.println("distance en Mode V "+distanceParcourue);
     }
 
@@ -86,9 +86,9 @@ public class Conduite {
     public void distance(String  mode, int temps){
         if(mode.equals("acceleration"))
             distanceAcceleration(temps);
-        if(mode.equals("vitesse constante"))
+        if(mode.equals("vitesse"))
             distanceVitesseConstante(temps);
-        System.out.println("Distance "+this.distanceParcourue);
+        System.out.println("Distance "+distanceParcourue);
     }
     /**
      * @return the patinage
@@ -119,27 +119,26 @@ public class Conduite {
         return (vitesseLineaire<res)?true:false;
     }
     
-    public static void main(String []args){
-       Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
-       System.out.println("voiture "+v.toString());
-       v.getTransmission().passerVitesse();
-       v.getTransmission().passerVitesse();
-       v.getTransmission().passerVitesse();
-       Conduite c = new Conduite(v);
-//       c.vitesseRoues();
-       v.moteur.regimeCourant(v.transmission.getCoefCourant());
-       c.vitesseAvancement();
-       c.acceleration(TypeTerrain.ASPHALT);
-       System.out.println("\ncomparaison\n"); 
-      Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
-      System.out.println("voiture "+vv.toString());
-      vv.getTransmission().passerVitesse();
-      vv.getTransmission().passerVitesse();
-      vv.getTransmission().passerVitesse();
-      vv.moteur.regimeCourant(v.transmission.getCoefCourant());
-      Conduite cc = new Conduite(vv);
-//      cc.vitesseRoues();
-      cc.vitesseAvancement();
-      cc.acceleration(TypeTerrain.ASPHALT);
-    }
+//    public static void main(String []args){
+//       Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
+//       System.out.println("voiture "+v.toString());
+//       v.getTransmission().passerVitesse();
+//       v.getTransmission().passerVitesse();
+//       Conduite c = new Conduite(v);
+//       c.vitesseAvancement();
+//       c.acceleration(TypeTerrain.ASPHALT);
+////       c.distanceVitesseConstante(10);
+//       c.distanceAcceleration(60);
+//       
+//       System.out.println("\ncomparaison\n"); 
+//      Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
+//      System.out.println("voiture "+vv.toString());
+//      vv.getTransmission().passerVitesse();
+//      vv.getTransmission().passerVitesse();
+//      Conduite cc = new Conduite(vv);
+//      cc.vitesseAvancement();
+//      cc.acceleration(TypeTerrain.ASPHALT);
+////      cc.distanceVitesseConstante(10);
+//      cc.distanceAcceleration(60);
+//    }
 }

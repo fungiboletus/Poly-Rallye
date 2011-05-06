@@ -23,11 +23,11 @@ public class Moteur {
     protected int regimeCoupleMax;
     protected int regimeRupteur;
 
-    private double regimeCourant;
+    private double regimeCourant = 800.0;
+    private double coupleCourant;
     protected double coeff = 0.7;
-    
-    public Moteur() {
 
+    public Moteur() {
     }
 
     public Moteur(Element noeud) {
@@ -54,9 +54,9 @@ public class Moteur {
                 .getAttributeValue("regime"));
 
         regimeRupteur = GestionXML.getInt(noeud.getChildText("rupteur"));
-        
+
         if (regimeRupteur == 0) {
-        	regimeRupteur = regimePuissanceMax + 500;
+            regimeRupteur = regimePuissanceMax + 500;
         }
 
         String sSisposition = configuration.getAttributeValue("disposition")
@@ -125,33 +125,44 @@ public class Moteur {
     public int getRegimeRupteur() {
         return regimeRupteur;
     }
-    
+
     /**
      * Renvoie le couple de la voiture en fonction de son régime actuel
+     * 
      * @param regime
      * @return
      */
 
-    public double getCouple(double regime) {
-        double res = getCoupleMax()+ (getRegimePuissanceMax() - getRegimeCoupleMax())
-                * ((/*1500*/regime - getCoupleMax()) / (getRegimePuissanceMax()-getRegimeCoupleMax()));
-        return res;
+    public double getCouple() {
+//        double r = this.getPuissanceMax() * 716 / this.getRegimePuissanceMax();
+        // coupleCourant = getCoupleMax()+ ((r - getCoupleMax())*((regimeCourant
+        // - getRegimeCoupleMax())) /
+        // (getRegimePuissanceMax()-getRegimeCoupleMax()));
+        // coupleCourant=0.1*this.puissanceMax;
+        if (coupleCourant < coupleMax) {
+            if (coupleCourant == 0)
+                coupleCourant = 0.1 * puissanceMax;
+            else
+                coupleCourant += 4;
+        }
+        System.out.println("couple courant? " + coupleCourant);
+        return coupleCourant;
     }
 
-    
-    public double regimeCourant(double pourcentage){
-        regimeCourant = (pourcentage+10) * this.regimeCoupleMax /(double)100;
-        System.out.println("RegimeMax "+regimeCoupleMax);
-        System.out.println("Regime "+regimeCourant);
-        return regimeCourant;
+    public void regimeCourant() {
+//        regimeCourant = (coupleCourant * regimeCoupleMax / (double) coupleMax);
+         regimeCourant+=(getCouple()*100/coupleMax);
+        System.out.println("regime courant " + regimeCourant);
+        setRegimeCourant(regimeCourant);
     }
 
     /**
-     * @param regimeCourant the regimeCourant to set
+     * @param regimeCourant
+     *            the regimeCourant to set
      */
     public void setRegimeCourant(double regime) {
-        regimeCourant=regime;
-        if(regimeRupteur<regimeCourant)
+        regimeCourant = regime;
+        if (regimeRupteur < regimeCourant)
             regimeCourant = coeff * regimeCoupleMax;
     }
 
@@ -161,7 +172,7 @@ public class Moteur {
     public double getRegimeCourant() {
         return regimeCourant;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -203,21 +214,21 @@ public class Moteur {
     }
 
     public void lireSpecifications() {
-    	StringBuilder sb = new StringBuilder();
-		
+        StringBuilder sb = new StringBuilder();
+
         sb.append("Moteur de ");
 
-        sb.append((int)Math.round(cylindree/1000.0));
+        sb.append((int) Math.round(cylindree / 1000.0));
         sb.append(" litres pour ");
         sb.append(nbCylindres);
         sb.append(" cylindres, ");
         sb.append(nbSoupapes);
         sb.append(" soupapes");
-        
+
         Liseuse.lire(sb.toString());
         Liseuse.marquerPause();
         sb = new StringBuilder();
-        
+
         sb.append("Disposés ");
 
         switch (disposition) {
@@ -244,22 +255,37 @@ public class Moteur {
         Liseuse.lire(sb.toString());
         Liseuse.marquerPause();
         sb = new StringBuilder();
-        
+
         sb.append("Couple max de ");
         sb.append(coupleMax);
         sb.append(" nioutown mètres à ");
         sb.append(regimeCoupleMax);
         sb.append(" tours par minutes");
-        
+
         Liseuse.lire(sb.toString());
         sb = new StringBuilder();
-        
+
         sb.append("Puissance max de ");
         sb.append(puissanceMax);
         sb.append(" chevaux à ");
         sb.append(regimePuissanceMax);
         sb.append(" tours minute");
-        
+
         Liseuse.lire(sb.toString());
     }
+
+//    public static void main(String[] args) {
+//        Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
+//        Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
+//        System.out.println("m "+v.moteur.getRegimeCoupleMax());
+//        System.out.println("m "+vv.moteur.getRegimeCoupleMax());
+//        for (int i = 0; i < 100; i++) {
+////            System.out.println("?? " + v.moteur.getCouple());
+////             System.out.println("?? "+vv.moteur.getCouple());
+//             v.moteur.regimeCourant();
+//             vv.moteur.regimeCourant();
+//             System.out.println("?? "+v.moteur.getRegimeCourant());
+//             System.out.println("?? "+vv.moteur.getRegimeCourant());
+//        }
+//    }
 }

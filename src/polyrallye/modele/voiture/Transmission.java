@@ -210,20 +210,19 @@ public class Transmission {
 			switch (pr) {
 			case ARRIERE_DROITE:
 			case ARRIERE_GAUCHE:
-				return moteur.getCouple(moteur.regimeCourant(getCoefCourant())) * getCoefCourant() * RENDEMENT * 0.5;
+				return moteur.getCouple() * getCoefCourant() * RENDEMENT * 0.5;
 			}
 			break;
 		case TRACTION:
 			switch (pr) {
 			case AVANT_DROITE:
 			case AVANT_GAUCHE:
-				return moteur.getCouple(moteur.regimeCourant(getCoefCourant())) * RENDEMENT * 0.5;
+				return moteur.getCouple() * RENDEMENT * 0.5;
 			}
 			break;
 		case QUATTRO:
 			// Une transmission 4x4 a un rendement plus faible.
-			return moteur.getCouple(moteur.regimeCourant(getCoefCourant()))
-			* getCoefCourant() * RENDEMENT
+			return moteur.getCouple()* getCoefCourant() * RENDEMENT
 					* RENDEMENT * 0.25;
 		}
 
