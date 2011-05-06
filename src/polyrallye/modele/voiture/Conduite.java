@@ -127,8 +127,8 @@ public class Conduite {
 //       Conduite c = new Conduite(v);
 //       c.vitesseAvancement();
 //       c.acceleration(TypeTerrain.ASPHALT);
-////       c.distanceVitesseConstante(10);
-//       c.distanceAcceleration(60);
+//       c.distanceVitesseConstante(3600);
+////       c.distanceAcceleration(3600);
 //       
 //       System.out.println("\ncomparaison\n"); 
 //      Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
@@ -138,7 +138,7 @@ public class Conduite {
 //      Conduite cc = new Conduite(vv);
 //      cc.vitesseAvancement();
 //      cc.acceleration(TypeTerrain.ASPHALT);
-////      cc.distanceVitesseConstante(10);
-//      cc.distanceAcceleration(60);
+//      cc.distanceVitesseConstante(3600);
+////      cc.distanceAcceleration(3600);
 //    }
 }
