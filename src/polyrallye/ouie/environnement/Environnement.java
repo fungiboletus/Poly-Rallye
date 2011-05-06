@@ -90,7 +90,7 @@ public class Environnement {
 		if (extSfx != null && !extSfx.equals("null"))
 			rep = "Sons/" + extSfx + "/";
 		// Procédure normale
-		if (!extSfx.equals("null") && temps.equals(temps)
+		if (extSfx != null && !extSfx.equals("null") && temps.equals(temps)
 				&& new File(rep + "sfx_" + temps).exists()) {
 			randSfx = new File(rep + "sfx_nuit").listFiles().length;
 			rep += "sfx_nuit/";
@@ -98,7 +98,7 @@ public class Environnement {
 			rep += "sfx/";
 		
 		//Pas de sfx pour certains niveau
-		if (extSfx.equals("null"))
+		if (randSfx==0 || (extSfx != null && extSfx.equals("null")))
 			sfx = new Sfx();
 		else
 			sfx = new Sfx(rep, randSfx, intervalle);
@@ -170,13 +170,13 @@ public class Environnement {
 		// Si le sfx est extérieur au dossier
 		if (extSfx != null && !extSfx.equals("null"))
 			rep = "Sons/" + extSfx + "/";
-		if (!extSfx.equals("null") && temps.equals(temps) && new File(rep + "sfx_" + temps).exists()) {
+		if (temps.equals(temps) && new File(rep + "sfx_" + temps).exists()) {
 			randSfx = new File(rep + "sfx_nuit").listFiles().length;
 			rep += "sfx_nuit/";
 		} else
 			rep += "sfx/";
 
-		if (extSfx.equals("null"))
+		if (randSfx==0 || (extSfx != null && extSfx.equals("null")))
 			sfx = new Sfx();
 		else
 			sfx = new Sfx(rep, randSfx, intervalle);

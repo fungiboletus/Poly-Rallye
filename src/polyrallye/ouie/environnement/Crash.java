@@ -17,11 +17,13 @@ public class Crash {
 	public Crash(String env) {
 
 		environnement = null;
+		son  = null;
 		changeEnvironnement(env);
+
 	}
 
 	public void changeEnvironnement(String env) {
-		if (son.isAlive())
+		if (son !=null && son.isAlive())
 			son.delete();
 		// On va charger dans le fichier les config
 		String rep = "Sons/Crash" + "/";
