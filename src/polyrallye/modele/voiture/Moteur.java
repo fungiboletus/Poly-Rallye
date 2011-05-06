@@ -228,13 +228,8 @@ public class Moteur {
         Liseuse.lire(sb.toString());
         Liseuse.marquerPause();
         sb = new StringBuilder();
-<<<<<<< HEAD
-
-        sb.append("Disposés ");
-=======
         
         sb.append("Disposition ");
->>>>>>> b4f11db3091d0d51b9293313b65793cca1199e2d
 
         switch (disposition) {
         case LIGNE:
@@ -278,19 +273,4 @@ public class Moteur {
 
         Liseuse.lire(sb.toString());
     }
-
-//    public static void main(String[] args) {
-//        Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
-//        Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
-//        System.out.println("m "+v.moteur.getRegimeCoupleMax());
-//        System.out.println("m "+vv.moteur.getRegimeCoupleMax());
-//        for (int i = 0; i < 100; i++) {
-////            System.out.println("?? " + v.moteur.getCouple());
-////             System.out.println("?? "+vv.moteur.getCouple());
-//             v.moteur.regimeCourant();
-//             vv.moteur.regimeCourant();
-//             System.out.println("?? "+v.moteur.getRegimeCourant());
-//             System.out.println("?? "+vv.moteur.getRegimeCourant());
-//        }
-//    }
 }
