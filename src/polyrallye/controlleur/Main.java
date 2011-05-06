@@ -3,6 +3,7 @@ package polyrallye.controlleur;
 import java.awt.event.KeyListener;
 import java.util.Map.Entry;
 
+import polyrallye.modele.championnat.Championnat;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;

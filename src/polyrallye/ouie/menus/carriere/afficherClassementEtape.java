@@ -12,6 +12,8 @@ public class afficherClassementEtape extends Menu implements ActionMenu {
 
     protected List<Rang> classements = new ArrayList<Rang>();
 
+    boolean isplayed = false;
+
     public afficherClassementEtape(Menu menuPrecedent, List<Rang> classements) {
         super(menuPrecedent);
 
@@ -31,9 +33,11 @@ public class afficherClassementEtape extends Menu implements ActionMenu {
 
             @Override
             public void actionMenu() {
+
                 for (int i = 0; i < classements.size(); ++i) {
                     if (Joueur.session.getNom() == classements.get(i)
-                            .getPersonne().getNom())
+                            .getPersonne().getNom()) {
+                        isplayed = true;
                         Liseuse.lire("numéro "
                                 + classements.get(i).getClassement() + ", "
                                 + classements.get(i).getPersonne().getNom()
@@ -46,7 +50,11 @@ public class afficherClassementEtape extends Menu implements ActionMenu {
                                 + " secondes "
                                 + classements.get(i).getDuree().getDixiemes()
                                 + " dixièmes ");
+                    }
                 }
+                if (!isplayed)
+                    Liseuse
+                            .lire("Vous n'avez pas encore participer à cette étape");
 
             }
         });
@@ -55,57 +63,89 @@ public class afficherClassementEtape extends Menu implements ActionMenu {
 
                     @Override
                     public void actionMenu() {
-                        Liseuse.lire("numéro "
-                                + classements.get(0).getClassement() + ", "
-                                + classements.get(0).getPersonne().getNom()
-                                + ", "
-                                + classements.get(0).getDuree().getHeures()
-                                + " heures "
-                                + classements.get(0).getDuree().getMinutes()
-                                + " minutes "
-                                + classements.get(0).getDuree().getSecondes()
-                                + " secondes "
-                                + classements.get(0).getDuree().getDixiemes()
-                                + " dixièmes ");
+
                         for (int i = 0; i < classements.size(); ++i) {
                             if (Joueur.session.getNom() == classements.get(i)
-                                    .getPersonne().getNom())
-                                Liseuse.lire("vous êtes classé numéro "
-                                        + classements.get(i).getClassement()
-                                        + ", "
-                                        + classements.get(i).getPersonne()
-                                                .getNom()
-                                        + ", "
-                                        + classements.get(i).getDuree()
-                                                .getHeures()
-                                        + " heures "
-                                        + classements.get(i).getDuree()
-                                                .getMinutes()
-                                        + " minutes "
-                                        + classements.get(i).getDuree()
-                                                .getSecondes()
-                                        + " secondes "
-                                        + classements.get(i).getDuree()
-                                                .getDixiemes() + " dixièmes ");
+                                    .getPersonne().getNom()) {
+                                isplayed = true;
+                            }
                         }
+
+                        if (isplayed) {
+                            Liseuse.lire("numéro "
+                                    + classements.get(0).getClassement()
+                                    + ", "
+                                    + classements.get(0).getPersonne().getNom()
+                                    + ", "
+                                    + classements.get(0).getDuree().getHeures()
+                                    + " heures "
+                                    + classements.get(0).getDuree()
+                                            .getMinutes()
+                                    + " minutes "
+                                    + classements.get(0).getDuree()
+                                            .getSecondes()
+                                    + " secondes "
+                                    + classements.get(0).getDuree()
+                                            .getDixiemes() + " dixièmes ");
+                            for (int i = 0; i < classements.size(); ++i) {
+                                if (Joueur.session.getNom() == classements.get(
+                                        i).getPersonne().getNom())
+                                    Liseuse.lire("vous êtes classé numéro "
+                                            + classements.get(i)
+                                                    .getClassement()
+                                            + ", "
+                                            + classements.get(i).getPersonne()
+                                                    .getNom()
+                                            + ", "
+                                            + classements.get(i).getDuree()
+                                                    .getHeures()
+                                            + " heures "
+                                            + classements.get(i).getDuree()
+                                                    .getMinutes()
+                                            + " minutes "
+                                            + classements.get(i).getDuree()
+                                                    .getSecondes()
+                                            + " secondes "
+                                            + classements.get(i).getDuree()
+                                                    .getDixiemes()
+                                            + " dixièmes ");
+                            }
+                        } else
+                            Liseuse
+                                    .lire("Vous n'avez pas encore participer à cette étape");
                     }
                 });
+
         ajouterElement("tou le classement", new ActionMenu() {
 
             @Override
             public void actionMenu() {
+
                 for (int i = 0; i < classements.size(); ++i) {
-                    Liseuse.lire("numéro " + classements.get(i).getClassement()
-                            + ", " + classements.get(i).getPersonne().getNom()
-                            + ", " + classements.get(i).getDuree().getHeures()
-                            + " heures "
-                            + classements.get(i).getDuree().getMinutes()
-                            + " minutes "
-                            + classements.get(i).getDuree().getSecondes()
-                            + " secondes "
-                            + classements.get(i).getDuree().getDixiemes()
-                            + " dixièmes ");
+                    if (Joueur.session.getNom() == classements.get(i)
+                            .getPersonne().getNom()) {
+                        isplayed = true;
+                    }
                 }
+
+                if (isplayed) {
+                    for (int i = 0; i < classements.size(); ++i) {
+                        Liseuse.lire("numéro "
+                                + classements.get(i).getClassement() + ", "
+                                + classements.get(i).getPersonne().getNom()
+                                + ", "
+                                + classements.get(i).getDuree().getHeures()
+                                + " heures "
+                                + classements.get(i).getDuree().getMinutes()
+                                + " minutes "
+                                + classements.get(i).getDuree().getSecondes()
+                                + " secondes "
+                                + classements.get(i).getDuree().getDixiemes()
+                                + " dixièmes ");
+                    }
+                } else
+                    Liseuse
+                            .lire("Vous n'avez pas encore participer à cette étape");
             }
         });
     }
