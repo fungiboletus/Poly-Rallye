@@ -168,7 +168,7 @@ public class Environnement {
 
 		// Création du sfx
 		// Si le sfx est extérieur au dossier
-		if (extSfx != null && !extSfx.equals("null"))
+		if (extSfx != null)
 			rep = "Sons/" + extSfx + "/";
 		if (temps.equals(temps) && new File(rep + "sfx_" + temps).exists()) {
 			randSfx = new File(rep + "sfx_nuit").listFiles().length;
@@ -176,7 +176,7 @@ public class Environnement {
 		} else
 			rep += "sfx/";
 
-		if (randSfx==0 || (extSfx != null && extSfx.equals("null")))
+		if (randSfx==0)
 			sfx = new Sfx();
 		else
 			sfx = new Sfx(rep, randSfx, intervalle);
