@@ -1,0 +1,1756 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-8460' action='modify' timestamp='2009-07-15T08:40:39Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8914281' lon='6.1344411'>
+    <tag k='environnement' v='village' />
+    <tag k='meteo' v='pluie' />
+    <tag k='polyrallye' v='depart' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='nuit' />
+  </node>
+  <node id='-8458' timestamp='2009-07-15T08:40:39Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8909686' lon='6.1341188'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8456' timestamp='2009-07-15T08:40:36Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8908517' lon='6.1339995'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8454' timestamp='2009-07-15T08:40:35Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8907987' lon='6.1339093'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8452' timestamp='2009-07-15T08:40:36Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8907606' lon='6.1337583'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8450' timestamp='2009-07-15T08:40:37Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.890751' lon='6.1336588'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8448' timestamp='2009-07-15T08:40:37Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8907687' lon='6.1335178'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8446' timestamp='2009-07-15T08:40:37Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8908116' lon='6.1333972'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8444' timestamp='2009-07-15T08:40:37Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8908535' lon='6.1333074'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8442' timestamp='2009-07-15T08:40:38Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8909333' lon='6.1332449'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8440' timestamp='2009-07-15T08:40:38Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.891324' lon='6.1330495'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8438' timestamp='2009-07-15T08:40:38Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8914038' lon='6.132987'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8436' timestamp='2009-07-15T08:40:34Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.891458' lon='6.1329166'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8434' timestamp='2009-07-15T08:40:34Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8914919' lon='6.1328077'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8432' timestamp='2009-07-15T08:40:34Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.891513' lon='6.1326917'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8430' timestamp='2009-07-15T08:40:34Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8914996' lon='6.1325795'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8428' timestamp='2009-07-15T08:40:35Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8914641' lon='6.1324782'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8426' timestamp='2009-07-15T08:40:35Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8914236' lon='6.1324012'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8424' timestamp='2009-07-15T08:40:35Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8913607' lon='6.1323474'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8422' timestamp='2009-07-15T08:40:35Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8912793' lon='6.1323294'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8420' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8911826' lon='6.1323194'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8418' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8905285' lon='6.1323116'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8416' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8904601' lon='6.1323302'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8414' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8903682' lon='6.1323946'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8412' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8902749' lon='6.1325063'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8410' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.890182' lon='6.1326585'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8408' timestamp='2009-07-15T08:40:05Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8901194' lon='6.1327822'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8406' timestamp='2009-07-15T08:40:05Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8900926' lon='6.1328803'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8404' timestamp='2009-07-15T08:40:05Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8900714' lon='6.1330589'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8402' timestamp='2009-07-15T08:40:35Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8900468' lon='6.1333565'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8400' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8899864' lon='6.1335719'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8398' timestamp='2009-09-17T14:42:05Z' uid='24200' user='Zedh' visible='true' version='4' lat='45.8894823' lon='6.1345693'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8396' timestamp='2009-09-17T14:42:05Z' uid='24200' user='Zedh' visible='true' version='4' lat='45.8893552' lon='6.1347097'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8394' timestamp='2009-09-17T14:42:05Z' uid='24200' user='Zedh' visible='true' version='4' lat='45.8891826' lon='6.1347964'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8392' timestamp='2009-09-17T14:42:05Z' uid='24200' user='Zedh' visible='true' version='4' lat='45.8890462' lon='6.1347802'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8390' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8889147' lon='6.1346846'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8388' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8888513' lon='6.1345818'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8386' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8888145' lon='6.1344329'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8384' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8888101' lon='6.1342554'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8382' timestamp='2009-07-15T08:40:05Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8888544' lon='6.1341031'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8380' timestamp='2009-07-15T08:40:05Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8889472' lon='6.133974'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8378' timestamp='2009-07-15T08:40:05Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8891172' lon='6.1338198'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8376' timestamp='2009-07-15T08:40:05Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.889285' lon='6.1336566'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8374' action='modify' timestamp='2009-07-15T08:40:06Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8893801' lon='6.1334781'>
+    <tag k='environnement' v='foret' />
+  </node>
+  <node id='-8372' timestamp='2010-10-18T11:48:12Z' uid='42918' user='sco' visible='true' version='1' lat='45.8893812' lon='6.1333395' />
+  <node id='-8370' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8893828' lon='6.1331334'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8368' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8892853' lon='6.1325749'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8366' timestamp='2009-08-16T10:22:48Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.889244' lon='6.1322784'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8364' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8891451' lon='6.1319081'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8362' timestamp='2009-08-16T11:13:34Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8891259' lon='6.131816' />
+  <node id='-8360' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8890952' lon='6.1316688'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8358' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8890813' lon='6.1312659'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8356' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.889082' lon='6.1309732'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8354' timestamp='2009-07-15T08:40:07Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8891134' lon='6.1307657'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8352' timestamp='2009-08-16T18:25:41Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8891304' lon='6.1306964' />
+  <node id='-8350' timestamp='2009-07-15T08:40:08Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8891807' lon='6.1304907'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8348' timestamp='2008-05-24T21:00:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8892456' lon='6.1302633' />
+  <node id='-8346' timestamp='2009-08-16T10:22:47Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8892582' lon='6.1301442'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8344' timestamp='2008-05-24T21:00:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8892456' lon='6.1300428' />
+  <node id='-8342' timestamp='2009-08-16T10:22:48Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8892078' lon='6.1299696' />
+  <node id='-8340' timestamp='2009-08-16T10:22:47Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8891518' lon='6.1299264'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8338' timestamp='2008-08-15T23:47:09Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8890686' lon='6.1299096' />
+  <node id='-8336' timestamp='2009-08-16T10:22:47Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8889855' lon='6.1299628'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8334' timestamp='2009-08-16T10:22:48Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8889194' lon='6.1300918' />
+  <node id='-8332' timestamp='2009-08-16T10:22:48Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8888788' lon='6.1307035' />
+  <node id='-8330' timestamp='2009-08-16T10:22:48Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8888174' lon='6.1309347' />
+  <node id='-8328' timestamp='2009-08-16T18:25:41Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8887345' lon='6.1311133' />
+  <node id='-8326' timestamp='2009-08-16T10:22:48Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8886126' lon='6.1313759' />
+  <node id='-8324' timestamp='2009-08-16T10:22:48Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8882878' lon='6.131857' />
+  <node id='-8322' timestamp='2008-05-24T21:00:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8880191' lon='6.1328678' />
+  <node id='-8320' timestamp='2010-10-18T11:38:44Z' uid='42918' user='sco' visible='true' version='2' lat='45.8879012' lon='6.1331862' />
+  <node id='-8318' timestamp='2009-08-16T11:13:32Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8878192' lon='6.1332675' />
+  <node id='-8316' timestamp='2008-05-24T21:00:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8877297' lon='6.1334466' />
+  <node id='-8314' timestamp='2008-05-24T21:00:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8874403' lon='6.1338324' />
+  <node id='-8312' timestamp='2008-05-24T21:00:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8873025' lon='6.1339565' />
+  <node id='-8310' timestamp='2009-07-15T08:38:46Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8872052' lon='6.1340226'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8308' timestamp='2008-05-24T21:00:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8871096' lon='6.133984' />
+  <node id='-8306' timestamp='2008-05-24T21:00:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8870545' lon='6.1337911' />
+  <node id='-8304' timestamp='2009-05-17T10:24:50Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8872522' lon='6.1334184' />
+  <node id='-8302' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8875369' lon='6.1330781' />
+  <node id='-8300' timestamp='2009-08-16T11:13:32Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8876747' lon='6.132756' />
+  <node id='-8298' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8877024' lon='6.1326911' />
+  <node id='-8296' timestamp='2009-08-16T11:13:32Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.887734' lon='6.1325454' />
+  <node id='-8294' timestamp='2009-08-16T20:18:44Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8877939' lon='6.1322689' />
+  <node id='-8292' timestamp='2008-05-24T21:01:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8879777' lon='6.1314208' />
+  <node id='-8290' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8879545' lon='6.1311347' />
+  <node id='-8288' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8878543' lon='6.1307736' />
+  <node id='-8286' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8877707' lon='6.1302987' />
+  <node id='-8284' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8875825' lon='6.1299183' />
+  <node id='-8282' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8875301' lon='6.1297647' />
+  <node id='-8280' timestamp='2008-05-24T21:01:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8875092' lon='6.1295329' />
+  <node id='-8278' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8875986' lon='6.1290815' />
+  <node id='-8276' timestamp='2009-02-27T18:15:51Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8876649' lon='6.128738' />
+  <node id='-8274' timestamp='2009-02-27T18:16:17Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8876061' lon='6.1285795' />
+  <node id='-8272' timestamp='2009-05-08T19:58:38Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8875402' lon='6.1285531' />
+  <node id='-8270' timestamp='2009-02-27T18:15:51Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8874552' lon='6.128544' />
+  <node id='-8268' timestamp='2009-07-15T08:41:11Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8873731' lon='6.1286368'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8266' timestamp='2009-02-27T18:15:52Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8873281' lon='6.1287354' />
+  <node id='-8264' timestamp='2009-05-24T20:19:02Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.887266' lon='6.1290446' />
+  <node id='-8262' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8871737' lon='6.1294778' />
+  <node id='-8260' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8870725' lon='6.1299424' />
+  <node id='-8258' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8868955' lon='6.1302486' />
+  <node id='-8256' timestamp='2008-05-24T21:01:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8867099' lon='6.1304562' />
+  <node id='-8254' timestamp='2008-05-24T21:01:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8860623' lon='6.1308558' />
+  <node id='-8252' timestamp='2008-05-24T21:01:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8856488' lon='6.1310763' />
+  <node id='-8250' timestamp='2008-05-24T21:01:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8852768' lon='6.1311315' />
+  <node id='-8248' timestamp='2009-08-16T11:13:35Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8851153' lon='6.1311248' />
+  <node id='-8246' action='modify' timestamp='2009-08-16T11:13:36Z' uid='24200' user='Zedh' visible='true' version='4' lat='45.884971' lon='6.1310421'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+    <tag k='surface' v='terre' />
+  </node>
+  <node id='-8244' timestamp='2008-05-24T21:01:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8848358' lon='6.1308972' />
+  <node id='-8242' timestamp='2009-02-27T18:48:12Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.884692' lon='6.1307885' />
+  <node id='-8240' timestamp='2009-02-27T18:48:12Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8845338' lon='6.1307642' />
+  <node id='-8238' timestamp='2009-08-16T11:13:33Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8843786' lon='6.1308688' />
+  <node id='-8236' timestamp='2008-05-24T21:01:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8840503' lon='6.1310901' />
+  <node id='-8234' timestamp='2009-07-15T08:38:56Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.883519' lon='6.1311777'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8232' timestamp='2009-02-26T22:03:20Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8830915' lon='6.1312803' />
+  <node id='-8230' timestamp='2008-05-24T21:01:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8829616' lon='6.1312693' />
+  <node id='-8228' timestamp='2009-07-15T08:38:55Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8828763' lon='6.1312365'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8226' timestamp='2008-05-24T21:01:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8826998' lon='6.1311728' />
+  <node id='-8224' timestamp='2009-08-16T20:18:47Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8825659' lon='6.1311409' />
+  <node id='-8222' timestamp='2008-05-24T21:01:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8824655' lon='6.1311177' />
+  <node id='-8220' timestamp='2008-05-24T21:01:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8822864' lon='6.1311452' />
+  <node id='-8218' timestamp='2009-05-27T18:08:59Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8822069' lon='6.1311673' />
+  <node id='-8216' timestamp='2008-05-24T21:01:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8819143' lon='6.1312693' />
+  <node id='-8214' timestamp='2008-05-24T21:01:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8815698' lon='6.1312693' />
+  <node id='-8212' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8812987' lon='6.1311399' />
+  <node id='-8210' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8810661' lon='6.1310986' />
+  <node id='-8208' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8808671' lon='6.1311304' />
+  <node id='-8206' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8805034' lon='6.1314237' />
+  <node id='-8204' timestamp='2009-02-27T18:51:39Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8803526' lon='6.1314894' />
+  <node id='-8202' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8802462' lon='6.1313523' />
+  <node id='-8200' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8802458' lon='6.1312015' />
+  <node id='-8198' timestamp='2009-05-17T10:24:50Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8803245' lon='6.1310833' />
+  <node id='-8196' timestamp='2009-02-27T18:51:38Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8804039' lon='6.1309756' />
+  <node id='-8194' timestamp='2009-07-15T08:45:55Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8806379' lon='6.1306658'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8192' timestamp='2009-05-27T18:08:58Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.880701' lon='6.1305806' />
+  <node id='-8190' timestamp='2009-02-27T18:51:41Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8808548' lon='6.1303692' />
+  <node id='-8188' timestamp='2009-02-27T18:51:41Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8809481' lon='6.1302117' />
+  <node id='-8186' timestamp='2009-02-27T18:51:40Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8810295' lon='6.1297685' />
+  <node id='-8184' timestamp='2009-07-15T08:38:55Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.881049' lon='6.1295021'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8182' timestamp='2009-05-27T18:08:56Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8810007' lon='6.1287428' />
+  <node id='-8180' timestamp='2008-05-24T21:01:04Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.880991' lon='6.1285958' />
+  <node id='-8178' timestamp='2008-05-24T21:01:04Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.880867' lon='6.1284167' />
+  <node id='-8176' timestamp='2008-05-24T21:01:04Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8806603' lon='6.1284029' />
+  <node id='-8174' timestamp='2008-05-24T21:01:04Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.880426' lon='6.1284167' />
+  <node id='-8172' timestamp='2009-05-17T10:24:50Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8801378' lon='6.128364' />
+  <node id='-8170' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8799181' lon='6.128463' />
+  <node id='-8168' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8795635' lon='6.1285488' />
+  <node id='-8166' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.879316' lon='6.1284721' />
+  <node id='-8164' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8791812' lon='6.1283411' />
+  <node id='-8162' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8790423' lon='6.1280073' />
+  <node id='-8160' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8788262' lon='6.1277884' />
+  <node id='-8158' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8784985' lon='6.1276244' />
+  <node id='-8156' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8782024' lon='6.1274426' />
+  <node id='-8154' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.878011' lon='6.1273492' />
+  <node id='-8152' timestamp='2009-05-17T10:24:50Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8777561' lon='6.1273554' />
+  <node id='-8150' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8774642' lon='6.1273295' />
+  <node id='-8148' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.877307' lon='6.1272817' />
+  <node id='-8146' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8770399' lon='6.1271316' />
+  <node id='-8144' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8766009' lon='6.1268686' />
+  <node id='-8142' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8762627' lon='6.1266057' />
+  <node id='-8140' timestamp='2009-07-15T08:45:45Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.8759087' lon='6.1265174'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8138' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8758108' lon='6.1265148' />
+  <node id='-8136' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8753791' lon='6.1265368' />
+  <node id='-8134' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8751424' lon='6.1265169' />
+  <node id='-8132' timestamp='2009-04-12T18:52:10Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8748834' lon='6.1264604' />
+  <node id='-8130' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8747501' lon='6.1263609' />
+  <node id='-8128' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.874449' lon='6.1260735' />
+  <node id='-8126' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8742715' lon='6.1258068' />
+  <node id='-8124' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8737733' lon='6.1248981' />
+  <node id='-8122' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8734916' lon='6.1243455' />
+  <node id='-8120' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8733253' lon='6.1239301' />
+  <node id='-8118' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8732168' lon='6.1237971' />
+  <node id='-8116' timestamp='2009-02-27T19:18:19Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8731379' lon='6.1237092' />
+  <node id='-8114' timestamp='2009-07-15T08:44:32Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8728223' lon='6.1234648'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8112' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='3' lat='45.8725435' lon='6.1232715' />
+  <node id='-8110' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8721642' lon='6.1231807' />
+  <node id='-8108' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8718489' lon='6.1231537' />
+  <node id='-8106' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8715446' lon='6.1229757' />
+  <node id='-8104' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8712406' lon='6.1226225' />
+  <node id='-8102' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8708806' lon='6.1222871' />
+  <node id='-8100' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.870065' lon='6.1220627' />
+  <node id='-8098' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8694112' lon='6.1217011' />
+  <node id='-8096' timestamp='2009-05-17T10:24:50Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8688418' lon='6.1215446' />
+  <node id='-8094' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8683103' lon='6.1212457' />
+  <node id='-8092' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8678384' lon='6.1210185' />
+  <node id='-8090' timestamp='2008-05-24T21:01:08Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8671278' lon='6.1209752' />
+  <node id='-8088' timestamp='2009-07-15T08:36:14Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8667874' lon='6.1209279'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8086' timestamp='2009-02-27T19:39:33Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8665604' lon='6.1209273' />
+  <node id='-8084' timestamp='2009-04-11T19:48:50Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8664887' lon='6.1209409' />
+  <node id='-8082' timestamp='2009-07-15T08:36:14Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8664347' lon='6.1209527'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8080' timestamp='2009-02-27T19:39:33Z' uid='24200' user='Zedh' visible='true' version='2' lat='45.8660587' lon='6.1210458' />
+  <node id='-8078' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8655132' lon='6.1211475' />
+  <node id='-8076' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.865399' lon='6.1211382' />
+  <node id='-8074' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8650116' lon='6.1209412' />
+  <node id='-8072' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8647765' lon='6.1208643' />
+  <node id='-8070' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8645465' lon='6.1208468' />
+  <node id='-8068' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8643129' lon='6.1209371' />
+  <node id='-8066' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8640125' lon='6.1212973' />
+  <node id='-8064' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8632512' lon='6.1226434' />
+  <node id='-8062' timestamp='2008-05-24T21:01:09Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8631177' lon='6.1228218' />
+  <node id='-8060' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8629766' lon='6.1228817' />
+  <node id='-8058' timestamp='2008-05-24T21:01:09Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8628421' lon='6.1229183' />
+  <node id='-8056' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8626325' lon='6.1229116' />
+  <node id='-8054' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.862422' lon='6.1228285' />
+  <node id='-8052' timestamp='2008-05-24T21:01:09Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8622771' lon='6.1227391' />
+  <node id='-8050' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8618706' lon='6.1225291' />
+  <node id='-8048' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8615012' lon='6.1225061' />
+  <node id='-8046' timestamp='2008-05-24T21:01:10Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8612987' lon='6.12256' />
+  <node id='-8044' timestamp='2008-05-24T21:01:10Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8609404' lon='6.1226702' />
+  <node id='-8042' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8605816' lon='6.1226727' />
+  <node id='-8040' timestamp='2008-05-24T21:01:10Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8600171' lon='6.1227391' />
+  <node id='-8038' timestamp='2008-05-24T21:01:10Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8597415' lon='6.1227253' />
+  <node id='-8036' timestamp='2008-05-24T21:01:10Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8594934' lon='6.1226151' />
+  <node id='-8034' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.859075' lon='6.1223255' />
+  <node id='-8032' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8587856' lon='6.1219677' />
+  <node id='-8030' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8583464' lon='6.1216374' />
+  <node id='-8028' timestamp='2008-05-24T21:01:10Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8581705' lon='6.1214437' />
+  <node id='-8026' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8579873' lon='6.1212194' />
+  <node id='-8024' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8578036' lon='6.1208016' />
+  <node id='-8022' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.857531' lon='6.1203114' />
+  <node id='-8020' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8574874' lon='6.1201718' />
+  <node id='-8018' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8574685' lon='6.1198962' />
+  <node id='-8016' timestamp='2008-05-24T21:01:10Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8575366' lon='6.1189495' />
+  <node id='-8014' timestamp='2008-05-24T21:01:11Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8574814' lon='6.1184396' />
+  <node id='-8012' timestamp='2010-04-25T13:39:43Z' uid='35243' user='chasu' visible='true' version='1' lat='45.8574823' lon='6.1182757' />
+  <node id='-8010' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8574828' lon='6.1181763' />
+  <node id='-8008' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8574664' lon='6.1177934' />
+  <node id='-8006' timestamp='2009-07-15T08:44:07Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.85743' lon='6.1175595'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-8004' timestamp='2008-05-24T21:01:11Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.857385' lon='6.1174474' />
+  <node id='-8002' timestamp='2008-05-24T21:01:11Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8572334' lon='6.1172131' />
+  <node id='-8000' timestamp='2009-05-17T10:24:50Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8570832' lon='6.1171137' />
+  <node id='-7998' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8569484' lon='6.1170859' />
+  <node id='-7996' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.856578' lon='6.1171099' />
+  <node id='-7994' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8562025' lon='6.117089' />
+  <node id='-7992' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8560386' lon='6.1170425' />
+  <node id='-7990' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8558911' lon='6.1169477' />
+  <node id='-7988' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8557489' lon='6.1167736' />
+  <node id='-7986' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8556341' lon='6.1165609' />
+  <node id='-7984' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.855519' lon='6.1160841' />
+  <node id='-7982' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8554527' lon='6.1158595' />
+  <node id='-7980' timestamp='2008-05-24T21:01:12Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8553041' lon='6.1155595' />
+  <node id='-7978' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8551733' lon='6.1153521' />
+  <node id='-7976' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8549684' lon='6.115198' />
+  <node id='-7974' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8548251' lon='6.1151493' />
+  <node id='-7972' timestamp='2009-05-17T10:24:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8545958' lon='6.1151965' />
+  <node id='-7970' timestamp='2009-06-01T12:39:12Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.854534' lon='6.1151952' />
+  <node id='-7968' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8542874' lon='6.1151895' />
+  <node id='-7966' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8538583' lon='6.1152055' />
+  <node id='-7964' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8535268' lon='6.1151553' />
+  <node id='-7962' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8533317' lon='6.1150768' />
+  <node id='-7960' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8528828' lon='6.1147974' />
+  <node id='-7958' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8525282' lon='6.1145576' />
+  <node id='-7956' timestamp='2008-05-24T21:01:12Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8523' lon='6.1143054' />
+  <node id='-7954' timestamp='2009-08-17T19:43:38Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8518599' lon='6.1135766' />
+  <node id='-7952' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8518185' lon='6.1135081' />
+  <node id='-7950' timestamp='2008-05-24T21:01:13Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8516661' lon='6.113327' />
+  <node id='-7948' timestamp='2008-05-24T21:01:13Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8514456' lon='6.1132168' />
+  <node id='-7946' timestamp='2009-06-14T16:30:16Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8513771' lon='6.1131965' />
+  <node id='-7944' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8511283' lon='6.11316' />
+  <node id='-7942' timestamp='2008-05-24T21:01:13Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8507428' lon='6.113079' />
+  <node id='-7940' timestamp='2008-05-24T21:01:13Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8503156' lon='6.1128034' />
+  <node id='-7938' timestamp='2008-05-24T21:01:13Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8498884' lon='6.1124451' />
+  <node id='-7936' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8494818' lon='6.1122898' />
+  <node id='-7934' timestamp='2008-05-24T21:01:14Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8489926' lon='6.112197' />
+  <node id='-7932' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.848552' lon='6.1119611' />
+  <node id='-7930' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8483973' lon='6.1117672' />
+  <node id='-7928' timestamp='2009-06-01T12:39:26Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8482165' lon='6.111667' />
+  <node id='-7926' timestamp='2008-05-24T21:01:14Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8481796' lon='6.1116458' />
+  <node id='-7924' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8473637' lon='6.1115042' />
+  <node id='-7922' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8469218' lon='6.1113618' />
+  <node id='-7920' timestamp='2008-05-24T21:01:14Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8465811' lon='6.1113013' />
+  <node id='-7918' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.846268' lon='6.1112412' />
+  <node id='-7916' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8459366' lon='6.1110743' />
+  <node id='-7914' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8455704' lon='6.1108869' />
+  <node id='-7912' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8454061' lon='6.1107555' />
+  <node id='-7910' timestamp='2009-05-17T10:24:50Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8452552' lon='6.1105542' />
+  <node id='-7908' timestamp='2008-05-24T21:01:14Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8445967' lon='6.1099094' />
+  <node id='-7906' timestamp='2008-05-24T21:01:14Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8436596' lon='6.1091791' />
+  <node id='-7904' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8430613' lon='6.1088745' />
+  <node id='-7902' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8427435' lon='6.1086882' />
+  <node id='-7900' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8424227' lon='6.1084428' />
+  <node id='-7898' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8419765' lon='6.1082098' />
+  <node id='-7896' timestamp='2009-05-17T10:24:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8412805' lon='6.1076959' />
+  <node id='-7894' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8409335' lon='6.1075522' />
+  <node id='-7892' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8405703' lon='6.1074209' />
+  <node id='-7890' timestamp='2008-05-24T21:01:15Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8399664' lon='6.1070707' />
+  <node id='-7888' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8390069' lon='6.1063643' />
+  <node id='-7886' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8383205' lon='6.1059453' />
+  <node id='-7884' timestamp='2009-05-17T10:24:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8377828' lon='6.1057158' />
+  <node id='-7882' timestamp='2009-07-19T17:49:04Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8367918' lon='6.1049594' />
+  <node id='-7880' timestamp='2009-07-19T17:49:04Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8365887' lon='6.1047816'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </node>
+  <node id='-7878' timestamp='2009-11-21T21:11:06Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.836533' lon='6.1047316'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7876' timestamp='2009-05-17T10:24:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8363582' lon='6.1045011' />
+  <node id='-7874' timestamp='2009-05-17T10:24:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8361711' lon='6.1041354' />
+  <node id='-7872' timestamp='2009-05-17T10:24:48Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8359647' lon='6.1038416' />
+  <node id='-7870' timestamp='2008-05-24T21:01:16Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8357082' lon='6.1036255' />
+  <node id='-7868' timestamp='2008-05-24T21:01:16Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8351983' lon='6.1033361' />
+  <node id='-7866' timestamp='2008-05-24T21:01:16Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8346058' lon='6.1031983' />
+  <node id='-7864' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8342878' lon='6.1030302' />
+  <node id='-7862' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8335506' lon='6.102365' />
+  <node id='-7860' timestamp='2009-08-17T19:43:38Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8332077' lon='6.1019824' />
+  <node id='-7858' timestamp='2008-05-24T21:01:16Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8330624' lon='6.1018203' />
+  <node id='-7856' timestamp='2009-08-17T19:43:38Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.832547' lon='6.1011659' />
+  <node id='-7854' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8324599' lon='6.1010554' />
+  <node id='-7852' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.83217' lon='6.1006058' />
+  <node id='-7850' timestamp='2009-08-17T19:43:38Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.8320162' lon='6.1004423' />
+  <node id='-7848' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8317884' lon='6.1002001' />
+  <node id='-7846' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8316014' lon='6.1000727' />
+  <node id='-7844' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8313198' lon='6.0999291' />
+  <node id='-7842' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8309351' lon='6.0996922' />
+  <node id='-7840' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8306052' lon='6.0995825' />
+  <node id='-7838' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8304047' lon='6.0994894' />
+  <node id='-7836' timestamp='2008-05-24T21:01:17Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8302925' lon='6.0995051' />
+  <node id='-7834' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8302084' lon='6.0995792' />
+  <node id='-7832' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8302439' lon='6.0996846' />
+  <node id='-7830' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8303318' lon='6.0997565' />
+  <node id='-7828' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8306504' lon='6.1000274' />
+  <node id='-7826' timestamp='2008-05-24T21:01:17Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8307748' lon='6.1002769' />
+  <node id='-7824' timestamp='2008-05-24T21:01:17Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8309126' lon='6.1007041' />
+  <node id='-7822' timestamp='2009-08-17T19:43:37Z' uid='24200' user='Zedh' visible='true' version='1' lat='45.830952' lon='6.101045' />
+  <node id='-7820' timestamp='2008-05-24T21:01:17Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8309953' lon='6.1014206' />
+  <node id='-7818' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.831127' lon='6.1020492' />
+  <node id='-7816' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8312853' lon='6.1024194' />
+  <node id='-7814' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8313796' lon='6.102559' />
+  <node id='-7812' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8316006' lon='6.1027224' />
+  <node id='-7810' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8316099' lon='6.1027915' />
+  <node id='-7808' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8315745' lon='6.1028333' />
+  <node id='-7806' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8315033' lon='6.102853' />
+  <node id='-7804' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8314153' lon='6.102825' />
+  <node id='-7802' timestamp='2008-05-24T21:01:18Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8306921' lon='6.1023577' />
+  <node id='-7800' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8305109' lon='6.1021671' />
+  <node id='-7798' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8302007' lon='6.1017024' />
+  <node id='-7796' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8299333' lon='6.1015088' />
+  <node id='-7794' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.829647' lon='6.1013624' />
+  <node id='-7792' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8294344' lon='6.1012242' />
+  <node id='-7790' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8293131' lon='6.1011037' />
+  <node id='-7788' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8291309' lon='6.100807' />
+  <node id='-7786' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8289555' lon='6.100583' />
+  <node id='-7784' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8287969' lon='6.1004365' />
+  <node id='-7782' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8283622' lon='6.1001998' />
+  <node id='-7780' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8278802' lon='6.1001918' />
+  <node id='-7778' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8276978' lon='6.100121' />
+  <node id='-7776' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8274806' lon='6.0999987' />
+  <node id='-7774' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8271261' lon='6.0997338' />
+  <node id='-7772' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8267407' lon='6.0994189' />
+  <node id='-7770' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8264982' lon='6.0992662' />
+  <node id='-7768' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8261202' lon='6.0991606' />
+  <node id='-7766' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.825735' lon='6.0989576' />
+  <node id='-7764' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.825554' lon='6.0988956' />
+  <node id='-7762' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8249801' lon='6.0984985' />
+  <node id='-7760' timestamp='2008-05-24T21:01:20Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8246838' lon='6.0983889' />
+  <node id='-7758' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8242571' lon='6.0982663' />
+  <node id='-7756' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.823761' lon='6.0982062' />
+  <node id='-7754' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8235003' lon='6.0981918' />
+  <node id='-7752' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8232371' lon='6.0980224' />
+  <node id='-7750' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8230907' lon='6.0978816' />
+  <node id='-7748' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8228614' lon='6.097774' />
+  <node id='-7746' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8225593' lon='6.0977272' />
+  <node id='-7744' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8222084' lon='6.0978544' />
+  <node id='-7742' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.821877' lon='6.0982172' />
+  <node id='-7740' timestamp='2008-05-24T21:01:21Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8217349' lon='6.0985303' />
+  <node id='-7738' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.821626' lon='6.0987051' />
+  <node id='-7736' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8215083' lon='6.0987486' />
+  <node id='-7734' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8212101' lon='6.0987434' />
+  <node id='-7732' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8210717' lon='6.0988112' />
+  <node id='-7730' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8208318' lon='6.0990399' />
+  <node id='-7728' timestamp='2008-05-24T21:01:22Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8206861' lon='6.0990786' />
+  <node id='-7726' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8204842' lon='6.0990198' />
+  <node id='-7724' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8203643' lon='6.098967' />
+  <node id='-7722' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.820205' lon='6.0989409' />
+  <node id='-7720' timestamp='2008-05-24T21:01:22Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8200481' lon='6.0989428' />
+  <node id='-7718' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8198005' lon='6.0989485' />
+  <node id='-7716' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8195228' lon='6.0988856' />
+  <node id='-7714' timestamp='2008-05-24T21:01:22Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8192311' lon='6.0987233' />
+  <node id='-7712' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8188681' lon='6.0985319' />
+  <node id='-7710' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.818555' lon='6.0983725' />
+  <node id='-7708' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8183213' lon='6.0982084' />
+  <node id='-7706' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8181563' lon='6.0980534' />
+  <node id='-7704' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8180305' lon='6.0979927' />
+  <node id='-7702' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8179408' lon='6.0980383' />
+  <node id='-7700' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8179226' lon='6.0980974' />
+  <node id='-7698' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8179566' lon='6.0982112' />
+  <node id='-7696' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8184181' lon='6.0987467' />
+  <node id='-7694' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8186834' lon='6.0993343' />
+  <node id='-7692' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8188344' lon='6.0995749' />
+  <node id='-7690' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8193395' lon='6.1001843' />
+  <node id='-7688' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8195296' lon='6.1004437' />
+  <node id='-7686' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8196582' lon='6.1007328' />
+  <node id='-7684' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8196836' lon='6.1009959' />
+  <node id='-7682' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.819663' lon='6.1013444' />
+  <node id='-7680' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8196927' lon='6.1016047' />
+  <node id='-7678' timestamp='2008-05-24T21:01:24Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8197921' lon='6.1018572' />
+  <node id='-7676' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8199199' lon='6.1021116' />
+  <node id='-7674' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8203648' lon='6.1034045' />
+  <node id='-7672' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8204318' lon='6.1035211' />
+  <node id='-7670' timestamp='2008-05-24T21:01:25Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8207066' lon='6.1039668' />
+  <node id='-7668' timestamp='2008-05-24T21:01:25Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8207676' lon='6.1041375' />
+  <node id='-7666' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8207813' lon='6.1042123' />
+  <node id='-7664' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8207403' lon='6.1042678' />
+  <node id='-7662' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8206564' lon='6.104281' />
+  <node id='-7660' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8205314' lon='6.1041956' />
+  <node id='-7658' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8201366' lon='6.1037563' />
+  <node id='-7656' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8200291' lon='6.1036913' />
+  <node id='-7654' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8199114' lon='6.1036734' />
+  <node id='-7652' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8197716' lon='6.1037248' />
+  <node id='-7650' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8196773' lon='6.1037751' />
+  <node id='-7648' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8195998' lon='6.1038793' />
+  <node id='-7646' timestamp='2009-11-22T01:03:42Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.8195561' lon='6.1040189'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7644' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8195446' lon='6.1041999' />
+  <node id='-7642' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8195429' lon='6.1043227' />
+  <node id='-7640' timestamp='2009-11-21T21:10:10Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.8195274' lon='6.1044686'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7638' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8195025' lon='6.1045356' />
+  <node id='-7636' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.819441' lon='6.1046259' />
+  <node id='-7634' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8193093' lon='6.1046545' />
+  <node id='-7632' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8191904' lon='6.1047093' />
+  <node id='-7630' timestamp='2009-11-21T21:10:10Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.8190827' lon='6.104679'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7628' timestamp='2009-07-19T17:49:06Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.818956' lon='6.1045677' />
+  <node id='-7626' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8187319' lon='6.1043279' />
+  <node id='-7624' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8182865' lon='6.1038943' />
+  <node id='-7622' timestamp='2009-11-21T21:10:14Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.8181934' lon='6.1038176'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7620' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8180571' lon='6.1036596' />
+  <node id='-7618' timestamp='2009-07-19T17:49:06Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8179394' lon='6.1035357' />
+  <node id='-7616' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8177157' lon='6.1033727' />
+  <node id='-7614' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8175981' lon='6.1033765' />
+  <node id='-7612' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8174892' lon='6.1033967' />
+  <node id='-7610' timestamp='2009-11-21T21:10:14Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.8174128' lon='6.1033669'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7608' timestamp='2009-07-19T17:49:06Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8173196' lon='6.1032511' />
+  <node id='-7606' timestamp='2009-11-21T21:10:14Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.8172787' lon='6.1031322'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7604' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8172612' lon='6.1029641' />
+  <node id='-7602' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.817251' lon='6.1026483' />
+  <node id='-7600' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8172093' lon='6.1022645' />
+  <node id='-7598' timestamp='2009-07-19T17:49:05Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8170924' lon='6.101912' />
+  <node id='-7596' timestamp='2009-07-19T17:49:06Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='2' lat='45.8168619' lon='6.1013465' />
+  <node id='-7594' timestamp='2009-07-19T17:49:04Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='3' lat='45.8167706' lon='6.1011617' />
+  <node id='-7592' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8165938' lon='6.1009051' />
+  <node id='-7590' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8163454' lon='6.1007379' />
+  <node id='-7588' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8159406' lon='6.1006317' />
+  <node id='-7586' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.815768' lon='6.1005756' />
+  <node id='-7584' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8155143' lon='6.1004491' />
+  <node id='-7582' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8153445' lon='6.1003921' />
+  <node id='-7580' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8151989' lon='6.1004331' />
+  <node id='-7578' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8150373' lon='6.1005149' />
+  <node id='-7576' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8148991' lon='6.1005672' />
+  <node id='-7574' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8147425' lon='6.1005563' />
+  <node id='-7572' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8144095' lon='6.1003834' />
+  <node id='-7570' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8142536' lon='6.100355' />
+  <node id='-7568' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8140225' lon='6.1003925' />
+  <node id='-7566' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8138134' lon='6.1003279' />
+  <node id='-7564' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8136313' lon='6.1002167' />
+  <node id='-7562' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8134888' lon='6.1000504' />
+  <node id='-7560' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8132682' lon='6.0996121' />
+  <node id='-7558' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.813118' lon='6.0993841' />
+  <node id='-7556' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8128586' lon='6.0991145' />
+  <node id='-7554' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8126571' lon='6.098921' />
+  <node id='-7552' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8124805' lon='6.0989029' />
+  <node id='-7550' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8122069' lon='6.0990238' />
+  <node id='-7548' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8120837' lon='6.0990831' />
+  <node id='-7546' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8119685' lon='6.0990726' />
+  <node id='-7544' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8117214' lon='6.0990458' />
+  <node id='-7542' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8114732' lon='6.0990922' />
+  <node id='-7540' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8113883' lon='6.0991094' />
+  <node id='-7538' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8112523' lon='6.0990229' />
+  <node id='-7536' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8110552' lon='6.0987296' />
+  <node id='-7534' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8108482' lon='6.0985359' />
+  <node id='-7532' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8106226' lon='6.0983224' />
+  <node id='-7530' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8104244' lon='6.0982604' />
+  <node id='-7528' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8100764' lon='6.0982504' />
+  <node id='-7526' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8098596' lon='6.0983054' />
+  <node id='-7524' action='modify' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.80953' lon='6.098379'>
+    <tag k='environnement' v='plaine' />
+  </node>
+  <node id='-7522' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8094306' lon='6.0984345' />
+  <node id='-7520' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8093817' lon='6.0985598' />
+  <node id='-7518' action='modify' timestamp='2009-05-17T10:12:51Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8093953' lon='6.0987013'>
+    <tag k='surface' v='asphalt' />
+  </node>
+  <node id='-7516' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.809702' lon='6.0994366' />
+  <node id='-7514' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8097426' lon='6.0996296' />
+  <node id='-7512' timestamp='2009-05-17T10:12:50Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8097549' lon='6.0998399' />
+  <node id='-7510' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.809725' lon='6.0999979' />
+  <node id='-7508' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8096547' lon='6.1001796' />
+  <node id='-7506' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8094911' lon='6.1003721' />
+  <node id='-7504' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8085065' lon='6.1011325' />
+  <node id='-7502' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8083583' lon='6.1013096' />
+  <node id='-7500' timestamp='2010-03-14T20:24:58Z' uid='59288' user='SIGmaster74' visible='true' version='1' lat='45.808297' lon='6.1014375' />
+  <node id='-7498' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8082852' lon='6.1014674' />
+  <node id='-7496' timestamp='2010-03-14T20:24:59Z' uid='59288' user='SIGmaster74' visible='true' version='1' lat='45.8082191' lon='6.1017665' />
+  <node id='-7494' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8082188' lon='6.1017903' />
+  <node id='-7492' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8082047' lon='6.102252' />
+  <node id='-7490' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8081158' lon='6.1024725' />
+  <node id='-7488' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8080118' lon='6.1026264' />
+  <node id='-7486' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8078703' lon='6.1027063' />
+  <node id='-7484' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.807619' lon='6.1028722' />
+  <node id='-7482' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8073823' lon='6.1031122' />
+  <node id='-7480' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8071369' lon='6.1032936' />
+  <node id='-7478' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8069569' lon='6.1034732' />
+  <node id='-7476' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8065798' lon='6.1036756' />
+  <node id='-7474' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.806275' lon='6.1038575' />
+  <node id='-7472' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8060884' lon='6.1039013' />
+  <node id='-7470' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8057144' lon='6.103913' />
+  <node id='-7468' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8054829' lon='6.1039398' />
+  <node id='-7466' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8052143' lon='6.1039189' />
+  <node id='-7464' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8049252' lon='6.1037884' />
+  <node id='-7462' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8046241' lon='6.1036734' />
+  <node id='-7460' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8040255' lon='6.1033898' />
+  <node id='-7458' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8034452' lon='6.1032234' />
+  <node id='-7456' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8030672' lon='6.103112' />
+  <node id='-7454' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8024522' lon='6.1029367' />
+  <node id='-7452' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8022954' lon='6.1029254' />
+  <node id='-7450' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8021668' lon='6.102978' />
+  <node id='-7448' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8020893' lon='6.1030472' />
+  <node id='-7446' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8018737' lon='6.1032989' />
+  <node id='-7444' timestamp='2008-05-24T21:01:32Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8014765' lon='6.1037717' />
+  <node id='-7442' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8010889' lon='6.1043157' />
+  <node id='-7440' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8010025' lon='6.1045354' />
+  <node id='-7438' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8009864' lon='6.104699' />
+  <node id='-7436' timestamp='2008-05-24T21:01:33Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8010009' lon='6.1049911' />
+  <node id='-7434' timestamp='2008-05-24T21:01:33Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8009277' lon='6.1054301' />
+  <node id='-7432' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8008666' lon='6.105932' />
+  <node id='-7430' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8008975' lon='6.1061338' />
+  <node id='-7428' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8009542' lon='6.1062768' />
+  <node id='-7426' timestamp='2008-05-24T21:01:33Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8010619' lon='6.1064422' />
+  <node id='-7424' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8013107' lon='6.1066567' />
+  <node id='-7422' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8014506' lon='6.1068319' />
+  <node id='-7420' timestamp='2008-05-24T21:01:33Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.8016959' lon='6.1073202' />
+  <node id='-7418' timestamp='2009-11-21T21:09:49Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.8019703' lon='6.1080117'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7416' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8020389' lon='6.1081845' />
+  <node id='-7414' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8020792' lon='6.1083864' />
+  <node id='-7412' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8020926' lon='6.1085866' />
+  <node id='-7410' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8020704' lon='6.1088948' />
+  <node id='-7408' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8020645' lon='6.1090731' />
+  <node id='-7406' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8022222' lon='6.1099158' />
+  <node id='-7404' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8023246' lon='6.1104054' />
+  <node id='-7402' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8023187' lon='6.1105135' />
+  <node id='-7400' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8022736' lon='6.1105906' />
+  <node id='-7398' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8021754' lon='6.1106287' />
+  <node id='-7396' timestamp='2009-05-17T10:12:58Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8020725' lon='6.1106253' />
+  <node id='-7394' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8019616' lon='6.1105515' />
+  <node id='-7392' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8017665' lon='6.1103587' />
+  <node id='-7390' timestamp='2009-05-17T10:12:53Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8016154' lon='6.1102712' />
+  <node id='-7388' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8013282' lon='6.1101629' />
+  <node id='-7386' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8012338' lon='6.110084' />
+  <node id='-7384' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8010477' lon='6.109786' />
+  <node id='-7382' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.800904' lon='6.1096064' />
+  <node id='-7380' timestamp='2009-05-17T10:12:52Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8007663' lon='6.1094976' />
+  <node id='-7378' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.8002296' lon='6.109149' />
+  <node id='-7376' timestamp='2009-05-17T10:12:56Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.8000729' lon='6.1090649' />
+  <node id='-7374' timestamp='2009-05-17T10:12:54Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.7998601' lon='6.1089801' />
+  <node id='-7372' timestamp='2009-05-17T10:12:49Z' uid='74847' user='Marc Mongenet' visible='true' version='1' lat='45.799765' lon='6.1088977' />
+  <node id='-7370' timestamp='2009-05-17T10:12:55Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.7996435' lon='6.1087222' />
+  <node id='-7368' timestamp='2009-05-17T10:12:57Z' uid='74847' user='Marc Mongenet' visible='true' version='2' lat='45.7995464' lon='6.108518' />
+  <node id='-7366' timestamp='2008-05-24T21:01:35Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7994034' lon='6.1080396' />
+  <node id='-7364' timestamp='2008-05-24T21:01:35Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7992449' lon='6.1075884' />
+  <node id='-7362' timestamp='2009-11-21T21:10:08Z' uid='183561' user='EtienneChoveBot' visible='true' version='2' lat='45.7991924' lon='6.1075359'>
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre. Mise à jour : 2009' />
+  </node>
+  <node id='-7360' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7990864' lon='6.1074299' />
+  <node id='-7358' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.798745' lon='6.107186' />
+  <node id='-7356' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7985621' lon='6.1070885' />
+  <node id='-7354' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7984401' lon='6.1070397' />
+  <node id='-7352' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7981962' lon='6.107247' />
+  <node id='-7350' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7980865' lon='6.107308' />
+  <node id='-7348' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.797867' lon='6.1072592' />
+  <node id='-7346' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7975499' lon='6.1070763' />
+  <node id='-7344' timestamp='2008-05-24T21:01:36Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7967329' lon='6.1064788' />
+  <node id='-7342' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7965744' lon='6.1062715' />
+  <node id='-7340' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.796172' lon='6.105113' />
+  <node id='-7338' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7956355' lon='6.1035888' />
+  <node id='-7336' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7954647' lon='6.1032961' />
+  <node id='-7334' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7948184' lon='6.1028937' />
+  <node id='-7332' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7943917' lon='6.1025888' />
+  <node id='-7330' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7941112' lon='6.1023084' />
+  <node id='-7328' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7939161' lon='6.1022108' />
+  <node id='-7326' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7936356' lon='6.1021986' />
+  <node id='-7324' timestamp='2008-05-24T21:01:37Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7934405' lon='6.1022596' />
+  <node id='-7322' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7932576' lon='6.1022718' />
+  <node id='-7320' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7930259' lon='6.1021742' />
+  <node id='-7318' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7928064' lon='6.1021011' />
+  <node id='-7316' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7926113' lon='6.1019913' />
+  <node id='-7314' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7924772' lon='6.1020523' />
+  <node id='-7312' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7924894' lon='6.102284' />
+  <node id='-7310' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7927576' lon='6.102662' />
+  <node id='-7308' timestamp='2008-05-24T21:01:38Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7935015' lon='6.1033693' />
+  <node id='-7306' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7937698' lon='6.1038083' />
+  <node id='-7304' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7944038' lon='6.1045521' />
+  <node id='-7302' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7946721' lon='6.105296' />
+  <node id='-7300' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7951233' lon='6.106491' />
+  <node id='-7298' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.795294' lon='6.1070641' />
+  <node id='-7296' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7952452' lon='6.107369' />
+  <node id='-7294' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7950623' lon='6.1075519' />
+  <node id='-7292' timestamp='2008-05-24T21:01:39Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7945746' lon='6.107747' />
+  <node id='-7290' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7939283' lon='6.1079665' />
+  <node id='-7288' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7937088' lon='6.1080762' />
+  <node id='-7286' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7935015' lon='6.1083689' />
+  <node id='-7284' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7931235' lon='6.109259' />
+  <node id='-7282' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7929405' lon='6.1100273' />
+  <node id='-7280' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7929893' lon='6.1109175' />
+  <node id='-7278' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7929649' lon='6.1114296' />
+  <node id='-7276' action='modify' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7928674' lon='6.1116125'>
+    <tag k='environnement' v='foret' />
+  </node>
+  <node id='-7274' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7926479' lon='6.1116613' />
+  <node id='-7272' timestamp='2008-05-24T21:01:40Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7922943' lon='6.1115637' />
+  <node id='-7270' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7918675' lon='6.1112223' />
+  <node id='-7268' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7911358' lon='6.1110394' />
+  <node id='-7266' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7905871' lon='6.1107833' />
+  <node id='-7264' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7901847' lon='6.1107102' />
+  <node id='-7262' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7898554' lon='6.1106248' />
+  <node id='-7260' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7894774' lon='6.1103199' />
+  <node id='-7258' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7891848' lon='6.1100882' />
+  <node id='-7256' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7890384' lon='6.1101004' />
+  <node id='-7254' timestamp='2008-05-24T21:01:41Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7888555' lon='6.1102834' />
+  <node id='-7252' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7887458' lon='6.1104297' />
+  <node id='-7250' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7885629' lon='6.1105516' />
+  <node id='-7248' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7881361' lon='6.1106004' />
+  <node id='-7246' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7876849' lon='6.1105516' />
+  <node id='-7244' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7874044' lon='6.1104419' />
+  <node id='-7242' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7867337' lon='6.1104297' />
+  <node id='-7240' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7864167' lon='6.1105394' />
+  <node id='-7238' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7861118' lon='6.1106736' />
+  <node id='-7236' timestamp='2008-05-24T21:01:42Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.785685' lon='6.1107223' />
+  <node id='-7234' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7854412' lon='6.1108077' />
+  <node id='-7232' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.785368' lon='6.1110028' />
+  <node id='-7230' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.785429' lon='6.1112101' />
+  <node id='-7228' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.785807' lon='6.1116735' />
+  <node id='-7226' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7858923' lon='6.1119661' />
+  <node id='-7224' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7857826' lon='6.1126002' />
+  <node id='-7222' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7858314' lon='6.1136733' />
+  <node id='-7220' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7857826' lon='6.1143196' />
+  <node id='-7218' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7857216' lon='6.1145635' />
+  <node id='-7216' timestamp='2008-05-24T21:01:43Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7855753' lon='6.1146001' />
+  <node id='-7214' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7853192' lon='6.1144903' />
+  <node id='-7212' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7850997' lon='6.1145025' />
+  <node id='-7210' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7849656' lon='6.1144903' />
+  <node id='-7208' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7847583' lon='6.114344' />
+  <node id='-7206' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7845754' lon='6.1141245' />
+  <node id='-7204' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7843193' lon='6.1141001' />
+  <node id='-7202' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7840998' lon='6.1141733' />
+  <node id='-7200' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7838681' lon='6.1141367' />
+  <node id='-7198' timestamp='2008-05-24T21:01:44Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7836364' lon='6.1139172' />
+  <node id='-7196' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7833194' lon='6.1137831' />
+  <node id='-7194' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7828316' lon='6.1137709' />
+  <node id='-7192' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7825755' lon='6.1137465' />
+  <node id='-7190' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7820634' lon='6.1138684' />
+  <node id='-7188' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7817707' lon='6.1138684' />
+  <node id='-7186' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7816732' lon='6.1136977' />
+  <node id='-7184' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7814415' lon='6.1128197' />
+  <node id='-7182' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7813195' lon='6.1126002' />
+  <node id='-7180' timestamp='2008-05-24T21:01:45Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.781161' lon='6.1125149' />
+  <node id='-7178' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7809781' lon='6.1126124' />
+  <node id='-7176' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.780844' lon='6.1129661' />
+  <node id='-7174' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7807586' lon='6.1134538' />
+  <node id='-7172' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7806245' lon='6.113527' />
+  <node id='-7170' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.780344' lon='6.1134294' />
+  <node id='-7168' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7798928' lon='6.1131368' />
+  <node id='-7166' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7796733' lon='6.1128685' />
+  <node id='-7164' timestamp='2008-05-24T21:01:46Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7795148' lon='6.111954' />
+  <node id='-7162' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.779527' lon='6.1112711' />
+  <node id='-7160' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7796489' lon='6.1110394' />
+  <node id='-7158' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7797587' lon='6.110698' />
+  <node id='-7156' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7796489' lon='6.1104297' />
+  <node id='-7154' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7793441' lon='6.1102468' />
+  <node id='-7152' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7789539' lon='6.1102102' />
+  <node id='-7150' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7784661' lon='6.1104053' />
+  <node id='-7148' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.777832' lon='6.1109784' />
+  <node id='-7146' timestamp='2008-05-24T21:01:47Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7772345' lon='6.1115394' />
+  <node id='-7144' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7771004' lon='6.1116857' />
+  <node id='-7142' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7768443' lon='6.1117345' />
+  <node id='-7140' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7765272' lon='6.1116125' />
+  <node id='-7138' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7758566' lon='6.1112467' />
+  <node id='-7136' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7751615' lon='6.1110882' />
+  <node id='-7134' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7732226' lon='6.1107711' />
+  <node id='-7132' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7705643' lon='6.1104419' />
+  <node id='-7130' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7698936' lon='6.110198' />
+  <node id='-7128' timestamp='2008-05-24T21:01:48Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7694912' lon='6.1098078' />
+  <node id='-7126' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7689303' lon='6.1095395' />
+  <node id='-7124' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7681742' lon='6.109381' />
+  <node id='-7122' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7678328' lon='6.1092103' />
+  <node id='-7120' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7676011' lon='6.1089298' />
+  <node id='-7118' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.767528' lon='6.108442' />
+  <node id='-7116' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7674426' lon='6.1080518' />
+  <node id='-7114' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7672963' lon='6.1078201' />
+  <node id='-7112' timestamp='2008-05-24T21:01:49Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7670524' lon='6.1076982' />
+  <node id='-7110' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7668329' lon='6.1074299' />
+  <node id='-7108' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7667353' lon='6.1070885' />
+  <node id='-7106' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7665158' lon='6.1067958' />
+  <node id='-7104' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.766211' lon='6.1067349' />
+  <node id='-7102' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7657354' lon='6.1067227' />
+  <node id='-7100' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7655159' lon='6.1066495' />
+  <node id='-7098' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7652964' lon='6.1064666' />
+  <node id='-7096' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7650403' lon='6.1064422' />
+  <node id='-7094' timestamp='2008-05-24T21:01:50Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7647355' lon='6.1064666' />
+  <node id='-7092' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7644184' lon='6.1065519' />
+  <node id='-7090' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7641136' lon='6.1065763' />
+  <node id='-7088' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7636746' lon='6.1064788' />
+  <node id='-7086' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7632478' lon='6.1063812' />
+  <node id='-7084' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7629551' lon='6.106113' />
+  <node id='-7082' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.76276' lon='6.1057349' />
+  <node id='-7080' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7626625' lon='6.1053569' />
+  <node id='-7078' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7624064' lon='6.1050155' />
+  <node id='-7076' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7620162' lon='6.1048935' />
+  <node id='-7074' timestamp='2008-05-24T21:01:51Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7617357' lon='6.1049545' />
+  <node id='-7072' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7614675' lon='6.104857' />
+  <node id='-7070' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7612845' lon='6.1044302' />
+  <node id='-7068' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7610285' lon='6.1038936' />
+  <node id='-7066' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.760809' lon='6.1037229' />
+  <node id='-7064' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7606748' lon='6.1038205' />
+  <node id='-7062' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.760748' lon='6.1042716' />
+  <node id='-7060' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7616991' lon='6.1060276' />
+  <node id='-7058' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7625649' lon='6.1075763' />
+  <node id='-7056' timestamp='2008-05-24T21:01:52Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7627113' lon='6.1079177' />
+  <node id='-7054' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7629186' lon='6.1080396' />
+  <node id='-7052' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7634429' lon='6.1080396' />
+  <node id='-7050' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7639795' lon='6.1082347' />
+  <node id='-7048' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7643087' lon='6.1087103' />
+  <node id='-7046' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7650282' lon='6.1097712' />
+  <node id='-7044' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7656866' lon='6.1106004' />
+  <node id='-7042' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7666134' lon='6.1112223' />
+  <node id='-7040' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7677718' lon='6.1122222' />
+  <node id='-7038' timestamp='2008-05-24T21:01:53Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7696131' lon='6.1138562' />
+  <node id='-7036' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7705887' lon='6.1144903' />
+  <node id='-7034' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7712959' lon='6.1148684' />
+  <node id='-7032' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7716618' lon='6.1149415' />
+  <node id='-7030' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7720764' lon='6.1152098' />
+  <node id='-7028' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7729909' lon='6.1158805' />
+  <node id='-7026' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7737592' lon='6.1163804' />
+  <node id='-7024' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7739665' lon='6.1164658' />
+  <node id='-7022' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7740152' lon='6.1166243' />
+  <node id='-7020' timestamp='2008-05-24T21:01:54Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7738689' lon='6.1166731' />
+  <node id='-7018' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7736128' lon='6.1165511' />
+  <node id='-7016' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7731616' lon='6.1162707' />
+  <node id='-7014' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7729665' lon='6.1161365' />
+  <node id='-7012' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7725763' lon='6.116039' />
+  <node id='-7010' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7721495' lon='6.1158927' />
+  <node id='-7008' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7717593' lon='6.1156488' />
+  <node id='-7006' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7714179' lon='6.1155634' />
+  <node id='-7004' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7705521' lon='6.1153073' />
+  <node id='-7002' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7695888' lon='6.1150269' />
+  <node id='-7000' timestamp='2008-05-24T21:01:55Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7680767' lon='6.1143074' />
+  <node id='-6998' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7663817' lon='6.1136002' />
+  <node id='-6996' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7649794' lon='6.1131124' />
+  <node id='-6994' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7638087' lon='6.112649' />
+  <node id='-6992' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7627357' lon='6.1124539' />
+  <node id='-6990' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7613333' lon='6.1119905' />
+  <node id='-6988' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7610041' lon='6.111832' />
+  <node id='-6986' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7608334' lon='6.111832' />
+  <node id='-6984' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7607968' lon='6.1120149' />
+  <node id='-6982' timestamp='2008-05-24T21:01:56Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7609797' lon='6.1121978' />
+  <node id='-6980' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7615772' lon='6.1124173' />
+  <node id='-6978' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7625893' lon='6.113088' />
+  <node id='-6976' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7639185' lon='6.113966' />
+  <node id='-6974' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7646745' lon='6.1146367' />
+  <node id='-6972' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7664549' lon='6.1157951' />
+  <node id='-6970' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7674304' lon='6.1165268' />
+  <node id='-6968' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7685645' lon='6.1176364' />
+  <node id='-6966' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7695278' lon='6.1185998' />
+  <node id='-6964' timestamp='2008-05-24T21:01:57Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.770418' lon='6.1197582' />
+  <node id='-6962' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.771113' lon='6.120502' />
+  <node id='-6960' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7713325' lon='6.1207215' />
+  <node id='-6958' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7714301' lon='6.1208801' />
+  <node id='-6956' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7713691' lon='6.1210508' />
+  <node id='-6954' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7712228' lon='6.120941' />
+  <node id='-6952' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7707838' lon='6.1205142' />
+  <node id='-6950' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7704789' lon='6.1203435' />
+  <node id='-6948' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7701375' lon='6.120246' />
+  <node id='-6946' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7692839' lon='6.1196972' />
+  <node id='-6944' timestamp='2008-05-24T21:01:58Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.768723' lon='6.1192339' />
+  <node id='-6942' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7681742' lon='6.1189656' />
+  <node id='-6940' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7669548' lon='6.118429' />
+  <node id='-6938' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7663085' lon='6.1181364' />
+  <node id='-6936' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7661378' lon='6.1181364' />
+  <node id='-6934' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7660768' lon='6.1182949' />
+  <node id='-6932' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7661744' lon='6.1184778' />
+  <node id='-6930' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7667597' lon='6.1190875' />
+  <node id='-6928' timestamp='2008-05-24T21:01:59Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7672109' lon='6.1196728' />
+  <node id='-6926' action='modify' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7675645' lon='6.1205874'>
+    <tag k='environnement' v='village' />
+  </node>
+  <node id='-6924' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7677718' lon='6.1212825' />
+  <node id='-6922' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7678572' lon='6.12188' />
+  <node id='-6920' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7683084' lon='6.1220873' />
+  <node id='-6918' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7688327' lon='6.1224897' />
+  <node id='-6916' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7692107' lon='6.1230384' />
+  <node id='-6914' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.770857' lon='6.1244651' />
+  <node id='-6912' action='modify' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7731982' lon='6.1263918'>
+    <tag k='son' v='crowds/Crowd_EOR_Top1.wav' />
+  </node>
+  <node id='-6910' timestamp='2008-05-24T21:02:00Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7734543' lon='6.1266113' />
+  <node id='-6908' timestamp='2008-05-24T21:02:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7736982' lon='6.1270137' />
+  <node id='-6906' timestamp='2008-05-24T21:02:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7738201' lon='6.1276112' />
+  <node id='-6904' timestamp='2008-05-24T21:02:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7739787' lon='6.1287453' />
+  <node id='-6902' timestamp='2008-05-24T21:02:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7739421' lon='6.1293306' />
+  <node id='-6900' timestamp='2008-05-24T21:02:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7737957' lon='6.1295501' />
+  <node id='-6898' timestamp='2008-05-24T21:02:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7735884' lon='6.1296477' />
+  <node id='-6896' timestamp='2008-05-24T21:02:01Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7723324' lon='6.1298062' />
+  <node id='-6894' timestamp='2008-05-24T21:02:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7721008' lon='6.1299037' />
+  <node id='-6892' timestamp='2008-05-24T21:02:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.771991' lon='6.1301354' />
+  <node id='-6890' timestamp='2008-05-24T21:02:02Z' uid='7900' user='Emmanuel Pacaud' visible='true' version='1' lat='45.7718447' lon='6.1314524' />
+  <node id='-6888' action='modify' timestamp='2009-07-10T19:42:24Z' uid='24200' user='Zedh' visible='true' version='3' lat='45.7718239' lon='6.1316933'>
+    <tag k='polyrallye' v='arrivee' />
+    <tag k='son' v='/crowds/Crowd_EOG_Mid4.wav' />
+  </node>
+  <way id='-8462' timestamp='2010-10-18T11:48:30Z' uid='42918' user='sco' visible='true' version='31'>
+    <nd ref='-8460' />
+    <nd ref='-8458' />
+    <nd ref='-8456' />
+    <nd ref='-8454' />
+    <nd ref='-8452' />
+    <nd ref='-8450' />
+    <nd ref='-8448' />
+    <nd ref='-8446' />
+    <nd ref='-8444' />
+    <nd ref='-8442' />
+    <nd ref='-8440' />
+    <nd ref='-8438' />
+    <nd ref='-8436' />
+    <nd ref='-8434' />
+    <nd ref='-8432' />
+    <nd ref='-8430' />
+    <nd ref='-8428' />
+    <nd ref='-8426' />
+    <nd ref='-8424' />
+    <nd ref='-8422' />
+    <nd ref='-8420' />
+    <nd ref='-8418' />
+    <nd ref='-8416' />
+    <nd ref='-8414' />
+    <nd ref='-8412' />
+    <nd ref='-8410' />
+    <nd ref='-8408' />
+    <nd ref='-8406' />
+    <nd ref='-8404' />
+    <nd ref='-8402' />
+    <nd ref='-8400' />
+    <nd ref='-8398' />
+    <nd ref='-8396' />
+    <nd ref='-8394' />
+    <nd ref='-8392' />
+    <nd ref='-8390' />
+    <nd ref='-8388' />
+    <nd ref='-8386' />
+    <nd ref='-8384' />
+    <nd ref='-8382' />
+    <nd ref='-8380' />
+    <nd ref='-8378' />
+    <nd ref='-8376' />
+    <nd ref='-8374' />
+    <nd ref='-8372' />
+    <nd ref='-8370' />
+    <nd ref='-8368' />
+    <nd ref='-8366' />
+    <nd ref='-8364' />
+    <nd ref='-8362' />
+    <nd ref='-8360' />
+    <nd ref='-8358' />
+    <nd ref='-8356' />
+    <nd ref='-8354' />
+    <nd ref='-8352' />
+    <nd ref='-8350' />
+    <nd ref='-8348' />
+    <nd ref='-8346' />
+    <nd ref='-8344' />
+    <nd ref='-8342' />
+    <nd ref='-8340' />
+    <nd ref='-8338' />
+    <nd ref='-8336' />
+    <nd ref='-8334' />
+    <nd ref='-8332' />
+    <nd ref='-8330' />
+    <nd ref='-8328' />
+    <nd ref='-8326' />
+    <nd ref='-8324' />
+    <nd ref='-8322' />
+    <nd ref='-8320' />
+    <nd ref='-8318' />
+    <nd ref='-8316' />
+    <nd ref='-8314' />
+    <nd ref='-8312' />
+    <nd ref='-8310' />
+    <nd ref='-8308' />
+    <nd ref='-8306' />
+    <nd ref='-8304' />
+    <nd ref='-8302' />
+    <nd ref='-8300' />
+    <nd ref='-8298' />
+    <nd ref='-8296' />
+    <nd ref='-8294' />
+    <nd ref='-8292' />
+    <nd ref='-8290' />
+    <nd ref='-8288' />
+    <nd ref='-8286' />
+    <nd ref='-8284' />
+    <nd ref='-8282' />
+    <nd ref='-8280' />
+    <nd ref='-8278' />
+    <nd ref='-8276' />
+    <nd ref='-8274' />
+    <nd ref='-8272' />
+    <nd ref='-8270' />
+    <nd ref='-8268' />
+    <nd ref='-8266' />
+    <nd ref='-8264' />
+    <nd ref='-8262' />
+    <nd ref='-8260' />
+    <nd ref='-8258' />
+    <nd ref='-8256' />
+    <nd ref='-8254' />
+    <nd ref='-8252' />
+    <nd ref='-8250' />
+    <nd ref='-8248' />
+    <nd ref='-8246' />
+    <nd ref='-8244' />
+    <nd ref='-8242' />
+    <nd ref='-8240' />
+    <nd ref='-8238' />
+    <nd ref='-8236' />
+    <nd ref='-8234' />
+    <nd ref='-8232' />
+    <nd ref='-8230' />
+    <nd ref='-8228' />
+    <nd ref='-8226' />
+    <nd ref='-8224' />
+    <nd ref='-8222' />
+    <nd ref='-8220' />
+    <nd ref='-8218' />
+    <nd ref='-8216' />
+    <nd ref='-8214' />
+    <nd ref='-8212' />
+    <nd ref='-8210' />
+    <nd ref='-8208' />
+    <nd ref='-8206' />
+    <nd ref='-8204' />
+    <nd ref='-8202' />
+    <nd ref='-8200' />
+    <nd ref='-8198' />
+    <nd ref='-8196' />
+    <nd ref='-8194' />
+    <nd ref='-8192' />
+    <nd ref='-8190' />
+    <nd ref='-8188' />
+    <nd ref='-8186' />
+    <nd ref='-8184' />
+    <nd ref='-8182' />
+    <nd ref='-8180' />
+    <nd ref='-8178' />
+    <nd ref='-8176' />
+    <nd ref='-8174' />
+    <nd ref='-8172' />
+    <nd ref='-8170' />
+    <nd ref='-8168' />
+    <nd ref='-8166' />
+    <nd ref='-8164' />
+    <nd ref='-8162' />
+    <nd ref='-8160' />
+    <nd ref='-8158' />
+    <nd ref='-8156' />
+    <nd ref='-8154' />
+    <nd ref='-8152' />
+    <nd ref='-8150' />
+    <nd ref='-8148' />
+    <nd ref='-8146' />
+    <nd ref='-8144' />
+    <nd ref='-8142' />
+    <nd ref='-8140' />
+    <nd ref='-8138' />
+    <nd ref='-8136' />
+    <nd ref='-8134' />
+    <nd ref='-8132' />
+    <nd ref='-8130' />
+    <nd ref='-8128' />
+    <nd ref='-8126' />
+    <nd ref='-8124' />
+    <nd ref='-8122' />
+    <nd ref='-8120' />
+    <nd ref='-8118' />
+    <nd ref='-8116' />
+    <nd ref='-8114' />
+    <nd ref='-8112' />
+    <nd ref='-8110' />
+    <nd ref='-8108' />
+    <nd ref='-8106' />
+    <nd ref='-8104' />
+    <nd ref='-8102' />
+    <nd ref='-8100' />
+    <nd ref='-8098' />
+    <nd ref='-8096' />
+    <nd ref='-8094' />
+    <nd ref='-8092' />
+    <nd ref='-8090' />
+    <nd ref='-8088' />
+    <nd ref='-8086' />
+    <nd ref='-8084' />
+    <nd ref='-8082' />
+    <nd ref='-8080' />
+    <nd ref='-8078' />
+    <nd ref='-8076' />
+    <nd ref='-8074' />
+    <nd ref='-8072' />
+    <nd ref='-8070' />
+    <nd ref='-8068' />
+    <nd ref='-8066' />
+    <nd ref='-8064' />
+    <nd ref='-8062' />
+    <nd ref='-8060' />
+    <nd ref='-8058' />
+    <nd ref='-8056' />
+    <nd ref='-8054' />
+    <nd ref='-8052' />
+    <nd ref='-8050' />
+    <nd ref='-8048' />
+    <nd ref='-8046' />
+    <nd ref='-8044' />
+    <nd ref='-8042' />
+    <nd ref='-8040' />
+    <nd ref='-8038' />
+    <nd ref='-8036' />
+    <nd ref='-8034' />
+    <nd ref='-8032' />
+    <nd ref='-8030' />
+    <nd ref='-8028' />
+    <nd ref='-8026' />
+    <nd ref='-8024' />
+    <nd ref='-8022' />
+    <nd ref='-8020' />
+    <nd ref='-8018' />
+    <nd ref='-8016' />
+    <nd ref='-8014' />
+    <nd ref='-8012' />
+    <nd ref='-8010' />
+    <nd ref='-8008' />
+    <nd ref='-8006' />
+    <nd ref='-8004' />
+    <nd ref='-8002' />
+    <nd ref='-8000' />
+    <nd ref='-7998' />
+    <nd ref='-7996' />
+    <nd ref='-7994' />
+    <nd ref='-7992' />
+    <nd ref='-7990' />
+    <nd ref='-7988' />
+    <nd ref='-7986' />
+    <nd ref='-7984' />
+    <nd ref='-7982' />
+    <nd ref='-7980' />
+    <nd ref='-7978' />
+    <nd ref='-7976' />
+    <nd ref='-7974' />
+    <nd ref='-7972' />
+    <nd ref='-7970' />
+    <nd ref='-7968' />
+    <nd ref='-7966' />
+    <nd ref='-7964' />
+    <nd ref='-7962' />
+    <nd ref='-7960' />
+    <nd ref='-7958' />
+    <nd ref='-7956' />
+    <nd ref='-7954' />
+    <nd ref='-7952' />
+    <nd ref='-7950' />
+    <nd ref='-7948' />
+    <nd ref='-7946' />
+    <nd ref='-7944' />
+    <nd ref='-7942' />
+    <nd ref='-7940' />
+    <nd ref='-7938' />
+    <nd ref='-7936' />
+    <nd ref='-7934' />
+    <nd ref='-7932' />
+    <nd ref='-7930' />
+    <nd ref='-7928' />
+    <nd ref='-7926' />
+    <nd ref='-7924' />
+    <nd ref='-7922' />
+    <nd ref='-7920' />
+    <nd ref='-7918' />
+    <nd ref='-7916' />
+    <nd ref='-7914' />
+    <nd ref='-7912' />
+    <nd ref='-7910' />
+    <nd ref='-7908' />
+    <nd ref='-7906' />
+    <nd ref='-7904' />
+    <nd ref='-7902' />
+    <nd ref='-7900' />
+    <nd ref='-7898' />
+    <nd ref='-7896' />
+    <nd ref='-7894' />
+    <nd ref='-7892' />
+    <nd ref='-7890' />
+    <nd ref='-7888' />
+    <nd ref='-7886' />
+    <nd ref='-7884' />
+    <nd ref='-7882' />
+    <nd ref='-7880' />
+    <nd ref='-7878' />
+    <nd ref='-7876' />
+    <nd ref='-7874' />
+    <nd ref='-7872' />
+    <nd ref='-7870' />
+    <nd ref='-7868' />
+    <nd ref='-7866' />
+    <nd ref='-7864' />
+    <nd ref='-7862' />
+    <nd ref='-7860' />
+    <nd ref='-7858' />
+    <nd ref='-7856' />
+    <nd ref='-7854' />
+    <nd ref='-7852' />
+    <nd ref='-7850' />
+    <nd ref='-7848' />
+    <nd ref='-7846' />
+    <nd ref='-7844' />
+    <nd ref='-7842' />
+    <nd ref='-7840' />
+    <nd ref='-7838' />
+    <nd ref='-7836' />
+    <nd ref='-7834' />
+    <nd ref='-7832' />
+    <nd ref='-7830' />
+    <nd ref='-7828' />
+    <nd ref='-7826' />
+    <nd ref='-7824' />
+    <nd ref='-7822' />
+    <nd ref='-7820' />
+    <nd ref='-7818' />
+    <nd ref='-7816' />
+    <nd ref='-7814' />
+    <nd ref='-7812' />
+    <nd ref='-7810' />
+    <nd ref='-7808' />
+    <nd ref='-7806' />
+    <nd ref='-7804' />
+    <nd ref='-7802' />
+    <nd ref='-7800' />
+    <nd ref='-7798' />
+    <nd ref='-7796' />
+    <nd ref='-7794' />
+    <nd ref='-7792' />
+    <nd ref='-7790' />
+    <nd ref='-7788' />
+    <nd ref='-7786' />
+    <nd ref='-7784' />
+    <nd ref='-7782' />
+    <nd ref='-7780' />
+    <nd ref='-7778' />
+    <nd ref='-7776' />
+    <nd ref='-7774' />
+    <nd ref='-7772' />
+    <nd ref='-7770' />
+    <nd ref='-7768' />
+    <nd ref='-7766' />
+    <nd ref='-7764' />
+    <nd ref='-7762' />
+    <nd ref='-7760' />
+    <nd ref='-7758' />
+    <nd ref='-7756' />
+    <nd ref='-7754' />
+    <nd ref='-7752' />
+    <nd ref='-7750' />
+    <nd ref='-7748' />
+    <nd ref='-7746' />
+    <nd ref='-7744' />
+    <nd ref='-7742' />
+    <nd ref='-7740' />
+    <nd ref='-7738' />
+    <nd ref='-7736' />
+    <nd ref='-7734' />
+    <nd ref='-7732' />
+    <nd ref='-7730' />
+    <nd ref='-7728' />
+    <nd ref='-7726' />
+    <nd ref='-7724' />
+    <nd ref='-7722' />
+    <nd ref='-7720' />
+    <nd ref='-7718' />
+    <nd ref='-7716' />
+    <nd ref='-7714' />
+    <nd ref='-7712' />
+    <nd ref='-7710' />
+    <nd ref='-7708' />
+    <nd ref='-7706' />
+    <nd ref='-7704' />
+    <nd ref='-7702' />
+    <nd ref='-7700' />
+    <nd ref='-7698' />
+    <nd ref='-7696' />
+    <nd ref='-7694' />
+    <nd ref='-7692' />
+    <nd ref='-7690' />
+    <nd ref='-7688' />
+    <nd ref='-7686' />
+    <nd ref='-7684' />
+    <nd ref='-7682' />
+    <nd ref='-7680' />
+    <nd ref='-7678' />
+    <nd ref='-7676' />
+    <nd ref='-7674' />
+    <nd ref='-7672' />
+    <nd ref='-7670' />
+    <nd ref='-7668' />
+    <nd ref='-7666' />
+    <nd ref='-7664' />
+    <nd ref='-7662' />
+    <nd ref='-7660' />
+    <nd ref='-7658' />
+    <nd ref='-7656' />
+    <nd ref='-7654' />
+    <nd ref='-7652' />
+    <nd ref='-7650' />
+    <nd ref='-7648' />
+    <nd ref='-7646' />
+    <nd ref='-7644' />
+    <nd ref='-7642' />
+    <nd ref='-7640' />
+    <nd ref='-7638' />
+    <nd ref='-7636' />
+    <nd ref='-7634' />
+    <nd ref='-7632' />
+    <nd ref='-7630' />
+    <nd ref='-7628' />
+    <nd ref='-7626' />
+    <nd ref='-7624' />
+    <nd ref='-7622' />
+    <nd ref='-7620' />
+    <nd ref='-7618' />
+    <nd ref='-7616' />
+    <nd ref='-7614' />
+    <nd ref='-7612' />
+    <nd ref='-7610' />
+    <nd ref='-7608' />
+    <nd ref='-7606' />
+    <nd ref='-7604' />
+    <nd ref='-7602' />
+    <nd ref='-7600' />
+    <nd ref='-7598' />
+    <nd ref='-7596' />
+    <nd ref='-7594' />
+    <nd ref='-7592' />
+    <nd ref='-7590' />
+    <nd ref='-7588' />
+    <nd ref='-7586' />
+    <nd ref='-7584' />
+    <nd ref='-7582' />
+    <nd ref='-7580' />
+    <nd ref='-7578' />
+    <nd ref='-7576' />
+    <nd ref='-7574' />
+    <nd ref='-7572' />
+    <nd ref='-7570' />
+    <nd ref='-7568' />
+    <nd ref='-7566' />
+    <nd ref='-7564' />
+    <nd ref='-7562' />
+    <nd ref='-7560' />
+    <nd ref='-7558' />
+    <nd ref='-7556' />
+    <nd ref='-7554' />
+    <nd ref='-7552' />
+    <nd ref='-7550' />
+    <nd ref='-7548' />
+    <nd ref='-7546' />
+    <nd ref='-7544' />
+    <nd ref='-7542' />
+    <nd ref='-7540' />
+    <nd ref='-7538' />
+    <nd ref='-7536' />
+    <nd ref='-7534' />
+    <nd ref='-7532' />
+    <nd ref='-7530' />
+    <nd ref='-7528' />
+    <nd ref='-7526' />
+    <nd ref='-7524' />
+    <nd ref='-7522' />
+    <nd ref='-7520' />
+    <nd ref='-7518' />
+    <nd ref='-7516' />
+    <nd ref='-7514' />
+    <nd ref='-7512' />
+    <nd ref='-7510' />
+    <nd ref='-7508' />
+    <nd ref='-7506' />
+    <nd ref='-7504' />
+    <nd ref='-7502' />
+    <nd ref='-7500' />
+    <nd ref='-7498' />
+    <nd ref='-7496' />
+    <nd ref='-7494' />
+    <nd ref='-7492' />
+    <nd ref='-7490' />
+    <nd ref='-7488' />
+    <nd ref='-7486' />
+    <nd ref='-7484' />
+    <nd ref='-7482' />
+    <nd ref='-7480' />
+    <nd ref='-7478' />
+    <nd ref='-7476' />
+    <nd ref='-7474' />
+    <nd ref='-7472' />
+    <nd ref='-7470' />
+    <nd ref='-7468' />
+    <nd ref='-7466' />
+    <nd ref='-7464' />
+    <nd ref='-7462' />
+    <nd ref='-7460' />
+    <nd ref='-7458' />
+    <nd ref='-7456' />
+    <nd ref='-7454' />
+    <nd ref='-7452' />
+    <nd ref='-7450' />
+    <nd ref='-7448' />
+    <nd ref='-7446' />
+    <nd ref='-7444' />
+    <nd ref='-7442' />
+    <nd ref='-7440' />
+    <nd ref='-7438' />
+    <nd ref='-7436' />
+    <nd ref='-7434' />
+    <nd ref='-7432' />
+    <nd ref='-7430' />
+    <nd ref='-7428' />
+    <nd ref='-7426' />
+    <nd ref='-7424' />
+    <nd ref='-7422' />
+    <nd ref='-7420' />
+    <nd ref='-7418' />
+    <nd ref='-7416' />
+    <nd ref='-7414' />
+    <nd ref='-7412' />
+    <nd ref='-7410' />
+    <nd ref='-7408' />
+    <nd ref='-7406' />
+    <nd ref='-7404' />
+    <nd ref='-7402' />
+    <nd ref='-7400' />
+    <nd ref='-7398' />
+    <nd ref='-7396' />
+    <nd ref='-7394' />
+    <nd ref='-7392' />
+    <nd ref='-7390' />
+    <nd ref='-7388' />
+    <nd ref='-7386' />
+    <nd ref='-7384' />
+    <nd ref='-7382' />
+    <nd ref='-7380' />
+    <nd ref='-7378' />
+    <nd ref='-7376' />
+    <nd ref='-7374' />
+    <nd ref='-7372' />
+    <nd ref='-7370' />
+    <nd ref='-7368' />
+    <nd ref='-7366' />
+    <nd ref='-7364' />
+    <nd ref='-7362' />
+    <nd ref='-7360' />
+    <nd ref='-7358' />
+    <nd ref='-7356' />
+    <nd ref='-7354' />
+    <nd ref='-7352' />
+    <nd ref='-7350' />
+    <nd ref='-7348' />
+    <nd ref='-7346' />
+    <nd ref='-7344' />
+    <nd ref='-7342' />
+    <nd ref='-7340' />
+    <nd ref='-7338' />
+    <nd ref='-7336' />
+    <nd ref='-7334' />
+    <nd ref='-7332' />
+    <nd ref='-7330' />
+    <nd ref='-7328' />
+    <nd ref='-7326' />
+    <nd ref='-7324' />
+    <nd ref='-7322' />
+    <nd ref='-7320' />
+    <nd ref='-7318' />
+    <nd ref='-7316' />
+    <nd ref='-7314' />
+    <nd ref='-7312' />
+    <nd ref='-7310' />
+    <nd ref='-7308' />
+    <nd ref='-7306' />
+    <nd ref='-7304' />
+    <nd ref='-7302' />
+    <nd ref='-7300' />
+    <nd ref='-7298' />
+    <nd ref='-7296' />
+    <nd ref='-7294' />
+    <nd ref='-7292' />
+    <nd ref='-7290' />
+    <nd ref='-7288' />
+    <nd ref='-7286' />
+    <nd ref='-7284' />
+    <nd ref='-7282' />
+    <nd ref='-7280' />
+    <nd ref='-7278' />
+    <nd ref='-7276' />
+    <nd ref='-7274' />
+    <nd ref='-7272' />
+    <nd ref='-7270' />
+    <nd ref='-7268' />
+    <nd ref='-7266' />
+    <nd ref='-7264' />
+    <nd ref='-7262' />
+    <nd ref='-7260' />
+    <nd ref='-7258' />
+    <nd ref='-7256' />
+    <nd ref='-7254' />
+    <nd ref='-7252' />
+    <nd ref='-7250' />
+    <nd ref='-7248' />
+    <nd ref='-7246' />
+    <nd ref='-7244' />
+    <nd ref='-7242' />
+    <nd ref='-7240' />
+    <nd ref='-7238' />
+    <nd ref='-7236' />
+    <nd ref='-7234' />
+    <nd ref='-7232' />
+    <nd ref='-7230' />
+    <nd ref='-7228' />
+    <nd ref='-7226' />
+    <nd ref='-7224' />
+    <nd ref='-7222' />
+    <nd ref='-7220' />
+    <nd ref='-7218' />
+    <nd ref='-7216' />
+    <nd ref='-7214' />
+    <nd ref='-7212' />
+    <nd ref='-7210' />
+    <nd ref='-7208' />
+    <nd ref='-7206' />
+    <nd ref='-7204' />
+    <nd ref='-7202' />
+    <nd ref='-7200' />
+    <nd ref='-7198' />
+    <nd ref='-7196' />
+    <nd ref='-7194' />
+    <nd ref='-7192' />
+    <nd ref='-7190' />
+    <nd ref='-7188' />
+    <nd ref='-7186' />
+    <nd ref='-7184' />
+    <nd ref='-7182' />
+    <nd ref='-7180' />
+    <nd ref='-7178' />
+    <nd ref='-7176' />
+    <nd ref='-7174' />
+    <nd ref='-7172' />
+    <nd ref='-7170' />
+    <nd ref='-7168' />
+    <nd ref='-7166' />
+    <nd ref='-7164' />
+    <nd ref='-7162' />
+    <nd ref='-7160' />
+    <nd ref='-7158' />
+    <nd ref='-7156' />
+    <nd ref='-7154' />
+    <nd ref='-7152' />
+    <nd ref='-7150' />
+    <nd ref='-7148' />
+    <nd ref='-7146' />
+    <nd ref='-7144' />
+    <nd ref='-7142' />
+    <nd ref='-7140' />
+    <nd ref='-7138' />
+    <nd ref='-7136' />
+    <nd ref='-7134' />
+    <nd ref='-7132' />
+    <nd ref='-7130' />
+    <nd ref='-7128' />
+    <nd ref='-7126' />
+    <nd ref='-7124' />
+    <nd ref='-7122' />
+    <nd ref='-7120' />
+    <nd ref='-7118' />
+    <nd ref='-7116' />
+    <nd ref='-7114' />
+    <nd ref='-7112' />
+    <nd ref='-7110' />
+    <nd ref='-7108' />
+    <nd ref='-7106' />
+    <nd ref='-7104' />
+    <nd ref='-7102' />
+    <nd ref='-7100' />
+    <nd ref='-7098' />
+    <nd ref='-7096' />
+    <nd ref='-7094' />
+    <nd ref='-7092' />
+    <nd ref='-7090' />
+    <nd ref='-7088' />
+    <nd ref='-7086' />
+    <nd ref='-7084' />
+    <nd ref='-7082' />
+    <nd ref='-7080' />
+    <nd ref='-7078' />
+    <nd ref='-7076' />
+    <nd ref='-7074' />
+    <nd ref='-7072' />
+    <nd ref='-7070' />
+    <nd ref='-7068' />
+    <nd ref='-7066' />
+    <nd ref='-7064' />
+    <nd ref='-7062' />
+    <nd ref='-7060' />
+    <nd ref='-7058' />
+    <nd ref='-7056' />
+    <nd ref='-7054' />
+    <nd ref='-7052' />
+    <nd ref='-7050' />
+    <nd ref='-7048' />
+    <nd ref='-7046' />
+    <nd ref='-7044' />
+    <nd ref='-7042' />
+    <nd ref='-7040' />
+    <nd ref='-7038' />
+    <nd ref='-7036' />
+    <nd ref='-7034' />
+    <nd ref='-7032' />
+    <nd ref='-7030' />
+    <nd ref='-7028' />
+    <nd ref='-7026' />
+    <nd ref='-7024' />
+    <nd ref='-7022' />
+    <nd ref='-7020' />
+    <nd ref='-7018' />
+    <nd ref='-7016' />
+    <nd ref='-7014' />
+    <nd ref='-7012' />
+    <nd ref='-7010' />
+    <nd ref='-7008' />
+    <nd ref='-7006' />
+    <nd ref='-7004' />
+    <nd ref='-7002' />
+    <nd ref='-7000' />
+    <nd ref='-6998' />
+    <nd ref='-6996' />
+    <nd ref='-6994' />
+    <nd ref='-6992' />
+    <nd ref='-6990' />
+    <nd ref='-6988' />
+    <nd ref='-6986' />
+    <nd ref='-6984' />
+    <nd ref='-6982' />
+    <nd ref='-6980' />
+    <nd ref='-6978' />
+    <nd ref='-6976' />
+    <nd ref='-6974' />
+    <nd ref='-6972' />
+    <nd ref='-6970' />
+    <nd ref='-6968' />
+    <nd ref='-6966' />
+    <nd ref='-6964' />
+    <nd ref='-6962' />
+    <nd ref='-6960' />
+    <nd ref='-6958' />
+    <nd ref='-6956' />
+    <nd ref='-6954' />
+    <nd ref='-6952' />
+    <nd ref='-6950' />
+    <nd ref='-6948' />
+    <nd ref='-6946' />
+    <nd ref='-6944' />
+    <nd ref='-6942' />
+    <nd ref='-6940' />
+    <nd ref='-6938' />
+    <nd ref='-6936' />
+    <nd ref='-6934' />
+    <nd ref='-6932' />
+    <nd ref='-6930' />
+    <nd ref='-6928' />
+    <nd ref='-6926' />
+    <nd ref='-6924' />
+    <nd ref='-6922' />
+    <nd ref='-6920' />
+    <nd ref='-6918' />
+    <nd ref='-6916' />
+    <nd ref='-6914' />
+    <nd ref='-6912' />
+    <nd ref='-6910' />
+    <nd ref='-6908' />
+    <nd ref='-6906' />
+    <nd ref='-6904' />
+    <nd ref='-6902' />
+    <nd ref='-6900' />
+    <nd ref='-6898' />
+    <nd ref='-6896' />
+    <nd ref='-6894' />
+    <nd ref='-6892' />
+    <nd ref='-6890' />
+    <nd ref='-6888' />
+    <tag k='highway' v='tertiary' />
+    <tag k='name' v='Route du Semnoz' />
+    <tag k='source' v='cadastre-dgi-fr source : Direction Générale des Impôts - Cadastre ; mise à jour : 2008' />
+  </way>
+</osm>

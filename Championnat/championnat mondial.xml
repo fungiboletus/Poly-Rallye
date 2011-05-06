@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Championnat>
+  <nom>championnat mondial</nom>
+  <joueur>Marco</joueur>
+  <etape>
+    <numero>1</numero>
+    <nom>Rallye de Monaco</nom>
+    <joueur>
+      <nom>Marco</nom>
+      <argent>20000</argent>
+      <garage />
+    </joueur>
+    <circuit>Calenzana</circuit>
+    <classement>
+      <position>1</position>
+      <nom>Dialo</nom>
+      <voiture>Volkswagen W12 Coupe</voiture>
+      <duree>3042</duree>
+    </classement>
+    <classement>
+      <position>2</position>
+      <nom>Zicko</nom>
+      <voiture>Jaguar XJ-13 serie</voiture>
+      <duree>3057</duree>
+      <ecart>15</ecart>
+    </classement>
+    <classement>
+      <position>3</position>
+      <nom>Paolista</nom>
+      <voiture>Lamborghini Reventon serie</voiture>
+      <duree>3154</duree>
+      <ecart>112</ecart>
+    </classement>
+    <classement>
+      <position>4</position>
+      <nom>Salem</nom>
+      <voiture>Audi RS6</voiture>
+      <duree>3167</duree>
+      <ecart>125</ecart>
+    </classement>
+    <classement>
+      <position>5</position>
+      <nom>Munoz</nom>
+      <voiture>Lamborghini Reventon Roadster</voiture>
+      <duree>3187</duree>
+      <ecart>145</ecart>
+    </classement>
+    <classement>
+      <position>6</position>
+      <nom>Chang</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>3218</duree>
+      <ecart>176</ecart>
+    </classement>
+    <classement>
+      <position>7</position>
+      <nom>Marco</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>3219</duree>
+      <ecart>177</ecart>
+    </classement>
+    <classement>
+      <position>8</position>
+      <nom>Dupont</nom>
+      <voiture>Ferrari 288 GTO</voiture>
+      <duree>3359</duree>
+      <ecart>317</ecart>
+    </classement>
+    <classement>
+      <position>9</position>
+      <nom>Trapatoni</nom>
+      <voiture>Lamborghini Murcielago serie</voiture>
+      <duree>3381</duree>
+      <ecart>339</ecart>
+    </classement>
+    <classement>
+      <position>10</position>
+      <nom>Esposa</nom>
+      <voiture>Peugeot 206 WRC</voiture>
+      <duree>3393</duree>
+      <ecart>351</ecart>
+    </classement>
+  </etape>
+  <etape>
+    <numero>2</numero>
+    <nom>Rallye de Tunisie</nom>
+    <joueur>
+      <nom>Marco</nom>
+      <argent>20000</argent>
+      <garage />
+    </joueur>
+    <circuit>CoteReserveCalvi</circuit>
+    <classement>
+      <position>1</position>
+      <nom>Trapatoni</nom>
+      <voiture>Citroën C4 WRC</voiture>
+      <duree>3113</duree>
+    </classement>
+    <classement>
+      <position>2</position>
+      <nom>Salem</nom>
+      <voiture>Audi Quattro Sport Rallye</voiture>
+      <duree>3120</duree>
+      <ecart>7</ecart>
+    </classement>
+    <classement>
+      <position>3</position>
+      <nom>Esposa</nom>
+      <voiture>Porsche Carrera GT</voiture>
+      <duree>3204</duree>
+      <ecart>91</ecart>
+    </classement>
+    <classement>
+      <position>4</position>
+      <nom>Marco</nom>
+      <voiture>Ferrari Enzo serie</voiture>
+      <duree>3219</duree>
+      <ecart>106</ecart>
+    </classement>
+    <classement>
+      <position>5</position>
+      <nom>Chang</nom>
+      <voiture>Ferrari Enzo serie</voiture>
+      <duree>3279</duree>
+      <ecart>166</ecart>
+    </classement>
+    <classement>
+      <position>6</position>
+      <nom>Dialo</nom>
+      <voiture>Maserati MC12 serie</voiture>
+      <duree>3296</duree>
+      <ecart>183</ecart>
+    </classement>
+    <classement>
+      <position>7</position>
+      <nom>Dupont</nom>
+      <voiture>Volkswagen W12 Coupe</voiture>
+      <duree>3351</duree>
+      <ecart>238</ecart>
+    </classement>
+    <classement>
+      <position>8</position>
+      <nom>Zicko</nom>
+      <voiture>Volkswagen W12 Roadster</voiture>
+      <duree>3467</duree>
+      <ecart>354</ecart>
+    </classement>
+    <classement>
+      <position>9</position>
+      <nom>Munoz</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>3509</duree>
+      <ecart>396</ecart>
+    </classement>
+    <classement>
+      <position>10</position>
+      <nom>Paolista</nom>
+      <voiture>Audi RS6 Avant</voiture>
+      <duree>3607</duree>
+      <ecart>494</ecart>
+    </classement>
+  </etape>
+  <voitureEnJeu>Ferrari Enzo serie</voitureEnJeu>
+  <argentEnJeu>30000</argentEnJeu>
+</Championnat>
+

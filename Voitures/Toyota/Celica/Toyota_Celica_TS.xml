@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>Celica</nom>
+		<version>TS</version>
+		<periode annee="2000" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1796</cylindree>
+		<puissance regime="7800">189</puissance>
+		<couple_max regime="6800">180</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1119</poids>
+		<largeur>1735</largeur>
+		<longueur>4335</longueur>
+		<empattement>2600</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=77000</source>
+	</sources>
+</voiture>

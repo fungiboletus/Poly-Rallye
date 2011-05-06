@@ -53,8 +53,12 @@ public class Conduite {
      * @param masse
      */
     public void acceleration(TypeTerrain t) {
+<<<<<<< HEAD
         acceleration = ((v.moteur.getCouple()/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
         System.out.println("acceleration "+acceleration);
+=======
+       // acceleration = ((v.moteur.getCouple()/ v.transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
+>>>>>>> b4f11db3091d0d51b9293313b65793cca1199e2d
     }
 
     /**
@@ -119,6 +123,7 @@ public class Conduite {
         return (vitesseLineaire<res)?true:false;
     }
     
+<<<<<<< HEAD
 //    public static void main(String []args){
 //       Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
 //       System.out.println("voiture "+v.toString());
@@ -141,4 +146,30 @@ public class Conduite {
 //      cc.distanceVitesseConstante(3600);
 ////      cc.distanceAcceleration(3600);
 //    }
+=======
+    public static void main(String []args){
+       Voiture v = StockVoitures.getVoitureParNom("Peugeot 205 Turbo 16 Évolution 2");
+       System.out.println("voiture "+v.toString());
+       v.getTransmission().passerVitesse();
+       v.getTransmission().passerVitesse();
+       v.getTransmission().passerVitesse();
+       Conduite c = new Conduite(v);
+       //c.acceleration(TypeTerrain.ASPHALT);
+       c.distanceAcceleration(240);
+       c.vitesseAvancement();
+       System.out.println("distance "+c.distanceParcourue);
+       
+      Voiture vv = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
+      System.out.println("voiture "+vv.toString());
+      vv.getTransmission().passerVitesse();
+      vv.getTransmission().passerVitesse();
+      vv.getTransmission().passerVitesse();
+      Conduite cc = new Conduite(vv);
+      //cc.acceleration(TypeTerrain.ASPHALT);
+      c.vitesseAvancement();
+      cc.distanceAcceleration(240);
+      System.out.println("distance "+cc.distanceParcourue);
+       
+    }
+>>>>>>> b4f11db3091d0d51b9293313b65793cca1199e2d
 }

@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>4500</nom>
+		<version>GT</version>
+		<periode annee="1989" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="8" nb_soupapes="40" disposition="V" compression="normal"/>
+		<cylindree>4500</cylindree>
+		<puissance regime="6600">295</puissance>
+		<couple_max regime="4800">390</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1450</poids>
+		<largeur>1830</largeur>
+		<longueur>4365</longueur>
+		<empattement>2490</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=16082</source>
+	</sources>
+</voiture>

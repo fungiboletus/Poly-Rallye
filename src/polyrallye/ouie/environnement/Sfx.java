@@ -23,7 +23,16 @@ public class Sfx extends Thread {
 	protected double realDistance;
 
 	protected boolean isAlive;
+	protected boolean isFixe;
+	protected boolean isPaused;
+	protected boolean isNull;
 
+	public Sfx() {
+		isNull=true;
+		isFixe=false;
+		isPaused=true;
+	}
+	
 	public Sfx(String rep, int nombre) {
 		this(rep, nombre, 10);
 	}
@@ -41,9 +50,18 @@ public class Sfx extends Thread {
 		positionZ = 0;
 		distance = 0;
 		realDistance = 0;
+		isFixe = false;
+		isPaused = false;
+		isNull=false;
+	}
+
+	public Sfx(String rep, int nombre, long intervalle, boolean tt) {
+		this(rep, nombre, intervalle);
+		isFixe = true;
 	}
 
 	public void run() {
+		if (!isNull) {
 
 		Random random = new Random();
 		int position = 0;
@@ -64,15 +82,21 @@ public class Sfx extends Thread {
 			// Distance d'eloignement ?
 			temp.setReferenceDistance(200);
 
+			if (isFixe) {
+				temp.setPosition(0, 0, 0);
+				temp.setGain(0.7f);
+			}
+
 			// On joue le son
-			temp.play();
+			if (!isPaused)
+				temp.play();
 			realDistance = distance;
 			// On attend que le son se termine
 			while (temp.isPlaying()) {
-				if (distance != realDistance) {
+				if (!isFixe && distance != realDistance) {
 					positionY -= distance - realDistance;
-					realDistance=distance;
-				temp.setPosition(positionX, positionY, positionZ);
+					realDistance = distance;
+					temp.setPosition(positionX, positionY, positionZ);
 				}
 				Multithreading.dormir(20);
 			}
@@ -80,11 +104,15 @@ public class Sfx extends Thread {
 			temp.delete();
 			Multithreading.dormir(intervalle * 1000);
 		}
-
+		}
 	}
 
 	public void setVitesse(float t) {
 		vitesse = t;
+		if (isFixe && t<18)
+			isPaused=true;
+		else if(isFixe)
+			isPaused = false;
 	}
 
 	public void setDistance(double d) {
@@ -92,6 +120,12 @@ public class Sfx extends Thread {
 	}
 
 	public void tuer() {
+		if (!isNull)
+		temp.delete();
 		isAlive = false;
+	}
+	
+	public void pause(boolean b) {
+		isPaused = b;
 	}
 }

@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>Twingo</nom>
+		<version>1</version>
+		<periode annee="1993" />
+	</presentation>
+	<economie>
+		<rarete>1</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>1239</cylindree>
+		<puissance regime="5300">55</puissance>
+		<couple_max regime="2800">90</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>790</poids>
+		<largeur>1630</largeur>
+		<longueur>3433</longueur>
+		<empattement>2347</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=5918</source>
+	</sources>
+</voiture>

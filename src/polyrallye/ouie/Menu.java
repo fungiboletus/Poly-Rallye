@@ -3,6 +3,8 @@ package polyrallye.ouie;
 import java.util.ArrayList;
 import java.util.List;
 
+import polyrallye.controlleur.EcouteurEntrees;
+import polyrallye.controlleur.GestionEntreesMenu;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 
@@ -121,9 +123,9 @@ public abstract class Menu implements EcouteurEntrees {
 			remplis = true;
 		}
 
-		if (libelles.size() > 0) {
-			GestionEntrees.getInstance().setEcouteur(this);
-		}
+		//if (libelles.size() > 0) {
+			GestionEntreesMenu.getInstance().setEcouteur(this);
+		//}
 		changerMusique();
 		ennoncer();
 	}
@@ -187,7 +189,7 @@ public abstract class Menu implements EcouteurEntrees {
 			}
 		}
 
-		Liseuse.lire("Action invalide.");
+		Liseuse.lire("Action invalide");
 	}
 
 	@Override
@@ -221,12 +223,12 @@ public abstract class Menu implements EcouteurEntrees {
 
 	@Override
 	public void gauche() {
-		annuler();
+		//annuler();
 	}
 
 	@Override
 	public void droite() {
-		selectionner();
+		//selectionner();
 	}
 
 	public void aide() {

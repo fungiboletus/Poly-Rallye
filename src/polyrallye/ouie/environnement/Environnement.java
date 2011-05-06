@@ -18,6 +18,7 @@ public class Environnement {
 	protected String type;
 	protected String temps;
 	protected Meteo meteo;
+	protected Crash crash;
 
 	protected int randAmb;
 	protected int randSfx;
@@ -32,9 +33,10 @@ public class Environnement {
 		this.temps = temps;
 		this.meteo = new Meteo(meteo, type);
 
-		//Par defaut
+		// Par defaut
 		intervalle = 10;
-		
+		String extSfx = null;
+
 		// On va charger dans le fichier les config
 		String rep = "Sons/" + type + "/";
 		BufferedReader mani = null;
@@ -50,6 +52,8 @@ public class Environnement {
 					} else if (line.contains("sfx")) {
 						this.randSfx = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
+					} else if (line.contains("sfxout")) {
+						extSfx = line.substring(line.indexOf(" ") + 1);
 					} else if (line.contains("random")) {
 						this.intervalle = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
@@ -74,7 +78,7 @@ public class Environnement {
 		// On prend un son au pif parmi ceux disponibles
 		Random random = new Random();
 		String temp = rep + temps + "_" + (random.nextInt(randAmb) + 1)
-		+ ".wav";
+				+ ".wav";
 		System.out.println(temp);
 		ambiance = new Sound(temp);
 		ambiance.setLoop(true);
@@ -82,24 +86,37 @@ public class Environnement {
 		ambiance.setPosition(0, 0, 0);
 
 		// Création du sfx
-		if (temps.equals(temps) && new File(rep + "sfx_"+temps).exists()) {
+		// Si le sfx est extérieur au dossier
+		if (extSfx != null && !extSfx.equals("null"))
+			rep = "Sons/" + extSfx + "/";
+		// Procédure normale
+		if (!extSfx.equals("null") && temps.equals(temps)
+				&& new File(rep + "sfx_" + temps).exists()) {
 			randSfx = new File(rep + "sfx_nuit").listFiles().length;
 			rep += "sfx_nuit/";
 		} else
 			rep += "sfx/";
+		
+		//Pas de sfx pour certains niveau
+		if (extSfx.equals("null"))
+			sfx = new Sfx();
+		else
+			sfx = new Sfx(rep, randSfx, intervalle);
 
-		sfx = new Sfx(rep, randSfx,intervalle);
+		// Création Crash
+		crash = new Crash(type);
 
 	}
-	
+
 	public void change(String env) {
 		sfx.tuer();
-		
+
 		type = env;
-		
-		//intervalle par defaut (secondes ?)
+
+		// intervalle par defaut (secondes ?)
 		intervalle = 10;
-		
+		String extSfx = null;
+
 		// On va charger dans le fichier les config
 		String rep = "Sons/" + type + "/";
 		BufferedReader mani = null;
@@ -115,6 +132,8 @@ public class Environnement {
 					} else if (line.contains("sfx")) {
 						this.randSfx = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
+					} else if (line.contains("sfxout")) {
+						extSfx = line.substring(line.indexOf(" ") + 1);
 					} else if (line.contains("random")) {
 						this.intervalle = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
@@ -140,7 +159,7 @@ public class Environnement {
 		Sound sonTemp = null;
 		Random random = new Random();
 		String temp = rep + temps + "_" + (random.nextInt(randAmb) + 1)
-		+ ".wav";
+				+ ".wav";
 		System.out.println(temp);
 		sonTemp = new Sound(temp);
 		sonTemp.setLoop(true);
@@ -148,24 +167,32 @@ public class Environnement {
 		sonTemp.setPosition(0, 0, 0);
 
 		// Création du sfx
-		if (temps.equals(temps) && new File(rep + "sfx_"+temps).exists()) {
+		// Si le sfx est extérieur au dossier
+		if (extSfx != null && !extSfx.equals("null"))
+			rep = "Sons/" + extSfx + "/";
+		if (!extSfx.equals("null") && temps.equals(temps) && new File(rep + "sfx_" + temps).exists()) {
 			randSfx = new File(rep + "sfx_nuit").listFiles().length;
 			rep += "sfx_nuit/";
 		} else
 			rep += "sfx/";
 
-		sfx = new Sfx(rep, randSfx);
-		
-		//On fade
+		if (extSfx.equals("null"))
+			sfx = new Sfx();
+		else
+			sfx = new Sfx(rep, randSfx, intervalle);
+
+		// On fade
 		sonTemp.fadeIn(100, 0.4f);
 		ambiance.fadeOut(100);
-		while(ambiance.isPlaying()) {
+		while (ambiance.isPlaying()) {
 			System.out.println("Ambiance is playing !");
 		}
 		ambiance.delete();
 		ambiance = sonTemp;
-		
-		
+
+		// Creation crash
+		crash.changeEnvironnement(type);
+
 	}
 
 	public void play() {
@@ -177,23 +204,32 @@ public class Environnement {
 	public void fade() {
 		ambiance.setVelocity(0, 0, 100f);
 	}
-	
+
 	public void setDistance(double d) {
 		sfx.setDistance(d);
 	}
 
-	public void stop() {
-		ambiance.stop();
+	public void delete() {
+		ambiance.delete();
 		sfx.tuer();
-		meteo.stop();
+		meteo.delete();
+		crash.delete();
 	}
 
 	public void setVitesse(float p) {
 		sfx.setVitesse(p);
 	}
-	
+
+	public String getType() {
+		return type;
+	}
+
+	public void playCrash() {
+		crash.play();
+	}
+
 	public static void main(String[] args) {
-		final Environnement test = new Environnement("plaine", "nuit", "pluie");
+		final Environnement test = new Environnement("mer", "jour", "pluie");
 		test.setVitesse(300f);
 		test.play();
 		Scanner sc = new Scanner(System.in);
@@ -202,7 +238,7 @@ public class Environnement {
 
 		}
 		Timer t = new Timer();
-		
+
 		TimerTask tt = new TimerTask() {
 
 			@Override
@@ -210,9 +246,8 @@ public class Environnement {
 				// System.out.println(SonMoteur.accelere);
 				System.out.println("acc");
 				double dis = test.sfx.distance;
-				dis+=10;
+				dis += 10;
 				test.sfx.setDistance(dis);
-				
 
 			}
 		};
@@ -220,7 +255,5 @@ public class Environnement {
 		t.schedule(tt, 0, 10);
 
 	}
-	
-	
 
 }

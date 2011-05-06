@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Toyota</constructeur>
+		<nom>Supra</nom>
+		<version>Twin Turbo</version>
+		<periode annee="1993" />
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="24" disposition="ligne" compression="turbo"/>
+		<cylindree>2997</cylindree>
+		<puissance regime="5600">325</puissance>
+		<couple_max regime="4800">441</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1642</poids>
+		<largeur>1810</largeur>
+		<longueur>4520</longueur>
+		<empattement>2550</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=112530</source>
+	</sources>
+</voiture>

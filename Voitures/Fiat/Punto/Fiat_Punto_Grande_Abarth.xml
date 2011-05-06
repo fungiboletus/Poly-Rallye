@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Fiat</constructeur>
+		<nom>Punto</nom>
+		<version>Grande Abarth</version>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="turbo"/>
+		<cylindree>1368</cylindree>
+		<puissance regime="5500">148</puissance>
+		<couple_max regime="3000">230</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1050</poids><!-- non fiable -->
+		<largeur>2500</largeur><!-- non fiable -->
+		<longueur>4030</longueur>
+		<empattement>2510</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=154055</source>
+	</sources>
+</voiture>

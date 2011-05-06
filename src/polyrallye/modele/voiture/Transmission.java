@@ -40,7 +40,7 @@ public class Transmission {
 	 * Vitesse maximale de la voiture lorsque le moteur fournit sa puissance
 	 * maximale.
 	 */
-	protected double vitessePuissanceMaximale;
+	protected double vitessePuissanceMaximale = 0;
 
 	/**
 	 * La transmission a un lien étroit avec le moteur.
@@ -53,7 +53,7 @@ public class Transmission {
 	 * Rendement de transmission élevé, car on part du principe qu'il s'agit
 	 * (pour la plupart des voitures) de pièces de compétition
 	 */
-	protected static double RENDEMENT = 0.90;
+	protected static double RENDEMENT = 0.95;
 
 	/**
 	 * Toutes les voitures ont la même boîte de vitesses, donc pourquoi pas les
@@ -88,9 +88,6 @@ public class Transmission {
 		this.moteur = moteur;
 
 		vitesseCourante = 0;
-
-		// 200 Km/h de base, c'est pas mal non ?
-		vitessePuissanceMaximale = 200.0;
 	}
 
 	/**
@@ -121,10 +118,21 @@ public class Transmission {
 		if (vitesse != null) {
 			vitessePuissanceMaximale = GestionXML.getInt(vitesse.getText());
 		}
-		
-		calculerRapports();
 	}
 
+	// Définition d'un score
+	public void etablirVitesseMaximale(double scoreVoiture) {
+		// Interpolation linéaire, comme d'habitude
+		
+		final double xa = 120;
+		final double xb = 900;
+		
+		final double ya = 185;
+		final double yb = 380;
+		
+		vitessePuissanceMaximale = ya + (scoreVoiture - xa)*((yb-ya)/(xb-xa));
+	}
+	
 	/**
 	 * Calcule des spécifités de chaque rapport de la boite de vitesse, à partir
 	 * des informations contenues dans les données membres.
@@ -136,32 +144,36 @@ public class Transmission {
 		coefsRapports[0] = 0.0;
 
 		// Conversion de la vitesse en km/h en m/s
-		double vitesseMax = vitessePuissanceMaximale * 5 / 18;
+		final double vitesseMax = vitessePuissanceMaximale * 5 / 18;
 
 		// Périmètre de roue :-) (en m)
-		double perimetreRoue = 2 * RAYON_ROUE * Math.PI;
+		final double perimetreRoue = 2 * RAYON_ROUE * Math.PI;
 
 		// Combien la roue doit faire de tours par seconde pour attendre la
 		// vitesse maximale ? (en hertzs)
-		double nbToursMax = vitesseMax / perimetreRoue;
+		final double nbToursMax = vitesseMax / perimetreRoue;
 
 		// Pareil pour le minimum
-		double nbToursMin = VITESSE_MAX_PREMIERE / perimetreRoue;
+		final double nbToursMin = VITESSE_MAX_PREMIERE / perimetreRoue;
 
 		// Régime moteur en hertzs.
-		double regimeMoteur = moteur.getRegimePuissanceMax() / 60;
+		final double regimeMoteur = moteur.getRegimePuissanceMax() / 60;
 
 		// Calcul super compliqué des rapports
-		double rapportMax = regimeMoteur / nbToursMax;
-		double rapportMin = regimeMoteur / nbToursMin;
+		final double rapportMin = regimeMoteur / nbToursMin;
+		final double rapportMax = regimeMoteur / nbToursMax;
 
-		// Pour l'instant, on sépare chaque rapport de manière linéaire
-		// TODO: Penser à faire un truc non linéaire
+		// La différence de rapport suit une loi exponentielle
+		// Le calcul se fait donc avec une propriété exponentielle, et bien évidemment, avec une interpolation linéaire
+		
+		// Coefficient déterminé à la main à partir de véritables boites de vitesses
+		final double coeff = -0.4;
+		
+		final double expRapportMin = Math.exp(coeff);
+		final double expRapportMax = Math.exp(nbVitesses*coeff);
 
-		double intervale = (rapportMin - rapportMax) / (nbVitesses - 1);
-
-		for (int i = 0; i < nbVitesses; ++i) {
-			coefsRapports[i + 1] = rapportMin - intervale * i;
+		for (int i = 1; i <= nbVitesses; ++i) {
+			coefsRapports[i] = rapportMin + (Math.exp(coeff*i) - expRapportMin)*((rapportMax-rapportMin)/(expRapportMax-expRapportMin));
 		}
 	}
 
@@ -170,10 +182,12 @@ public class Transmission {
 	 * 
 	 * Pas de protection anti-noob là. Il veut passer la vitesse, il la passe.
 	 */
-	public void passerVitesse() {
+	public boolean passerVitesse() {
 		if (vitesseCourante < nbVitesses) {
 			++vitesseCourante;
+			return true;
 		}
+		return false;
 	}
 
 	/**
@@ -181,10 +195,12 @@ public class Transmission {
 	 * 
 	 * Pas de protectection anti-noob non plus.
 	 */
-	public void retrograder() {
+	public boolean retrograder() {
 		if (vitesseCourante > 0) {
 			--vitesseCourante;
+			return true;
 		}
+		return false;
 	}
 
 	/**
@@ -205,24 +221,36 @@ public class Transmission {
 	 * @return Couple à la roue
 	 */
 	public double getCoupleParRoue(PositionRoue pr) {
+		
+		// Gestion d'une fausse vitesse en prise directe (plus rendement plus élevé)
+		double rendement = (vitesseCourante+1) == nbVitesses/2 ? RENDEMENT : RENDEMENT*RENDEMENT;
+		
 		switch (type) {
 		case PROPULSION:
 			switch (pr) {
 			case ARRIERE_DROITE:
 			case ARRIERE_GAUCHE:
-				return moteur.getCouple() * getCoefCourant() * RENDEMENT * 0.5;
+				return moteur.getCouple() * getCoefCourant() * rendement * 0.5;
 			}
 			break;
 		case TRACTION:
 			switch (pr) {
 			case AVANT_DROITE:
 			case AVANT_GAUCHE:
+<<<<<<< HEAD
 				return moteur.getCouple() * RENDEMENT * 0.5;
+=======
+				return moteur.getCouple() * getCoefCourant() * rendement * 0.5;
+>>>>>>> b4f11db3091d0d51b9293313b65793cca1199e2d
 			}
 			break;
 		case QUATTRO:
 			// Une transmission 4x4 a un rendement plus faible.
+<<<<<<< HEAD
 			return moteur.getCouple()* getCoefCourant() * RENDEMENT
+=======
+			return moteur.getCouple() * getCoefCourant() * rendement
+>>>>>>> b4f11db3091d0d51b9293313b65793cca1199e2d
 					* RENDEMENT * 0.25;
 		}
 
@@ -279,6 +307,14 @@ public class Transmission {
 		sb.append(" vitesses");
 		
 		Liseuse.lire(sb.toString());
+	}
+
+	public int getRapportCourant() {
+		return vitesseCourante;
+	}
+
+	public double getVitessePuissanceMaximale() {
+		return vitessePuissanceMaximale;
 	}
 
 }

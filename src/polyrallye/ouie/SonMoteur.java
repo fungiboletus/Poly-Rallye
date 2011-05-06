@@ -3,12 +3,11 @@ package polyrallye.ouie;
 import java.io.File;
 import java.util.Map.Entry;
 import java.util.NavigableMap;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.TreeMap;
 
+import polyrallye.modele.voiture.Voiture;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
-import t2s.util.Random;
 
 /**
  * @author Antoine Pultier
@@ -17,83 +16,83 @@ import t2s.util.Random;
  */
 public class SonMoteur {
 
-	protected static NavigableMap<Integer, Sound> sons;
-
-	public static boolean accelere = false;
-
-	public static float regime;
-
-	/**
-	 * @param args
-	 * @throws InterruptedException
-	 */
-	public static void main(String[] args) throws InterruptedException {
-		lancer();
-	}
-
-	public static void lancer() {
-
-		// Sound ralenti = new Sound("Sons/moteur/ralenti.wav");
-
+	protected NavigableMap<Integer, Sound> sons;
+	
+	protected Voiture voiture;
+	
+	protected Sound passageRapport;
+	
+	public SonMoteur(Voiture voiture) {
+		this.voiture = voiture;
 		sons = new TreeMap<Integer, Sound>();
-
-		File dossier = new File("Sons/moteur");
-
+		
+		String variante = "r5";
+		String constructeur = voiture.getConstructeur();
+		
+		if (constructeur.equals("Audi") || constructeur.equals("Subaru")) {
+			variante = "cobra";
+		}
+		else if (constructeur.equals("Bugatti")) {
+			variante = "bugatti";
+		}
+		else if (constructeur.equals("Peugeot")) {
+			variante = "207";
+		}
+		else if (constructeur.equals("Fiat")) {
+			variante = "saab";
+		}
+		else if (constructeur.equals("Ferrari")) {
+			variante = "enzo";
+		}
+		
+		System.out.println(variante);
+		//Liseuse.lire(variante);
+		
+		File dossier = new File("Sons/moteurs/"+variante);
+		
 		for (File son : dossier.listFiles()) {
 			String nom = son.getName();
 			Integer nb = Integer.parseInt(nom.substring(0, nom.indexOf(".")));
-
+			
 			Sound s = new Sound(son.getAbsolutePath());
 			s.setLoop(true);
 			s.setOffset(2.0f);
-			s.play();
-			s.pause(true);
-			s.setGain(0.0f);
 			sons.put(nb, s);
 		}
-		// régime de 3800
-
-		regime = 2000;
-
-		Timer t = new Timer();
-
-		TimerTask tt = new TimerTask() {
-
-			@Override
-			public void run() {
-				// System.out.println(SonMoteur.accelere);
-				float regime = SonMoteur.regime;
-				if (SonMoteur.accelere && regime < 9500) {
-					regime += 20;// Random.delta(10, 15);
-				} else if (regime > 2010) {
-					regime -= 20;// Random.delta(5,15);
-				}
-
-				SonMoteur.setRegime(regime);
-			}
-		};
-
-		t.schedule(tt, 0, 30);
-
-		/*
-		 * while(true) { //System.out.println("R: "+ regime + " - "+accelere);
-		 * 
-		 * for (int i = 0; i < 1000; ++i); //Thread.sleep(0, 1); } /*while
-		 * (regime<9400) { setRegime(regime); Thread.sleep(0,1); regime += 1; }
-		 * while(regime > 3000) { setRegime(regime); Thread.sleep(1); regime -=
-		 * 10; } setRegime(2000); while(regime > 1000) { setRegime(regime);
-		 * Thread.sleep(1); regime -= 20; }
-		 */
-
+		
+		passageRapport = new Sound("Sons/voiture/rapport.wav");
+		passageRapport.setGain(0.8f);
 	}
 
-	public static void setRegime(float regime) {
+	public void play() {
+		for (Entry<Integer, Sound> tuple : sons.entrySet()) {
+			Sound s = tuple.getValue();
+			s.play();
+			s.pause(true);
+		}
+	}
+	
+	public void stop() {
+		for (Entry<Integer, Sound> tuple : sons.entrySet()) {
+			Sound s = tuple.getValue();
+			s.stop();
+			s.delete();
+		}
+	}
+
+	public void setRegime(float regime, boolean acceleration) {
 		// System.out.println(regime);
 
 		Integer intRegime = (int) regime;
 
 		// TODO Recoder ça proprement
-		float gain = (0.5f + 0.5f * (regime / 10000.0f));
+		float gain = (0.85f + 0.3f * (regime / 3000.0f));
+		
+		if (!acceleration) {
+			gain *= 0.7f;
+		}
+		
+		gain *= 0.50;
 
 		// Cas particulier plutôt rare, le régime est déjà dans les sons
 		Sound sonParfait = sons.get(intRegime);
@@ -145,8 +144,10 @@ public class SonMoteur {
 				}
 			}
 		}
-
-		SonMoteur.regime = regime;
+	}
+	
+	public void passageRapport() {
+		passageRapport.play();
 	}
 
 }

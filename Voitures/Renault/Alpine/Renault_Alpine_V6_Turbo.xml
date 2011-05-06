@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>Alpine</nom>
+		<version>V6 Turbo</version>
+		<periode annee="1986" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="12" disposition="V" compression="turbo"/>
+		<cylindree>2458</cylindree>
+		<puissance regime="5750">200</puissance>
+		<couple_max regime="2500">285</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>propulsion</type>
+	</transmission>
+	<chassis>
+		<poids>1180</poids>
+		<largeur>1754</largeur>
+		<longueur>4330</longueur>
+		<empattement>2339</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=26180</source>
+	</sources>
+</voiture>

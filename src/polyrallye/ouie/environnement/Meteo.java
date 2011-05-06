@@ -110,9 +110,10 @@ public class Meteo {
 
 	}
 
-	public void stop() {
-		meteo.stop();
-
+	public void delete() {
+		if (meteo != null) {
+			meteo.delete();			
+		}
 	}
 
 }

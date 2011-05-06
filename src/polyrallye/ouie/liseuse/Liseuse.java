@@ -24,8 +24,8 @@ import t2s.traitement.Pretraitement;
 import t2s.util.ConfigFile;
 
 import polyrallye.controlleur.Main;
-import polyrallye.ouie.CallbackArretSon;
 import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.utilitaires.CallbackArretSon;
 import polyrallye.utilitaires.Multithreading;
 
 /**
@@ -166,9 +166,7 @@ public abstract class Liseuse {
 			return false;
 		}
 
-		System.out.println(texte);
-
-		Main.log(texte);
+		Main.logLiseuse(texte);
 
 		Parole p = paroles.get(texte.trim().toLowerCase());
 		if (p != null) {
@@ -177,7 +175,7 @@ public abstract class Liseuse {
 			long time = Sys.getTime();
 			sonParoles.setOffset(p.getDebut());
 			sonParoles.play();
-			
+
 			long t = (long) ((p.getFin() - p.getDebut()) * 1000) - delai;
 
 			while (!interrompre) {
@@ -190,113 +188,130 @@ public abstract class Liseuse {
 			sonParoles.stop();
 		} else {
 
+			// VocalizeSIVOX gère mal les virgules
+			for (String te : texte.split(",")) {
 
-			// VocalizeSIVOX a un peu de mal avec les abréviations, il faut
-			// rajouter
-			// des espaces
+				// La première chose à faire est d'aller voir le cache
+				Sound son = Sound.depuisCache(te);
 
-			// Nouveau texte à lire
-			StringBuffer sb = new StringBuffer();
+				if (son == null) {
 
-			// On en profite pour remplacer les points par « points » pour
-			// éviter
-			// que la synthèse vocale s'arrête au milieu d'une cylindrée
-			Matcher regexMatcher = regexAbreviations.matcher(texte.replace(".",
-					" point "));
+					// VocalizeSIVOX a un peu de mal avec les abréviations, il
+					// faut
+					// rajouter
+					// des espaces
 
-			// Tant qu'il y a des abréviations
-			while (regexMatcher.find()) {
+					// Nouveau texte à lire
+					StringBuffer sb = new StringBuffer();
 
-				// Construction de la nouvelle abréviation
-				StringBuilder remplacement = new StringBuilder();
-				remplacement.append(' ');
+					// On en profite pour remplacer les points par « points »
+					// pour
+					// éviter
+					// que la synthèse vocale s'arrête au milieu d'une cylindrée
+					Matcher regexMatcher = regexAbreviations.matcher(te
+							.replace(".", " point "));
 
-				for (char c : regexMatcher.toMatchResult().group()
-						.toCharArray()) {
-					remplacement.append(remplacerLettre(c));
-					remplacement.append(' ');
-				}
+					// Tant qu'il y a des abréviations
+					while (regexMatcher.find()) {
 
-				// Remplacement de l'abréviation par la nouvelle
-				regexMatcher.appendReplacement(sb, remplacement.toString());
-			}
+						// Construction de la nouvelle abréviation
+						StringBuilder remplacement = new StringBuilder();
+						remplacement.append(' ');
 
-			// La suite
-			regexMatcher.appendTail(sb);
+						for (char c : regexMatcher.toMatchResult().group()
+								.toCharArray()) {
+							remplacement.append(remplacerLettre(c));
+							remplacement.append(' ');
+						}
 
-			// Utilisation de VocalyzeSIVOX
-			String nouveautexte = sb.toString();
-			
-			if (!texte.equals(nouveautexte)) {
-				Main.log(nouveautexte);
-			}
-			
-			Pretraitement traitement = new Pretraitement(nouveautexte);
-			Phrase phrase = null;
-			try {
-				phrase = traitement.nouvellePhrase();
-
-				if (phrase != null) {
-					Arbre arbre = new Arbre("");
-
-					ListePhonemes listePhonemes = new ListePhonemes(
-							arbre.trouverPhoneme(phrase.getPhrase()),
-							phrase.getProsodie());
-
-					listePhonemes.ecrirePhonemes("Paroles/VocalyzeSIVOX.pho");
-
-					SynthetiseurMbrola synthe = new SynthetiseurMbrola(
-							voixVocalyzeSIVOX, "Paroles/", "VocalyzeSIVOX");
-
-					synthe.muet();
-				} else {
-					Main.log("Traitement de la phrase raté…");
-				}
-
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-
-			// De temps en temps, il n'y a aucun fichier à lire
-			File son = new File("Paroles/VocalyzeSIVOX.wav");
-			if (son.exists()) {
-
-				// Récupération du son, qui a pour fichier son, et pour
-				// identifiant dans le cache texte
-				Sound s = new Sound(son, texte);
-
-				s.playAndWaitWithCallback(new CallbackArretSon() {
-
-					@Override
-					public boolean continuerLecture() {
-						return !interrompre;
+						// Remplacement de l'abréviation par la nouvelle
+						regexMatcher.appendReplacement(sb,
+								remplacement.toString());
 					}
-				});
-				s.delete();
 
-				// Suppression du fichier automatique, pour détecter les erreurs
-				// quand il y en a
-				son.delete();
+					// La suite
+					regexMatcher.appendTail(sb);
 
-			} else {
+					// Utilisation de VocalyzeSIVOX
+					String nouveautexte = sb.toString();
 
-				// TODO La phrase d'en dessous doit obligatoirement
-				// être enregistrée :D
-				Liseuse.lire("Erreur de synthèse vocale");
+					/*if (!texte.equals(nouveautexte)) {
+						Main.logInfo(nouveautexte);
+					}*/
+
+					Pretraitement traitement = new Pretraitement(nouveautexte);
+					Phrase phrase = null;
+					try {
+						phrase = traitement.nouvellePhrase();
+
+						if (phrase != null) {
+							Arbre arbre = new Arbre("");
+
+							ListePhonemes listePhonemes = new ListePhonemes(
+									arbre.trouverPhoneme(phrase.getPhrase()),
+									phrase.getProsodie());
+
+							listePhonemes
+									.ecrirePhonemes("Paroles/VocalyzeSIVOX.pho");
+
+							SynthetiseurMbrola synthe = new SynthetiseurMbrola(
+									voixVocalyzeSIVOX, "Paroles/",
+									"VocalyzeSIVOX");
+
+							synthe.muet();
+						} else {
+							Main.logImportant("Traitement de la phrase raté…");
+						}
+
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+
+					// De temps en temps, il n'y a aucun fichier à lire
+					File fson = new File("Paroles/VocalyzeSIVOX.wav");
+					if (fson.exists()) {
+
+						// Récupération du son, qui a pour fichier son, et pour
+						// identifiant dans le cache texte
+						son = new Sound(fson, te);
+
+						// Suppression du fichier automatique, pour détecter les
+						// erreurs
+						// quand il y en a
+						fson.delete();
+					}
+
+				}
+				if (son != null) {
+					son.playAndWaitWithCallback(new CallbackArretSon() {
+
+						@Override
+						public boolean continuerLecture() {
+							return !interrompre;
+						}
+					});
+
+					son.delete();
+
+				} else {
+
+					// TODO La phrase d'en dessous doit obligatoirement
+					// être enregistrée :D
+					Liseuse.lire("Erreur de synthèse vocale");
+				}
+				// Si on n'a pas le son, on fait un fichier texte qui contient
+				// le
+				// texte a énoncer
+
+				try {
+					PrintWriter pw = new PrintWriter(new FileWriter(
+							"Paroles/a_enregistrer.txt", true));
+					pw.println(texte);
+					pw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
-
-			// Si on n'a pas le son, on fait un fichier texte qui contient le
-			// texte a énoncer
-
-			try {
-				PrintWriter pw = new PrintWriter(new FileWriter(
-						"Paroles/a_enregistrer.txt", true));
-				pw.println(texte);
-				pw.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
 		}
 		return true;
 	}
@@ -307,17 +322,19 @@ public abstract class Liseuse {
 	}
 
 	public static void lire(int valeur) {
-		fileParoles.add(""+valeur);
+		fileParoles.add("" + valeur);
 	}
-	
+
 	/**
-	 * VocalyseSIVOX est très sympathique, mais il a du mal avec les lettres. Cette fonction permet de lui rendre une prononciation correcte.
+	 * VocalyseSIVOX est très sympathique, mais il a du mal avec les lettres.
+	 * Cette fonction permet de lui rendre une prononciation correcte.
 	 * 
-	 * @param c Lettre à énnoncer
+	 * @param c
+	 *            Lettre à énnoncer
 	 * @return Prononciation de la lettre
 	 */
 	public static String remplacerLettre(char c) {
-		String upper = (""+c).toUpperCase();
+		String upper = ("" + c).toUpperCase();
 		switch (upper.charAt(0)) {
 		case 'X':
 			return "iksse";

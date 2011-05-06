@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Alfa Romeo</constructeur>
+		<nom>Spider</nom>
+		<version>2.0 V6 Turbo</version>
+		<periode annee="1995" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="6" nb_soupapes="12" disposition="V" compression="turbo"/>
+		<cylindree>1996</cylindree>
+		<puissance regime="6000">200</puissance>
+		<couple_max regime="2400">280</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1380</poids>
+		<largeur>1780</largeur>
+		<longueur>4285</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=40557</source>
+	</sources>
+</voiture>

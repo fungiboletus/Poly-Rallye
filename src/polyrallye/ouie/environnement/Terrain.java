@@ -23,26 +23,25 @@ public class Terrain {
 			System.out.println(rep);
 			son = new Sound(rep+terrain+"_"+(random.nextInt(3)+1)+".wav");
 			son.setLoop(true);
-			son.setGain(0.6f);
+			son.setGain(1.0f);
 			
 			tournant = new Sound(rep+"derapage.wav");
 			tournant.setLoop(true);
-			tournant.setGain(0.6f);
 			
-			
-			sfx = new Sfx("Sons/terrain/sfx/",12,20);
+			sfx = new Sfx("Sons/terrain/sfx/",12,20,true);
 		
 	}
 	
 	public void play() {
 		son.play();
-		//sfx.run();
+		tournant.play();
+		tournant.pause(true);
+		sfx.run();
 	}
 	
-	public void setVitesse(float vitesse) {
-		float pitch = vitesse / 50;
+	public void setVitesse(double vitesse) {
+		float pitch = (float)vitesse / 50;
 		son.setPitch(pitch);
-
 	}
 	
 	public void change(String t) {
@@ -50,20 +49,30 @@ public class Terrain {
 	}
 	
 	public void playTourne() {
-		tournant.play();
+		tournant.pause(false);
+		tournant.setGain(1.2f);
 	}
 	
 	public void stopTourne() {
-		tournant.fadeOut(1000);
+		
+		float gain = tournant.getGain();
+		gain -= 0.05f;
+		
+		if (gain < 0.0) {
+			tournant.pause(true);
+		}
+		else {
+			tournant.setGain(gain);
+		}
 	}
 	
-	public void stop() {
-		sfx.stop();
-		son.stop();
+	public void delete() {
+		sfx.tuer();
+		son.delete();
 	}
 	
 	public static void main(String[] args) {
-		Terrain t = new Terrain("herbe");
+		Terrain t = new Terrain("terre");
 		t.play();
 		Scanner sc = new Scanner(System.in);
 		boolean b = true;

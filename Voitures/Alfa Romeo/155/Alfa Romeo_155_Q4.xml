@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Alfa Romeo</constructeur>
+		<nom>155</nom>
+		<version>Q4</version>
+		<periode annee="1992" />
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="turbo"/>
+		<cylindree>1995</cylindree>
+		<puissance regime="6000">187</puissance>
+		<couple_max regime="2500">297</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1390</poids>
+		<largeur>1700</largeur>
+		<longueur>4443</longueur>
+		<empattement>2540</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=40755</source>
+	</sources>
+</voiture>

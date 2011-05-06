@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Renault</constructeur>
+		<nom>19</nom>
+		<version>SPI</version>
+		<periode annee="1992" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>1794</cylindree>
+		<puissance regime="5750">93</puissance>
+		<couple_max regime="2750">142</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1096</poids>
+		<largeur>1696</largeur>
+		<longueur>4162</longueur>
+		<empattement>2544</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=26004</source>
+	</sources>
+</voiture>

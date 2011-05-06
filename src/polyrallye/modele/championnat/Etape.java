@@ -1,17 +1,17 @@
 package polyrallye.modele.championnat;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 import org.jdom.Element;
 
-import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.personnes.Adversaire;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.personnes.Personne;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -24,9 +24,9 @@ import polyrallye.utilitaires.GestionXML;
 public class Etape {
 
     protected int numeroEtape;
+    protected Joueur joueur = Joueur.session;
     protected String nom;
-    protected Joueur joueur;
-    protected Circuit circuit;
+    protected String circuit;
     protected List<Personne> participants;
     protected List<Rang> classement;
     protected List<Voiture> voitures;
@@ -35,7 +35,8 @@ public class Etape {
      * Constructeur
      * 
      */
-    public Etape(int numero, String uneEpreuve, List<Personne> participants) {
+    public Etape(int numero, String uneEpreuve, List<Personne> participants,
+            String cir) {
 
         if (uneEpreuve == null || numero <= 0)
             throw new NullPointerException(
@@ -54,48 +55,98 @@ public class Etape {
 
         voitures = new ArrayList<Voiture>();
 
+        circuit = cir;
     }
 
     public Etape(Element noeud) {
 
-        joueur = new Joueur(noeud.getChildText("joueur"));
+        joueur = new Joueur(Joueur.session.getNom());
 
-        circuit = new Circuit(noeud.getChild("circuit"));
+        circuit = noeud.getChildText("circuit");
         nom = noeud.getChildText("nom");
 
-        for (Object e : noeud.getChildren("participants")) {
-            Personne balise = new Personne((Element) e);
-            participants.add(balise);
+        voitures = new ArrayList<Voiture>();
+        classement = new ArrayList<Rang>();
+        for (Object e : noeud.getChildren("classement")) {
+            Rang balise = new Rang((Element) e);
+            if (balise.getEcart() == null)
+                balise.setEcart(new Duree(0));
+            balise.setSpeciale(nom);
+            voitures.add(StockVoitures.getVoitureParNom(balise.getCar()));
+            classement.add(balise);
         }
-
-        for (Object e : noeud.getChildren("voitures")) {
-            Voiture balise = new Voiture((Element) e);
-            voitures.add(balise);
+        
+        participants = new ArrayList<Personne>();
+        for (int i = 0; i < classement.size(); ++i) {
+            participants.add(classement.get(i).getPersonne());
         }
 
         numeroEtape = GestionXML.getInt(noeud.getChildText("numero"));
-
+     
     }
-    
-    public Element toXML() {
-        
-        Element noeud = new Element("Etape");
 
-        noeud.addContent(new Element("numero").setText(""+ numeroEtape));
+    public int getNumeroEtape() {
+        return numeroEtape;
+    }
+
+    public void setNumeroEtape(int numeroEtape) {
+        this.numeroEtape = numeroEtape;
+    }
+
+    public Joueur getJoueur() {
+        return joueur;
+    }
+
+    public void setJoueur(Joueur joueur) {
+        this.joueur = joueur;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getCircuit() {
+        return circuit;
+    }
+
+    public void setCircuit(String circuit) {
+        this.circuit = circuit;
+    }
+
+    public List<Voiture> getVoitures() {
+        return voitures;
+    }
+
+    public void setVoitures(List<Voiture> voitures) {
+        this.voitures = voitures;
+    }
+
+    public Element toXML() {
+
+        Element noeud = new Element("etape");
+
+        noeud.addContent(new Element("numero").setText("" + numeroEtape));
         noeud.addContent(new Element("nom").setText(nom));
-        
+
         noeud.addContent(joueur.toXML());
-        
-        noeud.addContent(new Element("circuit").setText(circuit.getNom()));
-        
-        for(int i=0;i<participants.size()-1;++i)
-            noeud.addContent(new Element("participant").setText(participants.get(i).getNom()));
-        
-        for(int i=0;i<classement.size()-1;++i)
+
+        noeud.addContent(new Element("circuit").setText(circuit));
+
+        // for (int i = 0; i < participants.size() - 1; ++i)
+        // noeud.addContent(new Element("participant").setText(participants
+        // .get(i).getNom()));
+
+        setecart();
+
+        noeud.addContent(classement.get(0).toXML());
+
+        for (int i = 1; i < classement.size(); ++i) {
             noeud.addContent(classement.get(i).toXML());
-            
-        for(int i=0;i<voitures.size()-1;++i)
-            noeud.addContent(voitures.get(i).getNomComplet());
+        }
 
         return noeud;
     }
@@ -132,22 +183,27 @@ public class Etape {
      * 
      * @return
      */
-    public Duree ramdomduree(Personne pers, Duree dureeIdeale, Joueur J,
-            Voiture voitJoueur) {
-        Adversaire adv = (Adversaire) pers;
-        double scorevoitadv = adv.getVoiture().getScore();
+    public Duree ramdomduree(Adversaire adv, Voiture voiture,
+            Duree dureeIdeale, Joueur J, Voiture voitJoueur) {
+
+        double scorevoitadv = voiture.getScore();
+
         double scorevoitjoueur = voitJoueur.getScore();
 
         double rapport = scorevoitjoueur / scorevoitadv;
 
-        int sec = dureeIdeale.ConvertToSeconds();
+        int dix = dureeIdeale.ConvertToDixiemes();
 
-        int approx = (int) (sec * rapport);
-        Duree approxDuree = new Duree(approx);
-        int fin = t2s.util.Random.delta(-(5 * approxDuree.getMinutes() + 1),
-                5 * approxDuree.getMinutes() + 1);
+        int approx = (int) (dix * rapport);
 
-        return new Duree(fin);
+        // approx += t2s.util.Random.unsignedDelta((20 * ((int)(1.5*rapport))),
+        // 20 * ((int)(1.5*rapport)));
+
+        approx += (int) (Math.random() * (100 - (-100))) - 100;
+
+        System.out.println(adv.getNom() + " ---- " + voiture);
+
+        return new Duree(approx);
 
     }
 
@@ -156,43 +212,64 @@ public class Etape {
      * 
      * @return
      */
-    @SuppressWarnings("unchecked")
     public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {
 
-        participants.add(joueur);
-        participants.add(new Adversaire("Jean"));
+        participants = new ArrayList<Personne>();
+        participants.add(Joueur.session);
+        participants.add(new Adversaire("Chang"));
         participants.add(new Adversaire("Dupont"));
         participants.add(new Adversaire("Esposa"));
         participants.add(new Adversaire("Munoz"));
         participants.add(new Adversaire("Trapatoni"));
         participants.add(new Adversaire("Paolista"));
-        participants.add(new Adversaire("Barbosi"));
+        participants.add(new Adversaire("Salem"));
         participants.add(new Adversaire("Zicko"));
-        participants.add(new Adversaire("Papisto"));
+        participants.add(new Adversaire("Dialo"));
 
-        classement.add(new Rang(nom, participants.get(0), dureeJoueurEtape));
+        voitures.add(voitJoueur);
+        voitures.addAll(StockVoitures.getVoituresEquivalentes(voitJoueur, 9));
+
+        classement.add(new Rang(nom, participants.get(0), dureeJoueurEtape,
+                voitures.get(0).getNomComplet()));
         for (int i = 1; i < 10; ++i) {
-            classement
-                    .add(new Rang(nom, participants.get(i), ramdomduree(
-                            participants.get(i), dureeJoueurEtape, joueur,
-                            voitJoueur)));
+            Adversaire adv = (Adversaire) participants.get(i);
+            adv.setVoiture(voitures.get(i - 1));
+            classement.add(new Rang(nom, participants.get(i), ramdomduree(adv,
+                    voitures.get(i - 1), dureeJoueurEtape, Joueur.session,
+                    voitJoueur), (voitures.get(i - 1)).getNomComplet()));
         }
-
-        voitures.add(StockVoitures
-                .getVoitureParNom("Bugatti Veyron 16.4 Super Sport"));
-        voitures.add(StockVoitures
-                .getVoitureParNom("Audi Quattro Sport S1 Pikes Peak"));
-        voitures.add(StockVoitures.getVoitureParNom("Audi Quattro Sport S1"));
-        voitures.add(StockVoitures.getVoitureParNom("Citroën DS3 WRC"));
-        voitures.add(StockVoitures.getVoitureParNom("Peugeot 307 WRC"));
-        voitures.add(StockVoitures.getVoitureParNom("Peugeot 306 S16"));
-        voitures.add(StockVoitures.getVoitureParNom("Peugeot 206 WRC"));
-        voitures.add(StockVoitures.getVoitureParNom("Renault 5 Turbo"));
-        voitures.add(StockVoitures
-                .getVoitureParNom("Subaru Impreza WRC Génération 3 Sti"));
 
         // réorganisation, trie de la liste classement
         Collections.sort(classement);
+
+        // mise a jour des écarts
+        setecart();
+
+        for (int i = 0; i < 10; ++i) {
+            classement.get(i).setClassement(i + 1);
+            System.out.println(classement.get(i));
+            if (i > 1
+                    && classement.get(i).getDuree().equals(
+                            classement.get(i - 1).getDuree()))
+                classement.get(i).getDuree().setDixiemes(
+                        classement.get(i).getDuree().getDixiemes() - 5);
+        }
+
+    }
+
+    /**
+     * 
+     * 
+     * @return
+     */
+    public void setecart() {
+        int premier = classement.get(0).getDuree().ConvertToDixiemes();
+
+        for (int i = 1; i < 10; ++i) {
+            classement.get(i).setEcart(
+                    new Duree(classement.get(i).getDuree().ConvertToDixiemes()
+                            - premier));
+        }
 
     }
 
@@ -220,5 +297,38 @@ public class Etape {
      */
     public List<Personne> getParticipants() {
         return participants;
+    }
+
+    public static Etape chargerEtape(String nom) {
+        File f = new File("Championnat/" + nom + ".xml");
+
+        if (f.exists()) {
+            Element n;
+            try {
+                n = GestionXML.chargerNoeudRacine(f);
+                return new Etape(n);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            throw new IllegalAccessError();
+        }
+        return null;
+    }
+
+    public static void EnregistrerEtape(Etape et) {
+        try {
+            File d = new File("Championnat");
+
+            if (!d.exists()) {
+                d.mkdir();
+            }
+
+            GestionXML.enregistrerRacine("Championnat/" + et.getEtape()
+                    + ".xml", et.toXML());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Liseuse.lire("Impossible de sauvegarder la progression.");
+        }
     }
 }
