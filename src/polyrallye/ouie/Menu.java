@@ -58,10 +58,10 @@ public abstract class Menu implements EcouteurEntrees {
 
 	static {
 		// Chargement des sons de l'interface
-		sonSuivant = new Sound("Sons/menus/suivant.ogg");
-		sonPrecedent = new Sound("Sons/menus/precedent.ogg");
+		sonSuivant = new Sound("Sons/menus/suivant.wav");
+		sonPrecedent = new Sound("Sons/menus/precedent.wav");
 		sonTic = new Sound("Sons/menus/tic.wav");
-		sonBoucle = new Sound("Sons/menus/suivant.ogg");
+		sonBoucle = new Sound("Sons/menus/tictic.wav");
 	}
 
 	/**
@@ -164,11 +164,12 @@ public abstract class Menu implements EcouteurEntrees {
 	public void precedent() {
 		if (courant == 0) {
 			courant = libelles.size();
+			sonBoucle.play();
+		} else {
+			sonTic.play();
 		}
 
 		--courant;
-
-		sonTic.play();
 
 		Liseuse.interrompre();
 		ennoncer();
