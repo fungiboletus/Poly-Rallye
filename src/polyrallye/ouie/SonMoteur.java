@@ -6,7 +6,6 @@ import java.util.NavigableMap;
 import java.util.TreeMap;
 
 import polyrallye.modele.voiture.Voiture;
-import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 
 /**
@@ -61,7 +60,7 @@ public class SonMoteur {
 		}
 		
 		passageRapport = new Sound("Sons/voiture/rapport.wav");
-		passageRapport.setGain(0.8f);
+		passageRapport.setGain(0.4f);
 	}
 
 	public void play() {

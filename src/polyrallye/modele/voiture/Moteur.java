@@ -2,29 +2,100 @@ package polyrallye.modele.voiture;
 
 import org.jdom.Element;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
+/**
+ * Gestion du moteur de la voiture.
+ *
+ */
 public class Moteur {
+    /**
+     * Nom du moteur.
+     * 
+     * Cela permet de repérer les moteurs identiques
+     * en fonction des voitures, comme le V6 PRV
+     */
     protected String nom;
 
+    /**
+     * Cylindrée du moteur
+     */
     protected int cylindree;
 
+    /**
+     * Nombre de cylindres du moteur
+     */
     protected int nbCylindres;
+    
+    /**
+     * Disposition du moteur (ligne, V, canard)
+     */
     protected DispositionMoteur disposition;
+    
+    /**
+     * Type de compression du moteur (turbo, compresseur, etc)
+     */
     protected CompressionMoteur compression;
 
+    /**
+     * Nombre de soupapes du moteur.
+     */
     protected int nbSoupapes;
 
-    protected int puissanceMax;
-    protected int regimePuissanceMax;
+    /**
+     * Puissance maximale du moteur.
+     */
+    protected double puissanceMax;
+    
+    /**
+     * Régime associé à la puissance maximale du moteur. 
+     */
+    protected double regimePuissanceMax;
 
-    protected int coupleMax;
-    protected int regimeCoupleMax;
-    protected int regimeRupteur;
+    /**
+     * Couple maximal du moteur.
+     */
+    protected double coupleMax;
+    
+    /**
+     * Régime associé au couple maximal du moteur. 
+     */
+    protected double regimeCoupleMax;
+    
+    /**
+     * Couple correspondant à la puissance maximale.
+     */
+    protected double couplePuissanceMax;
+    
+    /**
+     * Régime auquel le rupteur se déclanche.
+     */
+    protected double regimeRupteur;
 
+    /**
+     * Est-ce que le rupteur est enclanché ?
+     * 
+     * Il se déclanche au regimeRupteur, et s'arrête au regimePuissanceMax
+     */
+    protected boolean rupteurEnclanche;
+    
+    /**
+     * Regime actuel du moteur, est utilisé pour calculer 
+     * le couple en fonction de la puissance.
+     */
     private double regimeCourant = 800.0;
-    private double coupleCourant;
+    
+    /**
+     * Est-ce que la voiture est en train d'accélérer ?
+     * 
+     * Dans une version ultérieure, il pourrait être intéressant
+     * de permettre d'accélérer plus ou moins fort. Mais avec un clavier,
+     * c'est tout ou rien.
+     */
+    private boolean accelere = false;
+    
     protected double coeff = 0.7;
 
     public Moteur() {
@@ -52,11 +123,13 @@ public class Moteur {
         coupleMax = GestionXML.getInt(couple_max.getText());
         regimeCoupleMax = GestionXML.getInt(couple_max
                 .getAttributeValue("regime"));
+        
+        couplePuissanceMax = (puissanceMax*736)/((regimePuissanceMax/60.0)*2*Math.PI);
 
         regimeRupteur = GestionXML.getInt(noeud.getChildText("rupteur"));
 
         if (regimeRupteur == 0) {
-            regimeRupteur = regimePuissanceMax + 500;
+            regimeRupteur = regimePuissanceMax + 350;
         }
 
         String sSisposition = configuration.getAttributeValue("disposition")
@@ -106,23 +179,23 @@ public class Moteur {
         return nbSoupapes;
     }
 
-    public int getPuissanceMax() {
+    public double getPuissanceMax() {
         return puissanceMax;
     }
 
-    public int getRegimePuissanceMax() {
+    public double getRegimePuissanceMax() {
         return regimePuissanceMax;
     }
 
-    public int getCoupleMax() {
+    public double getCoupleMax() {
         return coupleMax;
     }
 
-    public int getRegimeCoupleMax() {
+    public double getRegimeCoupleMax() {
         return regimeCoupleMax;
     }
 
-    public int getRegimeRupteur() {
+    public double getRegimeRupteur() {
         return regimeRupteur;
     }
 
@@ -134,19 +207,57 @@ public class Moteur {
      */
 
     public double getCouple() {
+    	// 736
 //        double r = this.getPuissanceMax() * 716 / this.getRegimePuissanceMax();
         // coupleCourant = getCoupleMax()+ ((r - getCoupleMax())*((regimeCourant
         // - getRegimeCoupleMax())) /
         // (getRegimePuissanceMax()-getRegimeCoupleMax()));
         // coupleCourant=0.1*this.puissanceMax;
-        if (coupleCourant < coupleMax) {
+    	
+    	
+    	Main.logDebug("Couple max: "+coupleMax);
+    	Main.logDebug("Couple puissance max: "+couplePuissanceMax);
+    	
+    	// Entre couple max et puissance max (l'idéal)
+    	double xa = regimeCoupleMax;
+    	double xb = regimePuissanceMax;
+    	
+    	double ya = coupleMax;
+    	double yb = couplePuissanceMax;
+
+    	if (!accelere || rupteurEnclanche) {
+    		xa = 800.0;
+    		xb = regimeRupteur;
+    		
+    		ya = couplePuissanceMax*-0.57;
+    		yb = coupleMax*-0.63;
+    	} else if (regimeCourant < regimeCoupleMax) {
+    		xb = xa;
+    		xa = 800.0;
+    		
+    		yb = ya;
+    		ya = yb*0.79;
+    	} else if (regimeCourant > regimePuissanceMax) {
+    		xa = xb;
+    		xb = regimeRupteur;
+    		
+    		ya = yb;
+    		yb = ya*0.73;
+    	}
+    	
+		double couple = ya + (regimeCourant - xa)*((yb-ya)/(xb-xa));
+    	
+		Main.logDebug("Couple calculé: "+couple);
+    	
+    	return couple;
+        /*if (coupleCourant < coupleMax) {
             if (coupleCourant == 0)
                 coupleCourant = 0.1 * puissanceMax;
             else
                 coupleCourant += 4;
         }
         System.out.println("couple courant? " + coupleCourant);
-        return coupleCourant;
+        return coupleCourant;*/
     }
 
     public void regimeCourant() {
@@ -161,9 +272,14 @@ public class Moteur {
      *            the regimeCourant to set
      */
     public void setRegimeCourant(double regime) {
-        regimeCourant = regime;
-        if (regimeRupteur < regimeCourant)
-            regimeCourant = coeff * regimeCoupleMax;
+    	
+        regimeCourant = regime > 800.0 ? regime : 800.0;
+        
+        if (regimeCourant > regimeRupteur) {
+        	rupteurEnclanche = true;
+        } else if (rupteurEnclanche && regimeCourant < regimeRupteur - 400) {
+        	rupteurEnclanche = false;
+        }
     }
 
     /**
@@ -173,7 +289,19 @@ public class Moteur {
         return regimeCourant;
     }
 
-    @Override
+    public boolean isAccelere() {
+		return accelere;
+	}
+
+	public void setAccelere(boolean accelere) {
+		this.accelere = accelere;
+	}
+
+	public boolean isRupteurEnclanche() {
+		return rupteurEnclanche;
+	}
+
+	@Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Moteur [");

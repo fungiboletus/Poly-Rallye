@@ -8,6 +8,8 @@ public class Klaxon {
 	protected String name;
 
 	protected Sound klaxon;
+	
+	protected boolean enclanche;
 
 	public Klaxon(String t) {
 
@@ -34,14 +36,19 @@ public class Klaxon {
 
 	}
 
-	public void play() {
-		//klaxon.setOffset(0.0f);
-		klaxon.pause(false);
+	public void pouet() {
+		if (!enclanche) {
+			klaxon.pause(false);
+			enclanche = true;
+		}
 	}
 
-	public void pause() {
-		klaxon.pause(true);
-		klaxon.setOffset(0.0f);
+	public void pasPouet() {
+		if (enclanche) {
+			klaxon.pause(true);
+			klaxon.setOffset(0.0f);
+			enclanche = false;
+		}
 	}
 	
 	public void delete() {

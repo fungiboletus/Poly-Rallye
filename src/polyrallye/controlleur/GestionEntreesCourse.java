@@ -54,6 +54,9 @@ public class GestionEntreesCourse extends KeyAdapter {
 		case KeyEvent.VK_D:
 			Main.basculerAffichageConsole();
 			break;
+		case KeyEvent.VK_V:
+			Main.debug = !Main.debug;
+			break;
 		}
 	}
 	
@@ -118,5 +121,9 @@ public class GestionEntreesCourse extends KeyAdapter {
 	
 	public boolean isKlaxon() {
 		return klaxon;
+	}
+
+	public boolean isEchap() {
+		return echap;
 	}
 }

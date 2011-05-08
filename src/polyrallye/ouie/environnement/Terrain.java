@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 import polyrallye.ouie.utilitaires.Sound;
-import polyrallye.ouie.utilitaires.Sound.SoundException;
 
 public class Terrain {
 	protected String terrain;

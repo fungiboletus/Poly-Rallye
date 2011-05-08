@@ -71,6 +71,9 @@ public class Circuit {
 	// }
 
 	public Circuit(Element noeud) {
+		
+		contenu = new LinkedList<ContenuCircuit>();
+		
 		if (noeud.getChildren("way").size() != 1) {
 			System.err
 					.println("Le fichier OSM ne contient pas un seul chemin.");

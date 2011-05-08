@@ -1,0 +1,31 @@
+<!-- Créé à la main ;-) -->
+<voiture>
+	<presentation>
+		<constructeur>Dacia</constructeur>
+		<nom>Sandero</nom>
+		<version>1.2 16v</version>
+		<periode annee="2007" />
+	</presentation>
+	<economie>
+		<rarete>2</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="16" disposition="ligne" compression="normal"/>
+		<cylindree>1149</cylindree>
+		<puissance regime="4250">75</puissance>
+		<couple_max regime="2800">140</couple_max><!-- pifométrie totale -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1025</poids>
+		<largeur>1746</largeur>
+		<longueur>4020</longueur>
+		<empattement>2589</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Dacia_Sandero</source>
+	</sources>
+</voiture>

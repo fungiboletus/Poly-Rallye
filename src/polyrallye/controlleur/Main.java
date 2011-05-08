@@ -10,109 +10,121 @@ import polyrallye.ouie.FenetreNoire;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.menus.Principal;
 import polyrallye.utilitaires.Multithreading;
+
 public class Main {
 
-    protected static FenetreNoire fenetre;
+	protected static FenetreNoire fenetre;
 
-    protected static Principal menuPrincipal;
+	protected static Principal menuPrincipal;
 
-    /**
-     * @param args
-     * @throws LWJGLException
-     */
-    public static void main(String[] args) {
+	protected static boolean debug = false;
 
-        if (args.length > 0 && args[0].equals("voitures")) {
-            voitures();
-        } else {
-            classique(args);
-        }
+	/**
+	 * @param args
+	 * @throws LWJGLException
+	 */
+	public static void main(String[] args) {
 
-    }
+		if (args.length > 0 && args[0].equals("voitures")) {
+			voitures();
+		} else {
+			classique(args);
+		}
 
-    public static void voitures() {
-        for (Entry<Double, Voiture> s : StockVoitures
-                .getVoituresParPerformances().entrySet()) {
-            Main.logInfo("v : " + Math.round(s.getKey()) + "\t"
-                    + s.getValue().getNomComplet() + " --- "
-                    + s.getValue().getPrix() + " €");
-        }
-    }
+	}
 
-    public static void classique(String[] args) {
+	public static void voitures() {
+		for (Entry<Double, Voiture> s : StockVoitures
+				.getVoituresParPerformances().entrySet()) {
+			Main.logInfo("v : " + Math.round(s.getKey()) + "\t"
+					+ s.getValue().getNomComplet() + " --- "
+					+ s.getValue().getPrix() + " €");
+		}
+	}
 
-        fenetre = new FenetreNoire();
+	public static void classique(String[] args) {
 
-        logInfo("Les fautes sont la plupart du temps volontaires,\npour la synthèse vocale.");
+		fenetre = new FenetreNoire();
 
-        Liseuse.lancer();
+		logInfo("Les fautes sont la plupart du temps volontaires,\npour la synthèse vocale.");
 
-        String nomJoueur = args.length > 1 ? args[0] : "Bob";
-        Joueur j = Joueur.chargerJoueur(nomJoueur);
-        j.setSessionCourante();
+		Liseuse.lancer();
 
-        Liseuse.lire("PolyRallye");
+		String nomJoueur = args.length > 1 ? args[0] : "Bob";
+		Joueur j = Joueur.chargerJoueur(nomJoueur);
+		j.setSessionCourante();
 
-        changerGestionEntrees(GestionEntreesMenu.getInstance());
+		Liseuse.lire("PolyRallye");
 
-        menuPrincipal = new Principal();
-        menuPrincipal.lancer();
-    }
+		changerGestionEntrees(GestionEntreesMenu.getInstance());
 
-    public static void quitter() {
-        Joueur.EnregistrerJoueur(Joueur.session);
+		menuPrincipal = new Principal();
+		menuPrincipal.lancer();
 
-        Liseuse.interrompre();
+		// TODO à enlever quand on ne sera plus en développement
+		fenetre.basculerAffichageConsole();
+	}
 
-        Liseuse.lire("Salut");
+	public static void quitter() {
+		Joueur.EnregistrerJoueur(Joueur.session);
 
-        Multithreading.dormir(800);
+		Liseuse.interrompre();
 
-        Liseuse.arreter();
-    }
+		Liseuse.lire("Salut");
 
-    public static void demanderAQuitter() {
-        quitter();
-        fenetre.dispose();
-    }
+		Multithreading.dormir(800);
 
-    public static void revenirAuMenuPrincipal() {
-        Liseuse.lire("Retour au menu principal");
-        menuPrincipal.lancer();
-    }
+		Liseuse.arreter();
+	}
 
-    public static void logInfo(String texte) {
-        if (fenetre != null) {
-            fenetre.logInfo(texte);
-        }
-        System.out.println(texte);
-    }
+	public static void demanderAQuitter() {
+		quitter();
+		fenetre.dispose();
+	}
 
-    public static void logLiseuse(String texte) {
-        if (fenetre != null) {
-            fenetre.logLiseuse(texte);
-        }
-        System.out.println(texte);
-    }
+	public static void revenirAuMenuPrincipal() {
+		Liseuse.lire("Retour au menu principal");
+		menuPrincipal.lancer();
+	}
 
-    public static void logImportant(String texte) {
-        if (fenetre != null) {
-            fenetre.logImportant(texte);
-        }
-        System.out.println(texte);
-    }
+	public static void logInfo(String texte) {
+		if (fenetre != null) {
+			fenetre.logInfo(texte);
+		}
+		System.out.println(texte);
+	}
 
-    public static void basculerAffichageConsole() {
-        if (fenetre != null) {
-            fenetre.basculerAffichageConsole();
-        }
-    }
+	public static void logLiseuse(String texte) {
+		if (fenetre != null) {
+			fenetre.logLiseuse(texte);
+		}
+		System.out.println(texte);
+	}
 
-    public static Principal getMenuPrincipal() {
-        return menuPrincipal;
-    }
+	public static void logImportant(String texte) {
+		if (fenetre != null) {
+			fenetre.logImportant(texte);
+		}
+		System.out.println(texte);
+	}
+	
+	public static void logDebug(String texte) {
+		if (debug) {
+			System.out.println(texte);
+		}
+	}
 
-    public static void changerGestionEntrees(KeyListener listener) {
-        fenetre.changerGestionEntrees(listener);
-    }
+	public static void basculerAffichageConsole() {
+		if (fenetre != null) {
+			fenetre.basculerAffichageConsole();
+		}
+	}
+
+	public static Principal getMenuPrincipal() {
+		return menuPrincipal;
+	}
+
+	public static void changerGestionEntrees(KeyListener listener) {
+		fenetre.changerGestionEntrees(listener);
+	}
 }

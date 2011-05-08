@@ -1,7 +1,12 @@
 package polyrallye.controlleur;
 
+import java.io.File;
 import java.util.TimerTask;
 
+import org.jdom.Element;
+
+import polyrallye.modele.Copilote;
+import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.voiture.Conduite;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
@@ -13,7 +18,9 @@ import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Terrain;
+import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.utilitaires.GestionXML;
 import polyrallye.utilitaires.Multithreading;
 import t2s.util.Random;
 
@@ -25,78 +32,118 @@ public class Course implements ActionMenu {
 	protected java.util.Timer timerOrganisateur;
 	protected org.lwjgl.util.Timer timerCompteur;
 
+	/**
+	 * Temps entre chaque tick d'horloge.
+	 */
 	protected float temps;
 
+	/**
+	 * Entrées de la course.
+	 */
 	protected GestionEntreesCourse entreesCourse;
 
-	protected SonMoteur sMoteur;
-	protected Environnement environnement;
-	protected Terrain terrain;
-
+	/**
+	 * Son du moteur.
+	 */
+	protected SonMoteur sonMoteur;
+	
+	/**
+	 * Voiture conduite.
+	 */
 	protected Voiture voiture;
 	
+	/**
+	 * Gestion physique de la conduite.
+	 */
 	protected Conduite conduite;
+	
+	/**
+	 * Circuit parcouru.
+	 */
+	protected Circuit circuit;
 
+	/**
+	 * Bruit du crash.
+	 */
 	protected Crash crash;
+	
+	/**
+	 * Bruit du klaxon.
+	 */
 	protected Klaxon klaxon;
 
-	// Démonstration, ça ne restera pas
-	protected float regime;
+	/**
+	 * Copilote.
+	 */
+	protected Copilote copilote;
 
-	protected Sound gauche;
-	protected Sound droite;
-	protected Sound freine;
-	protected Sound ok;
-
-	protected int devonsNousTourner = 10000000;
-
-	protected boolean virageDroite;
-
-	protected boolean klaxonEnclanche;
-
+	/**
+	 * Score du joueur pour la course.
+	 */
 	protected double score;
 
-	// Temporaire hein
-	protected Thread canard2;
-
-	public Course(Voiture voiture) {
+	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
+		this.circuit = circuit;
 	}
+	
+	public Course(Voiture voiture) {
+		this(voiture, "Calenzana");
+	}
+
+	public Course(Voiture voiture, String fichierCircuit) {
+		this.voiture = voiture;
+		
+		try {
+			Element noeud = GestionXML.chargerNoeudRacine(new File(
+			"Circuits/"+fichierCircuit+".osm"));
+			circuit = new Circuit(noeud);
+		} catch (Exception e) {
+			Liseuse.lire("Désolé il y a un problème avec ce circuit");
+			Main.logImportant(e.getMessage());
+			e.printStackTrace();
+		}
+
+	}
+	
 
 	@Override
 	public void actionMenu() {
+		if (circuit == null) return;
+		
 		entreesCourse = new GestionEntreesCourse();
 
 		Main.changerGestionEntrees(entreesCourse);
 
-		environnement = new Environnement("village", "jour", "clair");
-		terrain = new Terrain("asphalt");
-		sMoteur = new SonMoteur(voiture);
+		// Lancement de l'envirronnement sonore propre au circuit.
+		circuit.changeTerrain("asphalt");
+		circuit.start();
+		
+		// Création du son du moteur
+		sonMoteur = new SonMoteur(voiture);
+		sonMoteur.play();
 
+		// Création du moteur physique
 		conduite = new Conduite(voiture);
 		
-		crash = new Crash(environnement.getType());
+		// Le klaxon, c'est important
 		klaxon = new Klaxon(voiture.getNomComplet());
 
-		final Thread canard = new Thread() {
-			public void run() {
-				terrain.play();
-			}
-		};
-		canard.start();
-
-		System.out.println("ok");
-		environnement.play();
-		sMoteur.play();
-
-		regime = 850.0f;
-		voiture.getTransmission().passerVitesse();
-
+		// Si on part en première, c'est mieux
+		voiture.getTransmission().setPremiere();
+		
+		// Timer qui s'occupe de faire le travail 50 fois par secondes
 		timerOrganisateur = new java.util.Timer();
+		
+		// Timer qui sert à compter le temps passé,
+		// ce qui n'a rien à voir avec le timer précedent,
+		// bien qu'ils aient le même nom
 		timerCompteur = new org.lwjgl.util.Timer();
 
 		org.lwjgl.util.Timer.tick();
 		temps = timerCompteur.getTime();
+
+		Main.logInfo("La course est lancée");
 
 		score = voiture.getMoteur().getPuissanceMax();
 
@@ -104,27 +151,46 @@ public class Course implements ActionMenu {
 
 			@Override
 			public void run() {
-				if (entreesCourse.echap) {
-					canard.stop();
-					canard2.stop();
-					environnement.delete();
-					terrain.delete();
-					sMoteur.stop();
+				
+				if (entreesCourse.isEchap()) {
+					circuit.stop();
+					sonMoteur.stop();
 					timerOrganisateur.cancel();
 					Main
 							.changerGestionEntrees(GestionEntreesMenu
 									.getInstance());
 				}
-
+				
 				// Gestion du temps
 				org.lwjgl.util.Timer.tick();
 				float tempsTmp = timerCompteur.getTime();
-				float deltaTemps = tempsTmp - temps;
+				float tempsTick = tempsTmp - temps;
 				temps = tempsTmp;
 
+				conduite.tick(tempsTick);
+				
+				// Gestion du klaxon
+				if (entreesCourse.isKlaxon()) {
+					klaxon.pouet();
+				} else {
+					klaxon.pasPouet();
+				}
+				
+				// Gestion de l'accélérateur
+				voiture.getMoteur().setAccelere(entreesCourse.isAccelere());
+				
+				// Et du frein
+				conduite.setFreinage(entreesCourse.isFreine());
+				
+				// Maintenant, du passage des vitesses
 				Transmission t = voiture.getTransmission();
+				
+				if (((entreesCourse.isRapportSup()||voiture.getMoteur().isRupteurEnclanche()) && t.passerVitesse()) || (entreesCourse.isRapportInf() && t.retrograder())) {
+					sonMoteur.passageRapport();
+				}
+				
 
-				if (entreesCourse.isAccelere()) {
+				/*if (entreesCourse.isAccelere()) {
 					conduite.acceleration(TypeTerrain.ASPHALT);
 					voiture.getMoteur().regimeCourant();
 				}
@@ -186,7 +252,7 @@ public class Course implements ActionMenu {
 					}
 				}
 */
-				Moteur m = voiture.getMoteur();
+				/*Moteur m = voiture.getMoteur();
 				if (regime < 850) {
 					regime = 850;
 				} else if (regime > m.getRegimeRupteur()) {
@@ -195,7 +261,7 @@ public class Course implements ActionMenu {
 						if (t.passerVitesse()) {
 							rupteur = false;
 							regime *= 0.625f;
-							sMoteur.passageRapport();
+							sonMoteur.passageRapport();
 							System.out.println("CANARD DE MERDE");
 						}
 					}
@@ -211,41 +277,23 @@ public class Course implements ActionMenu {
 					if (t.getRapportCourant() > 1) {
 						t.retrograder();
 						regime *= 1.2f;
-						sMoteur.passageRapport();
+						sonMoteur.passageRapport();
 						System.out.println("CANARD DE MERDE 2");
 					}
 				}
 
-				if (entreesCourse.klaxon) {
-					if (!klaxonEnclanche) {
-						klaxon.play();
-						klaxonEnclanche = true;
-					}
-				} else if (klaxonEnclanche) {
-					klaxon.pause();
-					klaxonEnclanche = false;
-				}
-
-				sMoteur.setRegime((float) voiture.getMoteur().getRegimeCourant(), entreesCourse.isAccelere());
+				
+				*/
+				sonMoteur.setRegime((float) voiture.getMoteur().getRegimeCourant(), entreesCourse.isAccelere());
 				// terrain.setVitesse(regime / 3.0f);
-				// TODO mettre le code de abdoul (oui monsieur)
+				// TODO mettre le code de abdoul (oui monsieur)*/
 			}
 		};
 
 		// À 50Hz, comme le courant EDF
-		timerOrganisateur.schedule(tt, 0, 20);
+		timerOrganisateur.schedule(tt, 0, 20);//20
 
-		gauche = new Sound("Sons/divers/gauche.wav");
-		// gauche.setGain(18.0f);
-		droite = new Sound("Sons/divers/droite.wav");
-		// droite.setGain(18.0f);
-
-		freine = new Sound("Sons/divers/freine.wav");
-
-		// TODO
-		ok = new Sound("Sons/divers/freine.wav");
-
-		canard2 = new Thread() {
+	/*		canard2 = new Thread() {
 			public void run() {
 
 				while (true) {
@@ -291,20 +339,20 @@ public class Course implements ActionMenu {
 			}
 
 			protected void megaCrash() {
-				regime = 10;
-				sMoteur.setRegime(10, false);
+				//regime = 10;
+				sonMoteur.setRegime(10, false);
 				score *= 0.25;
 
 				Transmission t = voiture.getTransmission();
 				while (t.getRapportCourant() > 1) {
 					t.retrograder();
 				}
-				sMoteur.passageRapport();
+				sonMoteur.passageRapport();
 				crash.play();
 			}
 		};
 
 		canard2.start();
-
+		*/
 	}
 }

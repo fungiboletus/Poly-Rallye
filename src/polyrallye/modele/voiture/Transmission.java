@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.jdom.Element;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
@@ -127,8 +128,8 @@ public class Transmission {
 		final double xa = 120;
 		final double xb = 900;
 		
-		final double ya = 185;
-		final double yb = 380;
+		final double ya = 160;
+		final double yb = 300;
 		
 		vitessePuissanceMaximale = ya + (scoreVoiture - xa)*((yb-ya)/(xb-xa));
 	}
@@ -196,7 +197,7 @@ public class Transmission {
 	 * Pas de protectection anti-noob non plus.
 	 */
 	public boolean retrograder() {
-		if (vitesseCourante > 0) {
+		if (vitesseCourante > 1) {
 			--vitesseCourante;
 			return true;
 		}
@@ -221,28 +222,26 @@ public class Transmission {
 	 * @return Couple à la roue
 	 */
 	public double getCoupleParRoue(PositionRoue pr) {
-		
+		//Main.logLiseuse("couple moteur: "+moteur.getCouple());
 		// Gestion d'une fausse vitesse en prise directe (plus rendement plus élevé)
 		double rendement = (vitesseCourante+1) == nbVitesses/2 ? RENDEMENT : RENDEMENT*RENDEMENT;
 		
 		switch (type) {
 		case PROPULSION:
 			switch (pr) {
-			case ARRIERE_DROITE:
-			case ARRIERE_GAUCHE:
-				return moteur.getCouple() * getCoefCourant() * rendement * 0.5;
+			case ARRIERE:
+				return moteur.getCouple() * getCoefCourant() * rendement;
 			}
 			break;
 		case TRACTION:
 			switch (pr) {
-			case AVANT_DROITE:
-			case AVANT_GAUCHE:
-				return moteur.getCouple() * getCoefCourant() * rendement * 0.5;
+			case AVANT:
+				return moteur.getCouple() * getCoefCourant() * rendement;
 			}
 			break;
 		case QUATTRO:
 			// Une transmission 4x4 a un rendement plus faible.
-			return moteur.getCouple()* getCoefCourant() * RENDEMENT;
+			return moteur.getCouple() * getCoefCourant() * rendement * RENDEMENT * 0.5;
 		}
 
 		// Si on est là, c'est que la roue n'est pas motrice.
@@ -308,4 +307,7 @@ public class Transmission {
 		return vitessePuissanceMaximale;
 	}
 
+	public void setPremiere() {
+		vitesseCourante = 1;
+	}
 }
