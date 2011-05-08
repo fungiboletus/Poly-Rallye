@@ -48,7 +48,7 @@ public class Main {
 
         Liseuse.lancer();
 
-        String nomJoueur = args.length > 1 ? args[0] : "Bob";
+        String nomJoueur = args.length > 1 ? args[0] : "Marco";
         Joueur j = Joueur.chargerJoueur(nomJoueur);
         j.setSessionCourante();
 
