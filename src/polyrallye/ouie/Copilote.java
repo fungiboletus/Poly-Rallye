@@ -81,7 +81,7 @@ public class Copilote {
 		freine = new Sound(rep+"freine_"+(random.nextInt(nombres[2])+1)+".wav");
 		
 		if (nombres[3]!=0)
-		bullshit = new Sfx(rep+"sfx/", nombres[3], 2, true,3.0f);
+		bullshit = new Sfx(rep+"sfx/", nombres[3], 3, true,3.0f);
 		else
 			bullshit = new Sfx(); 
 		bullshit.start();
@@ -105,6 +105,16 @@ public class Copilote {
 			isPipelette=true;
 			bullshit.pause(false);
 		}
+	}
+	
+	public void playCrash() {
+		String rep = "Sons/copilote/"+id+"/";
+		if (new File(rep+"crash.wav").exists()) {
+			Sound crash = new Sound(rep+"crash.wav");
+			crash.playAndWait();
+			crash.delete();
+		}
+			
 	}
 	
 	public void playGauche() {

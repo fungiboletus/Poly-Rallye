@@ -82,6 +82,8 @@ public class Radio extends Thread {
 		Random random = new Random();
 		id = random.nextInt(nbRadio) + 1;
 		
+		readManifeste();
+		
 		chargerCom();
 		chargerZike();
 		Multithreading.dormir(1000);

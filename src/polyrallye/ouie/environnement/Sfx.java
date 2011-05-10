@@ -26,7 +26,7 @@ public class Sfx extends Thread {
 	protected boolean isFixe;
 	protected boolean isPaused;
 	protected boolean isNull;
-	
+
 	private float gain;
 
 	public Sfx() {
@@ -55,16 +55,16 @@ public class Sfx extends Thread {
 		isFixe = false;
 		isPaused = false;
 		isNull = false;
-		gain=0.7f;
+		gain = 0.7f;
 	}
 
 	public Sfx(String rep, int nombre, long intervalle, boolean tt) {
 		this(rep, nombre, intervalle);
 		isFixe = true;
 	}
-	
-	public Sfx(String rep, int nombre, long intervalle, boolean tt,float g) {
-		this(rep, nombre, intervalle,tt);
+
+	public Sfx(String rep, int nombre, long intervalle, boolean tt, float g) {
+		this(rep, nombre, intervalle, tt);
 		gain = g;
 	}
 
@@ -76,8 +76,9 @@ public class Sfx extends Thread {
 
 			while (isAlive) {
 				try {
-					temp.charger(rep + "sfx_" + (random.nextInt(nombre) + 1)
-							+ ".wav");
+					if (!isPaused)
+						temp.charger(rep + "sfx_"
+								+ (random.nextInt(nombre) + 1) + ".wav");
 				} catch (SoundException e1) {
 				}
 				// Volume
@@ -109,7 +110,8 @@ public class Sfx extends Thread {
 					Multithreading.dormir(20);
 				}
 				// On le supprimme
-				temp.delete();
+				if (!isPaused)
+					temp.delete();
 				Multithreading.dormir(intervalle * 1000);
 			}
 		}
@@ -135,5 +137,7 @@ public class Sfx extends Thread {
 
 	public void pause(boolean b) {
 		isPaused = b;
+		if(b)
+			temp.stop();
 	}
 }
