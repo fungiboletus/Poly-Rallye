@@ -242,7 +242,6 @@ public class Sound {
 					System.out.println("Suppression du cache pour «"+clef+"»");					
 				}
 			}
-			
 			data = SoundScape.loadSoundData(chemin);
 			if (data != -1) {
 				cache = new TupleData();

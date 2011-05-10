@@ -50,7 +50,7 @@ public class Copilote {
 						nombres[0] = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
 					} else if (line.contains("sfx")) {
-						nombres[4] = Integer.valueOf(line.substring(line
+						nombres[3] = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
 					} else if (line.contains("droite")) {
 						nombres[1] = Integer.valueOf(line.substring(line
@@ -76,14 +76,15 @@ public class Copilote {
 			e.printStackTrace();
 		}
 
-		gauche = new Sound(rep+"gauche_"+random.nextInt(nombres[0])+".wav");
-		droite = new Sound(rep+"droite_"+random.nextInt(nombres[1])+".wav");
-		freine = new Sound(rep+"freine_"+random.nextInt(nombres[2])+".wav");
+		gauche = new Sound(rep+"gauche_"+(random.nextInt(nombres[0])+1)+".wav");
+		droite = new Sound(rep+"droite_"+(random.nextInt(nombres[1])+1)+".wav");
+		freine = new Sound(rep+"freine_"+(random.nextInt(nombres[2])+1)+".wav");
 		
 		if (nombres[3]!=0)
-		bullshit = new Sfx(rep+"sfx/", nombres[3], 5, true);
+		bullshit = new Sfx(rep+"sfx/", nombres[3], 2, true,3.0f);
 		else
 			bullshit = new Sfx(); 
+		bullshit.start();
 
 		bullshit.pause(true);
 	}
@@ -111,12 +112,12 @@ public class Copilote {
 		Random random = new Random();
 		if (isPipelette)
 			bullshit.pause(true);
-		gauche.playAndWait();
+		gauche.play();
 		if (isPipelette)
 			bullshit.pause(false);
 		gauche.delete();
 		try {
-			gauche.charger(rep+"gauche_"+random.nextInt(nombres[0])+".wav");
+			gauche.charger(rep+"gauche_"+(random.nextInt(nombres[0])+1)+".wav");
 		} catch (SoundException e) {
 			System.err.println("Erreur chargement son gauche");
 		}
@@ -127,12 +128,12 @@ public class Copilote {
 		Random random = new Random();
 		if (isPipelette)
 			bullshit.pause(true);
-		droite.playAndWait();
+		droite.play();
 		if (isPipelette)
 			bullshit.pause(false);
 		droite.delete();
 		try {
-			droite.charger(rep+"droite_"+random.nextInt(nombres[1])+".wav");
+			droite.charger(rep+"droite_"+(random.nextInt(nombres[1])+1)+".wav");
 		} catch (SoundException e) {
 			System.err.println("Erreur chargement son droite");
 		}
@@ -143,15 +144,22 @@ public class Copilote {
 		Random random = new Random();
 		if (isPipelette)
 			bullshit.pause(true);
-		freine.playAndWait();
+		freine.play();
 		if (isPipelette)
 			bullshit.pause(false);
 		freine.delete();
 		try {
-			freine.charger(rep+"freine_"+random.nextInt(nombres[2])+".wav");
+			freine.charger(rep+"freine_"+(random.nextInt(nombres[2])+1)+".wav");
 		} catch (SoundException e) {
 			System.err.println("Erreur chargement son freine");
 		}
+	}
+	
+	public void delete() {
+		gauche.delete();
+		droite.delete();
+		freine.delete();
+		bullshit.tuer();
 	}
 		
 

@@ -26,13 +26,15 @@ public class Sfx extends Thread {
 	protected boolean isFixe;
 	protected boolean isPaused;
 	protected boolean isNull;
+	
+	private float gain;
 
 	public Sfx() {
-		isNull=true;
-		isFixe=false;
-		isPaused=true;
+		isNull = true;
+		isFixe = false;
+		isPaused = true;
 	}
-	
+
 	public Sfx(String rep, int nombre) {
 		this(rep, nombre, 10);
 	}
@@ -52,66 +54,72 @@ public class Sfx extends Thread {
 		realDistance = 0;
 		isFixe = false;
 		isPaused = false;
-		isNull=false;
+		isNull = false;
+		gain=0.7f;
 	}
 
 	public Sfx(String rep, int nombre, long intervalle, boolean tt) {
 		this(rep, nombre, intervalle);
 		isFixe = true;
 	}
+	
+	public Sfx(String rep, int nombre, long intervalle, boolean tt,float g) {
+		this(rep, nombre, intervalle,tt);
+		gain = g;
+	}
 
 	public void run() {
 		if (!isNull) {
 
-		Random random = new Random();
-		int position = 0;
+			Random random = new Random();
+			int position = 0;
 
-		while (isAlive) {
-			try {
-				temp.charger(rep + "sfx_" + (random.nextInt(nombre) + 1)
-						+ ".wav");
-			} catch (SoundException e1) {
-			}
-			// Volume
-			temp.setGain(1f);
-			// Position initiale du son
-			positionX = 5 - random.nextInt(10);
-			positionY = 5 - random.nextInt(10);
-			positionZ = 5 - random.nextInt(10);
-			temp.setPosition(positionX, positionY, positionZ);
-			// Distance d'eloignement ?
-			temp.setReferenceDistance(200);
-
-			if (isFixe) {
-				temp.setPosition(0, 0, 0);
-				temp.setGain(0.7f);
-			}
-
-			// On joue le son
-			if (!isPaused)
-				temp.play();
-			realDistance = distance;
-			// On attend que le son se termine
-			while (temp.isPlaying()) {
-				if (!isFixe && distance != realDistance) {
-					positionY -= distance - realDistance;
-					realDistance = distance;
-					temp.setPosition(positionX, positionY, positionZ);
+			while (isAlive) {
+				try {
+					temp.charger(rep + "sfx_" + (random.nextInt(nombre) + 1)
+							+ ".wav");
+				} catch (SoundException e1) {
 				}
-				Multithreading.dormir(20);
+				// Volume
+				temp.setGain(1f);
+				// Position initiale du son
+				positionX = 5 - random.nextInt(10);
+				positionY = 5 - random.nextInt(10);
+				positionZ = 5 - random.nextInt(10);
+				temp.setPosition(positionX, positionY, positionZ);
+				// Distance d'eloignement ?
+				temp.setReferenceDistance(200);
+
+				if (isFixe) {
+					temp.setPosition(0, 0, 0);
+					temp.setGain(gain);
+				}
+
+				// On joue le son
+				if (!isPaused)
+					temp.play();
+				realDistance = distance;
+				// On attend que le son se termine
+				while (temp.isPlaying()) {
+					if (!isFixe && distance != realDistance) {
+						positionY -= distance - realDistance;
+						realDistance = distance;
+						temp.setPosition(positionX, positionY, positionZ);
+					}
+					Multithreading.dormir(20);
+				}
+				// On le supprimme
+				temp.delete();
+				Multithreading.dormir(intervalle * 1000);
 			}
-			// On le supprimme
-			temp.delete();
-			Multithreading.dormir(intervalle * 1000);
-		}
 		}
 	}
 
 	public void setVitesse(float t) {
 		vitesse = t;
-		if (isFixe && t<18)
-			isPaused=true;
-		else if(isFixe)
+		if (isFixe && t < 18)
+			isPaused = true;
+		else if (isFixe)
 			isPaused = false;
 	}
 
@@ -121,10 +129,10 @@ public class Sfx extends Thread {
 
 	public void tuer() {
 		if (!isNull)
-		temp.delete();
+			temp.delete();
 		isAlive = false;
 	}
-	
+
 	public void pause(boolean b) {
 		isPaused = b;
 	}

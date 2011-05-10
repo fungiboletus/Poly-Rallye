@@ -19,6 +19,11 @@ public class GestionEntreesCourse extends KeyAdapter {
 	protected boolean klaxon;
 	protected boolean echap;
 	protected boolean automatique = true;
+	protected boolean volumup = false;
+	protected boolean volumdown = false;
+	protected boolean radio = false;
+	protected boolean station = false;
+	protected boolean copilote = false;
 	
 	@Override
 	public void keyPressed(KeyEvent touche) {
@@ -53,6 +58,21 @@ public class GestionEntreesCourse extends KeyAdapter {
 			break;
 		case KeyEvent.VK_D:
 			Main.basculerAffichageConsole();
+			break;
+		case KeyEvent.VK_C:
+			copilote=true;
+			break;
+		case KeyEvent.VK_E:
+			radio=true;
+			break;
+		case KeyEvent.VK_R:
+			station=true;
+			break;
+		case KeyEvent.VK_T:
+			volumup=true;
+			break;
+		case KeyEvent.VK_Y:
+			volumdown=true;
 			break;
 		case KeyEvent.VK_V:
 			Main.debug = !Main.debug;
@@ -125,5 +145,46 @@ public class GestionEntreesCourse extends KeyAdapter {
 
 	public boolean isEchap() {
 		return echap;
+	}
+	
+	public boolean isCopilotte() {
+		return copilote;
+	}
+	
+	public boolean isRadio() {
+		return radio;
+	}
+	
+	public boolean isStation() {
+		return station;
+	}
+	
+	public boolean isVLD() {
+		return volumdown;
+	}
+	
+	public boolean isVLU() {
+		return volumup;
+	}
+	
+	//Mode bricolage
+	public void copiloteChecked() {
+		copilote=false;
+	}
+	
+	public void radioChecked() {
+		radio=false;
+	}
+	
+	public void stationChecked() {
+		station=false;
+	}
+	
+	public void vldChecked() {
+		volumdown=false;
+	}
+	
+	public void vluChecked() {
+		volumup=false;
 	}
 }

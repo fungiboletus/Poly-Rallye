@@ -5,7 +5,6 @@ import java.util.TimerTask;
 
 import org.jdom.Element;
 
-import polyrallye.modele.Copilote;
 import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.voiture.Conduite;
 import polyrallye.modele.voiture.Moteur;
@@ -13,7 +12,9 @@ import polyrallye.modele.voiture.Transmission;
 import polyrallye.modele.voiture.TypeTerrain;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.Copilote;
 import polyrallye.ouie.Klaxon;
+import polyrallye.ouie.Radio;
 import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.environnement.Environnement;
@@ -76,6 +77,11 @@ public class Course implements ActionMenu {
 	 * Copilote.
 	 */
 	protected Copilote copilote;
+	
+	/**
+	 * Radio
+	 */
+	protected Radio radio;
 
 	/**
 	 * Score du joueur pour la course.
@@ -128,7 +134,14 @@ public class Course implements ActionMenu {
 		
 		// Le klaxon, c'est important
 		klaxon = new Klaxon(voiture.getNomComplet());
-
+		
+		//Creation copilote
+		copilote= new Copilote();
+		
+		//Creation radio
+		radio = new Radio();
+		radio.start();
+		
 		// Si on part en première, c'est mieux
 		voiture.getTransmission().setPremiere();
 		
@@ -175,6 +188,32 @@ public class Course implements ActionMenu {
 				} else {
 					klaxon.pasPouet();
 				}
+				
+				//Gestion copilote
+				if (entreesCourse.isCopilotte()) {
+					copilote.togglePipelette();
+					entreesCourse.copiloteChecked();
+				}
+				
+				//Gestion Radio
+				if (entreesCourse.isRadio()) {
+					radio.toggleRadio();
+					entreesCourse.radioChecked();
+				}
+				else if(entreesCourse.isStation()) {
+					radio.changeStation();
+					entreesCourse.stationChecked();
+				}
+				else if(entreesCourse.isVLD()) {
+					radio.diminuerSon();
+					entreesCourse.vldChecked();
+				}
+				else if(entreesCourse.isVLU()) {
+					radio.augmenterSon();
+					entreesCourse.vluChecked();
+				}
+	
+				
 				
 				// Gestion de l'accélérateur
 				voiture.getMoteur().setAccelere(entreesCourse.isAccelere());
@@ -354,5 +393,9 @@ public class Course implements ActionMenu {
 
 		canard2.start();
 		*/
+		
+		
 	}
+	
+	
 }
