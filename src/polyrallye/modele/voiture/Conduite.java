@@ -90,9 +90,12 @@ public class Conduite {
 			// qui ne bloque même pas les roues une seule fois tellement il
 			// est parfait <3
 
-			forceMotrice = forceMotriceMax * -2.5;
+			forceMotrice = forceMotriceMax * -2.1;
 		} else {
-			forceMotrice = forceMotrice(forceMotriceMax*1.3);
+			
+			double coupleMoteur = moteur.getCouple();
+			
+			forceMotrice = forceMotrice(forceMotriceMax * 1.3, coupleMoteur);
 		}
 
 		double somme = forceMotrice - forceRestitance;
@@ -104,7 +107,8 @@ public class Conduite {
 		acceleration = somme / masse / ratioInertie;
 
 		Main.logDebug("Vitesse: " + vitesse * 3.6);
-		Main.logDebug("Acceleration: "+acceleration);
+		Main.logDebug("Rapport: "+transmission.getRapportCourant());
+		Main.logDebug("Acceleration: " + acceleration);
 		Main.logDebug("=================");
 
 		// C'est magique <3
@@ -118,7 +122,7 @@ public class Conduite {
 		if (patinage) {
 			regime /= coeffAdherenceFrottement;
 		}
-		
+
 		Main.logDebug("Régime: " + regime);
 		moteur.setRegimeCourant(regime);
 
@@ -135,7 +139,7 @@ public class Conduite {
 	public boolean isPatinage() {
 		return patinage;
 	}
-	
+
 	public boolean isFreinage() {
 		return freinage;
 	}
@@ -220,13 +224,16 @@ public class Conduite {
 	/**
 	 * Calcule la force motrice pour l'ensemble des roues.
 	 * 
-	 * @param forceMotriceMax Force maximale possible
+	 * @param forceMotriceMax
+	 *            Force maximale possible
+	 * @param coupleMoteur
+	 *            Couple du moteur
 	 * @return Force motrice
 	 */
-	public double forceMotrice(double forceMotriceMax) {
-
-		double forceAvant = transmission.getCoupleParRoue(PositionRoue.AVANT) / Transmission.RAYON_ROUE;
-		double forceArriere = transmission.getCoupleParRoue(PositionRoue.ARRIERE) / Transmission.RAYON_ROUE;
+	public double forceMotrice(double forceMotriceMax, double coupleMoteur) {
+		
+		double forceAvant = transmission.getCoupleParRoue(PositionRoue.AVANT, coupleMoteur) / Transmission.RAYON_ROUE;
+		double forceArriere = transmission.getCoupleParRoue(PositionRoue.ARRIERE, coupleMoteur) / Transmission.RAYON_ROUE;
 		
 		boolean patinageAvant = false;
 		if (forceAvant > forceMotriceMax) {

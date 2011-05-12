@@ -21,7 +21,7 @@ public class SelectionVoiturePerformances extends Menu implements ActionMenu {
 	
 		ajouterElement("Moyennes", new SelectionneurPerformances(this, 200, 300));
 		ajouterElement("Bonnes", new SelectionneurPerformances(this, 300, 400));
-		ajouterElement("Très bonnes", new SelectionneurPerformances(this, 4, 560));
+		ajouterElement("Très bonnes", new SelectionneurPerformances(this, 400, 560));
 		ajouterElement("Exceptionnelles", new SelectionneurPerformances(this, 560, 1000));
 		ajouterElement("Très faibles", new SelectionneurPerformances(this, 0, 120));
 		ajouterElement("Faibles", new SelectionneurPerformances(this, 120, 200));

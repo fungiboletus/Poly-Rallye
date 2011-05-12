@@ -4,6 +4,7 @@ import org.jdom.Element;
 
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -95,6 +96,11 @@ public class Moteur {
      * c'est tout ou rien.
      */
     private boolean accelere = false;
+    
+    /**
+     * Est-ce que le moteur est en panne ?
+     */
+    private boolean panne = false;
     
     protected double coeff = 0.7;
 
@@ -207,6 +213,8 @@ public class Moteur {
      */
 
     public double getCouple() {
+    	// Si le moteur est en panne, il n'avance plus
+    	if (panne) return 0.0;
     	
     	// Entre couple max et puissance max (l'idéal)
     	double xa = regimeCoupleMax;
@@ -251,7 +259,17 @@ public class Moteur {
         regimeCourant = regime > 800.0 ? regime : 800.0;
         
         if (regimeCourant > regimeRupteur) {
-        	rupteurEnclanche = true;
+        	// Si on a un gros sur-régime
+        	if (regimeCourant*0.7 > regimeRupteur && !panne) {
+        		Liseuse.lire("Panne du moteur");
+        		Liseuse.lire("Relancez la course");
+        		Sound s = new Sound("Sons/Crash/vehicule_1.wav");
+        		s.play();
+        		//s.delete();
+        		panne = true;
+        	} else {        		
+        		rupteurEnclanche = true;
+        	}
         } else if (rupteurEnclanche && regimeCourant < regimeRupteur - 400) {
         	rupteurEnclanche = false;
         }
@@ -261,6 +279,7 @@ public class Moteur {
      * @return the regimeCourant
      */
     public double getRegimeCourant() {
+    	if (panne) return 0.0;
         return regimeCourant;
     }
 
@@ -375,5 +394,9 @@ public class Moteur {
         sb.append(" tours minute");
 
         Liseuse.lire(sb.toString());
+    }
+    
+    public void reset() {
+    	panne = false;
     }
 }

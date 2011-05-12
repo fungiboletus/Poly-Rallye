@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import org.jdom.Element;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
@@ -180,7 +181,7 @@ public class Transmission {
 		final double expRapportMax = Math.exp(nbVitesses * coeff);
 
 		for (int i = 1; i <= nbVitesses; ++i) {
-			coefsRapports[i] = (vitesseMaxBoite / vitesseMax )
+			coefsRapports[i] = (vitesseMaxBoite / vitesseMax)
 					* (rapportMin + (Math.exp(coeff * i) - expRapportMin)
 							* ((rapportMax - rapportMin) / (expRapportMax - expRapportMin)));
 		}
@@ -222,14 +223,33 @@ public class Transmission {
 	}
 
 	/**
+	 * Retourne le coefficient du régime auquel le moteur doit tourner avant de
+	 * pouvoir rétrogader.
+	 * 
+	 * Le but est d'éviter que la boite automatique rentre dans une boucle
+	 * infinie de passage de rapports.
+	 * 
+	 * Une conséquence agréable est que le rétrogradage est plus réaliste.
+	 * 
+	 * @return Le coefficient
+	 */
+	public double getCoeffBoiteAutomatique() {
+		if (vitesseCourante <= 1) return 0.0;
+		
+		return 0.75 * (coefsRapports[vitesseCourante] / coefsRapports[vitesseCourante - 1]);
+	}
+
+	/**
 	 * Récupère le couple à la roue en fonction de la roue et du type de
 	 * transmission.
 	 * 
 	 * @param pr
 	 *            Roue
+	 * @param coupleMoteur
+	 *            Couple du moteur
 	 * @return Couple à la roue
 	 */
-	public double getCoupleParRoue(PositionRoue pr) {
+	public double getCoupleParRoue(PositionRoue pr, double coupleMoteur) {
 		// Main.logLiseuse("couple moteur: "+moteur.getCouple());
 		// Gestion d'une fausse vitesse en prise directe (plus rendement plus
 		// élevé)
@@ -240,19 +260,19 @@ public class Transmission {
 		case PROPULSION:
 			switch (pr) {
 			case ARRIERE:
-				return moteur.getCouple() * getCoefCourant() * rendement;
+				return coupleMoteur * getCoefCourant() * rendement;
 			}
 			break;
 		case TRACTION:
 			switch (pr) {
 			case AVANT:
-				return moteur.getCouple() * getCoefCourant() * rendement;
+				return coupleMoteur * getCoefCourant() * rendement;
 			}
 			break;
 		case QUATTRO:
 			// Une transmission 4x4 a un rendement plus faible.
-			return moteur.getCouple() * getCoefCourant() * rendement
-					* RENDEMENT * 0.5;
+			return coupleMoteur * getCoefCourant() * rendement * RENDEMENT
+					* 0.5;
 		}
 
 		// Si on est là, c'est que la roue n'est pas motrice.

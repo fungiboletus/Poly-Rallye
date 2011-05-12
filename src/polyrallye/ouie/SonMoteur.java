@@ -146,7 +146,7 @@ public class SonMoteur {
 		float xa = 800.0f;
 		float xb = regimeRupteur;
 
-		float ya = 0.75f;
+		float ya = 0.85f;
 		float yb = 1.0f;
 
 		float gain = ya + (regime - xa) * ((yb - ya) / (xb - xa));
