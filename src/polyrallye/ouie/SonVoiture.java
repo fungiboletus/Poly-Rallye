@@ -11,12 +11,12 @@ import polyrallye.ouie.utilitaires.Sound;
 /**
  * @author Antoine Pultier
  * 
- *         Classe de gestion du son moteur. En cours de développement.
+ *         Classe de gestion du son des voitures.
  */
-public class SonMoteur {
+public class SonVoiture {
 
 	/**
-	 * Les différents régimes enregistrés.
+	 * Les différents régimes du moteur enregistrés.
 	 */
 	protected NavigableMap<Integer, Sound> sons;
 
@@ -42,14 +42,15 @@ public class SonMoteur {
 
 	/**
 	 * Son du passage d'un rapport.
-	 * 
-	 * De manière logique, ce son devrait plus se trouver dans une classe ayant
-	 * rapport à la transmission, mais créer une classe juste pour un son est
-	 * plutôt contre-productif.
 	 */
 	protected Sound passageRapport;
 
-	public SonMoteur(Voiture voiture) {
+	/**
+	 * Son des freins.
+	 */
+	protected Sound sonFreinage;
+
+	public SonVoiture(Voiture voiture) {
 		this.voiture = voiture;
 
 		this.regimeRupteur = (float) voiture.getMoteur().getRegimeRupteur();
@@ -102,6 +103,9 @@ public class SonMoteur {
 		// Récupération du son du passage des rapports.
 		passageRapport = new Sound("Sons/voiture/rapport.wav");
 		passageRapport.setGain(0.4f);
+
+		sonFreinage = new Sound("Sons/voiture/frein.wav");
+		sonFreinage.setGain(0.3f);
 	}
 
 	/**
@@ -124,6 +128,8 @@ public class SonMoteur {
 			s.stop();
 			s.delete();
 		}
+		passageRapport.delete();
+		sonFreinage.delete();
 	}
 
 	/**
@@ -218,4 +224,12 @@ public class SonMoteur {
 		passageRapport.play();
 	}
 
+	/**
+	 * Son du freinage.
+	 */
+	public void sonFreinage() {
+		if (!sonFreinage.isPlaying()) {
+			sonFreinage.play();
+		}
+	}
 }

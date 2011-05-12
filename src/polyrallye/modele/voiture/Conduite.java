@@ -90,7 +90,7 @@ public class Conduite {
 			// qui ne bloque même pas les roues une seule fois tellement il
 			// est parfait <3
 
-			forceMotrice = forceMotriceMax * -2.1;
+			forceMotrice = forceMotriceMax * -1.5;
 		} else {
 			
 			double coupleMoteur = moteur.getCouple();

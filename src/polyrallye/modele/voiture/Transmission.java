@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 import org.jdom.Element;
 
-import polyrallye.controlleur.Main;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 

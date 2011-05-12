@@ -72,8 +72,7 @@ public class Sfx extends Thread {
 		if (!isNull) {
 
 			Random random = new Random();
-			int position = 0;
-
+			
 			while (isAlive) {
 				try {
 					if (!isPaused)

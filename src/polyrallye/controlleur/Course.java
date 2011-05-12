@@ -14,7 +14,7 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Copilote;
 import polyrallye.ouie.Klaxon;
 import polyrallye.ouie.Radio;
-import polyrallye.ouie.SonMoteur;
+import polyrallye.ouie.SonVoiture;
 import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
@@ -51,7 +51,7 @@ public class Course implements ActionMenu {
 	/**
 	 * Son du moteur.
 	 */
-	protected SonMoteur sonMoteur;
+	protected SonVoiture sonVoiture;
 
 	/**
 	 * Voiture conduite.
@@ -137,8 +137,8 @@ public class Course implements ActionMenu {
 		circuit.start();
 
 		// Création du son du moteur
-		sonMoteur = new SonMoteur(voiture);
-		sonMoteur.play();
+		sonVoiture = new SonVoiture(voiture);
+		sonVoiture.play();
 
 		// Création du moteur physique
 		conduite = new Conduite(voiture);
@@ -183,7 +183,7 @@ public class Course implements ActionMenu {
 
 				if (entreesCourse.isEchap()) {
 					circuit.stop();
-					sonMoteur.stop();
+					sonVoiture.stop();
 					timerOrganisateur.cancel();
 					klaxon.delete();
 					radio.delete();
@@ -199,6 +199,9 @@ public class Course implements ActionMenu {
 
 				conduite.tick(tempsTick);
 
+				final double vitesse = conduite.getVitesseLineaire();
+				final double position = conduite.getDistanceParcourue();
+				
 				// Gestion du klaxon
 				if (entreesCourse.isKlaxon()) {
 					klaxon.pouet();
@@ -236,8 +239,21 @@ public class Course implements ActionMenu {
 				if (cpTicksPassageRapport > 0)
 					--cpTicksPassageRapport;
 
+				boolean sonFrottement = false;
+				
 				// Et du frein
-				conduite.setFreinage(entreesCourse.isFreine());
+				if (entreesCourse.isFreine()) {
+					conduite.setFreinage(true);
+					if (vitesse > 0.0) {
+						if (vitesse < 1.0) {
+							sonVoiture.sonFreinage();
+						} else {						
+							sonFrottement = true;
+						}						
+					}
+				} else {
+					conduite.setFreinage(false);
+				}
 
 				// Maintenant, du passage des vitesses
 				Transmission t = voiture.getTransmission();
@@ -253,11 +269,13 @@ public class Course implements ActionMenu {
 						|| ((entreesCourse.isRapportInf() || (entreesCourse.automatique && regimeMoteur < (regimePuissanceMax + 250)
 								* t.getCoeffBoiteAutomatique())) && t
 								.retrograder())) {
-					sonMoteur.passageRapport();
+					sonVoiture.passageRapport();
 					cpTicksPassageRapport = 5;
-					Main.logImportant("op "+t.getCoeffBoiteAutomatique());
 				}
 
+				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
+					sonFrottement = true;
+				}
 				/*
 				 * if (entreesCourse.isAccelere()) {
 				 * conduite.acceleration(TypeTerrain.ASPHALT);
@@ -322,10 +340,19 @@ public class Course implements ActionMenu {
 				 */
 
 				if (conduite.isPatinage()) {
-					Main.logDebug("ÇA PATINE !");
+					sonFrottement = true;
 				}
 
-				sonMoteur.setRegime((float) voiture.getMoteur()
+				if (sonFrottement) {
+					circuit.playFrottement();
+				} else {
+					circuit.stopFrottement();
+				}
+				
+				circuit.setDistance(position);
+				circuit.setVitesse(vitesse);
+				
+				sonVoiture.setRegime((float) voiture.getMoteur()
 						.getRegimeCourant(), entreesCourse.isAccelere());
 				// terrain.setVitesse(regime / 3.0f);
 				// TODO mettre le code de abdoul (oui monsieur)*/
