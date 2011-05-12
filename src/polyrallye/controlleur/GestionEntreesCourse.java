@@ -5,8 +5,8 @@ import java.awt.event.KeyEvent;
 
 /**
  * @author Antoine Pultier
- *
- *	Gestion des entrées clavier des courses.
+ * 
+ *         Gestion des entrées clavier des courses.
  */
 public class GestionEntreesCourse extends KeyAdapter {
 
@@ -24,7 +24,7 @@ public class GestionEntreesCourse extends KeyAdapter {
 	protected boolean radio = false;
 	protected boolean station = false;
 	protected boolean copilote = false;
-	
+
 	@Override
 	public void keyPressed(KeyEvent touche) {
 		switch (touche.getKeyCode()) {
@@ -60,26 +60,26 @@ public class GestionEntreesCourse extends KeyAdapter {
 			Main.basculerAffichageConsole();
 			break;
 		case KeyEvent.VK_C:
-			copilote=true;
+			copilote = true;
 			break;
 		case KeyEvent.VK_E:
-			radio=true;
+			radio = true;
 			break;
 		case KeyEvent.VK_R:
-			station=true;
+			station = true;
 			break;
 		case KeyEvent.VK_T:
-			volumup=true;
+			volumup = true;
 			break;
 		case KeyEvent.VK_Y:
-			volumdown=true;
+			volumdown = true;
 			break;
 		case KeyEvent.VK_V:
 			Main.debug = !Main.debug;
 			break;
 		}
 	}
-	
+
 	@Override
 	public void keyReleased(KeyEvent touche) {
 		switch (touche.getKeyCode()) {
@@ -100,14 +100,12 @@ public class GestionEntreesCourse extends KeyAdapter {
 			klaxon = false;
 			break;
 		// Pour les passages de rapports, c'est des évènements
-			// à réinitialiser sois même
-		/*case KeyEvent.VK_SHIFT:
-			rapportSup = true;
-			break;
-		case KeyEvent.VK_CONTROL:
-			rapportInf = true;
-			break;*/
-			
+		// à réinitialiser sois même
+		/*
+		 * case KeyEvent.VK_SHIFT: rapportSup = true; break; case
+		 * KeyEvent.VK_CONTROL: rapportInf = true; break;
+		 */
+
 		}
 	}
 
@@ -138,7 +136,7 @@ public class GestionEntreesCourse extends KeyAdapter {
 		rapportInf = false;
 		return tmp;
 	}
-	
+
 	public boolean isKlaxon() {
 		return klaxon;
 	}
@@ -146,45 +144,45 @@ public class GestionEntreesCourse extends KeyAdapter {
 	public boolean isEchap() {
 		return echap;
 	}
-	
+
 	public boolean isCopilotte() {
 		return copilote;
 	}
-	
+
 	public boolean isRadio() {
 		return radio;
 	}
-	
+
 	public boolean isStation() {
 		return station;
 	}
-	
+
 	public boolean isVLD() {
 		return volumdown;
 	}
-	
+
 	public boolean isVLU() {
 		return volumup;
 	}
-	
-	//Mode bricolage
+
+	// Mode bricolage
 	public void copiloteChecked() {
-		copilote=false;
+		copilote = false;
 	}
-	
+
 	public void radioChecked() {
-		radio=false;
+		radio = false;
 	}
-	
+
 	public void stationChecked() {
-		station=false;
+		station = false;
 	}
-	
+
 	public void vldChecked() {
-		volumdown=false;
+		volumdown = false;
 	}
-	
+
 	public void vluChecked() {
-		volumup=false;
+		volumup = false;
 	}
 }

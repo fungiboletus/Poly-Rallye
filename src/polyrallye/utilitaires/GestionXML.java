@@ -13,7 +13,9 @@ import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
 
 /**
- * @author Antoine Pultier Classe de gestion XML.
+ * Classe de gestion XML.
+ * 
+ * @author Antoine Pultier
  */
 public abstract class GestionXML {
 	/**
@@ -58,9 +60,8 @@ public abstract class GestionXML {
 		doc.setRootElement(new Element(nom));
 		return doc;
 	}
-	
-	public static Document creerDocument(Element root)
-	{
+
+	public static Document creerDocument(Element root) {
 		Document doc = new Document();
 		doc.setRootElement(root);
 		return doc;
@@ -86,32 +87,64 @@ public abstract class GestionXML {
 		return e;
 	}
 
+	/**
+	 * Transforme un string en int
+	 * 
+	 * @param nombre
+	 *            Chaîne de caractères représentant le nombre
+	 * @return Le nombre
+	 */
 	public static int getInt(String nombre) {
-		if (nombre == null) return 0;
+		if (nombre == null)
+			return 0;
 		return Integer.parseInt(nombre.replace(" ", ""));
 	}
-	
+
+	/**
+	 * Transforme un string en double
+	 * 
+	 * @param nombre
+	 *            Chaîne de caractères représentant le nombre
+	 * @return Le nombre
+	 */
 	public static double getDouble(String nombre) {
-		if (nombre == null) return 0.0;
+		if (nombre == null)
+			return 0.0;
 		return Double.parseDouble(nombre.replace(" ", ""));
 	}
-	
-	public static Element chargerNoeudRacine(File fichier) throws Exception
-	{
+
+	/**
+	 * Charge le premier élément contenu dans un fichier
+	 * 
+	 * @param fichier
+	 *            Le fichier à ouvrir
+	 * @return La racine
+	 * @throws Exception
+	 */
+	public static Element chargerNoeudRacine(File fichier) throws Exception {
 		FileInputStream lecteurFichier = new FileInputStream(fichier);
 		Element noeud = chargerElementFlux(creerDocument(lecteurFichier));
 		lecteurFichier.close();
-		
+
 		return noeud;
 	}
-	
-	public static void enregistrerRacine(String nomFichier, Element noeud) throws Exception
-	{
+
+	/**
+	 * Enregistre un arbre XML dans un fichier.
+	 * 
+	 * @param nomFichier
+	 *            Le fichier dans lequel il faut écrire les données
+	 * @param noeud
+	 *            La racine des nœuds xml à enregistrer
+	 * @throws Exception
+	 */
+	public static void enregistrerRacine(String nomFichier, Element noeud)
+			throws Exception {
 		Document doc = creerDocument(noeud);
-		
+
 		FileOutputStream f = new FileOutputStream(nomFichier);
 		ecrireXML(f, doc);
-		
+
 		f.close();
 	}
 }

@@ -7,9 +7,7 @@ import org.jdom.Element;
 
 import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.voiture.Conduite;
-import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
-import polyrallye.modele.voiture.TypeTerrain;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Copilote;
@@ -17,20 +15,27 @@ import polyrallye.ouie.Klaxon;
 import polyrallye.ouie.Radio;
 import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.environnement.Crash;
-import polyrallye.ouie.environnement.Environnement;
-import polyrallye.ouie.environnement.Terrain;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.GestionXML;
-import polyrallye.utilitaires.Multithreading;
-import t2s.util.Random;
 
+/**
+ * Gestion d'une course (copilotes, environnement, circuit, sons)
+ * 
+ * @author antoine
+ *
+ */
 public class Course implements ActionMenu {
 
 	/**
 	 * Le timer qui excécute la course.
 	 */
 	protected java.util.Timer timerOrganisateur;
+	
+	
+	/**
+	 * Le timer qui compte le temps passé.
+	 * Celui-ci n'a rien à voir avec le timer précédent.
+	 */
 	protected org.lwjgl.util.Timer timerCompteur;
 
 	/**
@@ -94,7 +99,7 @@ public class Course implements ActionMenu {
 	}
 	
 	public Course(Voiture voiture) {
-		this(voiture, "Calenzana");
+		this(voiture, "Herault/Le_Vigan");
 	}
 
 	public Course(Voiture voiture, String fichierCircuit) {
@@ -169,6 +174,9 @@ public class Course implements ActionMenu {
 					circuit.stop();
 					sonMoteur.stop();
 					timerOrganisateur.cancel();
+					klaxon.delete();
+					radio.delete();
+					copilote.delete();
 					Main
 							.changerGestionEntrees(GestionEntreesMenu
 									.getInstance());
@@ -321,8 +329,14 @@ public class Course implements ActionMenu {
 					}
 				}
 
+			
 				
 				*/
+				
+				if (conduite.isPatinage()) {
+					Main.logDebug("ÇA PATINE !");
+				}
+				
 				sonMoteur.setRegime((float) voiture.getMoteur().getRegimeCourant(), entreesCourse.isAccelere());
 				// terrain.setVitesse(regime / 3.0f);
 				// TODO mettre le code de abdoul (oui monsieur)*/

@@ -207,16 +207,6 @@ public class Moteur {
      */
 
     public double getCouple() {
-    	// 736
-//        double r = this.getPuissanceMax() * 716 / this.getRegimePuissanceMax();
-        // coupleCourant = getCoupleMax()+ ((r - getCoupleMax())*((regimeCourant
-        // - getRegimeCoupleMax())) /
-        // (getRegimePuissanceMax()-getRegimeCoupleMax()));
-        // coupleCourant=0.1*this.puissanceMax;
-    	
-    	
-    	Main.logDebug("Couple max: "+coupleMax);
-    	Main.logDebug("Couple puissance max: "+couplePuissanceMax);
     	
     	// Entre couple max et puissance max (l'idéal)
     	double xa = regimeCoupleMax;
@@ -250,23 +240,8 @@ public class Moteur {
 		Main.logDebug("Couple calculé: "+couple);
     	
     	return couple;
-        /*if (coupleCourant < coupleMax) {
-            if (coupleCourant == 0)
-                coupleCourant = 0.1 * puissanceMax;
-            else
-                coupleCourant += 4;
-        }
-        System.out.println("couple courant? " + coupleCourant);
-        return coupleCourant;*/
     }
-
-    public void regimeCourant() {
-//        regimeCourant = (coupleCourant * regimeCoupleMax / (double) coupleMax);
-         regimeCourant+=(getCouple()*100/coupleMax);
-        System.out.println("regime courant " + regimeCourant);
-        setRegimeCourant(regimeCourant);
-    }
-
+    
     /**
      * @param regimeCourant
      *            the regimeCourant to set

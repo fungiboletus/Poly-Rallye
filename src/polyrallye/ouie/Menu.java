@@ -77,10 +77,18 @@ public abstract class Menu implements EcouteurEntrees {
 		this.menuPrecedent = menuPrecedent;
 	}
 
+	/**
+	 * Récupère la musique du menu.
+	 * 
+	 * @return Musique du menu.
+	 */
 	public Sound getMusique() {
 		return null;
 	}
 
+	/**
+	 * Change la musique du menu, si il y en a une
+	 */
 	public void changerMusique() {
 		Sound musique = getMusique();
 
@@ -123,9 +131,9 @@ public abstract class Menu implements EcouteurEntrees {
 			remplis = true;
 		}
 
-		//if (libelles.size() > 0) {
-			GestionEntreesMenu.getInstance().setEcouteur(this);
-		//}
+		// if (libelles.size() > 0) {
+		GestionEntreesMenu.getInstance().setEcouteur(this);
+		// }
 		changerMusique();
 		ennoncer();
 	}
@@ -224,12 +232,12 @@ public abstract class Menu implements EcouteurEntrees {
 
 	@Override
 	public void gauche() {
-		//annuler();
+		// annuler();
 	}
 
 	@Override
 	public void droite() {
-		//selectionner();
+		// selectionner();
 	}
 
 	public void aide() {

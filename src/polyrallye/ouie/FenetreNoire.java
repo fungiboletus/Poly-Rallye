@@ -28,29 +28,68 @@ import polyrallye.controlleur.Main;
  */
 public class FenetreNoire extends JFrame {
 
+	/**
+	 * Truc de swing qui sert à rien… 
+	 */
 	private static final long serialVersionUID = -6277192979591219507L;
 
+	/**
+	 * Console qui affiche les messages.
+	 */
 	protected JTextPane console;
+	
+	/**
+	 * Gestion des styles de la console.
+	 */
 	protected StyledDocument documentConsole;
+	
+	/**
+	 * Style d'affichage dans la console en bleu.
+	 */
 	protected SimpleAttributeSet consoleBleu;
+	
+	/**
+	 * Style d'affichage dans la console en blanc. 
+	 */
 	protected SimpleAttributeSet consoleBlanc;
+	
+	/**
+	 * Style d'affichage dans la console en rouge.
+	 */
 	protected SimpleAttributeSet consoleRouge;
 	
+	/**
+	 * Un panneau est présent dans la JFrame.
+	 * 
+	 * L'unique raison de sa présence est de pouvoir changer la couleur de fond.
+	 */
 	protected JPanel panneau;
+	
+	/**
+	 * Gestion du défilement de la console.
+	 */
 	protected JScrollPane defilement;
 	
+	/**
+	 * Listener des entrées clavier de la fenêtre, et donc du jeu.
+	 */
 	protected KeyListener gestionEntrees;
 	
+	/**
+	 * Est-ce que la console est affichée ?
+	 */
 	protected boolean consoleAffichee = false;
 
 	public FenetreNoire() {
 		super("PolyRallye");
 		
-		requestFocus();
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		setSize(960, 540);
 		setExtendedState(MAXIMIZED_BOTH);
+		
+		// JE VEUX LE FOCUS
+		requestFocus();
 		requestFocusInWindow();
 
 		// Pour avoir un fond noir, malgré le thème, il faut un jpanel
@@ -143,6 +182,11 @@ public class FenetreNoire extends JFrame {
 		panneau.repaint();
 	}
 	
+	/**
+	 * Change le listener qui récupère les évènements du clavier.
+	 * 
+	 * @param nouveauListener Le nouveau listener
+	 */
 	public void changerGestionEntrees(KeyListener nouveauListener)
 	{
 		if (gestionEntrees != null)

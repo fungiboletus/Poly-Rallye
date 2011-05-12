@@ -4,11 +4,25 @@ import java.io.File;
 
 import polyrallye.ouie.utilitaires.Sound;
 
+/**
+ * Klaxon de la voiture.
+ * 
+ */
 public class Klaxon {
+
+	/**
+	 * Nom du klaxon.
+	 */
 	protected String name;
 
+	/**
+	 * Son du klaxon.
+	 */
 	protected Sound klaxon;
-	
+
+	/**
+	 * Est-ce que le klaxon est déjà enclanché ?
+	 */
 	protected boolean enclanche;
 
 	public Klaxon(String t) {
@@ -36,6 +50,9 @@ public class Klaxon {
 
 	}
 
+	/**
+	 * Enclanche le klaxon
+	 */
 	public void pouet() {
 		if (!enclanche) {
 			klaxon.pause(false);
@@ -43,6 +60,9 @@ public class Klaxon {
 		}
 	}
 
+	/**
+	 * Arrête le klaxon.
+	 */
 	public void pasPouet() {
 		if (enclanche) {
 			klaxon.pause(true);
@@ -50,7 +70,10 @@ public class Klaxon {
 			enclanche = false;
 		}
 	}
-	
+
+	/**
+	 * Supprime le klaxon, et donc le son associé.
+	 */
 	public void delete() {
 		klaxon.delete();
 	}

@@ -1,5 +1,6 @@
 package polyrallye.ouie.menus;
 
+import polyrallye.controlleur.Main;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
@@ -23,6 +24,7 @@ public class SelectionneurPerformances implements ActionMenu {
 	public void actionMenu() {
 		Voiture v = StockVoitures.getVoitureParPerformances(min, max);
 		Liseuse.lire(v.getNomComplet());
+		Main.logInfo("Score de : "+v.getScore());
 		new VoitureArcade(menuPrecedent, v).lancer();
 	}
 

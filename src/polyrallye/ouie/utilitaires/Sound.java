@@ -11,6 +11,14 @@ import polyrallye.ouie.utilitaires.SoundScape;
 import polyrallye.utilitaires.CallbackArretSon;
 import polyrallye.utilitaires.Multithreading;
 
+/**
+ * Classe permettant de gérer les sons simplement.
+ *
+ */
+/**
+ * @author antoine
+ *
+ */
 public class Sound {
 
 	public class SoundException extends Exception {
@@ -33,19 +41,37 @@ public class Sound {
 		}
 	}
 	
+	/**
+	 * Tuple, entre le nombre de références d'un son, et un son.
+	 */
 	protected class TupleData {
 		public int nbReferences;
 		public int data;
 	}
 
+	/**
+	 * Base de données des sons.
+	 */
 	protected static Map<String, TupleData> cacheData; 
 	
+	/**
+	 * Identifiant du son, servant au cache.
+	 */
 	protected String identifiant;
 	
+	/**
+	 * Identifiant de la source du son.
+	 */
 	protected int data;
 
+	/**
+	 * Identifiant de l'écouteur.
+	 */
 	protected int id;
 	
+	/**
+	 * Est-ce que le son est en pause ?
+	 */
 	protected boolean enPause = false;
 
 	static {
@@ -110,6 +136,9 @@ public class Sound {
 		}
 	}
 	
+	/**
+	 * Est-ce que le son est toujours correct ?
+	 */
 	public boolean isAlive() {
 		return (id != -1 && data != -1);
 	}
@@ -171,6 +200,9 @@ public class Sound {
 		return false;
 	}
 
+	/**
+	 * Lit le son, et attends que la lecture soit terminée.
+	 */
 	public void playAndWait() {
 		play();
 
