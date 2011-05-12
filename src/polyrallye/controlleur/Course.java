@@ -165,16 +165,12 @@ public class Course implements ActionMenu {
 		timerCompteur = new org.lwjgl.util.Timer();
 
 		org.lwjgl.util.Timer.tick();
-		temps = timerCompteur.getTime();
 
-		Main.logInfo("La course est lancée");
 
 		score = voiture.getMoteur().getPuissanceMax();
 
 		final Moteur moteur = voiture.getMoteur();
 		moteur.reset();
-
-		Main.logImportant(voiture.getTransmission().toString());
 
 		TimerTask tt = new TimerTask() {
 
@@ -361,6 +357,10 @@ public class Course implements ActionMenu {
 
 		// À 50Hz, comme le courant EDF
 		timerOrganisateur.schedule(tt, 0, 20);// 20
+
+		temps = timerCompteur.getTime();
+
+		Main.logInfo("La course est lancée");
 
 		/*
 		 * canard2 = new Thread() { public void run() {

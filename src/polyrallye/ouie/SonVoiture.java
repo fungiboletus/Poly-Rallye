@@ -60,8 +60,8 @@ public class SonVoiture {
 			float xa = 100.0f;
 			float xb = 900.0f;
 
-			float ya = 1.0f;
-			float yb = 1.20f;
+			float ya = 0.6f;
+			float yb = 0.8f;
 
 			gainFinal = ya + ((float) voiture.getScore() - xa)
 					* ((yb - ya) / (xb - xa));
