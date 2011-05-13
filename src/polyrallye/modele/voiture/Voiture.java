@@ -203,7 +203,7 @@ public class Voiture {
 				* (0.6 + (Math.abs(moteur.getRegimePuissanceMax()
 						- moteur.getRegimeCoupleMax()) / 5000.0) * 0.42) * (moteur
 				.getPuissanceMax() * 4.2 + Math.pow(moteur.getCoupleMax(), 1.3)))
-				/ Math.pow((double) chassis.getPoids(), 1.2);
+				/ Math.pow((double) chassis.getMasse(), 1.2);
 		
 		// Maintenant, il faut faire une interpolation
 

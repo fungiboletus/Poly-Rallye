@@ -1,121 +1,257 @@
 package polyrallye.modele.voiture;
 
-
-
+import polyrallye.controlleur.Main;
 
 /**
+ * Moteur physique du jeu.
  * 
- * @author macina
+ * @author Abdoul Karimou Macina
+ * @author Antoine Pultier
  */
 public class Conduite {
-    protected double acceleration;
-    protected double vitesseLineaire;
-    protected double distanceParcourue;
-    protected double frottement;
-    protected boolean patinage;
-    protected String mode;
-    Voiture v;
-    public Conduite(Voiture v) {
-        this.v = v;
-        acceleration = 0.0;
-        vitesseLineaire = 0.0;
-        distanceParcourue = 0.0;
-        patinage = false;
-        mode=null;
-    }
 
-    /**
-     * 
-     * @param m
-     * @param t
-     * @return
-     */
-    public void vitesseAvancement(){
-        vitesseLineaire = vitesseRoues()*2*Math.PI*Transmission.RAYON_ROUE;
-        System.out.println("vitesseAvancement "+vitesseLineaire);
-    }
-    /**
-     * Calcule la vitesse des roues
-     * @return
-     */
-    public double vitesseRoues(){
-        double rMax = (v.moteur.getPuissanceMax()*716)/(double)v.moteur.getCoupleMax();
-        double res =  rMax*(1/v.transmission.getCoefCourant());
-        return res;
-        
-    }
-    /**
-     * Calcule l'acceleration en fonction de la puissance, la masse la rayon de
-     * la roue et le regime
-     *  de la voiture.
-     * 
-     * @param m
-     * @param masse
-     */
-    public void acceleration(TypeTerrain t) {
-        acceleration = ((v.moteur.getCouple()/ Transmission.RAYON_ROUE) - t.frottement)*(1/(double)(v.chassis.getPoids()));
-    }
+	/**
+	 * Accélération de la voiture (m/s^2)
+	 */
+	protected double acceleration;
 
-    /**
-     * Calcule la distance parcourue apres un temps d'acceleration.
-     * 
-     * @param tempsAcceleration
-     */
-    public void distanceAcceleration(int tempsAcceleration) {
-        distanceParcourue += (vitesseLineaire/(double)3600) * tempsAcceleration + acceleration
-                * Math.sqrt(tempsAcceleration) / (double) 2;
-        System.out.println("distance en Mode A "+distanceParcourue);
-    }
+	/**
+	 * Vitesse de la voiture (m/s)
+	 */
+	protected double vitesse;
 
-    /**
-     * Calcule la distance en fonction de la vitesse.
-     * 
-     * @param temps
-     */
-    public void distanceVitesseConstante(int tempsVariation) {
-        distanceParcourue += (vitesseLineaire/(double)3600) * tempsVariation;
-        System.out.println("distance en Mode V "+distanceParcourue);
-    }
+	/**
+	 * Distance parcourue par rapport au début du circuit (m)
+	 */
+	protected double position;
 
-    /**
-     * calcul de la possiton de la voiture.
-     * @param mode
-     * @param temps
-     */
-    public void distance(String  mode, int temps){
-        if(mode.equals("acceleration"))
-            distanceAcceleration(temps);
-        if(mode.equals("vitesse"))
-            distanceVitesseConstante(temps);
-        System.out.println("Distance "+distanceParcourue);
-    }
-    /**
-     * @return the patinage
-     */
-    public boolean isPatinage() {
-        return patinage;
-    }
+	/**
+	 * Coefficient d'adhérence ou de frottement
+	 */
+	protected double coeffAdherenceFrottement;
 
-    /**
-     * @param patinage
-     *            the patinage to set
-     */
-    public void setPatinage() {
-        int i=0;
-        if(i==0){
-            patinage = true;
-        }
-        else
-            patinage = false;
-    }
+	/**
+	 * Est-ce que la voiture patine ?
+	 */
+	protected boolean patinage;
 
-    /**
-     * Cette méthode permet verefier si une voiture v passe un virage ou non
-     * En fonction  des caracteristiques du virage: rayon, angle de relevement, angle de frottement
-     */
-    public boolean passageVirage(double angleRelevement, double angleFrottement, double rayon){
-        double res = Math.sqrt(rayon*9.81*Math.tan(angleFrottement)+angleRelevement);
-        return (vitesseLineaire<res)?true:false;
-    }
-   
+	/**
+	 * La voiture conduite.
+	 */
+	protected Voiture voiture;
+
+	/**
+	 * Copie de la valeur de la masse de la voiture. Car cette valeur est
+	 * souvent appelée.
+	 */
+	protected double masse;
+
+	/**
+	 * Pareil
+	 */
+	protected Moteur moteur;
+
+	protected Transmission transmission;
+
+	protected boolean freinage;
+
+	public Conduite(Voiture v) {
+		this.voiture = v;
+		acceleration = 0.0;
+		vitesse = 0.0;
+		position = 0.0;
+		patinage = false;
+		masse = v.getChassis().getMasse();
+		coeffAdherenceFrottement = 0.8;
+		this.moteur = voiture.getMoteur();
+		this.transmission = voiture.getTransmission();
+	}
+
+	/**
+	 * @param temps
+	 *            Temps passé par rapport au tick précédent
+	 */
+	public void tick(double temps) {
+
+		double forceRestitance = resistanceAerodynamique()
+				+ resistanceRoulement();
+		// Main.logInfo("Resistance aérodynamique: "+resistanceAerodynamique());
+
+		// double puissanceRequise = forceRestitance*vitesse;
+
+		double forceMotrice;
+		double forceMotriceMax = coeffAdherenceFrottement * masse * 9.81;
+
+		if (freinage) {
+
+			// Pour simplifier de façon ÉNORME les calculs,
+			// on suppose que toutes les voitures ont des freins et un ABS
+			// parfait
+			// qui ne bloque même pas les roues une seule fois tellement il
+			// est parfait <3
+
+			forceMotrice = forceMotriceMax * -1.5;
+		} else {
+			
+			double coupleMoteur = moteur.getCouple();
+			
+			forceMotrice = forceMotrice(forceMotriceMax * 1.3, coupleMoteur);
+		}
+
+		double somme = forceMotrice - forceRestitance;
+
+		// Inertie des pièces mécaniques de la voiture
+		double ratioInertie = 1.12;
+
+		// F = masse * acceleration
+		acceleration = somme / masse / ratioInertie;
+
+		Main.logDebug("Vitesse: " + vitesse * 3.6);
+		Main.logDebug("Rapport: "+transmission.getRapportCourant());
+		Main.logDebug("Acceleration: " + acceleration);
+		Main.logDebug("=================");
+
+		// C'est magique <3
+		position += 0.5 * acceleration * temps * temps + vitesse * temps;
+		vitesse += acceleration * temps;
+
+		double regime = (vitesse / (2 * Math.PI * Transmission.RAYON_ROUE))
+				* transmission.getCoefCourant() * 60;
+
+		// Si on patine, le moteur tourne à fond \o/
+		if (patinage) {
+			regime /= coeffAdherenceFrottement;
+		}
+
+		Main.logDebug("Régime: " + regime);
+		moteur.setRegimeCourant(regime);
+
+		// Histoire de ne pas partir en arrière à cause de la restitance de
+		// roulement…
+		if (vitesse < 0.0)
+			vitesse = 0.0;
+		// System.out.println("t : "+temps+"\t\t"+vitesse);
+	}
+
+	/**
+	 * @return the patinage
+	 */
+	public boolean isPatinage() {
+		return patinage;
+	}
+
+	public boolean isFreinage() {
+		return freinage;
+	}
+
+	public void setFreinage(boolean freinage) {
+		this.freinage = freinage;
+	}
+
+	/**
+	 * Cette méthode permet verefier si une voiture v passe un virage ou non En
+	 * fonction des caracteristiques du virage: rayon, angle de relevement,
+	 * angle de frottement
+	 */
+	public boolean passageVirage(double angleRelevement,
+			double angleFrottement, double rayon) {
+		double res = Math.sqrt(rayon * 9.81 * Math.tan(angleFrottement)
+				+ angleRelevement);
+		return (vitesse < res) ? true : false;
+	}
+
+	public double getAcceleration() {
+		return acceleration;
+	}
+
+	public double getVitesseLineaire() {
+		return vitesse;
+	}
+
+	public double getDistanceParcourue() {
+		return position;
+	}
+
+	/**
+	 * Calcule la resistance aérodynamique en fonction de la voiture, et de sa
+	 * vitesse.
+	 * 
+	 * @return Resistance
+	 */
+	public double resistanceAerodynamique() {
+		// Le coefficient de resistance est un fonction des caractèristiques de
+		// la voiture
+		// Actuellement, les meilleures voitures de série sur ce domaine ont un
+		// coefficient de 0,25
+		// Certaines voitures peuvent descendre en dessous, d'autres sont bien
+		// au dessus, tel un SUV
+		// Les formules 1, ont un coefficient de 0.9, car les flux d'airs sont
+		// très utilisés
+		// Pour simplifier nos calculs, nous utilisons un coefficient constant,
+		// car on ne peux s'amuser à passer en souflerie chacune des voitures du
+		// jeu.
+		final double Cx = 0.267;
+
+		// Calcul de la surface frontale, à partir de la largeur
+		// ce n'est pas très lié, mais ça permet d'établir des différences entre
+		// les voitures
+		double A = 0.0014 * voiture.getChassis().getLargeur();
+
+		// Et voici la formule magique
+		return Cx * A * 0.5 * vitesse * vitesse * 1.202;
+	}
+
+	/**
+	 * Calcule la resistance au roulement en fonction de la voiture, et du
+	 * terrain.
+	 * 
+	 * @return Resistance
+	 */
+	public double resistanceRoulement() {
+
+		// Coefficient de restitance au roulement
+		// Cela dépend de la voiture, du pneu, et d'une grande quantité d'autres
+		// facteurs
+		// mais dans notre cas, 1% est une valeur moyenne.
+		// Normalement, la vitesse joue un tout petit peu, mais c'est
+		// négligeable par
+		// rapport à la restitance aéordynamique
+		double fr = 0.01;
+
+		return fr * masse * 9.81;
+	}
+
+	/**
+	 * Calcule la force motrice pour l'ensemble des roues.
+	 * 
+	 * @param forceMotriceMax
+	 *            Force maximale possible
+	 * @param coupleMoteur
+	 *            Couple du moteur
+	 * @return Force motrice
+	 */
+	public double forceMotrice(double forceMotriceMax, double coupleMoteur) {
+		
+		double forceAvant = transmission.getCoupleParRoue(PositionRoue.AVANT, coupleMoteur) / Transmission.RAYON_ROUE;
+		double forceArriere = transmission.getCoupleParRoue(PositionRoue.ARRIERE, coupleMoteur) / Transmission.RAYON_ROUE;
+		
+		boolean patinageAvant = false;
+		if (forceAvant > forceMotriceMax) {
+			forceAvant = forceMotriceMax*coeffAdherenceFrottement;
+			patinage = true;
+		} else {
+			patinage = false;
+			patinageAvant = true;
+		}
+		
+		if (forceArriere > forceMotriceMax) {
+			forceArriere = forceMotriceMax*coeffAdherenceFrottement;
+			patinage = true;
+		} else if (!patinageAvant) {
+			patinage = false;
+		}
+		
+		return forceAvant + forceArriere ;
+
+	}
 }

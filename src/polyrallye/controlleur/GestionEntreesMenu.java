@@ -3,7 +3,6 @@ package polyrallye.controlleur;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-
 /**
  * @author Antoine Pultier
  * 

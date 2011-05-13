@@ -121,18 +121,19 @@ public class Transmission {
 	}
 
 	// Définition d'un score
-	public void etablirVitesseMaximale(double scoreVoiture) {
+	public void etablirVitesseMaximale(double puissanceVoiture) {
 		// Interpolation linéaire, comme d'habitude
-		
-		final double xa = 120;
-		final double xb = 900;
-		
-		final double ya = 185;
-		final double yb = 380;
-		
-		vitessePuissanceMaximale = ya + (scoreVoiture - xa)*((yb-ya)/(xb-xa));
+
+		final double xa = 100;
+		final double xb = 800;
+
+		final double ya = 180;
+		final double yb = 350;
+
+		vitessePuissanceMaximale = ya + (puissanceVoiture - xa)
+				* ((yb - ya) / (xb - xa));
 	}
-	
+
 	/**
 	 * Calcule des spécifités de chaque rapport de la boite de vitesse, à partir
 	 * des informations contenues dans les données membres.
@@ -144,14 +145,18 @@ public class Transmission {
 		coefsRapports[0] = 0.0;
 
 		// Conversion de la vitesse en km/h en m/s
-		final double vitesseMax = vitessePuissanceMaximale * 5 / 18;
+		final double vitesseMax = vitessePuissanceMaximale * 5.0 / 18.0;
+
+		// La fonction exponentielle est correcte pour une vitesse de 180 km/h,
+		// pas beaucoup plus
+		final double vitesseMaxBoite = 180.0 * 5.0 / 18.0;
 
 		// Périmètre de roue :-) (en m)
 		final double perimetreRoue = 2 * RAYON_ROUE * Math.PI;
 
 		// Combien la roue doit faire de tours par seconde pour attendre la
 		// vitesse maximale ? (en hertzs)
-		final double nbToursMax = vitesseMax / perimetreRoue;
+		final double nbToursMax = vitesseMaxBoite / perimetreRoue;
 
 		// Pareil pour le minimum
 		final double nbToursMin = VITESSE_MAX_PREMIERE / perimetreRoue;
@@ -164,16 +169,20 @@ public class Transmission {
 		final double rapportMax = regimeMoteur / nbToursMax;
 
 		// La différence de rapport suit une loi exponentielle
-		// Le calcul se fait donc avec une propriété exponentielle, et bien évidemment, avec une interpolation linéaire
-		
-		// Coefficient déterminé à la main à partir de véritables boites de vitesses
+		// Le calcul se fait donc avec une propriété exponentielle, et bien
+		// évidemment, avec une interpolation linéaire
+
+		// Coefficient déterminé à la main à partir de véritables boites de
+		// vitesses
 		final double coeff = -0.4;
-		
+
 		final double expRapportMin = Math.exp(coeff);
-		final double expRapportMax = Math.exp(nbVitesses*coeff);
+		final double expRapportMax = Math.exp(nbVitesses * coeff);
 
 		for (int i = 1; i <= nbVitesses; ++i) {
-			coefsRapports[i] = rapportMin + (Math.exp(coeff*i) - expRapportMin)*((rapportMax-rapportMin)/(expRapportMax-expRapportMin));
+			coefsRapports[i] = (vitesseMaxBoite / vitesseMax)
+					* (rapportMin + (Math.exp(coeff * i) - expRapportMin)
+							* ((rapportMax - rapportMin) / (expRapportMax - expRapportMin)));
 		}
 	}
 
@@ -196,7 +205,7 @@ public class Transmission {
 	 * Pas de protectection anti-noob non plus.
 	 */
 	public boolean retrograder() {
-		if (vitesseCourante > 0) {
+		if (vitesseCourante > 1) {
 			--vitesseCourante;
 			return true;
 		}
@@ -213,36 +222,56 @@ public class Transmission {
 	}
 
 	/**
+	 * Retourne le coefficient du régime auquel le moteur doit tourner avant de
+	 * pouvoir rétrogader.
+	 * 
+	 * Le but est d'éviter que la boite automatique rentre dans une boucle
+	 * infinie de passage de rapports.
+	 * 
+	 * Une conséquence agréable est que le rétrogradage est plus réaliste.
+	 * 
+	 * @return Le coefficient
+	 */
+	public double getCoeffBoiteAutomatique() {
+		if (vitesseCourante <= 1) return 0.0;
+		
+		return 0.75 * (coefsRapports[vitesseCourante] / coefsRapports[vitesseCourante - 1]);
+	}
+
+	/**
 	 * Récupère le couple à la roue en fonction de la roue et du type de
 	 * transmission.
 	 * 
 	 * @param pr
 	 *            Roue
+	 * @param coupleMoteur
+	 *            Couple du moteur
 	 * @return Couple à la roue
 	 */
-	public double getCoupleParRoue(PositionRoue pr) {
-		
-		// Gestion d'une fausse vitesse en prise directe (plus rendement plus élevé)
-		double rendement = (vitesseCourante+1) == nbVitesses/2 ? RENDEMENT : RENDEMENT*RENDEMENT;
-		
+	public double getCoupleParRoue(PositionRoue pr, double coupleMoteur) {
+		// Main.logLiseuse("couple moteur: "+moteur.getCouple());
+		// Gestion d'une fausse vitesse en prise directe (plus rendement plus
+		// élevé)
+		double rendement = (vitesseCourante + 1) == nbVitesses / 2 ? RENDEMENT
+				: RENDEMENT * RENDEMENT;
+
 		switch (type) {
 		case PROPULSION:
 			switch (pr) {
-			case ARRIERE_DROITE:
-			case ARRIERE_GAUCHE:
-				return moteur.getCouple() * getCoefCourant() * rendement * 0.5;
+			case ARRIERE:
+				return coupleMoteur * getCoefCourant() * rendement;
 			}
 			break;
 		case TRACTION:
 			switch (pr) {
-			case AVANT_DROITE:
-			case AVANT_GAUCHE:
-				return moteur.getCouple() * getCoefCourant() * rendement * 0.5;
+			case AVANT:
+				return coupleMoteur * getCoefCourant() * rendement;
 			}
 			break;
 		case QUATTRO:
 			// Une transmission 4x4 a un rendement plus faible.
-			return moteur.getCouple()* getCoefCourant() * RENDEMENT;
+			return coupleMoteur * getCoefCourant() * rendement * RENDEMENT
+					* 0.5;
 		}
 
 		// Si on est là, c'est que la roue n'est pas motrice.
@@ -272,10 +301,10 @@ public class Transmission {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 	public void lireSpecifications() {
 		StringBuilder sb = new StringBuilder();
-		
+
 		sb.append("Transmission aux ");
 		switch (type) {
 		case PROPULSION:
@@ -288,15 +317,15 @@ public class Transmission {
 			sb.append("4 roues");
 			break;
 		}
-		
+
 		Liseuse.lire(sb.toString());
-        Liseuse.marquerPause();
-        sb = new StringBuilder();
-        
+		Liseuse.marquerPause();
+		sb = new StringBuilder();
+
 		sb.append("Avec une boite de ");
 		sb.append(nbVitesses);
 		sb.append(" vitesses");
-		
+
 		Liseuse.lire(sb.toString());
 	}
 
@@ -308,4 +337,7 @@ public class Transmission {
 		return vitessePuissanceMaximale;
 	}
 
+	public void setPremiere() {
+		vitesseCourante = 1;
+	}
 }

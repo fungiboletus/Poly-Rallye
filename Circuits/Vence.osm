@@ -1,0 +1,791 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-9443' action='modify' timestamp='2009-06-01T15:05:59Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8966032' lon='7.1237383'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9442' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963558' lon='7.1240988'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9441' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8962445' lon='7.1243391'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9440' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961084' lon='7.1246824'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9439' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959847' lon='7.1250687'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9438' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959229' lon='7.1253519'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9437' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959229' lon='7.1257296'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9436' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8957992' lon='7.1260128'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9435' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8957002' lon='7.1263304'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9434' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8958239' lon='7.126399'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9433' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959847' lon='7.1262703'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9432' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8960899' lon='7.1260557'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9431' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8962569' lon='7.1256437'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9430' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964301' lon='7.1254549'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9429' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896628' lon='7.1252403'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9428' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968012' lon='7.1251288'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9427' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8969743' lon='7.1251288'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9426' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.897098' lon='7.1254377'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9425' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8971228' lon='7.1259012'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9424' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.897098' lon='7.126399'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9423' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8969372' lon='7.1268711'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9422' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968012' lon='7.1273003'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9421' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967888' lon='7.1277037'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9420' action='modify' timestamp='2009-06-01T15:06:28Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8966775' lon='7.1279869'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9419' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964919' lon='7.1282444'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9418' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8962754' lon='7.1285019'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9417' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961084' lon='7.128871'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9416' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959662' lon='7.1291885'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9415' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8957806' lon='7.129446'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9414' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8955518' lon='7.1297894'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9413' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8954405' lon='7.1300726'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9412' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8953291' lon='7.1302786'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9411' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8950199' lon='7.1306047'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9410' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8947725' lon='7.1307936'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9409' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8945869' lon='7.130991'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9408' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8944818' lon='7.1312227'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9407' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8944385' lon='7.1314201'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9406' action='modify' timestamp='2009-06-01T15:06:27Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8945436' lon='7.1314631'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9405' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8946859' lon='7.1313086'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9404' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8948529' lon='7.1312485'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9403' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8951003' lon='7.1311626'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9402' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.895391' lon='7.1310339'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9401' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8955642' lon='7.1309052'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9400' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8956569' lon='7.1309309'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9399' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8956384' lon='7.1310339'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9398' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8955332' lon='7.1311884'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9397' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8953662' lon='7.1314459'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9396' action='modify' timestamp='2011-04-27T18:26:29Z' uid='411998' user='sergio7826' visible='true' version='2' lat='43.8952673' lon='7.1319351'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9395' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8952054' lon='7.132493'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9394' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8952673' lon='7.1328192'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9393' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8952673' lon='7.1332827'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9392' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8952673' lon='7.133626'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9391' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8952858' lon='7.1338663'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9390' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.895224' lon='7.1340551'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9389' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8951188' lon='7.1342783'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9388' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8949951' lon='7.1344671'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9387' action='modify' timestamp='2009-06-01T15:06:26Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8949147' lon='7.1347933'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9386' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8948838' lon='7.1350679'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9385' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8947601' lon='7.1354799'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9384' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8945746' lon='7.1358233'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9383' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8944014' lon='7.1362009'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9382' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8943272' lon='7.1365442'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9381' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8943272' lon='7.1368532'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9380' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8943148' lon='7.1374712'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9379' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8942777' lon='7.1378145'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9378' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.894154' lon='7.1383123'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9377' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8940674' lon='7.1387415'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9376' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.893956' lon='7.1390848'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9375' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8937829' lon='7.1394024'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9374' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8935231' lon='7.1398058'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9373' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8933375' lon='7.1401491'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9372' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8931643' lon='7.1407156'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9371' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8930283' lon='7.1410589'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9370' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8930159' lon='7.1413765'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9369' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8929355' lon='7.1420374'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9368' action='modify' timestamp='2009-06-01T15:06:25Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8927685' lon='7.1425781'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9367' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8927066' lon='7.1427755'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9366' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8926077' lon='7.1429644'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9365' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8925211' lon='7.1431532'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9364' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8925211' lon='7.1432648'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9363' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8925953' lon='7.143239'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9362' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8927932' lon='7.1429472'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9361' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8930283' lon='7.142664'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9360' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8934303' lon='7.142149'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9359' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8936777' lon='7.1417799'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9358' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8939251' lon='7.1415911'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9357' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8941292' lon='7.1413765'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9356' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8942962' lon='7.1411619'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9355' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8944632' lon='7.1408873'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9354' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8947601' lon='7.1405611'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9353' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.895057' lon='7.1403723'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9352' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8955518' lon='7.1399775'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9351' action='modify' timestamp='2009-06-01T15:06:24Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8957188' lon='7.1397028'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9350' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959476' lon='7.1393423'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9349' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961208' lon='7.1390333'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9348' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963558' lon='7.1386042'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9347' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964919' lon='7.1383295'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9346' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896628' lon='7.1380291'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9345' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967393' lon='7.1380034'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9344' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967269' lon='7.1381149'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9343' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8965661' lon='7.1385441'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9342' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964177' lon='7.1390848'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9341' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896195' lon='7.1398573'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9340' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8958858' lon='7.1405439'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9339' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.895626' lon='7.1409473'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9338' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8953477' lon='7.1414022'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9337' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8950384' lon='7.1419773'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9336' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8949333' lon='7.1422348'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9335' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8948962' lon='7.1424065'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9334' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8950075' lon='7.1423636'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9333' action='modify' timestamp='2009-06-01T15:06:23Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8951436' lon='7.1421061'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9332' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8954095' lon='7.1417627'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9331' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959043' lon='7.1413336'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9330' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963806' lon='7.1407499'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9329' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968012' lon='7.140235'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9328' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968939' lon='7.140235'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9327' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968754' lon='7.1403723'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9326' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967084' lon='7.1405611'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9325' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964795' lon='7.1410074'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9324' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963064' lon='7.1415052'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9323' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961827' lon='7.1418057'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9322' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959662' lon='7.142149'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9321' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8958116' lon='7.1424065'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9320' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8958734' lon='7.142518'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9319' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8960095' lon='7.1423464'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9318' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963064' lon='7.1419344'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9317' action='modify' timestamp='2009-06-01T15:06:22Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967393' lon='7.1414022'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9316' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8970362' lon='7.1410761'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9315' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.897265' lon='7.1409044'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9314' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8974073' lon='7.1408615'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9313' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8973887' lon='7.1410074'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9312' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8971599' lon='7.1413164'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9311' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8969125' lon='7.1418057'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9310' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967517' lon='7.1421747'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9309' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8965538' lon='7.1425524'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9308' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963682' lon='7.1428099'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9307' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8962754' lon='7.1429644'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9306' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963187' lon='7.1430502'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9305' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964795' lon='7.1428957'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9304' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968321' lon='7.1424494'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9303' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8974073' lon='7.1417456'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9302' action='modify' timestamp='2009-06-01T15:06:21Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8978649' lon='7.1413164'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9301' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8981927' lon='7.1409473'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9300' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.898335' lon='7.1406469'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9299' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8984401' lon='7.1402178'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9298' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8986442' lon='7.1398315'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9297' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8987927' lon='7.1395741'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9296' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8989163' lon='7.1391878'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9295' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8990895' lon='7.1389132'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9294' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8991204' lon='7.1390333'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9293' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.89904' lon='7.1394882'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9292' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8987679' lon='7.1405182'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9291' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8985638' lon='7.1412048'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9290' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8984834' lon='7.1417456'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9289' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8983597' lon='7.1421747'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9288' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8982113' lon='7.1424666'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9287' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8979144' lon='7.1427069'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9286' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8975928' lon='7.143033'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9285' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8973083' lon='7.1432648'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9284' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8970486' lon='7.1435652'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9283' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967702' lon='7.1439085'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9282' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8965228' lon='7.1442518'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9281' action='modify' timestamp='2009-06-01T15:06:20Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8963064' lon='7.1448698'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9280' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961208' lon='7.1451101'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9279' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896059' lon='7.1454363'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9278' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961084' lon='7.145711'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9277' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961332' lon='7.1459513'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9276' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896059' lon='7.1462431'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9275' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8960095' lon='7.1465006'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9274' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896059' lon='7.1469297'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9273' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961703' lon='7.1473589'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9272' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896294' lon='7.1476851'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9271' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964795' lon='7.1479855'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9270' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896628' lon='7.1482'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9269' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8966465' lon='7.148303'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9268' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8965847' lon='7.1483288'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9267' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896461' lon='7.148243'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9266' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8962569' lon='7.1481142'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9265' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8959971' lon='7.1478996'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9264' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8958858' lon='7.1477537'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9263' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8957806' lon='7.1475306'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9262' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8957002' lon='7.1475992'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9261' action='modify' timestamp='2009-06-01T15:06:19Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8957002' lon='7.1478138'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9260' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8958239' lon='7.1481142'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9259' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.896059' lon='7.1483889'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9258' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964177' lon='7.1487579'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9257' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8967269' lon='7.1490154'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9256' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968506' lon='7.1491442'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9255' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8968506' lon='7.149333'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9254' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8964301' lon='7.1500711'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9253' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8961084' lon='7.1505861'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9252' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8954281' lon='7.1515646'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9251' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8953044' lon='7.1518736'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9250' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.8952054' lon='7.1521483'>
+    <tag k='nom' v='Vence' />
+  </node>
+  <node id='-9249' action='modify' timestamp='2009-06-01T15:06:18Z' uid='32744' user='Thomas Wagner' visible='true' version='1' lat='43.895057' lon='7.1523371'>
+    <tag k='environnement' v='plaine' />
+    <tag k='meteo' v='pluie' />
+    <tag k='nom' v='Vence' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='nuit' />
+  </node>
+  <way id='-9248' action='modify' timestamp='2009-06-01T15:06:29Z' uid='32744' user='Thomas Wagner' visible='true' version='1'>
+    <nd ref='-9249' />
+    <nd ref='-9250' />
+    <nd ref='-9251' />
+    <nd ref='-9252' />
+    <nd ref='-9253' />
+    <nd ref='-9254' />
+    <nd ref='-9255' />
+    <nd ref='-9256' />
+    <nd ref='-9257' />
+    <nd ref='-9258' />
+    <nd ref='-9259' />
+    <nd ref='-9260' />
+    <nd ref='-9261' />
+    <nd ref='-9262' />
+    <nd ref='-9263' />
+    <nd ref='-9264' />
+    <nd ref='-9265' />
+    <nd ref='-9266' />
+    <nd ref='-9267' />
+    <nd ref='-9268' />
+    <nd ref='-9269' />
+    <nd ref='-9270' />
+    <nd ref='-9271' />
+    <nd ref='-9272' />
+    <nd ref='-9273' />
+    <nd ref='-9274' />
+    <nd ref='-9275' />
+    <nd ref='-9276' />
+    <nd ref='-9277' />
+    <nd ref='-9278' />
+    <nd ref='-9279' />
+    <nd ref='-9280' />
+    <nd ref='-9281' />
+    <nd ref='-9282' />
+    <nd ref='-9283' />
+    <nd ref='-9284' />
+    <nd ref='-9285' />
+    <nd ref='-9286' />
+    <nd ref='-9287' />
+    <nd ref='-9288' />
+    <nd ref='-9289' />
+    <nd ref='-9290' />
+    <nd ref='-9291' />
+    <nd ref='-9292' />
+    <nd ref='-9293' />
+    <nd ref='-9294' />
+    <nd ref='-9295' />
+    <nd ref='-9296' />
+    <nd ref='-9297' />
+    <nd ref='-9298' />
+    <nd ref='-9299' />
+    <nd ref='-9300' />
+    <nd ref='-9301' />
+    <nd ref='-9302' />
+    <nd ref='-9303' />
+    <nd ref='-9304' />
+    <nd ref='-9305' />
+    <nd ref='-9306' />
+    <nd ref='-9307' />
+    <nd ref='-9308' />
+    <nd ref='-9309' />
+    <nd ref='-9310' />
+    <nd ref='-9311' />
+    <nd ref='-9312' />
+    <nd ref='-9313' />
+    <nd ref='-9314' />
+    <nd ref='-9315' />
+    <nd ref='-9316' />
+    <nd ref='-9317' />
+    <nd ref='-9318' />
+    <nd ref='-9319' />
+    <nd ref='-9320' />
+    <nd ref='-9321' />
+    <nd ref='-9322' />
+    <nd ref='-9323' />
+    <nd ref='-9324' />
+    <nd ref='-9325' />
+    <nd ref='-9326' />
+    <nd ref='-9327' />
+    <nd ref='-9328' />
+    <nd ref='-9329' />
+    <nd ref='-9330' />
+    <nd ref='-9331' />
+    <nd ref='-9332' />
+    <nd ref='-9333' />
+    <nd ref='-9334' />
+    <nd ref='-9335' />
+    <nd ref='-9336' />
+    <nd ref='-9337' />
+    <nd ref='-9338' />
+    <nd ref='-9339' />
+    <nd ref='-9340' />
+    <nd ref='-9341' />
+    <nd ref='-9342' />
+    <nd ref='-9343' />
+    <nd ref='-9344' />
+    <nd ref='-9345' />
+    <nd ref='-9346' />
+    <nd ref='-9347' />
+    <nd ref='-9348' />
+    <nd ref='-9349' />
+    <nd ref='-9350' />
+    <nd ref='-9351' />
+    <nd ref='-9352' />
+    <nd ref='-9353' />
+    <nd ref='-9354' />
+    <nd ref='-9355' />
+    <nd ref='-9356' />
+    <nd ref='-9357' />
+    <nd ref='-9358' />
+    <nd ref='-9359' />
+    <nd ref='-9360' />
+    <nd ref='-9361' />
+    <nd ref='-9362' />
+    <nd ref='-9363' />
+    <nd ref='-9364' />
+    <nd ref='-9365' />
+    <nd ref='-9366' />
+    <nd ref='-9367' />
+    <nd ref='-9368' />
+    <nd ref='-9369' />
+    <nd ref='-9370' />
+    <nd ref='-9371' />
+    <nd ref='-9372' />
+    <nd ref='-9373' />
+    <nd ref='-9374' />
+    <nd ref='-9375' />
+    <nd ref='-9376' />
+    <nd ref='-9377' />
+    <nd ref='-9378' />
+    <nd ref='-9379' />
+    <nd ref='-9380' />
+    <nd ref='-9381' />
+    <nd ref='-9382' />
+    <nd ref='-9383' />
+    <nd ref='-9384' />
+    <nd ref='-9385' />
+    <nd ref='-9386' />
+    <nd ref='-9387' />
+    <nd ref='-9388' />
+    <nd ref='-9389' />
+    <nd ref='-9390' />
+    <nd ref='-9391' />
+    <nd ref='-9392' />
+    <nd ref='-9393' />
+    <nd ref='-9394' />
+    <nd ref='-9395' />
+    <nd ref='-9396' />
+    <nd ref='-9397' />
+    <nd ref='-9398' />
+    <nd ref='-9399' />
+    <nd ref='-9400' />
+    <nd ref='-9401' />
+    <nd ref='-9402' />
+    <nd ref='-9403' />
+    <nd ref='-9404' />
+    <nd ref='-9405' />
+    <nd ref='-9406' />
+    <nd ref='-9407' />
+    <nd ref='-9408' />
+    <nd ref='-9409' />
+    <nd ref='-9410' />
+    <nd ref='-9411' />
+    <nd ref='-9412' />
+    <nd ref='-9413' />
+    <nd ref='-9414' />
+    <nd ref='-9415' />
+    <nd ref='-9416' />
+    <nd ref='-9417' />
+    <nd ref='-9418' />
+    <nd ref='-9419' />
+    <nd ref='-9420' />
+    <nd ref='-9421' />
+    <nd ref='-9422' />
+    <nd ref='-9423' />
+    <nd ref='-9424' />
+    <nd ref='-9425' />
+    <nd ref='-9426' />
+    <nd ref='-9427' />
+    <nd ref='-9428' />
+    <nd ref='-9429' />
+    <nd ref='-9430' />
+    <nd ref='-9431' />
+    <nd ref='-9432' />
+    <nd ref='-9433' />
+    <nd ref='-9434' />
+    <nd ref='-9435' />
+    <nd ref='-9436' />
+    <nd ref='-9437' />
+    <nd ref='-9438' />
+    <nd ref='-9439' />
+    <nd ref='-9440' />
+    <nd ref='-9441' />
+    <nd ref='-9442' />
+    <nd ref='-9443' />
+    <tag k='highway' v='unclassified' />
+    <tag k='nom' v='Vence' />
+  </way>
+</osm>

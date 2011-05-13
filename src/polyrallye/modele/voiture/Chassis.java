@@ -7,7 +7,7 @@ import polyrallye.utilitaires.GestionXML;
 
 public class Chassis
 {
-	protected int poids;
+	protected int masse;
 	
 	protected int largeur;
 	
@@ -21,14 +21,14 @@ public class Chassis
 	
 	public Chassis(Element noeud)
 	{
-		poids = GestionXML.getInt(noeud.getChildText("poids"));
+		masse = GestionXML.getInt(noeud.getChildText("poids"));
 		largeur = GestionXML.getInt(noeud.getChildText("largeur"));
 		longueur = GestionXML.getInt(noeud.getChildText("longueur"));
 		empattement = GestionXML.getInt(noeud.getChildText("empattement"));
 	}
 
-	public int getPoids() {
-		return poids;
+	public int getMasse() {
+		return masse;
 	}
 
 	public int getLargeur() {
@@ -46,7 +46,7 @@ public class Chassis
 	public void lireSpecifications() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append(poids);
+		sb.append(masse);
 		sb.append(" kilos pour ");
 		sb.append((int)Math.round(largeur/1000.0));
 		sb.append(" mètres de large sur ");

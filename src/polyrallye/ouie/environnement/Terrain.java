@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 import polyrallye.ouie.utilitaires.Sound;
-import polyrallye.ouie.utilitaires.Sound.SoundException;
 
 public class Terrain {
 	protected String terrain;
@@ -36,7 +35,7 @@ public class Terrain {
 		son.play();
 		tournant.play();
 		tournant.pause(true);
-		sfx.run();
+		sfx.start();
 	}
 	
 	public void setVitesse(double vitesse) {
@@ -48,12 +47,12 @@ public class Terrain {
 		
 	}
 	
-	public void playTourne() {
+	public void playFrottement() {
 		tournant.pause(false);
 		tournant.setGain(1.2f);
 	}
 	
-	public void stopTourne() {
+	public void stopFrottement() {
 		
 		float gain = tournant.getGain();
 		gain -= 0.05f;
@@ -71,7 +70,7 @@ public class Terrain {
 		son.delete();
 	}
 	
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Terrain t = new Terrain("terre");
 		t.play();
 		Scanner sc = new Scanner(System.in);
@@ -88,7 +87,7 @@ public class Terrain {
 				else
 			t.setVitesse(temp);
 			}
-		}
+		}*/
 		
 	
 	

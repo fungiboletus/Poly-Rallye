@@ -10,7 +10,6 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import polyrallye.ouie.SonMoteur;
 import polyrallye.ouie.utilitaires.Sound;
 
 public class Environnement {

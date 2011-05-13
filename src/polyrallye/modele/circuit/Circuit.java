@@ -2,14 +2,11 @@ package polyrallye.modele.circuit;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 import org.jdom.Element;
 
-import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Evenement;
 import polyrallye.ouie.environnement.Terrain;
@@ -71,6 +68,9 @@ public class Circuit {
 	// }
 
 	public Circuit(Element noeud) {
+		
+		contenu = new LinkedList<ContenuCircuit>();
+		
 		if (noeud.getChildren("way").size() != 1) {
 			System.err
 					.println("Le fichier OSM ne contient pas un seul chemin.");
@@ -162,8 +162,8 @@ public class Circuit {
 						if ((param = getTagValue(n, "environnement")) != null)
 							contenu.add(new Evenement("environnement",
 									distance, param, this));
-						if ((param = getTagValue(n, "terrain")) != null)
-							contenu.add(new Evenement("terrain", distance,
+						if ((param = getTagValue(n, "surface")) != null)
+							contenu.add(new Evenement("surface", distance,
 									param, this));
 						if ((param = getTagValue(n, "son")) != null)
 							contenu.add(new Evenement("son", distance, param,
@@ -212,6 +212,7 @@ public class Circuit {
 
 	public void start() {
 		environnement.play();
+		terrain.play();
 	}
 
 	public double getDistance() {
@@ -226,6 +227,14 @@ public class Circuit {
 		environnement.playCrash();
 	}
 
+	public void playFrottement() {
+		terrain.playFrottement();
+	}
+	
+	public void stopFrottement() {
+		terrain.stopFrottement();
+	}
+	
 	public void setDistance(double d) {
 		environnement.setDistance(d);
 		ContenuCircuit temp;
