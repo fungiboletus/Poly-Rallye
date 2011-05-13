@@ -59,5 +59,8 @@ public class Main {
         Championnat Champ = Championnat
                 .chargerChampionnat("championnat européen");
         Champ.setClassement();
+        
+        // on lance la course en donnant l'étape en cours
+        // aprés avoir joué la course --> on sauvegarde l'étape et le championnat en cours
     }
 }
