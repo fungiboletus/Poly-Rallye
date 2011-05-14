@@ -2,7 +2,7 @@
 <voiture>
 	<presentation>
 		<constructeur>BMW</constructeur>
-		<nom>528i</nom>
+		<nom>528 i</nom>
 		<version>Touring</version>
 		<periode annee="2010" />
 	</presentation>

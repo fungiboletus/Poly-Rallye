@@ -1,11 +1,6 @@
 package polyrallye.modele.championnat;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import polyrallye.modele.personnes.Joueur;
-import polyrallye.modele.voiture.StockVoitures;
-import polyrallye.modele.voiture.Voiture;
 
 public class Main {
 
@@ -52,7 +47,7 @@ public class Main {
 
         Championnat.chargerChampionnat("championnat mondial");
 
-        Etape Et = Etape.chargerEtape("Rallye de Monaco");
+        //Etape Et = Etape.chargerEtape("Rallye de Monaco");
 
         // System.out.println(Et.getClassement());
 

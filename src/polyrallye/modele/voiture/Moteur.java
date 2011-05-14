@@ -379,18 +379,18 @@ public class Moteur {
         sb = new StringBuilder();
 
         sb.append("Couple max de ");
-        sb.append(coupleMax);
+        sb.append((int)coupleMax);
         sb.append(" nioutown mètres à ");
-        sb.append(regimeCoupleMax);
+        sb.append((int)regimeCoupleMax);
         sb.append(" tours par minutes");
 
         Liseuse.lire(sb.toString());
         sb = new StringBuilder();
 
         sb.append("Puissance max de ");
-        sb.append(puissanceMax);
+        sb.append((int)puissanceMax);
         sb.append(" chevaux à ");
-        sb.append(regimePuissanceMax);
+        sb.append((int)regimePuissanceMax);
         sb.append(" tours minute");
 
         Liseuse.lire(sb.toString());

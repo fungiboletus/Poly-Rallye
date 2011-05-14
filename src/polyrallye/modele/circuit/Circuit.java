@@ -97,7 +97,7 @@ public class Circuit {
 
 		double distance = 0;
 
-		double angle = 0;
+		//double angle = 0;
 
 		int i = 0;
 

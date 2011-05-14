@@ -2,7 +2,7 @@
 <voiture>
 	<presentation>
 		<constructeur>BMW</constructeur>
-		<nom>328i</nom>
+		<nom>328 i</nom>
 		<periode annee="1999" />
 	</presentation>
 	<economie>

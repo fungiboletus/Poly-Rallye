@@ -1,8 +1,6 @@
 package polyrallye.ouie.environnement;
 
 import java.util.Random;
-import java.util.Scanner;
-
 import polyrallye.ouie.utilitaires.Sound;
 
 public class Terrain {
@@ -49,7 +47,7 @@ public class Terrain {
 	
 	public void playFrottement() {
 		tournant.pause(false);
-		tournant.setGain(1.2f);
+		tournant.setGain(0.8f);
 	}
 	
 	public void stopFrottement() {

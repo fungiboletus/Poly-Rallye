@@ -2,7 +2,7 @@
 <voiture>
 	<presentation>
 		<constructeur>BMW</constructeur>
-		<nom>740i</nom>
+		<nom>740 i</nom>
 		<version>2008</version>
 		<periode annee="2008" />
 	</presentation>

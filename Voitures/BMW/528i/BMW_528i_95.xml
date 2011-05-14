@@ -2,7 +2,7 @@
 <voiture>
 	<presentation>
 		<constructeur>BMW</constructeur>
-		<nom>528i</nom>
+		<nom>528 i</nom>
 		<version>95</version>
 		<periode annee="1995" />
 	</presentation>

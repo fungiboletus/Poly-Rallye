@@ -96,7 +96,7 @@ public abstract class Liseuse {
 		// lt = new LecteurTexte();
 		sonParoles = new Sound("Paroles/paroles.ogg");
 		// sonParoles_A.setGain(0.90f);
-
+		
 		voixVocalyzeSIVOX = ConfigFile.rechercher("VOIX_4");
 
 		paroles = new HashMap<String, Parole>();
@@ -235,9 +235,9 @@ public abstract class Liseuse {
 					// Utilisation de VocalyzeSIVOX
 					String nouveautexte = sb.toString();
 
-					/*if (!texte.equals(nouveautexte)) {
-						Main.logInfo(nouveautexte);
-					}*/
+					if (!texte.equals(nouveautexte)) {
+						Main.logDebug(nouveautexte);
+					}
 
 					Pretraitement traitement = new Pretraitement(nouveautexte);
 					Phrase phrase = null;
@@ -297,7 +297,9 @@ public abstract class Liseuse {
 
 					// TODO La phrase d'en dessous doit obligatoirement
 					// être enregistrée :D
-					Liseuse.lire("Erreur de synthèse vocale");
+					//Liseuse.lire("Polyrallye");
+					Main.logImportant("Erreur de syntèse vocale…");
+					Main.logImportant(ConfigFile.rechercher("CONFIGURE"));
 				}
 				// Si on n'a pas le son, on fait un fichier texte qui contient
 				// le
@@ -346,6 +348,26 @@ public abstract class Liseuse {
 			return "té";
 		case '-':
 			return " ";
+		case '0':
+			return "zéro";
+		case '1':
+			return "un";
+		case '2':
+			return "deu";
+		case '3':
+			return "troi";
+		case '4':
+			return "quatre";
+		case '5':
+			return "cinq";
+		case '6':
+			return "six";
+		case '7':
+			return "sept";
+		case '8':
+			return "huite";
+		case '9':
+			return "neuf";
 		default:
 			return upper;
 		}
