@@ -6,6 +6,7 @@ import java.util.TimerTask;
 import org.jdom.Element;
 
 import polyrallye.modele.circuit.Circuit;
+import polyrallye.modele.circuit.Portion;
 import polyrallye.modele.voiture.Conduite;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
@@ -26,7 +27,7 @@ import polyrallye.utilitaires.GestionXML;
  * 
  */
 public class Course implements ActionMenu {
-
+	
 	/**
 	 * Le timer qui excécute la course.
 	 */
@@ -98,7 +99,27 @@ public class Course implements ActionMenu {
 	 * longtemps
 	 */
 	protected int cpTicksPassageRapport;
-
+	
+	/**
+	 * Portion courante du circuit.
+	 */
+	protected Portion portionCourante;
+	
+	/**
+	 * Distance parcourue sur la section en cours
+	 */
+	protected double distancePortion = 0.0;
+	
+	/**
+	 * Ou en est le conducteur ?
+	 */
+	protected enum typeAction { ACCELERATION, FREINAGE, VIRAGE };
+	
+	/**
+	 * Ce que doit être en train de faire le conducteur
+	 */
+	protected typeAction actionCourante;
+	
 	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
 		this.circuit = circuit;
@@ -123,6 +144,12 @@ public class Course implements ActionMenu {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see polyrallye.ouie.ActionMenu#actionMenu()
+	 */
+	/* (non-Javadoc)
+	 * @see polyrallye.ouie.ActionMenu#actionMenu()
+	 */
 	@Override
 	public void actionMenu() {
 		if (circuit == null)
@@ -135,24 +162,19 @@ public class Course implements ActionMenu {
 		System.out.println(circuit);
 		// Lancement de l'envirronnement sonore propre au circuit.
 		circuit.changeTerrain("asphalt");
-		circuit.start();
-
 		// Création du son du moteur
 		sonVoiture = new SonVoiture(voiture);
-		sonVoiture.play();
 
 		// Création du moteur physique
 		conduite = new Conduite(voiture);
-
 		// Le klaxon, c'est important
 		klaxon = new Klaxon(voiture.getNomComplet());
 
 		// Creation copilote
 		copilote = new Copilote();
-
+		
 		// Creation radio
-		radio = new Radio();
-		radio.start();
+		//radio = new Radio();
 
 		// Si on part en première, c'est mieux
 		voiture.getTransmission().setPremiere();
@@ -167,12 +189,13 @@ public class Course implements ActionMenu {
 
 		org.lwjgl.util.Timer.tick();
 
-
 		score = voiture.getMoteur().getPuissanceMax();
 
 		final Moteur moteur = voiture.getMoteur();
 		moteur.reset();
 
+		portionCourante = circuit.nextPortion();
+		
 		TimerTask tt = new TimerTask() {
 
 			@Override
@@ -194,7 +217,7 @@ public class Course implements ActionMenu {
 				float tempsTick = tempsTmp - temps;
 				temps = tempsTmp;
 
-				conduite.tick(tempsTick);
+				double distanceParcourue = conduite.tick(tempsTick);
 
 				final double vitesse = conduite.getVitesseLineaire();
 				final double position = conduite.getDistanceParcourue();
@@ -261,7 +284,7 @@ public class Course implements ActionMenu {
 						.getRegimePuissanceMax();
 
 				// Ceci est une belle condition avec des appels de méthodes <3
-				if (((entreesCourse.isRapportSup() || (entreesCourse.automatique && regimeMoteur > (regimePuissanceMax + 250.0))) && t
+				if (((entreesCourse.isRapportSup() || (entreesCourse.automatique && (regimeMoteur > (regimePuissanceMax + 250.0) || moteur.isRupteurEnclanche()))) && t
 						.passerVitesse())
 						|| ((entreesCourse.isRapportInf() || (entreesCourse.automatique && regimeMoteur < (regimePuissanceMax + 250)
 								* t.getCoeffBoiteAutomatique())) && t
@@ -292,6 +315,35 @@ public class Course implements ActionMenu {
 				
 				// Gestion des portions du circuit
 				
+				distancePortion += distanceParcourue;
+				
+				Main.logDebug("Distance parcourue:" + position);
+				Main.logDebug("Distance portion:" + distancePortion);
+				
+				double diff = portionCourante.getLongueur()-distancePortion;
+				
+				if (diff < 0.0) {
+					portionCourante = circuit.nextPortion();
+					
+					if (portionCourante == null) {
+						timerOrganisateur.cancel();
+						Liseuse.lire("Ahah");
+					}
+					else {
+						distancePortion = portionCourante.getLongueur()+diff;
+						switch (portionCourante.getType()) {
+						case GAUCHE:
+							copilote.playGauche();
+							Main.logImportant("<= GAUCHE");
+							break;
+						case DROITE:
+							copilote.playDroite();
+							Main.logImportant("DROITE =>");
+							break;
+						}
+					}
+				}
+				
 				/*Portion temp;
 				if (contenu.element().getLongueur() <= d) {
 					temp = contenu.poll();
@@ -305,51 +357,17 @@ public class Course implements ActionMenu {
 			}
 		};
 
+		// Démarrage des sons
+		circuit.start();
+		sonVoiture.play();
+		radio.start();
+		
 		// À 50Hz, comme le courant EDF
 		timerOrganisateur.schedule(tt, 0, 20);// 20
 
-		temps = timerCompteur.getTime();
-
+		temps = timerCompteur.getTime();		
+		
 		Main.logInfo("La course est lancée");
-
-		/*
-		 * canard2 = new Thread() { public void run() {
-		 * 
-		 * while (true) {
-		 * 
-		 * long d = Random.unsignedDelta(4, 10) * 1000;
-		 * 
-		 * Main.logImportant("" + d);
-		 * 
-		 * Multithreading.dormir(d);
-		 * 
-		 * freine.play();
-		 * 
-		 * virageDroite = Random.unsignedDelta(1, 2) == 1;
-		 * 
-		 * devonsNousTourner = Random.unsignedDelta(120, 400);
-		 * 
-		 * if (Random.unsignedDelta(1, 2) == 1) { gauche.play(); if
-		 * (!hasTourned("gauche")) { megaCrash();
-		 * 
-		 * } } else { droite.play(); if (!hasTourned("droite")) { megaCrash(); }
-		 * } } }
-		 * 
-		 * protected boolean hasTourned(String sens) { double time = 0; while
-		 * (time < 2) { if ((sens.equals("gauche") && entreesCourse.isGauche())
-		 * || (sens.equals("droite") && entreesCourse .isDroite())) return true;
-		 * time += 0.1; Multithreading.dormir(100); } return false; }
-		 * 
-		 * protected void megaCrash() { //regime = 10; sonMoteur.setRegime(10,
-		 * false); score *= 0.25;
-		 * 
-		 * Transmission t = voiture.getTransmission(); while
-		 * (t.getRapportCourant() > 1) { t.retrograder(); }
-		 * sonMoteur.passageRapport(); crash.play(); } };
-		 * 
-		 * canard2.start();
-		 */
-
 	}
 
 }

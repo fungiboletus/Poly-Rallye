@@ -28,6 +28,11 @@ public class Environnement {
 
 	public Environnement(String type, String temps, String meteo) {
 		super();
+		
+		if (type == null) type = "plaine";
+		if (temps == null) temps = "jour";
+		if (meteo == null) meteo = "clair";
+		
 		this.type = type;
 		this.temps = temps;
 		this.meteo = new Meteo(meteo, type);
