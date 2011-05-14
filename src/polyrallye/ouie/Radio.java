@@ -173,17 +173,14 @@ public class Radio extends Thread {
 				}
 			} catch (IOException e) {
 				System.out.println("Erreur lecture fichier");
-				e.printStackTrace();
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur chargement fichier");
-			e.printStackTrace();
 		}
 
 		try {
 			mani.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 

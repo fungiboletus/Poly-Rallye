@@ -19,21 +19,21 @@ public class Championnat {
     protected String nom;
     protected List<Etape> etapes;
     protected List<Rang> classement;
-    protected Voiture voitureGagné;
-    protected int argentGagné;
+    protected Voiture voitureGagne;
+    protected int argentGagne;
 
     public Championnat(Joueur J, String nom, List<Etape> etapes,
-            Voiture voitureGagné, int argentGagné) {
+            Voiture voitureGagne, int argentGagne) {
         this.player = J;
-        this.argentGagné = argentGagné;
-        this.voitureGagné = voitureGagné;
+        this.argentGagne = argentGagne;
+        this.voitureGagne = voitureGagne;
         this.nom = nom;
 
         if (nom == null)
             throw new NullPointerException(
                     "Vous devez au moins specifier le nom du championnat !");
 
-        // si la liste de speciales est null : en créer une
+        // si la liste de speciales est null : en creer une
         if (etapes == null)
             this.etapes = new ArrayList<Etape>();
         else
@@ -52,10 +52,10 @@ public class Championnat {
             etapes.add(balise);
         }
 
-        voitureGagné = StockVoitures.getVoitureParNom((noeud
+        voitureGagne = StockVoitures.getVoitureParNom((noeud
                 .getChildText("voitureEnJeu")));
 
-        argentGagné = GestionXML.getInt(noeud.getChildText("argentEnJeu"));
+        argentGagne = GestionXML.getInt(noeud.getChildText("argentEnJeu"));
 
     }
 
@@ -69,10 +69,10 @@ public class Championnat {
         for (int i = 0; i < etapes.size(); ++i)
             noeud.addContent(etapes.get(i).toXML());
 
-        noeud.addContent(new Element("voitureEnJeu").setText(voitureGagné
+        noeud.addContent(new Element("voitureEnJeu").setText(voitureGagne
                 .getNomComplet()));
 
-        noeud.addContent(new Element("argentEnJeu").setText("" + argentGagné));
+        noeud.addContent(new Element("argentEnJeu").setText("" + argentGagne));
 
         return noeud;
     }
@@ -85,12 +85,12 @@ public class Championnat {
         this.etapes = etapes;
     }
 
-    public Voiture getVoitureGagné() {
-        return voitureGagné;
+    public Voiture getVoitureGagne() {
+        return voitureGagne;
     }
 
-    public void setVoitureGagné(Voiture voitureGagné) {
-        this.voitureGagné = voitureGagné;
+    public void setVoitureGagne(Voiture voitureGagne) {
+        this.voitureGagne = voitureGagne;
     }
 
     public void setNom(String nom) {
@@ -110,8 +110,8 @@ public class Championnat {
     }
 
     public void RemisePrix() throws Exception {
-        player.getGarage().ajouter(voitureGagné);
-        player.ajouterArgent(argentGagné);
+        player.getGarage().ajouter(voitureGagne);
+        player.ajouterArgent(argentGagne);
     }
 
     public void setClassement() {
@@ -141,10 +141,10 @@ public class Championnat {
             }
         }
 
-        // réorganisation, trie de la liste classement
+        // reorganisation, trie de la liste classement
         Collections.sort(classement);
 
-        // mise a jour des écarts
+        // mise a jour des ecarts
         setecart();
 
         for (int i = 0; i < 10; ++i) {
@@ -185,12 +185,12 @@ public class Championnat {
         this.classement = classement;
     }
 
-    public int getArgentGagné() {
-        return argentGagné;
+    public int getArgentGagne() {
+        return argentGagne;
     }
 
-    public void setArgentGagné(int argentGagné) {
-        this.argentGagné = argentGagné;
+    public void setArgentGagne(int argentGagne) {
+        this.argentGagne = argentGagne;
     }
 
     public static Championnat chargerChampionnat(String nom) {
