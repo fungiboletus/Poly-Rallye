@@ -25,7 +25,6 @@ public class Copilote {
 	private List<Sound> ok;
 
 	private Sfx bullshit;
-	private Sound ok;
 	private boolean isPipelette;
 
 	private Random random;
