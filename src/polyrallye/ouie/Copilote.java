@@ -97,8 +97,7 @@ public class Copilote {
 
 			if (new File(rep+"stfu.wav").exists()) {
 				Sound stfu = new Sound(rep+"stfu.wav");
-				stfu.playAndWait();
-				stfu.delete();
+				stfu.playAndDelete();
 			}
 		}
 		else {

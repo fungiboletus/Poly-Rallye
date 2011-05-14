@@ -132,6 +132,7 @@ public class Course implements ActionMenu {
 
 		Main.changerGestionEntrees(entreesCourse);
 
+		System.out.println(circuit);
 		// Lancement de l'envirronnement sonore propre au circuit.
 		circuit.changeTerrain("asphalt");
 		circuit.start();
@@ -272,69 +273,7 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
 					sonFrottement = true;
 				}
-				/*
-				 * if (entreesCourse.isAccelere()) {
-				 * conduite.acceleration(TypeTerrain.ASPHALT);
-				 * voiture.getMoteur().regimeCourant(); }
-				 * 
-				 * /*if (entreesCourse.isAccelere()) { double xa = 20; double xb
-				 * = 1000; double ya = 0.5; double yb = 2.5;
-				 * 
-				 * double plus = t.getCoefCourant() (ya + (score - xa) * ((yb -
-				 * ya) / (xb - xa)));
-				 * 
-				 * regime += plus;
-				 * 
-				 * // System.out.println(plus);
-				 * 
-				 * } else { regime -= 27.0f; }
-				 * 
-				 * if (entreesCourse.isFreine()) { regime -= 50.0f;
-				 * 
-				 * /* if (devonsNousTourner > 1) { if (virageDroite == false) {
-				 * gauche.play(); } else { droite.play(); } }
-				 */
-				/*
-				 * }
-				 * 
-				 * if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
-				 * regime -= 35.0f; terrain.playTourne(); /* // Si ça fait trop
-				 * longtemps que l'on freine if (--devonsNousTourner < 0) { if
-				 * (devonsNousTourner < 80) { // CRASH regime = 8000; // Pour
-				 * avoir un retour sonore hein } } else { if
-				 * ((entreesCourse.isGauche() && virageDroite == false) ||
-				 * entreesCourse.isDroite() && virageDroite) { if
-				 * (devonsNousTourner == 0) { ok.play(); devonsNousTourner =
-				 * 10000000; } } else { // CRASH regime = 8000; } }
-				 */
-				/*
-				 * } else { terrain.stopTourne(); }
-				 * 
-				 * /*if (entreesCourse.isRapportInf()) { if
-				 * (t.getRapportCourant() > 1 && t.retrograder()) { regime *=
-				 * 1.2f; sMoteur.passageRapport(); } }
-				 * 
-				 * if (entreesCourse.isRapportSup()) { if (t.passerVitesse()) {
-				 * regime *= 0.625f; sMoteur.passageRapport(); } }
-				 */
-				/*
-				 * Moteur m = voiture.getMoteur(); if (regime < 850) { regime =
-				 * 850; } else if (regime > m.getRegimeRupteur()) { boolean
-				 * rupteur = true; if (entreesCourse.automatique) { if
-				 * (t.passerVitesse()) { rupteur = false; regime *= 0.625f;
-				 * sonMoteur.passageRapport();
-				 * System.out.println("CANARD DE MERDE"); } }
-				 * 
-				 * if (rupteur) { System.out.println(m.getRegimeRupteur());
-				 * regime = m.getRegimeRupteur() - 250; } }
-				 * 
-				 * if (entreesCourse.automatique && regime <
-				 * m.getRegimeRupteur() * 0.625) { if (t.getRapportCourant() >
-				 * 1) { t.retrograder(); regime *= 1.2f;
-				 * sonMoteur.passageRapport();
-				 * System.out.println("CANARD DE MERDE 2"); } }
-				 */
-
+				
 				if (conduite.isPatinage()) {
 					sonFrottement = true;
 				}
@@ -350,8 +289,19 @@ public class Course implements ActionMenu {
 				
 				sonVoiture.setRegime((float) voiture.getMoteur()
 						.getRegimeCourant(), entreesCourse.isAccelere());
-				// terrain.setVitesse(regime / 3.0f);
-				// TODO mettre le code de abdoul (oui monsieur)*/
+				
+				// Gestion des portions du circuit
+				
+				/*Portion temp;
+				if (contenu.element().getLongueur() <= d) {
+					temp = contenu.poll();
+					while (temp != null && !temp.getType().equals("virage")) {
+						Evenement temp2 = (Evenement) temp;
+						temp2.exec();
+						temp = contenu.poll();
+					}
+				}*/
+
 			}
 		};
 

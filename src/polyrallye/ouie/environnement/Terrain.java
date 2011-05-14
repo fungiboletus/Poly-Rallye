@@ -47,7 +47,7 @@ public class Terrain {
 	
 	public void playFrottement() {
 		tournant.pause(false);
-		tournant.setGain(0.8f);
+		tournant.setGain(0.5f);
 	}
 	
 	public void stopFrottement() {

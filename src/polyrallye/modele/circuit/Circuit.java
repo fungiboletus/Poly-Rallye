@@ -1,75 +1,68 @@
 package polyrallye.modele.circuit;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
 import org.jdom.Element;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.environnement.Environnement;
 import polyrallye.ouie.environnement.Evenement;
 import polyrallye.ouie.environnement.Terrain;
+import polyrallye.ouie.environnement.TypeEvenement;
 import polyrallye.utilitaires.Cartographie;
 import polyrallye.utilitaires.GestionXML;
 
+/**
+ * Circuit.
+ * 
+ * Un circuit est créé à partir d'un chemin sur une carte OpenStreetMap.
+ * 
+ * La carte doit respecter certaines conventions :
+ * 
+ * Elle ne contient qu'un seul chemin (ou route).
+ * 
+ * Le premier noeud contient _obligatoirement_ les quatre attributs suivants :
+ * 
+ * - surface
+ * - temps
+ * - meteo
+ * - environnement
+ * 
+ * Les noeuds suivants peuvent redéfinir un ou plusieurs des attributs suivants :
+ * 
+ * - surface
+ * - environnement
+ * - son
+ */
 public class Circuit {
+	/**
+	 * Nom du circuit.
+	 */
 	protected String nom;
+	
+	/**
+	 * Environnement courant du circuit.
+	 */
 	protected Environnement environnement;
-	protected Queue<ContenuCircuit> contenu;
+	
+	/**
+	 * Terrain courant du circuit.
+	 */
 	protected Terrain terrain;
 
+	/**
+	 * Portions du circuit.
+	 */
+	protected Queue<Portion> portions;
 
 
 	protected double distance;
 
-	// public Circuit(String file) {
-	// try {
-	// Element racine = GestionXML.chargerNoeudRacine(new File("Circuits/"
-	// + file + ".xml"));
-	// nom = racine.getChildText("nom");
-	// terrain = new Terrain(racine.getChildText("terrain"));
-	// String type = racine.getChildText("environnement");
-	// String temps = racine.getChildText("temps");
-	// String meteo = racine.getChildText("meteo");
-	// environnement = new Environnement(type, temps, meteo);
-	// distance=0;
-	//
-	// contenu = new LinkedList<ContenuCircuit>();
-	// Element parcours = racine.getChild("contenu");
-	//
-	// for (Iterator iterator = parcours.getChildren().iterator(); iterator
-	// .hasNext();) {
-	// Element element = (Element) iterator.next();
-	// if (element.getName().equals("gauche")
-	// || element.getName().equals("droite")) {
-	// contenu.add(new Route(Double.valueOf(element
-	// .getAttributeValue("distance")), Long
-	// .valueOf(element.getAttributeValue("longueur")),
-	// TypeRoute.valueOf(element.getName()),
-	// Double.valueOf(element.getAttributeValue("force"))));
-	//
-	// } else if (element.getName().equals("fin")) {
-	// distance = Double.valueOf(element.getAttributeValue("distance"));
-	// } else {
-	//
-	// contenu.add(new Evenement(element.getName(), Double
-	// .valueOf(element.getAttributeValue("distance")),
-	// Double.valueOf(element.getAttributeValue("longueur")),element.getAttributeValue("type"),
-	// this));
-	// }
-	//
-	// }
-	//
-	// } catch (Exception e) {
-	// System.out.println("Erreur chargement xml");
-	// }
-	//
-	// }
-
 	public Circuit(Element noeud) {
 		
-		contenu = new LinkedList<ContenuCircuit>();
+		portions = new LinkedList<Portion>();
 		
 		if (noeud.getChildren("way").size() != 1) {
 			System.err
@@ -136,43 +129,41 @@ public class Circuit {
 			}
 
 			if (i > 0) {
-				double d = Cartographie.distance(latCourant, lonCourant,
+				double distancePortion = Cartographie.distance(latCourant, lonCourant,
 						latSuivant, lonSuivant);
-
-				System.out.println("Distance : " + d);
-
-				distance += d;
+				
+				distance += distancePortion;
 
 				if (i > 1) {
-
-					double a = Cartographie.angleVirage(latPrecedent,
+					
+					double anglePortion = Cartographie.angleVirage(latPrecedent,
 							lonPrecedent, latCourant, lonCourant, latSuivant,
 							lonSuivant);
-					System.out.println("Angle : " + a);
-
-					TypeRoute s = Cartographie.sensVirage(latPrecedent,
+					
+					TypeRoute typePortion = Cartographie.sensVirage(latPrecedent,
 							lonPrecedent, latCourant, lonCourant, latSuivant,
 							lonSuivant);
 
-					// On ajoute le virage
-					contenu.add(new Route(d, s, a));
+					// Maintenant que l'on a toutes les bonnes informations, création de la portion
+					Portion portion = new Portion(distancePortion, typePortion, anglePortion);
+					
 					// Si des evenements lies
 					if (n.getChildren() != null) {
-						String param;
-						if ((param = getTagValue(n, "environnement")) != null)
-							contenu.add(new Evenement("environnement",
-									distance, param, this));
-						if ((param = getTagValue(n, "surface")) != null)
-							contenu.add(new Evenement("surface", distance,
-									param, this));
-						if ((param = getTagValue(n, "son")) != null)
-							contenu.add(new Evenement("son", distance, param,
-									this));
+						
+						String parametre;
+						
+						if ((parametre = getTagValue(n, "environnement")) != null)
+							portion.addEvenement(new Evenement(TypeEvenement.ENVIRONNEMENT, parametre));
+						
+						if ((parametre = getTagValue(n, "surface")) != null)
+							portion.addEvenement(new Evenement(TypeEvenement.TERRAIN, parametre));
+						
+						if ((parametre = getTagValue(n, "son")) != null)
+							portion.addEvenement(new Evenement(TypeEvenement.SON, parametre));
 					}
 
-					System.out.println("Sens : "
-							+ (s == TypeRoute.GAUCHE ? "gauche" : "droite"));
-
+					// On ajoute le virage
+					portions.add(portion);
 				}
 			}
 
@@ -183,11 +174,9 @@ public class Circuit {
 			lonCourant = lonSuivant;
 
 			++i;
-
-			System.out.println();
 		}
-
-		System.out.println("Distance totale : " + distance);
+		
+		Main.logInfo("Distance du circuit : "+distance);
 	}
 
 	public static String getTagValue(Element noeud, String tag) {
@@ -237,24 +226,15 @@ public class Circuit {
 	
 	public void setDistance(double d) {
 		environnement.setDistance(d);
-		ContenuCircuit temp;
-		if (contenu.element().getDistance() <= d) {
-			temp = contenu.poll();
-			while (temp != null && !temp.getType().equals("virage")) {
-				Evenement temp2 = (Evenement) temp;
-				temp2.exec();
-				temp = contenu.poll();
-			}
-		}
-
 	}
 
-	public Route nextVirage() {
-		return (Route) contenu.element();
+	public Portion nextVirage() {
+		return (Portion) portions.element();
 	}
 
 	public void setVitesse(double vitesse) {
 		terrain.setVitesse(vitesse);
+		environnement.setVitesse(vitesse);
 	}
 
 	public void stop() {
@@ -262,18 +242,18 @@ public class Circuit {
 		terrain.delete();
 	}
 
-	public static void main(String[] args) throws Exception {
-		/*
-		 * Circuit test = new Circuit("Circuit_1"); test.start(); Scanner sc =
-		 * new Scanner(System.in); while (!sc.next().equals("e")) ;
-		 * test.changeEnvironnement("mer"); while (!sc.next().equals("e")) ;
-		 */
-
-		Element noeud = GestionXML.chargerNoeudRacine(new File(
-				"Circuits/Calenzana.osm"));
-
-		Circuit temp = new Circuit(noeud);
-		temp.start();
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Circuit [nom=");
+		builder.append(nom);
+		builder.append(", distance=");
+		builder.append(distance);
+		builder.append(", portions=");
+		builder.append(portions);
+		builder.append("]");
+		return builder.toString();
 	}
+	
 
 }

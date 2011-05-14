@@ -1,66 +1,56 @@
 package polyrallye.ouie.environnement;
 
 import polyrallye.modele.circuit.Circuit;
-import polyrallye.modele.circuit.ContenuCircuit;
 import polyrallye.ouie.utilitaires.Sound;
-import polyrallye.ouie.utilitaires.Sound.SoundException;
 
-public class Evenement implements ContenuCircuit {
-	
-	protected Circuit circuit;
-	
-	protected String type;
-	protected double distance;
-	//protected double longueur;	
-	protected String param;
-	
-	protected Sound son;
-	
-	public Evenement(String t,double d,String p,Circuit c) {
-		type=t;
-		distance=d;
-		//longueur=l;
-		param=p;
-		circuit=c;
-		son=null;
-		if (type.equals("son")) {
-			son = new Sound();
-		}
+/**
+ * Évènements sonores associés à une portion de circuit.
+ */
+public class Evenement {
+
+	/**
+	 * Type de l'évènement en cours.
+	 * 
+	 * Cette manière de programmer n'est pas très polymorphique, mais avoir 4
+	 * classes pour 10 lignes de code m'emmerde.
+	 */
+	protected TypeEvenement type;
+
+	/**
+	 * Paramètre de l'évènement (comme le terrain si c'est un changement de
+	 * terrain).
+	 */
+	protected String parametre;
+
+	public Evenement(TypeEvenement type, String parametre) {
+		this.type = type;
+		this.parametre = parametre;
 	}
-	
-	public void exec() {
-		if(type.equals("environnement")) {
-			circuit.changeEnvironnement(param);
+
+	public void exec(Circuit circuit) {
+		switch (type) {
+		case ENVIRONNEMENT:
+			circuit.changeEnvironnement(parametre);			
+			break;
+		case TERRAIN:
+			circuit.changeTerrain(parametre);
+			break;
+		case SON:
+			Sound s = new Sound("Sons/divers/" + parametre);
+			s.playAndDelete();
+			break;
 		}
-		else if (type.equals("terrain")) {
-			circuit.changeTerrain(param);
-		}
-		else if (type.equals("son")) {
-			try {
-				son.charger("Sons/divers/"+param);
-				son.play();
-				while(son.isPlaying());
-				son.delete();
-			} catch (SoundException e) {
-				System.out.println("Erreur chargement "+param);
-			}
-		}
-	}
-	
-	
-	@Override
-	public double getDistance() {
-		return distance;
 	}
 
 	@Override
-	public String getType() {
-		return type;
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("[");
+		builder.append(type);
+		builder.append(" : ");
+		builder.append(parametre);
+		builder.append("]");
+		return builder.toString();
 	}
-
-//	@Override
-//	public double getLongueur() {
-//		return longueur;
-//	}
 
 }

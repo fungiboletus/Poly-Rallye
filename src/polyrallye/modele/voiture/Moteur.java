@@ -264,8 +264,7 @@ public class Moteur {
         		Liseuse.lire("Panne du moteur");
         		Liseuse.lire("Relancez la course");
         		Sound s = new Sound("Sons/Crash/vehicule_1.wav");
-        		s.play();
-        		//s.delete();
+        		s.playAndDelete();
         		panne = true;
         	} else {        		
         		rupteurEnclanche = true;

@@ -215,8 +215,8 @@ public class Environnement {
 		crash.delete();
 	}
 
-	public void setVitesse(float p) {
-		sfx.setVitesse(p);
+	public void setVitesse(double v) {
+		sfx.setVitesse((float) v);
 	}
 
 	public String getType() {

@@ -210,6 +210,18 @@ public class Sound {
 			Multithreading.dormir(100);
 		}
 	}
+	
+	/**
+	 * Lit le son en parralèle, et le supprime après lecture.
+	 */
+	public void playAndDelete() {
+		new Thread() {
+			public void run() {
+				playAndWait();
+				delete();
+			}
+		}.start();
+	}
 
 	public void playAndWaitWithCallback(CallbackArretSon car) {
 		play();
