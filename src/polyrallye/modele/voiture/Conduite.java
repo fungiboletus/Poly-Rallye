@@ -70,8 +70,9 @@ public class Conduite {
 	/**
 	 * @param temps
 	 *            Temps passé par rapport au tick précédent
+	 * @return Distance parcourue lors du tick
 	 */
-	public void tick(double temps) {
+	public double tick(double temps) {
 
 		double forceRestitance = resistanceAerodynamique()
 				+ resistanceRoulement();
@@ -112,8 +113,18 @@ public class Conduite {
 		Main.logDebug("=================");
 
 		// C'est magique <3
-		position += 0.5 * acceleration * temps * temps + vitesse * temps;
+		double distanceParcourue = 0.5 * acceleration * temps * temps + vitesse * temps;
 		vitesse += acceleration * temps;
+		
+		// Histoire de ne pas partir en arrière à cause de la restitance de
+		// roulement…
+		if (vitesse < 0.0)
+			vitesse = 0.0;
+
+		if (distanceParcourue < 0.0)
+			distanceParcourue = 0.0;
+		
+		position += distanceParcourue;
 
 		double regime = (vitesse / (2 * Math.PI * Transmission.RAYON_ROUE))
 				* transmission.getCoefCourant() * 60;
@@ -125,12 +136,10 @@ public class Conduite {
 
 		Main.logDebug("Régime: " + regime);
 		moteur.setRegimeCourant(regime);
-
-		// Histoire de ne pas partir en arrière à cause de la restitance de
-		// roulement…
-		if (vitesse < 0.0)
-			vitesse = 0.0;
+		
 		// System.out.println("t : "+temps+"\t\t"+vitesse);
+		
+		return distanceParcourue;
 	}
 
 	/**

@@ -93,6 +93,8 @@ public class Circuit {
 		//double angle = 0;
 
 		int i = 0;
+		
+		Portion portionCourante;
 
 		// Parcours du chemin
 		for (Object e : chemin.getChildren("nd")) {
@@ -144,6 +146,7 @@ public class Circuit {
 							lonPrecedent, latCourant, lonCourant, latSuivant,
 							lonSuivant);
 
+					//if (distancePortion < 50)
 					// Maintenant que l'on a toutes les bonnes informations, création de la portion
 					Portion portion = new Portion(distancePortion, typePortion, anglePortion);
 					
@@ -228,8 +231,8 @@ public class Circuit {
 		environnement.setDistance(d);
 	}
 
-	public Portion nextVirage() {
-		return (Portion) portions.element();
+	public Portion nextPortion() {
+		return portions.poll();
 	}
 
 	public void setVitesse(double vitesse) {
