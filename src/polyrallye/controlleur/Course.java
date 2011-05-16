@@ -174,7 +174,7 @@ public class Course implements ActionMenu {
 		copilote = new Copilote();
 		
 		// Creation radio
-		//radio = new Radio();
+		radio = new Radio();
 
 		// Si on part en première, c'est mieux
 		voiture.getTransmission().setPremiere();

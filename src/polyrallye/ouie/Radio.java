@@ -40,8 +40,8 @@ public class Radio extends Thread {
 		musique = new Sound();
 
 		readManifeste();
-		chargerCom();
-		chargerZike();
+//		chargerCom();
+//		chargerZike();
 		setToLevel();
 		
 		isPaused=true;
@@ -93,12 +93,19 @@ public class Radio extends Thread {
 	}
 	
 	public void toggleRadio() {
-		if (isPaused)
+		if (isPaused) {
+			inter.play();
+			chargerCom();
+			chargerZike();
+			inter.stop();
 			isPaused=false;
+		}
 		else {
 			isPaused=true;
 			com.stop();
 			musique.stop();
+			com.delete();
+			musique.delete();
 		}
 	}
 
@@ -173,17 +180,14 @@ public class Radio extends Thread {
 				}
 			} catch (IOException e) {
 				System.out.println("Erreur lecture fichier");
-				e.printStackTrace();
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Erreur chargement fichier");
-			e.printStackTrace();
 		}
 
 		try {
 			mani.close();
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 
