@@ -66,6 +66,17 @@ public class Portion {
 	public List<Evenement> getEvenements() {
 		return evenements;
 	}
+	
+	public boolean aDesEvenements() {
+		return !evenements.isEmpty();
+	}
+	
+	public void execution(Circuit cc) {
+		for (int i = 0; i < evenements.size(); i++) {
+			evenements.get(i).exec(cc);
+		}
+		evenements.clear();
+	}
 
 	@Override
 	public String toString() {

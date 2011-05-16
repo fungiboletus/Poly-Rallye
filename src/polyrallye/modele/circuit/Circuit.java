@@ -232,7 +232,10 @@ public class Circuit {
 	}
 
 	public Portion nextPortion() {
-		return portions.poll();
+		Portion temp = portions.poll();
+		if (temp.aDesEvenements()) 
+			temp.execution(this);
+		return temp;
 	}
 
 	public void setVitesse(double vitesse) {

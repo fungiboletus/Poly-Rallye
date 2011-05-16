@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.utilitaires.Sound;
 
 public class Environnement {
@@ -113,6 +114,7 @@ public class Environnement {
 	}
 
 	public void change(String env) {
+		Main.logInfo("Changement environnement de "+type+" vers "+env);
 		sfx.tuer();
 
 		type = env;
@@ -186,7 +188,7 @@ public class Environnement {
 			sfx = new Sfx(rep, randSfx, intervalle);
 
 		// On fade
-		sonTemp.fadeIn(100, 0.4f);
+		sonTemp.play();
 		ambiance.fadeOut(100);
 		while (ambiance.isPlaying()) {
 			System.out.println("Ambiance is playing !");
@@ -196,6 +198,9 @@ public class Environnement {
 
 		// Creation crash
 		crash.changeEnvironnement(type);
+		
+		//play
+		sfx.start();
 
 	}
 
@@ -233,30 +238,30 @@ public class Environnement {
 	}
 
 	public static void main(String[] args) {
-		final Environnement test = new Environnement("mer", "jour", "pluie");
+		final Environnement test = new Environnement("mer", "jour", "clair");
 		test.setVitesse(300f);
 		test.play();
 		Scanner sc = new Scanner(System.in);
-
+		
 		while (!sc.next().equals("e")) {
-
+			test.change("foret");
 		}
-		Timer t = new Timer();
-
-		TimerTask tt = new TimerTask() {
-
-			@Override
-			public void run() {
-				// System.out.println(SonMoteur.accelere);
-				System.out.println("acc");
-				double dis = test.sfx.distance;
-				dis += 10;
-				test.sfx.setDistance(dis);
-
-			}
-		};
-
-		t.schedule(tt, 0, 10);
+//		Timer t = new Timer();
+//
+//		TimerTask tt = new TimerTask() {
+//
+//			@Override
+//			public void run() {
+//				// System.out.println(SonMoteur.accelere);
+//				System.out.println("acc");
+//				double dis = test.sfx.distance;
+//				dis += 10;
+//				test.sfx.setDistance(dis);
+//
+//			}
+//		};
+//
+//		t.schedule(tt, 0, 10);
 
 	}
 

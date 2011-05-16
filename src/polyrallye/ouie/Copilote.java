@@ -22,10 +22,8 @@ public class Copilote {
 	private List<Sound> gauche;
 	private List<Sound> droite;
 	private List<Sound> freine;
-<<<<<<< HEAD
-=======
 	private List<Sound> ok;
->>>>>>> 6e0edfee5c5e6f545c6c774cc480b8665a636837
+
 
 	private Sfx bullshit;
 	private boolean isPipelette;
@@ -49,10 +47,8 @@ public class Copilote {
 		int nbDroite = 0;
 		int nbFreine = 0;
 		int nbSfx = 0;
-<<<<<<< HEAD
-=======
 		int nbOk = 0;
->>>>>>> 6e0edfee5c5e6f545c6c774cc480b8665a636837
+
 
 		BufferedReader mani = null;
 		// On lit le fichier comme d'ab
@@ -94,10 +90,8 @@ public class Copilote {
 		gauche = new ArrayList<Sound>(nbGauche);
 		droite = new ArrayList<Sound>(nbDroite);
 		freine = new ArrayList<Sound>(nbFreine);
-<<<<<<< HEAD
-=======
+
 		ok = new ArrayList<Sound>(nbOk);
->>>>>>> 6e0edfee5c5e6f545c6c774cc480b8665a636837
 		Main.logImportant("" + nbDroite);
 		for (int i = 1; i <= nbGauche; ++i) {
 			gauche.add(new Sound(rep + "gauche_" + i + ".wav"));
@@ -110,12 +104,11 @@ public class Copilote {
 		for (int i = 1; i <= nbFreine; ++i) {
 			freine.add(new Sound(rep + "freine_" + i + ".wav"));
 		}
-<<<<<<< HEAD
-=======
+
 		for (int i = 1; i <= nbOk; ++i) {
 			ok.add(new Sound(rep + "ok_" + i + ".wav"));
 		}
->>>>>>> 6e0edfee5c5e6f545c6c774cc480b8665a636837
+
 
 		if (nbSfx != 0) {
 			bullshit = new Sfx(rep + "sfx/", nbSfx, 3, true, 3.0f);
@@ -143,8 +136,7 @@ public class Copilote {
 		}
 	}
 
-<<<<<<< HEAD
-=======
+
 	public void playOk() {
 		String rep = "Sons/copilote/" + id + "/";
 		Random random = new Random();
@@ -155,7 +147,6 @@ public class Copilote {
 			bullshit.pause(false);
 	}
 
->>>>>>> 6e0edfee5c5e6f545c6c774cc480b8665a636837
 	public void playCrash() {
 		String rep = "Sons/copilote/" + id + "/";
 		if (new File(rep + "crash.wav").exists()) {
@@ -167,7 +158,7 @@ public class Copilote {
 	}
 
 	public void playGauche() {
-<<<<<<< HEAD
+
 		/*
 		 * if (isPipelette) bullshit.pause(true);*
 		 */
@@ -189,25 +180,7 @@ public class Copilote {
 		/*
 		 * if (isPipelette) bullshit.pause(false);
 		 */
-=======
-		if (isPipelette)
-			bullshit.pause(true);
 
-		gauche.get(random.nextInt(gauche.size())).play();
-
-		if (isPipelette)
-			bullshit.pause(false);
-	}
-
-	public void playDroite() {
-		if (isPipelette)
-			bullshit.pause(true);
-
-		droite.get(random.nextInt(droite.size())).play();
-
-		if (isPipelette)
-			bullshit.pause(false);
->>>>>>> 6e0edfee5c5e6f545c6c774cc480b8665a636837
 	}
 
 	public void playFreine() {
