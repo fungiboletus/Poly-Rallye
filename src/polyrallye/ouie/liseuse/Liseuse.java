@@ -236,7 +236,7 @@ public abstract class Liseuse {
 					String nouveautexte = sb.toString();
 
 					if (!texte.equals(nouveautexte)) {
-						Main.logDebug(nouveautexte);
+						Main.logDebug(nouveautexte, 19);
 					}
 
 					Pretraitement traitement = new Pretraitement(nouveautexte);

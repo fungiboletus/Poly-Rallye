@@ -358,5 +358,12 @@ public class Sound {
 			
 		}
 	}
+	
+	public static void afficherCache() {
+
+		for (Entry<String, TupleData> e : cacheData.entrySet()) {
+			System.out.println(e.getKey());
+		} 
+	}
 
 }

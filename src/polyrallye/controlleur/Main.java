@@ -9,6 +9,7 @@ import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.FenetreNoire;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.menus.Principal;
+import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
 
 /**
@@ -37,7 +38,7 @@ public class Main {
 	 * standard.
 	 */
 	protected static boolean debug = false;
-
+	
 	/**
 	 * @param args
 	 *            Arguments (pas vraiment gérés)
@@ -108,6 +109,8 @@ public class Main {
 		Multithreading.dormir(800);
 
 		Liseuse.arreter();
+		
+		Sound.afficherCache();
 	}
 
 	/**
@@ -173,12 +176,13 @@ public class Main {
 	 * @param texte
 	 *            Texte à afficher.
 	 */
-	public static void logDebug(String texte) {
+	public static void logDebug(String texte, int index) {
 		if (debug) {
 			System.out.println(texte);
+			fenetre.logDebug(texte, index);
 		}
 	}
-
+	
 	/**
 	 * Masque ou affiche la console.
 	 */

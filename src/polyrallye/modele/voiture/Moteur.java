@@ -245,7 +245,7 @@ public class Moteur {
     	
 		double couple = ya + (regimeCourant - xa)*((yb-ya)/(xb-xa));
     	
-		Main.logDebug("Couple calculé: "+couple);
+		Main.logDebug("Couple calculé: "+couple, 8);
     	
     	return couple;
     }

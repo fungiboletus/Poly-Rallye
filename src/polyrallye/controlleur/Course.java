@@ -196,6 +196,8 @@ public class Course implements ActionMenu {
 
 		portionCourante = circuit.nextPortion();
 		
+		actionCourante = typeAction.ACCELERATION;
+		
 		TimerTask tt = new TimerTask() {
 
 			@Override
@@ -206,7 +208,7 @@ public class Course implements ActionMenu {
 					sonVoiture.stop();
 					timerOrganisateur.cancel();
 					klaxon.delete();
-					radio.delete();
+					//radio.delete();
 					copilote.delete();
 					Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
 				}
@@ -259,7 +261,7 @@ public class Course implements ActionMenu {
 				if (cpTicksPassageRapport > 0)
 					--cpTicksPassageRapport;
 
-				boolean sonFrottement = false;
+				double sonFrottement = 0.0;
 				
 				// Et du frein
 				if (entreesCourse.isFreine()) {
@@ -268,7 +270,7 @@ public class Course implements ActionMenu {
 						if (vitesse < 1.0) {
 							sonVoiture.sonFreinage();
 						} else {						
-							sonFrottement = true;
+							sonFrottement = 0.22;
 						}						
 					}
 				} else {
@@ -294,15 +296,15 @@ public class Course implements ActionMenu {
 				}
 
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
-					sonFrottement = true;
+					sonFrottement = 0.4;
 				}
 				
 				if (conduite.isPatinage()) {
-					sonFrottement = true;
+					sonFrottement = 0.65;
 				}
 
-				if (sonFrottement) {
-					circuit.playFrottement();
+				if (sonFrottement>0.0) {
+					circuit.playFrottement((float)sonFrottement);
 				} else {
 					circuit.stopFrottement();
 				}
@@ -317,12 +319,37 @@ public class Course implements ActionMenu {
 				
 				distancePortion += distanceParcourue;
 				
-				Main.logDebug("Distance parcourue:" + position);
-				Main.logDebug("Distance portion:" + distancePortion);
+				Main.logDebug("Distance parcourue: " + position, 0);
+				Main.logDebug("Distance portion: " + distancePortion, 1);
 				
 				double diff = portionCourante.getLongueur()-distancePortion;
 				
+				double vitesseMaxVirage = conduite.getVitesseMaxPourVirage(portionCourante.getAngle());
+				
+				double distanceFreinage = conduite.getDistanceFreinage(vitesseMaxVirage)*3.0;
+				
+				//distanceFreinage = (distanceFreinage/vitesse + 0.5) * vitesse;
+				
+				double tempsFreinage = distanceFreinage/vitesse;
+				
+				Main.logDebug("Angle virage: "+portionCourante.getAngle(),2);
+				Main.logDebug("Vitesse max virage: "+vitesseMaxVirage*3.6, 3);
+				Main.logDebug("Distance Freinage: "+distanceFreinage, 4);
+				Main.logDebug("Temps freinage: "+tempsFreinage, 12);
+				
+				if (distanceFreinage >= diff) {
+					actionCourante = typeAction.FREINAGE;
+					entreesCourse.freine = true;
+				} else {
+					entreesCourse.freine = false;
+				}
+				
 				if (diff < 0.0) {
+					// Une petite marge
+					Main.logImportant("FIAL: "+conduite.getDistanceFreinage(vitesseMaxVirage));
+					
+					entreesCourse.freine = false;
+					
 					portionCourante = circuit.nextPortion();
 					
 					if (portionCourante == null) {
@@ -330,7 +357,8 @@ public class Course implements ActionMenu {
 						Liseuse.lire("Ahah");
 					}
 					else {
-						distancePortion = portionCourante.getLongueur()+diff;
+						actionCourante = typeAction.ACCELERATION;
+						distancePortion = -diff;
 						switch (portionCourante.getType()) {
 						case GAUCHE:
 							copilote.playGauche();
@@ -353,14 +381,13 @@ public class Course implements ActionMenu {
 						temp = contenu.poll();
 					}
 				}*/
-
 			}
 		};
 
 		// Démarrage des sons
 		circuit.start();
 		sonVoiture.play();
-		radio.start();
+		//radio.start();
 		
 		// À 50Hz, comme le courant EDF
 		timerOrganisateur.schedule(tt, 0, 20);// 20

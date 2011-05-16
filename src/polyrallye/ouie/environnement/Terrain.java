@@ -45,9 +45,9 @@ public class Terrain {
 		
 	}
 	
-	public void playFrottement() {
+	public void playFrottement(float gainFrottement) {
 		tournant.pause(false);
-		tournant.setGain(0.5f);
+		tournant.setGain(gainFrottement);
 	}
 	
 	public void stopFrottement() {
@@ -66,6 +66,7 @@ public class Terrain {
 	public void delete() {
 		sfx.tuer();
 		son.delete();
+		tournant.delete();
 	}
 	
 	/*public static void main(String[] args) {

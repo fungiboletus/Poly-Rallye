@@ -93,9 +93,9 @@ public class Conduite {
 
 			forceMotrice = forceMotriceMax * -1.5;
 		} else {
-			
+
 			double coupleMoteur = moteur.getCouple();
-			
+
 			forceMotrice = forceMotrice(forceMotriceMax * 1.3, coupleMoteur);
 		}
 
@@ -107,15 +107,15 @@ public class Conduite {
 		// F = masse * acceleration
 		acceleration = somme / masse / ratioInertie;
 
-		Main.logDebug("Vitesse: " + vitesse * 3.6);
-		Main.logDebug("Rapport: "+transmission.getRapportCourant());
-		Main.logDebug("Acceleration: " + acceleration);
-		Main.logDebug("=================");
+		Main.logDebug("Vitesse: " + vitesse * 3.6, 5);
+		Main.logDebug("Rapport: " + transmission.getRapportCourant(), 6);
+		Main.logDebug("Acceleration: " + acceleration, 7);
 
 		// C'est magique <3
-		double distanceParcourue = 0.5 * acceleration * temps * temps + vitesse * temps;
+		double distanceParcourue = 0.5 * acceleration * temps * temps + vitesse
+				* temps;
 		vitesse += acceleration * temps;
-		
+
 		// Histoire de ne pas partir en arrière à cause de la restitance de
 		// roulement…
 		if (vitesse < 0.0)
@@ -123,7 +123,7 @@ public class Conduite {
 
 		if (distanceParcourue < 0.0)
 			distanceParcourue = 0.0;
-		
+
 		position += distanceParcourue;
 
 		double regime = (vitesse / (2 * Math.PI * Transmission.RAYON_ROUE))
@@ -134,11 +134,11 @@ public class Conduite {
 			regime /= coeffAdherenceFrottement;
 		}
 
-		Main.logDebug("Régime: " + regime);
+		Main.logDebug("Régime: " + regime, 8);
 		moteur.setRegimeCourant(regime);
-		
+
 		// System.out.println("t : "+temps+"\t\t"+vitesse);
-		
+
 		return distanceParcourue;
 	}
 
@@ -181,6 +181,42 @@ public class Conduite {
 		return position;
 	}
 
+	/**
+	 * Calcule la distance de freinage.
+	 * 
+	 * C'est la formule que l'on trouve partout.
+	 * 
+	 * Elle considère que l'on effectue un freinage parfait…
+	 * 
+	 * @param vFinale
+	 *            vitesse à atteindre en m^2
+	 * @return Distance en mètres pour s'arrêter
+	 */
+	public double getDistanceFreinage(double vFinale) {
+		if (vFinale > vitesse) {
+			return 0.0;
+		}
+
+		double vDiff = vFinale-vitesse;
+
+		return (vDiff * vDiff) / (2.0 * 9.81 * coeffAdherenceFrottement);
+	}
+
+	
+	/**
+	 * @param angleVirage Angle entre 0 (ligne droite) et 180°
+	 * @return Vitesse maximale (en m/s)
+	 */
+	public double getVitesseMaxPourVirage(double angleVirage) {
+		double xa = 0.0;
+		double xb = 180.0;
+		
+		double ya = 40.0*coeffAdherenceFrottement;
+		double yb = 8.0*coeffAdherenceFrottement;
+		
+		return ya + (angleVirage - xa)*((yb-ya)/(xb-xa));
+	}
+	
 	/**
 	 * Calcule la resistance aérodynamique en fonction de la voiture, et de sa
 	 * vitesse.
@@ -240,27 +276,29 @@ public class Conduite {
 	 * @return Force motrice
 	 */
 	public double forceMotrice(double forceMotriceMax, double coupleMoteur) {
-		
-		double forceAvant = transmission.getCoupleParRoue(PositionRoue.AVANT, coupleMoteur) / Transmission.RAYON_ROUE;
-		double forceArriere = transmission.getCoupleParRoue(PositionRoue.ARRIERE, coupleMoteur) / Transmission.RAYON_ROUE;
-		
+
+		double forceAvant = transmission.getCoupleParRoue(PositionRoue.AVANT,
+				coupleMoteur) / Transmission.RAYON_ROUE;
+		double forceArriere = transmission.getCoupleParRoue(
+				PositionRoue.ARRIERE, coupleMoteur) / Transmission.RAYON_ROUE;
+
 		boolean patinageAvant = false;
 		if (forceAvant > forceMotriceMax) {
-			forceAvant = forceMotriceMax*coeffAdherenceFrottement;
+			forceAvant = forceMotriceMax * coeffAdherenceFrottement;
 			patinage = true;
 		} else {
 			patinage = false;
 			patinageAvant = true;
 		}
-		
+
 		if (forceArriere > forceMotriceMax) {
-			forceArriere = forceMotriceMax*coeffAdherenceFrottement;
+			forceArriere = forceMotriceMax * coeffAdherenceFrottement;
 			patinage = true;
 		} else if (!patinageAvant) {
 			patinage = false;
 		}
-		
-		return forceAvant + forceArriere ;
+
+		return forceAvant + forceArriere;
 
 	}
 }

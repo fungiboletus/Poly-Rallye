@@ -114,7 +114,7 @@ public class Meteo {
 		if (meteo != null) {
 			meteo.delete();			
 		}
-		sfx.tuer();
+		if (sfx != null) sfx.tuer();
 	}
 
 }

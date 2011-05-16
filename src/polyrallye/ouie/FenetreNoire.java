@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -79,6 +80,16 @@ public class FenetreNoire extends JFrame {
 	 * Est-ce que la console est affichée ?
 	 */
 	protected boolean consoleAffichee = false;
+	
+	/**
+	 * Panneau qui contient les informations de debug
+	 */
+	protected JPanel panneauInfosDebug;
+	
+	/**
+	 * Liste des labels qui contiennent les informations de débug
+	 */
+	protected JLabel[] informationsDebug;
 
 	public FenetreNoire() {
 		super("PolyRallye");
@@ -123,7 +134,20 @@ public class FenetreNoire extends JFrame {
 		defilement.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		defilement.setBorder(BorderFactory.createEmptyBorder());
 		
-		//panneau.add(defilement, BorderLayout.EAST);
+		panneauInfosDebug = new JPanel();
+		panneauInfosDebug.setBackground(Color.BLACK);
+		panneauInfosDebug.setPreferredSize(new Dimension(450, 0));
+		panneauInfosDebug.setLayout(new GridLayout(20, 1));
+		
+		informationsDebug = new JLabel[20];
+		
+		for (int i = 0; i < 20; ++i) {
+			JLabel l = new JLabel();
+			l.setForeground(Color.WHITE);
+			informationsDebug[i] = l;
+			panneauInfosDebug.add(l);
+		}
+		
 		panneau.add(image, BorderLayout.CENTER);
 		
 		add(panneau);
@@ -166,15 +190,24 @@ public class FenetreNoire extends JFrame {
 		log(texte, consoleRouge);
 	}
 	
+	public void logDebug(String texte, int index) {
+		if (consoleAffichee) {
+			if (index >= 20) index %= 20;
+			informationsDebug[index].setText(texte);			
+		}
+	}
+	
 	/**
 	 * Affiche ou masque la console.
 	 */
 	public void basculerAffichageConsole() {
 		if (consoleAffichee) {
 			panneau.remove(defilement);
+			panneau.remove(panneauInfosDebug);
 			consoleAffichee = false;
 		} else {
 			panneau.add(defilement, BorderLayout.EAST);
+			panneau.add(panneauInfosDebug, BorderLayout.WEST);
 			consoleAffichee = true;
 		}
 		

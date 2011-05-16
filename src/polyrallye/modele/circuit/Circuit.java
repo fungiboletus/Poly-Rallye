@@ -219,8 +219,8 @@ public class Circuit {
 		environnement.playCrash();
 	}
 
-	public void playFrottement() {
-		terrain.playFrottement();
+	public void playFrottement(float gainFrottement) {
+		terrain.playFrottement(gainFrottement);
 	}
 	
 	public void stopFrottement() {
