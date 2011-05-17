@@ -95,7 +95,7 @@ public abstract class GestionXML {
 	 * @return Le nombre
 	 */
 	public static int getInt(String nombre) {
-		if (nombre == null)
+		if (nombre == null || nombre.length() == 0)
 			return 0;
 		return Integer.parseInt(nombre.replace(" ", ""));
 	}

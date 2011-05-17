@@ -30,9 +30,9 @@ public class Championnat extends Menu implements ActionMenu {
     public void remplir() {
         List<polyrallye.modele.championnat.Championnat> l = new ArrayList<polyrallye.modele.championnat.Championnat>();
         l.add(polyrallye.modele.championnat.Championnat
-                .chargerChampionnat("championnat mondial"));
-        l.add(polyrallye.modele.championnat.Championnat
-                .chargerChampionnat("championnat européen"));
+                .chargerChampionnat("championnat1"));
+        //l.add(polyrallye.modele.championnat.Championnat
+        //       .chargerChampionnat("championnat européen"));
         ListIterator<polyrallye.modele.championnat.Championnat> i = l
                 .listIterator(l.size());
 

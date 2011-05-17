@@ -194,7 +194,7 @@ public class Championnat {
     }
 
     public static Championnat chargerChampionnat(String nom) {
-        File f = new File("Championnat/" + nom + ".xml");
+        File f = new File("Championnats/" + nom + ".xml");
 
         if (f.exists()) {
             Element n;

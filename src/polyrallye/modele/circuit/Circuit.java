@@ -229,6 +229,7 @@ public class Circuit {
 	
 	public void setDistance(double d) {
 		environnement.setDistance(d);
+		terrain.setDistance(d);
 	}
 
 	public Portion nextPortion() {
