@@ -127,6 +127,7 @@ public class Course implements ActionMenu {
 
 	public Course(Voiture voiture) {
 		this(voiture, "Herault/Le_Vigan");
+//		this(voiture, "Autoroute");
 	}
 
 	public Course(Voiture voiture, String fichierCircuit) {
@@ -161,7 +162,7 @@ public class Course implements ActionMenu {
 
 		System.out.println(circuit);
 		// Lancement de l'envirronnement sonore propre au circuit.
-		circuit.changeTerrain("asphalt");
+//		circuit.changeTerrain("asphalt");
 		// Création du son du moteur
 		sonVoiture = new SonVoiture(voiture);
 
