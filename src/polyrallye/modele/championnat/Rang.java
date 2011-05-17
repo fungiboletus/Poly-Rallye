@@ -51,7 +51,7 @@ public class Rang implements Comparable<Rang> {
         personne = new Personne(noeud.getChildText("nom"));
 
         car = noeud.getChildText("voiture");
-
+        
         duree = new Duree(GestionXML.getInt(noeud.getChildText("duree")));
 
         if (classement != 1)

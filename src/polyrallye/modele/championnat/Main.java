@@ -41,19 +41,19 @@ public class Main {
         // LE.get(i).EnregistrerEtape(LE.get(i));
 
         // chargement xml
-        String nomJoueur = args.length > 1 ? args[0] : "Bob";
+        String nomJoueur = args.length > 1 ? args[0] : "Marco";
         Joueur j = Joueur.chargerJoueur(nomJoueur);
         j.setSessionCourante();
 
-        Championnat.chargerChampionnat("championnat mondial");
+        Championnat.chargerChampionnat("championnat1");
 
         //Etape Et = Etape.chargerEtape("Rallye de Monaco");
 
         // System.out.println(Et.getClassement());
 
-        Championnat Champ = Championnat
-                .chargerChampionnat("championnat européen");
-        Champ.setClassement();
+//        Championnat Champ = Championnat
+//                .chargerChampionnat("championnat européen");
+//        Champ.setClassement();
         
         // on lance la course en donnant l'étape en cours
         // aprés avoir joué la course --> on sauvegarde l'étape et le championnat en cours
