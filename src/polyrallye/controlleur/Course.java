@@ -19,6 +19,7 @@ import polyrallye.ouie.SonVoiture;
 import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
+import polyrallye.utilitaires.Multithreading;
 
 /**
  * Gestion d'une course (copilotes, environnement, circuit, sons)
@@ -68,12 +69,7 @@ public class Course implements ActionMenu {
 	 * Circuit parcouru.
 	 */
 	protected Circuit circuit;
-
-	/**
-	 * Bruit du crash.
-	 */
-	protected Crash crash;
-
+	
 	/**
 	 * Bruit du klaxon.
 	 */
@@ -113,12 +109,26 @@ public class Course implements ActionMenu {
 	/**
 	 * Ou en est le conducteur ?
 	 */
-	protected enum typeAction { ACCELERATION, FREINAGE, VIRAGE };
+	protected enum typeAction { ACCELERATION, AVANT_FREINAGE, ATTENTE_DECLENCHEMENT, FREINAGE, VIRAGE };
 	
 	/**
 	 * Ce que doit être en train de faire le conducteur
 	 */
 	protected typeAction actionCourante;
+	
+	/**
+	 * Position de la voiture avant qu'il freine.
+	 * 
+	 * La stratégie est de le remetre à cette position lorsqu'il freine.
+	 * 
+	 * C'est plus rigolo, sinon, il faut être super réactif pour réagir à temps.
+	 */
+	protected double positionAvantFreinage;
+	
+	/**
+	 * TODO: CANARD
+	 */
+	protected double tempsAvantFreinage;
 	
 	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
@@ -322,6 +332,7 @@ public class Course implements ActionMenu {
 				Main.logDebug("Distance parcourue: " + position, 0);
 				Main.logDebug("Distance portion: " + distancePortion, 1);
 				
+				// Gestion des virages
 				double diff = portionCourante.getLongueur()-distancePortion;
 				
 				double vitesseMaxVirage = conduite.getVitesseMaxPourVirage(portionCourante.getAngle());
@@ -337,23 +348,57 @@ public class Course implements ActionMenu {
 				Main.logDebug("Distance Freinage: "+distanceFreinage, 4);
 				Main.logDebug("Temps freinage: "+tempsFreinage, 12);
 				
-				if (distanceFreinage >= diff) {
-					actionCourante = typeAction.FREINAGE;
-					entreesCourse.freine = true;
-				} else {
-					entreesCourse.freine = false;
+				switch (actionCourante) {
+				case ACCELERATION:
+					if (distanceFreinage >= diff && distanceFreinage-diff > 5.0) {
+						actionCourante = typeAction.AVANT_FREINAGE;
+						positionAvantFreinage = position;
+						copilote.playFreine();
+						tempsAvantFreinage = tempsTmp;
+					}
+					break;
+				case AVANT_FREINAGE:
+					if (tempsTmp - tempsAvantFreinage > 3.0 ) {
+						circuit.playCrash();
+						conduite.crash();
+						sonVoiture.setRegime(800.0f, false);
+						Main.logImportant("CRASH CRASH CRASH");
+						Multithreading.dormir(1500);
+						copilote.playCrash();
+						Multithreading.dormir(2000);
+						actionCourante = typeAction.ACCELERATION;
+					} else {
+						if (entreesCourse.isFreine()) {
+							actionCourante = typeAction.FREINAGE;
+						}						
+					}
+					// Dans tout les cas (et donc en cas de crash), on se remet au bon endroit…
+					conduite.setPosition(positionAvantFreinage);
+					break;
+				case FREINAGE:
+					break;
 				}
 				
-				if (diff < 0.0) {
-					// Une petite marge
-					Main.logImportant("FIAL: "+conduite.getDistanceFreinage(vitesseMaxVirage));
+				if (actionCourante != typeAction.AVANT_FREINAGE && diff < 0.0) {
 					
-					entreesCourse.freine = false;
+					double marge = conduite.getDistanceFreinage(vitesseMaxVirage);
+					
+					// Une petite marge
+					if (marge > 20.0) {
+						Main.logImportant("FIAL: "+marge);
+						
+					} else {
+						Main.logImportant("BRAVO: "+marge);
+						
+					}
+					
+					actionCourante = typeAction.ACCELERATION;
 					
 					portionCourante = circuit.nextPortion();
 					
 					if (portionCourante == null) {
 						timerOrganisateur.cancel();
+						timerCompteur.pause();
 						Liseuse.lire("Ahah");
 					}
 					else {

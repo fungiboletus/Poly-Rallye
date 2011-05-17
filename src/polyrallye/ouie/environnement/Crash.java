@@ -71,11 +71,15 @@ public class Crash {
 	}
 
 	public void play() {
-		son.play();
-		while (son.isPlaying());
-		repick();
-		son.setGain(2f);
-		son.setPosition(0, 0, 0);
+		new Thread() {
+			public void run() {
+				son.play();
+				son.playAndWait();
+				repick();
+				son.setGain(2f);
+				son.setPosition(0, 0, 0);				
+			}
+		}.start();
 	}
 
 	private void repick() {
