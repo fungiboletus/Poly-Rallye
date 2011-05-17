@@ -71,7 +71,6 @@ public class Sfx extends Thread {
 	}
 
 	public void run() {
-		Main.logInfo("Start SFX "+rep);
 		if (!isNull) {
 
 			Random random = new Random();

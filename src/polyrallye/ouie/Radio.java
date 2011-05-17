@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Random;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
 import polyrallye.utilitaires.Multithreading;
@@ -94,6 +95,7 @@ public class Radio extends Thread {
 	
 	public void toggleRadio() {
 		if (isPaused) {
+			Main.logInfo("Radio On");
 			inter.play();
 			chargerCom();
 			chargerZike();
@@ -101,6 +103,7 @@ public class Radio extends Thread {
 			isPaused=false;
 		}
 		else {
+			Main.logInfo("Radio Off");
 			isPaused=true;
 			com.stop();
 			musique.stop();

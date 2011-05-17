@@ -126,8 +126,8 @@ public class Course implements ActionMenu {
 	}
 
 	public Course(Voiture voiture) {
-		this(voiture, "Herault/Le_Vigan");
-//		this(voiture, "Autoroute");
+//		this(voiture, "Herault/Le_Vigan");
+		this(voiture, "Autoroute");
 	}
 
 	public Course(Voiture voiture, String fichierCircuit) {
