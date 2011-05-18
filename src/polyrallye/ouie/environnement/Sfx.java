@@ -1,7 +1,9 @@
 package polyrallye.ouie.environnement;
 
 import java.util.Random;
+import java.util.Scanner;
 
+import polyrallye.controlleur.Main;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
 import polyrallye.utilitaires.Multithreading;
@@ -69,6 +71,7 @@ public class Sfx extends Thread {
 	}
 
 	public void run() {
+		Main.logInfo("Start SFX "+rep);
 		if (!isNull) {
 
 			Random random = new Random();
@@ -83,8 +86,8 @@ public class Sfx extends Thread {
 				// Volume
 				temp.setGain(1f);
 				// Position initiale du son
-				positionX = 5 - random.nextInt(10);
-				positionY = 5 - random.nextInt(10);
+				positionX =0;
+				positionY = 1000 - random.nextInt(500);
 				positionZ = 5 - random.nextInt(10);
 				temp.setPosition(positionX, positionY, positionZ);
 				// Distance d'eloignement ?
@@ -125,7 +128,8 @@ public class Sfx extends Thread {
 	}
 
 	public void setDistance(double d) {
-		distance = d;
+		//System.out.println("New distance : "+distance+" old  : "+d);
+		distance = d*100;
 	}
 
 	public void tuer() {
@@ -139,4 +143,6 @@ public class Sfx extends Thread {
 		if(b)
 			temp.stop();
 	}
+		
+	
 }

@@ -102,7 +102,7 @@ public class Conduite {
 		double somme = forceMotrice - forceRestitance;
 
 		// Inertie des pièces mécaniques de la voiture
-		double ratioInertie = 1.12;
+		final double ratioInertie = 1.12;
 
 		// F = masse * acceleration
 		acceleration = somme / masse / ratioInertie;
@@ -300,5 +300,17 @@ public class Conduite {
 
 		return forceAvant + forceArriere;
 
+	}
+
+	public void setPosition(double position) {
+		this.position = position;
+	}
+	
+	/**
+	 * Fonction appelée lors d'un crash…
+	 */
+	public void crash() {
+		vitesse = 0.0;
+		moteur.setRegimeCourant(800.0);
 	}
 }

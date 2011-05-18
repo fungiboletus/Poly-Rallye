@@ -12,6 +12,8 @@ import java.util.TimerTask;
 
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.ouie.utilitaires.Sound.SoundException;
+import polyrallye.utilitaires.Multithreading;
 
 public class Environnement {
 
@@ -19,21 +21,25 @@ public class Environnement {
 	protected String temps;
 	protected Meteo meteo;
 	protected Crash crash;
-
+	
 	protected int randAmb;
 	protected int randSfx;
 	protected int intervalle;
+	protected double distance;
 
 	protected Sound ambiance;
 	protected Sfx sfx;
 
 	public Environnement(String type, String temps, String meteo) {
 		super();
-		
-		if (type == null) type = "plaine";
-		if (temps == null) temps = "jour";
-		if (meteo == null) meteo = "clair";
-		
+
+		if (type == null)
+			type = "plaine";
+		if (temps == null)
+			temps = "jour";
+		if (meteo == null)
+			meteo = "clair";
+
 		this.type = type;
 		this.temps = temps;
 		this.meteo = new Meteo(meteo, type);
@@ -101,9 +107,9 @@ public class Environnement {
 			rep += "sfx_nuit/";
 		} else
 			rep += "sfx/";
-		
-		//Pas de sfx pour certains niveau
-		if (randSfx==0 || (extSfx != null && extSfx.equals("null")))
+
+		// Pas de sfx pour certains niveau
+		if (randSfx == 0 || (extSfx != null && extSfx.equals("null")))
 			sfx = new Sfx();
 		else
 			sfx = new Sfx(rep, randSfx, intervalle);
@@ -114,7 +120,7 @@ public class Environnement {
 	}
 
 	public void change(String env) {
-		Main.logInfo("Changement environnement de "+type+" vers "+env);
+		Main.logInfo("Changement environnement de " + type + " vers " + env);
 		sfx.tuer();
 
 		type = env;
@@ -162,15 +168,12 @@ public class Environnement {
 		}
 
 		// On prend un son au pif parmi ceux disponibles
-		Sound sonTemp = null;
+
 		Random random = new Random();
 		String temp = rep + temps + "_" + (random.nextInt(randAmb) + 1)
 				+ ".wav";
 		System.out.println(temp);
-		sonTemp = new Sound(temp);
-		sonTemp.setLoop(true);
-		sonTemp.setGain(0.4f);
-		sonTemp.setPosition(0, 0, 0);
+
 
 		// Création du sfx
 		// Si le sfx est extérieur au dossier
@@ -182,24 +185,65 @@ public class Environnement {
 		} else
 			rep += "sfx/";
 
-		if (randSfx==0)
+		if (randSfx == 0)
 			sfx = new Sfx();
 		else
 			sfx = new Sfx(rep, randSfx, intervalle);
 
 		// On fade
-		sonTemp.play();
-		ambiance.fadeOut(100);
-		while (ambiance.isPlaying()) {
-			System.out.println("Ambiance is playing !");
-		}
-		ambiance.delete();
-		ambiance = sonTemp;
+//		sonTemp.play();
+//		ambiance.fadeOut(100);
+//		while (ambiance.isPlaying()) {
+//			System.out.println("Ambiance is playing !");
+//		}
+//		ambiance.delete();
+//		ambiance = sonTemp;
+		Sound sonTemp = new Sound();
+		Thread ttemp = new Fade(sonTemp) {
+			@Override
+			public void run() {
+				Random random = new Random();
+				String temp = "Sons/" + type + "/" + temps + "_" + (random.nextInt(randAmb) + 1)
+						+ ".wav";
+				try {
+					sonTemp.charger(temp);
+				} catch (SoundException e) {
 
+				}
+				sonTemp.setLoop(true);
+				sonTemp.setGain(0.4f);
+				sonTemp.setPosition(0, 0, 0);
+				float positionX =0;
+				float positionYi = 1000 - random.nextInt(50);
+				float positionYo = 0;
+				float positionZ = 5 - random.nextInt(10);
+				sonTemp.setPosition(positionX, positionYi, positionZ);
+				sonTemp.setReferenceDistance(200);
+				double realDistance = distance;
+				sonTemp.play();
+				while (positionYo>-2000) {
+					if (distance != realDistance) {
+						if(positionYi>0)
+						positionYi -= distance - realDistance;
+						positionYo -= distance - realDistance;
+						realDistance = distance;
+						sonTemp.setPosition(positionX, positionYi, positionZ);
+						ambiance.setPosition(positionX, positionYo, positionZ);
+					}
+					Multithreading.dormir(20);
+				}
+				ambiance.stop();
+				ambiance.delete();
+				ambiance = sonTemp;
+				ambiance.setPosition(0, 0, 0);
+
+			}
+		};
+		ttemp.start();
 		// Creation crash
 		crash.changeEnvironnement(type);
-		
-		//play
+
+		// play
 		sfx.start();
 
 	}
@@ -216,6 +260,7 @@ public class Environnement {
 
 	public void setDistance(double d) {
 		sfx.setDistance(d);
+		distance = d * 100;
 	}
 
 	public void delete() {
@@ -238,31 +283,42 @@ public class Environnement {
 	}
 
 	public static void main(String[] args) {
-		final Environnement test = new Environnement("mer", "jour", "clair");
+		final Environnement test = new Environnement("devSFX", "jour", "clair");
 		test.setVitesse(300f);
 		test.play();
 		Scanner sc = new Scanner(System.in);
-		
+
 		while (!sc.next().equals("e")) {
 			test.change("foret");
 		}
-//		Timer t = new Timer();
-//
-//		TimerTask tt = new TimerTask() {
-//
-//			@Override
-//			public void run() {
-//				// System.out.println(SonMoteur.accelere);
-//				System.out.println("acc");
-//				double dis = test.sfx.distance;
-//				dis += 10;
-//				test.sfx.setDistance(dis);
-//
-//			}
-//		};
-//
-//		t.schedule(tt, 0, 10);
+		Timer t = new Timer();
 
+		TimerTask tt = new TimerTask() {
+
+			@Override
+			public void run() {
+				// System.out.println(SonMoteur.accelere);
+				System.out.println("acc");
+				double dis = test.sfx.distance;
+				dis += 10;
+				test.sfx.setDistance(dis);
+
+			}
+		};
+
+		t.schedule(tt, 0, 10);
+
+	}
+	
+	private class Fade extends Thread {
+		Sound sonTemp;
+		
+		public Fade(Sound sonTemp) {
+			this.sonTemp=sonTemp;
+		}
+	
 	}
 
 }
+
+
