@@ -125,12 +125,13 @@ public class Copilote {
 		if (isPipelette) {
 			isPipelette = false;
 			bullshit.pause(true);
-
+			Main.logInfo("Le copilote reste professionnel");
 			if (new File(rep + "stfu.wav").exists()) {
 				Sound stfu = new Sound(rep + "stfu.wav");
 				stfu.playAndDelete();
 			}
 		} else {
+			Main.logInfo("Le copilote raconte sa vie");
 			isPipelette = true;
 			bullshit.pause(false);
 		}
@@ -149,6 +150,10 @@ public class Copilote {
 
 	public void playCrash() {
 		String rep = "Sons/copilote/" + id + "/";
+		if (isPipelette) {
+			isPipelette = false;
+			bullshit.pause(true);
+		}
 		if (new File(rep + "crash.wav").exists()) {
 			Sound crash = new Sound(rep + "crash.wav");
 			crash.playAndWait();

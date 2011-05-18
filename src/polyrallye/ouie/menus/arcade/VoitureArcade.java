@@ -32,7 +32,7 @@ public class VoitureArcade extends Menu implements ActionMenu {
 	@Override
 	public void remplir() {
 
-		ajouterElement("Lancer la course avec cette voiture", new Course(voiture));
+		ajouterElement("Lancer la course avec cette voiture", new SelectionCircuit(this,voiture));
 
 		ajouterElement("Écouter les spécifications", new Specifications(this, voiture));
 		

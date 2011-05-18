@@ -8,6 +8,7 @@ import polyrallye.ouie.menus.SelectionVoiturePerformances;
 
 public class Arcade extends Menu implements ActionMenu {
 
+	
 	public Arcade(Menu menuPrecedent) {
 		super(menuPrecedent);
 	}
