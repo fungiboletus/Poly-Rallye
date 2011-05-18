@@ -1,5 +1,6 @@
 package polyrallye.ouie.menus.carriere;
 
+import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
@@ -13,7 +14,6 @@ public class Carriere extends Menu implements ActionMenu {
 
 	@Override
 	public void actionMenu() {
-		Liseuse.lire("Le mode carrière n'est pas du tout terminé.");
 		lancer();
 	}
 
@@ -24,6 +24,13 @@ public class Carriere extends Menu implements ActionMenu {
 	ajouterElement("Magasins", new SelectionVoitureMagasin(this, false));
 	ajouterElement("Permis", new Permis(this));
 	ajouterElement("Championnat", new Championnat(this));
+	ajouterElement("Combien ais-je d'argent ?", new ActionMenu() {
+		
+		@Override
+		public void actionMenu() {
+			Liseuse.lire("Vous avez "+Joueur.session.getArgent()+" euros");
+		}
+	});
 	}
 
 }
