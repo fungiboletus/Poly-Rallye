@@ -7,6 +7,7 @@ import org.jdom.Element;
 
 import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.circuit.Portion;
+import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.voiture.Conduite;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
@@ -28,7 +29,7 @@ import polyrallye.utilitaires.Multithreading;
  * 
  */
 public class Course implements ActionMenu {
-	
+
 	/**
 	 * Le timer qui excécute la course.
 	 */
@@ -69,7 +70,7 @@ public class Course implements ActionMenu {
 	 * Circuit parcouru.
 	 */
 	protected Circuit circuit;
-	
+
 	/**
 	 * Bruit du klaxon.
 	 */
@@ -95,27 +96,29 @@ public class Course implements ActionMenu {
 	 * longtemps
 	 */
 	protected int cpTicksPassageRapport;
-	
+
 	/**
 	 * Portion courante du circuit.
 	 */
 	protected Portion portionCourante;
-	
+
 	/**
 	 * Distance parcourue sur la section en cours
 	 */
 	protected double distancePortion = 0.0;
-	
+
 	/**
 	 * Ou en est le conducteur ?
 	 */
-	protected enum typeAction { ACCELERATION, AVANT_FREINAGE, ATTENTE_DECLENCHEMENT, FREINAGE, VIRAGE };
-	
+	protected enum typeAction {
+		ACCELERATION, AVANT_FREINAGE, FREINAGE, AVANT_VIRAGE, VIRAGE, APRES_VIRAGE
+	};
+
 	/**
 	 * Ce que doit être en train de faire le conducteur
 	 */
 	protected typeAction actionCourante;
-	
+
 	/**
 	 * Position de la voiture avant qu'il freine.
 	 * 
@@ -124,20 +127,32 @@ public class Course implements ActionMenu {
 	 * C'est plus rigolo, sinon, il faut être super réactif pour réagir à temps.
 	 */
 	protected double positionAvantFreinage;
-	
+
 	/**
-	 * TODO: CANARD
+	 * Temps du joueur avant qu'il réagisse à une action
 	 */
-	protected double tempsAvantFreinage;
-	
+	protected double tempsAvantReaction;
+
+	/**
+	 * Temps que le joueur met en plus pour finir la course par rapport au temps
+	 * idéal
+	 */
+	protected double penalite = 0.0;
+
+	/**
+	 * Temps pendant lequel le joueur doit tourner dans le virage
+	 */
+	protected double tempsVirage;
+
 	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
 		this.circuit = circuit;
 	}
 
 	public Course(Voiture voiture) {
-//		this(voiture, "Herault/Le_Vigan");
-		this(voiture, "Autoroute");
+		this(voiture, "Herault/Le_Vigan");
+		// this(voiture, "Autoroute");
+
 	}
 
 	public Course(Voiture voiture, String fichierCircuit) {
@@ -155,10 +170,14 @@ public class Course implements ActionMenu {
 
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see polyrallye.ouie.ActionMenu#actionMenu()
 	 */
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see polyrallye.ouie.ActionMenu#actionMenu()
 	 */
 	@Override
@@ -172,7 +191,7 @@ public class Course implements ActionMenu {
 
 		System.out.println(circuit);
 		// Lancement de l'envirronnement sonore propre au circuit.
-//		circuit.changeTerrain("asphalt");
+		// circuit.changeTerrain("asphalt");
 		// Création du son du moteur
 		sonVoiture = new SonVoiture(voiture);
 
@@ -183,7 +202,7 @@ public class Course implements ActionMenu {
 
 		// Creation copilote
 		copilote = new Copilote();
-		
+
 		// Creation radio
 		radio = new Radio();
 
@@ -206,9 +225,9 @@ public class Course implements ActionMenu {
 		moteur.reset();
 
 		portionCourante = circuit.nextPortion();
-		
+
 		actionCourante = typeAction.ACCELERATION;
-		
+
 		TimerTask tt = new TimerTask() {
 
 			@Override
@@ -219,7 +238,7 @@ public class Course implements ActionMenu {
 					sonVoiture.stop();
 					timerOrganisateur.cancel();
 					klaxon.delete();
-					//radio.delete();
+					// radio.delete();
 					copilote.delete();
 					Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
 				}
@@ -234,7 +253,7 @@ public class Course implements ActionMenu {
 
 				final double vitesse = conduite.getVitesseLineaire();
 				final double position = conduite.getDistanceParcourue();
-				
+
 				// Gestion du klaxon
 				if (entreesCourse.isKlaxon()) {
 					klaxon.pouet();
@@ -273,16 +292,16 @@ public class Course implements ActionMenu {
 					--cpTicksPassageRapport;
 
 				double sonFrottement = 0.0;
-				
+
 				// Et du frein
 				if (entreesCourse.isFreine()) {
 					conduite.setFreinage(true);
 					if (vitesse > 0.0) {
 						if (vitesse < 1.0) {
 							sonVoiture.sonFreinage();
-						} else {						
+						} else {
 							sonFrottement = 0.22;
-						}						
+						}
 					}
 				} else {
 					conduite.setFreinage(false);
@@ -297,8 +316,8 @@ public class Course implements ActionMenu {
 						.getRegimePuissanceMax();
 
 				// Ceci est une belle condition avec des appels de méthodes <3
-				if (((entreesCourse.isRapportSup() || (entreesCourse.automatique && (regimeMoteur > (regimePuissanceMax + 250.0) || moteur.isRupteurEnclanche()))) && t
-						.passerVitesse())
+				if (((entreesCourse.isRapportSup() || (entreesCourse.automatique && (regimeMoteur > (regimePuissanceMax + 250.0) || moteur
+						.isRupteurEnclanche()))) && t.passerVitesse())
 						|| ((entreesCourse.isRapportInf() || (entreesCourse.automatique && regimeMoteur < (regimePuissanceMax + 250)
 								* t.getCoeffBoiteAutomatique())) && t
 								.retrograder())) {
@@ -309,138 +328,203 @@ public class Course implements ActionMenu {
 				if (entreesCourse.isGauche() || entreesCourse.isDroite()) {
 					sonFrottement = 0.4;
 				}
-				
+
 				if (conduite.isPatinage()) {
 					sonFrottement = 0.65;
 				}
 
-				if (sonFrottement>0.0) {
-					circuit.playFrottement((float)sonFrottement);
+				if (sonFrottement > 0.0) {
+					circuit.playFrottement((float) sonFrottement);
 				} else {
 					circuit.stopFrottement();
 				}
-				
+
 				circuit.setDistance(position);
 				circuit.setVitesse(vitesse);
-				
+
 				sonVoiture.setRegime((float) voiture.getMoteur()
 						.getRegimeCourant(), entreesCourse.isAccelere());
-				
+
 				// Gestion des portions du circuit
-				
+
 				distancePortion += distanceParcourue;
-				
+
 				Main.logDebug("Distance parcourue: " + position, 0);
 				Main.logDebug("Distance portion: " + distancePortion, 1);
-				
+
 				// Gestion des virages
-				double diff = portionCourante.getLongueur()-distancePortion;
-				
-				double vitesseMaxVirage = conduite.getVitesseMaxPourVirage(portionCourante.getAngle());
-				
-				double distanceFreinage = conduite.getDistanceFreinage(vitesseMaxVirage)*3.0;
-				
-				//distanceFreinage = (distanceFreinage/vitesse + 0.5) * vitesse;
-				
-				double tempsFreinage = distanceFreinage/vitesse;
-				
-				Main.logDebug("Angle virage: "+portionCourante.getAngle(),2);
-				Main.logDebug("Vitesse max virage: "+vitesseMaxVirage*3.6, 3);
-				Main.logDebug("Distance Freinage: "+distanceFreinage, 4);
-				Main.logDebug("Temps freinage: "+tempsFreinage, 12);
-				
+				double diff = portionCourante.getLongueur() - distancePortion;
+
+				double vitesseMaxVirage = conduite
+						.getVitesseMaxPourVirage(portionCourante.getAngle());
+
+				double distanceFreinage = conduite
+						.getDistanceFreinage(vitesseMaxVirage) * 4.0;
+
+				// distanceFreinage = (distanceFreinage/vitesse + 0.5) *
+				// vitesse;
+
+				double tempsFreinage = distanceFreinage / vitesse;
+
+				Main.logDebug("Angle virage: " + portionCourante.getAngle(), 2);
+				Main.logDebug("Vitesse max virage: " + vitesseMaxVirage * 3.6,
+						3);
+				Main.logDebug("Distance Freinage: " + distanceFreinage, 4);
+				Main.logDebug("Temps freinage: " + tempsFreinage, 12);
+				Main.logDebug("Pénalité: " + penalite, 17);
+
+				final double tempsReaction = 1.5;
+
 				switch (actionCourante) {
 				case ACCELERATION:
-					if (distanceFreinage >= diff && distanceFreinage-diff > 5.0) {
+					Main.logDebug("ACCELERATION", 16);
+					// Si on doit freiner, et que le freinage est un minimum
+					// important
+					if (distanceFreinage >= diff
+							&& distanceFreinage - diff > 3.0) {
 						actionCourante = typeAction.AVANT_FREINAGE;
 						positionAvantFreinage = position;
 						copilote.playFreine();
-						tempsAvantFreinage = tempsTmp;
+						Main.logInfo("FREINE !");
+						tempsAvantReaction = tempsTmp;
 					}
 					break;
 				case AVANT_FREINAGE:
-					if (tempsTmp - tempsAvantFreinage > 3.0 ) {
-						circuit.playCrash();
-						conduite.crash();
-						sonVoiture.setRegime(800.0f, false);
-						Main.logImportant("CRASH CRASH CRASH");
-						Multithreading.dormir(1500);
-						copilote.playCrash();
-						Multithreading.dormir(2000);
+					Main.logDebug("AVANT_FREINAGE", 16);
+					if (tempsTmp - tempsAvantReaction > tempsReaction) {
+						crash();
 						actionCourante = typeAction.ACCELERATION;
+						// On se remet là où on devait être pour freiner
+						conduite.setPosition(positionAvantFreinage);
+						penalite += tempsReaction + 10.0;
 					} else {
 						if (entreesCourse.isFreine()) {
 							actionCourante = typeAction.FREINAGE;
-						}						
+							// On se remet à l'endroit idéal pour freiner, en
+							// fonction de la nouvelle vitesse
+							conduite.setPosition(position
+									- conduite
+											.getDistanceFreinage(vitesseMaxVirage)
+									* 4.0);
+							penalite += tempsTmp - tempsAvantReaction;
+						}
 					}
-					// Dans tout les cas (et donc en cas de crash), on se remet au bon endroit…
-					conduite.setPosition(positionAvantFreinage);
+					break;
+				case AVANT_VIRAGE:
+					Main.logDebug("AVANT_VIRAGE", 16);
+					if (tempsTmp - tempsAvantReaction > tempsReaction) {
+						crash();
+						actionCourante = typeAction.ACCELERATION;
+						penalite += tempsReaction + 5.0;
+					} else {
+						if ((portionCourante.getType() == TypeRoute.GAUCHE
+								&& entreesCourse.isGauche() && !entreesCourse
+								.isDroite())
+								|| (portionCourante.getType() == TypeRoute.DROITE
+										&& !entreesCourse.isGauche() && entreesCourse
+										.isDroite())) {
+							actionCourante = typeAction.VIRAGE;
+							tempsAvantReaction = tempsTmp;
+							tempsVirage = 1.0;
+						}
+					}
+					break;
+				case VIRAGE:
+					Main.logDebug("VIRAGE", 16);
+					if ((portionCourante.getType() == TypeRoute.GAUCHE
+							&& entreesCourse.isGauche() && !entreesCourse
+							.isDroite())
+							|| (portionCourante.getType() == TypeRoute.DROITE
+									&& !entreesCourse.isGauche() && entreesCourse
+									.isDroite())) {
+						if (tempsTmp - tempsAvantReaction > tempsVirage) {
+							copilote.playOk();
+							Main.logInfo("OK");
+							actionCourante = typeAction.ACCELERATION;
+						}
+					} else {
+						Main.logImportant("CANARD");
+						actionCourante = typeAction.ACCELERATION;
+					}
+					break;
+				case APRES_VIRAGE:
+					Main.logDebug("APRES VIRAGE", 16);
 					break;
 				case FREINAGE:
+					Main.logDebug("FREINAGE", 16);
 					break;
 				}
-				
-				if (actionCourante != typeAction.AVANT_FREINAGE && diff < 0.0) {
-					
-					double marge = conduite.getDistanceFreinage(vitesseMaxVirage);
-					
+
+				if ((actionCourante != typeAction.APRES_VIRAGE) && diff < 0.0) {
+
+					double marge = conduite
+							.getDistanceFreinage(vitesseMaxVirage);
+
 					// Une petite marge
 					if (marge > 20.0) {
-						Main.logImportant("FIAL: "+marge);
-						
+						crash();
+						penalite += marge;
+						actionCourante = typeAction.ACCELERATION;
 					} else {
-						Main.logImportant("BRAVO: "+marge);
-						
+						actionCourante = typeAction.AVANT_VIRAGE;
+						tempsAvantReaction = tempsTmp;
 					}
-					
-					actionCourante = typeAction.ACCELERATION;
-					
+
 					portionCourante = circuit.nextPortion();
-					
+
 					if (portionCourante == null) {
 						timerOrganisateur.cancel();
 						timerCompteur.pause();
 						Liseuse.lire("Ahah");
-					}
-					else {
-						actionCourante = typeAction.ACCELERATION;
+					} else {
 						distancePortion = -diff;
 						switch (portionCourante.getType()) {
 						case GAUCHE:
 							copilote.playGauche();
-							Main.logImportant("<= GAUCHE");
+							Main.logInfo("<= GAUCHE");
 							break;
 						case DROITE:
 							copilote.playDroite();
-							Main.logImportant("DROITE =>");
+							Main.logInfo("DROITE =>");
 							break;
 						}
 					}
 				}
-				
-				/*Portion temp;
-				if (contenu.element().getLongueur() <= d) {
-					temp = contenu.poll();
-					while (temp != null && !temp.getType().equals("virage")) {
-						Evenement temp2 = (Evenement) temp;
-						temp2.exec();
-						temp = contenu.poll();
-					}
-				}*/
+
+				/*
+				 * Portion temp; if (contenu.element().getLongueur() <= d) {
+				 * temp = contenu.poll(); while (temp != null &&
+				 * !temp.getType().equals("virage")) { Evenement temp2 =
+				 * (Evenement) temp; temp2.exec(); temp = contenu.poll(); } }
+				 */
 			}
 		};
 
 		// Démarrage des sons
 		circuit.start();
 		sonVoiture.play();
-		//radio.start();
-		
+		// radio.start();
+
 		// À 50Hz, comme le courant EDF
 		timerOrganisateur.schedule(tt, 0, 20);// 20
 
-		temps = timerCompteur.getTime();		
-		
+		temps = timerCompteur.getTime();
+
 		Main.logInfo("La course est lancée");
+	}
+
+	/**
+	 * Fonction appelée lors d'un crash.
+	 */
+	public void crash() {
+		circuit.playCrash();
+		circuit.stopFrottement();
+		conduite.crash();
+		sonVoiture.setRegime(800.0f, false);
+		Main.logImportant("CRASH CRASH CRASH");
+		Multithreading.dormir(1500);
+		copilote.playCrash();
+		Multithreading.dormir(2000);
 	}
 
 }

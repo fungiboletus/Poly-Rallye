@@ -7,7 +7,7 @@ import polyrallye.controlleur.Main;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.Multithreading;
 
-public class Terrain extends Thread {
+public class Terrain {
 	protected String terrain;
 
 	protected Sound son;

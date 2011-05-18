@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
@@ -25,6 +26,8 @@ public class SelectionVoitureMagasin extends Menu implements ActionMenu {
 	};
 
 	protected niveauHierarchie niveau;
+	
+	protected boolean modeArcade;
 	
 	static {
 		/*musique = new Sound("Ressources/Reno Project - 1.0/02 - Atlanta.ogg");
@@ -49,6 +52,7 @@ public class SelectionVoitureMagasin extends Menu implements ActionMenu {
 	
 	protected SelectionVoitureMagasin(Menu menuPrecedent, boolean modeArcade, Map<String, Map<String, Map<String, Voiture>>> hierarchie) {
 		this(menuPrecedent, niveauHierarchie.CONSTRUCTEURS);
+		this.modeArcade = modeArcade;
 		
 		for (Entry<String, Map<String, Map<String, Voiture>>> c : hierarchie.entrySet()) {
 			SelectionVoitureMagasin menuConstructeur = new SelectionVoitureMagasin(this, niveauHierarchie.MODELES);
@@ -105,6 +109,11 @@ public class SelectionVoitureMagasin extends Menu implements ActionMenu {
 	public void actionMenu() {
 		switch (niveau) {
 		case CONSTRUCTEURS:
+			
+			if (!modeArcade) {
+				Liseuse.lire("Vous avez "+Joueur.session.getArgent()+" euros");
+			}
+			
 			Liseuse.lire("Sélectionnez le constructeur");
 			break;
 		case MODELES:

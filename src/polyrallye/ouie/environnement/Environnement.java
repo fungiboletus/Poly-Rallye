@@ -63,7 +63,7 @@ public class Environnement {
 					} else if (line.contains("sfx")) {
 						this.randSfx = Integer.valueOf(line.substring(line
 								.indexOf(" ") + 1));
-					} else if (line.contains("sfxout")) {
+					} else if (line.contains("out")) {
 						extSfx = line.substring(line.indexOf(" ") + 1);
 					} else if (line.contains("random")) {
 						this.intervalle = Integer.valueOf(line.substring(line

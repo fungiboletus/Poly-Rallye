@@ -139,13 +139,7 @@ public class Copilote {
 
 
 	public void playOk() {
-		String rep = "Sons/copilote/" + id + "/";
-		Random random = new Random();
-		if (isPipelette)
-			bullshit.pause(true);
-		gauche.get(random.nextInt(gauche.size())).play();
-		if (isPipelette)
-			bullshit.pause(false);
+		ok.get(random.nextInt(ok.size())).play();
 	}
 
 	public void playCrash() {
@@ -207,6 +201,9 @@ public class Copilote {
 			s.delete();
 		}
 		for (Sound s : freine) {
+			s.delete();
+		}
+		for (Sound s : ok) {
 			s.delete();
 		}
 		bullshit.tuer();
