@@ -214,8 +214,16 @@ public class Conduite {
 		double xa = 0.0;
 		double xb = 180.0;
 		
-		double ya = 40.0*coeffAdherenceFrottement;
-		double yb = 8.0*coeffAdherenceFrottement;
+		double xxa = 100.0;
+		double xxb = 1000.0;
+		
+		double yya = 30.0;
+		double yyb = 60.0;
+		
+		double r = yya + (angleVirage - xxa)*((yyb-yya)/(xxb-xxa));
+		
+		double ya = r*coeffAdherenceFrottement;
+		double yb = r*0.3*coeffAdherenceFrottement;
 		
 		return ya + (angleVirage - xa)*((yb-ya)/(xb-xa));
 	}

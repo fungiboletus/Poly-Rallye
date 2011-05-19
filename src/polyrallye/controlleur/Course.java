@@ -358,7 +358,7 @@ public class Course {
 						.getVitesseMaxPourVirage(portionCourante.getAngle());
 
 				double distanceFreinage = conduite
-						.getDistanceFreinage(vitesseMaxVirage) * 4.0;
+						.getDistanceFreinage(vitesseMaxVirage) * 2.0;
 
 				// distanceFreinage = (distanceFreinage/vitesse + 0.5) *
 				// vitesse;
