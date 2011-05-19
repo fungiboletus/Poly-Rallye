@@ -1,13 +1,10 @@
 package polyrallye.ouie.environnement;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
 
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
+import polyrallye.utilitaires.LectureFichier;
 
 public class Crash {
 	protected String environnement;
@@ -27,38 +24,19 @@ public class Crash {
 			son.delete();
 		// On va charger dans le fichier les config
 		String rep = "Sons/Crash" + "/";
-		BufferedReader mani = null;
 		// On lit le fichier
-		try {
-			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
-			String line = null;
-			try {
-				while ((line = mani.readLine()) != null) {
-					if (line.contains(env)) {
-						this.environnement = (line
-								.substring(line.indexOf(" ") + 1));
-					}
-				}
-				// On remet le terrain a defaut si on a pas de sons specifiques
-				if (environnement == null) {
-					environnement = "vehicule";
-				}
+		String[] lectureManifeste = new String[1];
+		lectureManifeste[0] = env;
 
-			} catch (IOException e) {
-				System.out.println("Erreur lecture fichier");
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Erreur chargement fichier");
-			e.printStackTrace();
-		}
 
-		try {
-			mani.close();
-		} catch (IOException e) {
-			System.out.println("Erreur fermeture fichier");
-			e.printStackTrace();
-		}
+		lectureManifeste = new LectureFichier(rep).lire("manifeste.cfg",
+				lectureManifeste);
+		if (lectureManifeste[0]!=null)
+			this.environnement = (lectureManifeste[0]
+					.substring(lectureManifeste[0].indexOf(" ") + 1));
+		else
+			environnement = "vehicule";
+
 
 		// On prend un son au pif parmi ceux disponibles
 		Random random = new Random();

@@ -1,22 +1,20 @@
 package polyrallye.ouie.menus;
 
-import java.io.File;
-import java.util.List;
 
-import org.jdom.Element;
 
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.utilitaires.GestionXML;
+
 
 public class SuppressionDonneesJoueur extends Menu implements ActionMenu{
 	
 	protected String nom;
 	
-	public SuppressionDonneesJoueur(Menu menuPrecedent) {
+	public SuppressionDonneesJoueur(Menu menuPrecedent,String nom) {
 		super(menuPrecedent);
+		this.nom=nom;
 	}
 	
 	@Override
@@ -32,20 +30,23 @@ public class SuppressionDonneesJoueur extends Menu implements ActionMenu{
 					
 					@Override
 					public void actionMenu() {
-						annuler();
+						Liseuse.lire("Vous êtes "+Joueur.session.getNom());
+						ennoncer();
 						
 					}
 				});
-				ajouterElement("Effacer la progression du joueur "+nom+" ?", new ActionMenu() {
+				ajouterElement("Effacer la progression du joueur "+nom, new ActionMenu() {
 					
 					@Override
 					public void actionMenu() {
 						Joueur.session.RemiseAZero();
 						Joueur.EnregistrerJoueur(Joueur.session);
-						Liseuse.lire("La progression du joueur a ete effacee");
-						String[] annonces = new String[1];
-						annonces[0]= "Vous êtes "+Joueur.session.getNom();
-						annulerEnnoncer(annonces);
+//						String[] annonces = new String[2];
+//						annonces[0]= "La progression du joueur a ete effacee";
+//						annonces[1]= "Vous êtes "+Joueur.session.getNom();
+						Liseuse.lire("La progression du joueur "+nom+" a été effacé");
+						Liseuse.lire("Vous êtes "+Joueur.session.getNom());
+						ennoncer();
 					}
 				});
 	

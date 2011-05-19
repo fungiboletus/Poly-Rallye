@@ -4,8 +4,6 @@ import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.menus.SelectionVoitureMagasin;
-import polyrallye.ouie.menus.SelectionVoiturePerformances;
 import polyrallye.utilitaires.EcritureFichier;
 
 public class ConfigJoueur extends Menu implements ActionMenu {
@@ -36,7 +34,7 @@ public class ConfigJoueur extends Menu implements ActionMenu {
 			}
 		});
 		ajouterElement("Creer un nouveau joueur", new CreationJoueur(this));
-		ajouterElement("Effacer la progression du joueur", new SuppressionDonneesJoueur(menuPrecedent));
+		ajouterElement("Effacer la progression du joueur", new SuppressionDonneesJoueur(menuPrecedent,Joueur.session.getNom()));
 	}
 	
 	

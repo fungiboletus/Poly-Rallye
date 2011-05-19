@@ -13,6 +13,7 @@ import java.util.TimerTask;
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
+import polyrallye.utilitaires.LectureFichier;
 import polyrallye.utilitaires.Multithreading;
 
 public class Environnement {
@@ -21,7 +22,7 @@ public class Environnement {
 	protected String temps;
 	protected Meteo meteo;
 	protected Crash crash;
-	
+
 	protected int randAmb;
 	protected int randSfx;
 	protected int intervalle;
@@ -50,40 +51,31 @@ public class Environnement {
 
 		// On va charger dans le fichier les config
 		String rep = "Sons/" + type + "/";
-		BufferedReader mani = null;
+
 		// On lit le fichier
-		try {
-			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
-			String line = null;
-			try {
-				while ((line = mani.readLine()) != null) {
-					if (line.contains(temps)) {
-						this.randAmb = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					} else if (line.contains("sfx")) {
-						this.randSfx = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					} else if (line.contains("out")) {
-						extSfx = line.substring(line.indexOf(" ") + 1);
-					} else if (line.contains("random")) {
-						this.intervalle = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					}
+		String[] lectureManifeste = new String[4];
+		lectureManifeste[0] = temps;
+		lectureManifeste[1] = "sfx";
+		lectureManifeste[2] = "out";
+		lectureManifeste[3] = "random";
 
-				}
-			} catch (IOException e) {
-				System.out.println("Erreur lecture fichier");
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Erreur chargement fichier");
-			e.printStackTrace();
+		lectureManifeste = new LectureFichier(rep).lire("manifeste.cfg",
+				lectureManifeste);
+		if (lectureManifeste[0]!=null)
+			this.randAmb = Integer.valueOf(lectureManifeste[0]
+					.substring(lectureManifeste[0].indexOf(" ") + 1));
+
+		if (lectureManifeste[1]!=null) {
+			this.randSfx = Integer.valueOf(lectureManifeste[1]
+					.substring(lectureManifeste[1].indexOf(" ") + 1));
 		}
-
-		try {
-			mani.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (lectureManifeste[2]!=null) {
+			extSfx = lectureManifeste[2].substring(lectureManifeste[2]
+					.indexOf(" ") + 1);
+		}
+		if (lectureManifeste[3]!=null) {
+			this.intervalle = Integer.valueOf(lectureManifeste[3]
+					.substring(lectureManifeste[3].indexOf(" ") + 1));
 		}
 
 		// On prend un son au pif parmi ceux disponibles
@@ -174,7 +166,6 @@ public class Environnement {
 				+ ".wav";
 		System.out.println(temp);
 
-
 		// Création du sfx
 		// Si le sfx est extérieur au dossier
 		if (extSfx != null)
@@ -191,20 +182,20 @@ public class Environnement {
 			sfx = new Sfx(rep, randSfx, intervalle);
 
 		// On fade
-//		sonTemp.play();
-//		ambiance.fadeOut(100);
-//		while (ambiance.isPlaying()) {
-//			System.out.println("Ambiance is playing !");
-//		}
-//		ambiance.delete();
-//		ambiance = sonTemp;
+		// sonTemp.play();
+		// ambiance.fadeOut(100);
+		// while (ambiance.isPlaying()) {
+		// System.out.println("Ambiance is playing !");
+		// }
+		// ambiance.delete();
+		// ambiance = sonTemp;
 		Sound sonTemp = new Sound();
 		Thread ttemp = new Fade(sonTemp) {
 			@Override
 			public void run() {
 				Random random = new Random();
-				String temp = "Sons/" + type + "/" + temps + "_" + (random.nextInt(randAmb) + 1)
-						+ ".wav";
+				String temp = "Sons/" + type + "/" + temps + "_"
+						+ (random.nextInt(randAmb) + 1) + ".wav";
 				try {
 					sonTemp.charger(temp);
 				} catch (SoundException e) {
@@ -213,7 +204,7 @@ public class Environnement {
 				sonTemp.setLoop(true);
 				sonTemp.setGain(0.4f);
 				sonTemp.setPosition(0, 0, 0);
-				float positionX =0;
+				float positionX = 0;
 				float positionYi = 1000 - random.nextInt(50);
 				float positionYo = 0;
 				float positionZ = 5 - random.nextInt(10);
@@ -221,10 +212,10 @@ public class Environnement {
 				sonTemp.setReferenceDistance(200);
 				double realDistance = distance;
 				sonTemp.play();
-				while (positionYo>-2000) {
+				while (positionYo > -2000) {
 					if (distance != realDistance) {
-						if(positionYi>0)
-						positionYi -= distance - realDistance;
+						if (positionYi > 0)
+							positionYi -= distance - realDistance;
 						positionYo -= distance - realDistance;
 						realDistance = distance;
 						sonTemp.setPosition(positionX, positionYi, positionZ);
@@ -309,16 +300,14 @@ public class Environnement {
 		t.schedule(tt, 0, 10);
 
 	}
-	
+
 	private class Fade extends Thread {
 		Sound sonTemp;
-		
+
 		public Fade(Sound sonTemp) {
-			this.sonTemp=sonTemp;
+			this.sonTemp = sonTemp;
 		}
-	
+
 	}
 
 }
-
-
