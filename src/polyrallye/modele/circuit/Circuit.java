@@ -179,6 +179,7 @@ public class Circuit {
 						double addAngle = portion.getAngle() / 2.0;
 						portionCourante.setLongueur(portionCourante
 								.getLongueur() + addDistance);
+						portionCourante.fusionnerEvenements(portion);
 						portion.setAngle(portionCourante.getAngle() + addAngle);
 						distancePortionAddition += addDistance;
 						anglePortionAddition += addAngle;

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import polyrallye.ouie.environnement.Evenement;
+import polyrallye.ouie.environnement.TypeEvenement;
 
 /**
  * Portion d'un circuit.
@@ -77,6 +78,24 @@ public class Portion {
 	
 	public boolean aDesEvenements() {
 		return !evenements.isEmpty();
+	}
+	
+	/**
+	 * @param p
+	 */
+	public void fusionnerEvenements(Portion p) {
+		for (Evenement e : p.getEvenements()) {
+			boolean ajouter = true;
+			for (Evenement ee : evenements) {
+				if (e.getType() == ee.getType() && e.getType() != TypeEvenement.SON) {
+					ajouter = false;
+				}
+			}
+			
+			if (ajouter) {
+				addEvenement(e);
+			}
+		}
 	}
 	
 	public void execution(Circuit cc) {
