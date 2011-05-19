@@ -519,10 +519,14 @@ public class Course {
 	public void crash() {
 		circuit.playCrash();
 		circuit.stopFrottement();
+		Main.logImportant("V: "+conduite.getVitesseLineaire());
 		conduite.stop();
+		Main.logImportant("V: "+conduite.getVitesseLineaire());
 		sonVoiture.setRegime(800.0f, false);
 		Main.logImportant("CRASH CRASH CRASH");
+		Multithreading.dormir(1500);
 		copilote.playCrash();
+		Multithreading.dormir(1000);
 	}
 
 	public void finDeCourse() {
