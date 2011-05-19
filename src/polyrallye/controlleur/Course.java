@@ -249,7 +249,7 @@ public class Course {
 				float tempsTick = tempsTmp - temps;
 				temps = tempsTmp;
 
-				double distanceParcourue = conduite.tick(tempsTick);
+				double distanceParcourue = conduite.tick(tempsTick*entreesCourse.coeffVitesse);
 
 				final double vitesse = conduite.getVitesseLineaire();
 				final double position = conduite.getDistanceParcourue();
