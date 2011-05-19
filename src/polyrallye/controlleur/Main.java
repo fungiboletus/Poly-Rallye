@@ -17,10 +17,6 @@ import polyrallye.utilitaires.Multithreading;
  *
  *	Classe qui lance le jeu.
  */
-/**
- * @author antoine
- * 
- */
 public class Main {
 
 	/**

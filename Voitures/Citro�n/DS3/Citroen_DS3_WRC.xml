@@ -1,0 +1,32 @@
+<voiture>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>DS3</nom>
+		<version>WRC</version>
+		<periode debut="2010" fin="2011"/>
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+		<prix>100 000</prix>
+	</economie>
+	<moteur nom="THP 200">
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1598</cylindree>
+		<puissance regime="6000">300</puissance>
+		<couple_max regime="3250">350</couple_max>
+		<rupteur>6600</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1200</poids>
+		<largeur>1820</largeur>
+		<longueur>3948</longueur>
+		<empattement>2461</empattement>
+	</chassis>
+	<sources>
+		<source>http://en.wikipedia.org/wiki/Citro%C3%ABn_DS3_WRC</source>
+	</sources>
+</voiture>

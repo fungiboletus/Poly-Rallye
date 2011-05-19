@@ -1,0 +1,34 @@
+<voiture>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>Xsara</nom>
+		<version>Kit car</version>
+		<periode debut="1998" fin="2000"/>
+	</presentation>
+	<economie>
+		<rarete>3</rarete>
+		<prix>25 000</prix>
+	</economie>
+	<moteur nom="EW10J4S">
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1998</cylindree>
+		<puissance regime="8750">280</puissance>
+		<couple_max regime="6750">250</couple_max>
+		<rupteur>9250</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>960</poids>
+		<largeur>1840</largeur>
+		<longueur>4167</longueur>
+		<empattement>2555</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Citro%C3%ABn_Xsara</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=86031</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=73</source>
+	</sources>
+</voiture>
