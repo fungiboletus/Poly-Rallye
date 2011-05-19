@@ -59,6 +59,14 @@ public class Portion {
 		return type;
 	}
 	
+	public void setLongueur(double longueur) {
+		this.longueur = longueur;
+	}
+
+	public void setAngle(double angle) {
+		this.angle = angle;
+	}
+
 	public void addEvenement(Evenement e) {
 		evenements.add(e);
 	}

@@ -225,13 +225,7 @@ public class Course {
 			public void run() {
 
 				if (entreesCourse.isEchap()) {
-					circuit.stop();
-					sonVoiture.stop();
-					timerOrganisateur.cancel();
-					klaxon.delete();
-					// radio.delete();
-					copilote.delete();
-					Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
+					fermer();
 				}
 
 				// Gestion du temps
@@ -467,6 +461,7 @@ public class Course {
 						timerOrganisateur.cancel();
 						timerCompteur.pause();
 						Liseuse.lire("Ahah");
+						fermer();
 					} else {
 						distancePortion = -diff;
 						switch (portionCourante.getType()) {
@@ -518,4 +513,13 @@ public class Course {
 		Multithreading.dormir(2000);
 	}
 
+	public void fermer() {
+		circuit.stop();
+		sonVoiture.stop();
+		timerOrganisateur.cancel();
+		klaxon.delete();
+		// radio.delete();
+		copilote.delete();
+		Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
+	}
 }
