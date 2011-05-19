@@ -12,7 +12,6 @@ import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.circuit.Portion;
 import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.personnes.Joueur;
-import polyrallye.modele.voiture.Conduite;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Transmission;
@@ -520,12 +519,10 @@ public class Course {
 	public void crash() {
 		circuit.playCrash();
 		circuit.stopFrottement();
-		conduite.crash();
+		conduite.stop();
 		sonVoiture.setRegime(800.0f, false);
 		Main.logImportant("CRASH CRASH CRASH");
-		Multithreading.dormir(1500);
 		copilote.playCrash();
-		Multithreading.dormir(2000);
 	}
 
 	public void finDeCourse() {

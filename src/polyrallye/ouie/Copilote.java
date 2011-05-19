@@ -150,8 +150,7 @@ public class Copilote {
 		}
 		if (new File(rep + "crash.wav").exists()) {
 			Sound crash = new Sound(rep + "crash.wav");
-			crash.playAndWait();
-			crash.delete();
+			crash.playAndDelete();
 		}
 
 	}

@@ -1,6 +1,9 @@
-package polyrallye.modele.voiture;
+package polyrallye.controlleur;
 
-import polyrallye.controlleur.Main;
+import polyrallye.modele.voiture.Moteur;
+import polyrallye.modele.voiture.PositionRoue;
+import polyrallye.modele.voiture.Transmission;
+import polyrallye.modele.voiture.Voiture;
 
 /**
  * Moteur physique du jeu.
@@ -309,7 +312,7 @@ public class Conduite {
 	/**
 	 * Fonction appelée lors d'un crash…
 	 */
-	public void crash() {
+	public void stop() {
 		vitesse = 0.0;
 		moteur.setRegimeCourant(800.0);
 	}
