@@ -5,11 +5,16 @@ import java.util.TimerTask;
 
 import org.jdom.Element;
 
+import polyrallye.modele.championnat.Championnat;
+import polyrallye.modele.championnat.Duree;
+import polyrallye.modele.championnat.Etape;
 import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.circuit.Portion;
 import polyrallye.modele.circuit.TypeRoute;
+import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.Conduite;
 import polyrallye.modele.voiture.Moteur;
+import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Transmission;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
@@ -144,13 +149,23 @@ public class Course {
 	 */
 	protected double tempsVirage;
 
+	protected Championnat championnat;
+
+	protected Etape etape;
+
 	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
 		this.circuit = circuit;
 	}
 
+	public Course(Voiture voiture, Circuit circuit, Etape et) {
+		this.voiture = voiture;
+		this.circuit = circuit;
+		this.etape = et;
+	}
+
 	public Course(Voiture voiture) {
-		this(voiture, "Herault/Le_Vigan");
+		this(voiture, "Nouveau/Monaco");
 		// this(voiture, "Autoroute");
 
 	}
@@ -194,7 +209,7 @@ public class Course {
 
 		// Creation radio
 		radio = new Radio();
-		//POur activer la radio (pas directement dans le jeu)
+		// POur activer la radio (pas directement dans le jeu)
 		radio.start();
 
 		// Si on part en première, c'est mieux
@@ -513,13 +528,57 @@ public class Course {
 		Multithreading.dormir(2000);
 	}
 
+	public void finDeCourse() {
+
+		etape.setClassement(new Duree((int) timerCompteur.getTime()),
+				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
+		Etape.EnregistrerEtape(etape);
+
+		championnat.setClassement();
+
+		int nbplayed = 0;
+		boolean isfinished = false;
+
+		for (int i = 0; i < championnat.getEtapes().size() - 1; ++i) {
+			for (int j = 0; j < championnat.getEtapes().get(i).getClassement()
+					.size() - 1; ++j) {
+				if (Joueur.session.getNom().equals(
+						championnat.getEtapes().get(i).getClassement().get(j)
+								.getPersonne().getNom())) {
+					nbplayed++;
+				}
+			}
+		}
+
+		if (nbplayed == 10)
+			isfinished = true;
+
+		if (isfinished
+				&& championnat.getClassement().get(0).getPersonne().getNom()
+						.equals(Joueur.session.getNom())) {
+			try {
+				championnat.RemisePrix();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			Liseuse.lire("vous avez gagné le championnat et vous avez remporté la voiture "
+					+ championnat.getVoitureGagne()
+					+ " et "
+					+ championnat.getArgentGagne() + " euros");
+		}
+		Championnat.EnregistrerChampionnat(championnat);
+	}
+
 	public void fermer() {
 		circuit.stop();
 		sonVoiture.stop();
 		timerOrganisateur.cancel();
 		klaxon.delete();
-		// radio.delete();
+		radio.delete();
 		copilote.delete();
 		Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
+		finDeCourse();
 	}
 }

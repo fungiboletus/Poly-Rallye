@@ -188,7 +188,7 @@ public class Circuit {
 
 					if (ajouter) {
 						if (portionCourante == null) {
-							//portions.add(portion);
+							// portions.add(portion);
 							portionCourante = portion;
 						} else {
 							portions.add(portionCourante);
@@ -268,7 +268,7 @@ public class Circuit {
 
 	public Portion nextPortion() {
 		Portion temp = portions.poll();
-		if (temp.aDesEvenements())
+		if (temp != null && temp.aDesEvenements())
 			temp.execution(this);
 		return temp;
 	}

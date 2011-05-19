@@ -16,15 +16,16 @@ public class VoitureChampionnat extends Menu implements ActionMenu {
         protected static Sound musique;
         
         protected String circuit;
+        protected polyrallye.modele.championnat.Etape etape;
 
         static {
                 musique = new Sound("Sons/foret/jour_6.wav");
                 musique.setLoop(true);
         }
 
-        public VoitureChampionnat(Menu menuPrecedent, String circuit) {
+        public VoitureChampionnat(Menu menuPrecedent, String circuit, polyrallye.modele.championnat.Etape etape) {
                 super(menuPrecedent);
-                
+                this.etape = etape;
                 this.circuit = circuit;
 
                 messageMenuVide = "Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.";
