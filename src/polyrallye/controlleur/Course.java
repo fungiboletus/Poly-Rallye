@@ -205,6 +205,8 @@ public class Course implements ActionMenu {
 
 		// Creation radio
 		radio = new Radio();
+		//POur activer la radio (pas directement dans le jeu)
+		radio.start();
 
 		// Si on part en première, c'est mieux
 		voiture.getTransmission().setPremiere();
