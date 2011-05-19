@@ -4,7 +4,6 @@ import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.menus.SelectionVoitureMagasin;
 
 public class Carriere extends Menu implements ActionMenu {
 

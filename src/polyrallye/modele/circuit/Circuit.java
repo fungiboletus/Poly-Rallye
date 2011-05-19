@@ -89,9 +89,9 @@ public class Circuit {
 
 		int i = 0;
 
-		Portion portionCourante = null;
+		/*Portion portionCourante = null;
 		double distancePortionAddition = 0.0;
-		double anglePortionAddition = 0.0;
+		double anglePortionAddition = 0.0;*/
 
 		// Parcours du chemin
 		for (Object e : chemin.getChildren("nd")) {

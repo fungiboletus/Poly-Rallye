@@ -2,7 +2,6 @@ package polyrallye.ouie.menus.arcade;
 
 import java.io.File;
 
-import polyrallye.controlleur.Main;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
