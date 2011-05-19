@@ -53,4 +53,8 @@ public class Evenement {
 		return builder.toString();
 	}
 
+	public TypeEvenement getType() {
+		return type;
+	}
+
 }

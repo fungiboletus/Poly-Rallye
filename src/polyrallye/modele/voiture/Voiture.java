@@ -5,6 +5,7 @@ import java.util.Random;
 import org.jdom.Element;
 
 import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.menus.SelectionneurPerformances;
 import polyrallye.utilitaires.GestionXML;
 
 public class Voiture {
@@ -43,7 +44,7 @@ public class Voiture {
 		constructeur = presentation.getChildText("constructeur");
 
 		Element economie = noeud.getChild("economie");
-		//prix = GestionXML.getInt(economie.getChildText("prix"));
+		// prix = GestionXML.getInt(economie.getChildText("prix"));
 		rarete = GestionXML.getInt(economie.getChildText("rarete"));
 
 		Element periode = presentation.getChild("periode");
@@ -60,11 +61,11 @@ public class Voiture {
 		transmission = new Transmission(moteur, noeud.getChild("transmission"));
 		chassis = new Chassis(noeud.getChild("chassis"));
 		sources = new Sources(noeud.getChild("sources"));
-		
+
 		if (transmission.getVitessePuissanceMaximale() < 1.0) {
 			transmission.etablirVitesseMaximale(getScore());
 		}
-		
+
 		transmission.calculerRapports();
 	}
 
@@ -94,7 +95,7 @@ public class Voiture {
 	public int getRarete() {
 		return rarete;
 	}
-	
+
 	public int getDebutDiffusion() {
 		return debutDiffusion;
 	}
@@ -120,62 +121,62 @@ public class Voiture {
 	}
 
 	public int getPrix() {
-		int scorePrix = rarete*20 + (int) getScore() + new Random(getNomComplet().hashCode()).nextInt(30) - 15;
-		
-		//System.out.println(getNomComplet()+" +++ " + scorePrix);
-		
-		// Le gain est en fonction de l'année, plus la voiture est vielle, mieux c'est, sauf dans les années 90 où les voitures sont vielles, mais simplement mal cotées
-		
+		int scorePrix = rarete * 20 + (int) getScore()
+				+ new Random(getNomComplet().hashCode()).nextInt(30) - 15;
+
+		// System.out.println(getNomComplet()+" +++ " + scorePrix);
+
+		// Le gain est en fonction de l'année, plus la voiture est vielle, mieux
+		// c'est, sauf dans les années 90 où les voitures sont vielles, mais
+		// simplement mal cotées
+
 		double gainAnnee = 0.0;
-		
+
 		double xa = 1950;
 		double xb = 1995;
 		double ya = 3.0;
 		double yb = 1.0;
-		
+
 		if (debutDiffusion > xb) {
 			xa = xb;
-			xb = 2012; // la fin du monde est cette année là, inutile de gérer la suite (ironie)
+			xb = 2012; // la fin du monde est cette année là, inutile de gérer
+						// la suite (ironie)
 			ya = yb;
 			yb = 1.6;
 		}
-		
-		gainAnnee = ya + (debutDiffusion - xa)*((yb-ya)/(xb-xa));
-		
+
+		gainAnnee = ya + (debutDiffusion - xa) * ((yb - ya) / (xb - xa));
+
 		if (scorePrix <= 100) {
 			xa = 0;
 			xb = 100;
 			ya = 1;
-			yb = 1000;			
-		}
-		else if (scorePrix <= 250) {
+			yb = 1000;
+		} else if (scorePrix <= 250) {
 			xa = 100;
 			xb = 200;
 			ya = 1000;
-			yb = 25000;	
-		}
-		else if (scorePrix <= 500) {
+			yb = 25000;
+		} else if (scorePrix <= 500) {
 			xa = 250;
 			xb = 500;
 			ya = 25000;
-			yb = 80000;	
-		}
-		else if (scorePrix <= 700) {
+			yb = 80000;
+		} else if (scorePrix <= 700) {
 			xa = 500;
 			xb = 700;
 			ya = 80000;
-			yb = 200000;	
-		}
-		else {
+			yb = 200000;
+		} else {
 			xa = 700;
 			xb = 1200;
 			ya = 120000;
-			yb = 2500000;	 
+			yb = 2500000;
 		}
-		
-		//System.out.println("\n"+getNomComplet()+" _____ "+gainAnnee+" _____ "+scorePrix);
-		
-		return (int) ((ya + (scorePrix - xa)*((yb-ya)/(xb-xa)))*gainAnnee);
+
+		// System.out.println("\n"+getNomComplet()+" _____ "+gainAnnee+" _____ "+scorePrix);
+
+		return (int) ((ya + (scorePrix - xa) * ((yb - ya) / (xb - xa))) * gainAnnee);
 	}
 
 	/**
@@ -204,7 +205,7 @@ public class Voiture {
 						- moteur.getRegimeCoupleMax()) / 5000.0) * 0.42) * (moteur
 				.getPuissanceMax() * 4.2 + Math.pow(moteur.getCoupleMax(), 1.3)))
 				/ Math.pow((double) chassis.getMasse(), 1.2);
-		
+
 		// Maintenant, il faut faire une interpolation
 
 		double xa = 0.01;
@@ -219,8 +220,8 @@ public class Voiture {
 			yb = 900;
 		}
 
-		return ya + (score - xa)*((yb-ya)/(xb-xa));
-		
+		return ya + (score - xa) * ((yb - ya) / (xb - xa));
+
 	}
 
 	@Override
@@ -239,9 +240,9 @@ public class Voiture {
 	public void lireSpecifications() {
 		Liseuse.lire(getNomComplet());
 		Liseuse.marquerPause();
-		
+
 		StringBuilder sb = new StringBuilder();
-		
+
 		sb.append("Construite");
 
 		if (debutDiffusion == finDiffusion || finDiffusion == 0) {
@@ -253,29 +254,31 @@ public class Voiture {
 			sb.append(" et ");
 			sb.append(finDiffusion);
 		}
-		
+
 		Liseuse.lire(sb.toString());
-		
+
 		moteur.lireSpecifications();
 		Liseuse.marquerPause();
-		
+
 		chassis.lireSpecifications();
 		Liseuse.marquerPause();
 
 		transmission.lireSpecifications();
-		
+
 	}
 
 	public void ennoncerCategoriePerformances() {
 		double score = getScore();
 
-		if (score <= 200) {
+		if (score <= 120) {
+			Liseuse.lire("Très faibles performances");
+		} else if (score <= 200) {
 			Liseuse.lire("Faibles performances");
 		} else if (score <= 300) {
 			Liseuse.lire("Performances moyennes");
 		} else if (score <= 400) {
 			Liseuse.lire("Bonnes performances");
-		} else if (score <= 620) {
+		} else if (score <= 560) {
 			Liseuse.lire("Très bonnes performances");
 		} else {
 			Liseuse.lire("Performances exceptionnelles");

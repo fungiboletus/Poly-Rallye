@@ -3,25 +3,30 @@ package polyrallye.ouie.menus.carriere;
 import java.util.List;
 import java.util.ListIterator;
 
-import polyrallye.controlleur.Course;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.menus.LancementCourse;
 import polyrallye.ouie.utilitaires.Sound;
 
 public class VoitureChampionnat extends Menu implements ActionMenu {
 
         protected static Sound musique;
+        
+        protected String circuit;
+        protected polyrallye.modele.championnat.Etape etape;
 
         static {
                 musique = new Sound("Sons/foret/jour_6.wav");
                 musique.setLoop(true);
         }
 
-        public VoitureChampionnat(Menu menuPrecedent) {
+        public VoitureChampionnat(Menu menuPrecedent, String circuit, polyrallye.modele.championnat.Etape etape) {
                 super(menuPrecedent);
+                this.etape = etape;
+                this.circuit = circuit;
 
                 messageMenuVide = "Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.";
         }
@@ -45,7 +50,7 @@ public class VoitureChampionnat extends Menu implements ActionMenu {
 
                 while (i.hasPrevious()) {
                         Voiture v = i.previous();
-                        ajouterElement(v.getNomComplet(), new Course(v));
+                        ajouterElement(v.getNomComplet(), new LancementCourse(v, circuit));
                 }
         }
 }

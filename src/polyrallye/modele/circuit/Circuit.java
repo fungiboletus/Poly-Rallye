@@ -25,28 +25,24 @@ import polyrallye.utilitaires.GestionXML;
  * 
  * Le premier noeud contient _obligatoirement_ les quatre attributs suivants :
  * 
- * - surface
- * - temps
- * - meteo
- * - environnement
+ * - surface - temps - meteo - environnement
  * 
- * Les noeuds suivants peuvent redéfinir un ou plusieurs des attributs suivants :
+ * Les noeuds suivants peuvent redéfinir un ou plusieurs des attributs suivants
+ * :
  * 
- * - surface
- * - environnement
- * - son
+ * - surface - environnement - son
  */
 public class Circuit {
 	/**
 	 * Nom du circuit.
 	 */
 	protected String nom;
-	
+
 	/**
 	 * Environnement courant du circuit.
 	 */
 	protected Environnement environnement;
-	
+
 	/**
 	 * Terrain courant du circuit.
 	 */
@@ -57,13 +53,12 @@ public class Circuit {
 	 */
 	protected Queue<Portion> portions;
 
-
 	protected double distance;
 
 	public Circuit(Element noeud) {
-		
+
 		portions = new LinkedList<Portion>();
-		
+
 		if (noeud.getChildren("way").size() != 1) {
 			System.err
 					.println("Le fichier OSM ne contient pas un seul chemin.");
@@ -90,11 +85,13 @@ public class Circuit {
 
 		double distance = 0;
 
-		//double angle = 0;
+		// double angle = 0;
 
 		int i = 0;
-		
-		Portion portionCourante;
+
+		Portion portionCourante = null;
+		double distancePortionAddition = 0.0;
+		double anglePortionAddition = 0.0;
 
 		// Parcours du chemin
 		for (Object e : chemin.getChildren("nd")) {
@@ -131,42 +128,79 @@ public class Circuit {
 			}
 
 			if (i > 0) {
-				double distancePortion = Cartographie.distance(latCourant, lonCourant,
-						latSuivant, lonSuivant);
-				
+				double distancePortion = Cartographie.distance(latCourant,
+						lonCourant, latSuivant, lonSuivant);
+
 				distance += distancePortion;
 
 				if (i > 1) {
-					
-					double anglePortion = Cartographie.angleVirage(latPrecedent,
-							lonPrecedent, latCourant, lonCourant, latSuivant,
-							lonSuivant);
-					
-					TypeRoute typePortion = Cartographie.sensVirage(latPrecedent,
-							lonPrecedent, latCourant, lonCourant, latSuivant,
-							lonSuivant);
 
-					//if (distancePortion < 50)
-					// Maintenant que l'on a toutes les bonnes informations, création de la portion
-					Portion portion = new Portion(distancePortion, typePortion, anglePortion);
-					
+					double anglePortion = Cartographie.angleVirage(
+							latPrecedent, lonPrecedent, latCourant, lonCourant,
+							latSuivant, lonSuivant);
+
+					TypeRoute typePortion = Cartographie.sensVirage(
+							latPrecedent, lonPrecedent, latCourant, lonCourant,
+							latSuivant, lonSuivant);
+
+					// if (distancePortion < 50)
+					// Maintenant que l'on a toutes les bonnes informations,
+					// création de la portion
+					Portion portion = new Portion(distancePortion, typePortion,
+							anglePortion);
+
 					// Si des evenements lies
 					if (n.getChildren() != null) {
-						
+
 						String parametre;
-						
+
 						if ((parametre = getTagValue(n, "environnement")) != null)
-							portion.addEvenement(new Evenement(TypeEvenement.ENVIRONNEMENT, parametre));
-						
+							portion.addEvenement(new Evenement(
+									TypeEvenement.ENVIRONNEMENT, parametre));
+
 						if ((parametre = getTagValue(n, "surface")) != null)
-							portion.addEvenement(new Evenement(TypeEvenement.TERRAIN, parametre));
-						
+							portion.addEvenement(new Evenement(
+									TypeEvenement.TERRAIN, parametre));
+
 						if ((parametre = getTagValue(n, "son")) != null)
-							portion.addEvenement(new Evenement(TypeEvenement.SON, parametre));
+							portion.addEvenement(new Evenement(
+									TypeEvenement.SON, parametre));
 					}
 
-					// On ajoute le virage
-					portions.add(portion);
+					boolean ajouter = true;
+
+					// Simplification des petits virages
+					if (portionCourante != null
+							&& portionCourante.getType() == portion.getType()
+							&& (portion.getLongueur() < 30.0 || portion
+									.getAngle() < 30.0)) {
+						Main.logImportant("SOUPER");
+						double addDistance = portion.getLongueur() / 2.0;
+						double addAngle = portion.getAngle() / 2.0;
+						portionCourante.setLongueur(portionCourante
+								.getLongueur() + addDistance);
+						portionCourante.fusionnerEvenements(portion);
+						portion.setAngle(portionCourante.getAngle() + addAngle);
+						distancePortionAddition += addDistance;
+						anglePortionAddition += addAngle;
+						ajouter = false;
+					}
+
+					if (ajouter) {
+						if (portionCourante == null) {
+							// portions.add(portion);
+							portionCourante = portion;
+						} else {
+							portions.add(portionCourante);
+							portion.setLongueur(portion.getLongueur()
+									+ distancePortionAddition);
+							portion.setAngle(portion.getAngle()
+									+ anglePortionAddition);
+							portionCourante = portion;
+							distancePortionAddition = 0.0;
+							anglePortionAddition = 0.0;
+						}
+					}
 				}
 			}
 
@@ -178,8 +212,8 @@ public class Circuit {
 
 			++i;
 		}
-		
-		Main.logInfo("Distance du circuit : "+distance);
+
+		Main.logInfo("Distance du circuit : " + distance);
 	}
 
 	public static String getTagValue(Element noeud, String tag) {
@@ -214,7 +248,7 @@ public class Circuit {
 	public String getNom() {
 		return nom;
 	}
-	
+
 	public void playCrash() {
 		environnement.playCrash();
 	}
@@ -222,11 +256,11 @@ public class Circuit {
 	public void playFrottement(float gainFrottement) {
 		terrain.playFrottement(gainFrottement);
 	}
-	
+
 	public void stopFrottement() {
 		terrain.stopFrottement();
 	}
-	
+
 	public void setDistance(double d) {
 		environnement.setDistance(d);
 		terrain.setDistance(d);
@@ -234,7 +268,7 @@ public class Circuit {
 
 	public Portion nextPortion() {
 		Portion temp = portions.poll();
-		if (temp.aDesEvenements()) 
+		if (temp != null && temp.aDesEvenements())
 			temp.execution(this);
 		return temp;
 	}
@@ -261,6 +295,5 @@ public class Circuit {
 		builder.append("]");
 		return builder.toString();
 	}
-	
 
 }

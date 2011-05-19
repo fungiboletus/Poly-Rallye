@@ -2,14 +2,12 @@ package polyrallye.ouie.menus.arcade;
 
 import java.io.File;
 
-import polyrallye.controlleur.Course;
 import polyrallye.controlleur.Main;
 import polyrallye.modele.voiture.Voiture;
-import polyrallye.ouie.Menu;
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.menus.SelectionVoitureMagasin;
-import polyrallye.ouie.menus.SelectionVoiturePerformances;
+import polyrallye.ouie.menus.LancementCourse;
 
 public class SelectionCircuitInDirectory extends Menu implements ActionMenu {
 	
@@ -37,7 +35,7 @@ public class SelectionCircuitInDirectory extends Menu implements ActionMenu {
 				Main.logImportant(op[i].getName());
 				String t = op[i].getName().substring(0, op[i].getName().indexOf("."));
 				if(!op[i].isDirectory())
-				ajouterElement(t,new Course( voiture,rep+"/"+t));
+				ajouterElement(t,new LancementCourse( voiture,rep+"/"+t));
 			}
 		}
 
