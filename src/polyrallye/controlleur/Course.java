@@ -240,7 +240,7 @@ public class Course implements ActionMenu {
 					sonVoiture.stop();
 					timerOrganisateur.cancel();
 					klaxon.delete();
-					// radio.delete();
+					radio.delete();
 					copilote.delete();
 					Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
 				}

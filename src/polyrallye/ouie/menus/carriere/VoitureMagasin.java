@@ -32,7 +32,7 @@ public class VoitureMagasin extends Menu implements ActionMenu {
 	@Override
 	public void actionMenu() {
 		Liseuse.lire(voiture.getNomComplet());
-		//Liseuse.lire(" euros.");*/
+		Liseuse.lire("Prix "+voiture.getPrix()+" euros");
 		lancer();
 
 	}
