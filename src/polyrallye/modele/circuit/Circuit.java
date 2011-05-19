@@ -167,7 +167,8 @@ public class Circuit {
 									TypeEvenement.SON, parametre));
 					}
 
-					boolean ajouter = true;
+					portions.add(portion);
+					/*boolean ajouter = true;
 
 					// Simplification des petits virages
 					if (portionCourante != null
@@ -188,7 +189,6 @@ public class Circuit {
 
 					if (ajouter) {
 						if (portionCourante == null) {
-							// portions.add(portion);
 							portionCourante = portion;
 						} else {
 							portions.add(portionCourante);
@@ -200,7 +200,7 @@ public class Circuit {
 							distancePortionAddition = 0.0;
 							anglePortionAddition = 0.0;
 						}
-					}
+					}*/
 				}
 			}
 
