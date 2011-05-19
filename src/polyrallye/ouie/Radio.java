@@ -82,6 +82,21 @@ public class Radio extends Thread {
 		
 		Random random = new Random();
 		id = random.nextInt(nbRadio) + 1;
+		switch (id) {
+			case 1:
+				Main.logInfo("Radio Jazz");
+				break;
+			case 2:
+				Main.logInfo("Radio Rock");
+				break;
+			case 3:
+				Main.logInfo("Radio Rap");
+				break;
+			case 4:
+				Main.logInfo("Radio Disco");
+				break;
+		}
+			
 		
 		readManifeste();
 		
@@ -116,14 +131,20 @@ public class Radio extends Thread {
 		if (level > 0.2f) {
 			level -= 0.2;
 			setToLevel();
+			Main.logInfo("Volume -");
 		}
+		else
+			Main.logInfo("Volume au minimum");
 	}
 
 	public void augmenterSon() {
 		if (level < 3.0f) {
 			level += 0.2;
 			setToLevel();
+			Main.logInfo("Volume +");
 		}
+		else
+			Main.logInfo("Volume au maximum");
 	}
 
 	public void delete() {

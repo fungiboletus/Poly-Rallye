@@ -33,7 +33,7 @@ import polyrallye.utilitaires.Multithreading;
  * @author antoine
  * 
  */
-public class Course implements ActionMenu {
+public class Course {
 
     /**
      * Le timer qui excécute la course.
@@ -186,56 +186,7 @@ public class Course implements ActionMenu {
 
     }
 
-    public void FinDeCourse() throws Exception {
-
-        etape.setClassement(new Duree((int) timerCompteur.getTime()),
-                StockVoitures.getVoitureParNom(voiture.getNomComplet()));
-        Etape.EnregistrerEtape(etape);
-
-        championnat.setClassement();
-        
-        int nbplayed = 0;       
-        boolean isfinished = false;
-
-        for (int i = 0; i < championnat.getEtapes().size() - 1; ++i) {
-            for (int j = 0; j < championnat.getEtapes().get(i).getClassement()
-                    .size() - 1; ++j) {
-                if (Joueur.session.getNom().equals(
-                        championnat.getEtapes().get(i).getClassement().get(j)
-                                .getPersonne().getNom())) {
-                    nbplayed++;
-                }
-            }
-        }
-
-        if (nbplayed == 10)
-            isfinished = true;
-        
-        if (isfinished && championnat.getClassement().get(0).getPersonne().getNom().equals(
-                Joueur.session.getNom())) {
-            championnat.RemisePrix();
-
-            Liseuse
-                    .lire("vous avez gagné le championnat et vous avez remporté la voiture "
-                            + championnat.getVoitureGagne()
-                            + " et "
-                            + championnat.getArgentGagne() + " euros");
-        }
-        Championnat.EnregistrerChampionnat(championnat);
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see polyrallye.ouie.ActionMenu#actionMenu()
-     */
-    /*
-     * (non-Javadoc)
-     * 
-     * @see polyrallye.ouie.ActionMenu#actionMenu()
-     */
-    @Override
-    public void actionMenu() {
+    public void start() {
         if (circuit == null)
             return;
 
@@ -259,6 +210,8 @@ public class Course implements ActionMenu {
 
         // Creation radio
         radio = new Radio();
+        // POur activer la radio (pas directement dans le jeu)
+        radio.start();
 
         // Si on part en première, c'est mieux
         voiture.getTransmission().setPremiere();
@@ -297,6 +250,7 @@ public class Course implements ActionMenu {
                     Main
                             .changerGestionEntrees(GestionEntreesMenu
                                     .getInstance());
+                    finDeCourse();
                 }
 
                 // Gestion du temps
@@ -582,6 +536,50 @@ public class Course implements ActionMenu {
         Multithreading.dormir(1500);
         copilote.playCrash();
         Multithreading.dormir(2000);
+    }
+
+    public void finDeCourse() {
+
+        etape.setClassement(new Duree((int) timerCompteur.getTime()),
+                StockVoitures.getVoitureParNom(voiture.getNomComplet()));
+        Etape.EnregistrerEtape(etape);
+
+        championnat.setClassement();
+
+        int nbplayed = 0;
+        boolean isfinished = false;
+
+        for (int i = 0; i < championnat.getEtapes().size() - 1; ++i) {
+            for (int j = 0; j < championnat.getEtapes().get(i).getClassement()
+                    .size() - 1; ++j) {
+                if (Joueur.session.getNom().equals(
+                        championnat.getEtapes().get(i).getClassement().get(j)
+                                .getPersonne().getNom())) {
+                    nbplayed++;
+                }
+            }
+        }
+
+        if (nbplayed == 10)
+            isfinished = true;
+
+        if (isfinished
+                && championnat.getClassement().get(0).getPersonne().getNom()
+                        .equals(Joueur.session.getNom())) {
+            try {
+                championnat.RemisePrix();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            Liseuse
+                    .lire("vous avez gagné le championnat et vous avez remporté la voiture "
+                            + championnat.getVoitureGagne()
+                            + " et "
+                            + championnat.getArgentGagne() + " euros");
+        }
+        Championnat.EnregistrerChampionnat(championnat);
     }
 
 }
