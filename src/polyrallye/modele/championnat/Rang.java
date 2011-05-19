@@ -162,7 +162,6 @@ public class Rang implements Comparable<Rang> {
 
         if (car != null) affichCar = ", " + car;
         
-        System.out.println(duree);
         if (speciale != null) {
             resultat.append("\n" + speciale + " (" + classement + pos + ": "
                     + personne.getNom() + affichCar + ", duree -> " + duree + affichEcart
