@@ -61,7 +61,7 @@ public class Transmission {
 	 * 
 	 * Donnée en m
 	 */
-	protected static double RAYON_ROUE = 0.42;
+	public static double RAYON_ROUE = 0.42;
 
 	/**
 	 * Vitesse maximale en première.

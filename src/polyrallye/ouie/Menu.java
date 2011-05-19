@@ -239,6 +239,10 @@ public abstract class Menu implements EcouteurEntrees {
 	public void droite() {
 		// selectionner();
 	}
+	
+	public boolean isEmpty() {
+		return actions.isEmpty();
+	}
 
 	public void aide() {
 		Liseuse.lire("Vous êtes dans un menu. Utilisez les touches haut et bas pour vous déplacer dans le menu. Entrée pour valider, et échap pour annuler.");
