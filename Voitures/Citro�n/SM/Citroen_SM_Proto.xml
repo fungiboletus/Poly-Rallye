@@ -1,0 +1,34 @@
+<voiture>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>SM</nom>
+		<version>Proto</version>
+		<periode debut="1972" fin="1973"/>
+	</presentation>
+	<economie>
+		<rarete>7</rarete>
+		<prix>84 000</prix>
+	</economie>
+	<moteur nom="C114/03">
+		<configuration nb_cylindres="6" disposition="V" compression="turbo" nb_soupapes="12"/>
+		<cylindree>2670</cylindree>
+		<puissance regime="5750">250</puissance>
+		<couple_max regime="4200">290</couple_max>
+		<rupteur>6200</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>5</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1210</poids>
+		<largeur>1836</largeur>
+		<longueur>4300</longueur>
+		<empattement>2950</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Citro%C3%ABn_SM</source>
+		<source>http://www.rallye-info.com/carspecs.asp?car=438</source>
+		<source>http://www.carfolio.com/specifications/models/car/fr/?car=25652</source>
+	</sources>
+</voiture>

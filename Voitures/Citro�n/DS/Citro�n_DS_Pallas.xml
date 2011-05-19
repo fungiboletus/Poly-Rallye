@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>DS</nom>
+		<version>Pallas</version>
+		<periode annee="1966" />
+	</presentation>
+	<economie>
+		<rarete>5</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="8" disposition="ligne" compression="normal"/>
+		<cylindree>2175</cylindree>
+		<puissance regime="5250">125</puissance>
+		<couple_max regime="3500">200</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>4</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1300</poids>
+		<largeur>1791</largeur>
+		<longueur>4839</longueur>
+		<empattement>3124</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=35761</source>
+	</sources>
+</voiture>
