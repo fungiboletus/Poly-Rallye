@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infos>
+  <year>2011</year>
+  <gamecategories>
+    <gamecategory>Conduite</gamecategory>
+  </gamecategories>
+  <shortdescription>Jeu de rallye putain de bien.</shortdescription>
+  <public>NV</public>
+  <age>À partir de 10 ans</age>
+  <title>PolyRallye</title>
+  <authors>
+    <author>Abdoul Karimou Macina</author>
+    <author>Ghazi Ochi</author>
+    <author>Antoine Pultier</author>
+    <author>Clément Wirth</author>
+  </authors>
+  <notes>
+    <note>Mais c'est génial.</note>
+  </notes>
+  <gameplay>Vive les canards.</gameplay>
+  <gamerules>Vive les canards.</gamerules>
+</infos>
+
