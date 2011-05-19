@@ -41,11 +41,17 @@ public abstract class StockVoitures {
 	 * Arbre de voitures classées en fonction de leurs performances.
 	 */
 	protected static NavigableMap<Double, Voiture> voituresParPerformances;
+	
+	/**
+	 * Arbre de voitures classées en fonction de leurs prix.
+	 */
+	protected static NavigableMap<Integer, Voiture> voituresParPrix;
 
 	static {
 		voituresParNom = new TreeMap<String, Voiture>();
 		hierarchieVoitures = new TreeMap<String, Map<String, Map<String, Voiture>>>();
 		voituresParPerformances = new TreeMap<Double, Voiture>();
+		voituresParPrix = new TreeMap<Integer, Voiture>();
 
 		File dossier = new File("Voitures");
 
@@ -105,6 +111,8 @@ public abstract class StockVoitures {
 		voituresParNom.put(v.getNomComplet(), v);
 		
 		double score = v.getScore();
+		
+		voituresParPrix.put(v.getPrix(), v);
 		
 		Voiture ancienne = voituresParPerformances.get(score);
 		
@@ -176,6 +184,10 @@ public abstract class StockVoitures {
 		Object voitures [] = voituresParPerformances.subMap(min, true, max, true).entrySet().toArray();
 		
 		return ((Entry<Double, Voiture>) voitures[Random.unsignedDelta(0, voitures.length)]).getValue();
+	}
+	
+	public static NavigableMap<Integer,Voiture> getVoituresParPrix(int max) {
+		return voituresParPrix;
 	}
 	
 	public static NavigableMap<Double, Voiture> getVoituresParPerformances() {
