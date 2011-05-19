@@ -158,8 +158,15 @@ public class Course implements ActionMenu {
         this.circuit = circuit;
     }
 
+    public Course(Voiture voiture, Circuit circuit, Etape et, Championnat champ) {
+        this.voiture = voiture;
+        this.circuit = circuit;
+        this.etape = et;
+        this.championnat = champ;
+    }
+
     public Course(Voiture voiture) {
-        this(voiture, "Herault/Le_Vigan");
+        this(voiture, "Nouveau/Monaco");
         // this(voiture, "Autoroute");
 
     }
@@ -180,14 +187,31 @@ public class Course implements ActionMenu {
     }
 
     public void FinDeCourse() throws Exception {
+
         etape.setClassement(new Duree((int) timerCompteur.getTime()),
                 StockVoitures.getVoitureParNom(voiture.getNomComplet()));
         Etape.EnregistrerEtape(etape);
 
+        championnat.setClassement();
         
+        int nbplayed = 0;       
+        boolean isfinished = false;
+
+        for (int i = 0; i < championnat.getEtapes().size() - 1; ++i) {
+            for (int j = 0; j < championnat.getEtapes().get(i).getClassement()
+                    .size() - 1; ++j) {
+                if (Joueur.session.getNom().equals(
+                        championnat.getEtapes().get(i).getClassement().get(j)
+                                .getPersonne().getNom())) {
+                    nbplayed++;
+                }
+            }
+        }
+
+        if (nbplayed == 10)
+            isfinished = true;
         
-        
-        if (championnat.getClassement().get(0).getPersonne().getNom().equals(
+        if (isfinished && championnat.getClassement().get(0).getPersonne().getNom().equals(
                 Joueur.session.getNom())) {
             championnat.RemisePrix();
 
@@ -197,6 +221,7 @@ public class Course implements ActionMenu {
                             + " et "
                             + championnat.getArgentGagne() + " euros");
         }
+        Championnat.EnregistrerChampionnat(championnat);
     }
 
     /*
