@@ -1,0 +1,31 @@
+<!-- Créé avec CarFolioParser -->
+<voiture>
+	<presentation>
+		<constructeur>Audi</constructeur>
+		<nom>TT</nom>
+		<version>Coupé 1.8T quattro</version>
+		<periode annee="1999" />
+	</presentation>
+	<economie>
+		<rarete>4</rarete>
+	</economie>
+	<moteur>
+		<configuration nb_cylindres="4" nb_soupapes="20" disposition="ligne" compression="turbo"/>
+		<cylindree>1781</cylindree>
+		<puissance regime="5500">177</puissance>
+		<couple_max regime="1950">235</couple_max>
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>4x4</type>
+	</transmission>
+	<chassis>
+		<poids>1410</poids>
+		<largeur>1764</largeur>
+		<longueur>4041</longueur>
+		<empattement>2429</empattement>
+	</chassis>
+	<sources>
+		<source>http://www.carfolio.com/specifications/models/car/?car=81488</source>
+	</sources>
+</voiture>
