@@ -475,7 +475,7 @@ public class Course {
 					if (portionCourante == null) {
 						timerOrganisateur.cancel();
 						timerCompteur.pause();
-						Liseuse.lire("Ahah");
+						Liseuse.lire("Fin de la course");
 						fermer();
 					} else {
 						distancePortion = -diff;
