@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-90361' action='modify' visible='true' lat='43.731130263747' lon='7.4202889565623975' />
+  <node id='-90318' action='modify' timestamp='2011-03-16T15:13:20Z' uid='323054' user='Abendsegler' visible='true' version='1' lat='43.73103940585161' lon='7.420300703882072'>
+    <tag k='crossing_ref' v='zebra' />
+    <tag k='highway' v='crossing' />
+  </node>
+  <node id='-90317' action='modify' timestamp='2011-03-16T15:13:31Z' uid='323054' user='Abendsegler' visible='true' version='2' lat='43.7311943308204' lon='7.420225677894457'>
+    <tag k='crossing_ref' v='zebra' />
+    <tag k='highway' v='crossing' />
+  </node>
+  <node id='-90316' action='modify' timestamp='2011-03-16T15:13:29Z' uid='323054' user='Abendsegler' visible='true' version='2' lat='43.731273720106486' lon='7.420286737147017' />
+  <node id='-90315' action='modify' timestamp='2011-03-16T15:13:26Z' uid='323054' user='Abendsegler' visible='true' version='2' lat='43.73133540862306' lon='7.420136672577942' />
+  <node id='-90314' action='modify' timestamp='2011-03-16T15:13:30Z' uid='323054' user='Abendsegler' visible='true' version='2' lat='43.7314616529179' lon='7.420151437147018' />
+  <node id='-90313' action='modify' timestamp='2011-03-16T15:13:22Z' uid='323054' user='Abendsegler' visible='true' version='2' lat='43.73148245603857' lon='7.419988737147017' />
+  <node id='-90312' action='modify' timestamp='2011-03-16T15:13:29Z' uid='323054' user='Abendsegler' visible='true' version='2' lat='43.73143884949719' lon='7.419838437147016'>
+    <tag k='crossing_ref' v='zebra' />
+    <tag k='environnement' v='urban' />
+    <tag k='highway' v='crossing' />
+    <tag k='meteo' v='pluie' />
+    <tag k='polyrallye' v='depart' />
+    <tag k='surface' v='gravier' />
+    <tag k='temps' v='jour' />
+  </node>
+  <way id='-90305' action='modify' timestamp='2011-03-16T15:13:28Z' uid='323054' user='Abendsegler' visible='true'>
+    <nd ref='-90312' />
+    <nd ref='-90313' />
+    <nd ref='-90314' />
+    <nd ref='-90315' />
+    <nd ref='-90316' />
+    <nd ref='-90317' />
+    <nd ref='-90361' />
+    <nd ref='-90318' />
+    <tag k='highway' v='residential' />
+  </way>
+</osm>

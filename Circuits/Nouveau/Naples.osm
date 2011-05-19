@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <osm version='0.6' generator='JOSM'>
+<<<<<<< HEAD
   <node id='-10583' action='modify' visible='true' lat='40.8398167243451' lon='14.238440707601542' />
   <node id='-10573' action='modify' visible='true' lat='40.838778211473' lon='14.2358914046676' />
   <node id='-10561' action='modify' visible='true' lat='40.83862985116305' lon='14.232492334089017' />
@@ -21,12 +22,32 @@
   <node id='-10486' timestamp='2011-04-30T09:44:46Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8396284' lon='14.2421639' />
   <node id='-10485' action='modify' timestamp='2011-05-17T19:06:57Z' uid='72791' user='HelmutStier' visible='true' version='1' lat='40.8391830237806' lon='14.240825832129664' />
   <node id='-10445' action='modify' timestamp='2011-04-12T13:51:31Z' uid='410505' user='Udini' visible='true' version='4' lat='40.8366539' lon='14.2293919'>
+=======
+  <node id='-8323' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8449048' lon='14.2439913' />
+  <node id='-8322' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8447865' lon='14.2440352' />
+  <node id='-8321' timestamp='2011-04-30T09:44:46Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8447055' lon='14.244042' />
+  <node id='-8320' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8444656' lon='14.2439373' />
+  <node id='-8319' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.844344' lon='14.243917' />
+  <node id='-8318' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='4' lat='40.8442731' lon='14.2439499' />
+  <node id='-8317' action='modify' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='4' lat='40.8441724' lon='14.2440582'>
+    <tag k='meteo' v='clair' />
+  </node>
+  <node id='-8316' action='modify' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='4' lat='40.843828' lon='14.2447465'>
+    <tag k='meteo' v='clair' />
+    <tag k='son' v='crowds/Crowd_Disguise2.wav' />
+  </node>
+  <node id='-8315' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='4' lat='40.8437691' lon='14.244802' />
+  <node id='-8314' timestamp='2011-04-30T09:44:43Z' uid='445536' user='EGis' visible='true' version='2' lat='40.8436957' lon='14.2448166' />
+  <node id='-8313' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8436482' lon='14.2448088' />
+  <node id='-8312' action='modify' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8432394' lon='14.2446061'>
+>>>>>>> 6bdf72d90b09f7252a1b0439e76dbc23325190e7
     <tag k='environnement' v='urban' />
     <tag k='meteo' v='clair' />
     <tag k='polyrallye' v='depart' />
     <tag k='surface' v='asphalt' />
     <tag k='temps' v='jour' />
   </node>
+<<<<<<< HEAD
   <way id='-10444' action='modify' timestamp='2011-05-17T19:07:01Z' uid='72791' user='HelmutStier' visible='true'>
     <nd ref='-10445' />
     <nd ref='-10561' />
@@ -47,6 +68,21 @@
     <nd ref='-10533' />
     <nd ref='-10534' />
     <nd ref='-10535' />
+=======
+  <way id='-8253' action='modify' timestamp='2011-05-17T19:07:01Z' uid='72791' user='HelmutStier' visible='true'>
+    <nd ref='-8312' />
+    <nd ref='-8313' />
+    <nd ref='-8314' />
+    <nd ref='-8315' />
+    <nd ref='-8316' />
+    <nd ref='-8317' />
+    <nd ref='-8318' />
+    <nd ref='-8319' />
+    <nd ref='-8320' />
+    <nd ref='-8321' />
+    <nd ref='-8322' />
+    <nd ref='-8323' />
+>>>>>>> 6bdf72d90b09f7252a1b0439e76dbc23325190e7
     <tag k='highway' v='tertiary' />
     <tag k='is_in:city' v='Napoli' />
     <tag k='name' v='Corso Vittorio Emanuele' />
