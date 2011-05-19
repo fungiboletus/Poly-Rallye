@@ -23,6 +23,7 @@ import polyrallye.ouie.Radio;
 import polyrallye.ouie.SonVoiture;
 import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.liseuse.Liseuse;
+import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.GestionXML;
 import polyrallye.utilitaires.Multithreading;
 
@@ -474,7 +475,12 @@ public class Course {
 					if (portionCourante == null) {
 						timerOrganisateur.cancel();
 						timerCompteur.pause();
+						sonVoiture.setRegime(800,false);
 						Liseuse.lire("Fin de la course");
+						Sound sonFin = new Sound("Sons/divers/fin.wav");
+						sonFin.setGain(2.0f);
+						sonFin.playAndWait();
+						sonFin.delete();
 						fermer();
 					} else {
 						distancePortion = -diff;
@@ -519,10 +525,14 @@ public class Course {
 	public void crash() {
 		circuit.playCrash();
 		circuit.stopFrottement();
+		Main.logImportant("V: "+conduite.getVitesseLineaire());
 		conduite.stop();
+		Main.logImportant("V: "+conduite.getVitesseLineaire());
 		sonVoiture.setRegime(800.0f, false);
 		Main.logImportant("CRASH CRASH CRASH");
+		Multithreading.dormir(1500);
 		copilote.playCrash();
+		Multithreading.dormir(1000);
 	}
 
 	public void finDeCourse() {

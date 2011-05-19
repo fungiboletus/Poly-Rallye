@@ -1,0 +1,33 @@
+<voiture>
+	<presentation>
+		<constructeur>Citroën</constructeur>
+		<nom>DS3</nom>
+		<version>Racing</version>
+		<periode debut="2010" fin="2011"/>
+	</presentation>
+	<economie>
+		<rarete>6</rarete>
+		<prix>10 000</prix>
+	</economie>
+	<moteur nom="THP 200">
+		<configuration nb_cylindres="4" disposition="ligne" compression="turbo" nb_soupapes="16"/>
+		<cylindree>1598</cylindree>
+		<puissance regime="6000">202</puissance>
+		<couple_max regime="2000">275</couple_max>
+		<rupteur>6600</rupteur><!-- Non fiable -->
+	</moteur>
+	<transmission>
+		<nb_rapports>6</nb_rapports>
+		<type>traction</type>
+	</transmission>
+	<chassis>
+		<poids>1165</poids>
+		<largeur>1715</largeur>
+		<longueur>3948</longueur>
+		<empattement>2464</empattement>
+	</chassis>
+	<sources>
+		<source>http://fr.wikipedia.org/wiki/Citro%C3%ABn_DS3</source>
+		<source>http://www.citroen.fr/home/#/citroen-ds3/performance/</source>
+	</sources>
+</voiture>
