@@ -37,6 +37,9 @@ public class Principal extends Menu {
 		ajouterElement(
 				"Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible",
 				new Carriere(this));
+		ajouterElement(
+				"Configuration Joueur - Choisissez votre joueur et configurez le jeu",
+				new ConfigJoueur(this));
 	}
 
 }

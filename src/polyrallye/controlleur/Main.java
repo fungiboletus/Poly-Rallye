@@ -10,6 +10,7 @@ import polyrallye.ouie.FenetreNoire;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.menus.Principal;
 import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.utilitaires.LectureFichier;
 import polyrallye.utilitaires.Multithreading;
 
 /**
@@ -81,7 +82,7 @@ public class Main {
 		Liseuse.lancer();
 
 		// Récupération des informations du joueur
-		String nomJoueur = args.length > 1 ? args[0] : "Bob";
+		String nomJoueur = args.length > 1 ? args[0] : (new LectureFichier("Comptes/")).lirePremiereLigne("Autoload.cfg");
 		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
 

@@ -32,6 +32,7 @@ public abstract class GestionXML {
 			throws Exception {
 		// On affiche de façon à ce que ça soit lisible
 		XMLOutputter sortie = new XMLOutputter(Format.getPrettyFormat());
+		
 		sortie.output(document, flux);
 	}
 
@@ -66,6 +67,7 @@ public abstract class GestionXML {
 		doc.setRootElement(root);
 		return doc;
 	}
+	
 
 	/**
 	 * Récupère le noeud parent d'un document.
@@ -147,4 +149,5 @@ public abstract class GestionXML {
 
 		f.close();
 	}
+	
 }

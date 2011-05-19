@@ -208,6 +208,18 @@ public abstract class Menu implements EcouteurEntrees {
 		Liseuse.interrompre();
 		menuPrecedent.lancer();
 	}
+	
+	/**
+	 * Annule en remettant les enonces de depart
+	 */
+	public void annulerEnnoncer(String[] annonces) {
+		sonPrecedent.play();
+		Liseuse.interrompre();
+		for (int i = 0; i < annonces.length; i++) {
+			Liseuse.lire(annonces[i]);
+		}
+		menuPrecedent.lancer();
+	}
 
 	/**
 	 * Énnonce le libellé de l'élement courant.
