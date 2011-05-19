@@ -56,8 +56,8 @@ public class Rang implements Comparable<Rang> {
 
         if (classement != 1)
             ecart = new Duree(GestionXML.getInt(noeud.getChildText("ecart")));
-
-    }
+            
+        }
 
     public Element toXML() {
 
@@ -163,11 +163,11 @@ public class Rang implements Comparable<Rang> {
         if (car != null) affichCar = ", " + car;
         
         if (speciale != null) {
-            resultat.append(speciale + " (" + classement + pos + ": "
+            resultat.append("\n" + speciale + " (" + classement + pos + ": "
                     + personne.getNom() + affichCar + ", duree -> " + duree + affichEcart
                     + " )");
         } else {
-            resultat.append(" (" + classement + pos + ": "
+            resultat.append("\n"+ " (" + classement + pos + ": "
                     + personne.getNom() + ", " + car + ", duree -> " + duree + affichEcart
                     + " )");
         }

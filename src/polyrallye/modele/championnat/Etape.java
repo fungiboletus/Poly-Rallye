@@ -60,7 +60,7 @@ public class Etape {
 
     public Etape(Element noeud) {
 
-        joueur = new Joueur(Joueur.session.getNom());
+        //joueur = new Joueur(noeud.getChildText("joueur"));
 
         circuit = noeud.getChildText("circuit");
         nom = noeud.getChildText("nom");
@@ -212,8 +212,8 @@ public class Etape {
      * 
      * @return
      */
-    public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {
-
+    public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {        
+        classement = new ArrayList<Rang>();
         participants = new ArrayList<Personne>();
         participants.add(Joueur.session);
         participants.add(new Adversaire("Chang"));
@@ -226,6 +226,7 @@ public class Etape {
         participants.add(new Adversaire("Zicko"));
         participants.add(new Adversaire("Dialo"));
 
+        voitures = new ArrayList<Voiture>();
         voitures.add(voitJoueur);
         voitures.addAll(StockVoitures.getVoituresEquivalentes(voitJoueur, 9));
 
@@ -247,14 +248,13 @@ public class Etape {
 
         for (int i = 0; i < 10; ++i) {
             classement.get(i).setClassement(i + 1);
-            System.out.println(classement.get(i));
+            //System.out.println(classement.get(i));
             if (i > 1
                     && classement.get(i).getDuree().equals(
                             classement.get(i - 1).getDuree()))
                 classement.get(i).getDuree().setDixiemes(
                         classement.get(i).getDuree().getDixiemes() - 5);
         }
-
     }
 
     /**
@@ -300,7 +300,7 @@ public class Etape {
     }
 
     public static Etape chargerEtape(String nom) {
-        File f = new File("Championnat/" + nom + ".xml");
+        File f = new File("Championnats/" + nom + ".xml");
 
         if (f.exists()) {
             Element n;
@@ -318,13 +318,13 @@ public class Etape {
 
     public static void EnregistrerEtape(Etape et) {
         try {
-            File d = new File("Championnat");
+            File d = new File("Championnats");
 
             if (!d.exists()) {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnat/" + et.getEtape()
+            GestionXML.enregistrerRacine("Championnats/" + et.getEtape()
                     + ".xml", et.toXML());
         } catch (Exception e) {
             e.printStackTrace();

@@ -34,8 +34,6 @@ public class Championnat {
                     "Vous devez au moins specifier le nom du championnat !");
 
         // si la liste de speciales est null : en creer une
-        if (etapes == null)
-            this.etapes = new ArrayList<Etape>();
         else
             this.etapes = etapes;
     }
@@ -115,10 +113,8 @@ public class Championnat {
     }
 
     public void setClassement() {
-        classement = new ArrayList<Rang>();
-
         classement = etapes.get(0).getClassement();
-
+        
         for (int i = 0; i < 10; ++i) {
             classement.get(i).setSpeciale(nom);
             classement.get(i).setCar(null);
@@ -212,13 +208,13 @@ public class Championnat {
 
     public static void EnregistrerChampionnat(Championnat c) {
         try {
-            File d = new File("Championnat");
+            File d = new File("Championnats");
 
             if (!d.exists()) {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnat/" + c.getNom() + ".xml",
+            GestionXML.enregistrerRacine("Championnats/" + c.getNom() + ".xml",
                     c.toXML());
         } catch (Exception e) {
             e.printStackTrace();
