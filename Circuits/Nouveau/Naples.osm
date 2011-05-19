@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-97670' timestamp='2010-12-19T10:39:51Z' uid='341006' user='NeandertalMan' visible='true' version='1' lat='40.8448954' lon='14.2341692' />
+  <node id='-97669' timestamp='2010-12-19T10:39:52Z' uid='341006' user='NeandertalMan' visible='true' version='1' lat='40.8454517' lon='14.2339439' />
+  <node id='-97668' timestamp='2010-12-19T10:39:52Z' uid='341006' user='NeandertalMan' visible='true' version='1' lat='40.8461497' lon='14.2345662' />
+  <node id='-97667' timestamp='2010-12-19T10:39:51Z' uid='341006' user='NeandertalMan' visible='true' version='1' lat='40.8462146' lon='14.2350704' />
+  <node id='-97666' timestamp='2010-12-19T10:39:51Z' uid='341006' user='NeandertalMan' visible='true' version='1' lat='40.8461416' lon='14.235285' />
+  <node id='-97665' timestamp='2010-12-19T10:39:51Z' uid='341006' user='NeandertalMan' visible='true' version='1' lat='40.8461903' lon='14.235564' />
+  <node id='-97664' timestamp='2011-02-24T20:44:43Z' uid='175551' user='coso' visible='true' version='2' lat='40.8464391' lon='14.2360297' />
+  <node id='-97663' timestamp='2011-02-24T20:41:04Z' uid='175551' user='coso' visible='true' version='1' lat='40.8464577' lon='14.2361065' />
+  <node id='-97662' timestamp='2011-02-24T20:41:36Z' uid='175551' user='coso' visible='true' version='2' lat='40.8464574' lon='14.2361755' />
+  <node id='-97661' timestamp='2011-02-24T20:41:12Z' uid='175551' user='coso' visible='true' version='1' lat='40.8464263' lon='14.2362571' />
+  <node id='-97660' action='modify' timestamp='2011-02-24T20:43:57Z' uid='175551' user='coso' visible='true' version='2' lat='40.8461934' lon='14.2366378'>
+    <tag k='environnement' v='ville' />
+    <tag k='meteo' v='clair' />
+    <tag k='polyrallye' v='depart' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='jour' />
+  </node>
+  <way id='-97659' timestamp='2011-02-24T20:42:11Z' uid='175551' user='coso' visible='true' version='2'>
+    <nd ref='-97660' />
+    <nd ref='-97661' />
+    <nd ref='-97662' />
+    <nd ref='-97663' />
+    <nd ref='-97664' />
+    <nd ref='-97665' />
+    <nd ref='-97666' />
+    <nd ref='-97667' />
+    <nd ref='-97668' />
+    <nd ref='-97669' />
+    <nd ref='-97670' />
+    <tag k='highway' v='residential' />
+  </way>
+</osm>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-93656' timestamp='2009-08-30T20:45:11Z' uid='86264' user='memch' visible='true' version='1' lat='45.7486988' lon='7.0398719' />
+  <node id='-93655' timestamp='2009-08-30T20:45:11Z' uid='86264' user='memch' visible='true' version='1' lat='45.7482556' lon='7.0399749' />
+  <node id='-93654' timestamp='2009-08-30T20:45:11Z' uid='86264' user='memch' visible='true' version='1' lat='45.7482975' lon='7.0396745' />
+  <node id='-93653' timestamp='2009-08-30T20:45:11Z' uid='86264' user='memch' visible='true' version='1' lat='45.748567' lon='7.0394428' />
+  <node id='-93652' timestamp='2009-08-30T20:45:11Z' uid='86264' user='memch' visible='true' version='1' lat='45.748579' lon='7.0391853' />
+  <node id='-93651' timestamp='2009-08-30T20:45:10Z' uid='86264' user='memch' visible='true' version='1' lat='45.7484353' lon='7.0392454' />
+  <node id='-93650' action='modify' timestamp='2009-08-30T20:45:10Z' uid='86264' user='memch' visible='true' version='1' lat='45.74811407164975' lon='7.0394880695772' />
+  <node id='-93649' action='modify' timestamp='2009-08-30T20:45:10Z' uid='86264' user='memch' visible='true' version='1' lat='45.74779775673766' lon='7.039547313051466' />
+  <node id='-93648' action='modify' timestamp='2009-08-30T20:45:10Z' uid='86264' user='memch' visible='true' version='1' lat='45.747935457084125' lon='7.039002752205869' />
+  <node id='-93647' timestamp='2009-08-30T20:45:09Z' uid='86264' user='memch' visible='true' version='1' lat='45.7483394' lon='7.0387561' />
+  <node id='-93646' timestamp='2009-08-30T20:45:09Z' uid='86264' user='memch' visible='true' version='1' lat='45.7485071' lon='7.038018' />
+  <node id='-93645' action='modify' timestamp='2009-08-30T20:45:09Z' uid='86264' user='memch' visible='true' version='1' lat='45.7483874' lon='7.0375545'>
+    <tag k='environnement' v='foret' />
+    <tag k='meteo' v='vent' />
+    <tag k='polyrallye' v='depart' />
+    <tag k='surface' v='herbe' />
+    <tag k='temps' v='jour' />
+  </node>
+  <way id='-93353' action='modify' timestamp='2010-11-11T08:49:35Z' uid='91490' user='Heinz_V' visible='true'>
+    <nd ref='-93645' />
+    <nd ref='-93646' />
+    <nd ref='-93647' />
+    <nd ref='-93648' />
+    <nd ref='-93649' />
+    <nd ref='-93650' />
+    <nd ref='-93651' />
+    <nd ref='-93652' />
+    <nd ref='-93653' />
+    <nd ref='-93654' />
+    <nd ref='-93655' />
+    <nd ref='-93656' />
+    <tag k='highway' v='secondary' />
+    <tag k='name' v='Colle san Carlo' />
+    <tag k='ref' v='SR39' />
+  </way>
+</osm>
