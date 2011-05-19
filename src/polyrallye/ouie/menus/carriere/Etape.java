@@ -32,7 +32,7 @@ public class Etape extends Menu implements ActionMenu {
 
         while (i.hasPrevious()) {
             polyrallye.modele.championnat.Etape c = i.previous();
-            ajouterElement(c.getNom(), new VoitureChampionnat(menuPrecedent));
+            ajouterElement(c.getNom(), new VoitureChampionnat(menuPrecedent, c.getCircuit()));
             ajouterElement("classement " + c.getNom(),
                     new afficherClassementEtape(menuPrecedent, c
                             .getClassement()));

@@ -28,7 +28,7 @@ import polyrallye.utilitaires.Multithreading;
  * @author antoine
  * 
  */
-public class Course implements ActionMenu {
+public class Course {
 
 	/**
 	 * Le timer qui excécute la course.
@@ -170,18 +170,7 @@ public class Course implements ActionMenu {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see polyrallye.ouie.ActionMenu#actionMenu()
-	 */
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see polyrallye.ouie.ActionMenu#actionMenu()
-	 */
-	@Override
-	public void actionMenu() {
+	public void start() {
 		if (circuit == null)
 			return;
 
