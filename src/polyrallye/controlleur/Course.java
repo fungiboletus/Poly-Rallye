@@ -158,11 +158,10 @@ public class Course {
         this.circuit = circuit;
     }
 
-    public Course(Voiture voiture, Circuit circuit, Etape et, Championnat champ) {
+    public Course(Voiture voiture, Circuit circuit, Etape et) {
         this.voiture = voiture;
         this.circuit = circuit;
         this.etape = et;
-        this.championnat = champ;
     }
 
     public Course(Voiture voiture) {
