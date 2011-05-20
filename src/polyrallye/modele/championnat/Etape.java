@@ -15,8 +15,7 @@ import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 /**
- * Classe Match : représente un etape, avec ses deux equipes, son arbitre et son
- * gagnant
+ * Classe Etape : représente une etape
  * 
  * @author zizou
  * 
@@ -34,6 +33,10 @@ public class Etape {
     /**
      * Constructeur
      * 
+     * @param numero
+     * @param uneEpreuve
+     * @param participants
+     * @param cir
      */
     public Etape(int numero, String uneEpreuve, List<Personne> participants,
             String cir) {
@@ -58,9 +61,14 @@ public class Etape {
         circuit = cir;
     }
 
+    /**
+     * Constructeur à partir d'un élément du fichier XML.
+     * 
+     * @param noeud
+     */
     public Etape(Element noeud) {
 
-        //joueur = new Joueur(noeud.getChildText("joueur"));
+        // joueur = new Joueur(noeud.getChildText("joueur"));
 
         circuit = noeud.getChildText("circuit");
         nom = noeud.getChildText("nom");
@@ -75,14 +83,14 @@ public class Etape {
             voitures.add(StockVoitures.getVoitureParNom(balise.getCar()));
             classement.add(balise);
         }
-        
+
         participants = new ArrayList<Personne>();
         for (int i = 0; i < classement.size(); ++i) {
             participants.add(classement.get(i).getPersonne());
         }
 
         numeroEtape = GestionXML.getInt(noeud.getChildText("numero"));
-     
+
     }
 
     public int getNumeroEtape() {
@@ -125,6 +133,11 @@ public class Etape {
         this.voitures = voitures;
     }
 
+    /**
+     * Insertion XML
+     * 
+     * @return Element
+     */
     public Element toXML() {
 
         Element noeud = new Element("etape");
@@ -172,16 +185,21 @@ public class Etape {
     /**
      * affecte le classement de la spéciale
      * 
-     * @return
+     * @param classement
      */
     public void setClassement(List<Rang> classement) {
         this.classement = classement;
     }
 
     /**
-     * affecte le classement de la spéciale
+     * Duree aléatoire
      * 
-     * @return
+     * @param adv
+     * @param voiture
+     * @param dureeIdeale
+     * @param J
+     * @param voitJoueur
+     * @return Duree
      */
     public Duree ramdomduree(Adversaire adv, Voiture voiture,
             Duree dureeIdeale, Joueur J, Voiture voitJoueur) {
@@ -208,11 +226,12 @@ public class Etape {
     }
 
     /**
-     * affecte le classement de la spéciale
+     * affecte le classement de la spéciale (de façon aléatoire)
      * 
-     * @return
+     * @param dureeJoueurEtape
+     * @param voitJoueur
      */
-    public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {        
+    public void setClassement(Duree dureeJoueurEtape, Voiture voitJoueur) {
         classement = new ArrayList<Rang>();
         participants = new ArrayList<Personne>();
         participants.add(Joueur.session);
@@ -248,7 +267,7 @@ public class Etape {
 
         for (int i = 0; i < 10; ++i) {
             classement.get(i).setClassement(i + 1);
-            //System.out.println(classement.get(i));
+            // System.out.println(classement.get(i));
             if (i > 1
                     && classement.get(i).getDuree().equals(
                             classement.get(i - 1).getDuree()))
@@ -259,8 +278,7 @@ public class Etape {
 
     /**
      * 
-     * 
-     * @return
+     * Actualise l'écart
      */
     public void setecart() {
         int premier = classement.get(0).getDuree().ConvertToDixiemes();
@@ -299,6 +317,12 @@ public class Etape {
         return participants;
     }
 
+    /**
+     * Chargement de l'Etape
+     * 
+     * @param nom
+     * @return Etape
+     */
     public static Etape chargerEtape(String nom) {
         File f = new File("Championnats/" + nom + ".xml");
 
@@ -316,6 +340,11 @@ public class Etape {
         return null;
     }
 
+    /**
+     * Enregistement de l'étape
+     * 
+     * @param et
+     */
     public static void EnregistrerEtape(Etape et) {
         try {
             File d = new File("Championnats");
@@ -324,16 +353,21 @@ public class Etape {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnats/" + et.getEtape()
-                    + "_" + Joueur.session.getNom() + ".xml", et.toXML());
+            GestionXML.enregistrerRacine("Championnats/" + et.getEtape() + "_"
+                    + Joueur.session.getNom() + ".xml", et.toXML());
         } catch (Exception e) {
             e.printStackTrace();
             Liseuse.lire("Impossible de sauvegarder la progression.");
         }
     }
+
     
+    /**
+     * Vide le classement. Ce sont les durées qui sont mise à zéro.
+     * 
+     */
     public void viderClassement() {
-        for (int i = 0; i < classement.size()-1; ++i){
+        for (int i = 0; i < classement.size() - 1; ++i) {
             classement.get(i).setDuree(new Duree(0));
         }
     }

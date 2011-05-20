@@ -13,6 +13,13 @@ import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
+/**
+ * Classe Championnat : représente un championnat
+ * 
+ * @author ochi
+ * 
+ */
+
 public class Championnat {
 
     protected Joueur player;
@@ -22,6 +29,20 @@ public class Championnat {
     protected Voiture voitureGagne;
     protected int argentGagne;
 
+    /**
+     * Création d'un championnat
+     * 
+     * @param J
+     *            joueur
+     * @param nom
+     *            nom de l'étape
+     * @param etapes
+     *            Listes d'étapes
+     * @param voitureGagne
+     *            voitureGagné
+     * @param argentGagne
+     *            argentGagné
+     */
     public Championnat(Joueur J, String nom, List<Etape> etapes,
             Voiture voitureGagne, int argentGagne) {
         this.player = J;
@@ -38,6 +59,11 @@ public class Championnat {
             this.etapes = etapes;
     }
 
+    /**
+     * Création d'un championnat à partir d'un noeud
+     * 
+     * @param noeud
+     */
     public Championnat(Element noeud) {
 
         player = new Joueur(noeud.getChildText("joueur"));
@@ -57,12 +83,19 @@ public class Championnat {
 
     }
 
+    /**
+     * Effectue l'insertion XML du championnat
+     * 
+     * @param noeud
+     */
     public Element toXML() {
 
         Element noeud = new Element("Championnat");
 
         noeud.addContent(new Element("nom").setText(nom));
-        noeud.addContent(new Element("joueur").setText(Joueur.session.getNom()));
+        noeud
+                .addContent(new Element("joueur").setText(Joueur.session
+                        .getNom()));
 
         for (int i = 0; i < etapes.size(); ++i)
             noeud.addContent(etapes.get(i).toXML());
@@ -75,22 +108,47 @@ public class Championnat {
         return noeud;
     }
 
+    /**
+     * Getter
+     * 
+     * @return List<Etape>
+     */
     public List<Etape> getEtapes() {
         return etapes;
     }
 
+    /**
+     * Setter
+     * 
+     * @param etapes
+     */
     public void setEtapes(List<Etape> etapes) {
         this.etapes = etapes;
     }
 
+    /**
+     * Retourne la voiture à gagner
+     * 
+     * @return Voiture
+     */
     public Voiture getVoitureGagne() {
         return voitureGagne;
     }
 
+    /**
+     * Affecte la voiture gagné
+     * 
+     * @param voitureGagne
+     */
     public void setVoitureGagne(Voiture voitureGagne) {
         this.voitureGagne = voitureGagne;
     }
 
+    /**
+     * Setter
+     * 
+     * @param nom
+     */
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -107,14 +165,22 @@ public class Championnat {
         return player;
     }
 
+    /**
+     * Remise du Prix. On affecte la voiture et l'argent gagné
+     * 
+     * @throws Exception
+     */
     public void RemisePrix() throws Exception {
         player.getGarage().ajouter(voitureGagne);
         player.ajouterArgent(argentGagne);
     }
 
+    /**
+     * Effectue le classement. Effectue la somme de toutes les étapes.
+     */
     public void setClassement() {
         classement = etapes.get(0).getClassement();
-        
+
         for (int i = 0; i < 10; ++i) {
             classement.get(i).setSpeciale(nom);
             classement.get(i).setCar(null);
@@ -150,9 +216,9 @@ public class Championnat {
     }
 
     /**
+     * Acualise l'écart
      * 
      * 
-     * @return
      */
     public void setecart() {
         int premier = classement.get(0).getDuree().ConvertToDixiemes();
@@ -189,6 +255,12 @@ public class Championnat {
         this.argentGagne = argentGagne;
     }
 
+    /**
+     * Chargement du championnat
+     * 
+     * @param nom
+     * @return Championnat
+     */
     public static Championnat chargerChampionnat(String nom) {
         File f = new File("Championnats/" + nom + ".xml");
 
@@ -206,6 +278,11 @@ public class Championnat {
         return null;
     }
 
+    /**
+     * Enregistrement du championnat
+     * 
+     * @param c
+     */
     public static void EnregistrerChampionnat(Championnat c) {
         try {
             File d = new File("Championnats");
@@ -214,8 +291,8 @@ public class Championnat {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnats/" + c.getNom() +"_"+ Joueur.session.getNom() + ".xml",
-                    c.toXML());
+            GestionXML.enregistrerRacine("Championnats/" + c.getNom() + "_"
+                    + Joueur.session.getNom() + ".xml", c.toXML());
         } catch (Exception e) {
             e.printStackTrace();
             Liseuse.lire("Impossible de sauvegarder la progression.");

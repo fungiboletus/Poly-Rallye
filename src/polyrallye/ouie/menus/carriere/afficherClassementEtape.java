@@ -8,6 +8,13 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
 
+
+/**
+ * afficherClassementEtape : Permet de lire un classement à partir d'une étape
+ * 
+ * @author ochi
+ *
+ */
 public class afficherClassementEtape extends Menu implements ActionMenu {
 
     protected List<Rang> classements = new ArrayList<Rang>();
