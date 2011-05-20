@@ -2,7 +2,6 @@ package polyrallye.controlleur;
 
 import java.util.TimerTask;
 
-import polyrallye.modele.championnat.Duree;
 import polyrallye.modele.circuit.Portion;
 import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.voiture.Moteur;

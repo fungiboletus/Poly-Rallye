@@ -1,7 +1,5 @@
 package polyrallye.modele.championnat;
 
-import polyrallye.controlleur.Course;
-import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.StockVoitures;
 

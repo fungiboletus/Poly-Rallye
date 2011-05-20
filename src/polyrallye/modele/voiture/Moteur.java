@@ -4,7 +4,6 @@ import org.jdom.Element;
 
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.GestionXML;
 
 /**
