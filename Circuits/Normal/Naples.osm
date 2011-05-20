@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-10656' action='modify' visible='true' lat='40.854700287509026' lon='14.24968378720764' />
+  <node id='-10654' action='modify' visible='true' lat='40.85148651201465' lon='14.244389081114068' />
+  <node id='-10652' action='modify' visible='true' lat='40.837442956729724' lon='14.231381099476781' />
+  <node id='-10583' action='modify' visible='true' lat='40.8398167243451' lon='14.238440707601542' />
+  <node id='-10573' action='modify' visible='true' lat='40.838778211473' lon='14.2358914046676' />
+  <node id='-10561' action='modify' visible='true' lat='40.838877118161804' lon='14.233342101733662' />
+  <node id='-10535' action='modify' timestamp='2009-06-09T19:10:41Z' uid='118871' user='osxdirk' visible='true' version='11' lat='40.85589690412947' lon='14.251656877349225' />
+  <node id='-10534' action='modify' timestamp='2011-04-30T09:44:43Z' uid='445536' user='EGis' visible='true' version='3' lat='40.854192423312746' lon='14.247009205416507' />
+  <node id='-10533' action='modify' timestamp='2011-04-30T09:44:43Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8526098740969' lon='14.24642350496513' />
+  <node id='-10532' action='modify' timestamp='2011-05-06T17:23:18Z' uid='445536' user='EGis' visible='true' version='4' lat='40.849998780332236' lon='14.243263568547398'>
+    <tag k='son' v='crowds/Crowd_Disguise2.wav' />
+  </node>
+  <node id='-10531' action='modify' timestamp='2011-04-30T09:44:44Z' uid='445536' user='EGis' visible='true' version='4' lat='40.849145817712134' lon='14.23994103167829' />
+  <node id='-10525' action='modify' timestamp='2011-04-30T09:44:44Z' uid='445536' user='EGis' visible='true' version='4' lat='40.84779488691041' lon='14.241705933709477' />
+  <node id='-10524' action='modify' timestamp='2011-04-30T09:44:44Z' uid='445536' user='EGis' visible='true' version='4' lat='40.84641442500607' lon='14.241882266741895' />
+  <node id='-10514' action='modify' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.84574542444343' lon='14.243860566516208' />
+  <node id='-10505' timestamp='2011-04-30T09:44:43Z' uid='445536' user='EGis' visible='true' version='2' lat='40.8436957' lon='14.2448166' />
+  <node id='-10504' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='3' lat='40.8436482' lon='14.2448088' />
+  <node id='-10495' action='modify' timestamp='2011-04-30T09:44:45Z' uid='445536' user='EGis' visible='true' version='4' lat='40.84195866332518' lon='14.243944266741899' />
+  <node id='-10488' action='modify' timestamp='2011-04-30T09:44:46Z' uid='445536' user='EGis' visible='true' version='4' lat='40.83941287791816' lon='14.243802901128436' />
+  <node id='-10487' action='modify' timestamp='2011-04-30T09:44:46Z' uid='445536' user='EGis' visible='true' version='4' lat='40.83977100535503' lon='14.242936667193273' />
+  <node id='-10486' action='modify' timestamp='2011-04-30T09:44:46Z' uid='445536' user='EGis' visible='true' version='3' lat='40.839529494432185' lon='14.241706332806727' />
+  <node id='-10485' action='modify' timestamp='2011-05-17T19:06:57Z' uid='72791' user='HelmutStier' visible='true' version='1' lat='40.83903466437669' lon='14.24043363167829' />
+  <node id='-10445' action='modify' timestamp='2011-04-12T13:51:31Z' uid='410505' user='Udini' visible='true' version='4' lat='40.8366539' lon='14.2293919'>
+    <tag k='environnement' v='urban' />
+    <tag k='meteo' v='clair' />
+    <tag k='polyrallye' v='depart' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='jour' />
+  </node>
+  <way id='-10444' action='modify' timestamp='2011-05-17T19:07:01Z' uid='72791' user='HelmutStier' visible='true'>
+    <nd ref='-10445' />
+    <nd ref='-10652' />
+    <nd ref='-10561' />
+    <nd ref='-10573' />
+    <nd ref='-10583' />
+    <nd ref='-10485' />
+    <nd ref='-10486' />
+    <nd ref='-10487' />
+    <nd ref='-10488' />
+    <nd ref='-10495' />
+    <nd ref='-10504' />
+    <nd ref='-10505' />
+    <nd ref='-10514' />
+    <nd ref='-10524' />
+    <nd ref='-10525' />
+    <nd ref='-10531' />
+    <nd ref='-10532' />
+    <nd ref='-10654' />
+    <nd ref='-10533' />
+    <nd ref='-10534' />
+    <nd ref='-10656' />
+    <nd ref='-10535' />
+    <tag k='highway' v='tertiary' />
+    <tag k='is_in:city' v='Napoli' />
+    <tag k='name' v='Corso Vittorio Emanuele' />
+  </way>
+</osm>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-54524' action='modify' visible='true' lat='12.628028281411249' lon='-7.9728579406920765' />
+  <node id='-54522' action='modify' visible='true' lat='12.636505395816888' lon='-7.970896268861437'>
+    <tag k='meteo' v='vent' />
+  </node>
+  <node id='-54517' action='modify' timestamp='2010-12-21T08:25:03Z' uid='258878' user='JesperFj' visible='true' version='2' lat='12.61185730840886' lon='-7.983665738080251' />
+  <node id='-54516' action='modify' timestamp='2010-12-21T08:25:03Z' uid='258878' user='JesperFj' visible='true' version='2' lat='12.612899919083905' lon='-7.980305676913197' />
+  <node id='-54515' action='modify' timestamp='2010-12-21T08:25:03Z' uid='258878' user='JesperFj' visible='true' version='2' lat='12.61256312778666' lon='-7.9771666244990325'>
+    <tag k='meteo' v='clair' />
+  </node>
+  <node id='-54514' action='modify' timestamp='2010-12-21T08:25:03Z' uid='258878' user='JesperFj' visible='true' version='2' lat='12.614022913777875' lon='-7.975160799247303' />
+  <node id='-54513' action='modify' timestamp='2010-12-21T08:25:03Z' uid='258878' user='JesperFj' visible='true' version='2' lat='12.61479393256584' lon='-7.972502202164929' />
+  <node id='-54512' action='modify' timestamp='2009-07-09T17:01:10Z' uid='59758' user='rendle' visible='true' version='1' lat='12.617518342858284' lon='-7.970131288583714'>
+    <tag k='meteo' v='vent' />
+  </node>
+  <node id='-54511' action='modify' timestamp='2010-12-12T02:02:50Z' uid='33589' user='zenfunk' visible='true' version='2' lat='12.621819175009085' lon='-7.972302396329672' />
+  <node id='-54510' action='modify' timestamp='2010-12-12T02:02:50Z' uid='33589' user='zenfunk' visible='true' version='2' lat='12.62467795047813' lon='-7.975080187576786' />
+  <node id='-54509' action='modify' timestamp='2010-12-12T02:02:50Z' uid='33589' user='zenfunk' visible='true' version='2' lat='12.63080853001731' lon='-7.9730740351626235' />
+  <node id='-54508' action='modify' timestamp='2010-12-12T02:02:50Z' uid='33589' user='zenfunk' visible='true' version='2' lat='12.632971875534327' lon='-7.97304781001404' />
+  <node id='-54507' action='modify' timestamp='2010-12-12T02:02:50Z' uid='33589' user='zenfunk' visible='true' version='2' lat='12.634207251605549' lon='-7.972037971181089' />
+  <node id='-54506' action='modify' timestamp='2009-07-09T17:01:10Z' uid='59758' user='rendle' visible='true' version='1' lat='12.638332068700551' lon='-7.969332363331983' />
+  <node id='-54505' action='modify' timestamp='2009-07-09T17:01:10Z' uid='59758' user='rendle' visible='true' version='1' lat='12.639918363429375' lon='-7.967783228320435' />
+  <node id='-54504' action='modify' timestamp='2010-12-12T02:02:50Z' uid='33589' user='zenfunk' visible='true' version='2' lat='12.640043063385901' lon='-7.965856425402809' />
+  <node id='-54503' action='modify' timestamp='2010-12-12T02:02:50Z' uid='33589' user='zenfunk' visible='true' version='2' lat='12.638757783775073' lon='-7.962354448743838' />
+  <node id='-54502' action='modify' visible='true' lat='12.63732574680773' lon='-7.958705879628171'>
+    <tag k='environnement' v='plaine' />
+    <tag k='meteo' v='clair' />
+    <tag k='polyrallye' v='depart' />
+    <tag k='surface' v='sable' />
+    <tag k='temps' v='jour' />
+  </node>
+  <way id='-54501' action='modify' visible='true'>
+    <nd ref='-54502' />
+    <nd ref='-54503' />
+    <nd ref='-54504' />
+    <nd ref='-54505' />
+    <nd ref='-54506' />
+    <nd ref='-54522' />
+    <nd ref='-54507' />
+    <nd ref='-54508' />
+    <nd ref='-54509' />
+    <nd ref='-54524' />
+    <nd ref='-54510' />
+    <nd ref='-54511' />
+    <nd ref='-54512' />
+    <nd ref='-54513' />
+    <nd ref='-54514' />
+    <nd ref='-54515' />
+    <nd ref='-54516' />
+    <nd ref='-54517' />
+    <tag k='landuse' v='residential' />
+    <tag k='source' v='Yahoo and Bing' />
+  </way>
+</osm>
