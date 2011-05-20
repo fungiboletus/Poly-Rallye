@@ -219,8 +219,7 @@ public class Course {
 	}
 
 	public void finDeCourse() {
-		timerOrganisateur.cancel();
-		timerCompteur.pause();
+		
 		sonVoiture.setRegime(800, false);
 		Liseuse.lire("Fin de la course");
 		Sound sonFin = new Sound("Sons/divers/fin.wav");
@@ -233,6 +232,9 @@ public class Course {
 		etape.setClassement(new Duree((int) timerCompteur.getTime()),
 				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
 		Etape.EnregistrerEtape(etape);
+		
+		timerOrganisateur.cancel();
+                timerCompteur.pause();
 		
 		championnat.setClassement();
 
