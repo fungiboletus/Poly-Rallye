@@ -50,11 +50,13 @@ public class Main {
 
         Championnat champ = Championnat.chargerChampionnat("championnat1");
 
-        champ.getEtapes().get(0).setClassement(new Duree(0,5,21,9),
+        champ.getEtapes().get(1).setClassement(new Duree(0,5,21,9),
                 StockVoitures.getVoitureParNom("Peugeot 307 WRC"));
           
-        System.out.println(champ.getEtapes().get(0).getClassement());
+        System.out.println(champ.getEtapes().get(1).getClassement());
 
+        Etape.EnregistrerEtape(champ.getEtapes().get(1));
+        Championnat.EnregistrerChampionnat(champ);
         //Championnat Champ = Championnat
 //                .chargerChampionnat("championnat européen");
 //        Champ.setClassement();

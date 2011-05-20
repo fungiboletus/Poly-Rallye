@@ -28,7 +28,7 @@ public class VoitureChampionnat extends Menu implements ActionMenu {
                 this.etape = etape;
                 this.circuit = circuit;
 
-                messageMenuVide = "Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.";
+                messageMenuVide = "Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.";
         }
 
         public Sound getMusique() {
