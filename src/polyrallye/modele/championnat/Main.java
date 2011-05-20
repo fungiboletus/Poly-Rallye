@@ -1,6 +1,9 @@
 package polyrallye.modele.championnat;
 
+import java.util.List;
+
 import polyrallye.modele.personnes.Joueur;
+import polyrallye.modele.voiture.StockVoitures;
 
 public class Main {
 
@@ -41,21 +44,22 @@ public class Main {
         // LE.get(i).EnregistrerEtape(LE.get(i));
 
         // chargement xml
-        String nomJoueur = args.length > 1 ? args[0] : "Marco";
+        String nomJoueur = "Gazouz";
         Joueur j = Joueur.chargerJoueur(nomJoueur);
         j.setSessionCourante();
 
-        Championnat.chargerChampionnat("championnat1");
+        Championnat champ = Championnat.chargerChampionnat("championnat1");
 
-        //Etape Et = Etape.chargerEtape("Rallye de Monaco");
+        champ.getEtapes().get(1).setClassement(new Duree(0,5,21,9),
+                StockVoitures.getVoitureParNom("Peugeot 307 WRC"));
+          
+        System.out.println(champ.getEtapes().get(1).getClassement());
 
-        // System.out.println(Et.getClassement());
-
-//        Championnat Champ = Championnat
+        Etape.EnregistrerEtape(champ.getEtapes().get(1));
+        Championnat.EnregistrerChampionnat(champ);
+        //Championnat Champ = Championnat
 //                .chargerChampionnat("championnat européen");
 //        Champ.setClassement();
         
-        // on lance la course en donnant l'étape en cours
-        // aprés avoir joué la course --> on sauvegarde l'étape et le championnat en cours
-    }
+        }
 }

@@ -221,7 +221,7 @@ public class Course {
 		etape.setClassement(new Duree((int) timerCompteur.getTime()),
 				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
 		Etape.EnregistrerEtape(etape);
-
+		
 		championnat.setClassement();
 
 		int nbplayed = 0;

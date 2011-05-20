@@ -11,109 +11,118 @@ import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.utilitaires.GestionXML;
 
 public class Joueur extends Personne {
-    public static Joueur session;
+	public static Joueur session;
 
-    protected Garage garage;
-    protected int argent = 0;
+	protected Garage garage;
+	protected int argent = 0;
 
-    protected Permis permis;
+	protected Permis permis;
 
-    public Joueur(String nom) {
-        super(nom);
+	public Joueur(String nom) {
+		super(nom);
 
-        garage = new Garage(null);
+		garage = new Garage(null);
 
-        // Au début, on a beaucoup d'argent
-        argent = 20000;
+		// Au début, on a beaucoup d'argent
+		argent = 20000;
 
-        permis = new Permis();
-    }
+		permis = new Permis();
+	}
 
-    public Joueur(Element noeud) {
-        super(noeud.getChildText("nom"));
+	public Joueur(Element noeud) {
+		super(noeud.getChildText("nom"));
 
-        garage = new Garage(noeud.getChild("garage"));
+		garage = new Garage(noeud.getChild("garage"));
 
-        argent = GestionXML.getInt(noeud.getChildText("argent"));
+		argent = GestionXML.getInt(noeud.getChildText("argent"));
 
-        permis = new Permis(noeud.getChild("permis"));
-    }
+		permis = new Permis(noeud.getChild("permis"));
+	}
 
-    public Garage getGarage() {
-        return garage;
-    }
+	public Garage getGarage() {
+		return garage;
+	}
 
-    public int getArgent() {
-        return argent;
-    }
+	public int getArgent() {
+		return argent;
+	}
 
-    public int ajouterArgent(int somme) {
-        return (argent += somme);
-    }
+	public int ajouterArgent(int somme) {
+		return (argent += somme);
+	}
 
-    public Permis getPermis() {
-        return permis;
-    }
+	public Permis getPermis() {
+		return permis;
+	}
 
-    public void acheterVoiture(Voiture v) throws Exception {
-        int prix = v.getPrix();
+	public void RemiseAZero() {
+		garage = new Garage(null);
 
-        if (prix > argent) {
-            throw new Exception(
-                    "Vous n'avez pas assez d'argent pour acheter la voiture");
-        }
-        garage.ajouter(v);
-        argent -= prix;
-    }
+		// Au début, on a beaucoup d'argent
+		argent = 20000;
 
-    public void vendreVoiture(Voiture v) throws Exception {
-        argent += garage.vendre(v);
-    }
+		permis = new Permis();
+	}
 
-    public Element toXML() {
-        Element noeud = new Element("joueur");
+	public void acheterVoiture(Voiture v) throws Exception {
+		int prix = v.getPrix();
 
-        noeud.addContent(new Element("nom").setText(nom));
-        noeud.addContent(new Element("argent").setText("" + argent));
+		if (prix > argent) {
+			throw new Exception(
+					"Vous n'avez pas assez d'argent pour acheter la voiture");
+		}
+		garage.ajouter(v);
+		argent -= prix;
+	}
 
-        noeud.addContent(garage.toXML());
+	public void vendreVoiture(Voiture v) throws Exception {
+		argent += garage.vendre(v);
+	}
 
-        return noeud;
-    }
+	public Element toXML() {
+		Element noeud = new Element("joueur");
 
-    public void setSessionCourante() {
-        session = this;
-    }
+		noeud.addContent(new Element("nom").setText(nom));
+		noeud.addContent(new Element("argent").setText("" + argent));
 
-    public static Joueur chargerJoueur(String nom) {
-        File f = new File("Comptes/" + nom.hashCode() + ".xml");
+		noeud.addContent(garage.toXML());
 
-        if (f.exists()) {
-            Element n;
-            try {
-                n = GestionXML.chargerNoeudRacine(f);
-                return new Joueur(n);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+		return noeud;
+	}
 
-        return new Joueur(nom);
-    }
+	public void setSessionCourante() {
+		session = this;
+	}
 
-    public static void EnregistrerJoueur(Joueur j) {
-        try {
-            File d = new File("Comptes");
+	public static Joueur chargerJoueur(String nom) {
+		File f = new File("Comptes/" + nom.hashCode() + ".xml");
 
-            if (!d.exists()) {
-                d.mkdir();
-            }
+		if (f.exists()) {
+			Element n;
+			try {
+				n = GestionXML.chargerNoeudRacine(f);
+				return new Joueur(n);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
-            GestionXML.enregistrerRacine("Comptes/" + j.getNom().hashCode()
-                    + ".xml", j.toXML());
-        } catch (Exception e) {
-            e.printStackTrace();
-            Liseuse.lire("Impossible de sauvegarder la progression.");
-        }
-    }
+		return new Joueur(nom);
+	}
+
+	public static void EnregistrerJoueur(Joueur j) {
+		try {
+			File d = new File("Comptes");
+
+			if (!d.exists()) {
+				d.mkdir();
+			}
+
+			GestionXML.enregistrerRacine("Comptes/" + j.getNom().hashCode()
+					+ ".xml", j.toXML());
+		} catch (Exception e) {
+			e.printStackTrace();
+			Liseuse.lire("Impossible de sauvegarder la progression.");
+		}
+	}
 }
