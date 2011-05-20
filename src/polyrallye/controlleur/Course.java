@@ -220,9 +220,15 @@ public class Course {
 		Multithreading.dormir(1000);
 	}
 
+<<<<<<< HEAD
+	public void finDeCourse() {
+		
+		sonVoiture.setRegime(800, false);
+=======
 	public void finDeCourse(int nbSecondesCourse) {
 		fermer();
 		
+>>>>>>> 8c1fced5609b80d206f4f64b8c583ff4d2702aa3
 		Liseuse.lire("Fin de la course");
 		Sound sonFin = new Sound("Ressources/Sons/divers/fin.wav");
 		sonFin.setGain(2.0f);
@@ -242,6 +248,9 @@ public class Course {
 		etape.setClassement(tempsEtape,
 				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
 		Etape.EnregistrerEtape(etape);
+		
+		timerOrganisateur.cancel();
+                timerCompteur.pause();
 		
 		championnat.setClassement();
 
