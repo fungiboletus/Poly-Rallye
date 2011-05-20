@@ -62,7 +62,7 @@ public class Championnat {
         Element noeud = new Element("Championnat");
 
         noeud.addContent(new Element("nom").setText(nom));
-        noeud.addContent(new Element("joueur").setText(player.getNom()));
+        noeud.addContent(new Element("joueur").setText(Joueur.session.getNom()));
 
         for (int i = 0; i < etapes.size(); ++i)
             noeud.addContent(etapes.get(i).toXML());
@@ -214,7 +214,7 @@ public class Championnat {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnats/" + c.getNom() + ".xml",
+            GestionXML.enregistrerRacine("Championnats/" + c.getNom() +"_"+ Joueur.session.getNom() + ".xml",
                     c.toXML());
         } catch (Exception e) {
             e.printStackTrace();

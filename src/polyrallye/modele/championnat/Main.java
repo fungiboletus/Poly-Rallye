@@ -44,7 +44,7 @@ public class Main {
         // LE.get(i).EnregistrerEtape(LE.get(i));
 
         // chargement xml
-        String nomJoueur = "Gazouz";
+        String nomJoueur = "zizou";
         Joueur j = Joueur.chargerJoueur(nomJoueur);
         j.setSessionCourante();
 
@@ -52,7 +52,9 @@ public class Main {
 
         champ.getEtapes().get(1).setClassement(new Duree(0,5,21,9),
                 StockVoitures.getVoitureParNom("Peugeot 307 WRC"));
-          
+        
+        champ.getEtapes().get(1).viderClassement();
+        
         System.out.println(champ.getEtapes().get(1).getClassement());
 
         Etape.EnregistrerEtape(champ.getEtapes().get(1));

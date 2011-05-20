@@ -4,7 +4,7 @@
   <joueur>zizou</joueur>
   <etape>
     <numero>1</numero>
-    <nom>Rallye de Monaco</nom>
+    <nom>RallyedeMonaco</nom>
     <joueur>
       <nom>zizou</nom>
       <argent>20000</argent>
@@ -83,7 +83,7 @@
   </etape>
   <etape>
     <numero>2</numero>
-    <nom>Rallye de Tunisie</nom>
+    <nom>RallyedeTunisie</nom>
     <joueur>
       <nom>zizou</nom>
       <argent>20000</argent>
