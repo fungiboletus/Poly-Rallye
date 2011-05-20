@@ -53,7 +53,7 @@ public abstract class StockVoitures {
 		voituresParPerformances = new TreeMap<Double, Voiture>();
 		voituresParPrix = new TreeMap<Integer, Voiture>();
 
-		File dossier = new File("Voitures");
+		File dossier = new File("Ressources/Voitures");
 
 		if (!dossier.isDirectory()) {
 			Liseuse.lire("Le jeu ne contient pas de dossier de voitures.");

@@ -87,7 +87,7 @@ public class SonVoiture {
 		System.out.println(variante);
 		// Liseuse.lire(variante);
 
-		File dossier = new File("Sons/moteurs/" + variante);
+		File dossier = new File("Ressources/Sons/moteurs/" + variante);
 
 		// Récupération des sons correspondants aux différents régimes.
 		for (File son : dossier.listFiles()) {
@@ -101,10 +101,10 @@ public class SonVoiture {
 		}
 
 		// Récupération du son du passage des rapports.
-		passageRapport = new Sound("Sons/voiture/rapport.wav");
+		passageRapport = new Sound("Ressources/Sons/voiture/rapport.wav");
 		passageRapport.setGain(0.4f);
 
-		sonFreinage = new Sound("Sons/voiture/frein.wav");
+		sonFreinage = new Sound("Ressources/Sons/voiture/frein.wav");
 		sonFreinage.setGain(0.3f);
 	}
 

@@ -24,7 +24,7 @@ public class Joueur extends Personne {
 		garage = new Garage(null);
 
 		// Au début, on a beaucoup d'argent
-		argent = 20000;
+		argent = 40000;
 
 		permis = new Permis();
 	}
@@ -59,7 +59,7 @@ public class Joueur extends Personne {
 		garage = new Garage(null);
 
 		// Au début, on a beaucoup d'argent
-		argent = 20000;
+		argent = 40000;
 
 		permis = new Permis();
 	}
@@ -95,7 +95,7 @@ public class Joueur extends Personne {
 	}
 
 	public static Joueur chargerJoueur(String nom) {
-		File f = new File("Comptes/" + nom.hashCode() + ".xml");
+		File f = new File("Ressources/Comptes/" + nom.hashCode() + ".xml");
 
 		if (f.exists()) {
 			Element n;
@@ -112,13 +112,13 @@ public class Joueur extends Personne {
 
 	public static void EnregistrerJoueur(Joueur j) {
 		try {
-			File d = new File("Comptes");
+			File d = new File("Ressources/Comptes");
 
 			if (!d.exists()) {
 				d.mkdir();
 			}
 
-			GestionXML.enregistrerRacine("Comptes/" + j.getNom().hashCode()
+			GestionXML.enregistrerRacine("Ressources/Comptes/" + j.getNom().hashCode()
 					+ ".xml", j.toXML());
 		} catch (Exception e) {
 			e.printStackTrace();

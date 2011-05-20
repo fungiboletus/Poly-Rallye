@@ -78,7 +78,7 @@ public class Main {
 		Liseuse.lancer();
 
 		// Récupération des informations du joueur
-		String nomJoueur = args.length > 1 ? args[0] : (new LectureFichier("Comptes/")).lirePremiereLigne("Autoload.cfg");
+		String nomJoueur = args.length > 1 ? args[0] : (new LectureFichier("Ressources/Comptes/")).lirePremiereLigne("Autoload.cfg");
 		Joueur j = Joueur.chargerJoueur(nomJoueur);
 		j.setSessionCourante();
 

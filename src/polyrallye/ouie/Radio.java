@@ -1,15 +1,13 @@
 package polyrallye.ouie;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
 
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
+import polyrallye.utilitaires.GestionXML;
+import polyrallye.utilitaires.LectureFichier;
 import polyrallye.utilitaires.Multithreading;
 
 public class Radio extends Thread {
@@ -22,13 +20,12 @@ public class Radio extends Thread {
 	private int nbZike;
 	private int nbRadio;
 	private float level;
-	
+
 	private boolean isPaused;
 	private boolean isAlive;
-	private boolean isUberPaused;
 
 	public Radio() {
-		String rep = "Sons/radio/";
+		String rep = "Ressources/Sons/radio/";
 		nbRadio = (new File(rep).list()).length - 1;
 		Random random = new Random();
 		id = random.nextInt(nbRadio) + 1;
@@ -42,49 +39,48 @@ public class Radio extends Thread {
 		musique = new Sound();
 
 		readManifeste();
-//		chargerCom();
-//		chargerZike();
+		// chargerCom();
+		// chargerZike();
 		setToLevel();
-		
-		isPaused=true;
-		isAlive=true;
 
-		
+		isPaused = true;
+		isAlive = true;
+
 		inter.play();
 		inter.pause(true);
-		
+
 	}
-	
+
 	public void run() {
 		while (isAlive) {
-			if(!isPaused)
+			if (!isPaused)
 				com.playAndWait();
-			if(!isPaused) {
+			if (!isPaused) {
 				com.delete();
 				chargerCom();
 				musique.playAndWait();
 			}
-			if(!isPaused) {
-			musique.delete();
-			chargerZike();
+			if (!isPaused) {
+				musique.delete();
+				chargerZike();
 			}
 			setToLevel();
-			if(isPaused)
+			if (isPaused)
 				Multithreading.dormir(1000);
 		}
 	}
-	
+
 	public void changeStation() {
 		if (!isPaused) {
-		inter.pause(false);
-		com.stop();
-		musique.stop();
-		com.delete();
-		musique.delete();
-		
-		Random random = new Random();
-		id = random.nextInt(nbRadio) + 1;
-		switch (id) {
+			inter.pause(false);
+			com.stop();
+			musique.stop();
+			com.delete();
+			musique.delete();
+
+			Random random = new Random();
+			id = random.nextInt(nbRadio) + 1;
+			switch (id) {
 			case 1:
 				Main.logInfo("Radio Jazz");
 				break;
@@ -97,21 +93,18 @@ public class Radio extends Thread {
 			case 4:
 				Main.logInfo("Radio Disco");
 				break;
-		}
-			
-		
-		readManifeste();
-		
-		chargerCom();
-		chargerZike();
-		Multithreading.dormir(1000);
-		inter.pause(true);
-		
+			}
+
+			readManifeste();
+
+			chargerCom();
+			chargerZike();
+			Multithreading.dormir(1000);
+			inter.pause(true);
+
 		}
 	}
-	
 
-	
 	public void toggleRadio() {
 		if (isPaused) {
 			Main.logInfo("Radio On");
@@ -119,11 +112,10 @@ public class Radio extends Thread {
 			chargerCom();
 			chargerZike();
 			inter.stop();
-			isPaused=false;
-		}
-		else {
+			isPaused = false;
+		} else {
 			Main.logInfo("Radio Off");
-			isPaused=true;
+			isPaused = true;
 			com.stop();
 			musique.stop();
 			com.delete();
@@ -136,8 +128,7 @@ public class Radio extends Thread {
 			level -= 0.2;
 			setToLevel();
 			Main.logInfo("Volume -");
-		}
-		else
+		} else
 			Main.logInfo("Volume au minimum");
 	}
 
@@ -146,20 +137,19 @@ public class Radio extends Thread {
 			level += 0.2;
 			setToLevel();
 			Main.logInfo("Volume +");
-		}
-		else
+		} else
 			Main.logInfo("Volume au maximum");
 	}
 
 	public void delete() {
-		isAlive=false;
+		isAlive = false;
 		musique.delete();
 		com.delete();
 		inter.delete();
 	}
 
 	private void chargerCom() {
-		String rep = "Sons/radio/" + id + "/";
+		String rep = "Ressources/Sons/radio/" + id + "/";
 		Random random = new Random();
 		try {
 			com.charger(rep + "com_" + (random.nextInt(nbCom) + 1) + ".wav");
@@ -167,9 +157,9 @@ public class Radio extends Thread {
 			System.err.println("Erreur chargement Commentaires radio");
 		}
 	}
-	
+
 	private void chargerZike() {
-		String rep = "Sons/radio/" + id + "/";
+		String rep = "Ressources/Sons/radio/" + id + "/";
 		Random random = new Random();
 		try {
 			musique.charger(rep + "musique_" + (random.nextInt(nbZike) + 1)
@@ -189,34 +179,25 @@ public class Radio extends Thread {
 	}
 
 	private void readManifeste() {
-		String rep = "Sons/radio/" + id + "/";
+		String rep = "Ressources/Sons/radio/" + id + "/";
 
-		BufferedReader mani = null;
 		// On lit le fichier comme d'ab
-		try {
-			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
-			String line = null;
-			try {
-				while ((line = mani.readLine()) != null) {
-					if (line.contains("com")) {
-						nbCom = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					} else if (line.contains("zike")) {
-						nbZike = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					}
-				}
-			} catch (IOException e) {
-				System.out.println("Erreur lecture fichier");
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Erreur chargement fichier");
+		String[] lectureManifeste = new String[2];
+		lectureManifeste[0] = "com";
+		lectureManifeste[1] = "zike";
+
+		lectureManifeste = new LectureFichier(rep).lire("manifeste.cfg",
+				lectureManifeste);
+		if (lectureManifeste[0] != null)
+			nbCom = Integer.valueOf(lectureManifeste[0]
+					.substring(lectureManifeste[0].indexOf(" ")+1));
+
+		if (lectureManifeste[1] != null) {
+			nbZike = Integer.valueOf(lectureManifeste[1]
+					.substring(lectureManifeste[1].indexOf(" ")+1));
+
 		}
 
-		try {
-			mani.close();
-		} catch (IOException e) {
-		}
 	}
 
 }

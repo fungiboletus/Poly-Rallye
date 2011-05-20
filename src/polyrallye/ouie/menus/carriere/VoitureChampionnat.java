@@ -26,8 +26,8 @@ public class VoitureChampionnat extends Menu implements ActionMenu {
     protected polyrallye.modele.championnat.Etape etape;
 
     static {
-        musique = new Sound("Sons/foret/jour_6.wav");
-        musique.setLoop(true);
+//        musique = new Sound("Sons/foret/jour_6.wav");
+//        musique.setLoop(true);
     }
 
     public VoitureChampionnat(Menu menuPrecedent, String circuit,

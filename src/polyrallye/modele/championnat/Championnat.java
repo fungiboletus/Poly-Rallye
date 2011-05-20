@@ -262,7 +262,7 @@ public class Championnat {
      * @return Championnat
      */
     public static Championnat chargerChampionnat(String nom) {
-        File f = new File("Championnats/" + nom + ".xml");
+        File f = new File("Ressources/Championnats/" + nom + ".xml");
 
         if (f.exists()) {
             Element n;
@@ -285,13 +285,13 @@ public class Championnat {
      */
     public static void EnregistrerChampionnat(Championnat c) {
         try {
-            File d = new File("Championnats");
+            File d = new File("Ressources/Championnats");
 
             if (!d.exists()) {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnats/" + c.getNom() + "_"
+            GestionXML.enregistrerRacine("Ressources/Championnats/" + c.getNom() + "_"
                     + Joueur.session.getNom() + ".xml", c.toXML());
         } catch (Exception e) {
             e.printStackTrace();

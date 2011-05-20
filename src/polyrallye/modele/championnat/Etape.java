@@ -324,7 +324,7 @@ public class Etape {
      * @return Etape
      */
     public static Etape chargerEtape(String nom) {
-        File f = new File("Championnats/" + nom + ".xml");
+        File f = new File("Ressources/Championnats/" + nom + ".xml");
 
         if (f.exists()) {
             Element n;
@@ -347,13 +347,13 @@ public class Etape {
      */
     public static void EnregistrerEtape(Etape et) {
         try {
-            File d = new File("Championnats");
+            File d = new File("Ressources/Championnats");
 
             if (!d.exists()) {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnats/" + et.getEtape() + "_"
+            GestionXML.enregistrerRacine("Ressources/Championnats/" + et.getEtape() + "_"
                     + Joueur.session.getNom() + ".xml", et.toXML());
         } catch (Exception e) {
             e.printStackTrace();

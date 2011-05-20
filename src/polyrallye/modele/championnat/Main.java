@@ -52,7 +52,7 @@ public class Main {
         Joueur j = Joueur.chargerJoueur(nomJoueur);
         j.setSessionCourante();
 
-        Championnat champ = Championnat.chargerChampionnat("championnat1");
+        Championnat champ = Championnat.chargerChampionnat("Ressources/championnat1");
 
         champ.getEtapes().get(1).setClassement(new Duree(0, 5, 21, 9),
                 StockVoitures.getVoitureParNom("Peugeot 307 WRC"));

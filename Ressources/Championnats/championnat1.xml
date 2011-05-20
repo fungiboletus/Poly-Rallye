@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Championnat>
+  <nom>championnat1</nom>
+  <joueur>Abdoul</joueur>
+  <etape>
+    <numero>1</numero>
+    <nom>RallyedeMonaco</nom>
+    <joueur>
+      <nom>Abdoul</nom>
+      <argent>20000</argent>
+      <garage />
+    </joueur>
+    <circuit>Nouveau/Monaco</circuit>
+    <classement>
+      <position>1</position>
+      <nom>Esposa</nom>
+      <voiture>Ferrari Enzo serie</voiture>
+      <duree>2934</duree>
+    </classement>
+    <classement>
+      <position>2</position>
+      <nom>Munoz</nom>
+      <voiture>Jaguar XJ-13 serie</voiture>
+      <duree>3001</duree>
+      <ecart>67</ecart>
+    </classement>
+    <classement>
+      <position>3</position>
+      <nom>Zicko</nom>
+      <voiture>Maserati MC12 serie</voiture>
+      <duree>3006</duree>
+      <ecart>72</ecart>
+    </classement>
+    <classement>
+      <position>4</position>
+      <nom>Trapatoni</nom>
+      <voiture>Peugeot 205 Turbo 16 Évolution 1</voiture>
+      <duree>3096</duree>
+      <ecart>162</ecart>
+    </classement>
+    <classement>
+      <position>5</position>
+      <nom>Dialo</nom>
+      <voiture>Audi RS6</voiture>
+      <duree>3116</duree>
+      <ecart>182</ecart>
+    </classement>
+    <classement>
+      <position>6</position>
+      <nom>Dupont</nom>
+      <voiture>Lamborghini Reventon serie</voiture>
+      <duree>3186</duree>
+      <ecart>252</ecart>
+    </classement>
+    <classement>
+      <position>7</position>
+      <nom>Gazouz</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>3219</duree>
+      <ecart>285</ecart>
+    </classement>
+    <classement>
+      <position>8</position>
+      <nom>Chang</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>3264</duree>
+      <ecart>330</ecart>
+    </classement>
+    <classement>
+      <position>9</position>
+      <nom>Paolista</nom>
+      <voiture>Dodge Viper SRT-10</voiture>
+      <duree>3499</duree>
+      <ecart>565</ecart>
+    </classement>
+    <classement>
+      <position>10</position>
+      <nom>Salem</nom>
+      <voiture>Peugeot 206 WRC</voiture>
+      <duree>3531</duree>
+      <ecart>597</ecart>
+    </classement>
+  </etape>
+  <etape>
+    <numero>2</numero>
+    <nom>RallyedeTunisie</nom>
+    <joueur>
+      <nom>Abdoul</nom>
+      <argent>20000</argent>
+      <garage />
+    </joueur>
+    <circuit>Afrique/Dakar</circuit>
+    <classement>
+      <position>1</position>
+      <nom>Zicko</nom>
+      <voiture>Peugeot 405 Turbo 16 Grand Raid</voiture>
+      <duree>3063</duree>
+    </classement>
+    <classement>
+      <position>2</position>
+      <nom>Salem</nom>
+      <voiture>Volkswagen W12 Coupe</voiture>
+      <duree>3102</duree>
+      <ecart>39</ecart>
+    </classement>
+    <classement>
+      <position>3</position>
+      <nom>Paolista</nom>
+      <voiture>Audi RS6</voiture>
+      <duree>3118</duree>
+      <ecart>55</ecart>
+    </classement>
+    <classement>
+      <position>4</position>
+      <nom>Chang</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>3175</duree>
+      <ecart>112</ecart>
+    </classement>
+    <classement>
+      <position>5</position>
+      <nom>Abdoul</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>3219</duree>
+      <ecart>156</ecart>
+    </classement>
+    <classement>
+      <position>6</position>
+      <nom>Esposa</nom>
+      <voiture>Lamborghini Murcielago serie</voiture>
+      <duree>3220</duree>
+      <ecart>157</ecart>
+    </classement>
+    <classement>
+      <position>7</position>
+      <nom>Trapatoni</nom>
+      <voiture>Lamborghini Reventon serie</voiture>
+      <duree>3229</duree>
+      <ecart>166</ecart>
+    </classement>
+    <classement>
+      <position>8</position>
+      <nom>Munoz</nom>
+      <voiture>Lamborghini Reventon Roadster</voiture>
+      <duree>3278</duree>
+      <ecart>215</ecart>
+    </classement>
+    <classement>
+      <position>9</position>
+      <nom>Dupont</nom>
+      <voiture>Lamborghini Diablo GTR</voiture>
+      <duree>3403</duree>
+      <ecart>340</ecart>
+    </classement>
+    <classement>
+      <position>10</position>
+      <nom>Dialo</nom>
+      <voiture>Peugeot 206 WRC</voiture>
+      <duree>3544</duree>
+      <ecart>481</ecart>
+    </classement>
+  </etape>
+  <voitureEnJeu>Ferrari Enzo serie</voitureEnJeu>
+  <argentEnJeu>30000</argentEnJeu>
+</Championnat>
+

@@ -30,7 +30,7 @@ public class SelectionJoueur extends Menu implements ActionMenu{
 	public void remplir() {
 		
 		try {
-			Element noeud = GestionXML.chargerNoeudRacine(new File("Comptes/nomutilises.xml"));
+			Element noeud = GestionXML.chargerNoeudRacine(new File("Ressources/Comptes/nomutilises.xml"));
 			List<Element> noms = noeud.getChildren("nom");
 			
 			for (int i = 0; i < noms.size(); i++) {

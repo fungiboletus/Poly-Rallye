@@ -36,7 +36,7 @@ public class Meteo {
 		if (!etat.equals("clair")) {
 
 			// On va charger dans le fichier les config
-			String rep = "Sons/meteo" + "/" + etat + "/";
+			String rep = "Ressources/Sons/meteo" + "/" + etat + "/";
 
 			// On lit le fichier
 			String[] lectureManifeste = new String[2];

@@ -52,7 +52,7 @@ public class Environnement {
 		String extSfx = null;
 
 		// On va charger dans le fichier les config
-		String rep = "Sons/" + type + "/";
+		String rep = "Ressources/Sons/" + type + "/";
 
 		// On lit le fichier
 		String[] lectureManifeste = new String[4];
@@ -93,7 +93,7 @@ public class Environnement {
 		// Création du sfx
 		// Si le sfx est extérieur au dossier
 		if (extSfx != null && !extSfx.equals("null"))
-			rep = "Sons/" + extSfx + "/";
+			rep = "Ressources/Sons/" + extSfx + "/";
 		// Procédure normale
 		if (extSfx != null && !extSfx.equals("null") && temps.equals(temps)
 				&& new File(rep + "sfx_" + temps).exists()) {
@@ -124,7 +124,7 @@ public class Environnement {
 		String extSfx = null;
 
 		// On va charger dans le fichier les config
-		String rep = "Sons/" + type + "/";
+		String rep = "Ressources/Sons/" + type + "/";
 
 		// On lit le fichier
 		String[] lectureManifeste = new String[4];
@@ -162,7 +162,7 @@ public class Environnement {
 		// Création du sfx
 		// Si le sfx est extérieur au dossier
 		if (extSfx != null)
-			rep = "Sons/" + extSfx + "/";
+			rep = "Ressources/Sons/" + extSfx + "/";
 		if (temps.equals(temps) && new File(rep + "sfx_" + temps).exists()) {
 			randSfx = new File(rep + "sfx_nuit").listFiles().length;
 			rep += "sfx_nuit/";
@@ -187,7 +187,7 @@ public class Environnement {
 			@Override
 			public void run() {
 				Random random = new Random();
-				String temp = "Sons/" + type + "/" + temps + "_"
+				String temp = "Ressources/Sons/" + type + "/" + temps + "_"
 						+ (random.nextInt(randAmb) + 1) + ".wav";
 				try {
 					sonTemp.charger(temp);

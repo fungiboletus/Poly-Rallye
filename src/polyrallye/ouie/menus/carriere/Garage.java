@@ -15,8 +15,8 @@ public class Garage extends Menu implements ActionMenu {
 	protected static Sound musique;
 
 	static {
-		musique = new Sound("Sons/foret/jour_6.wav");
-		musique.setLoop(true);
+//		musique = new Sound("Sons/foret/jour_6.wav");
+//		musique.setLoop(true);
 	}
 
 	public Garage(Menu menuPrecedent) {
