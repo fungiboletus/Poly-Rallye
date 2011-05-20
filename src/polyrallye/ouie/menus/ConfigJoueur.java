@@ -34,7 +34,7 @@ public class ConfigJoueur extends Menu implements ActionMenu {
 			}
 		});
 		ajouterElement("Creer un nouveau joueur", new CreationJoueur(this));
-		ajouterElement("Effacer la progression du joueur", new SuppressionDonneesJoueur(menuPrecedent,Joueur.session.getNom()));
+		ajouterElement("Effacer la progression du joueur", new SuppressionDonneesJoueur(menuPrecedent));
 	}
 	
 	
