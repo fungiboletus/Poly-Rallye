@@ -27,7 +27,7 @@ public class Klaxon {
 
 	public Klaxon(String t) {
 
-		String rep = "Sons/klaxon/";
+		String rep = "Ressources/Sons/klaxon/";
 
 		if (t.contains("Gendarmerie"))
 			name = "gendarmerie";

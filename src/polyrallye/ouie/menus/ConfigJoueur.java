@@ -27,7 +27,7 @@ public class ConfigJoueur extends Menu implements ActionMenu {
 			
 			@Override
 			public void actionMenu() {
-				new EcritureFichier("Comptes/").ecriturePremiereLigne("Autoload.cfg",Joueur.session.getNom());
+				new EcritureFichier("Ressources/Comptes/").ecriturePremiereLigne("Autoload.cfg",Joueur.session.getNom());
 				Liseuse.lire("Le joueur "+Joueur.session.getNom()+" sera chargé au début du jeu");
 				Liseuse.lire("Vous êtes "+Joueur.session.getNom());
 

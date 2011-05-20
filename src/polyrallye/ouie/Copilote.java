@@ -1,10 +1,6 @@
 package polyrallye.ouie;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -13,6 +9,7 @@ import polyrallye.controlleur.Main;
 import polyrallye.ouie.environnement.Sfx;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.GestionXML;
+import polyrallye.utilitaires.LectureFichier;
 
 public class Copilote {
 
@@ -24,7 +21,6 @@ public class Copilote {
 	private List<Sound> freine;
 	private List<Sound> ok;
 
-
 	private Sfx bullshit;
 	private boolean isPipelette;
 
@@ -35,7 +31,7 @@ public class Copilote {
 		random = new Random();
 
 		// Sélection d'un copilote
-		String rep = "Sons/copilote/";
+		String rep = "Ressources/Sons/copilote/";
 		int nb = (new File(rep).list()).length;
 		id = random.nextInt(nb) + 1;
 		rep += id + "/";
@@ -49,43 +45,46 @@ public class Copilote {
 		int nbSfx = 0;
 		int nbOk = 0;
 
-
-		BufferedReader mani = null;
 		// On lit le fichier comme d'ab
-		try {
-			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
-			String line = null;
-			try {
-				while ((line = mani.readLine()) != null) {
-					if (line.contains("gauche")) {
-						nbGauche = GestionXML.getInt(line.substring(line
-								.indexOf(" ")));
-					} else if (line.contains("sfx")) {
-						nbSfx = GestionXML.getInt(line.substring(line
-								.indexOf(" ")));
-					} else if (line.contains("ok")) {
-						nbOk = Integer
-								.valueOf(line.substring(line.indexOf(" ") + 1));
-					} else if (line.contains("droite")) {
-						nbDroite = GestionXML.getInt(line.substring(line
-								.indexOf(" ")));
-					} else if (line.contains("freine")) {
-						nbFreine = GestionXML.getInt(line.substring(line
-								.indexOf(" ")));
-					}
+		String[] lectureManifeste = new String[5];
+		lectureManifeste[0] = "gauche";
+		lectureManifeste[1] = "sfx";
+		lectureManifeste[2] = "ok";
+		lectureManifeste[3] = "droite";
+		lectureManifeste[4] = "freine";
 
-				}
-			} catch (IOException e) {
-				System.out.println("Erreur lecture fichier");
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Erreur chargement fichier");
-		}
+		lectureManifeste = new LectureFichier(rep).lire("manifeste.cfg",
+				lectureManifeste);
+		if (lectureManifeste[0] != null)
+			nbGauche = Integer.valueOf(lectureManifeste[0]
+					.substring(lectureManifeste[0].indexOf(" ") + 1));
 
-		try {
-			mani.close();
-		} catch (IOException e) {
+		if (lectureManifeste[1] != null) {
+			nbSfx = Integer.valueOf(lectureManifeste[1]
+					.substring(lectureManifeste[1].indexOf(" ")+1));
 		}
+		if (lectureManifeste[2] != null) {
+			nbOk = Integer.valueOf(lectureManifeste[2]
+					.substring(lectureManifeste[2].indexOf(" ") + 1));
+		}
+		if (lectureManifeste[3] != null) {
+			nbDroite = Integer.valueOf(lectureManifeste[3]
+					.substring(lectureManifeste[3].indexOf(" ")+1));
+		}
+		if (lectureManifeste[4] != null)
+			nbFreine = Integer.valueOf(lectureManifeste[4]
+					.substring(lectureManifeste[4].indexOf(" ")+1));
+
+		if (nbGauche == -1)
+			nbGauche = 0;
+		if (nbDroite == -1)
+			nbDroite = 0;
+		if (nbOk == -1)
+			nbOk = 0;
+		if (nbSfx == -1)
+			nbSfx = 0;
+		if (nbFreine == -1)
+			nbFreine = 0;
 
 		gauche = new ArrayList<Sound>(nbGauche);
 		droite = new ArrayList<Sound>(nbDroite);
@@ -109,7 +108,6 @@ public class Copilote {
 			ok.add(new Sound(rep + "ok_" + i + ".wav"));
 		}
 
-
 		if (nbSfx != 0) {
 			bullshit = new Sfx(rep + "sfx/", nbSfx, 3, true, 3.0f);
 		} else {
@@ -121,7 +119,7 @@ public class Copilote {
 	}
 
 	public void togglePipelette() {
-		String rep = "Sons/copilote/" + id + "/";
+		String rep = "Ressources/Sons/copilote/" + id + "/";
 		if (isPipelette) {
 			isPipelette = false;
 			bullshit.pause(true);
@@ -137,7 +135,6 @@ public class Copilote {
 		}
 	}
 
-
 	public void playOk() {
 		Main.logInfo("OK");
 		ok.get(random.nextInt(ok.size())).play();
@@ -145,7 +142,7 @@ public class Copilote {
 
 	public void playCrash() {
 		Main.logImportant("CRASH CRASH CRASH !");
-		String rep = "Sons/copilote/" + id + "/";
+		String rep = "Ressources/Sons/copilote/" + id + "/";
 		if (isPipelette) {
 			isPipelette = false;
 			bullshit.pause(true);
@@ -160,7 +157,7 @@ public class Copilote {
 	public void playGauche() {
 
 		Main.logInfo("Gauche…");
-		
+
 		/*
 		 * if (isPipelette) bullshit.pause(true);*
 		 */
@@ -175,7 +172,7 @@ public class Copilote {
 	public void playDroite() {
 
 		Main.logInfo("Droite…");
-		
+
 		/*
 		 * if (isPipelette) bullshit.pause(true);
 		 */
@@ -191,7 +188,7 @@ public class Copilote {
 	public void playFreine() {
 
 		Main.logInfo("Freine !");
-		
+
 		if (isPipelette)
 			bullshit.pause(true);
 

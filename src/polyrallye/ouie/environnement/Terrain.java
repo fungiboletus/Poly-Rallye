@@ -18,7 +18,7 @@ public class Terrain {
 	public Terrain(String t) {
 		terrain = t;
 		Random random = new Random();
-		String rep = "Sons/terrain/" + terrain + "/";
+		String rep = "Ressources/Sons/terrain/" + terrain + "/";
 		son = new Sound(rep + terrain + "_" + (random.nextInt(3) + 1) + ".wav");
 		son.setLoop(true);
 		son.setGain(1.5f);
@@ -27,7 +27,7 @@ public class Terrain {
 		tournant = new Sound(rep + "derapage.wav");
 		tournant.setLoop(true);
 
-		sfx = new Sfx("Sons/terrain/sfx/", 12, 20, true);
+		sfx = new Sfx("Ressources/Sons/terrain/sfx/", 12, 20, true);
 
 	}
 
@@ -60,7 +60,7 @@ public class Terrain {
 			@Override
 			public void run() {
 				Random random = new Random();
-				String rep = "Sons/terrain/" + terrain + "/";
+				String rep = "Ressources/Sons/terrain/" + terrain + "/";
 				String temp = rep + terrain + "_" + (random.nextInt(3) + 1) + ".wav";
 
 				sonTemp = new Sound(temp);

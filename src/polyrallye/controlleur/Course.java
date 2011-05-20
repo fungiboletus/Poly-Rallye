@@ -139,7 +139,7 @@ public class Course {
         this.voiture = voiture;
 
         try {
-            Element noeud = GestionXML.chargerNoeudRacine(new File("Circuits/"
+            Element noeud = GestionXML.chargerNoeudRacine(new File("Ressources/Circuits/"
                     + fichierCircuit + ".osm"));
             circuit = new Circuit(noeud);
         } catch (Exception e) {
@@ -226,7 +226,7 @@ public class Course {
         fermer();
 
         Liseuse.lire("Fin de la course");
-        Sound sonFin = new Sound("Sons/divers/fin.wav");
+        Sound sonFin = new Sound("Ressources/Sons/divers/fin.wav");
         sonFin.setGain(2.0f);
         sonFin.playAndWait();
         sonFin.delete();

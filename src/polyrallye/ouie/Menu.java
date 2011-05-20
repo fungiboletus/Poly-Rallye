@@ -58,10 +58,10 @@ public abstract class Menu implements EcouteurEntrees {
 
 	static {
 		// Chargement des sons de l'interface
-		sonSuivant = new Sound("Sons/menus/suivant.wav");
-		sonPrecedent = new Sound("Sons/menus/precedent.wav");
-		sonTic = new Sound("Sons/menus/tic.wav");
-		sonBoucle = new Sound("Sons/menus/tictic.wav");
+		sonSuivant = new Sound("Ressources/Sons/menus/suivant.wav");
+		sonPrecedent = new Sound("Ressources/Sons/menus/precedent.wav");
+		sonTic = new Sound("Ressources/Sons/menus/tic.wav");
+		sonBoucle = new Sound("Ressources/Sons/menus/tictic.wav");
 	}
 
 	/**
@@ -258,7 +258,7 @@ public abstract class Menu implements EcouteurEntrees {
 
 	@Override
 	public void but() {
-		Sound b = new Sound("Sons/aide/but.ogg");
+		Sound b = new Sound("Ressources/Sons/aide/but.ogg");
 		Liseuse.interrompre();
 		b.playAndWait();
 		b.delete();
