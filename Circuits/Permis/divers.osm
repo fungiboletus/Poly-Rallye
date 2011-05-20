@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-26093' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.00508503122869' lon='-47.646777075403065'>
+    <tag k='environnement' v='urban_war' />
+    <tag k='meteo' v='clair' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='jour' />
+  </node>
+  <node id='-26091' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.0271044085879915' lon='-47.64682153279845' />
+  <node id='-26089' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.005344678393349' lon='-47.64678103980099'>
+    <tag k='son' v='../aide/divers.ogg' />
+  </node>
+  <node id='-26087' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.005214613609132' lon='-47.646779896916456' />
+  <way id='-26095' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true'>
+    <nd ref='-26093' />
+    <nd ref='-26087' />
+    <nd ref='-26089' />
+    <nd ref='-26091' />
+  </way>
+</osm>

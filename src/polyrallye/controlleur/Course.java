@@ -107,6 +107,8 @@ public class Course {
 	protected Etape etape;
 	
 	protected GamePlay ordonnanceur;
+	
+	protected float tempsTimer;
 
 	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
@@ -218,18 +220,32 @@ public class Course {
 		Multithreading.dormir(1000);
 	}
 
+<<<<<<< HEAD
 	public void finDeCourse() {
 		
 		sonVoiture.setRegime(800, false);
+=======
+	public void finDeCourse(int nbSecondesCourse) {
+		fermer();
+		
+>>>>>>> 8c1fced5609b80d206f4f64b8c583ff4d2702aa3
 		Liseuse.lire("Fin de la course");
 		Sound sonFin = new Sound("Sons/divers/fin.wav");
 		sonFin.setGain(2.0f);
 		sonFin.playAndWait();
 		sonFin.delete();
 		
+		Main
+        .changerGestionEntrees(GestionEntreesMenu
+                .getInstance());
+		
+		Duree tempsEtape = new Duree(nbSecondesCourse);
+		
+		Liseuse.lire("Tu as mis "+tempsEtape.getMinutes()+" minutes et "+tempsEtape.getSecondes()+" secondes");
+		
 		if (etape == null) return;
 		
-		etape.setClassement(new Duree((int) timerCompteur.getTime()),
+		etape.setClassement(tempsEtape,
 				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
 		Etape.EnregistrerEtape(etape);
 		
@@ -274,6 +290,7 @@ public class Course {
 	}
 
 	public void fermer() {
+		circuit.stopFrottement();
 		circuit.stop();
 		sonVoiture.stop();
 		timerOrganisateur.cancel();
@@ -281,7 +298,5 @@ public class Course {
 		radio.delete();
 		copilote.delete();
 		Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
-		finDeCourse();
-
 	}
 }

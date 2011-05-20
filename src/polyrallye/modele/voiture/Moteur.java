@@ -4,7 +4,6 @@ import org.jdom.Element;
 
 import polyrallye.controlleur.Main;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.GestionXML;
 
 /**
@@ -260,15 +259,15 @@ public class Moteur {
         
         if (regimeCourant > regimeRupteur) {
         	// Si on a un gros sur-régime
-        	if (regimeCourant*0.7 > regimeRupteur && !panne) {
+        	/*if (regimeCourant*0.7 > regimeRupteur && !panne) {
         		Liseuse.lire("Panne du moteur");
         		Liseuse.lire("Relancez la course");
         		Sound s = new Sound("Sons/Crash/vehicule_1.wav");
         		s.playAndDelete();
         		panne = true;
-        	} else {        		
+        	} else {        		*/
         		rupteurEnclanche = true;
-        	}
+        	//}
         } else if (rupteurEnclanche && regimeCourant < regimeRupteur - 400) {
         	rupteurEnclanche = false;
         }

@@ -97,20 +97,26 @@ public class Conduite {
 		double forceMotrice;
 		double forceMotriceMax = coeffAdherenceFrottement * masse * 9.81;
 
+		
+		// Pour simplifier de façon ÉNORME les calculs,
+		// on suppose que toutes les voitures ont des freins et un ABS
+		// parfait
+		// qui ne bloque même pas les roues une seule fois tellement il
+		// est parfait <3
+		double forceFreinageMax = forceMotriceMax * -1.9;
+
 		if (freinage) {
-
-			// Pour simplifier de façon ÉNORME les calculs,
-			// on suppose que toutes les voitures ont des freins et un ABS
-			// parfait
-			// qui ne bloque même pas les roues une seule fois tellement il
-			// est parfait <3
-
-			forceMotrice = forceMotriceMax * -1.9;
+			forceMotrice = forceFreinageMax;
 		} else {
 
 			double coupleMoteur = moteur.getCouple();
 
 			forceMotrice = forceMotrice(forceMotriceMax * 1.3, coupleMoteur);
+		}
+		
+		// Si on tourne, on a une force de freinage
+		if (virage) {
+			forceMotrice += forceFreinageMax * 0.25;
 		}
 
 		double somme = forceMotrice - forceRestitance;

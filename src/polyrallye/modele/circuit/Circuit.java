@@ -146,7 +146,7 @@ public class Circuit {
 					// if (distancePortion < 50)
 					// Maintenant que l'on a toutes les bonnes informations,
 					// création de la portion
-					Portion portion = new Portion(distancePortion, typePortion,
+					Portion portion = new Portion(distancePortion*0.60, typePortion,
 							anglePortion);
 
 					// Si des evenements lies

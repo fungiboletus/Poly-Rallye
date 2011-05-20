@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-55795' action='modify' timestamp='2009-11-18T12:11:05Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='5' lat='14.6997398' lon='-17.1587272'>
+    <tag k='environnement' v='plaine' />
+    <tag k='meteo' v='vent' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='jour' />
+  </node>
+  <node id='-55793' timestamp='2009-11-18T12:11:05Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6992144' lon='-17.1591045' />
+  <node id='-55791' timestamp='2009-11-18T12:11:05Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6980081' lon='-17.159692' />
+  <node id='-55789' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6970987' lon='-17.1599971' />
+  <node id='-55787' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6953554' lon='-17.1605045' />
+  <node id='-55785' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6945006' lon='-17.1606917' />
+  <node id='-55783' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.693473' lon='-17.1607879' />
+  <node id='-55781' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6910953' lon='-17.1611761' />
+  <node id='-55779' action='modify' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6896866' lon='-17.1617623'>
+    <tag k='son' v='crowds/crowd2.wav' />
+  </node>
+  <node id='-55777' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6885435' lon='-17.1623998' />
+  <node id='-55775' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6875586' lon='-17.163019' />
+  <node id='-55773' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6858968' lon='-17.1641301' />
+  <node id='-55771' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6848722' lon='-17.1648485' />
+  <node id='-55769' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6829508' lon='-17.1661375' />
+  <node id='-55767' action='modify' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6804622' lon='-17.167783'>
+    <tag k='surface' v='terre' />
+  </node>
+  <node id='-55765' timestamp='2009-11-18T12:11:04Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6791655' lon='-17.1681873' />
+  <node id='-55763' action='modify' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6755813' lon='-17.1682812'>
+    <tag k='environnement' v='foret' />
+  </node>
+  <node id='-55761' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6747787' lon='-17.1682813' />
+  <node id='-55759' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6741367' lon='-17.1683477' />
+  <node id='-55757' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.673329' lon='-17.1683103' />
+  <node id='-55755' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6720836' lon='-17.1683874' />
+  <node id='-55753' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6703819' lon='-17.1686391' />
+  <node id='-55751' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6681017' lon='-17.1690633' />
+  <node id='-55749' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6658229' lon='-17.1695757' />
+  <node id='-55747' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6631933' lon='-17.1697575' />
+  <node id='-55745' timestamp='2009-11-18T12:11:02Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6616515' lon='-17.1697235' />
+  <node id='-55743' timestamp='2009-11-18T12:11:02Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6601995' lon='-17.1696834' />
+  <node id='-55741' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6589202' lon='-17.1700803' />
+  <node id='-55739' timestamp='2009-11-18T12:11:03Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6564738' lon='-17.1711001' />
+  <node id='-55737' timestamp='2009-11-18T12:11:02Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6544328' lon='-17.1728309' />
+  <node id='-55735' timestamp='2009-11-18T12:11:02Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.6526354' lon='-17.1737408' />
+  <node id='-55733' timestamp='2009-11-18T12:11:02Z' uid='160042' user='Jean-Marc Liotier' visible='true' version='2' lat='14.650728' lon='-17.1740584' />
+  <way id='-55797' action='modify' timestamp='2009-12-12T15:48:17Z' uid='160042' user='Jean-Marc Liotier' visible='true'>
+    <nd ref='-55795' />
+    <nd ref='-55793' />
+    <nd ref='-55791' />
+    <nd ref='-55789' />
+    <nd ref='-55787' />
+    <nd ref='-55785' />
+    <nd ref='-55783' />
+    <nd ref='-55781' />
+    <nd ref='-55779' />
+    <nd ref='-55777' />
+    <nd ref='-55775' />
+    <nd ref='-55773' />
+    <nd ref='-55771' />
+    <nd ref='-55769' />
+    <nd ref='-55767' />
+    <nd ref='-55765' />
+    <nd ref='-55763' />
+    <nd ref='-55761' />
+    <nd ref='-55759' />
+    <nd ref='-55757' />
+    <nd ref='-55755' />
+    <nd ref='-55753' />
+    <nd ref='-55751' />
+    <nd ref='-55749' />
+    <nd ref='-55747' />
+    <nd ref='-55745' />
+    <nd ref='-55743' />
+    <nd ref='-55741' />
+    <nd ref='-55739' />
+    <nd ref='-55737' />
+    <nd ref='-55735' />
+    <nd ref='-55733' />
+    <tag k='highway' v='tertiary' />
+    <tag k='source' v='GPS track 2008' />
+    <tag k='surface' v='asphalt' />
+  </way>
+</osm>

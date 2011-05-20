@@ -4,7 +4,7 @@
   <gamecategories>
     <gamecategory>Conduite</gamecategory>
   </gamecategories>
-  <shortdescription>Jeu de rallye putain de bien.</shortdescription>
+  <shortdescription>Jeu de rallye</shortdescription>
   <public>NV</public>
   <age>À partir de 10 ans</age>
   <title>PolyRallye</title>
@@ -15,9 +15,9 @@
     <author>Clément Wirth</author>
   </authors>
   <notes>
-    <note>Mais c'est génial.</note>
+    <note>Pensé principalement pour les non voyants</note>
   </notes>
-  <gameplay>Vive les canards.</gameplay>
-  <gamerules>Vive les canards.</gamerules>
+  <gameplay>Toute la conduite se joue selon les instructions du copilote</gameplay>
+  <gamerules>Etre le plus réactif aux commentaires du copilote</gamerules>
 </infos>
 

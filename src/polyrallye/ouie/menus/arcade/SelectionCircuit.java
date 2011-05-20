@@ -29,7 +29,7 @@ public class SelectionCircuit extends Menu implements ActionMenu {
 			File[] op = new File("Circuits/").listFiles();
 			for (int i = 0; i < op.length; i++) {
 				String t = op[i].getName();
-				if(op[i].isDirectory())
+				if(op[i].isDirectory() && !op[i].equals("Permis"))
 				ajouterElement(t,new SelectionCircuitInDirectory(this,t, voiture));
 			}
 			
