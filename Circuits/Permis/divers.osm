@@ -6,7 +6,7 @@
     <tag k='surface' v='asphalt' />
     <tag k='temps' v='jour' />
   </node>
-  <node id='-26091' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.008668295647156' lon='-47.646830439498515' />
+  <node id='-26091' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.0271044085879915' lon='-47.64682153279845' />
   <node id='-26089' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.005344678393349' lon='-47.64678103980099'>
     <tag k='son' v='../aide/divers.ogg' />
   </node>
