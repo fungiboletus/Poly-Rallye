@@ -40,6 +40,8 @@ public class GamePlay extends TimerTask {
 	protected double position;
 
 	protected float chrono;
+	
+	protected float tempsTick;
 
 	/**
 	 * Temps pendant lequel le joueur doit tourner dans le virage
@@ -77,7 +79,7 @@ public class GamePlay extends TimerTask {
 		// Gestion du temps
 		org.lwjgl.util.Timer.tick();
 		chrono = c.timerCompteur.getTime();
-		float tempsTick = chrono - c.temps;
+		tempsTick = chrono - c.temps;
 		c.temps = chrono;
 
 		double distanceParcourue = c.conduite.tick(tempsTick
@@ -290,6 +292,15 @@ public class GamePlay extends TimerTask {
 			tempsAvantReaction = chrono;
 		} else if (distanceAvantVirage < 0.0) {
 			virageSuivant();
+		} else if (c.entrees.isGauche() || c.entrees.isDroite()) {
+			if (chronoVirageNonDesire > TEMPS_REACTION) {
+				Main.logInfo("Il ne faut pas tourner n'importe quand");
+				c.crash();
+				distancePortion = 0.0;
+				chronoVirageNonDesire = 0.0;
+			} else {
+				chronoVirageNonDesire += tempsTick;
+			}
 		}
 	}
 
@@ -299,6 +310,7 @@ public class GamePlay extends TimerTask {
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
 			distancePortion = 0.0;
+			chronoVirageNonDesire = 0.0;
 			// On se remet là où on devait être pour freiner
 			// c.conduite.setPosition(positionAvantFreinage);
 			c.penalite += TEMPS_REACTION + 10.0;
@@ -322,6 +334,7 @@ public class GamePlay extends TimerTask {
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
 			distancePortion = 0.0;
+			chronoVirageNonDesire = 0.0;
 			c.penalite += TEMPS_REACTION + 5.0;
 		} else {
 			if ((portionCourante.getType() == TypeRoute.GAUCHE
@@ -352,6 +365,8 @@ public class GamePlay extends TimerTask {
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
 			distancePortion = 0.0;
+
+			chronoVirageNonDesire = 0.0;
 			c.penalite += TEMPS_REACTION + 5.0;
 		}
 	}
@@ -383,27 +398,6 @@ public class GamePlay extends TimerTask {
 				break;
 			}
 		}
-	}
-
-	public boolean passageVirage() {
-		if (distanceAvantVirage > 0.0) {
-			return false;
-		}
-
-		double marge = c.conduite.getDistanceFreinage(vitesseMaxVirage);
-
-		// Une petite marge
-		if (marge > 20.0) {
-			Main.logImportant("Marge: " + marge);
-			c.crash();
-			c.penalite += marge;
-			actionCourante = TypeAction.ACCELERATION;
-			distancePortion = 0.0;
-		} else {
-			virageSuivant();
-		}
-
-		return true;
 	}
 
 	public void modeVirageNonDesire() {
