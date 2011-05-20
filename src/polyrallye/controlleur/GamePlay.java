@@ -373,13 +373,17 @@ public class GamePlay extends TimerTask {
 
 	public void modeFreinage() {
 		// Si on freine trop
-		if (vitesse > 0.2 && vitesse <= vitesseMaxVirage) {
+		if (vitesse > 0.02 && vitesse <= vitesseMaxVirage) {
 			virageSuivant();
 		}
 	}
 
 	public void virageSuivant() {
-		portionCourante = c.circuit.nextPortion();
+		
+		do {			
+			portionCourante = c.circuit.nextPortion();
+		} while (portionCourante != null && portionCourante.getAngle() < 3.0);
+		
 		distancePortion = 0.0;
 
 		if (portionCourante == null) {
