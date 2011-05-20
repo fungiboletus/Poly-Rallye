@@ -297,8 +297,10 @@ public class OrdonnanceurCourse extends TimerTask {
 
 	public void modeAvantFreinage() {
 		if (chrono - tempsAvantReaction > TEMPS_REACTION) {
+			Main.logInfo("Le freinage na pas été effectué à temps");
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
 			// On se remet là où on devait être pour freiner
 			// c.conduite.setPosition(positionAvantFreinage);
 			c.penalite += TEMPS_REACTION + 10.0;
@@ -318,8 +320,10 @@ public class OrdonnanceurCourse extends TimerTask {
 
 	public void modeAvantVirage() {
 		if (chrono - tempsAvantReaction > TEMPS_REACTION) {
+			Main.logInfo("Vous n'avez pas tourné à temps");
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
 			c.penalite += TEMPS_REACTION + 5.0;
 		} else {
 			if ((portionCourante.getType() == TypeRoute.GAUCHE
@@ -328,12 +332,14 @@ public class OrdonnanceurCourse extends TimerTask {
 							&& !c.entrees.isGauche() && c.entrees.isDroite())) {
 				actionCourante = TypeAction.VIRAGE;
 				tempsAvantReaction = chrono;
-				tempsVirage = 1.0;
+				tempsVirage = c.conduite.getTempsPourVirage(portionCourante.getAngle());
+				Main.logImportant("Temps de : "+tempsVirage);
 			}
 		}
 	}
 
 	public void modeVirage() {
+		distancePortion = 0.0;
 		if ((portionCourante.getType() == TypeRoute.GAUCHE
 				&& c.entrees.isGauche() && !c.entrees.isDroite())
 				|| (portionCourante.getType() == TypeRoute.DROITE
@@ -398,6 +404,7 @@ public class OrdonnanceurCourse extends TimerTask {
 			c.crash();
 			c.penalite += marge;
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
 		} else {
 			virageSuivant();
 		}

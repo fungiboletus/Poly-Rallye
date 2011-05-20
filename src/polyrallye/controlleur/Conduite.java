@@ -247,6 +247,24 @@ public class Conduite {
 		return ya + (angleVirage - xa)*((yb-ya)/(xb-xa));
 	}
 	
+	public double getTempsPourVirage(double angleVirage) {
+		double xa = 0.0;
+		double xb = 180.0;
+		
+		double xxa = 0.0;
+		double xxb = 100.0;
+		
+		double yya = 1.3;
+		double yyb = 0.2;
+		
+		double r = yya + (vitesse - xxa)*((yyb-yya)/(xxb-xxa));
+		
+		double ya = r*1.5;
+		double yb = r*0.42;
+		
+		return ya + (angleVirage - xa)*((yb-ya)/(xb-xa));
+	}
+	
 	/**
 	 * Calcule la resistance aérodynamique en fonction de la voiture, et de sa
 	 * vitesse.
