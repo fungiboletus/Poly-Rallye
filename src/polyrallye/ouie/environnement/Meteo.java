@@ -55,7 +55,8 @@ public class Meteo {
 			}
 
 			if (env == -1) {
-				lectureManifeste[0] = "defaut";
+				environnement = "defaut";
+				lectureManifeste[0] = environnement;
 				lectureManifeste = new LectureFichier(rep).lire(
 						"manifeste.cfg", lectureManifeste);
 				if (lectureManifeste[0] != null)
@@ -63,7 +64,6 @@ public class Meteo {
 							.substring(lectureManifeste[0].indexOf(" ") + 1));
 
 			}
-
 			// On prend un son au pif parmi ceux disponibles
 			Random random = new Random();
 			meteo = new Sound(rep + environnement + "_"
