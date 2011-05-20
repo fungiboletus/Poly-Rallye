@@ -16,13 +16,10 @@ import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Transmission;
 import polyrallye.modele.voiture.Voiture;
-import polyrallye.ouie.ActionMenu;
-import polyrallye.ouie.Aide;
 import polyrallye.ouie.Copilote;
 import polyrallye.ouie.Klaxon;
 import polyrallye.ouie.Radio;
 import polyrallye.ouie.SonVoiture;
-import polyrallye.ouie.environnement.Crash;
 import polyrallye.ouie.liseuse.Liseuse;
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.utilitaires.GestionXML;
@@ -86,11 +83,6 @@ public class Course {
 	 * Copilote.
 	 */
 	protected Copilote copilote;
-
-	/**
-	 * Son de l'aide
-	 */
-	protected Aide aide;
 	
 	/**
 	 * Radio
