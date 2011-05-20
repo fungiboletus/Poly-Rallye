@@ -7,7 +7,7 @@ import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
 
-public class OrdonnanceurCourse extends TimerTask {
+public class GamePlay extends TimerTask {
 
 	protected Course c;
 
@@ -60,7 +60,7 @@ public class OrdonnanceurCourse extends TimerTask {
 	 */
 	protected double distancePortion = 0.0;
 
-	public OrdonnanceurCourse(Course course) {
+	public GamePlay(Course course) {
 		super();
 		this.c = course;
 
@@ -348,8 +348,11 @@ public class OrdonnanceurCourse extends TimerTask {
 				actionCourante = TypeAction.ACCELERATION;
 			}
 		} else {
-			Main.logImportant("CANARD");
+			Main.logInfo("Vous n'avez pas tourné assez longtemps");
+			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
+			c.penalite += TEMPS_REACTION + 5.0;
 		}
 	}
 

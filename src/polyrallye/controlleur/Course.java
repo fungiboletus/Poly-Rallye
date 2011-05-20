@@ -106,7 +106,7 @@ public class Course {
 
 	protected Etape etape;
 	
-	protected OrdonnanceurCourse ordonnanceur;
+	protected GamePlay ordonnanceur;
 
 	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
@@ -143,7 +143,7 @@ public class Course {
 			e.printStackTrace();
 		}
 		
-		ordonnanceur = new OrdonnanceurCourse(this);
+		ordonnanceur = new GamePlay(this);
 
 	}
 

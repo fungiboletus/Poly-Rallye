@@ -58,6 +58,7 @@ public class Meteo {
 
 		// On prend un son au pif parmi ceux disponibles
 		Random random = new Random();
+		System.out.println(env);
 		meteo = new Sound(rep + environnement + "_" + (random.nextInt(env) + 1)
 				+ ".wav");
 
