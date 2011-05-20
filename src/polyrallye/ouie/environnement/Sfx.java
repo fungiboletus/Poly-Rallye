@@ -11,8 +11,7 @@ public class Sfx extends Thread {
 	protected String rep;
 	protected int nombre;
 	protected long intervalle;
-
-	protected float vitesse;
+	
 	protected Sound temp;
 
 	protected float positionX;
@@ -45,7 +44,6 @@ public class Sfx extends Thread {
 		this.nombre = nombre;
 		this.intervalle = intervalle;
 		isAlive = true;
-		vitesse = 0;
 		temp = new Sound();
 		positionX = 0;
 		positionY = 0;
@@ -117,7 +115,6 @@ public class Sfx extends Thread {
 	}
 
 	public void setVitesse(float t) {
-		vitesse = t;
 		if (isFixe && t < 18)
 			isPaused = true;
 		else if (isFixe)

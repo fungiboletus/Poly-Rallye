@@ -25,6 +25,7 @@ public class SelectionJoueur extends Menu implements ActionMenu{
 		lancer();
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public void remplir() {
 		

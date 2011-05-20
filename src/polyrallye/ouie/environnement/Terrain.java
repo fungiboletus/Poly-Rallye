@@ -10,12 +10,10 @@ public class Terrain {
 
 	protected Sound son;
 	protected Sound tournant;
-
-	protected Double frottement;
+	
 	protected double distance;
 
 	protected Sfx sfx;
-	public boolean isPaused;
 
 	public Terrain(String t) {
 		terrain = t;

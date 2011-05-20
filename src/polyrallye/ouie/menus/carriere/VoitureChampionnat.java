@@ -57,9 +57,16 @@ public class VoitureChampionnat extends Menu implements ActionMenu {
         List<Voiture> l = Joueur.session.getGarage().getVoitures();
         ListIterator<Voiture> i = l.listIterator(l.size());
 
+<<<<<<< HEAD
         while (i.hasPrevious()) {
             Voiture v = i.previous();
             ajouterElement(v.getNomComplet(), new LancementCourse(v, circuit));
+=======
+                while (i.hasPrevious()) {
+                        Voiture v = i.previous();
+                        ajouterElement(v.getNomComplet(), new LancementCourse(v, circuit, etape));
+                }
+>>>>>>> 58c141144b2c8a85292f4716197e056865274d60
         }
     }
 }

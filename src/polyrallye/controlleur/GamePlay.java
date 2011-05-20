@@ -6,10 +6,8 @@ import polyrallye.modele.circuit.Portion;
 import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
-import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.utilitaires.Sound;
 
-public class OrdonnanceurCourse extends TimerTask {
+public class GamePlay extends TimerTask {
 
 	protected Course c;
 
@@ -62,7 +60,7 @@ public class OrdonnanceurCourse extends TimerTask {
 	 */
 	protected double distancePortion = 0.0;
 
-	public OrdonnanceurCourse(Course course) {
+	public GamePlay(Course course) {
 		super();
 		this.c = course;
 
@@ -282,7 +280,7 @@ public class OrdonnanceurCourse extends TimerTask {
 			c.circuit.stopFrottement();
 		}
 	}
-	
+
 	public void modeAcceleration() {
 		// Si le freinage approche trop
 		if (distanceFreinage >= distanceAvantVirage
@@ -297,8 +295,10 @@ public class OrdonnanceurCourse extends TimerTask {
 
 	public void modeAvantFreinage() {
 		if (chrono - tempsAvantReaction > TEMPS_REACTION) {
+			Main.logInfo("Le freinage na pas été effectué à temps");
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
 			// On se remet là où on devait être pour freiner
 			// c.conduite.setPosition(positionAvantFreinage);
 			c.penalite += TEMPS_REACTION + 10.0;
@@ -318,8 +318,10 @@ public class OrdonnanceurCourse extends TimerTask {
 
 	public void modeAvantVirage() {
 		if (chrono - tempsAvantReaction > TEMPS_REACTION) {
+			Main.logInfo("Vous n'avez pas tourné à temps");
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
 			c.penalite += TEMPS_REACTION + 5.0;
 		} else {
 			if ((portionCourante.getType() == TypeRoute.GAUCHE
@@ -328,12 +330,15 @@ public class OrdonnanceurCourse extends TimerTask {
 							&& !c.entrees.isGauche() && c.entrees.isDroite())) {
 				actionCourante = TypeAction.VIRAGE;
 				tempsAvantReaction = chrono;
-				tempsVirage = 1.0;
+				tempsVirage = c.conduite.getTempsPourVirage(portionCourante
+						.getAngle());
+				Main.logImportant("Temps de : " + tempsVirage);
 			}
 		}
 	}
 
 	public void modeVirage() {
+		distancePortion = 0.0;
 		if ((portionCourante.getType() == TypeRoute.GAUCHE
 				&& c.entrees.isGauche() && !c.entrees.isDroite())
 				|| (portionCourante.getType() == TypeRoute.DROITE
@@ -343,8 +348,11 @@ public class OrdonnanceurCourse extends TimerTask {
 				actionCourante = TypeAction.ACCELERATION;
 			}
 		} else {
-			Main.logImportant("CANARD");
+			Main.logInfo("Vous n'avez pas tourné assez longtemps");
+			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
+			c.penalite += TEMPS_REACTION + 5.0;
 		}
 	}
 
@@ -360,15 +368,7 @@ public class OrdonnanceurCourse extends TimerTask {
 		distancePortion = 0.0;
 
 		if (portionCourante == null) {
-			c.timerOrganisateur.cancel();
-			c.timerCompteur.pause();
-			c.sonVoiture.setRegime(800, false);
-			Liseuse.lire("Fin de la course");
-			Sound sonFin = new Sound("Sons/divers/fin.wav");
-			sonFin.setGain(2.0f);
-			sonFin.playAndWait();
-			sonFin.delete();
-			c.fermer();
+			c.finDeCourse();
 		} else {
 
 			actionCourante = TypeAction.AVANT_VIRAGE;
@@ -398,6 +398,7 @@ public class OrdonnanceurCourse extends TimerTask {
 			c.crash();
 			c.penalite += marge;
 			actionCourante = TypeAction.ACCELERATION;
+			distancePortion = 0.0;
 		} else {
 			virageSuivant();
 		}

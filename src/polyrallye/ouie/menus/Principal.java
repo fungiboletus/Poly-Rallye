@@ -8,7 +8,7 @@ import polyrallye.ouie.utilitaires.Sound;
 
 public class Principal extends Menu {
 
-	protected static Sound musique;
+	//protected static Sound musique;
 
 	static {
 		// musique = new Sound("Sons/foret/jour_1.wav");

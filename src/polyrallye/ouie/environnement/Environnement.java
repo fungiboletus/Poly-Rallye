@@ -1,10 +1,6 @@
 package polyrallye.ouie.environnement;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Timer;
@@ -236,10 +232,6 @@ public class Environnement {
 		meteo.play();
 	}
 
-	public void fade() {
-		ambiance.setVelocity(0, 0, 100f);
-	}
-
 	public void setDistance(double d) {
 		sfx.setDistance(d);
 		distance = d * 100;
@@ -258,14 +250,6 @@ public class Environnement {
 
 	public String getType() {
 		return type;
-	}
-	
-	public void Pause(boolean pause) {
-	
-			ambiance.pause(pause);
-			sfx.pause(pause);
-			meteo.Pause(pause);
-		
 	}
 
 	public void playCrash() {
