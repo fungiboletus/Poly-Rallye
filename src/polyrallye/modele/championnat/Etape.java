@@ -265,7 +265,7 @@ public class Etape {
         // mise a jour des écarts
         setecart();
 
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < classement.size(); ++i) {
             classement.get(i).setClassement(i + 1);
             // System.out.println(classement.get(i));
             if (i > 1
@@ -283,7 +283,7 @@ public class Etape {
     public void setecart() {
         int premier = classement.get(0).getDuree().ConvertToDixiemes();
 
-        for (int i = 1; i < 10; ++i) {
+        for (int i = 1; i < classement.size() ; ++i) {
             classement.get(i).setEcart(
                     new Duree(classement.get(i).getDuree().ConvertToDixiemes()
                             - premier));
@@ -367,7 +367,7 @@ public class Etape {
      * 
      */
     public void viderClassement() {
-        for (int i = 0; i < classement.size() - 1; ++i) {
+        for (int i = 0; i < classement.size(); ++i) {
             classement.get(i).setDuree(new Duree(0));
         }
     }

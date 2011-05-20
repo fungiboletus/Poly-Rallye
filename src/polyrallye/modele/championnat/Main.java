@@ -1,5 +1,7 @@
 package polyrallye.modele.championnat;
 
+import polyrallye.controlleur.Course;
+import polyrallye.modele.circuit.Circuit;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.StockVoitures;
 
@@ -7,7 +9,7 @@ import polyrallye.modele.voiture.StockVoitures;
  * Main : Test du namespace "Championnat"
  * 
  * @author ochi
- *
+ * 
  */
 public class Main {
 
@@ -48,24 +50,23 @@ public class Main {
         // LE.get(i).EnregistrerEtape(LE.get(i));
 
         // chargement xml
-        String nomJoueur = "zizou";
+        String nomJoueur = "Gazouz2";
         Joueur j = Joueur.chargerJoueur(nomJoueur);
         j.setSessionCourante();
 
         Championnat champ = Championnat.chargerChampionnat("championnat1");
 
-        champ.getEtapes().get(1).setClassement(new Duree(0,5,21,9),
+        champ.getEtapes().get(1).setClassement(new Duree(0, 5, 21, 9),
                 StockVoitures.getVoitureParNom("Peugeot 307 WRC"));
-        
-        champ.getEtapes().get(1).viderClassement();
-        
+
         System.out.println(champ.getEtapes().get(1).getClassement());
 
         Etape.EnregistrerEtape(champ.getEtapes().get(1));
         Championnat.EnregistrerChampionnat(champ);
-        //Championnat Champ = Championnat
-//                .chargerChampionnat("championnat européen");
-//        Champ.setClassement();
-        
-        }
+               
+        // Championnat Champ = Championnat
+        // .chargerChampionnat("championnat européen");
+        // Champ.setClassement();
+
+    }
 }
