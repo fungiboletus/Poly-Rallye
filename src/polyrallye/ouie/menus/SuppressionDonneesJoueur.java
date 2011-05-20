@@ -2,6 +2,8 @@ package polyrallye.ouie.menus;
 
 
 
+import java.io.File;
+
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
@@ -12,14 +14,14 @@ public class SuppressionDonneesJoueur extends Menu implements ActionMenu{
 	
 	protected String nom;
 	
-	public SuppressionDonneesJoueur(Menu menuPrecedent,String nom) {
+	public SuppressionDonneesJoueur(Menu menuPrecedent) {
 		super(menuPrecedent);
-		this.nom=nom;
+		nom = Joueur.session.getNom();
 	}
 	
 	@Override
 	public void actionMenu() {
-		Liseuse.lire("Voulez vous vraiment supprimer la progression du joueur "+nom+" ?");
+		Liseuse.lire("Voulez vous vraiment supprimer la progression du joueur "+Joueur.session.getNom()+" ?");
 		lancer();
 	}
 	
@@ -35,17 +37,21 @@ public class SuppressionDonneesJoueur extends Menu implements ActionMenu{
 						
 					}
 				});
-				ajouterElement("Effacer la progression du joueur "+nom, new ActionMenu() {
+				ajouterElement("Effacer la progression du joueur "+Joueur.session.getNom(), new ActionMenu() {
 					
 					@Override
 					public void actionMenu() {
 						Joueur.session.RemiseAZero();
 						Joueur.EnregistrerJoueur(Joueur.session);
 						
-						
+						String[] list = new File("Championnats/").list();
+						for (int i = 0; i < list.length; i++) {
+							if(list[i].contains(Joueur.session.getNom()))
+								new File("Championnats/"+list[i]).delete();
+						}
 						
 
-						Liseuse.lire("La progression du joueur "+nom+" a été effacé");
+						Liseuse.lire("La progression du joueur "+Joueur.session.getNom()+" a été effacé");
 						Liseuse.lire("Vous êtes "+Joueur.session.getNom());
 						ennoncer();
 					}
