@@ -4,174 +4,174 @@
   <joueur>Ghazi</joueur>
   <etape>
     <numero>1</numero>
-    <nom>RallyedeMonaco_Ghazi</nom>
+    <nom>RallyedeMonaco</nom>
     <joueur>
       <nom>Ghazi</nom>
-      <argent>9224</argent>
+      <argent>520</argent>
       <garage>
-        <voiture>Peugeot 307 CC 2 litres 180</voiture>
+        <voiture>Alfa Romeo 155 949;3R</voiture>
       </garage>
     </joueur>
-    <circuit>Permis/Argentine</circuit>
+    <circuit>/Permis/Argentine</circuit>
     <classement>
       <position>1</position>
-      <nom>Dialo</nom>
+      <nom>Paolista</nom>
       <voiture />
-      <duree>379</duree>
+      <duree>3455</duree>
     </classement>
     <classement>
       <position>2</position>
-      <nom>Trapatoni</nom>
+      <nom>Zicko</nom>
       <voiture />
-      <duree>403</duree>
-      <ecart>24</ecart>
+      <duree>3488</duree>
+      <ecart>33</ecart>
     </classement>
     <classement>
       <position>3</position>
-      <nom>Zicko</nom>
+      <nom>Esposa</nom>
       <voiture />
-      <duree>422</duree>
-      <ecart>43</ecart>
+      <duree>3564</duree>
+      <ecart>109</ecart>
     </classement>
     <classement>
       <position>4</position>
-      <nom>Salem</nom>
+      <nom>Ghazi</nom>
       <voiture />
-      <duree>473</duree>
-      <ecart>94</ecart>
+      <duree>3669</duree>
+      <ecart>214</ecart>
     </classement>
     <classement>
       <position>5</position>
-      <nom>Ghazi</nom>
+      <nom>Chang</nom>
       <voiture />
-      <duree>480</duree>
-      <ecart>101</ecart>
+      <duree>3670</duree>
+      <ecart>215</ecart>
     </classement>
     <classement>
       <position>6</position>
-      <nom>Chang</nom>
+      <nom>Trapatoni</nom>
       <voiture />
-      <duree>480</duree>
-      <ecart>101</ecart>
+      <duree>3721</duree>
+      <ecart>266</ecart>
     </classement>
     <classement>
       <position>7</position>
-      <nom>Esposa</nom>
+      <nom>Dialo</nom>
       <voiture />
-      <duree>501</duree>
-      <ecart>122</ecart>
+      <duree>3835</duree>
+      <ecart>380</ecart>
     </classement>
     <classement>
       <position>8</position>
-      <nom>Dupont</nom>
+      <nom>Salem</nom>
       <voiture />
-      <duree>518</duree>
-      <ecart>139</ecart>
+      <duree>3905</duree>
+      <ecart>450</ecart>
     </classement>
     <classement>
       <position>9</position>
-      <nom>Paolista</nom>
+      <nom>Dupont</nom>
       <voiture />
-      <duree>524</duree>
-      <ecart>145</ecart>
+      <duree>3965</duree>
+      <ecart>510</ecart>
     </classement>
     <classement>
       <position>10</position>
       <nom>Munoz</nom>
       <voiture />
-      <duree>13746</duree>
-      <ecart>13367</ecart>
+      <duree>13504</duree>
+      <ecart>10049</ecart>
     </classement>
   </etape>
   <etape>
     <numero>2</numero>
-    <nom>RallyedeNaples_Ghazi</nom>
+    <nom>RallyedeNaples</nom>
     <joueur>
       <nom>Ghazi</nom>
-      <argent>9224</argent>
+      <argent>520</argent>
       <garage>
-        <voiture>Peugeot 307 CC 2 litres 180</voiture>
+        <voiture>Alfa Romeo 155 949;3R</voiture>
       </garage>
     </joueur>
     <circuit>Normal/Naples</circuit>
     <classement>
       <position>1</position>
-      <nom>Esposa</nom>
+      <nom>Paolista</nom>
       <voiture>Volkswagen W12 Coupe</voiture>
-      <duree>0</duree>
+      <duree>3020</duree>
     </classement>
     <classement>
       <position>2</position>
-      <nom>Trapatoni</nom>
-      <voiture>Jaguar XJ-13 serie</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <nom>Zicko</nom>
+      <voiture>Peugeot 405 Turbo 16 Grand Raid</voiture>
+      <duree>3036</duree>
+      <ecart>16</ecart>
     </classement>
     <classement>
       <position>3</position>
-      <nom>Dialo</nom>
-      <voiture>Peugeot 205 Turbo 16 Évolution 1</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <nom>Esposa</nom>
+      <voiture>Audi RS6</voiture>
+      <duree>3164</duree>
+      <ecart>144</ecart>
     </classement>
     <classement>
       <position>4</position>
-      <nom>Paolista</nom>
-      <voiture>Lamborghini Reventon Roadster</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <nom>Trapatoni</nom>
+      <voiture>Audi RS6 Avant</voiture>
+      <duree>3165</duree>
+      <ecart>145</ecart>
     </classement>
     <classement>
       <position>5</position>
-      <nom>Chang</nom>
-      <voiture>Peugeot 307 WRC</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <nom>Munoz</nom>
+      <voiture>Volkswagen W12 Roadster</voiture>
+      <duree>3199</duree>
+      <ecart>179</ecart>
     </classement>
     <classement>
       <position>6</position>
-      <nom>Dupont</nom>
+      <nom>Ghazi</nom>
       <voiture>Peugeot 307 WRC</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <duree>3219</duree>
+      <ecart>199</ecart>
     </classement>
     <classement>
       <position>7</position>
-      <nom>zizou</nom>
+      <nom>Chang</nom>
       <voiture>Peugeot 307 WRC</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <duree>3266</duree>
+      <ecart>246</ecart>
     </classement>
     <classement>
       <position>8</position>
-      <nom>Zicko</nom>
-      <voiture>Audi RS6</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <nom>Dialo</nom>
+      <voiture>Lamborghini Diablo GTR</voiture>
+      <duree>3318</duree>
+      <ecart>298</ecart>
     </classement>
     <classement>
       <position>9</position>
-      <nom>Salem</nom>
-      <voiture>Lamborghini Diablo GTR</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
+      <nom>Dupont</nom>
+      <voiture>Dodge Viper SRT-10</voiture>
+      <duree>3484</duree>
+      <ecart>464</ecart>
     </classement>
     <classement>
       <position>10</position>
-      <nom>Munoz</nom>
-      <voiture>Lamborghini Murcielago serie</voiture>
-      <duree>3303</duree>
-      <ecart>3303</ecart>
+      <nom>Salem</nom>
+      <voiture>Peugeot 206 WRC</voiture>
+      <duree>3552</duree>
+      <ecart>532</ecart>
     </classement>
   </etape>
   <etape>
     <numero>2</numero>
-    <nom>RallyedeValbonne_Ghazi</nom>
+    <nom>RallyedeValbonne</nom>
     <joueur>
       <nom>Ghazi</nom>
-      <argent>9224</argent>
+      <argent>520</argent>
       <garage>
-        <voiture>Peugeot 307 CC 2 litres 180</voiture>
+        <voiture>Alfa Romeo 155 949;3R</voiture>
       </garage>
     </joueur>
     <circuit>Normal/Valbonne</circuit>
@@ -247,12 +247,12 @@
   </etape>
   <etape>
     <numero>2</numero>
-    <nom>RallyedeMontpellier_Ghazi</nom>
+    <nom>RallyedeMontpellier</nom>
     <joueur>
       <nom>Ghazi</nom>
-      <argent>9224</argent>
+      <argent>520</argent>
       <garage>
-        <voiture>Peugeot 307 CC 2 litres 180</voiture>
+        <voiture>Alfa Romeo 155 949;3R</voiture>
       </garage>
     </joueur>
     <circuit>Herault/Montpellier</circuit>
@@ -328,12 +328,12 @@
   </etape>
   <etape>
     <numero>2</numero>
-    <nom>RallyedeAnnecy_Ghazi</nom>
+    <nom>RallyedeAnnecy</nom>
     <joueur>
       <nom>Ghazi</nom>
-      <argent>9224</argent>
+      <argent>520</argent>
       <garage>
-        <voiture>Peugeot 307 CC 2 litres 180</voiture>
+        <voiture>Alfa Romeo 155 949;3R</voiture>
       </garage>
     </joueur>
     <circuit>Divers/Annecy</circuit>

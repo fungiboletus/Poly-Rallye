@@ -48,11 +48,11 @@ public class Main {
         // LE.get(i).EnregistrerEtape(LE.get(i));
 
         // chargement xml
-        String nomJoueur = "Gazouz2";
+        String nomJoueur = "Ghazi";
         Joueur j = Joueur.chargerJoueur(nomJoueur);
         j.setSessionCourante();
 
-        Championnat champ = Championnat.chargerChampionnat("Ressources/championnat1");
+        Championnat champ = Championnat.chargerChampionnat("championnatEurope");
 
         champ.getEtapes().get(1).setClassement(new Duree(0, 5, 21, 9),
                 StockVoitures.getVoitureParNom("Peugeot 307 WRC"));

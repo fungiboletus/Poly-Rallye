@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <joueur>
   <nom>Ghazi</nom>
-  <argent>20000</argent>
-  <garage />
+  <argent>520</argent>
+  <garage>
+    <voiture>Alfa Romeo 155 949;3R</voiture>
+  </garage>
 </joueur>
 

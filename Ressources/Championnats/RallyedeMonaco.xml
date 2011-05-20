@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <etape>
   <numero>1</numero>
-  <nom>RallyedeMonaco_Ghazi</nom>
+  <nom>RallyedeMonaco</nom>
   <joueur>
     <nom>Ghazi</nom>
-    <argent>9224</argent>
+    <argent>520</argent>
     <garage>
-      <voiture>Peugeot 307 CC 2 litres 180</voiture>
+      <voiture>Alfa Romeo 155 949;3R</voiture>
     </garage>
   </joueur>
-  <circuit>Permis/Argentine</circuit>
+  <circuit>/Permis/Argentine</circuit>
   <classement>
     <position>1</position>
-    <nom>Dialo</nom>
-    <voiture>Toyota Celica TS</voiture>
-    <duree>379</duree>
+    <nom>Salem</nom>
+    <voiture>Citroën C4 Grand Picasso HDi</voiture>
+    <duree>353</duree>
   </classement>
   <classement>
     <position>2</position>
-    <nom>Trapatoni</nom>
-    <voiture>Citroën Xsara VTS</voiture>
-    <duree>403</duree>
-    <ecart>24</ecart>
-  </classement>
-  <classement>
-    <position>3</position>
-    <nom>Zicko</nom>
-    <voiture>Alfa Romeo 145 2.0 Quadrifoglio</voiture>
-    <duree>422</duree>
+    <nom>Munoz</nom>
+    <voiture>Citroën SM serie</voiture>
+    <duree>396</duree>
     <ecart>43</ecart>
   </classement>
   <classement>
+    <position>3</position>
+    <nom>Esposa</nom>
+    <voiture>Toyota Celica TS</voiture>
+    <duree>400</duree>
+    <ecart>47</ecart>
+  </classement>
+  <classement>
     <position>4</position>
-    <nom>Salem</nom>
-    <voiture>Citroën DS Pallas</voiture>
-    <duree>473</duree>
-    <ecart>94</ecart>
+    <nom>Chang</nom>
+    <voiture>Alfa Romeo 155 949;3R</voiture>
+    <duree>404</duree>
+    <ecart>51</ecart>
   </classement>
   <classement>
     <position>5</position>
-    <nom>Ghazi</nom>
-    <voiture>Peugeot 307 CC 2 litres 180</voiture>
-    <duree>480</duree>
-    <ecart>101</ecart>
+    <nom>Paolista</nom>
+    <voiture>Renault 19 Cabriolet</voiture>
+    <duree>435</duree>
+    <ecart>82</ecart>
   </classement>
   <classement>
     <position>6</position>
-    <nom>Chang</nom>
-    <voiture>Peugeot 307 CC 2 litres 180</voiture>
-    <duree>480</duree>
-    <ecart>101</ecart>
+    <nom>Ghazi</nom>
+    <voiture>Alfa Romeo 155 949;3R</voiture>
+    <duree>450</duree>
+    <ecart>97</ecart>
   </classement>
   <classement>
     <position>7</position>
-    <nom>Esposa</nom>
-    <voiture>Austin A135 Princess IV</voiture>
-    <duree>501</duree>
-    <ecart>122</ecart>
+    <nom>Zicko</nom>
+    <voiture>Citroën XM Turbo</voiture>
+    <duree>452</duree>
+    <ecart>99</ecart>
   </classement>
   <classement>
     <position>8</position>
     <nom>Dupont</nom>
-    <voiture>Fiat Multipla 115 JTD SX</voiture>
-    <duree>518</duree>
-    <ecart>139</ecart>
+    <voiture>Toyota Sprinter Trueno FZ</voiture>
+    <duree>481</duree>
+    <ecart>128</ecart>
   </classement>
   <classement>
     <position>9</position>
-    <nom>Paolista</nom>
-    <voiture>Citroën CX Prestige</voiture>
-    <duree>524</duree>
-    <ecart>145</ecart>
+    <nom>Dialo</nom>
+    <voiture>Alfa Romeo Spider 1.8 Twin Spark 16v</voiture>
+    <duree>517</duree>
+    <ecart>164</ecart>
   </classement>
   <classement>
     <position>10</position>
-    <nom>Munoz</nom>
-    <voiture>Fiat Barchetta serie</voiture>
-    <duree>534</duree>
-    <ecart>155</ecart>
+    <nom>Trapatoni</nom>
+    <voiture>Fiat 500 1.4 16v</voiture>
+    <duree>556</duree>
+    <ecart>203</ecart>
   </classement>
 </etape>
 

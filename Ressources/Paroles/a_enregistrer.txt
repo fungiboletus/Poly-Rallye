@@ -4984,3 +4984,820 @@ Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitu
 Permis - Apprenez a conduire et comment jouer au jeu
 Jeu libre - Faites des courses sans objectifs, juste pour jouer
 Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Menu principal - Sélectionnez le mode de jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Comment voulez-vous choisir votre voiture ?
+Désolé il y a un problème avec ce circuit
+Désolé il y a un problème avec ce circuit
+Désolé il y a un problème avec ce circuit
+Désolé il y a un problème avec ce circuit
+Menu principal - Sélectionnez le mode de jeu
+Comment voulez-vous choisir votre voiture ?
+Veuillez choisir un circuit
+Menu principal - Sélectionnez le mode de jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Garage
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatAfrique
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeAnnecy_Ghazi
+RallyedeAnnecy_Ghazi
+classement RallyedeAnnecy_Ghazi
+RallyedeMontpellier_Ghazi
+classement RallyedeMontpellier_Ghazi
+RallyedeValbonne_Ghazi
+classement RallyedeValbonne_Ghazi
+RallyedeNaples_Ghazi
+classement RallyedeNaples_Ghazi
+RallyedeMonaco_Ghazi
+classement RallyedeMonaco_Ghazi
+RallyedeAnnecy_Ghazi
+classement RallyedeAnnecy_Ghazi
+RallyedeMontpellier_Ghazi
+classement RallyedeMontpellier_Ghazi
+RallyedeValbonne_Ghazi
+classement RallyedeValbonne_Ghazi
+RallyedeNaples_Ghazi
+classement RallyedeNaples_Ghazi
+RallyedeMonaco_Ghazi
+classement RallyedeMonaco_Ghazi
+RallyedeMonaco_Ghazi
+Vous pouvez sélectionner vos voitures qui sont dans votre garage.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+championnatEurope
+Menu principal - Sélectionnez le mode de jeu
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Garage
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatAfrique
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeAnnecy_Ghazi
+RallyedeMontpellier_Ghazi
+classement RallyedeMontpellier_Ghazi
+RallyedeValbonne_Ghazi
+classement RallyedeValbonne_Ghazi
+RallyedeNaples_Ghazi
+classement RallyedeNaples_Ghazi
+RallyedeMonaco_Ghazi
+classement RallyedeMonaco_Ghazi
+RallyedeAnnecy_Ghazi
+classement RallyedeAnnecy_Ghazi
+RallyedeMontpellier_Ghazi
+classement RallyedeMontpellier_Ghazi
+RallyedeValbonne_Ghazi
+classement RallyedeValbonne_Ghazi
+RallyedeNaples_Ghazi
+Menu principal - Sélectionnez le mode de jeu
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Configuration Joueur - Choisissez votre joueur et configurez le jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Garage
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatAfrique
+championnatEurope
+classement championnatEurope
+championnatAfrique
+classement championnatAfrique
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeAnnecy
+RallyedeMontpellier
+classement RallyedeAnnecy
+RallyedeAnnecy
+classement RallyedeMonaco
+RallyedeMonaco
+classement RallyedeNaples
+RallyedeNaples
+classement RallyedeNaples
+RallyedeMonaco
+Vous pouvez sélectionner vos voitures qui sont dans votre garage.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+championnatEurope
+Championnat
+Menu principal - Sélectionnez le mode de jeu
+Voulez-vous vraiment quitter le jeu ?
+Revenir au menu principal
+Quitter le jeu
+Revenir au menu principal
+Quitter le jeu
+Revenir au menu principal
+Quitter le jeu
+Revenir au menu principal
+Menu principal - Sélectionnez le mode de jeu
+Configuration Joueur - Choisissez votre joueur et configurez le jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Configuration Joueur - Choisissez votre joueur et configurez le jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Championnat
+Combien ais-je d'argent ?
+Garage
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Garage
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Vous n'avez aucune voiture. Pour obtenir des voitures, vous pouvez en acheter en magasin, ou en gagner dans certains championnats.
+Garage
+Magasins
+Comment voulez vous afficher les voitures ?
+Afficher uniquement les voitures que je peux acheter
+Vous avez 20000 euros
+Sélectionnez le modèle
+Sélectionnez la version
+Alfa Romeo 155 949;3R
+Écouter les spécifications complètes
+Êtes vous certain de vouloir acheter cette voiture pour 19480 euros, il vous restera 520 euros
+Êtes vous certain de vouloir acheter cette voiture pour 19480 euros, il vous restera 520 euros
+Menu principal - Sélectionnez le mode de jeu
+Configuration Joueur - Choisissez votre joueur et configurez le jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Magasins
+Championnat
+Combien ais-je d'argent ?
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatEurope
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeNaples
+RallyedeNaples
+classement RallyedeValbonne
+RallyedeValbonne
+classement RallyedeMontpellier
+RallyedeMontpellier
+classement RallyedeAnnecy
+RallyedeAnnecy
+classement RallyedeMonaco
+RallyedeMonaco
+classement RallyedeMonaco
+RallyedeMonaco
+Vous pouvez sélectionner vos voitures qui sont dans votre garage.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+Vous n'avez aucune voiture dans votre garage. Pour obtenir des voitures, vous pouvez en acheter en magasin.
+championnatEurope
+Championnat
+Menu principal - Sélectionnez le mode de jeu
+Voulez-vous vraiment quitter le jeu ?
+Menu principal - Sélectionnez le mode de jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Configuration Joueur - Choisissez votre joueur et configurez le jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Garage
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatAfrique
+championnatAfrique
+classement championnatEurope
+championnatEurope
+classement championnatAfrique
+championnatAfrique
+classement championnatAfrique
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeAnnecy
+RallyedeAnnecy
+classement RallyedeMonaco
+RallyedeMonaco
+classement RallyedeNaples
+RallyedeNaples
+classement RallyedeValbonne
+RallyedeNaples
+classement RallyedeNaples
+RallyedeMonaco
+Vous pouvez sélectionner vos voitures qui sont dans votre garage.
+Alfa Romeo 155 949;3R
+Désolé il y a un problème avec ce circuit
+Menu principal - Sélectionnez le mode de jeu
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Garage
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatAfrique
+championnatAfrique
+classement championnatAfrique
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeAnnecy
+RallyedeAnnecy
+classement RallyedeMonaco
+RallyedeMonaco
+classement RallyedeNaples
+RallyedeMonaco
+Vous pouvez sélectionner vos voitures qui sont dans votre garage.
+Alfa Romeo 155 949;3R
+Désolé il y a un problème avec ce circuit
+Menu principal - Sélectionnez le mode de jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Garage
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatAfrique
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeMonaco
+RallyedeMonaco
+Vous pouvez sélectionner vos voitures qui sont dans votre garage.
+Alfa Romeo 155 949;3R
+Désolé il y a un problème avec ce circuit
+Menu principal - Sélectionnez le mode de jeu
+Configuration Joueur - Choisissez votre joueur et configurez le jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Garage
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+classement championnatAfrique
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeMonaco
+RallyedeMonaco
+Vous pouvez sélectionner vos voitures qui sont dans votre garage.
+Alfa Romeo 155 949;3R
+Fin de la course
+Alfa Romeo 155 949;3R
+45 secondes
+Tu as mis 0 minutes et 45 secondes
+Alfa Romeo 155 949;3R
+championnatEurope
+classement championnatAfrique
+championnatEurope
+classement championnatEurope
+votre classement
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+votre position par rappor au premier
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+tou le classement
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes
+
+Championnat
+Menu principal - Sélectionnez le mode de jeu
+Configuration Joueur - Choisissez votre joueur et configurez le jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Permis - Apprenez a conduire et comment jouer au jeu
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Jeu libre - Faites des courses sans objectifs, juste pour jouer
+Permis - Apprenez a conduire et comment jouer au jeu
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible
+Championnat
+Combien ais-je d'argent ?
+Championnat
+Magasins
+Championnat
+Vous êtes dans le menu Championnat Veuillez sélectionner un championnat
+championnatAfrique
+classement championnatAfrique
+championnatAfrique
+classement championnatEurope
+championnatEurope
+Veuillez selectionner une étape
+classement RallyedeNaples
+RallyedeNaples
+classement RallyedeValbonne
+RallyedeValbonne
+classement RallyedeMontpellier
+RallyedeMontpellier
+classement RallyedeAnnecy
+RallyedeAnnecy
+classement RallyedeMonaco
+RallyedeMonaco
+classement RallyedeNaples
+RallyedeMonaco
+classement RallyedeMonaco
+votre classement
+votre position par rappor au premier
+votre classement
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+votre position par rappor au premier
+tou le classement
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
+numéro 1, Zicko, 5 minutes 45 secondes 8 dixièmes 
+numéro 2, Paolista, 5 minutes 54 secondes 4 dixièmes 
+numéro 3, Trapatoni, 5 minutes 56 secondes 8 dixièmes 
+numéro 4, Esposa, 6 minutes 6 secondes 5 dixièmes 
+numéro 5, Dialo, 6 minutes 9 secondes 7 dixièmes 
+numéro 6, Ghazi, 6 minutes 9 secondes 9 dixièmes 
+numéro 7, Chang, 6 minutes 14 secondes 6 dixièmes 
+numéro 8, Dupont, 6 minutes 40 secondes 2 dixièmes 
+numéro 9, Salem, 6 minutes 42 secondes 5 dixièmes 
+numéro 10, Munoz, 44 minutes 45 secondes 4 dixièmes 
+
