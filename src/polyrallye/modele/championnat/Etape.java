@@ -143,7 +143,7 @@ public class Etape {
         Element noeud = new Element("etape");
 
         noeud.addContent(new Element("numero").setText("" + numeroEtape));
-        noeud.addContent(new Element("nom").setText(nom));
+        noeud.addContent(new Element("nom").setText(nom+"_"+Joueur.session.getNom()));
 
         noeud.addContent(joueur.toXML());
 
@@ -324,7 +324,8 @@ public class Etape {
      * @return Etape
      */
     public static Etape chargerEtape(String nom) {
-        File f = new File("Championnats/" + nom + ".xml");
+        
+        File f = new File("Championnats/" + nom +".xml");
 
         if (f.exists()) {
             Element n;
@@ -353,8 +354,7 @@ public class Etape {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnats/" + et.getEtape() + "_"
-                    + Joueur.session.getNom() + ".xml", et.toXML());
+            GestionXML.enregistrerRacine("Championnats/" + et.getEtape() + ".xml", et.toXML());
         } catch (Exception e) {
             e.printStackTrace();
             Liseuse.lire("Impossible de sauvegarder la progression.");

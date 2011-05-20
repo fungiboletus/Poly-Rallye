@@ -1,80 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-  <etape>
-    <numero>2</numero>
-    <nom>RallyedeMonaco</nom>
-    <joueur>
-      <nom></nom>
-      <argent></argent>
-      <garage />
-    </joueur>
-    <circuit>Normal/Monaco</circuit>
-    <classement>
-      <position>1</position>
-      <nom>Esposa</nom>
-      <voiture>Volkswagen W12 Coupe</voiture>
-      <duree>0</duree>
-    </classement>
-    <classement>
-      <position>2</position>
-      <nom>Trapatoni</nom>
-      <voiture>Jaguar XJ-13 serie</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>3</position>
-      <nom>Dialo</nom>
-      <voiture>Peugeot 205 Turbo 16 Évolution 1</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>4</position>
-      <nom>Paolista</nom>
-      <voiture>Lamborghini Reventon Roadster</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>5</position>
-      <nom>Chang</nom>
-      <voiture>Peugeot 307 WRC</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>6</position>
-      <nom>Dupont</nom>
-      <voiture>Peugeot 307 WRC</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>7</position>
-      <nom>zizou</nom>
-      <voiture>Peugeot 307 WRC</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>8</position>
-      <nom>Zicko</nom>
-      <voiture>Audi RS6</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>9</position>
-      <nom>Salem</nom>
-      <voiture>Lamborghini Diablo GTR</voiture>
-      <duree>0</duree>
-      <ecart>0</ecart>
-    </classement>
-    <classement>
-      <position>10</position>
-      <nom>Munoz</nom>
-      <voiture>Lamborghini Murcielago serie</voiture>
-      <duree>3303</duree>
-      <ecart>3303</ecart>
-    </classement>
-	</etape>
+<etape>
+  <numero>1</numero>
+  <nom>RallyedeMonaco_Ghazi</nom>
+  <joueur>
+    <nom>Ghazi</nom>
+    <argent>9224</argent>
+    <garage>
+      <voiture>Peugeot 307 CC 2 litres 180</voiture>
+    </garage>
+  </joueur>
+  <circuit>Permis/Argentine</circuit>
+  <classement>
+    <position>1</position>
+    <nom>Dialo</nom>
+    <voiture>Toyota Celica TS</voiture>
+    <duree>379</duree>
+  </classement>
+  <classement>
+    <position>2</position>
+    <nom>Trapatoni</nom>
+    <voiture>Citroën Xsara VTS</voiture>
+    <duree>403</duree>
+    <ecart>24</ecart>
+  </classement>
+  <classement>
+    <position>3</position>
+    <nom>Zicko</nom>
+    <voiture>Alfa Romeo 145 2.0 Quadrifoglio</voiture>
+    <duree>422</duree>
+    <ecart>43</ecart>
+  </classement>
+  <classement>
+    <position>4</position>
+    <nom>Salem</nom>
+    <voiture>Citroën DS Pallas</voiture>
+    <duree>473</duree>
+    <ecart>94</ecart>
+  </classement>
+  <classement>
+    <position>5</position>
+    <nom>Ghazi</nom>
+    <voiture>Peugeot 307 CC 2 litres 180</voiture>
+    <duree>480</duree>
+    <ecart>101</ecart>
+  </classement>
+  <classement>
+    <position>6</position>
+    <nom>Chang</nom>
+    <voiture>Peugeot 307 CC 2 litres 180</voiture>
+    <duree>480</duree>
+    <ecart>101</ecart>
+  </classement>
+  <classement>
+    <position>7</position>
+    <nom>Esposa</nom>
+    <voiture>Austin A135 Princess IV</voiture>
+    <duree>501</duree>
+    <ecart>122</ecart>
+  </classement>
+  <classement>
+    <position>8</position>
+    <nom>Dupont</nom>
+    <voiture>Fiat Multipla 115 JTD SX</voiture>
+    <duree>518</duree>
+    <ecart>139</ecart>
+  </classement>
+  <classement>
+    <position>9</position>
+    <nom>Paolista</nom>
+    <voiture>Citroën CX Prestige</voiture>
+    <duree>524</duree>
+    <ecart>145</ecart>
+  </classement>
+  <classement>
+    <position>10</position>
+    <nom>Munoz</nom>
+    <voiture>Fiat Barchetta serie</voiture>
+    <duree>534</duree>
+    <ecart>155</ecart>
+  </classement>
+</etape>
+

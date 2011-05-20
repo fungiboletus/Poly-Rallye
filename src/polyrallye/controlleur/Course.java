@@ -29,274 +29,274 @@ import polyrallye.utilitaires.Multithreading;
  */
 public class Course {
 
-	/**
-	 * Le timer qui excécute la course.
-	 */
-	protected java.util.Timer timerOrganisateur;
+    /**
+     * Le timer qui excécute la course.
+     */
+    protected java.util.Timer timerOrganisateur;
 
-	/**
-	 * Le timer qui compte le temps passé. Celui-ci n'a rien à voir avec le
-	 * timer précédent.
-	 */
-	protected org.lwjgl.util.Timer timerCompteur;
+    /**
+     * Le timer qui compte le temps passé. Celui-ci n'a rien à voir avec le
+     * timer précédent.
+     */
+    protected org.lwjgl.util.Timer timerCompteur;
 
-	/**
-	 * Temps entre chaque tick d'horloge.
-	 */
-	protected float temps;
+    /**
+     * Temps entre chaque tick d'horloge.
+     */
+    protected float temps;
 
-	/**
-	 * Entrées de la course.
-	 */
-	protected GestionEntreesCourse entrees;
+    /**
+     * Entrées de la course.
+     */
+    protected GestionEntreesCourse entrees;
 
-	/**
-	 * Son du moteur.
-	 */
-	protected SonVoiture sonVoiture;
+    /**
+     * Son du moteur.
+     */
+    protected SonVoiture sonVoiture;
 
-	/**
-	 * Voiture conduite.
-	 */
-	protected Voiture voiture;
+    /**
+     * Voiture conduite.
+     */
+    protected Voiture voiture;
 
-	/**
-	 * Gestion physique de la conduite.
-	 */
-	protected Conduite conduite;
+    /**
+     * Gestion physique de la conduite.
+     */
+    protected Conduite conduite;
 
-	/**
-	 * Circuit parcouru.
-	 */
-	protected Circuit circuit;
+    /**
+     * Circuit parcouru.
+     */
+    protected Circuit circuit;
 
-	/**
-	 * Bruit du klaxon.
-	 */
-	protected Klaxon klaxon;
+    /**
+     * Bruit du klaxon.
+     */
+    protected Klaxon klaxon;
 
-	/**
-	 * Copilote.
-	 */
-	protected Copilote copilote;
-	
-	/**
-	 * Radio
-	 */
-	protected Radio radio;
+    /**
+     * Copilote.
+     */
+    protected Copilote copilote;
 
-	/**
-	 * Score du joueur pour la course.
-	 */
-	protected double score;
+    /**
+     * Radio
+     */
+    protected Radio radio;
 
-	/**
-	 * À chaque passage de rapport, il faut arrêter d'accélerer plus ou moins
-	 * longtemps
-	 */
-	protected int cpTicksPassageRapport;
-	
-	/**
-	 * Temps que le joueur met en plus pour finir la course par rapport au temps
-	 * idéal
-	 */
-	protected double penalite = 0.0;
+    /**
+     * Score du joueur pour la course.
+     */
+    protected double score;
 
-	protected Championnat championnat;
+    /**
+     * À chaque passage de rapport, il faut arrêter d'accélerer plus ou moins
+     * longtemps
+     */
+    protected int cpTicksPassageRapport;
 
-	protected Etape etape;
-	
-	protected GamePlay ordonnanceur;
-	
-	protected float tempsTimer;
+    /**
+     * Temps que le joueur met en plus pour finir la course par rapport au temps
+     * idéal
+     */
+    protected double penalite = 0.0;
 
-	public Course(Voiture voiture, Circuit circuit) {
-		this.voiture = voiture;
-		this.circuit = circuit;
-	}
+    protected Championnat championnat;
 
-	public Course(Voiture voiture, Circuit circuit, Etape et) {
-		this.voiture = voiture;
-		this.circuit = circuit;
-		this.etape = et;
-	}
+    protected Etape etape;
 
-	public Course(Voiture voiture) {
-		this(voiture, "Nouveau/Monaco");
-		// this(voiture, "Autoroute");
+    protected GamePlay ordonnanceur;
 
-	}
+    protected float tempsTimer;
 
-	public Course(Voiture voiture, String fichierCircuit, Etape etape) {
-		this(voiture, fichierCircuit);
-		this.etape = etape;
-	}
-	
-	public Course(Voiture voiture, String fichierCircuit) {
-		this.voiture = voiture;
+    public Course(Voiture voiture, Circuit circuit) {
+        this.voiture = voiture;
+        this.circuit = circuit;
+    }
 
-		try {
-			Element noeud = GestionXML.chargerNoeudRacine(new File("Circuits/"
-					+ fichierCircuit + ".osm"));
-			circuit = new Circuit(noeud);
-		} catch (Exception e) {
-			Liseuse.lire("Désolé il y a un problème avec ce circuit");
-			Main.logImportant(e.getMessage());
-			e.printStackTrace();
-		}
-		
-		ordonnanceur = new GamePlay(this);
+    public Course(Voiture voiture, Circuit circuit, Etape et) {
+        this.voiture = voiture;
+        this.circuit = circuit;
+        this.etape = et;
+    }
 
-	}
+    public Course(Voiture voiture) {
+        this(voiture, "Normal/Monaco");
+        // this(voiture, "Autoroute");
 
-	public void start() {
-		if (circuit == null)
-			return;
+    }
 
-		entrees = new GestionEntreesCourse();
+    public Course(Voiture voiture, String fichierCircuit, Etape etape,
+            Championnat champ) {
+        this(voiture, fichierCircuit);
+        this.etape = etape;
+        this.championnat = champ;
 
-		Main.changerGestionEntrees(entrees);
+    }
 
-		System.out.println(circuit);
-		
-		// Création du son du moteur
-		sonVoiture = new SonVoiture(voiture);
+    public Course(Voiture voiture, String fichierCircuit) {
+        this.voiture = voiture;
 
-		// Création du moteur physique
-		conduite = new Conduite(voiture);
-		
-		// Le klaxon, c'est important
-		klaxon = new Klaxon(voiture.getNomComplet());
+        try {
+            Element noeud = GestionXML.chargerNoeudRacine(new File("Circuits/"
+                    + fichierCircuit + ".osm"));
+            circuit = new Circuit(noeud);
+        } catch (Exception e) {
+            Liseuse.lire("Désolé il y a un problème avec ce circuit");
+            Main.logImportant(e.getMessage());
+            e.printStackTrace();
+        }
 
-		// Creation copilote
-		copilote = new Copilote();
+        ordonnanceur = new GamePlay(this);
 
-		
-		// Creation radio
-		radio = new Radio();
+    }
 
-		// Si on part en première, c'est mieux
-		voiture.getTransmission().setPremiere();
+    public void start() {
+        if (circuit == null)
+            return;
 
-		// Timer qui s'occupe de faire le travail 50 fois par secondes
-		timerOrganisateur = new java.util.Timer();
+        entrees = new GestionEntreesCourse();
 
-		// Timer qui sert à compter le temps passé,
-		// ce qui n'a rien à voir avec le timer précedent,
-		// bien qu'ils aient le même nom
-		timerCompteur = new org.lwjgl.util.Timer();
+        Main.changerGestionEntrees(entrees);
 
-		org.lwjgl.util.Timer.tick();
+        System.out.println(circuit);
 
-		score = voiture.getMoteur().getPuissanceMax();
+        // Création du son du moteur
+        sonVoiture = new SonVoiture(voiture);
 
-		final Moteur moteur = voiture.getMoteur();
-		moteur.reset();
+        // Création du moteur physique
+        conduite = new Conduite(voiture);
 
-		// Démarrage des sons
-		circuit.start();
-		sonVoiture.play();
-		// POur activer la radio (pas directement dans le jeu)
-		radio.start();
+        // Le klaxon, c'est important
+        klaxon = new Klaxon(voiture.getNomComplet());
 
-		// À 50Hz, comme le courant EDF
-		timerOrganisateur.schedule(ordonnanceur, 0, 20);// 20
+        // Creation copilote
+        copilote = new Copilote();
 
-		temps = timerCompteur.getTime();
+        // Creation radio
+        radio = new Radio();
 
-		Main.logInfo("La course est lancée");
-	}
+        // Si on part en première, c'est mieux
+        voiture.getTransmission().setPremiere();
 
-	/**
-	 * Fonction appelée lors d'un crash.
-	 */
-	public void crash() {
-		circuit.playCrash();
-		circuit.stopFrottement();
-		conduite.stop();
-		sonVoiture.setRegime(800.0f, false);
-		Multithreading.dormir(1500);
-		copilote.playCrash();
-		Multithreading.dormir(1000);
-	}
+        // Timer qui s'occupe de faire le travail 50 fois par secondes
+        timerOrganisateur = new java.util.Timer();
 
-<<<<<<< HEAD
-	public void finDeCourse() {
-		
-		sonVoiture.setRegime(800, false);
-=======
-	public void finDeCourse(int nbSecondesCourse) {
-		fermer();
-		
->>>>>>> 8c1fced5609b80d206f4f64b8c583ff4d2702aa3
-		Liseuse.lire("Fin de la course");
-		Sound sonFin = new Sound("Sons/divers/fin.wav");
-		sonFin.setGain(2.0f);
-		sonFin.playAndWait();
-		sonFin.delete();
-		
-		Main
-        .changerGestionEntrees(GestionEntreesMenu
-                .getInstance());
-		
-		Duree tempsEtape = new Duree(nbSecondesCourse);
-		
-		Liseuse.lire("Tu as mis "+tempsEtape.getMinutes()+" minutes et "+tempsEtape.getSecondes()+" secondes");
-		
-		if (etape == null) return;
-		
-		etape.setClassement(tempsEtape,
-				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
-		Etape.EnregistrerEtape(etape);
-		
-		timerOrganisateur.cancel();
-                timerCompteur.pause();
-		
-		championnat.setClassement();
+        // Timer qui sert à compter le temps passé,
+        // ce qui n'a rien à voir avec le timer précedent,
+        // bien qu'ils aient le même nom
+        timerCompteur = new org.lwjgl.util.Timer();
 
-		int nbplayed = 0;
-		boolean isfinished = false;
+        org.lwjgl.util.Timer.tick();
 
-		for (int i = 0; i < championnat.getEtapes().size(); ++i) {
-			for (int j = 0; j < championnat.getEtapes().get(i).getClassement()
-					.size(); ++j) {
-				if (Joueur.session.getNom().equals(
-						championnat.getEtapes().get(i).getClassement().get(j)
-								.getPersonne().getNom())) {
-					nbplayed++;
-				}
-			}
-		}
+        score = voiture.getMoteur().getPuissanceMax();
 
-		if (nbplayed == 10)
-			isfinished = true;
+        final Moteur moteur = voiture.getMoteur();
+        moteur.reset();
 
-		if (isfinished
-				&& championnat.getClassement().get(0).getPersonne().getNom()
-						.equals(Joueur.session.getNom())) {
-			try {
-				championnat.RemisePrix();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        // Démarrage des sons
+        circuit.start();
+        sonVoiture.play();
+        // POur activer la radio (pas directement dans le jeu)
+        radio.start();
 
-			Liseuse.lire("vous avez gagné le championnat et vous avez remporté la voiture "
-					+ championnat.getVoitureGagne()
-					+ " et "
-					+ championnat.getArgentGagne() + " euros");
-		}
-		Championnat.EnregistrerChampionnat(championnat);
-	}
+        // À 50Hz, comme le courant EDF
+        timerOrganisateur.schedule(ordonnanceur, 0, 20);// 20
 
-	public void fermer() {
-		circuit.stopFrottement();
-		circuit.stop();
-		sonVoiture.stop();
-		timerOrganisateur.cancel();
-		klaxon.delete();
-		radio.delete();
-		copilote.delete();
-		Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
-	}
+        temps = timerCompteur.getTime();
+
+        Main.logInfo("La course est lancée");
+    }
+
+    /**
+     * Fonction appelée lors d'un crash.
+     */
+    public void crash() {
+        circuit.playCrash();
+        circuit.stopFrottement();
+        conduite.stop();
+        sonVoiture.setRegime(800.0f, false);
+        Multithreading.dormir(1500);
+        copilote.playCrash();
+        Multithreading.dormir(1000);
+    }
+
+    public void finDeCourse(int nbSecondesCourse) {
+        fermer();
+
+        Liseuse.lire("Fin de la course");
+        Sound sonFin = new Sound("Sons/divers/fin.wav");
+        sonFin.setGain(2.0f);
+        sonFin.playAndWait();
+        sonFin.delete();
+
+        Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
+
+        Duree tempsEtape = new Duree(nbSecondesCourse * 10);
+
+        Liseuse.lire("" + nbSecondesCourse + " secondes");
+        Liseuse.lire("Tu as mis " + tempsEtape.getMinutes() + " minutes et "
+                + tempsEtape.getSecondes() + " secondes");
+
+        if (etape == null)
+            return;
+
+        etape.setClassement(tempsEtape, StockVoitures.getVoitureParNom(voiture
+                .getNomComplet()));
+        Etape.EnregistrerEtape(etape);
+
+        timerOrganisateur.cancel();
+        timerCompteur.pause();
+
+        championnat.setClassement();
+
+        Championnat.EnregistrerChampionnat(championnat);
+
+        int nbplayed = 0;
+        boolean isfinished = false;
+
+        for (int i = 0; i < championnat.getEtapes().size(); ++i) {
+            for (int j = 0; j < championnat.getEtapes().get(i).getClassement()
+                    .size(); ++j) {
+                if (Joueur.session.getNom().equals(
+                        championnat.getEtapes().get(i).getClassement().get(j)
+                                .getPersonne().getNom())) {
+                    nbplayed++;
+                }
+            }
+        }
+
+        if (nbplayed == 10)
+            isfinished = true;
+
+        if (isfinished
+                && championnat.getClassement().get(0).getPersonne().getNom()
+                        .equals(Joueur.session.getNom())) {
+            try {
+                championnat.RemisePrix();
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            Liseuse
+                    .lire("vous avez gagné le championnat et vous avez remporté la voiture "
+                            + championnat.getVoitureGagne()
+                            + " et "
+                            + championnat.getArgentGagne() + " euros");
+        }
+        Championnat.EnregistrerChampionnat(championnat);
+    }
+
+    public void fermer() {
+        circuit.stopFrottement();
+        circuit.stop();
+        sonVoiture.stop();
+        timerOrganisateur.cancel();
+        klaxon.delete();
+        radio.delete();
+        copilote.delete();
+        Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
+    }
 }

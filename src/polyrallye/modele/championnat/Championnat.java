@@ -262,7 +262,7 @@ public class Championnat {
      * @return Championnat
      */
     public static Championnat chargerChampionnat(String nom) {
-        File f = new File("Championnats/" + nom + ".xml");
+        File f = new File("Championnats/" + nom +".xml");
 
         if (f.exists()) {
             Element n;
@@ -291,8 +291,7 @@ public class Championnat {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Championnats/" + c.getNom() + "_"
-                    + Joueur.session.getNom() + ".xml", c.toXML());
+            GestionXML.enregistrerRacine("Championnats/" + c.getNom() + ".xml", c.toXML());
         } catch (Exception e) {
             e.printStackTrace();
             Liseuse.lire("Impossible de sauvegarder la progression.");

@@ -2,6 +2,8 @@ package polyrallye.ouie.menus.carriere;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import polyrallye.modele.championnat.Championnat;
 import polyrallye.modele.championnat.Rang;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.ouie.ActionMenu;
@@ -18,14 +20,17 @@ public class afficherClassementChampionnat extends Menu implements ActionMenu {
 
     protected List<Rang> classements = new ArrayList<Rang>();
 
+    protected Championnat champ;
     boolean isplayed = false;
 
     public afficherClassementChampionnat(Menu menuPrecedent,
-            List<Rang> classements) {
+            List<Rang> classements, Championnat champ) {
         super(menuPrecedent);
 
         this.classements = classements;
 
+        this.champ = champ;
+        
         messageMenuVide = "Vous n'avez pas encore participer à ce championnat";
     }
 

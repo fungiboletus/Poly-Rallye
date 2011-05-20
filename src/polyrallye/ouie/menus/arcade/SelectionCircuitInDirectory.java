@@ -34,7 +34,7 @@ public class SelectionCircuitInDirectory extends Menu implements ActionMenu {
 					op[i].getName().indexOf("."));
 			if (!op[i].isDirectory())
 				ajouterElement(t, new LancementCourse(voiture, rep + "/" + t,
-						null));
+						null, null));
 		}
 	}
 
