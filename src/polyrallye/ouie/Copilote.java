@@ -139,10 +139,12 @@ public class Copilote {
 
 
 	public void playOk() {
+		Main.logInfo("OK");
 		ok.get(random.nextInt(ok.size())).play();
 	}
 
 	public void playCrash() {
+		Main.logImportant("CRASH CRASH CRASH !");
 		String rep = "Sons/copilote/" + id + "/";
 		if (isPipelette) {
 			isPipelette = false;
@@ -157,6 +159,8 @@ public class Copilote {
 
 	public void playGauche() {
 
+		Main.logInfo("Gauche…");
+		
 		/*
 		 * if (isPipelette) bullshit.pause(true);*
 		 */
@@ -169,6 +173,9 @@ public class Copilote {
 	}
 
 	public void playDroite() {
+
+		Main.logInfo("Droite…");
+		
 		/*
 		 * if (isPipelette) bullshit.pause(true);
 		 */
@@ -182,6 +189,9 @@ public class Copilote {
 	}
 
 	public void playFreine() {
+
+		Main.logInfo("Freine !");
+		
 		if (isPipelette)
 			bullshit.pause(true);
 

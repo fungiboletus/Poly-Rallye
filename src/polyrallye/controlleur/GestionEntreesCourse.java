@@ -101,11 +101,11 @@ public class GestionEntreesCourse extends KeyAdapter {
 			klaxon = false;
 			break;
 		case KeyEvent.VK_F1:
-			coeffVitesse =  coeffVitesse > 0.12 ? coeffVitesse*0.5 : coeffVitesse;
+			coeffVitesse =  coeffVitesse > 0.12 ? coeffVitesse*0.33 : coeffVitesse;
 			Main.logImportant("Coefficient vitesse: "+coeffVitesse);
 			break;
 		case KeyEvent.VK_F2:
-			coeffVitesse =  coeffVitesse < 3.0 ? coeffVitesse*2.0 : coeffVitesse;
+			coeffVitesse =  coeffVitesse < 3.0 ? coeffVitesse*1.33 : coeffVitesse;
 			Main.logImportant("Coefficient vitesse: "+coeffVitesse);
 			break;
 		// Pour les passages de rapports, c'est des évènements
