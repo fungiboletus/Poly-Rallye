@@ -27,7 +27,7 @@ public class Permis extends Menu implements ActionMenu {
 			@Override
 			public void actionMenu() {
 				Voiture v = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
-				new Course(v,"Ressources/Permis/ligne").start();
+				new Course(v,"Permis/ligne").start();
 				
 				
 			}
@@ -37,7 +37,7 @@ public class Permis extends Menu implements ActionMenu {
 			@Override
 			public void actionMenu() {
 				Voiture v = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
-				new Course(v,"Ressources/Permis/Virage").start();
+				new Course(v,"Permis/Virage").start();
 				
 				
 			}
@@ -47,7 +47,7 @@ public class Permis extends Menu implements ActionMenu {
 			@Override
 			public void actionMenu() {
 				Voiture v = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
-				new Course(v,"Ressources/Permis/boite").start();
+				new Course(v,"Permis/boite").start();
 				
 				
 			}
@@ -57,7 +57,7 @@ public class Permis extends Menu implements ActionMenu {
 			@Override
 			public void actionMenu() {
 				Voiture v = StockVoitures.getVoitureParNom("Fiat Panda 4x4");
-				new Course(v,"Ressources/Permis/divers").start();
+				new Course(v,"Permis/divers").start();
 				
 				
 			}
