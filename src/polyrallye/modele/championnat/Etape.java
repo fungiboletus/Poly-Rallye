@@ -325,10 +325,16 @@ public class Etape {
             }
 
             GestionXML.enregistrerRacine("Championnats/" + et.getEtape()
-                    + ".xml", et.toXML());
+                    + "_" + Joueur.session.getNom() + ".xml", et.toXML());
         } catch (Exception e) {
             e.printStackTrace();
             Liseuse.lire("Impossible de sauvegarder la progression.");
+        }
+    }
+    
+    public void viderClassement() {
+        for (int i = 0; i < classement.size()-1; ++i){
+            classement.get(i).setDuree(new Duree(0));
         }
     }
 }

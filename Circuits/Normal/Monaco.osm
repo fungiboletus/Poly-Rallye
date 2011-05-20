@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-20316' action='modify' timestamp='2010-07-20T14:35:48Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7424029' lon='7.4177679'>
+    <tag k='environnement' v='urban' />
+    <tag k='meteo' v='clair' />
+    <tag k='polyrallye' v='depart' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='jour' />
+  </node>
+  <node id='-20305' action='modify' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7397885' lon='7.413387'>
+    <tag k='son' v='crowds/Crowd_EOR_Top1.wav' />
+  </node>
+  <node id='-20304' action='modify' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7386111' lon='7.4122877'>
+    <tag k='meteo' v='clair' />
+  </node>
+  <node id='-20303' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7375235' lon='7.4121907' />
+  <node id='-20302' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7356934' lon='7.4128249' />
+  <node id='-20301' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7351125' lon='7.4140728' />
+  <node id='-20300' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7348657' lon='7.4142569' />
+  <node id='-20299' action='modify' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7343039' lon='7.4146762'>
+    <tag k='meteo' v='vent' />
+  </node>
+  <node id='-20298' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.73309' lon='7.4144142' />
+  <node id='-20297' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.731991' lon='7.4145614' />
+  <node id='-20296' timestamp='2010-12-31T04:47:31Z' uid='24247' user='Vlad' visible='true' version='3' lat='43.7312976' lon='7.4161759' />
+  <node id='-20295' timestamp='2010-07-20T14:35:47Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.732088' lon='7.4172447' />
+  <node id='-20294' timestamp='2010-07-20T14:35:46Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7324975' lon='7.4180196' />
+  <node id='-20293' action='modify' timestamp='2010-07-20T14:35:46Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.732564' lon='7.4189782'>
+    <tag k='son' v='crowds/Crowd_Disguise1.wav' />
+  </node>
+  <node id='-20292' timestamp='2010-07-20T14:35:46Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7329698' lon='7.4217263' />
+  <node id='-20291' timestamp='2010-07-20T14:35:46Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7335218' lon='7.4213129' />
+  <node id='-20290' timestamp='2011-01-02T22:28:33Z' uid='24247' user='Vlad' visible='true' version='3' lat='43.7359275' lon='7.421328' />
+  <node id='-20289' timestamp='2011-01-02T22:32:05Z' uid='24247' user='Vlad' visible='true' version='3' lat='43.7367484' lon='7.4216416' />
+  <node id='-20288' timestamp='2011-01-02T22:28:55Z' uid='24247' user='Vlad' visible='true' version='3' lat='43.7370836' lon='7.4229892' />
+  <node id='-20287' timestamp='2010-07-20T14:35:46Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7377938' lon='7.425406' />
+  <node id='-20286' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7385944' lon='7.4278474' />
+  <node id='-20285' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7395083' lon='7.4279991' />
+  <node id='-20284' timestamp='2011-01-02T22:31:47Z' uid='24247' user='Vlad' visible='true' version='3' lat='43.7402959' lon='7.4254971' />
+  <node id='-20283' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7411175' lon='7.4258158' />
+  <node id='-20282' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7416862' lon='7.4265314' />
+  <node id='-20281' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7419605' lon='7.4283846' />
+  <node id='-20280' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7431623' lon='7.42974' />
+  <node id='-20279' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7446215' lon='7.4294544' />
+  <node id='-20278' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7453102' lon='7.4301807' />
+  <node id='-20277' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7464427' lon='7.4304483' />
+  <node id='-20276' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7467938' lon='7.4293987' />
+  <node id='-20275' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7465634' lon='7.4278824' />
+  <node id='-20274' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7465009' lon='7.4263361' />
+  <node id='-20273' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7458508' lon='7.4251247' />
+  <node id='-20272' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7447853' lon='7.4231673' />
+  <node id='-20271' timestamp='2010-07-20T14:35:45Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.743062' lon='7.4215503' />
+  <node id='-20270' timestamp='2010-07-20T14:35:44Z' uid='32360' user='pdunn' visible='true' version='2' lat='43.7425088' lon='7.4196387' />
+  <way id='-20269' action='modify' timestamp='2010-01-31T18:51:08Z' uid='165869' user='chdr' visible='true'>
+    <nd ref='-20316' />
+    <nd ref='-20270' />
+    <nd ref='-20271' />
+    <nd ref='-20272' />
+    <nd ref='-20273' />
+    <nd ref='-20274' />
+    <nd ref='-20275' />
+    <nd ref='-20276' />
+    <nd ref='-20277' />
+    <nd ref='-20278' />
+    <nd ref='-20279' />
+    <nd ref='-20280' />
+    <nd ref='-20281' />
+    <nd ref='-20282' />
+    <nd ref='-20283' />
+    <nd ref='-20284' />
+    <nd ref='-20285' />
+    <nd ref='-20286' />
+    <nd ref='-20287' />
+    <nd ref='-20288' />
+    <nd ref='-20289' />
+    <nd ref='-20290' />
+    <nd ref='-20291' />
+    <nd ref='-20292' />
+    <nd ref='-20293' />
+    <nd ref='-20294' />
+    <nd ref='-20295' />
+    <nd ref='-20296' />
+    <nd ref='-20297' />
+    <nd ref='-20298' />
+    <nd ref='-20299' />
+    <nd ref='-20300' />
+    <nd ref='-20301' />
+    <nd ref='-20302' />
+    <nd ref='-20303' />
+    <nd ref='-20304' />
+    <nd ref='-20305' />
+    <tag k='CLC:code' v='111' />
+    <tag k='CLC:id' v='FR-262304' />
+    <tag k='CLC:year' v='2006' />
+    <tag k='landuse' v='residential' />
+    <tag k='source' v='Union européenne - SOeS, CORINE Land Cover, 2006.' />
+  </way>
+</osm>

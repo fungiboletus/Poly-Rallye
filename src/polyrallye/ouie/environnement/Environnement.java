@@ -123,40 +123,31 @@ public class Environnement {
 
 		// On va charger dans le fichier les config
 		String rep = "Sons/" + type + "/";
-		BufferedReader mani = null;
+
 		// On lit le fichier
-		try {
-			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
-			String line = null;
-			try {
-				while ((line = mani.readLine()) != null) {
-					if (line.contains(temps)) {
-						this.randAmb = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					} else if (line.contains("sfx")) {
-						this.randSfx = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					} else if (line.contains("sfxout")) {
-						extSfx = line.substring(line.indexOf(" ") + 1);
-					} else if (line.contains("random")) {
-						this.intervalle = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					}
+		String[] lectureManifeste = new String[4];
+		lectureManifeste[0] = temps;
+		lectureManifeste[1] = "sfx";
+		lectureManifeste[2] = "out";
+		lectureManifeste[3] = "random";
 
-				}
-			} catch (IOException e) {
-				System.out.println("Erreur lecture fichier");
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Erreur chargement fichier");
-			e.printStackTrace();
+		lectureManifeste = new LectureFichier(rep).lire("manifeste.cfg",
+				lectureManifeste);
+		if (lectureManifeste[0]!=null)
+			this.randAmb = Integer.valueOf(lectureManifeste[0]
+					.substring(lectureManifeste[0].indexOf(" ") + 1));
+
+		if (lectureManifeste[1]!=null) {
+			this.randSfx = Integer.valueOf(lectureManifeste[1]
+					.substring(lectureManifeste[1].indexOf(" ") + 1));
 		}
-
-		try {
-			mani.close();
-		} catch (IOException e) {
-			e.printStackTrace();
+		if (lectureManifeste[2]!=null) {
+			extSfx = lectureManifeste[2].substring(lectureManifeste[2]
+					.indexOf(" ") + 1);
+		}
+		if (lectureManifeste[3]!=null) {
+			this.intervalle = Integer.valueOf(lectureManifeste[3]
+					.substring(lectureManifeste[3].indexOf(" ") + 1));
 		}
 
 		// On prend un son au pif parmi ceux disponibles
@@ -267,6 +258,14 @@ public class Environnement {
 
 	public String getType() {
 		return type;
+	}
+	
+	public void Pause(boolean pause) {
+	
+			ambiance.pause(pause);
+			sfx.pause(pause);
+			meteo.Pause(pause);
+		
 	}
 
 	public void playCrash() {

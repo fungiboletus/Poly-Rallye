@@ -41,9 +41,10 @@ public class SuppressionDonneesJoueur extends Menu implements ActionMenu{
 					public void actionMenu() {
 						Joueur.session.RemiseAZero();
 						Joueur.EnregistrerJoueur(Joueur.session);
-//						String[] annonces = new String[2];
-//						annonces[0]= "La progression du joueur a ete effacee";
-//						annonces[1]= "Vous êtes "+Joueur.session.getNom();
+						
+						
+						
+
 						Liseuse.lire("La progression du joueur "+nom+" a été effacé");
 						Liseuse.lire("Vous êtes "+Joueur.session.getNom());
 						ennoncer();

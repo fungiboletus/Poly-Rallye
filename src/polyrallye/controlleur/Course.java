@@ -83,7 +83,7 @@ public class Course {
 	 * Copilote.
 	 */
 	protected Copilote copilote;
-
+	
 	/**
 	 * Radio
 	 */
@@ -168,6 +168,7 @@ public class Course {
 		// Creation copilote
 		copilote = new Copilote();
 
+		
 		// Creation radio
 		radio = new Radio();
 
@@ -188,7 +189,7 @@ public class Course {
 
 		final Moteur moteur = voiture.getMoteur();
 		moteur.reset();
-		
+
 		// Démarrage des sons
 		circuit.start();
 		sonVoiture.play();
@@ -268,5 +269,6 @@ public class Course {
 		copilote.delete();
 		Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
 		finDeCourse();
+
 	}
 }
