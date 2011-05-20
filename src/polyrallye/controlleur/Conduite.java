@@ -54,9 +54,20 @@ public class Conduite {
 	 */
 	protected Moteur moteur;
 
+	/**
+	 * Pareil
+	 */
 	protected Transmission transmission;
 
+	/**
+	 * Est-ce que la voiture est en train de freiner ?
+	 */
 	protected boolean freinage;
+	
+	/**
+	 * Est-ce que la voiture est en train de tourner ?
+	 */
+	protected boolean virage;
 
 	public Conduite(Voiture v) {
 		this.voiture = v;
@@ -94,7 +105,7 @@ public class Conduite {
 			// qui ne bloque même pas les roues une seule fois tellement il
 			// est parfait <3
 
-			forceMotrice = forceMotriceMax * -2.5;
+			forceMotrice = forceMotriceMax * -1.9;
 		} else {
 
 			double coupleMoteur = moteur.getCouple();
@@ -160,6 +171,14 @@ public class Conduite {
 		this.freinage = freinage;
 	}
 
+	public boolean isVirage() {
+		return virage;
+	}
+
+	public void setVirage(boolean virage) {
+		this.virage = virage;
+	}
+
 	/**
 	 * Cette méthode permet verefier si une voiture v passe un virage ou non En
 	 * fonction des caracteristiques du virage: rayon, angle de relevement,
@@ -217,13 +236,13 @@ public class Conduite {
 		double xxa = 100.0;
 		double xxb = 1000.0;
 		
-		double yya = 30.0;
-		double yyb = 60.0;
+		double yya = 40.0;
+		double yyb = 50.0;
 		
 		double r = yya + (angleVirage - xxa)*((yyb-yya)/(xxb-xxa));
 		
 		double ya = r*coeffAdherenceFrottement;
-		double yb = r*0.3*coeffAdherenceFrottement;
+		double yb = r*0.42*coeffAdherenceFrottement;
 		
 		return ya + (angleVirage - xa)*((yb-ya)/(xb-xa));
 	}

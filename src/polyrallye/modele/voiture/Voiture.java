@@ -6,7 +6,6 @@ import org.jdom.Element;
 
 import polyrallye.controlleur.Conduite;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.menus.SelectionneurPerformances;
 import polyrallye.utilitaires.GestionXML;
 
 public class Voiture {

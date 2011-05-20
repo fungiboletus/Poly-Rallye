@@ -1,6 +1,7 @@
 package polyrallye.ouie.environnement;
 
 import java.util.Random;
+
 import polyrallye.ouie.utilitaires.Sound;
 import polyrallye.ouie.utilitaires.Sound.SoundException;
 import polyrallye.utilitaires.Multithreading;

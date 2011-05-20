@@ -3,11 +3,9 @@ package polyrallye.ouie.menus.arcade;
 import java.io.File;
 
 import polyrallye.modele.voiture.Voiture;
-import polyrallye.ouie.Menu;
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.menus.SelectionVoitureMagasin;
-import polyrallye.ouie.menus.SelectionVoiturePerformances;
 
 public class SelectionCircuit extends Menu implements ActionMenu {
 	

@@ -1,6 +1,5 @@
 package polyrallye.ouie.menus.arcade;
 
-import polyrallye.controlleur.Course;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;

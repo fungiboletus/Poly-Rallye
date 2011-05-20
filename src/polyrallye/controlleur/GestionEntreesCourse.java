@@ -24,7 +24,8 @@ public class GestionEntreesCourse extends KeyAdapter {
 	protected boolean radio = false;
 	protected boolean station = false;
 	protected boolean copilote = false;
-
+	protected double coeffVitesse = 1.0;
+	
 	@Override
 	public void keyPressed(KeyEvent touche) {
 		switch (touche.getKeyCode()) {
@@ -98,6 +99,14 @@ public class GestionEntreesCourse extends KeyAdapter {
 		case KeyEvent.VK_K:
 		case KeyEvent.VK_SPACE:
 			klaxon = false;
+			break;
+		case KeyEvent.VK_F1:
+			coeffVitesse =  coeffVitesse > 0.12 ? coeffVitesse*0.33 : coeffVitesse;
+			Main.logImportant("Coefficient vitesse: "+coeffVitesse);
+			break;
+		case KeyEvent.VK_F2:
+			coeffVitesse =  coeffVitesse < 3.0 ? coeffVitesse*1.33 : coeffVitesse;
+			Main.logImportant("Coefficient vitesse: "+coeffVitesse);
 			break;
 		// Pour les passages de rapports, c'est des évènements
 		// à réinitialiser sois même
