@@ -386,7 +386,7 @@ public class GamePlay extends TimerTask {
 		
 		distancePortion = 0.0;
 		if (portionCourante == null) {			
-			c.finDeCourse((int) c.timerCompteur.getTime());
+			c.finDeCourse((int) chrono);
 		} else {
 
 			actionCourante = TypeAction.AVANT_VIRAGE;

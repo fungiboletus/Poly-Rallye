@@ -107,6 +107,8 @@ public class Course {
 	protected Etape etape;
 	
 	protected GamePlay ordonnanceur;
+	
+	protected float tempsTimer;
 
 	public Course(Voiture voiture, Circuit circuit) {
 		this.voiture = voiture;
@@ -231,9 +233,13 @@ public class Course {
         .changerGestionEntrees(GestionEntreesMenu
                 .getInstance());
 		
+		Duree tempsEtape = new Duree(nbSecondesCourse);
+		
+		Liseuse.lire("Tu as mis "+tempsEtape.getMinutes()+" minutes et "+tempsEtape.getSecondes()+" secondes");
+		
 		if (etape == null) return;
 		
-		etape.setClassement(new Duree(nbSecondesCourse),
+		etape.setClassement(tempsEtape,
 				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
 		Etape.EnregistrerEtape(etape);
 		
