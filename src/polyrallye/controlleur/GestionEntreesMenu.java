@@ -67,6 +67,9 @@ public class GestionEntreesMenu extends KeyAdapter {
 				ecouteur.annuler();
 				break;
 			case KeyEvent.VK_F1:
+				ecouteur.but();
+				break;
+			case KeyEvent.VK_F2:
 				ecouteur.aide();
 				break;
 			case KeyEvent.VK_D:

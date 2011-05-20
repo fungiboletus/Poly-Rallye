@@ -256,6 +256,15 @@ public abstract class Menu implements EcouteurEntrees {
 		return actions.isEmpty();
 	}
 
+	@Override
+	public void but() {
+		Sound b = new Sound("Sons/aide/but.ogg");
+		Liseuse.interrompre();
+		b.playAndWait();
+		b.delete();
+		Liseuse.lancer();
+	}
+	
 	public void aide() {
 		Liseuse.lire("Vous êtes dans un menu. Utilisez les touches haut et bas pour vous déplacer dans le menu. Entrée pour valider, et échap pour annuler.");
 	}

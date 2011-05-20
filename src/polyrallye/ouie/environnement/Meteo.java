@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Random;
 
 import polyrallye.ouie.utilitaires.Sound;
+import polyrallye.utilitaires.LectureFichier;
 
 
 public class Meteo {
@@ -45,49 +46,24 @@ public class Meteo {
 		if (!etat.equals("clair")) {
 		// On va charger dans le fichier les config
 		String rep = "Sons/meteo" + "/" + etat + "/";
-		BufferedReader mani = null;
+
 		// On lit le fichier
-		try {
-			mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
-			String line = null;
-			try {
-				while ((line = mani.readLine()) != null) {
-					if (line.contains(environnement)) {
-						this.env = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					} else if (line.contains("sfx")) {
-						this.randSfx = Integer.valueOf(line.substring(line
-								.indexOf(" ") + 1));
-					}
-				}
-				// On remet le terrain a defaut si on a pas de sons specifiques
-				if (env == -1) {
-					environnement = "defaut";
-					mani.close();
-					mani = new BufferedReader(new FileReader(rep + "manifeste.cfg"));
-					line = null;
-					while ((line = mani.readLine()) != null) {
-						if (line.contains(environnement)) {
-							this.env = Integer.valueOf(line.substring(line
-									.indexOf(" ") + 1));
-						}
-					}
-				}
-			} catch (IOException e) {
-				System.out.println("Erreur lecture fichier");
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("Erreur chargement fichier");
-			e.printStackTrace();
+		String[] lectureManifeste = new String[2];
+		lectureManifeste[0] = environnement;
+		lectureManifeste[1] = "sfx";
+
+
+		lectureManifeste = new LectureFichier(rep).lire("manifeste.cfg",
+				lectureManifeste);
+		if (lectureManifeste[0]!=null)
+			this.env = Integer.valueOf(lectureManifeste[0].substring(lectureManifeste[0]
+					.indexOf(" ") + 1));
+
+		if (lectureManifeste[1]!=null) {
+			this.randSfx = Integer.valueOf(lectureManifeste[1].substring(lectureManifeste[1]
+					.indexOf(" ") + 1));
 		}
 
-		try {
-			mani.close();
-		} catch (IOException e) {
-			System.out.println("Erreur fermeture fichier");
-			e.printStackTrace();
-		}
 
 		// On prend un son au pif parmi ceux disponibles
 		Random random = new Random();
@@ -115,6 +91,11 @@ public class Meteo {
 			meteo.delete();			
 		}
 		if (sfx != null) sfx.tuer();
+	}
+	
+	public void Pause(boolean pause) {
+		meteo.pause(true);
+		sfx.pause(true);
 	}
 
 }

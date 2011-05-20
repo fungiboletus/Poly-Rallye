@@ -25,6 +25,7 @@ public class Radio extends Thread {
 	
 	private boolean isPaused;
 	private boolean isAlive;
+	private boolean isUberPaused;
 
 	public Radio() {
 		String rep = "Sons/radio/";
@@ -47,6 +48,7 @@ public class Radio extends Thread {
 		
 		isPaused=true;
 		isAlive=true;
+
 		
 		inter.play();
 		inter.pause(true);
@@ -107,6 +109,8 @@ public class Radio extends Thread {
 		
 		}
 	}
+	
+
 	
 	public void toggleRadio() {
 		if (isPaused) {

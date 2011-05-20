@@ -22,6 +22,8 @@ public class Principal extends Menu {
 	public Sound getMusique() {
 		return null;
 	}
+	
+	
 
 	public void lancer() {
 		Liseuse.lire("Menu principal - Sélectionnez le mode de jeu");

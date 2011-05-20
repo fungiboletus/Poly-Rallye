@@ -17,6 +17,7 @@ import polyrallye.modele.voiture.StockVoitures;
 import polyrallye.modele.voiture.Transmission;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.ActionMenu;
+import polyrallye.ouie.Aide;
 import polyrallye.ouie.Copilote;
 import polyrallye.ouie.Klaxon;
 import polyrallye.ouie.Radio;
@@ -86,6 +87,11 @@ public class Course {
 	 */
 	protected Copilote copilote;
 
+	/**
+	 * Son de l'aide
+	 */
+	protected Aide aide;
+	
 	/**
 	 * Radio
 	 */
@@ -207,6 +213,7 @@ public class Course {
 		// Creation copilote
 		copilote = new Copilote();
 
+		
 		// Creation radio
 		radio = new Radio();
 		// POur activer la radio (pas directement dans le jeu)
@@ -253,7 +260,7 @@ public class Course {
 
 				final double vitesse = conduite.getVitesseLineaire();
 				final double position = conduite.getDistanceParcourue();
-
+				
 				// Gestion du klaxon
 				if (entreesCourse.isKlaxon()) {
 					klaxon.pouet();
@@ -587,5 +594,6 @@ public class Course {
 		copilote.delete();
 		Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
 		finDeCourse();
+
 	}
 }

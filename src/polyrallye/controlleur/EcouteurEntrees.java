@@ -20,4 +20,6 @@ public interface EcouteurEntrees {
 	public void annuler();
 
 	public void aide();
+	
+	public void but();
 }
