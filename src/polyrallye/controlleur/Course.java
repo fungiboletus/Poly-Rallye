@@ -219,14 +219,17 @@ public class Course {
 	}
 
 	public void finDeCourse() {
-		timerOrganisateur.cancel();
-		timerCompteur.pause();
-		sonVoiture.setRegime(800, false);
+		fermer();
+		
 		Liseuse.lire("Fin de la course");
 		Sound sonFin = new Sound("Sons/divers/fin.wav");
 		sonFin.setGain(2.0f);
 		sonFin.playAndWait();
 		sonFin.delete();
+		
+		Main
+        .changerGestionEntrees(GestionEntreesMenu
+                .getInstance());
 		
 		if (etape == null) return;
 		
@@ -272,6 +275,7 @@ public class Course {
 	}
 
 	public void fermer() {
+		circuit.stopFrottement();
 		circuit.stop();
 		sonVoiture.stop();
 		timerOrganisateur.cancel();

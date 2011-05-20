@@ -48,7 +48,7 @@ public class GamePlay extends TimerTask {
 	 */
 	protected double tempsVirage;
 
-	protected double chronoVirageNonDesire;
+	protected double chronoVirageNonDesire = 0.0;
 
 	public final static double TEMPS_REACTION = 1.5;
 
@@ -233,7 +233,7 @@ public class GamePlay extends TimerTask {
 		c.conduite.setVirage(virage);
 
 		if (virage && vitesse > 3.0) {
-			sonFrottement = 0.4;
+			sonFrottement = 0.34;
 
 			/*
 			 * if (actionCourante == TypeAction.ACCELERATION || actionCourante
@@ -246,7 +246,7 @@ public class GamePlay extends TimerTask {
 
 	public void gestionPatinage() {
 		if (c.conduite.isPatinage()) {
-			sonFrottement = 0.65;
+			sonFrottement = 0.45;
 		}
 	}
 
@@ -359,12 +359,12 @@ public class GamePlay extends TimerTask {
 			if (chrono - tempsAvantReaction > tempsVirage) {
 				c.copilote.playOk();
 				actionCourante = TypeAction.ACCELERATION;
+				chronoVirageNonDesire = 0.0;
 			}
 		} else {
 			Main.logInfo("Vous n'avez pas tourné assez longtemps");
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
-			distancePortion = 0.0;
 
 			chronoVirageNonDesire = 0.0;
 			c.penalite += TEMPS_REACTION + 5.0;
