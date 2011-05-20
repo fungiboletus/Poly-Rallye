@@ -37,6 +37,9 @@ public class Principal extends Menu {
 				"Jeu libre - Faites des courses sans objectifs, juste pour jouer",
 				new Arcade(this));
 		ajouterElement(
+				"Permis - Apprenez a conduire et comment jouer au jeu",
+				new Permis(this));
+		ajouterElement(
 				"Carrière - Concourez dans de nombreux championnats, achetez et vendez vos voitures, pour être le meilleur pilote possible",
 				new Carriere(this));
 		ajouterElement(

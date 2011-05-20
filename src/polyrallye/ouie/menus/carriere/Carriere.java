@@ -21,7 +21,6 @@ public class Carriere extends Menu implements ActionMenu {
 		
 	ajouterElement("Garage", new Garage(this));
 	ajouterElement("Magasins", new Magasin(this));
-	ajouterElement("Permis", new Permis(this));
 	ajouterElement("Championnat", new Championnat(this));
 	ajouterElement("Combien ais-je d'argent ?", new ActionMenu() {
 		
