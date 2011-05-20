@@ -30,6 +30,7 @@ public class SelectionCircuitInDirectory extends Menu implements ActionMenu {
 	public void remplir() {
 		File[] op = new File("Circuits/" + rep).listFiles();
 		for (int i = 0; i < op.length; i++) {
+			System.out.println("LOL: "+op[i].getName());
 			String t = op[i].getName().substring(0,
 					op[i].getName().indexOf("."));
 			if (!op[i].isDirectory())

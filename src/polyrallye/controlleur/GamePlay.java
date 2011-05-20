@@ -40,13 +40,15 @@ public class GamePlay extends TimerTask {
 	protected double position;
 
 	protected float chrono;
+	
+	protected float tempsTick;
 
 	/**
 	 * Temps pendant lequel le joueur doit tourner dans le virage
 	 */
 	protected double tempsVirage;
 
-	protected double chronoVirageNonDesire;
+	protected double chronoVirageNonDesire = 0.0;
 
 	public final static double TEMPS_REACTION = 1.5;
 
@@ -77,7 +79,7 @@ public class GamePlay extends TimerTask {
 		// Gestion du temps
 		org.lwjgl.util.Timer.tick();
 		chrono = c.timerCompteur.getTime();
-		float tempsTick = chrono - c.temps;
+		tempsTick = chrono - c.temps;
 		c.temps = chrono;
 
 		double distanceParcourue = c.conduite.tick(tempsTick
@@ -231,7 +233,7 @@ public class GamePlay extends TimerTask {
 		c.conduite.setVirage(virage);
 
 		if (virage && vitesse > 3.0) {
-			sonFrottement = 0.4;
+			sonFrottement = 0.34;
 
 			/*
 			 * if (actionCourante == TypeAction.ACCELERATION || actionCourante
@@ -244,7 +246,7 @@ public class GamePlay extends TimerTask {
 
 	public void gestionPatinage() {
 		if (c.conduite.isPatinage()) {
-			sonFrottement = 0.65;
+			sonFrottement = 0.45;
 		}
 	}
 
@@ -290,6 +292,15 @@ public class GamePlay extends TimerTask {
 			tempsAvantReaction = chrono;
 		} else if (distanceAvantVirage < 0.0) {
 			virageSuivant();
+		} else if (c.entrees.isGauche() || c.entrees.isDroite()) {
+			if (chronoVirageNonDesire > TEMPS_REACTION) {
+				Main.logInfo("Il ne faut pas tourner n'importe quand");
+				c.crash();
+				distancePortion = 0.0;
+				chronoVirageNonDesire = 0.0;
+			} else {
+				chronoVirageNonDesire += tempsTick;
+			}
 		}
 	}
 
@@ -299,6 +310,7 @@ public class GamePlay extends TimerTask {
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
 			distancePortion = 0.0;
+			chronoVirageNonDesire = 0.0;
 			// On se remet là où on devait être pour freiner
 			// c.conduite.setPosition(positionAvantFreinage);
 			c.penalite += TEMPS_REACTION + 10.0;
@@ -322,6 +334,7 @@ public class GamePlay extends TimerTask {
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
 			distancePortion = 0.0;
+			chronoVirageNonDesire = 0.0;
 			c.penalite += TEMPS_REACTION + 5.0;
 		} else {
 			if ((portionCourante.getType() == TypeRoute.GAUCHE
@@ -332,7 +345,7 @@ public class GamePlay extends TimerTask {
 				tempsAvantReaction = chrono;
 				tempsVirage = c.conduite.getTempsPourVirage(portionCourante
 						.getAngle());
-				Main.logImportant("Temps de : " + tempsVirage);
+				//Main.logImportant("Temps de : " + tempsVirage);
 			}
 		}
 	}
@@ -346,25 +359,31 @@ public class GamePlay extends TimerTask {
 			if (chrono - tempsAvantReaction > tempsVirage) {
 				c.copilote.playOk();
 				actionCourante = TypeAction.ACCELERATION;
+				chronoVirageNonDesire = 0.0;
 			}
 		} else {
 			Main.logInfo("Vous n'avez pas tourné assez longtemps");
 			c.crash();
 			actionCourante = TypeAction.ACCELERATION;
-			distancePortion = 0.0;
+
+			chronoVirageNonDesire = 0.0;
 			c.penalite += TEMPS_REACTION + 5.0;
 		}
 	}
 
 	public void modeFreinage() {
 		// Si on freine trop
-		if (vitesse > 0.2 && vitesse <= vitesseMaxVirage) {
+		if (vitesse > 0.02 && vitesse <= vitesseMaxVirage) {
 			virageSuivant();
 		}
 	}
 
 	public void virageSuivant() {
-		portionCourante = c.circuit.nextPortion();
+		
+		do {			
+			portionCourante = c.circuit.nextPortion();
+		} while (portionCourante != null && portionCourante.getAngle() < 3.0);
+		
 		distancePortion = 0.0;
 
 		if (portionCourante == null) {
@@ -383,27 +402,6 @@ public class GamePlay extends TimerTask {
 				break;
 			}
 		}
-	}
-
-	public boolean passageVirage() {
-		if (distanceAvantVirage > 0.0) {
-			return false;
-		}
-
-		double marge = c.conduite.getDistanceFreinage(vitesseMaxVirage);
-
-		// Une petite marge
-		if (marge > 20.0) {
-			Main.logImportant("Marge: " + marge);
-			c.crash();
-			c.penalite += marge;
-			actionCourante = TypeAction.ACCELERATION;
-			distancePortion = 0.0;
-		} else {
-			virageSuivant();
-		}
-
-		return true;
 	}
 
 	public void modeVirageNonDesire() {

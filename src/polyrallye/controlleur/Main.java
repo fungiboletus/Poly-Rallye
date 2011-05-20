@@ -90,7 +90,7 @@ public class Main {
 		menuPrincipal.lancer();
 
 		// TODO à enlever quand on ne sera plus en développement
-		fenetre.basculerAffichageConsole();
+		//fenetre.basculerAffichageConsole();
 	}
 
 	/**
