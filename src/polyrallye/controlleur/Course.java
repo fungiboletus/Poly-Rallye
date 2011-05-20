@@ -218,7 +218,7 @@ public class Course {
 		Multithreading.dormir(1000);
 	}
 
-	public void finDeCourse() {
+	public void finDeCourse(int nbSecondesCourse) {
 		fermer();
 		
 		Liseuse.lire("Fin de la course");
@@ -233,7 +233,7 @@ public class Course {
 		
 		if (etape == null) return;
 		
-		etape.setClassement(new Duree((int) timerCompteur.getTime()),
+		etape.setClassement(new Duree(nbSecondesCourse),
 				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
 		Etape.EnregistrerEtape(etape);
 		
@@ -283,7 +283,5 @@ public class Course {
 		radio.delete();
 		copilote.delete();
 		Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
-		finDeCourse();
-
 	}
 }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <etape>
+    <numero>2</numero>
+    <nom>RallyedeSahara</nom>
+    <joueur>
+      <nom></nom>
+      <argent></argent>
+      <garage />
+    </joueur>
+    <circuit>Normal/Sahara</circuit>
+    <classement>
+      <position>1</position>
+      <nom>Esposa</nom>
+      <voiture>Volkswagen W12 Coupe</voiture>
+      <duree>0</duree>
+    </classement>
+    <classement>
+      <position>2</position>
+      <nom>Trapatoni</nom>
+      <voiture>Jaguar XJ-13 serie</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>3</position>
+      <nom>Dialo</nom>
+      <voiture>Peugeot 205 Turbo 16 Évolution 1</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>4</position>
+      <nom>Paolista</nom>
+      <voiture>Lamborghini Reventon Roadster</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>5</position>
+      <nom>Chang</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>6</position>
+      <nom>Dupont</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>7</position>
+      <nom>zizou</nom>
+      <voiture>Peugeot 307 WRC</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>8</position>
+      <nom>Zicko</nom>
+      <voiture>Audi RS6</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>9</position>
+      <nom>Salem</nom>
+      <voiture>Lamborghini Diablo GTR</voiture>
+      <duree>0</duree>
+      <ecart>0</ecart>
+    </classement>
+    <classement>
+      <position>10</position>
+      <nom>Munoz</nom>
+      <voiture>Lamborghini Murcielago serie</voiture>
+      <duree>3303</duree>
+      <ecart>3303</ecart>
+    </classement>
+	</etape>
