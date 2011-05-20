@@ -8,6 +8,12 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
 
+/**
+ * afficherClassementChampionnat : Permet de lire un classement à partir d'un championnat 
+ * 
+ * @author ochi
+ *
+ */
 public class afficherClassementChampionnat extends Menu implements ActionMenu {
 
     protected List<Rang> classements = new ArrayList<Rang>();

@@ -1,10 +1,14 @@
 package polyrallye.modele.championnat;
 
-import java.util.List;
-
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.StockVoitures;
 
+/**
+ * Main : Test du namespace "Championnat"
+ * 
+ * @author ochi
+ *
+ */
 public class Main {
 
     /**

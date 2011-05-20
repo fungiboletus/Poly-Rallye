@@ -41,11 +41,6 @@ public abstract class Liseuse {
 	protected static Sound sonParoles;
 
 	/**
-	 * Identifieur entre sonParoles_A et sonParoles_B
-	 */
-	protected static int source = 0;
-
-	/**
 	 * Dictionnaire des paroles enregistrées.
 	 */
 	protected static Map<String, Parole> paroles;
@@ -321,10 +316,6 @@ public abstract class Liseuse {
 	public static void lire(String texte) {
 
 		fileParoles.add(texte);
-	}
-
-	public static void lire(int valeur) {
-		fileParoles.add("" + valeur);
 	}
 
 	/**
