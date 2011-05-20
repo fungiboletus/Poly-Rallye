@@ -345,7 +345,7 @@ public class GamePlay extends TimerTask {
 				tempsAvantReaction = chrono;
 				tempsVirage = c.conduite.getTempsPourVirage(portionCourante
 						.getAngle());
-				Main.logImportant("Temps de : " + tempsVirage);
+				//Main.logImportant("Temps de : " + tempsVirage);
 			}
 		}
 	}
