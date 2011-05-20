@@ -1,7 +1,6 @@
 package polyrallye.controlleur;
 
 import java.io.File;
-import java.util.TimerTask;
 
 import org.jdom.Element;
 
@@ -9,12 +8,9 @@ import polyrallye.modele.championnat.Championnat;
 import polyrallye.modele.championnat.Duree;
 import polyrallye.modele.championnat.Etape;
 import polyrallye.modele.circuit.Circuit;
-import polyrallye.modele.circuit.Portion;
-import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.personnes.Joueur;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.StockVoitures;
-import polyrallye.modele.voiture.Transmission;
 import polyrallye.modele.voiture.Voiture;
 import polyrallye.ouie.Copilote;
 import polyrallye.ouie.Klaxon;
@@ -129,6 +125,11 @@ public class Course {
 
 	}
 
+	public Course(Voiture voiture, String fichierCircuit, Etape etape) {
+		this(voiture, fichierCircuit);
+		this.etape = etape;
+	}
+	
 	public Course(Voiture voiture, String fichierCircuit) {
 		this.voiture = voiture;
 
@@ -218,7 +219,17 @@ public class Course {
 	}
 
 	public void finDeCourse() {
-
+		timerOrganisateur.cancel();
+		timerCompteur.pause();
+		sonVoiture.setRegime(800, false);
+		Liseuse.lire("Fin de la course");
+		Sound sonFin = new Sound("Sons/divers/fin.wav");
+		sonFin.setGain(2.0f);
+		sonFin.playAndWait();
+		sonFin.delete();
+		
+		if (etape == null) return;
+		
 		etape.setClassement(new Duree((int) timerCompteur.getTime()),
 				StockVoitures.getVoitureParNom(voiture.getNomComplet()));
 		Etape.EnregistrerEtape(etape);
@@ -228,9 +239,9 @@ public class Course {
 		int nbplayed = 0;
 		boolean isfinished = false;
 
-		for (int i = 0; i < championnat.getEtapes().size() - 1; ++i) {
+		for (int i = 0; i < championnat.getEtapes().size(); ++i) {
 			for (int j = 0; j < championnat.getEtapes().get(i).getClassement()
-					.size() - 1; ++j) {
+					.size(); ++j) {
 				if (Joueur.session.getNom().equals(
 						championnat.getEtapes().get(i).getClassement().get(j)
 								.getPersonne().getNom())) {

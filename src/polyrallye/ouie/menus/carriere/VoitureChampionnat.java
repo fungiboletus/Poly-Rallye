@@ -50,7 +50,7 @@ public class VoitureChampionnat extends Menu implements ActionMenu {
 
                 while (i.hasPrevious()) {
                         Voiture v = i.previous();
-                        ajouterElement(v.getNomComplet(), new LancementCourse(v, circuit));
+                        ajouterElement(v.getNomComplet(), new LancementCourse(v, circuit, etape));
                 }
         }
 }

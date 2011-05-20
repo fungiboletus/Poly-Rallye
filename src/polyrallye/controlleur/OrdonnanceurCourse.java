@@ -6,8 +6,6 @@ import polyrallye.modele.circuit.Portion;
 import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.voiture.Moteur;
 import polyrallye.modele.voiture.Transmission;
-import polyrallye.ouie.liseuse.Liseuse;
-import polyrallye.ouie.utilitaires.Sound;
 
 public class OrdonnanceurCourse extends TimerTask {
 
@@ -282,7 +280,7 @@ public class OrdonnanceurCourse extends TimerTask {
 			c.circuit.stopFrottement();
 		}
 	}
-	
+
 	public void modeAcceleration() {
 		// Si le freinage approche trop
 		if (distanceFreinage >= distanceAvantVirage
@@ -332,8 +330,9 @@ public class OrdonnanceurCourse extends TimerTask {
 							&& !c.entrees.isGauche() && c.entrees.isDroite())) {
 				actionCourante = TypeAction.VIRAGE;
 				tempsAvantReaction = chrono;
-				tempsVirage = c.conduite.getTempsPourVirage(portionCourante.getAngle());
-				Main.logImportant("Temps de : "+tempsVirage);
+				tempsVirage = c.conduite.getTempsPourVirage(portionCourante
+						.getAngle());
+				Main.logImportant("Temps de : " + tempsVirage);
 			}
 		}
 	}
@@ -366,15 +365,7 @@ public class OrdonnanceurCourse extends TimerTask {
 		distancePortion = 0.0;
 
 		if (portionCourante == null) {
-			c.timerOrganisateur.cancel();
-			c.timerCompteur.pause();
-			c.sonVoiture.setRegime(800, false);
-			Liseuse.lire("Fin de la course");
-			Sound sonFin = new Sound("Sons/divers/fin.wav");
-			sonFin.setGain(2.0f);
-			sonFin.playAndWait();
-			sonFin.delete();
-			c.fermer();
+			c.finDeCourse();
 		} else {
 
 			actionCourante = TypeAction.AVANT_VIRAGE;

@@ -178,19 +178,7 @@ public class Conduite {
 	public void setVirage(boolean virage) {
 		this.virage = virage;
 	}
-
-	/**
-	 * Cette méthode permet verefier si une voiture v passe un virage ou non En
-	 * fonction des caracteristiques du virage: rayon, angle de relevement,
-	 * angle de frottement
-	 */
-	public boolean passageVirage(double angleRelevement,
-			double angleFrottement, double rayon) {
-		double res = Math.sqrt(rayon * 9.81 * Math.tan(angleFrottement)
-				+ angleRelevement);
-		return (vitesse < res) ? true : false;
-	}
-
+	
 	public double getAcceleration() {
 		return acceleration;
 	}
@@ -252,7 +240,7 @@ public class Conduite {
 		double xb = 180.0;
 		
 		double xxa = 0.0;
-		double xxb = 100.0;
+		double xxb = 200.0;
 		
 		double yya = 1.3;
 		double yyb = 0.2;

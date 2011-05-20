@@ -1,9 +1,5 @@
 package polyrallye.ouie.environnement;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Random;
 
 import polyrallye.ouie.utilitaires.Sound;
@@ -28,11 +24,6 @@ public class Meteo {
 		env = -1;
 		randSfx = -1;
 
-	}
-
-	public Meteo(String et) {
-		this();
-		etat = et;
 	}
 
 	public Meteo(String et, String en) {
@@ -91,11 +82,6 @@ public class Meteo {
 			meteo.delete();			
 		}
 		if (sfx != null) sfx.tuer();
-	}
-	
-	public void Pause(boolean pause) {
-		meteo.pause(true);
-		sfx.pause(true);
 	}
 
 }

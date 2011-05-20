@@ -26,6 +26,7 @@ public class CreationJoueur extends Menu implements ActionMenu{
 		
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void remplir() {
 		try {
@@ -60,6 +61,7 @@ public class CreationJoueur extends Menu implements ActionMenu{
 				Element trueRacine = new Element("noms");
 				
 				
+				@SuppressWarnings("unchecked")
 				List<Element> noms = racine.getChildren("nom");
 				for (int i = 0; i < noms.size(); i++) {
 					if(!noms.get(i).getText().equals(nom)) {
