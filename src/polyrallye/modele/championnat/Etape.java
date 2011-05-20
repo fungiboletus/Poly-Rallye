@@ -143,7 +143,7 @@ public class Etape {
         Element noeud = new Element("etape");
 
         noeud.addContent(new Element("numero").setText("" + numeroEtape));
-        noeud.addContent(new Element("nom").setText(nom+"_"+Joueur.session.getNom()));
+        noeud.addContent(new Element("nom").setText(nom));
 
         noeud.addContent(joueur.toXML());
 
