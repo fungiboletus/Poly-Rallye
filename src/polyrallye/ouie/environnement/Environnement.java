@@ -12,6 +12,11 @@ import polyrallye.ouie.utilitaires.Sound.SoundException;
 import polyrallye.utilitaires.LectureFichier;
 import polyrallye.utilitaires.Multithreading;
 
+/**
+ * Classe générant l'environnement sonore
+ * @author user
+ *
+ */
 public class Environnement {
 
 	protected String type;
@@ -27,6 +32,7 @@ public class Environnement {
 	protected Sound ambiance;
 	protected Sfx sfx;
 
+	
 	public Environnement(String type, String temps, String meteo) {
 		super();
 

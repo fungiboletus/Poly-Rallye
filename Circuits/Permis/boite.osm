@@ -1,14 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <osm version='0.6' generator='JOSM'>
-  <node id='-26083' action='modify' visible='true' lat='7.010205608186185' lon='-47.647242974321536' />
-  <node id='-26081' action='modify' visible='true' lat='7.009437988011629' lon='-47.647215564203606' />
-  <node id='-26079' action='modify' visible='true' lat='7.008960480097157' lon='-47.64697639083888' />
-  <node id='-26077' action='modify' visible='true' lat='7.0081893897968115' lon='-47.64618051025116' />
   <node id='-26073' action='modify' visible='true' lat='7.005214613609132' lon='-47.646779896916456' />
   <node id='-26065' action='modify' visible='true' lat='7.005344678393349' lon='-47.64678103980099'>
-    <tag k='son' v='../aide/virage.ogg' />
+    <tag k='son' v='../aide/boitevitesse.ogg' />
   </node>
-  <node id='-26042' action='modify' visible='true' lat='7.007777531936046' lon='-47.64680324346776' />
+  <node id='-26042' action='modify' visible='true' lat='7.008668295647156' lon='-47.646830439498515' />
   <node id='-26041' action='modify' visible='true' lat='7.00508503122869' lon='-47.646777075403065'>
     <tag k='environnement' v='tunnel' />
     <tag k='meteo' v='clair' />
@@ -20,9 +16,5 @@
     <nd ref='-26073' />
     <nd ref='-26065' />
     <nd ref='-26042' />
-    <nd ref='-26077' />
-    <nd ref='-26079' />
-    <nd ref='-26081' />
-    <nd ref='-26083' />
   </way>
 </osm>
