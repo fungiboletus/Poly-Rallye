@@ -181,14 +181,14 @@ public class Championnat {
     public void setClassement() {
         classement = etapes.get(0).getClassement();
 
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < classement.size(); ++i) {
             classement.get(i).setSpeciale(nom);
             classement.get(i).setCar(null);
         }
 
         for (int k = 1; k < etapes.size(); ++k) {
-            for (int i = 0; i < 10 && k >= 1; ++i) {
-                for (int j = 0; j < 10; ++j)
+            for (int i = 0; i < classement.size() && k >= 1; ++i) {
+                for (int j = 0; j < classement.size(); ++j)
                     if (classement.get(i).getPersonne().getNom()
                             .equalsIgnoreCase(
                                     etapes.get(k).getClassement().get(j)
@@ -209,7 +209,7 @@ public class Championnat {
         // mise a jour des ecarts
         setecart();
 
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < classement.size(); ++i) {
             System.out.println(classement.get(i));
         }
 
@@ -223,7 +223,7 @@ public class Championnat {
     public void setecart() {
         int premier = classement.get(0).getDuree().ConvertToDixiemes();
         classement.get(0).setClassement(1);
-        for (int i = 1; i < 10; ++i) {
+        for (int i = 1; i < classement.size(); ++i) {
             classement.get(i).setClassement(i + 1);
             classement.get(i).setEcart(
                     new Duree(classement.get(i).getDuree().ConvertToDixiemes()
