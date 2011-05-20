@@ -44,8 +44,6 @@ public class SuppressionDonneesJoueur extends Menu implements ActionMenu{
 						
 						
 						
-						
-						
 
 						Liseuse.lire("La progression du joueur "+nom+" a été effacé");
 						Liseuse.lire("Vous êtes "+Joueur.session.getNom());
