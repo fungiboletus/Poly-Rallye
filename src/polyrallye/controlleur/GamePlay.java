@@ -2,6 +2,7 @@ package polyrallye.controlleur;
 
 import java.util.TimerTask;
 
+import polyrallye.modele.championnat.Duree;
 import polyrallye.modele.circuit.Portion;
 import polyrallye.modele.circuit.TypeRoute;
 import polyrallye.modele.voiture.Moteur;
@@ -75,7 +76,7 @@ public class GamePlay extends TimerTask {
 		if (c.entrees.isEchap()) {
 			c.fermer();
 		}
-
+		
 		// Gestion du temps
 		org.lwjgl.util.Timer.tick();
 		chrono = c.timerCompteur.getTime();
@@ -385,9 +386,8 @@ public class GamePlay extends TimerTask {
 		} while (portionCourante != null && portionCourante.getAngle() < 3.0);
 		
 		distancePortion = 0.0;
-
-		if (portionCourante == null) {
-			c.finDeCourse();
+		if (portionCourante == null) {			
+			c.finDeCourse((int) c.timerCompteur.getTime());
 		} else {
 
 			actionCourante = TypeAction.AVANT_VIRAGE;
