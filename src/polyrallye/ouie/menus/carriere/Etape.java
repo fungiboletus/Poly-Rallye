@@ -7,6 +7,12 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
 
+/**
+ * Etape : permet de lister les étapes ainsi que leurs classements respectifs
+ * 
+ * @author ochi
+ *
+ */
 public class Etape extends Menu implements ActionMenu {
 
     protected List<polyrallye.modele.championnat.Etape> etapes;

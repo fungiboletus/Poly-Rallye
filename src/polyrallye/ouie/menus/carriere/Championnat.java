@@ -8,6 +8,13 @@ import polyrallye.ouie.ActionMenu;
 import polyrallye.ouie.Menu;
 import polyrallye.ouie.liseuse.Liseuse;
 
+/**
+ * Championnat : Permet de lister les championnats ainsi que leurs classements
+ * respectifs
+ * 
+ * @author ochi
+ * 
+ */
 public class Championnat extends Menu implements ActionMenu {
 
     public Championnat(Menu menuPrecedent) {
@@ -31,8 +38,8 @@ public class Championnat extends Menu implements ActionMenu {
         List<polyrallye.modele.championnat.Championnat> l = new ArrayList<polyrallye.modele.championnat.Championnat>();
         l.add(polyrallye.modele.championnat.Championnat
                 .chargerChampionnat("championnat1"));
-        //l.add(polyrallye.modele.championnat.Championnat
-        //       .chargerChampionnat("championnat européen"));
+        // l.add(polyrallye.modele.championnat.Championnat
+        // .chargerChampionnat("championnat européen"));
         ListIterator<polyrallye.modele.championnat.Championnat> i = l
                 .listIterator(l.size());
 

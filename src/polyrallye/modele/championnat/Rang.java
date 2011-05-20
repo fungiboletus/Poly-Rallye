@@ -6,7 +6,7 @@ import polyrallye.modele.personnes.Personne;
 import polyrallye.utilitaires.GestionXML;
 
 /**
- * Classe Rang : représente un rang pour une epreuve donnée
+ * Classe Rang : représente un rang pour un classement donné
  * 
  * @author zizou
  * 
@@ -22,7 +22,10 @@ public class Rang implements Comparable<Rang> {
     /**
      * Constructeur
      * 
-     * @param uneEpreuve
+     * @param uneSpeciale
+     * @param personne
+     * @param d
+     * @param car
      */
     public Rang(String uneSpeciale, Personne personne, Duree d, String car) {
 
@@ -44,6 +47,12 @@ public class Rang implements Comparable<Rang> {
         this.car = car;
     }
 
+    
+    /**
+     * Constructeur à partir d'un noeud
+     * 
+     * @param noeud
+     */
     public Rang(Element noeud) {
 
         classement = GestionXML.getInt(noeud.getChildText("position"));
@@ -51,14 +60,20 @@ public class Rang implements Comparable<Rang> {
         personne = new Personne(noeud.getChildText("nom"));
 
         car = noeud.getChildText("voiture");
-        
+
         duree = new Duree(GestionXML.getInt(noeud.getChildText("duree")));
 
         if (classement != 1)
             ecart = new Duree(GestionXML.getInt(noeud.getChildText("ecart")));
-            
-        }
 
+    }
+
+    
+    /**
+     * Insertion XML d'un rang 
+     * 
+     * @return Element
+     */
     public Element toXML() {
 
         Element noeud = new Element("classement");
@@ -83,7 +98,7 @@ public class Rang implements Comparable<Rang> {
     /**
      * retourne la speciale concernée par ce rang
      * 
-     * @return
+     * @return String
      */
     public String getSpeciale() {
         return speciale;
@@ -92,7 +107,7 @@ public class Rang implements Comparable<Rang> {
     /**
      * retourne l'ecart
      * 
-     * @return
+     * @return Duree
      */
     public Duree getEcart() {
         return ecart;
@@ -101,7 +116,7 @@ public class Rang implements Comparable<Rang> {
     /**
      * retourne la duree concernée par ce rang
      * 
-     * @return
+     * @return Duree
      */
     public Duree getDuree() {
         return duree;
@@ -110,7 +125,7 @@ public class Rang implements Comparable<Rang> {
     /**
      * retourne le classement
      * 
-     * @return
+     * @return int
      */
     public int getClassement() {
         return classement;
@@ -144,7 +159,7 @@ public class Rang implements Comparable<Rang> {
     }
 
     /**
-     * toString
+     * toString. Permet un affichage en adéquation au classement des étapes.
      */
     @Override
     public String toString() {
@@ -152,7 +167,7 @@ public class Rang implements Comparable<Rang> {
 
         // obtenir le suffixe de la position
         //
-        String pos = "eme";      
+        String pos = "eme";
         String affichCar = "";
         String affichEcart = "";
         if (classement == 1) {
@@ -160,16 +175,17 @@ public class Rang implements Comparable<Rang> {
         } else
             affichEcart = " ; écart --> " + ecart;
 
-        if (car != null) affichCar = ", " + car;
-        
+        if (car != null)
+            affichCar = ", " + car;
+
         if (speciale != null) {
             resultat.append("\n" + speciale + " (" + classement + pos + ": "
-                    + personne.getNom() + affichCar + ", duree -> " + duree + affichEcart
-                    + " )");
+                    + personne.getNom() + affichCar + ", duree -> " + duree
+                    + affichEcart + " )");
         } else {
-            resultat.append("\n"+ " (" + classement + pos + ": "
-                    + personne.getNom() + ", " + car + ", duree -> " + duree + affichEcart
-                    + " )");
+            resultat.append("\n" + " (" + classement + pos + ": "
+                    + personne.getNom() + ", " + car + ", duree -> " + duree
+                    + affichEcart + " )");
         }
 
         return resultat.toString();
