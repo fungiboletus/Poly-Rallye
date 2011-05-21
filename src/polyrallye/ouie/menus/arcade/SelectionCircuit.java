@@ -26,7 +26,7 @@ public class SelectionCircuit extends Menu implements ActionMenu {
 		
 		@Override
 		public void remplir() {
-			File[] op = new File("Ressources/Circuits/").listFiles();
+			File[] op = new File("ressources/Circuits/").listFiles();
 			for (int i = 0; i < op.length; i++) {
 				String t = op[i].getName();
 				if(op[i].isDirectory() && !op[i].equals("Permis"))

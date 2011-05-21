@@ -23,7 +23,7 @@ public class Crash {
 		if (son !=null && son.isAlive())
 			son.delete();
 		// On va charger dans le fichier les config
-		String rep = "Ressources/Sons/Crash" + "/";
+		String rep = "ressources/Sons/Crash" + "/";
 		// On lit le fichier
 		String[] lectureManifeste = new String[1];
 		lectureManifeste[0] = env;
@@ -63,7 +63,7 @@ public class Crash {
 	private void repick() {
 		Random random = new Random();
 		try {
-			son.charger("Ressources/Sons/Crash/" + environnement + "_"
+			son.charger("ressources/Sons/Crash/" + environnement + "_"
 					+ (random.nextInt(5) + 1) + ".wav");
 		} catch (SoundException e) {
 			System.out.println("Erreur changement son crash");

@@ -28,7 +28,7 @@ public class SelectionCircuitInDirectory extends Menu implements ActionMenu {
 
 	@Override
 	public void remplir() {
-		File[] op = new File("Ressources/Circuits/" + rep).listFiles();
+		File[] op = new File("ressources/Circuits/" + rep).listFiles();
 		for (int i = 0; i < op.length; i++) {
 			String t = op[i].getName().substring(0,
 					op[i].getName().indexOf("."));

@@ -89,7 +89,7 @@ public abstract class Liseuse {
 		fileParoles = new LinkedList<String>();
 
 		// lt = new LecteurTexte();
-		sonParoles = new Sound("Ressources/Paroles/paroles.ogg");
+		sonParoles = new Sound("ressources/Paroles/paroles.ogg");
 		// sonParoles_A.setGain(0.90f);
 		
 		voixVocalyzeSIVOX = ConfigFile.rechercher("VOIX_4");
@@ -98,7 +98,7 @@ public abstract class Liseuse {
 
 		try {
 			BufferedReader brMarqueurs = new BufferedReader(new FileReader(
-					"Ressources/Paroles/marqueurs.txt"));
+					"ressources/Paroles/marqueurs.txt"));
 
 			String ligneMarqueurs;
 			while ((ligneMarqueurs = brMarqueurs.readLine()) != null) {
@@ -247,10 +247,10 @@ public abstract class Liseuse {
 									phrase.getProsodie());
 
 							listePhonemes
-									.ecrirePhonemes("Ressources/Paroles/VocalyzeSIVOX.pho");
+									.ecrirePhonemes("ressources/Paroles/VocalyzeSIVOX.pho");
 
 							SynthetiseurMbrola synthe = new SynthetiseurMbrola(
-									voixVocalyzeSIVOX, "Ressources/Paroles/",
+									voixVocalyzeSIVOX, "ressources/Paroles/",
 									"VocalyzeSIVOX");
 
 							synthe.muet();
@@ -263,7 +263,7 @@ public abstract class Liseuse {
 					}
 
 					// De temps en temps, il n'y a aucun fichier à lire
-					File fson = new File("Ressources/Paroles/VocalyzeSIVOX.wav");
+					File fson = new File("ressources/Paroles/VocalyzeSIVOX.wav");
 					if (fson.exists()) {
 
 						// Récupération du son, qui a pour fichier son, et pour
@@ -302,7 +302,7 @@ public abstract class Liseuse {
 
 				try {
 					PrintWriter pw = new PrintWriter(new FileWriter(
-							"Ressources/Paroles/a_enregistrer.txt", true));
+							"ressources/Paroles/a_enregistrer.txt", true));
 					pw.println(texte);
 					pw.close();
 				} catch (IOException e) {

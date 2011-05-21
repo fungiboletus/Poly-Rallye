@@ -12,7 +12,7 @@ public class VoitureMagasin extends Menu implements ActionMenu {
 	protected static Sound musique;
 
 	static {
-		/*musique = new Sound("Ressources/Reno Project - 1.0/02 - Atlanta.ogg");
+		/*musique = new Sound("ressources/Reno Project - 1.0/02 - Atlanta.ogg");
 		musique.setOffset(100);
 		musique.setLoop(true);*/
 	}

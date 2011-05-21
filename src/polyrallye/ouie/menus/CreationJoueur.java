@@ -30,7 +30,7 @@ public class CreationJoueur extends Menu implements ActionMenu{
 	@Override
 	public void remplir() {
 		try {
-			Element noeud = GestionXML.chargerNoeudRacine(new File("Ressources/Comptes/nomsdispo.xml"));
+			Element noeud = GestionXML.chargerNoeudRacine(new File("ressources/Comptes/nomsdispo.xml"));
 			List<Element> noms = noeud.getChildren("nom");
 			
 			for (int i = 0; i < noms.size(); i++) {
@@ -56,7 +56,7 @@ public class CreationJoueur extends Menu implements ActionMenu{
 		public void actionMenu() {
 			
 			try {
-				Element racine = GestionXML.chargerNoeudRacine(new File("Ressources/Comptes/nomsdispo.xml"));
+				Element racine = GestionXML.chargerNoeudRacine(new File("ressources/Comptes/nomsdispo.xml"));
 				//Sinon ça ne marche pas
 				Element trueRacine = new Element("noms");
 				
@@ -73,7 +73,7 @@ public class CreationJoueur extends Menu implements ActionMenu{
 				}
 				
 				
-				GestionXML.enregistrerRacine("Ressources/Comptes/nomsdispo.xml", trueRacine);
+				GestionXML.enregistrerRacine("ressources/Comptes/nomsdispo.xml", trueRacine);
 
 				
 			} catch (Exception e) {
@@ -82,7 +82,7 @@ public class CreationJoueur extends Menu implements ActionMenu{
 			}
 			
 			try {
-				Element racine = GestionXML.chargerNoeudRacine(new File("Ressources/Comptes/nomutilises.xml"));
+				Element racine = GestionXML.chargerNoeudRacine(new File("ressources/Comptes/nomutilises.xml"));
 				//Sinon ça ne marche pas
 				Element trueRacine = new Element("noms");
 				
@@ -97,7 +97,7 @@ public class CreationJoueur extends Menu implements ActionMenu{
 					trueRacine.addContent(temp);
 				}
 				
-				GestionXML.enregistrerRacine("Ressources/Comptes/nomutilises.xml", trueRacine);
+				GestionXML.enregistrerRacine("ressources/Comptes/nomutilises.xml", trueRacine);
 				
 			} catch (Exception e) {
 				System.err.println("Erreur ajout nom");

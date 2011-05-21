@@ -31,7 +31,7 @@ public class Copilote {
 		random = new Random();
 
 		// Sélection d'un copilote
-		String rep = "Ressources/Sons/copilote/";
+		String rep = "ressources/Sons/copilote/";
 		int nb = (new File(rep).list()).length;
 		id = random.nextInt(nb) + 1;
 		rep += id + "/";
@@ -119,7 +119,7 @@ public class Copilote {
 	}
 
 	public void togglePipelette() {
-		String rep = "Ressources/Sons/copilote/" + id + "/";
+		String rep = "ressources/Sons/copilote/" + id + "/";
 		if (isPipelette) {
 			isPipelette = false;
 			bullshit.pause(true);
@@ -142,7 +142,7 @@ public class Copilote {
 
 	public void playCrash() {
 		Main.logImportant("CRASH CRASH CRASH !");
-		String rep = "Ressources/Sons/copilote/" + id + "/";
+		String rep = "ressources/Sons/copilote/" + id + "/";
 		if (isPipelette) {
 			isPipelette = false;
 			bullshit.pause(true);

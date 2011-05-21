@@ -25,7 +25,7 @@ public class Radio extends Thread {
 	private boolean isAlive;
 
 	public Radio() {
-		String rep = "Ressources/Sons/radio/";
+		String rep = "ressources/Sons/radio/";
 		nbRadio = (new File(rep).list()).length - 1;
 		Random random = new Random();
 		id = random.nextInt(nbRadio) + 1;
@@ -149,7 +149,7 @@ public class Radio extends Thread {
 	}
 
 	private void chargerCom() {
-		String rep = "Ressources/Sons/radio/" + id + "/";
+		String rep = "ressources/Sons/radio/" + id + "/";
 		Random random = new Random();
 		try {
 			com.charger(rep + "com_" + (random.nextInt(nbCom) + 1) + ".wav");
@@ -159,7 +159,7 @@ public class Radio extends Thread {
 	}
 
 	private void chargerZike() {
-		String rep = "Ressources/Sons/radio/" + id + "/";
+		String rep = "ressources/Sons/radio/" + id + "/";
 		Random random = new Random();
 		try {
 			musique.charger(rep + "musique_" + (random.nextInt(nbZike) + 1)
@@ -179,7 +179,7 @@ public class Radio extends Thread {
 	}
 
 	private void readManifeste() {
-		String rep = "Ressources/Sons/radio/" + id + "/";
+		String rep = "ressources/Sons/radio/" + id + "/";
 
 		// On lit le fichier comme d'ab
 		String[] lectureManifeste = new String[2];

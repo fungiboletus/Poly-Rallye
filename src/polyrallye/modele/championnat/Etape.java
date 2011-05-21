@@ -324,7 +324,7 @@ public class Etape {
      * @return Etape
      */
     public static Etape chargerEtape(String nom) {
-        File f = new File("Ressources/Championnats/" + nom + ".xml");
+        File f = new File("ressources/Championnats/" + nom + ".xml");
 
         if (f.exists()) {
             Element n;
@@ -347,13 +347,13 @@ public class Etape {
      */
     public static void EnregistrerEtape(Etape et) {
         try {
-            File d = new File("Ressources/Championnats");
+            File d = new File("ressources/Championnats");
 
             if (!d.exists()) {
                 d.mkdir();
             }
 
-            GestionXML.enregistrerRacine("Ressources/Championnats/" + et.getEtape() + ".xml", et.toXML());
+            GestionXML.enregistrerRacine("ressources/Championnats/" + et.getEtape() + ".xml", et.toXML());
         } catch (Exception e) {
             e.printStackTrace();
             Liseuse.lire("Impossible de sauvegarder la progression.");

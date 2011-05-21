@@ -36,7 +36,7 @@ public class Evenement {
 			circuit.changeTerrain(parametre);
 			break;
 		case SON:
-			Sound s = new Sound("Ressources/Sons/divers/" + parametre);
+			Sound s = new Sound("ressources/Sons/divers/" + parametre);
 			s.playAndDelete();
 			break;
 		}

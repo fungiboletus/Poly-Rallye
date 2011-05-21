@@ -109,7 +109,7 @@ public class FenetreNoire extends JFrame {
 		panneau.setLayout(new BorderLayout());
 
 		// Chargement de la magnifique image de fond
-		JLabel image = new JLabel(new ImageIcon("Ressources/logo.png"));
+		JLabel image = new JLabel(new ImageIcon("ressources/logo.png"));
 		image.setPreferredSize(new Dimension(480, 114));
 
 		console = new JTextPane();

@@ -33,7 +33,7 @@ public class SelectionVoitureMagasin extends Menu implements ActionMenu {
 	static {
 		/*
 		 * musique = new
-		 * Sound("Ressources/Reno Project - 1.0/02 - Atlanta.ogg");
+		 * Sound("ressources/Reno Project - 1.0/02 - Atlanta.ogg");
 		 * musique.play(); musique.pause(true); musique.setOffset(100);
 		 * musique.setLoop(true);
 		 */

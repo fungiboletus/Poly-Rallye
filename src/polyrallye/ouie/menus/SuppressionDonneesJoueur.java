@@ -44,10 +44,10 @@ public class SuppressionDonneesJoueur extends Menu implements ActionMenu{
 						Joueur.session.RemiseAZero();
 						Joueur.EnregistrerJoueur(Joueur.session);
 						
-						String[] list = new File("Ressources/Championnats/").list();
+						String[] list = new File("ressources/Championnats/").list();
 						for (int i = 0; i < list.length; i++) {
 							if(list[i].contains(Joueur.session.getNom()))
-								new File("Ressources/Championnats/"+list[i]).delete();
+								new File("ressources/Championnats/"+list[i]).delete();
 						}
 						
 

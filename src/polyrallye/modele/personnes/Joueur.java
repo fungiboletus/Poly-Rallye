@@ -95,7 +95,7 @@ public class Joueur extends Personne {
 	}
 
 	public static Joueur chargerJoueur(String nom) {
-		File f = new File("Ressources/Comptes/" + nom.hashCode() + ".xml");
+		File f = new File("ressources/Comptes/" + nom.hashCode() + ".xml");
 
 		if (f.exists()) {
 			Element n;
@@ -112,13 +112,13 @@ public class Joueur extends Personne {
 
 	public static void EnregistrerJoueur(Joueur j) {
 		try {
-			File d = new File("Ressources/Comptes");
+			File d = new File("ressources/Comptes");
 
 			if (!d.exists()) {
 				d.mkdir();
 			}
 
-			GestionXML.enregistrerRacine("Ressources/Comptes/" + j.getNom().hashCode()
+			GestionXML.enregistrerRacine("ressources/Comptes/" + j.getNom().hashCode()
 					+ ".xml", j.toXML());
 		} catch (Exception e) {
 			e.printStackTrace();
