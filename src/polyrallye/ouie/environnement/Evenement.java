@@ -1,5 +1,6 @@
 package polyrallye.ouie.environnement;
 
+import polyrallye.controlleur.GestionEntreesCourse;
 import polyrallye.modele.circuit.Circuit;
 import polyrallye.ouie.utilitaires.Sound;
 
@@ -38,6 +39,15 @@ public class Evenement {
 		case SON:
 			Sound s = new Sound("ressources/Sons/divers/" + parametre);
 			s.playAndDelete();
+			break;
+		case PERMIS:
+			Sound p = new Sound("ressources/Sons/aide/" + parametre);
+			p.setGain(2.0f);
+			GestionEntreesCourse.setActive(false);
+			p.playAndWait();
+			GestionEntreesCourse.setActive(true);
+			p.delete();
+			
 			break;
 		}
 	}

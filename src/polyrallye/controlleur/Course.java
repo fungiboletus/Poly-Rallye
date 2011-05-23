@@ -223,14 +223,14 @@ public class Course {
     }
 
     public void finDeCourse(int nbSecondesCourse) {
-        fermer();
+
 
         Liseuse.lire("Fin de la course");
         Sound sonFin = new Sound("ressources/Sons/divers/fin.wav");
         sonFin.setGain(2.0f);
         sonFin.playAndWait();
         sonFin.delete();
-
+        fermer();
         Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
 
         Duree tempsEtape = new Duree(nbSecondesCourse * 10);
@@ -299,4 +299,6 @@ public class Course {
         copilote.delete();
         Main.changerGestionEntrees(GestionEntreesMenu.getInstance());
     }
+    
+   
 }

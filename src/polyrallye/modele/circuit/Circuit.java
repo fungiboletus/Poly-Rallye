@@ -165,6 +165,9 @@ public class Circuit {
 						if ((parametre = getTagValue(n, "son")) != null)
 							portion.addEvenement(new Evenement(
 									TypeEvenement.SON, parametre));
+						if ((parametre = getTagValue(n, "permis")) != null)
+							portion.addEvenement(new Evenement(
+									TypeEvenement.PERMIS, parametre));
 					}
 
 					portions.add(portion);

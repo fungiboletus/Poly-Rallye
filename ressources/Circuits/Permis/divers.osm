@@ -1,20 +1,28 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <osm version='0.6' generator='JOSM'>
-  <node id='-26093' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.00508503122869' lon='-47.646777075403065'>
+  <node id='-54' action='modify' visible='true' lat='7.029152944029096' lon='-47.6409933420386' />
+  <node id='-52' action='modify' visible='true' lat='7.02145646756386' lon='-47.64788640598793' />
+  <node id='-50' action='modify' visible='true' lat='7.024474708812874' lon='-47.6300962188834' />
+  <node id='-48' action='modify' visible='true' lat='7.016878764299034' lon='-47.64656861435056' />
+  <node id='-45' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.00508503122869' lon='-47.646777075403065'>
     <tag k='environnement' v='urban_war' />
     <tag k='meteo' v='clair' />
     <tag k='surface' v='asphalt' />
     <tag k='temps' v='jour' />
   </node>
-  <node id='-26091' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.0271044085879915' lon='-47.64682153279845' />
-  <node id='-26089' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.005344678393349' lon='-47.64678103980099'>
-    <tag k='son' v='../aide/divers.ogg' />
+  <node id='-43' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.029770490312303' lon='-47.64905164172323' />
+  <node id='-41' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.005344678393349' lon='-47.64678103980099'>
+    <tag k='permis' v='divers.ogg' />
   </node>
-  <node id='-26087' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.005214613609132' lon='-47.646779896916456' />
-  <way id='-26095' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true'>
-    <nd ref='-26093' />
-    <nd ref='-26087' />
-    <nd ref='-26089' />
-    <nd ref='-26091' />
+  <node id='-39' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true' lat='7.005214613609132' lon='-47.646779896916456' />
+  <way id='-47' action='modify' timestamp='2011-05-20T05:01:08Z' visible='true'>
+    <nd ref='-45' />
+    <nd ref='-39' />
+    <nd ref='-41' />
+    <nd ref='-48' />
+    <nd ref='-50' />
+    <nd ref='-52' />
+    <nd ref='-54' />
+    <nd ref='-43' />
   </way>
 </osm>

@@ -87,7 +87,7 @@ public class Portion {
 		for (Evenement e : p.getEvenements()) {
 			boolean ajouter = true;
 			for (Evenement ee : evenements) {
-				if (e.getType() == ee.getType() && e.getType() != TypeEvenement.SON) {
+				if (e.getType() == ee.getType() && e.getType() != TypeEvenement.SON && e.getType() == ee.getType() && e.getType() != TypeEvenement.PERMIS) {
 					ajouter = false;
 				}
 			}
