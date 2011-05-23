@@ -137,6 +137,8 @@ public class Sfx extends Thread {
 		if(b)
 			temp.stop();
 	}
+	
+
 		
 	
 }

@@ -143,10 +143,17 @@ public class Copilote {
 	public void playCrash() {
 		Main.logImportant("CRASH CRASH CRASH !");
 		String rep = "ressources/Sons/copilote/" + id + "/";
+		/*Pour deactiver le copilote pipelette en cas de crash*/
+//		if (isPipelette) {
+//			isPipelette = false;
+//			bullshit.pause(true);
+//		}
+		/*On préfère le couper dans son élan*/
 		if (isPipelette) {
-			isPipelette = false;
 			bullshit.pause(true);
+			bullshit.pause(false);
 		}
+			
 		if (new File(rep + "crash.wav").exists()) {
 			Sound crash = new Sound(rep + "crash.wav");
 			crash.playAndDelete();
@@ -173,15 +180,12 @@ public class Copilote {
 
 		Main.logInfo("Droite…");
 
-		/*
-		 * if (isPipelette) bullshit.pause(true);
-		 */
+		
 
 		droite.get(random.nextInt(droite.size())).play();
 
-		/*
-		 * if (isPipelette) bullshit.pause(false);
-		 */
+		
+		 
 
 	}
 
@@ -189,13 +193,13 @@ public class Copilote {
 
 		Main.logInfo("Freine !");
 
-		if (isPipelette)
-			bullshit.pause(true);
+//		if (isPipelette)
+//			bullshit.pause(true);
 
 		freine.get(random.nextInt(freine.size())).play();
 
-		if (isPipelette)
-			bullshit.pause(false);
+//		if (isPipelette)
+//			bullshit.pause(false);
 
 	}
 
