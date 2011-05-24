@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-1147' action='modify' visible='true' lat='48.858877941372036' lon='2.30357181851783'>
+    <tag k='son' v='explosions/explode_1.wav' />
+  </node>
+  <node id='-1145' action='modify' visible='true' lat='48.85967742206016' lon='2.3073996393707996'>
+    <tag k='son' v='explosions/explode_9.wav' />
+  </node>
+  <node id='-1143' visible='true' lat='48.85991726377653' lon='2.3102148092044654' />
+  <node id='-1132' action='modify' visible='true' lat='48.86786778589982' lon='2.3137978274370505'>
+    <tag k='son' v='explosions/explode_4.wav' />
+  </node>
+  <node id='-1130' action='modify' visible='true' lat='48.869116744492345' lon='2.314557315701529' />
+  <node id='-1128' action='modify' visible='true' lat='48.87344622625608' lon='2.303468787040148' />
+  <node id='-1125' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.873549272383215' lon='2.295374779091316'>
+    <tag k='environnement' v='urban_war' />
+    <tag k='meteo' v='clair' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='jour' />
+  </node>
+  <node id='-1123' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.87441512199573' lon='2.3022797932291974'>
+    <tag k='son' v='explosions/explode_1.wav' />
+  </node>
+  <node id='-1121' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.87479392648899' lon='2.3057354648325727'>
+    <tag k='son' v='explosions/explode_2.wav' />
+  </node>
+  <node id='-1119' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.87299249818973' lon='2.3100423961990497'>
+    <tag k='son' v='explosions/explode_3.wav' />
+  </node>
+  <node id='-1117' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.87057032825151' lon='2.3101481114275306'>
+    <tag k='son' v='town_child_scream1.wav' />
+  </node>
+  <node id='-1115' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.86572703523327' lon='2.320272371834372'>
+    <tag k='son' v='c130_flyby.wav' />
+  </node>
+  <node id='-1113' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.864488238218016' lon='2.320278676180317' />
+  <node id='-1111' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.86272521309148' lon='2.3188897422383126' />
+  <node id='-1109' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.85864594639786' lon='2.32317768639818'>
+    <tag k='son' v='explosions/explode_4.wav' />
+  </node>
+  <node id='-1107' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.85648928553591' lon='2.3212377310621575'>
+    <tag k='son' v='explosions/explode_5.wav' />
+  </node>
+  <node id='-1105' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.857533865664216' lon='2.3176652899181702'>
+    <tag k='son' v='explosions/explode_6.wav' />
+  </node>
+  <node id='-1103' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.85819674978841' lon='2.314154279311968'>
+    <tag k='son' v='explosions/explode_7.wav' />
+  </node>
+  <node id='-1101' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true' lat='48.85813486276168' lon='2.3101109889168643'>
+    <tag k='son' v='explosions/explode_8.wav' />
+  </node>
+  <way id='-1127' action='modify' timestamp='2011-05-24T09:27:11Z' visible='true'>
+    <nd ref='-1125' />
+    <nd ref='-1123' />
+    <nd ref='-1128' />
+    <nd ref='-1121' />
+    <nd ref='-1119' />
+    <nd ref='-1117' />
+    <nd ref='-1130' />
+    <nd ref='-1132' />
+    <nd ref='-1115' />
+    <nd ref='-1113' />
+    <nd ref='-1111' />
+    <nd ref='-1109' />
+    <nd ref='-1107' />
+    <nd ref='-1105' />
+    <nd ref='-1103' />
+    <nd ref='-1101' />
+    <nd ref='-1143' />
+    <nd ref='-1145' />
+    <nd ref='-1147' />
+  </way>
+</osm>

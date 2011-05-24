@@ -226,7 +226,10 @@ public class Course {
 
 
         Liseuse.lire("Fin de la course");
-        Sound sonFin = new Sound("ressources/Sons/divers/fin.wav");
+        String t  = "ressources/Sons/divers/fin.wav";
+        if (circuit.getEnvironnement().equals("urban_war"))
+        	t = "ressources/Sons/divers/mort.wav";
+        Sound sonFin = new Sound(t);
         sonFin.setGain(2.0f);
         sonFin.playAndWait();
         sonFin.delete();

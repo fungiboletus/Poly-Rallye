@@ -1,0 +1,659 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-80609' timestamp='2009-10-16T17:44:36Z' uid='176693' user='MathiasRR' visible='true' version='16' lat='50.3527212' lon='6.983295' />
+  <node id='-80608' timestamp='2009-10-16T17:44:36Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3528143' lon='6.983544' />
+  <node id='-80607' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.3531524' lon='6.9845937' />
+  <node id='-80606' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='14' lat='50.3534057' lon='6.985275' />
+  <node id='-80605' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='1' lat='50.3535786' lon='6.985672' />
+  <node id='-80604' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.3537395' lon='6.9859053' />
+  <node id='-80603' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.354092' lon='6.9862084' />
+  <node id='-80602' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.354347' lon='6.9863238' />
+  <node id='-80601' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.3545541' lon='6.9863425' />
+  <node id='-80600' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.3548039' lon='6.9863077' />
+  <node id='-80599' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.3551068' lon='6.9862111' />
+  <node id='-80598' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.3553738' lon='6.9860743' />
+  <node id='-80597' timestamp='2010-07-17T18:27:56Z' uid='12973' user='MattGPS' visible='true' version='13' lat='50.355598' lon='6.9859161' />
+  <node id='-80596' timestamp='2009-10-16T17:44:33Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3557327' lon='6.9857954' />
+  <node id='-80595' timestamp='2009-10-16T17:44:32Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3559408' lon='6.9855808' />
+  <node id='-80594' timestamp='2009-10-16T17:44:31Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.35607' lon='6.98539' />
+  <node id='-80593' timestamp='2009-10-16T17:44:30Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.3561521' lon='6.9851922' />
+  <node id='-80592' timestamp='2009-10-16T17:44:29Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3562097' lon='6.984974' />
+  <node id='-80591' timestamp='2009-10-16T17:44:29Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3563025' lon='6.9845484' />
+  <node id='-80590' timestamp='2009-10-16T17:44:28Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3564006' lon='6.984073' />
+  <node id='-80589' timestamp='2009-10-16T17:44:27Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3565015' lon='6.9835581' />
+  <node id='-80588' timestamp='2009-10-16T17:44:27Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3566253' lon='6.9830488' />
+  <node id='-80587' timestamp='2009-10-16T17:44:27Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3567622' lon='6.9825768' />
+  <node id='-80586' timestamp='2009-10-16T17:44:26Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3569156' lon='6.9821304' />
+  <node id='-80585' timestamp='2009-10-16T17:44:26Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.357036' lon='6.9818729' />
+  <node id='-80584' timestamp='2009-10-16T17:44:25Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3572199' lon='6.9815556' />
+  <node id='-80583' timestamp='2009-10-16T17:44:24Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3573766' lon='6.981315' />
+  <node id='-80582' timestamp='2009-10-16T17:44:23Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.357549' lon='6.981138' />
+  <node id='-80581' timestamp='2009-10-16T17:44:23Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3577023' lon='6.981081' />
+  <node id='-80580' timestamp='2009-10-16T17:44:23Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3578834' lon='6.9811454' />
+  <node id='-80579' timestamp='2009-10-16T17:44:22Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3580517' lon='6.9813526' />
+  <node id='-80578' timestamp='2009-10-16T17:44:22Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3582087' lon='6.9817017' />
+  <node id='-80577' timestamp='2009-10-16T17:44:21Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3583959' lon='6.9820933' />
+  <node id='-80576' timestamp='2009-10-16T17:44:21Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3585091' lon='6.9823536' />
+  <node id='-80575' timestamp='2009-10-16T17:44:20Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3586624' lon='6.9826969' />
+  <node id='-80574' timestamp='2009-10-16T17:44:20Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3588157' lon='6.9831089' />
+  <node id='-80573' timestamp='2009-10-16T17:44:19Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.358921' lon='6.9834318' />
+  <node id='-80572' timestamp='2009-10-16T17:44:19Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3589517' lon='6.9837585' />
+  <node id='-80571' timestamp='2009-10-16T17:44:18Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.358926' lon='6.9840623' />
+  <node id='-80570' timestamp='2009-10-16T17:44:18Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3587474' lon='6.9845143' />
+  <node id='-80569' timestamp='2009-10-16T17:44:18Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3586105' lon='6.9847804' />
+  <node id='-80568' timestamp='2009-10-16T17:44:17Z' uid='176693' user='MathiasRR' visible='true' version='2' lat='50.3585322' lon='6.984916' />
+  <node id='-80567' timestamp='2009-10-16T17:44:16Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3584532' lon='6.9850736' />
+  <node id='-80566' timestamp='2009-10-16T17:44:16Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3582572' lon='6.9854349' />
+  <node id='-80565' timestamp='2009-10-16T17:44:15Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3581586' lon='6.9858383' />
+  <node id='-80564' timestamp='2009-10-16T17:44:15Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.358127' lon='6.9862718' />
+  <node id='-80563' timestamp='2009-10-16T17:44:14Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.358145' lon='6.9867628' />
+  <node id='-80562' timestamp='2009-10-16T17:44:14Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3582298' lon='6.9874262' />
+  <node id='-80561' timestamp='2009-10-16T17:44:14Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3583393' lon='6.9879645' />
+  <node id='-80560' timestamp='2009-10-16T17:44:14Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3584634' lon='6.9884888' />
+  <node id='-80559' timestamp='2009-10-16T17:44:13Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3585943' lon='6.9890173' />
+  <node id='-80558' timestamp='2009-10-16T17:44:12Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3587154' lon='6.9896353' />
+  <node id='-80557' timestamp='2009-10-16T17:44:11Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3587938' lon='6.9902157' />
+  <node id='-80556' timestamp='2009-10-16T17:44:11Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3588668' lon='6.990839' />
+  <node id='-80555' timestamp='2009-10-16T17:44:10Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.358969' lon='6.9913916' />
+  <node id='-80554' timestamp='2009-10-16T17:44:10Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3591607' lon='6.9919323' />
+  <node id='-80553' timestamp='2009-10-16T17:44:10Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3594091' lon='6.9923958' />
+  <node id='-80552' timestamp='2009-10-16T17:44:09Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3595853' lon='6.9928263' />
+  <node id='-80551' timestamp='2009-10-16T17:44:08Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.3597933' lon='6.9934067' />
+  <node id='-80550' timestamp='2009-10-16T17:44:07Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3600148' lon='6.9938075' />
+  <node id='-80549' timestamp='2009-10-16T17:44:07Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3602636' lon='6.9941608' />
+  <node id='-80548' timestamp='2009-10-16T17:44:07Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3605894' lon='6.9944679' />
+  <node id='-80547' timestamp='2009-10-16T17:44:06Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3609748' lon='6.9947441' />
+  <node id='-80546' timestamp='2009-10-16T17:44:06Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3612808' lon='6.9949739' />
+  <node id='-80545' timestamp='2009-10-16T17:44:06Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3615946' lon='6.9952299' />
+  <node id='-80544' timestamp='2009-10-16T17:44:06Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3618384' lon='6.9955164' />
+  <node id='-80543' timestamp='2009-10-16T17:44:05Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3621003' lon='6.9958672' />
+  <node id='-80542' timestamp='2009-10-16T17:44:05Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.362326' lon='6.9962264' />
+  <node id='-80541' timestamp='2009-10-16T17:44:05Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3625133' lon='6.9965252' />
+  <node id='-80540' timestamp='2009-10-16T17:44:04Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3627414' lon='6.9968911' />
+  <node id='-80539' timestamp='2009-10-16T17:44:04Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3628725' lon='6.9972834' />
+  <node id='-80538' timestamp='2009-10-16T17:44:04Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3629584' lon='6.9977859' />
+  <node id='-80537' timestamp='2009-10-16T17:44:03Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3630316' lon='6.9983041' />
+  <node id='-80536' timestamp='2009-10-16T17:44:03Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3631152' lon='6.9986303' />
+  <node id='-80535' timestamp='2009-10-16T17:44:03Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3632289' lon='6.9989266' />
+  <node id='-80534' timestamp='2009-10-16T17:44:03Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3633706' lon='6.9991477' />
+  <node id='-80533' timestamp='2009-10-16T17:44:02Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.36352' lon='6.9993593' />
+  <node id='-80532' timestamp='2009-10-16T17:44:01Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3637742' lon='6.9995432' />
+  <node id='-80531' timestamp='2009-10-16T17:44:01Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3639962' lon='6.9996201' />
+  <node id='-80530' timestamp='2009-10-16T17:44:00Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3644317' lon='6.9996065' />
+  <node id='-80529' timestamp='2009-10-16T17:44:00Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3647557' lon='6.9995973' />
+  <node id='-80528' timestamp='2009-10-16T17:43:59Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3650837' lon='6.9995846' />
+  <node id='-80527' timestamp='2009-10-16T17:43:59Z' uid='176693' user='MathiasRR' visible='true' version='6' lat='50.3653091' lon='6.99959' />
+  <node id='-80526' timestamp='2009-10-16T17:43:59Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3654914' lon='6.999571' />
+  <node id='-80525' timestamp='2009-10-16T17:43:58Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3659003' lon='6.9994964' />
+  <node id='-80524' timestamp='2009-10-16T17:43:58Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3662099' lon='6.9995066' />
+  <node id='-80523' timestamp='2009-10-16T17:43:57Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3665451' lon='6.9996249' />
+  <node id='-80522' timestamp='2009-10-16T17:43:57Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3667909' lon='6.9997941' />
+  <node id='-80521' timestamp='2009-10-16T17:43:57Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3670588' lon='6.9999958' />
+  <node id='-80520' timestamp='2009-10-16T17:43:57Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3673441' lon='7.0002514' />
+  <node id='-80519' timestamp='2009-10-16T17:43:56Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3675692' lon='7.0005214' />
+  <node id='-80518' timestamp='2009-10-16T17:43:56Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3678131' lon='7.0008041' />
+  <node id='-80517' timestamp='2009-10-16T17:43:56Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3680139' lon='7.0010314' />
+  <node id='-80516' timestamp='2009-10-16T17:43:56Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3681871' lon='7.0011571' />
+  <node id='-80515' timestamp='2009-10-16T17:43:56Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3683917' lon='7.0012563' />
+  <node id='-80514' timestamp='2009-10-16T17:43:55Z' uid='176693' user='MathiasRR' visible='true' version='6' lat='50.3685078' lon='7.0013327' />
+  <node id='-80513' timestamp='2009-10-16T17:43:55Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.368594' lon='7.0014147' />
+  <node id='-80512' timestamp='2009-10-16T17:43:55Z' uid='176693' user='MathiasRR' visible='true' version='6' lat='50.3686947' lon='7.0015433' />
+  <node id='-80511' timestamp='2009-10-16T17:43:55Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3687527' lon='7.0017063' />
+  <node id='-80510' timestamp='2009-10-16T17:43:54Z' uid='176693' user='MathiasRR' visible='true' version='6' lat='50.3687901' lon='7.0018638' />
+  <node id='-80509' timestamp='2009-10-16T17:43:54Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3688038' lon='7.0020603' />
+  <node id='-80508' timestamp='2009-10-16T17:43:53Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3687587' lon='7.0026783' />
+  <node id='-80507' timestamp='2009-10-16T17:43:53Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3687149' lon='7.003837' />
+  <node id='-80506' timestamp='2009-10-16T17:43:53Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3686876' lon='7.0042919' />
+  <node id='-80505' timestamp='2009-10-16T17:43:53Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3686797' lon='7.0046291' />
+  <node id='-80504' timestamp='2009-10-16T17:43:52Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3686954' lon='7.0049099' />
+  <node id='-80503' timestamp='2009-10-16T17:43:52Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3687645' lon='7.0051889' />
+  <node id='-80502' timestamp='2009-10-16T17:43:52Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3688996' lon='7.0054188' />
+  <node id='-80501' timestamp='2009-10-16T17:43:51Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3690669' lon='7.005526' />
+  <node id='-80500' timestamp='2009-10-16T17:43:51Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3692019' lon='7.0055628' />
+  <node id='-80499' timestamp='2009-10-16T17:43:51Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3694157' lon='7.0055536' />
+  <node id='-80498' timestamp='2009-10-16T17:43:50Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3696894' lon='7.0055279' />
+  <node id='-80497' timestamp='2009-10-16T17:43:50Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.369892' lon='7.0055107' />
+  <node id='-80496' timestamp='2009-10-16T17:43:50Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3700836' lon='7.0054935' />
+  <node id='-80495' timestamp='2009-10-16T17:43:50Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3702916' lon='7.0054678' />
+  <node id='-80494' timestamp='2009-10-16T17:43:49Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.37043' lon='7.005415' />
+  <node id='-80493' timestamp='2009-10-16T17:43:49Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3706535' lon='7.0052757' />
+  <node id='-80492' timestamp='2009-10-16T17:43:48Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3708107' lon='7.0050538' />
+  <node id='-80491' timestamp='2009-10-16T17:43:48Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3708914' lon='7.0047452' />
+  <node id='-80490' timestamp='2009-10-16T17:43:48Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3709464' lon='7.0044174' />
+  <node id='-80489' timestamp='2009-10-16T17:43:48Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3710064' lon='7.0040051' />
+  <node id='-80488' timestamp='2009-10-16T17:43:47Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3710856' lon='7.0037271' />
+  <node id='-80487' timestamp='2009-10-16T17:43:47Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3711785' lon='7.0034479' />
+  <node id='-80486' timestamp='2009-10-16T17:43:47Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3713566' lon='7.003139' />
+  <node id='-80485' timestamp='2009-10-16T17:43:47Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3715339' lon='7.0029392' />
+  <node id='-80484' timestamp='2009-10-16T17:43:45Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.371746' lon='7.0028723' />
+  <node id='-80483' timestamp='2009-10-16T17:43:45Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3720215' lon='7.0028929' />
+  <node id='-80482' timestamp='2009-10-16T17:43:44Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3723117' lon='7.003027' />
+  <node id='-80481' timestamp='2009-10-16T17:43:44Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3726151' lon='7.0031941' />
+  <node id='-80480' timestamp='2009-10-16T17:43:44Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.372985' lon='7.0034765' />
+  <node id='-80479' timestamp='2009-10-16T17:43:43Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3731982' lon='7.0036068' />
+  <node id='-80478' timestamp='2009-10-16T17:43:43Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3734065' lon='7.0036654' />
+  <node id='-80477' timestamp='2009-10-16T17:43:43Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3736625' lon='7.0036554' />
+  <node id='-80476' timestamp='2009-10-16T17:43:42Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3739036' lon='7.0035245' />
+  <node id='-80475' timestamp='2009-10-16T17:43:42Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3741133' lon='7.0033092' />
+  <node id='-80474' timestamp='2009-10-16T17:43:42Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3743261' lon='7.0030447' />
+  <node id='-80473' timestamp='2009-10-16T17:43:41Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.374565' lon='7.002715' />
+  <node id='-80472' timestamp='2009-10-16T17:43:41Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3747955' lon='7.0023883' />
+  <node id='-80471' timestamp='2009-10-16T17:43:41Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3749427' lon='7.0021316' />
+  <node id='-80470' timestamp='2009-10-16T17:43:40Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3750336' lon='7.0018076' />
+  <node id='-80469' timestamp='2009-10-16T17:43:40Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3750912' lon='7.0014042' />
+  <node id='-80468' timestamp='2009-10-16T17:43:40Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3751418' lon='7.0009703' />
+  <node id='-80467' timestamp='2009-10-16T17:43:40Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.3751872' lon='7.0007153' />
+  <node id='-80466' timestamp='2009-10-16T17:43:39Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3752679' lon='7.0004851' />
+  <node id='-80465' timestamp='2009-10-16T17:43:39Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3754775' lon='7.000069' />
+  <node id='-80464' timestamp='2009-10-16T17:43:37Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3757001' lon='6.9998116' />
+  <node id='-80463' timestamp='2009-10-16T17:43:37Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3759191' lon='6.9995487' />
+  <node id='-80462' timestamp='2009-10-16T17:43:36Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3761088' lon='6.9992209' />
+  <node id='-80461' timestamp='2009-10-16T17:43:36Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3762259' lon='6.9988448' />
+  <node id='-80460' timestamp='2009-10-16T17:43:35Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3763277' lon='6.9983933' />
+  <node id='-80459' timestamp='2009-10-16T17:43:34Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3764067' lon='6.9979977' />
+  <node id='-80458' timestamp='2009-10-16T17:43:34Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3764829' lon='6.997477' />
+  <node id='-80457' timestamp='2009-10-16T17:43:33Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3765478' lon='6.9970086' />
+  <node id='-80456' timestamp='2009-10-16T17:43:32Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3766363' lon='6.9966412' />
+  <node id='-80455' timestamp='2009-10-16T17:43:32Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3767182' lon='6.9963354' />
+  <node id='-80454' timestamp='2009-10-16T17:43:31Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3768113' lon='6.9960779' />
+  <node id='-80453' timestamp='2009-10-16T17:43:31Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3768775' lon='6.9958564' />
+  <node id='-80452' timestamp='2009-10-16T17:43:30Z' uid='176693' user='MathiasRR' visible='true' version='15' lat='50.3769375' lon='6.9956343' />
+  <node id='-80451' timestamp='2009-10-16T17:43:30Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3769495' lon='6.9953414' />
+  <node id='-80450' timestamp='2009-10-16T17:43:29Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3768967' lon='6.9950729' />
+  <node id='-80449' timestamp='2009-10-16T17:43:29Z' uid='176693' user='MathiasRR' visible='true' version='16' lat='50.376774' lon='6.9947761' />
+  <node id='-80448' timestamp='2009-10-16T17:43:28Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3766088' lon='6.9945775' />
+  <node id='-80447' timestamp='2009-10-16T17:43:28Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3764226' lon='6.9943956' />
+  <node id='-80446' timestamp='2009-10-16T17:43:27Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3758862' lon='6.9939322' />
+  <node id='-80445' timestamp='2009-10-16T17:43:26Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3756399' lon='6.9938635' />
+  <node id='-80444' timestamp='2009-10-16T17:43:26Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3753826' lon='6.9939322' />
+  <node id='-80443' timestamp='2009-10-16T17:43:25Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3751089' lon='6.9939493' />
+  <node id='-80442' timestamp='2009-10-16T17:43:25Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3749119' lon='6.9938807' />
+  <node id='-80441' timestamp='2009-10-16T17:43:24Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3747075' lon='6.9937548' />
+  <node id='-80440' timestamp='2009-10-16T17:43:23Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3744453' lon='6.993463' />
+  <node id='-80439' timestamp='2009-10-16T17:43:23Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3741686' lon='6.9931307' />
+  <node id='-80438' timestamp='2009-10-16T17:43:22Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3740141' lon='6.9928764' />
+  <node id='-80437' timestamp='2009-10-16T17:43:19Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3738609' lon='6.9925932' />
+  <node id='-80436' timestamp='2009-10-16T17:43:19Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3736145' lon='6.9921297' />
+  <node id='-80435' timestamp='2009-10-16T17:43:18Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3734538' lon='6.9917388' />
+  <node id='-80434' timestamp='2009-10-16T17:43:18Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.373367' lon='6.9912583' />
+  <node id='-80433' timestamp='2009-10-16T17:43:17Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3733335' lon='6.9907614' />
+  <node id='-80432' timestamp='2009-10-16T17:43:17Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3732756' lon='6.9901912' />
+  <node id='-80431' timestamp='2009-10-16T17:43:16Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3731849' lon='6.9896464' />
+  <node id='-80430' timestamp='2009-10-16T17:43:16Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3730839' lon='6.9891429' />
+  <node id='-80429' timestamp='2009-10-16T17:43:15Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.372975' lon='6.98866' />
+  <node id='-80428' timestamp='2009-10-16T17:43:13Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3728712' lon='6.9882219' />
+  <node id='-80427' timestamp='2009-10-16T17:43:13Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3727802' lon='6.9878196' />
+  <node id='-80426' timestamp='2009-10-16T17:43:12Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3726127' lon='6.9874176' />
+  <node id='-80425' timestamp='2009-10-16T17:43:12Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3723938' lon='6.9869799' />
+  <node id='-80424' timestamp='2009-10-16T17:43:11Z' uid='176693' user='MathiasRR' visible='true' version='6' lat='50.3722416' lon='6.9867922' />
+  <node id='-80423' timestamp='2009-10-16T17:43:10Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3720867' lon='6.9866308' />
+  <node id='-80422' timestamp='2009-10-16T17:43:10Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3719011' lon='6.9865202' />
+  <node id='-80421' timestamp='2009-10-16T17:43:07Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3717505' lon='6.9863809' />
+  <node id='-80420' timestamp='2009-10-16T17:43:07Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3716698' lon='6.9862575' />
+  <node id='-80419' timestamp='2009-10-16T17:43:06Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3716089' lon='6.9860573' />
+  <node id='-80418' timestamp='2009-10-16T17:43:05Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3715987' lon='6.9858556' />
+  <node id='-80417' timestamp='2009-10-16T17:43:05Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.371653' lon='6.9857096' />
+  <node id='-80416' timestamp='2009-10-16T17:43:04Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3717172' lon='6.9856016' />
+  <node id='-80415' timestamp='2009-10-16T17:43:03Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3717886' lon='6.9855366' />
+  <node id='-80414' timestamp='2009-10-16T17:43:03Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3718535' lon='6.9855164' />
+  <node id='-80413' timestamp='2009-10-16T17:43:02Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.371945' lon='6.9855079' />
+  <node id='-80412' timestamp='2009-10-16T17:43:01Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3720544' lon='6.9855275' />
+  <node id='-80411' timestamp='2009-10-16T17:43:01Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3722022' lon='6.9857096' />
+  <node id='-80410' timestamp='2009-10-16T17:43:00Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3722869' lon='6.9859366' />
+  <node id='-80409' timestamp='2009-10-16T17:43:00Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3724102' lon='6.9862846' />
+  <node id='-80408' timestamp='2009-10-16T17:42:59Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3725209' lon='6.9865464' />
+  <node id='-80407' timestamp='2009-10-16T17:42:59Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.372673' lon='6.9868855' />
+  <node id='-80406' timestamp='2009-10-16T17:42:59Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3728306' lon='6.9872158' />
+  <node id='-80405' timestamp='2009-10-16T17:42:58Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3730562' lon='6.9876236' />
+  <node id='-80404' timestamp='2009-10-16T17:42:58Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3732861' lon='6.9880527' />
+  <node id='-80403' timestamp='2009-10-16T17:42:57Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.373468' lon='6.9884033' />
+  <node id='-80402' timestamp='2009-10-16T17:42:57Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3736693' lon='6.9887823' />
+  <node id='-80401' timestamp='2009-10-16T17:42:56Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3737639' lon='6.9889679' />
+  <node id='-80400' timestamp='2009-10-16T17:42:56Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3739177' lon='6.9891518' />
+  <node id='-80399' timestamp='2009-10-16T17:42:55Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3741346' lon='6.9892868' />
+  <node id='-80398' timestamp='2009-10-16T17:42:55Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3742988' lon='6.9892929' />
+  <node id='-80397' timestamp='2009-10-16T17:42:54Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3744356' lon='6.9892372' />
+  <node id='-80396' timestamp='2009-10-16T17:42:54Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3745342' lon='6.9891256' />
+  <node id='-80395' timestamp='2009-10-16T17:42:53Z' uid='176693' user='MathiasRR' visible='true' version='15' lat='50.3746108' lon='6.9889969' />
+  <node id='-80394' timestamp='2009-10-16T17:42:51Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3746412' lon='6.9887297' />
+  <node id='-80393' timestamp='2009-10-16T17:42:51Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3745912' lon='6.9883508' />
+  <node id='-80392' timestamp='2009-10-16T17:42:50Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3745269' lon='6.9879591' />
+  <node id='-80391' timestamp='2009-10-16T17:42:50Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.3744583' lon='6.9875383' />
+  <node id='-80390' timestamp='2009-10-16T17:42:50Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.3744133' lon='6.9870883' />
+  <node id='-80389' timestamp='2009-10-16T17:42:49Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.374385' lon='6.986625' />
+  <node id='-80388' timestamp='2009-10-16T17:42:49Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.3743419' lon='6.9859556' />
+  <node id='-80387' timestamp='2009-10-16T17:42:48Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3743008' lon='6.9854345' />
+  <node id='-80386' timestamp='2009-10-16T17:42:48Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3742276' lon='6.9850206' />
+  <node id='-80385' timestamp='2009-10-16T17:42:47Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3741291' lon='6.9846024' />
+  <node id='-80384' timestamp='2009-10-16T17:42:47Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3739758' lon='6.9842762' />
+  <node id='-80383' timestamp='2009-10-16T17:42:47Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3737897' lon='6.98395' />
+  <node id='-80382' timestamp='2009-10-16T17:42:46Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3735926' lon='6.9835724' />
+  <node id='-80381' timestamp='2009-10-16T17:42:46Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3734284' lon='6.9832891' />
+  <node id='-80380' timestamp='2009-10-16T17:42:45Z' uid='176693' user='MathiasRR' visible='true' version='6' lat='50.3731157' lon='6.9827023' />
+  <node id='-80379' timestamp='2009-10-16T17:42:44Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3728427' lon='6.9820618' />
+  <node id='-80378' timestamp='2009-10-16T17:42:44Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3727196' lon='6.9817442' />
+  <node id='-80377' timestamp='2009-10-16T17:42:43Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3725963' lon='6.9814009' />
+  <node id='-80376' timestamp='2009-10-16T17:42:42Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3724498' lon='6.981036' />
+  <node id='-80375' timestamp='2009-10-16T17:42:42Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3723169' lon='6.9805548' />
+  <node id='-80374' timestamp='2009-10-16T17:42:41Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3722569' lon='6.9801048' />
+  <node id='-80373' timestamp='2009-10-16T17:42:41Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3722405' lon='6.9796413' />
+  <node id='-80372' timestamp='2009-10-16T17:42:40Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3723084' lon='6.9791472' />
+  <node id='-80371' timestamp='2009-10-16T17:42:40Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.372445' lon='6.9786417' />
+  <node id='-80370' timestamp='2009-10-16T17:42:39Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3725977' lon='6.9781798' />
+  <node id='-80369' timestamp='2009-10-16T17:42:38Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3727496' lon='6.9776415' />
+  <node id='-80368' timestamp='2009-10-16T17:42:37Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.372971' lon='6.9770727' />
+  <node id='-80367' timestamp='2009-10-16T17:42:37Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.37321' lon='6.9766485' />
+  <node id='-80366' timestamp='2009-10-16T17:42:36Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3734635' lon='6.9761623' />
+  <node id='-80365' timestamp='2009-10-16T17:42:36Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3736676' lon='6.9756626' />
+  <node id='-80364' timestamp='2009-10-16T17:42:34Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3738115' lon='6.9751645' />
+  <node id='-80363' timestamp='2009-10-16T17:42:34Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3739246' lon='6.9745776' />
+  <node id='-80362' timestamp='2009-10-16T17:42:33Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3740499' lon='6.9739464' />
+  <node id='-80361' timestamp='2009-10-16T17:42:33Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3741723' lon='6.973395' />
+  <node id='-80360' timestamp='2009-10-16T17:42:32Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3742419' lon='6.9728314' />
+  <node id='-80359' timestamp='2009-10-16T17:42:32Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3742995' lon='6.9721989' />
+  <node id='-80358' timestamp='2009-10-16T17:42:31Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3743436' lon='6.9715868' />
+  <node id='-80357' timestamp='2009-10-16T17:42:31Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3743838' lon='6.9710005' />
+  <node id='-80356' timestamp='2009-10-16T17:42:30Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3744276' lon='6.9704' />
+  <node id='-80355' timestamp='2009-10-16T17:42:29Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3744753' lon='6.9698847' />
+  <node id='-80354' timestamp='2009-10-16T17:42:29Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3744998' lon='6.9692945' />
+  <node id='-80353' timestamp='2009-10-16T17:42:28Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3744849' lon='6.9685349' />
+  <node id='-80352' timestamp='2009-10-16T17:42:28Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3744466' lon='6.9679855' />
+  <node id='-80351' timestamp='2009-10-16T17:42:27Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3744244' lon='6.9673958' />
+  <node id='-80350' timestamp='2009-10-16T17:42:27Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3744549' lon='6.9668758' />
+  <node id='-80349' timestamp='2009-10-16T17:42:26Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3745396' lon='6.9663891' />
+  <node id='-80348' timestamp='2009-10-16T17:42:26Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3746874' lon='6.9658741' />
+  <node id='-80347' timestamp='2009-10-16T17:42:25Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3748486' lon='6.9652439' />
+  <node id='-80346' timestamp='2009-10-16T17:42:24Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3750023' lon='6.9646982' />
+  <node id='-80345' timestamp='2009-10-16T17:42:22Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3751253' lon='6.9642433' />
+  <node id='-80344' timestamp='2009-10-16T17:42:21Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3753029' lon='6.9636787' />
+  <node id='-80343' timestamp='2009-10-16T17:42:21Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3755152' lon='6.963198' />
+  <node id='-80342' timestamp='2009-10-16T17:42:20Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3757992' lon='6.9626796' />
+  <node id='-80341' timestamp='2009-10-16T17:42:20Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3761019' lon='6.9622417' />
+  <node id='-80340' timestamp='2009-10-16T17:42:19Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3764133' lon='6.9619137' />
+  <node id='-80339' timestamp='2009-10-16T17:42:18Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3768348' lon='6.9616207' />
+  <node id='-80338' timestamp='2009-10-16T17:42:18Z' uid='176693' user='MathiasRR' visible='true' version='6' lat='50.3771182' lon='6.9614976' />
+  <node id='-80337' timestamp='2009-10-16T17:42:17Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3774024' lon='6.9613937' />
+  <node id='-80336' timestamp='2009-10-16T17:42:17Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3776925' lon='6.9613251' />
+  <node id='-80335' timestamp='2009-10-16T17:42:14Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3779787' lon='6.9612955' />
+  <node id='-80334' timestamp='2009-10-16T17:42:12Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3782399' lon='6.9612907' />
+  <node id='-80333' timestamp='2009-10-16T17:42:12Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3784804' lon='6.9612632' />
+  <node id='-80332' timestamp='2009-10-16T17:42:11Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3786884' lon='6.9612693' />
+  <node id='-80331' timestamp='2009-10-16T17:42:11Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3789241' lon='6.9612907' />
+  <node id='-80330' timestamp='2009-10-16T17:42:10Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3791646' lon='6.9613212' />
+  <node id='-80329' timestamp='2009-10-16T17:42:09Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3794206' lon='6.9613617' />
+  <node id='-80328' timestamp='2009-10-16T17:42:09Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3796466' lon='6.9613937' />
+  <node id='-80327' timestamp='2009-10-16T17:42:08Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3798585' lon='6.961412' />
+  <node id='-80326' timestamp='2009-10-16T17:42:07Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3800626' lon='6.9614237' />
+  <node id='-80325' timestamp='2009-10-16T17:42:07Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3802377' lon='6.9614027' />
+  <node id='-80324' timestamp='2009-10-16T17:42:06Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3804118' lon='6.9613517' />
+  <node id='-80323' timestamp='2009-10-16T17:42:05Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3805935' lon='6.9612631' />
+  <node id='-80322' timestamp='2009-10-16T17:42:04Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3807537' lon='6.9611238' />
+  <node id='-80321' timestamp='2009-10-16T17:42:03Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3808632' lon='6.9609503' />
+  <node id='-80320' timestamp='2009-10-16T17:42:01Z' uid='176693' user='MathiasRR' visible='true' version='11' lat='50.38095' lon='6.9605983' />
+  <node id='-80319' timestamp='2009-10-16T17:42:01Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3809219' lon='6.9602608' />
+  <node id='-80318' timestamp='2009-10-16T17:42:00Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3808507' lon='6.9599604' />
+  <node id='-80317' timestamp='2009-10-16T17:42:00Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3807139' lon='6.959617' />
+  <node id='-80316' timestamp='2009-10-16T17:41:59Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3804775' lon='6.9591567' />
+  <node id='-80315' timestamp='2009-10-16T17:41:57Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3802736' lon='6.9587353' />
+  <node id='-80314' timestamp='2009-10-16T17:41:57Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3800248' lon='6.9582008' />
+  <node id='-80313' timestamp='2009-10-16T17:41:57Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3798122' lon='6.9577642' />
+  <node id='-80312' timestamp='2009-10-16T17:41:54Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.379703' lon='6.9573903' />
+  <node id='-80311' timestamp='2009-10-16T17:41:53Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.379624' lon='6.9568765' />
+  <node id='-80310' timestamp='2009-10-16T17:41:53Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3795523' lon='6.9564002' />
+  <node id='-80309' timestamp='2009-10-16T17:41:52Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3794922' lon='6.9558757' />
+  <node id='-80308' timestamp='2009-10-16T17:41:51Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3794131' lon='6.9552839' />
+  <node id='-80307' timestamp='2009-10-16T17:41:51Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3793398' lon='6.9547783' />
+  <node id='-80306' timestamp='2009-10-16T17:41:50Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3792698' lon='6.9542588' />
+  <node id='-80305' timestamp='2009-10-16T17:41:50Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3791915' lon='6.9538121' />
+  <node id='-80304' timestamp='2009-10-16T17:41:49Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3791065' lon='6.9533871' />
+  <node id='-80303' timestamp='2009-10-16T17:41:49Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3790265' lon='6.9529754' />
+  <node id='-80302' timestamp='2009-10-16T17:41:48Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.378964' lon='6.9526557' />
+  <node id='-80301' timestamp='2009-10-16T17:41:47Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3788774' lon='6.9522869' />
+  <node id='-80300' timestamp='2009-10-16T17:41:45Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3787834' lon='6.9518678' />
+  <node id='-80299' timestamp='2009-10-16T17:41:45Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3786878' lon='6.9515206' />
+  <node id='-80298' timestamp='2009-10-16T17:41:44Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3785662' lon='6.9511131' />
+  <node id='-80297' timestamp='2009-10-16T17:41:44Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3784692' lon='6.9507673' />
+  <node id='-80296' timestamp='2009-10-16T17:41:43Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.378343' lon='6.9505586' />
+  <node id='-80295' timestamp='2009-10-16T17:41:43Z' uid='176693' user='MathiasRR' visible='true' version='12' lat='50.3781511' lon='6.9504513' />
+  <node id='-80294' timestamp='2009-10-16T17:41:42Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3779423' lon='6.9504562' />
+  <node id='-80293' timestamp='2009-10-16T17:41:42Z' uid='176693' user='MathiasRR' visible='true' version='15' lat='50.3776277' lon='6.9504618' />
+  <node id='-80292' timestamp='2009-10-16T17:41:41Z' uid='176693' user='MathiasRR' visible='true' version='13' lat='50.3773623' lon='6.9504114' />
+  <node id='-80291' timestamp='2009-10-16T17:41:41Z' uid='176693' user='MathiasRR' visible='true' version='14' lat='50.3771184' lon='6.9502999' />
+  <node id='-80290' action='modify' timestamp='2009-10-16T17:41:40Z' uid='176693' user='MathiasRR' visible='true' version='5' lat='50.3769516' lon='6.9501748'>
+    <tag k='environnement' v='foret' />
+    <tag k='meteo' v='clair' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='jour' />
+  </node>
+  <way id='-80289' action='modify' timestamp='2010-11-15T14:33:24Z' uid='179033' user='Radeln' visible='true' version='32'>
+    <nd ref='-80290' />
+    <nd ref='-80291' />
+    <nd ref='-80292' />
+    <nd ref='-80293' />
+    <nd ref='-80294' />
+    <nd ref='-80295' />
+    <nd ref='-80296' />
+    <nd ref='-80297' />
+    <nd ref='-80298' />
+    <nd ref='-80299' />
+    <nd ref='-80300' />
+    <nd ref='-80301' />
+    <nd ref='-80302' />
+    <nd ref='-80303' />
+    <nd ref='-80304' />
+    <nd ref='-80305' />
+    <nd ref='-80306' />
+    <nd ref='-80307' />
+    <nd ref='-80308' />
+    <nd ref='-80309' />
+    <nd ref='-80310' />
+    <nd ref='-80311' />
+    <nd ref='-80312' />
+    <nd ref='-80313' />
+    <nd ref='-80314' />
+    <nd ref='-80315' />
+    <nd ref='-80316' />
+    <nd ref='-80317' />
+    <nd ref='-80318' />
+    <nd ref='-80319' />
+    <nd ref='-80320' />
+    <nd ref='-80321' />
+    <nd ref='-80322' />
+    <nd ref='-80323' />
+    <nd ref='-80324' />
+    <nd ref='-80325' />
+    <nd ref='-80326' />
+    <nd ref='-80327' />
+    <nd ref='-80328' />
+    <nd ref='-80329' />
+    <nd ref='-80330' />
+    <nd ref='-80331' />
+    <nd ref='-80332' />
+    <nd ref='-80333' />
+    <nd ref='-80334' />
+    <nd ref='-80335' />
+    <nd ref='-80336' />
+    <nd ref='-80337' />
+    <nd ref='-80338' />
+    <nd ref='-80339' />
+    <nd ref='-80340' />
+    <nd ref='-80341' />
+    <nd ref='-80342' />
+    <nd ref='-80343' />
+    <nd ref='-80344' />
+    <nd ref='-80345' />
+    <nd ref='-80346' />
+    <nd ref='-80347' />
+    <nd ref='-80348' />
+    <nd ref='-80349' />
+    <nd ref='-80350' />
+    <nd ref='-80351' />
+    <nd ref='-80352' />
+    <nd ref='-80353' />
+    <nd ref='-80354' />
+    <nd ref='-80355' />
+    <nd ref='-80356' />
+    <nd ref='-80357' />
+    <nd ref='-80358' />
+    <nd ref='-80359' />
+    <nd ref='-80360' />
+    <nd ref='-80361' />
+    <nd ref='-80362' />
+    <nd ref='-80363' />
+    <nd ref='-80364' />
+    <nd ref='-80365' />
+    <nd ref='-80366' />
+    <nd ref='-80367' />
+    <nd ref='-80368' />
+    <nd ref='-80369' />
+    <nd ref='-80370' />
+    <nd ref='-80371' />
+    <nd ref='-80372' />
+    <nd ref='-80373' />
+    <nd ref='-80374' />
+    <nd ref='-80375' />
+    <nd ref='-80376' />
+    <nd ref='-80377' />
+    <nd ref='-80378' />
+    <nd ref='-80379' />
+    <nd ref='-80380' />
+    <nd ref='-80381' />
+    <nd ref='-80382' />
+    <nd ref='-80383' />
+    <nd ref='-80384' />
+    <nd ref='-80385' />
+    <nd ref='-80386' />
+    <nd ref='-80387' />
+    <nd ref='-80388' />
+    <nd ref='-80389' />
+    <nd ref='-80390' />
+    <nd ref='-80391' />
+    <nd ref='-80392' />
+    <nd ref='-80393' />
+    <nd ref='-80394' />
+    <nd ref='-80395' />
+    <nd ref='-80396' />
+    <nd ref='-80397' />
+    <nd ref='-80398' />
+    <nd ref='-80399' />
+    <nd ref='-80400' />
+    <nd ref='-80401' />
+    <nd ref='-80402' />
+    <nd ref='-80403' />
+    <nd ref='-80404' />
+    <nd ref='-80405' />
+    <nd ref='-80406' />
+    <nd ref='-80407' />
+    <nd ref='-80408' />
+    <nd ref='-80409' />
+    <nd ref='-80410' />
+    <nd ref='-80411' />
+    <nd ref='-80412' />
+    <nd ref='-80413' />
+    <nd ref='-80414' />
+    <nd ref='-80415' />
+    <nd ref='-80416' />
+    <nd ref='-80417' />
+    <nd ref='-80418' />
+    <nd ref='-80419' />
+    <nd ref='-80420' />
+    <nd ref='-80421' />
+    <nd ref='-80422' />
+    <nd ref='-80423' />
+    <nd ref='-80424' />
+    <nd ref='-80425' />
+    <nd ref='-80426' />
+    <nd ref='-80427' />
+    <nd ref='-80428' />
+    <nd ref='-80429' />
+    <nd ref='-80430' />
+    <nd ref='-80431' />
+    <nd ref='-80432' />
+    <nd ref='-80433' />
+    <nd ref='-80434' />
+    <nd ref='-80435' />
+    <nd ref='-80436' />
+    <nd ref='-80437' />
+    <nd ref='-80438' />
+    <nd ref='-80439' />
+    <nd ref='-80440' />
+    <nd ref='-80441' />
+    <nd ref='-80442' />
+    <nd ref='-80443' />
+    <nd ref='-80444' />
+    <nd ref='-80445' />
+    <nd ref='-80446' />
+    <nd ref='-80447' />
+    <nd ref='-80448' />
+    <nd ref='-80449' />
+    <nd ref='-80450' />
+    <nd ref='-80451' />
+    <nd ref='-80452' />
+    <nd ref='-80453' />
+    <nd ref='-80454' />
+    <nd ref='-80455' />
+    <nd ref='-80456' />
+    <nd ref='-80457' />
+    <nd ref='-80458' />
+    <nd ref='-80459' />
+    <nd ref='-80460' />
+    <nd ref='-80461' />
+    <nd ref='-80462' />
+    <nd ref='-80463' />
+    <nd ref='-80464' />
+    <nd ref='-80465' />
+    <nd ref='-80466' />
+    <nd ref='-80467' />
+    <nd ref='-80468' />
+    <nd ref='-80469' />
+    <nd ref='-80470' />
+    <nd ref='-80471' />
+    <nd ref='-80472' />
+    <nd ref='-80473' />
+    <nd ref='-80474' />
+    <nd ref='-80475' />
+    <nd ref='-80476' />
+    <nd ref='-80477' />
+    <nd ref='-80478' />
+    <nd ref='-80479' />
+    <nd ref='-80480' />
+    <nd ref='-80481' />
+    <nd ref='-80482' />
+    <nd ref='-80483' />
+    <nd ref='-80484' />
+    <nd ref='-80485' />
+    <nd ref='-80486' />
+    <nd ref='-80487' />
+    <nd ref='-80488' />
+    <nd ref='-80489' />
+    <nd ref='-80490' />
+    <nd ref='-80491' />
+    <nd ref='-80492' />
+    <nd ref='-80493' />
+    <nd ref='-80494' />
+    <nd ref='-80495' />
+    <nd ref='-80496' />
+    <nd ref='-80497' />
+    <nd ref='-80498' />
+    <nd ref='-80499' />
+    <nd ref='-80500' />
+    <nd ref='-80501' />
+    <nd ref='-80502' />
+    <nd ref='-80503' />
+    <nd ref='-80504' />
+    <nd ref='-80505' />
+    <nd ref='-80506' />
+    <nd ref='-80507' />
+    <nd ref='-80508' />
+    <nd ref='-80509' />
+    <nd ref='-80510' />
+    <nd ref='-80511' />
+    <nd ref='-80512' />
+    <nd ref='-80513' />
+    <nd ref='-80514' />
+    <nd ref='-80515' />
+    <nd ref='-80516' />
+    <nd ref='-80517' />
+    <nd ref='-80518' />
+    <nd ref='-80519' />
+    <nd ref='-80520' />
+    <nd ref='-80521' />
+    <nd ref='-80522' />
+    <nd ref='-80523' />
+    <nd ref='-80524' />
+    <nd ref='-80525' />
+    <nd ref='-80526' />
+    <nd ref='-80527' />
+    <nd ref='-80528' />
+    <nd ref='-80529' />
+    <nd ref='-80530' />
+    <nd ref='-80531' />
+    <nd ref='-80532' />
+    <nd ref='-80533' />
+    <nd ref='-80534' />
+    <nd ref='-80535' />
+    <nd ref='-80536' />
+    <nd ref='-80537' />
+    <nd ref='-80538' />
+    <nd ref='-80539' />
+    <nd ref='-80540' />
+    <nd ref='-80541' />
+    <nd ref='-80542' />
+    <nd ref='-80543' />
+    <nd ref='-80544' />
+    <nd ref='-80545' />
+    <nd ref='-80546' />
+    <nd ref='-80547' />
+    <nd ref='-80548' />
+    <nd ref='-80549' />
+    <nd ref='-80550' />
+    <nd ref='-80551' />
+    <nd ref='-80552' />
+    <nd ref='-80553' />
+    <nd ref='-80554' />
+    <nd ref='-80555' />
+    <nd ref='-80556' />
+    <nd ref='-80557' />
+    <nd ref='-80558' />
+    <nd ref='-80559' />
+    <nd ref='-80560' />
+    <nd ref='-80561' />
+    <nd ref='-80562' />
+    <nd ref='-80563' />
+    <nd ref='-80564' />
+    <nd ref='-80565' />
+    <nd ref='-80566' />
+    <nd ref='-80567' />
+    <nd ref='-80568' />
+    <nd ref='-80569' />
+    <nd ref='-80570' />
+    <nd ref='-80571' />
+    <nd ref='-80572' />
+    <nd ref='-80573' />
+    <nd ref='-80574' />
+    <nd ref='-80575' />
+    <nd ref='-80576' />
+    <nd ref='-80577' />
+    <nd ref='-80578' />
+    <nd ref='-80579' />
+    <nd ref='-80580' />
+    <nd ref='-80581' />
+    <nd ref='-80582' />
+    <nd ref='-80583' />
+    <nd ref='-80584' />
+    <nd ref='-80585' />
+    <nd ref='-80586' />
+    <nd ref='-80587' />
+    <nd ref='-80588' />
+    <nd ref='-80589' />
+    <nd ref='-80590' />
+    <nd ref='-80591' />
+    <nd ref='-80592' />
+    <nd ref='-80593' />
+    <nd ref='-80594' />
+    <nd ref='-80595' />
+    <nd ref='-80596' />
+    <nd ref='-80597' />
+    <nd ref='-80598' />
+    <nd ref='-80599' />
+    <nd ref='-80600' />
+    <nd ref='-80601' />
+    <nd ref='-80602' />
+    <nd ref='-80603' />
+    <nd ref='-80604' />
+    <nd ref='-80605' />
+    <nd ref='-80606' />
+    <nd ref='-80607' />
+    <nd ref='-80608' />
+    <nd ref='-80609' />
+    <tag k='access' v='private' />
+    <tag k='fixme' v='&apos;Trunk&apos; ist IMHO falsch, da nicht autobahnähnlich ausgebaut. Kraftfahrstraße bedingt nicht &apos;trunk&apos;.' />
+    <tag k='highway' v='trunk' />
+    <tag k='motorroad' v='yes' />
+    <tag k='nom' v='Nürburgring Nordschleife' />
+    <tag k='note' v='Kraftfahrstraße, bitte nicht wieder löschen' />
+    <tag k='oneway' v='yes' />
+    <tag k='sport' v='motor' />
+    <tag k='toll' v='yes' />
+  </way>
+</osm>

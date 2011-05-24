@@ -1,0 +1,2 @@
+Poly-Rallye
+(NV) C'est un jeu de rallye sans interface graphique et ou tout se joue à l'écoute. On peut choisir de faire des courses dans un mode carrière ou course simple. Lors d'une course, on suit les instructions du copilote pour ne pas se crasher. Le but de la course est d'être le plus réactif possible aux instructions du copilote pour faire le meilleur temps de parcours possible.

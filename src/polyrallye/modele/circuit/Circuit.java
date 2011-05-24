@@ -285,6 +285,10 @@ public class Circuit {
 		environnement.delete();
 		terrain.delete();
 	}
+	
+	public String getEnvironnement() {
+		return environnement.getType();
+	}
 
 	@Override
 	public String toString() {

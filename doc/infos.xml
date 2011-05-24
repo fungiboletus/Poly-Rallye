@@ -1,0 +1,21 @@
+<infos>
+    <year>2011</year>
+    <gamecategories>
+		<gamecategory>Conduite</gamecategory>
+    </gamecategories>
+    <shortdescription>Jeu de Rallye </shortdescription>
+    <public>Non voyant</public>
+    <age>tout âge</age>
+    <title>Poly-</title>
+    <authors>
+    <author>Abdoul Karimou Macina</author>
+    <author>Ghazi Ochi</author>
+    <author>Antoine Pultier</author>
+    <author>Clément Wirth</author>
+    </authors>
+    <notes>
+		<note> S'installe comme les autres jeux</note>
+	</notes>
+    <gameplay>Le joueur effectue des courses en suivant les instrructions sonores du copilote. Il existe deux mode, un mode carrire et un mode arcade.</gameplay>
+    <gamerules>Le joueur doit être réactif aux instrucctions du copilote</gamerules>
+</infos>

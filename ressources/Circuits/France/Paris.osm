@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version='0.6' generator='JOSM'>
+  <node id='-1012' action='modify' visible='true' lat='48.8581681752065' lon='2.309857826162039' />
+  <node id='-1010' action='modify' visible='true' lat='48.85819674978841' lon='2.314154279311968' />
+  <node id='-1008' action='modify' visible='true' lat='48.857533865664216' lon='2.3176652899181702' />
+  <node id='-1006' action='modify' visible='true' lat='48.85648928553591' lon='2.3212377310621575' />
+  <node id='-1004' action='modify' visible='true' lat='48.85864594639786' lon='2.32317768639818' />
+  <node id='-1002' action='modify' visible='true' lat='48.86272521309148' lon='2.3188897422383126' />
+  <node id='-1000' action='modify' visible='true' lat='48.864488238218016' lon='2.320278676180317' />
+  <node id='-998' action='modify' visible='true' lat='48.86572703523327' lon='2.320272371834372' />
+  <node id='-996' action='modify' visible='true' lat='48.869138228048215' lon='2.3101227951520475' />
+  <node id='-994' action='modify' visible='true' lat='48.87299249818973' lon='2.3100423961990497' />
+  <node id='-992' action='modify' visible='true' lat='48.87479392648899' lon='2.3057354648325727' />
+  <node id='-990' action='modify' visible='true' lat='48.87438515052877' lon='2.3021380220864947' />
+  <node id='-989' action='modify' visible='true' lat='48.873549272383215' lon='2.295374779091316'>
+    <tag k='environnement' v='urban' />
+    <tag k='meteo' v='pluie' />
+    <tag k='surface' v='asphalt' />
+    <tag k='temps' v='nuit' />
+  </node>
+  <way id='-991' action='modify' visible='true'>
+    <nd ref='-989' />
+    <nd ref='-990' />
+    <nd ref='-992' />
+    <nd ref='-994' />
+    <nd ref='-996' />
+    <nd ref='-998' />
+    <nd ref='-1000' />
+    <nd ref='-1002' />
+    <nd ref='-1004' />
+    <nd ref='-1006' />
+    <nd ref='-1008' />
+    <nd ref='-1010' />
+    <nd ref='-1012' />
+  </way>
+</osm>
